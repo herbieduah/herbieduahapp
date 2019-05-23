@@ -23,8 +23,8 @@ export const App = () => {
 	const style = createStyle(theme);
 	return (
 		<div style={style}>
-			<h1>Hello CodeSandbox</h1>
-			<h2>Start editing to see some magic happen!</h2>
+			<h1>Herbie Duah App</h1>
+			<h2>Hello this is my app. Just testing state!</h2>
 			<p>You clicked {count} times</p>
 			<button onClick={() => setCount(0)}>Reset</button>
 			<DecrementButton />
