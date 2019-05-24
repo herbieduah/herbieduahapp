@@ -1,41 +1,23 @@
-/* .App {
-	text-align: center;
+import { createGlobalStyle } from "styled-components";
+
+export const GlobalStyle = createGlobalStyle`
+  html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
-.App-logo {
-	animation: App-logo-spin infinite 20s linear;
-	height: 40vmin;
-	pointer-events: none;
-}
+  body {
+    /* @import url('https://fonts.googleapis.com/css?family=Roboto'); */
+    @import url("https://use.typekit.net/pzp7uyf.css");
+    font-family: 'basic-sans',-apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* overflow: hidden; */
+    -webkit-overflow-scrolling: touch;
+    -webkit-font-smoothing: antialiased;
+    /* position: relative; */
 
-.App-header {
-	background-color: #282c34;
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	font-size: calc(10px + 2vmin);
-	color: white;
-}
-
-.App-link {
-	color: #61dafb;
-} */
-
-@keyframes App-logo-spin {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
-}
-
-body {
-	background-color: red !important;
-}
-.Resizer {
+    .Resizer {
 	background: #000;
 	opacity: 0.2;
 	z-index: 1;
@@ -85,3 +67,8 @@ body {
 .Resizer.disabled:hover {
 	border-color: transparent;
 }
+
+    
+  }
+  
+`;

@@ -15,9 +15,20 @@ export const StateProvider = ({ children }) => {
 	// that uses `useContext`
 	const [count, setCount] = useState(0);
 	const [theme, setTheme] = useState("light");
+	const [contentWidth, onContentResizeWidth] = useState(0);
+	const [contentHeight, onContentResizeHeight] = useState(0);
 
 	// we compose the context here to pass it down
-	const context = { count, setCount, theme, setTheme };
+	const context = {
+		count,
+		setCount,
+		theme,
+		setTheme,
+		contentHeight,
+		onContentResizeHeight,
+		contentWidth,
+		onContentResizeWidth
+	};
 
 	// and we pass it down. Done!
 	// We just need to include `<ContextProvider>` somewhere at the root
