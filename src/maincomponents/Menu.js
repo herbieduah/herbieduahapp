@@ -1,18 +1,8 @@
-import React, { useContext } from "react";
-import { globalState } from "../State";
-import { MenuContainer } from "./stylecomponents/MenuContainer.js";
+import React from "react";
+import MenuContainer from "../stylecomponents/MenuContainer";
 import { MenuAction } from "../Actions";
 
 export const ContentMenu = () => {
-	const {
-		switchSides,
-		onContentResizeWidth,
-		onContentResizeHeight
-	} = useContext(globalState);
-	const onResize = (width, height) => {
-		onContentResizeWidth(width);
-		onContentResizeHeight(height);
-	};
 	return (
 		<MenuContainer>
 			<nav className='menu'>

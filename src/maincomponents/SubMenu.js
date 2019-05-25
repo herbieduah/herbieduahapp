@@ -1,7 +1,7 @@
 import React from "react";
 
 export const SubMenu = props => {
-	let category = this.props.category;
+	let category = props.category;
 	switch (category) {
 		case "work":
 			return (

@@ -4,12 +4,12 @@ import { menu, revealValues, useWindowResize } from "./helpers";
 import SubMenu from "./maincomponents/SubMenu";
 
 export const MenuAction = props => {
-	const { menuShow, setMenuShow } = useState("");
+	const [menuShow, setMenuShow] = useState("");
 	const { contentWidth, contentHeight } = useGlobalState();
 	const { width, height } = useWindowResize();
 	const values = { width, height, contentWidth, contentHeight };
 	const isShowingMore = revealValues(values).isShowingMore;
-	const category = this.props.category;
+	const category = props.category;
 	return (
 		<li className='menu__item'>
 			<button

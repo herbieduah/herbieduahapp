@@ -54,26 +54,20 @@ export function count(counter) {
 
 export function splitDir(width) {
 	let value;
-	isMobile(width) ? (value = "vertical") : (value = "horizontal");
+	isMobile(width) ? (value = "horizontal") : (value = "vertical");
 	return value;
 }
 
-export function flexDir(width) {
-	let value;
-	if (width < mobileSize) {
-		value = "column";
-	} else {
-		value = "row";
-	}
-	return value;
-}
-
-export function widthPercentage(width, height) {
-	let finalMinSize;
+export function minSliderSize(width, height) {
+	let minSize, maxSize;
 	isMobile(width)
-		? (finalMinSize = height * sliderMinSizeMobile)
-		: (finalMinSize = width * sliderMinSize);
-	return finalMinSize;
+		? (minSize = height * sliderMinSizeMobile)
+		: (minSize = width * sliderMinSize);
+	isMobile(width) ? (maxSize = height - minSize) : (maxSize = width - minSize);
+	return {
+		minSize,
+		maxSize
+	};
 }
 
 export function doneResizing(direction, localStorageDirection) {
@@ -149,9 +143,13 @@ export function menu(menu, current) {
 }
 
 export function getCurrentTheme(theDefaultTheme, theTheme) {
-	var found = themes.find(function(element) {
+	const found = themes.find(function(element) {
 		return element.name === theTheme;
 	});
-	let merged = Object.assign(theDefaultTheme, found.properties);
-	return merged;
+	const merged = Object.assign(theDefaultTheme, found.properties);
+	localStorage.setItem("currentThemeObject", JSON.stringify(merged));
+	const currentThemeObject = JSON.parse(
+		localStorage.getItem("currentThemeObject")
+	);
+	return currentThemeObject;
 }

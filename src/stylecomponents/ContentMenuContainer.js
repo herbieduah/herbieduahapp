@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { mobile } from "./StyleHelper";
+import { mobile } from "./StyleHelpers";
 export const ContentMenuContainer = styled.section`
 	display: flex;
 	position: relative;

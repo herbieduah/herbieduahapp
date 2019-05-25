@@ -1,4 +1,14 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
+// import { Gradients } from "./Animations";
+import {
+	mobile,
+	absoluteOverlay,
+	overlayBackground
+	// fiftyPixels,
+	// fluidTypeInfo,
+	// ctaColor,
+	// iconWidth
+} from "./StyleHelpers";
 
 export const GlobalStyle = createGlobalStyle`
   html {
@@ -15,7 +25,10 @@ export const GlobalStyle = createGlobalStyle`
     /* overflow: hidden; */
     -webkit-overflow-scrolling: touch;
     -webkit-font-smoothing: antialiased;
-    /* position: relative; */
+		/* position: relative; */
+		.sizer {
+			${absoluteOverlay};
+		}
 
     .Resizer {
 	background: #000;
@@ -41,11 +54,13 @@ export const GlobalStyle = createGlobalStyle`
 	border-bottom: 5px solid rgba(255, 255, 255, 0);
 	cursor: row-resize;
 	width: 100%;
+	background-color: red;
 }
 
 .Resizer.horizontal:hover {
 	border-top: 5px solid rgba(0, 0, 0, 0.5);
 	border-bottom: 5px solid rgba(0, 0, 0, 0.5);
+	background-color: red;
 }
 
 .Resizer.vertical {
@@ -68,7 +83,62 @@ export const GlobalStyle = createGlobalStyle`
 	border-color: transparent;
 }
 
-    
   }
   
+`;
+
+export const Overlay = styled.div`
+  ${absoluteOverlay}
+  background-color: ${overlayBackground};
+  z-index: 10;
+`;
+
+export function imgLoad(width, height) {
+	return `${(height / width) * 100}%`;
+}
+
+export const Image = styled.img`
+	${props =>
+		props.loaded
+			? `opacity: 0;transition: all .3s cubic-bezier(0.23, 1, 0.32, 1) 1;
+position: relative;
+opacity: 1;`
+			: `width: 100%;
+padding-bottom: ${props =>
+					props.width ? imgLoad(props.width, props.height) : "auto"};`};
+`;
+
+export const HerbieDuahApp = styled.div`
+	/* height: 90%; */
+	width: 100%;
+	content: "";
+	overflow: hidden;
+	/* background-color: aquamarine; */
+	position: relative;
+	margin: 0;
+	height: 100vh;
+	${mobile} {
+		/* height: 84vh;
+    margin-top: 0.3rem;
+    position: fixed;
+    border-bottom: 3px solid aquamarine;
+    overflow: hidden; */
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		border-bottom: 3px solid red;
+	}
+
+	.menu-button {
+		position: absolute;
+		bottom: 0;
+		left: 90%;
+		right: 0;
+		top: 10%;
+		z-index: 100;
+		font-size: 2em;
+	}
 `;

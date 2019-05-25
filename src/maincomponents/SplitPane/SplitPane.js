@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import stylePropType from "react-style-proptype";
 import { polyfill } from "react-lifecycles-compat";
+import SliderContainer from "../../stylecomponents/SliderContainer";
 
 import Pane from "./Pane";
 import Resizer, { RESIZER_DEFAULT_CLASSNAME } from "./Resizer";
@@ -262,51 +263,48 @@ class SplitPane extends React.Component {
 
 		const notNullChildren = removeNullChildren(children);
 
-		const style = {
-			display: "flex",
-			flex: 1,
-			height: "100%",
-			position: "absolute",
-			outline: "none",
-			overflow: "hidden",
-			MozUserSelect: "text",
-			WebkitUserSelect: "text",
-			msUserSelect: "text",
-			userSelect: "text",
-			...styleProps
-		};
+		const style = { ...styleProps };
 
-		if (split === "vertical") {
-			Object.assign(style, {
-				flexDirection: "row",
-				left: 0,
-				right: 0
-			});
-		} else {
-			Object.assign(style, {
-				bottom: 0,
-				flexDirection: "column",
-				minHeight: "100%",
-				top: 0,
-				width: "100%"
-			});
-		}
+		// if (split === "vertical") {
+		// 	Object.assign(style, {
+		// 		flexDirection: "row",
+		// 		left: 0,
+		// 		right: 0
+		// 	});
+		// } else {
+		// 	Object.assign(style, {
+		// 		bottom: 0,
+		// 		flexDirection: "column",
+		// 		minHeight: "100%",
+		// 		top: 0,
+		// 		width: "100%"
+		// 	});
+		// }
 
-		const classes = ["SplitPane", className, split, disabledClass];
+		const classes = ["contentmenu", className, split, disabledClass];
 
 		const pane1Style = { ...paneStyle, ...pane1StyleProps };
 		const pane2Style = { ...paneStyle, ...pane2StyleProps };
 
-		const pane1Classes = ["Pane1", paneClassName, pane1ClassName].join(" ");
-		const pane2Classes = ["Pane2", paneClassName, pane2ClassName].join(" ");
+		const pane1Classes = [
+			"contentmenu__side",
+			paneClassName,
+			pane1ClassName
+		].join(" ");
+		const pane2Classes = [
+			"contentmenu__side",
+			paneClassName,
+			pane2ClassName
+		].join(" ");
 
 		return (
-			<div
+			<SliderContainer
 				className={classes.join(" ")}
 				ref={node => {
 					this.splitPane = node;
 				}}
-				style={style}>
+				style={style}
+				direction={split}>
 				<Pane
 					className={pane1Classes}
 					key='pane1'
@@ -341,7 +339,7 @@ class SplitPane extends React.Component {
 					style={pane2Style}>
 					{notNullChildren[1]}
 				</Pane>
-			</div>
+			</SliderContainer>
 		);
 	}
 }
