@@ -1,5 +1,5 @@
 import React from "react";
-import { useGlobalState } from "./State";
+import { useGlobalState } from "../State";
 
 export const IncrementButton = () => {
 	const { count, setCount } = useGlobalState();

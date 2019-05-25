@@ -13,21 +13,38 @@ const Provider = globalState.Provider;
 export const StateProvider = ({ children }) => {
 	// state gets created here. Those will be available to any component
 	// that uses `useContext`
-	const [count, setCount] = useState(0);
-	const [theme, setTheme] = useState("light");
+
+	const [switchSides, setSides] = useState(true);
 	const [contentWidth, onContentResizeWidth] = useState(0);
 	const [contentHeight, onContentResizeHeight] = useState(0);
+	const [currentTheme, setTheme] = useState("default");
+	const [currentContentMenu, setCurrentContentMenu] = useState("home");
+	const [overlay, setOverlay] = useState(false);
+	const [currentOverlay, setCurrentOverlay] = useState("");
+
+	// currentLeftTop: "LandscapePhotography",
+	//   currentTheme: "default",
+	//   defaultAppTheme: defaultAppTheme,
+	//   splitDirection: splitDir(window.innerWidth),
+	//   showOverlay: false,
+	//   currentOverlay: ""
 
 	// we compose the context here to pass it down
 	const context = {
-		count,
-		setCount,
-		theme,
+		currentTheme,
 		setTheme,
+		switchSides,
+		setSides,
 		contentHeight,
 		onContentResizeHeight,
 		contentWidth,
-		onContentResizeWidth
+		onContentResizeWidth,
+		currentContentMenu,
+		setCurrentContentMenu,
+		overlay,
+		setOverlay,
+		currentOverlay,
+		setCurrentOverlay
 	};
 
 	// and we pass it down. Done!
