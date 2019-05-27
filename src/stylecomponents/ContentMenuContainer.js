@@ -5,6 +5,8 @@ export const ContentMenuContainer = styled.section`
 	position: relative;
 	z-index: 1;
 	overflow: auto;
+	width: 100%;
+	height: 100vh;
 	&::-webkit-scrollbar-track {
 		background-color: ${props => props.theme.bgColor};
 	}

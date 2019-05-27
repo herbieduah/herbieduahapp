@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { mobile } from "./Variables";
+import { mobile } from "./StyleHelpers";
 
 const baseStyle = css`
 	@import url("https://fonts.googleapis.com/css?family=Assistant");

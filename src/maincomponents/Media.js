@@ -1,29 +1,29 @@
-import React, { useContext } from "react";
+import React from "react";
 import ReactSVG from "react-svg";
 import ReactPlayer from "react-player";
 import ImageLoader from "./ImageLoader";
 import LazyLoad from "react-lazy-load";
 
 export const Media = props => {
-	const type = this.props.type;
+	const type = props.type;
 	switch (type) {
 		case "icon":
 			return (
 				<i>
-					<ReactSVG src={this.props.src} className={this.props.className} />
+					<ReactSVG src={props.src} className={props.className} />
 				</i>
 			);
 		case "video":
-			return <ReactPlayer url={this.props.url} />;
+			return <ReactPlayer url={props.url} />;
 		case "image":
 			return (
 				<LazyLoad>
 					<ImageLoader
-						src={this.props.src}
-						height={this.props.height}
-						width={this.props.width}
-						onClick={this.props.onClick}
-						onLoad={this.onLoad}
+						src={props.src}
+						height={props.height}
+						width={props.width}
+						onClick={props.onClick}
+						onLoad={props.onLoad}
 					/>
 				</LazyLoad>
 			);

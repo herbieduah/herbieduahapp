@@ -18,7 +18,7 @@ export const StateProvider = ({ children }) => {
 	const [contentWidth, onContentResizeWidth] = useState(0);
 	const [contentHeight, onContentResizeHeight] = useState(0);
 	const [currentTheme, setTheme] = useState("default");
-	const [currentContentMenu, setCurrentContentMenu] = useState("home");
+	const [currentContent, setCurrentContent] = useState("home");
 	const [overlay, setOverlay] = useState(false);
 	const [currentOverlay, setCurrentOverlay] = useState("");
 	const [dimensions, setDimensions] = useState({});
@@ -41,8 +41,8 @@ export const StateProvider = ({ children }) => {
 		onContentResizeHeight,
 		contentWidth,
 		onContentResizeWidth,
-		currentContentMenu,
-		setCurrentContentMenu,
+		currentContent,
+		setCurrentContent,
 		overlay,
 		setOverlay,
 		currentOverlay,

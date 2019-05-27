@@ -92,6 +92,10 @@ export const SliderController = styled.div`
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		transition: all .25s ease-in-out;
+		z-index: 10;
+		position: relative;
+		${props => (props.dragging ? `background-color: ${props.theme.ctaColor};` : ``)}
 		${mobile} {
 			height: ${sliderMobileWidth}px;
 			width: ${sliderMobileWidth}px;
@@ -131,23 +135,24 @@ export const SliderLineContainer = styled.div`
 	.gradient {
 		${absoluteOverlay};
 		width: 100%;
-		animation: ${Gradients} 15s ease infinite;
+		animation: ${Gradients} .5s ease infinite;
 		background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
 		background-size: 400% 400%;
 		z-index: 1;
 	}
 	hr {
 		width: 100%;
-		border-top: 4px dashed #8c8b8b;
+		border-top: 4px solid ${props => props.theme.ctaColor};
+		box-shadow: 0px 0px 15px ${props => props.theme.ctaColor};
 		border-bottom: 0;
 		border-left: 0;
 		border-right: 0;
 		position:relative;
-		z-index: 5;
+		z-index: 6;
 	}
 	${mobile} {
 		padding: ${props => props.linePaddingMobile}px 0
-			${props => props.linePaddingMobile - parseInt(sliderMobileWidth)}px;
+			${props => props.linePaddingMobile}px;
 		justify-content: center;
 		align-items: unset;
 		height: 100%;
@@ -156,7 +161,8 @@ export const SliderLineContainer = styled.div`
 			margin: 0 0 0 49.7%;
 			border-top: 0;
 			border-bottom: 0;
-			border-left: 4px dashed #8c8b8b;
+			box-shadow: none;
+			border-left: 4px solid ${props => props.theme.ctaColor};
 			border-right: 0;
 			width: 100%;
 		}

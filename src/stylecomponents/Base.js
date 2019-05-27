@@ -20,8 +20,8 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     /* @import url('https://fonts.googleapis.com/css?family=Roboto'); */
-    @import url("https://use.typekit.net/pzp7uyf.css");
-    font-family: 'basic-sans',-apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    @import url("https://use.typekit.net/zzt6omx.css");
+    font-family: 'objektiv-mk1',-apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     /* overflow: hidden; */
     -webkit-overflow-scrolling: touch;
     -webkit-font-smoothing: antialiased;

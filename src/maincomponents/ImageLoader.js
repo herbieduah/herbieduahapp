@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import { Image } from "./stylecomponents/Base";
+import { Image } from "../stylecomponents/Base";
 // import Text from "./stylecomponents/Text";
 const _loaded = {};
 

@@ -1,22 +1,18 @@
-import React, { useContext } from "react";
+import React, { useContext, Fragment } from "react";
 import Home from "../contentcomponents/Home";
 import ReactResizeDetector from "react-resize-detector";
 import { globalState } from "../State";
 
 export const Content = React.memo(props => {
-	const {
-		contentWidth,
-		onContentResizeWidth,
-		onContentResizeHeight
-	} = useContext(globalState);
+	const { onContentResizeWidth, onContentResizeHeight } = useContext(
+		globalState
+	);
 	const onResize = (width, height) => {
 		onContentResizeWidth(width);
 		onContentResizeHeight(height);
 	};
 	return (
-		<div>
-			{contentWidth}
-
+		<Fragment>
 			<ReactResizeDetector
 				handleWidth
 				handleHeight
@@ -26,7 +22,7 @@ export const Content = React.memo(props => {
 				refreshOptions={{ leading: false, trailing: true }}
 			/>
 			<Home />
-		</div>
+		</Fragment>
 	);
 });
 
