@@ -281,21 +281,17 @@ class SplitPane extends React.Component {
 		// 	});
 		// }
 
-		const classes = ["contentmenu", className, split, disabledClass];
+		const classes = ["hdapp__container", className, split, disabledClass];
 
 		const pane1Style = { ...paneStyle, ...pane1StyleProps };
 		const pane2Style = { ...paneStyle, ...pane2StyleProps };
 
-		const pane1Classes = [
-			"contentmenu__side",
-			paneClassName,
-			pane1ClassName
-		].join(" ");
-		const pane2Classes = [
-			"contentmenu__side",
-			paneClassName,
-			pane2ClassName
-		].join(" ");
+		const pane1Classes = ["hdapp__pane", paneClassName, pane1ClassName].join(
+			" "
+		);
+		const pane2Classes = ["hdapp__pane", paneClassName, pane2ClassName].join(
+			" "
+		);
 
 		return (
 			<SliderContainer

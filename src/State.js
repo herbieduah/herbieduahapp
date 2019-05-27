@@ -21,6 +21,7 @@ export const StateProvider = ({ children }) => {
 	const [currentContentMenu, setCurrentContentMenu] = useState("home");
 	const [overlay, setOverlay] = useState(false);
 	const [currentOverlay, setCurrentOverlay] = useState("");
+	const [dimensions, setDimensions] = useState({});
 
 	// currentLeftTop: "LandscapePhotography",
 	//   currentTheme: "default",
@@ -44,7 +45,9 @@ export const StateProvider = ({ children }) => {
 		overlay,
 		setOverlay,
 		currentOverlay,
-		setCurrentOverlay
+		setCurrentOverlay,
+		dimensions,
+		setDimensions
 	};
 
 	// and we pass it down. Done!

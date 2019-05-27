@@ -1,5 +1,12 @@
-import { useState, useEffect } from "react";
+import {
+	useState,
+	useEffect,
+	useCallback,
+	useLayoutEffect,
+	useContext
+} from "react";
 import { themes } from "./stylecomponents/Theme";
+import { globalState } from "./State";
 export function useWindowResize() {
 	const [width, setWidth] = useState(window.innerWidth);
 	const [height, setHeight] = useState(window.innerHeight);
@@ -152,4 +159,53 @@ export function getCurrentTheme(theDefaultTheme, theTheme) {
 		localStorage.getItem("currentThemeObject")
 	);
 	return currentThemeObject;
+}
+
+export function getDimensionObject(node) {
+	const rect = node.getBoundingClientRect();
+
+	if (rect.toJSON) {
+		return rect.toJSON();
+	} else {
+		return {
+			width: rect.width,
+			height: rect.height,
+			top: rect.top || rect.y,
+			left: rect.left || rect.x,
+			x: rect.x || rect.left,
+			y: rect.y || rect.top,
+			right: rect.right,
+			bottom: rect.bottom
+		};
+	}
+}
+
+export function useDimensions() {
+	// const [dimensions, setDimensions] = useState({});
+	const { dimensions, setDimensions } = useContext(globalState);
+	const [node, setNode] = useState(null);
+
+	const ref = useCallback(node => {
+		setNode(node);
+	}, []);
+
+	useLayoutEffect(() => {
+		if (node) {
+			const measure = () =>
+				window.requestAnimationFrame(() =>
+					setDimensions(getDimensionObject(node))
+				);
+			measure();
+
+			window.addEventListener("resize", measure);
+			window.addEventListener("scroll", measure);
+
+			return () => {
+				window.removeEventListener("resize", measure);
+				window.removeEventListener("scroll", measure);
+			};
+		}
+	}, [node, setDimensions]);
+
+	return [ref, dimensions, node];
 }

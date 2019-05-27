@@ -19,7 +19,7 @@ export const App = () => {
 	const { minSize, maxSize } = minSliderSize(ww, wh);
 	return (
 		<ThemeProvider theme={currentThemeObject}>
-			<HerbieDuahApp>
+			<HerbieDuahApp className='hdapp'>
 				<GlobalStyle />
 				<SplitPane
 					split={splitDir(ww, wh)}
