@@ -41,19 +41,12 @@ export const Overlay = styled.div`
   z-index: 10;
 `;
 
-export function imgLoad(width, height) {
-	return `${(height / width) * 100}%`;
-}
+// export function imgLoad(width, height) {
+// 	return `${(height / width) * 100}%`;
+// }
 
 export const Image = styled.img`
-	${props =>
-		props.loaded
-			? `opacity: 0;transition: all .3s cubic-bezier(0.23, 1, 0.32, 1) 1;
-position: relative;
-opacity: 1;`
-			: `width: 100%;
-padding-bottom: ${props =>
-					props.width ? imgLoad(props.width, props.height) : "auto"};`};
+	width: 100%;
 `;
 
 export const HerbieDuahApp = styled.div`

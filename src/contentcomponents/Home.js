@@ -19,6 +19,7 @@ export const Home = props => {
 	const isShowingMore = revealValues(values).isShowingMore;
 	const showMe = uniqueID === currentContent ? true : false;
 	let subMenu = props.menu;
+	console.log(revealValues(values));
 
 	if (showMe) {
 		return (
@@ -27,7 +28,9 @@ export const Home = props => {
 				isShowingMore={isShowingMore}
 				dragging={dragging}>
 				<header className='content__header'>
-					<Text h1>Hi, I am Herbie</Text>
+					<Text h1 m bold>
+						Flagstaff Chamber of Commerce
+					</Text>
 				</header>
 				<Text m className='content__less'>
 					There is an app for everything. In the future, there is going to be an

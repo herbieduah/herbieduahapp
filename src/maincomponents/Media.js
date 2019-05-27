@@ -20,8 +20,8 @@ export const Media = props => {
 				<LazyLoad>
 					<ImageLoader
 						src={props.src}
-						height={props.height}
-						width={props.width}
+						// height={props.height}
+						// width={props.width}
 						onClick={props.onClick}
 						onLoad={props.onLoad}
 					/>

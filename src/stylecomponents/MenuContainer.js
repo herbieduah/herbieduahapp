@@ -1,11 +1,16 @@
 import styled from "styled-components";
+import { mobile } from "./StyleHelpers";
 
 const MenuContainer = styled.aside`
 	width: 100%;
 	padding: 4rem;
 	display: flex;
 	justify-content: right;
-	align-items: center;
+	overflow:auto;
+	${mobile} {
+		padding: 0rem 1.5rem;
+	}
+	/* align-items: ${props => (props.isMobile ? `initial` : `center`)}; */
 	ul {
 		padding: 0;
 	}
@@ -50,6 +55,7 @@ const MenuContainer = styled.aside`
 			margin: 0.4rem 0;
 		}
 	}
+
 `;
 
 export default MenuContainer;

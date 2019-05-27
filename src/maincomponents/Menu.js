@@ -1,10 +1,12 @@
 import React from "react";
 import MenuContainer from "../stylecomponents/MenuContainer";
+import { isMobile, useWindowResize } from "../helpers";
 import { MenuAction } from "../Actions";
 
 export const ContentMenu = () => {
+	const { width: ww, height: wh } = useWindowResize();
 	return (
-		<MenuContainer>
+		<MenuContainer isMobile={isMobile(ww, wh)}>
 			<nav className='menu'>
 				<ul className='menu__list'>
 					{/* <li className='menu__item'>

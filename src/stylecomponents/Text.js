@@ -23,8 +23,16 @@ const baseStyle = css`
 		if (props.xl) return "2em";
 		return "1em";
 	}};
+	font-weight: ${props => {
+		if (props.bold) return "700";
+		return "400";
+	}};
+	font-style: ${props => {
+		if (props.italic) return "italic";
+		return "normal";
+	}};
 	max-width: 100%;
-	margin: 0 0 2.7rem;
+	margin: 0 0 5%;
 `;
 
 baseStyle.defaultProps = {
@@ -36,8 +44,6 @@ baseStyle.defaultProps = {
 };
 
 const HeadingOne = styled.h1`
-	font-weight: bold;
-	margin-bottom: 25px;
 	${baseStyle};
 
 	/* @media (max-width: 480px) {
@@ -49,32 +55,24 @@ const HeadingTwo = styled.h2`
 	line-height: 1;
 	line-height: 1.25;
 	${baseStyle};
-	font-weight: 700;
 	${mobile} {
 		font-size: 1rem;
 	}
 `;
 
 const HeadingThree = styled.h3`
-	font-weight: bold;
-	margin-bottom: 15px;
 	${baseStyle};
 `;
 
 const HeadingFour = styled.h4`
-	font-weight: bold;
-	margin-bottom: 10px;
 	${baseStyle};
 `;
 
 const HeadingFive = styled.h5`
-	font-weight: bold;
-	margin-bottom: 5px;
 	${baseStyle};
 `;
 
 const Paragraph = styled.p`
-	margin-bottom: 20%;
 	${baseStyle};
 `;
 

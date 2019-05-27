@@ -17,9 +17,9 @@ export const Content = React.memo(props => {
 				handleWidth
 				handleHeight
 				refreshMode={"debounce"}
-				refreshRate={200}
+				refreshRate={100}
 				onResize={onResize}
-				refreshOptions={{ leading: false, trailing: true }}
+				// refreshOptions={{ leading: false, trailing: true }}
 			/>
 			<Home />
 		</Fragment>

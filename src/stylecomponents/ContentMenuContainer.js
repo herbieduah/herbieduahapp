@@ -30,6 +30,7 @@ export const ContentMenuContainer = styled.section`
 	${mobile} {
 		width: 100% !important;
 		padding: 0;
+		height: 100%;
 		-webkit-overflow-scrolling: touch;
 	}
 `;

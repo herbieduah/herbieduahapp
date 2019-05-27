@@ -21,65 +21,69 @@ export const SliderContainer = styled.div`
 				min-height: 100%;
 				top: 0;
 				width: 100%;`}
-
-	.hdapp__resizer {
-		/* background: #000; */
-		/* opacity: 0.2; */
-		z-index: 1;
-		display: flex;
-		align-items: center;
-		/* -moz-box-sizing: border-box;
+	.hdapp {
+		&__pane {
+			overflow: hidden;
+		}
+		&__resizer {
+			/* background: #000; */
+			/* opacity: 0.2; */
+			z-index: 1;
+			display: flex;
+			align-items: center;
+			/* -moz-box-sizing: border-box;
 		-webkit-box-sizing: border-box;
 		box-sizing: border-box;
 		-moz-background-clip: padding;
 		-webkit-background-clip: padding;
 		background-clip: padding-box; */
-	}
-
-	.hdapp__resizer:hover {
-		/* -webkit-transition: all 2s ease;
-		transition: all 2s ease; */
-	}
-
-	.hdapp__resizer.horizontal {
-		height: ${sliderDesktopWidth};
-		/* margin: -5px 0; */
-		/* border-top: 5px solid rgba(255, 255, 255, 0);
-		border-bottom: 5px solid rgba(255, 255, 255, 0); */
-		display: flex;
-		justify-content: center;
-		cursor: row-resize;
-		width: 100%;
-		/* background-color: red; */
-		${mobile} {
-			height: ${sliderMobileWidth};
 		}
-	}
 
-	.hdapp__resizer.horizontal:hover {
-		/* border-top: 5px solid rgba(0, 0, 0, 0.5);
+		&__resizer:hover {
+			/* -webkit-transition: all 2s ease;
+		transition: all 2s ease; */
+		}
+
+		&__resizer.horizontal {
+			height: ${sliderDesktopWidth};
+			/* margin: -5px 0; */
+			/* border-top: 5px solid rgba(255, 255, 255, 0);
+		border-bottom: 5px solid rgba(255, 255, 255, 0); */
+			display: flex;
+			justify-content: center;
+			cursor: row-resize;
+			width: 100%;
+			/* background-color: red; */
+			${mobile} {
+				height: ${sliderMobileWidth};
+			}
+		}
+
+		&__resizer.horizontal:hover {
+			/* border-top: 5px solid rgba(0, 0, 0, 0.5);
 		border-bottom: 5px solid rgba(0, 0, 0, 0.5);
 		background-color: red; */
-	}
+		}
 
-	.hdapp__resizer.vertical {
-		width: ${sliderDesktopWidth}px;
-		/* margin: 0 -5px; */
-		/* border-left: 5px solid rgba(255, 255, 255, 0);
+		&__resizer.vertical {
+			width: ${sliderDesktopWidth}px;
+			/* margin: 0 -5px; */
+			/* border-left: 5px solid rgba(255, 255, 255, 0);
 		border-right: 5px solid rgba(255, 255, 255, 0); */
-		cursor: col-resize;
-		/* background-color: red; */
-	}
+			cursor: col-resize;
+			/* background-color: red; */
+		}
 
-	.hdapp__resizer.vertical:hover {
-		/* border-left: 5px solid rgba(0, 0, 0, 0.5);
+		&__resizer.vertical:hover {
+			/* border-left: 5px solid rgba(0, 0, 0, 0.5);
 		border-right: 5px solid rgba(0, 0, 0, 0.5); */
-	}
-	.hdapp__resizer.disabled {
-		cursor: not-allowed;
-	}
-	.hdapp__resizer.disabled:hover {
-		border-color: transparent;
+		}
+		&__resizer.disabled {
+			cursor: not-allowed;
+		}
+		&__resizer.disabled:hover {
+			border-color: transparent;
+		}
 	}
 `;
 

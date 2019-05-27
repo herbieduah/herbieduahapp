@@ -36,18 +36,18 @@ export const sliderMinSizeMobile = 0.35;
 export const sliderDesktopWidth = "60";
 export const sliderMobileWidth = "60";
 
-let browserWidth = window.innerWidth;
-let browserHeight = window.innerHeight;
+let ww = window.innerWidth;
+let wh = window.innerHeight;
 window.addEventListener("resize", function() {
-	browserWidth = window.innerWidth;
-	browserHeight = window.innerHeight;
+	ww = window.innerWidth;
+	wh = window.innerHeight;
 });
 
-let defaultRevealValues = {
-	browserWidth,
-	browserHeight,
-	contentWidth: browserWidth * 0.5,
-	contentHeight: browserHeight * 0.5
+const defaultRevealValues = {
+	ww,
+	wh,
+	cw: ww * 0.5,
+	ch: wh * 0.5
 };
 
 export function isMobile(width, height) {
@@ -92,16 +92,16 @@ export function showMore(dimensions) {
 	let showingMore = false;
 	let leftTopWidth = dimensions.leftTopWidth;
 	let leftTopHeight = dimensions.leftTopHeight;
-	let browserWidth = dimensions.browserWidth;
-	let browserHeight = dimensions.browserHeight;
-	if (isMobile(browserWidth, browserHeight)) {
-		if (leftTopHeight > browserHeight * 0.55) {
+	let ww = dimensions.ww;
+	let wh = dimensions.wh;
+	if (isMobile(ww, wh)) {
+		if (leftTopHeight > wh * 0.55) {
 			showingMore = true;
 		} else {
 			showingMore = false;
 		}
 	} else {
-		if (leftTopWidth > browserWidth * 0.56) {
+		if (leftTopWidth > ww * 0.56) {
 			showingMore = true;
 		} else {
 			showingMore = false;
@@ -111,35 +111,24 @@ export function showMore(dimensions) {
 }
 
 export function revealValues(revealValuesState = defaultRevealValues) {
-	let {
-		browserWidth,
-		browserHeight,
-		contentWidth,
-		contentHeight
-	} = revealValuesState;
-	let menuWidth = isMobile(browserWidth, browserHeight)
-		? contentWidth
-		: browserWidth - contentWidth - gutterSize;
-	let menuHeight = isMobile(browserWidth, browserHeight)
-		? browserHeight - contentHeight - gutterSize
-		: contentHeight;
-	let contentWidthPercentage = (contentWidth / browserWidth) * 100;
-	let contentHeightPercentage = (contentHeight / browserHeight) * 100;
-	let menuWidthPercentage = (menuWidth / browserWidth) * 100;
-	let menuHeightPercentage = (menuHeight / browserHeight) * 100;
-	let showingMoreDesktop = contentWidthPercentage > 55 ? true : false;
-	let showingMoreMobile = contentHeightPercentage > 55 ? true : false;
-	let isShowingMore = isMobile(browserWidth, browserHeight)
-		? showingMoreMobile
-		: showingMoreDesktop;
+	let { ww, wh, cw, ch } = revealValuesState;
+	let menuWidth = isMobile(ww, wh) ? cw : ww - cw - gutterSize;
+	let menuHeight = isMobile(ww, wh) ? wh - ch - gutterSize : ch;
+	let cwPercentage = (cw / ww) * 100;
+	let chPercentage = (ch / wh) * 100;
+	let menuWidthPercentage = (menuWidth / ww) * 100;
+	let menuHeightPercentage = (menuHeight / wh) * 100;
+	let showingMoreDesktop = cwPercentage > 55 ? true : false;
+	let showingMoreMobile = chPercentage > 55 ? true : false;
+	let isShowingMore = isMobile(ww, wh) ? showingMoreMobile : showingMoreDesktop;
 	let revealValuesObj = {
-		browserWidth,
-		browserHeight,
-		contentWidth,
+		ww,
+		wh,
+		cw,
 		menuWidth,
 		menuHeight,
-		contentWidthPercentage,
-		contentHeightPercentage,
+		cwPercentage,
+		chPercentage,
 		menuWidthPercentage,
 		menuHeightPercentage,
 		isShowingMore,
