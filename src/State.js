@@ -22,6 +22,7 @@ export const StateProvider = ({ children }) => {
 	const [overlay, setOverlay] = useState(false);
 	const [currentOverlay, setCurrentOverlay] = useState("");
 	const [dimensions, setDimensions] = useState({});
+	const [dragging, setDragging] = useState(false);
 
 	// currentLeftTop: "LandscapePhotography",
 	//   currentTheme: "default",
@@ -47,7 +48,9 @@ export const StateProvider = ({ children }) => {
 		currentOverlay,
 		setCurrentOverlay,
 		dimensions,
-		setDimensions
+		setDimensions,
+		dragging,
+		setDragging
 	};
 
 	// and we pass it down. Done!

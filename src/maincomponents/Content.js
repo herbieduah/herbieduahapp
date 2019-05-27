@@ -16,6 +16,7 @@ export const Content = React.memo(props => {
 	return (
 		<div>
 			{contentWidth}
+
 			<ReactResizeDetector
 				handleWidth
 				handleHeight

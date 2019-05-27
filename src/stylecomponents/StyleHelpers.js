@@ -20,10 +20,12 @@ export function fluidType(minVW, maxVW, minFontSize, maxFontSize) {
 	}
 	return finalFontSize;
 }
-let minVW = `320px`;
-let maxVW = `1200px`;
-let minFontSize = `16px`;
-let maxFontSize = `24px`;
+const minVW = `320px`;
+const maxVW = `1200px`;
+const minFontSize = `16px`;
+const maxFontSize = `24px`;
+export const sliderWidth = "3.4rem";
+export const sliderHeight = "2rem";
 export const fluidTypeInfo = fluidType(minVW, maxVW, minFontSize, maxFontSize);
 export const mobile = "@media only screen and (max-width: 500px)";
 export const mobileHorizontal = "@media only screen and (max-width: 1200px)";

@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import stylePropType from "react-style-proptype";
+import Slider from "./Slider";
 
 export const RESIZER_DEFAULT_CLASSNAME = "hdapp__resizer";
 
@@ -45,7 +46,7 @@ class Resizer extends React.Component {
 						onDoubleClick(event);
 					}
 				}}>
-				<div className='testing-sizer' />
+				<Slider />
 			</span>
 		);
 	}

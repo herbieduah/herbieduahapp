@@ -78,6 +78,7 @@ export const HerbieDuahApp = styled.div`
 		height: 100%;
 		overflow: hidden;
 		border-bottom: 3px solid red;
+		z-index: 10;
 	}
 
 	.menu-button {
