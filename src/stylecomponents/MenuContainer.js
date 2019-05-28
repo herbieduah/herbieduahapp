@@ -5,7 +5,7 @@ const MenuContainer = styled.aside`
 	width: 100%;
 	padding: 4rem;
 	display: flex;
-	justify-content: right;
+	justify-content: space-between;
 	overflow:auto;
 	${mobile} {
 		padding: 0rem 1.5rem;
@@ -31,14 +31,16 @@ const MenuContainer = styled.aside`
 		&__button {
 			margin-left: auto;
 			font-size: 1.5em;
+			text-transform: capitalize;
 		}
 		&__logo {
-			margin-left: auto;
+			width:20%;
 		}
 
 		&__list {
 			/* width: 100%; */
 			text-align: right;
+			margin-top: 0;
 		}
 		&__item {
 			margin-bottom: 0.3rem;

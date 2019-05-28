@@ -7,7 +7,13 @@ export const ContentMenuContainer = styled.section`
 	overflow: auto;
 	width: 100%;
 	height: 100vh;
-	&::-webkit-scrollbar-track {
+    -ms-overflow-style: none;  
+	scrollbar-width: none;
+	&::-webkit-scrollbar { 
+    	display: none; 
+	}
+}
+	/* &::-webkit-scrollbar-track {
 		background-color: ${props => props.theme.bgColor};
 	}
 
@@ -18,7 +24,7 @@ export const ContentMenuContainer = styled.section`
 
 	&::-webkit-scrollbar-thumb {
 		background-color: ${props => props.theme.bgColor};
-	}
+	} */
 	ul.blocks {
 		margin: 0;
 		padding: 0;

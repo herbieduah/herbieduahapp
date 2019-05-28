@@ -1,12 +1,15 @@
 import React from "react";
 import MenuContainer from "../stylecomponents/MenuContainer";
 import { isMobile, useWindowResize } from "../helpers";
+import Media from "../maincomponents/Media";
+import HerbieDuahLogo from "../media/icons/HerbieDuahLogo.svg";
 import { MenuAction } from "../Actions";
 
 export const ContentMenu = () => {
 	const { width: ww, height: wh } = useWindowResize();
 	return (
 		<MenuContainer isMobile={isMobile(ww, wh)}>
+			<Media type='icon' className='menu__logo svg' src={HerbieDuahLogo} />
 			<nav className='menu'>
 				<ul className='menu__list'>
 					{/* <li className='menu__item'>

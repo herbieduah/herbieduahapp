@@ -3,7 +3,6 @@ import styled, { css } from "styled-components";
 import { mobile } from "./StyleHelpers";
 
 const baseStyle = css`
-	@import url("https://fonts.googleapis.com/css?family=Assistant");
 	font-family: ${props => props.theme.fontFamily};
 	margin-bottom: ${props => props.noMargin && "0"};
 	font-weight: 400;
