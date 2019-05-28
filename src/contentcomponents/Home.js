@@ -50,12 +50,30 @@ export const Home = props => {
 						sure everything is good.
 					</Text>
 					<Text m>
-						Wanna see something crazy, my website knows that you on a{" "}
+						There is an app for everything, I think in the future there is going
+						to be an app for everyone{" "}
+						<span role='img' aria-label='shock'>
+							😱
+						</span>
+						. I know. The reason why I have the slider is because in real life
+						if someone asks where you work or what you do, you give them a short
+						answer
+						<span role='img' aria-label='shrug'>
+							🤷🏿‍
+						</span>
+						. If they are interested, they will ask more questions...hence the
+						slider
+						<span role='img' aria-label='mindblown'>
+							🤯
+						</span>
+					</Text>
+					<Text m>
+						Wanna see something crazy, my website knows that you on an{" "}
 						{mobileModel} scrolling through my site on {browserName}
 					</Text>
 
 					<Text m>
-						I am gonna be texting/messaging to check out somethings for me.
+						I am gonna be texting/messaging to check out some things for me.
 						Again... thank you.
 					</Text>
 
