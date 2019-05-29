@@ -10,7 +10,8 @@ import {
 	getCurrentTheme,
 	splitDir,
 	useWindowResize,
-	minSliderSize
+	minSliderSize,
+	defaultPaneSize
 } from "./helpers";
 
 export const App = () => {
@@ -33,7 +34,7 @@ export const App = () => {
 					split={splitDir(ww, wh)}
 					minSize={minSize}
 					maxSize={maxSize}
-					defaultSize={500}
+					defaultSize={defaultPaneSize(ww, wh)}
 					step={1}
 					onDragStarted={onDragging}
 					onDragFinished={onDraggingEnded}

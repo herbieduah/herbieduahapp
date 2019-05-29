@@ -38,6 +38,8 @@ export const sliderMobileWidth = "60";
 
 let ww = window.innerWidth;
 let wh = window.innerHeight;
+export const defaultContentWidth = ww * 0.5;
+export const defaultContentHeight = wh * 0.5;
 window.addEventListener("resize", function() {
 	ww = window.innerWidth;
 	wh = window.innerHeight;
@@ -46,8 +48,8 @@ window.addEventListener("resize", function() {
 const defaultRevealValues = {
 	ww,
 	wh,
-	cw: ww * 0.5,
-	ch: wh * 0.5
+	cw: defaultContentWidth,
+	ch: defaultContentHeight
 };
 
 export function isMobile(width, height) {
@@ -80,6 +82,14 @@ export function minSliderSize(width, height) {
 		minSize,
 		maxSize
 	};
+}
+
+export function defaultPaneSize(ww, wh) {
+	let defaultSize;
+	isMobile(ww, wh)
+		? (defaultSize = defaultContentHeight)
+		: (defaultSize = defaultContentWidth);
+	return defaultSize;
 }
 
 export function doneResizing(direction, localStorageDirection) {

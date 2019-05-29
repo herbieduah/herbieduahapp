@@ -14,6 +14,7 @@ const baseStyle = css`
 		if (props.right) return "right";
 		return "left";
 	}};
+
 	font-size: ${props => {
 		if (props.xs) return "0.8em";
 		if (props.s) return "0.9em";
@@ -31,7 +32,7 @@ const baseStyle = css`
 		return "normal";
 	}};
 	max-width: 100%;
-	margin: 0 0 5%;
+	margin: 0 0 3%;
 `;
 
 baseStyle.defaultProps = {
@@ -73,6 +74,8 @@ const HeadingFive = styled.h5`
 
 const Paragraph = styled.p`
 	${baseStyle};
+	font-family: "tablet-gothic", -apple-system, BlinkMacSystemFont, Oxygen,
+		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 `;
 
 const Text = ({

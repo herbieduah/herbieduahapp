@@ -1,4 +1,5 @@
 import React, { createContext, useState, useContext } from "react";
+import { defaultContentWidth, defaultContentHeight } from "./helpers.js";
 
 // Will hold global state
 export const globalState = createContext();
@@ -15,8 +16,8 @@ export const StateProvider = ({ children }) => {
 	// that uses `useContext`
 
 	const [switchSides, setSides] = useState(true);
-	const [contentWidth, onContentResizeWidth] = useState(0);
-	const [contentHeight, onContentResizeHeight] = useState(0);
+	const [contentWidth, onContentResizeWidth] = useState(defaultContentWidth);
+	const [contentHeight, onContentResizeHeight] = useState(defaultContentHeight);
 	const [currentTheme, setTheme] = useState("default");
 	const [currentContent, setCurrentContent] = useState("home");
 	const [overlay, setOverlay] = useState(false);

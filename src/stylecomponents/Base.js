@@ -12,7 +12,8 @@ import {
 
 export const GlobalStyle = createGlobalStyle`
   html {
-  box-sizing: border-box;
+	box-sizing: border-box;
+	
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -20,9 +21,12 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     /* @import url('https://fonts.googleapis.com/css?family=Roboto'); */
-    @import url("https://use.typekit.net/zzt6omx.css");
-    font-family: 'objektiv-mk1',-apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    /* overflow: hidden; */
+		/* overflow: hidden; */
+		@import url("https://use.typekit.net/zzt6omx.css");
+		font-family: 'commuters-sans',-apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		button {
+			font-family: 'commuters-sans',-apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		}
     -webkit-overflow-scrolling: touch;
     -webkit-font-smoothing: antialiased;
 		/* position: relative; */
