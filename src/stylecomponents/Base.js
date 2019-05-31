@@ -3,8 +3,8 @@ import styled, { createGlobalStyle } from "styled-components";
 import {
 	mobile,
 	absoluteOverlay,
-	overlayBackground
-	// fiftyPixels,
+	overlayBackground,
+	bgColor
 	// fluidTypeInfo,
 	// ctaColor,
 	// iconWidth
@@ -58,16 +58,11 @@ export const HerbieDuahApp = styled.div`
 	width: 100%;
 	content: "";
 	overflow: hidden;
-	/* background-color: aquamarine; */
+	background-color: ${bgColor};
 	position: relative;
 	margin: 0;
 	height: 100vh;
 	${mobile} {
-		/* height: 84vh;
-    margin-top: 0.3rem;
-    position: fixed;
-    border-bottom: 3px solid aquamarine;
-    overflow: hidden; */
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -78,13 +73,18 @@ export const HerbieDuahApp = styled.div`
 		z-index: 10;
 	}
 
-	.menu-button {
-		position: absolute;
-		bottom: 0;
-		left: 90%;
-		right: 0;
-		top: 10%;
-		z-index: 100;
-		font-size: 2em;
+	.container {
+		max-width: 740px;
+		width: 100%;
+		margin: 0 auto;
+	}
+	.container-full {
+		width: 100%;
+	}
+	.col-50 {
+		width: 50%;
+		${mobile} {
+			width: 100%;
+		}
 	}
 `;

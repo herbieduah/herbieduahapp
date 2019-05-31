@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1000px" height="1000px" viewBox="0 0 1000 1000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" fill="#000000" x="0" y="0" width="1000" height="1000"></rect>
+        <rect id="Rectangle" stroke="#FFFFFF" fill="#FFFFFF" x="150.5" y="150.5" width="249" height="274"></rect>
+        <rect id="Rectangle-Copy" stroke="#FFFFFF" fill="#FFFFFF" x="150.5" y="575.5" width="249" height="274"></rect>
+        <path d="M350.250493,649.749983 C350.565371,484.294422 507.144836,350.249983 700.250017,350.249983 C893.355198,350.249983 1049.93466,484.294422 1050.24954,649.749983 L350.250459,649.749983 Z" id="Combined-Shape" stroke="#FFFFFF" fill="#FFFFFF" transform="translate(700.250000, 499.999983) rotate(-270.000000) translate(-700.250000, -499.999983) "></path>
+        <path d="" id="Path" stroke="#979797"></path>
+    </g>
+</svg>

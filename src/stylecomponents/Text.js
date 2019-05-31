@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { mobile } from "./StyleHelpers";
+import { mobile, fontColor } from "./StyleHelpers";
 
 const baseStyle = css`
 	font-family: ${props => props.theme.fontFamily};
@@ -8,7 +8,7 @@ const baseStyle = css`
 	font-weight: 400;
 	margin-top: 0;
 	line-height: 1.5;
-	color: ${props => props.theme.fontColor};
+	color: ${fontColor};
 	text-align: ${props => {
 		if (props.center) return "center";
 		if (props.right) return "right";
@@ -74,8 +74,8 @@ const HeadingFive = styled.h5`
 
 const Paragraph = styled.p`
 	${baseStyle};
-	font-family: "tablet-gothic", -apple-system, BlinkMacSystemFont, Oxygen,
-		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	font-family: "basic-sans", -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu,
+		Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 `;
 
 const Text = ({

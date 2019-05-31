@@ -92,7 +92,7 @@ export const SliderController = styled.div`
 		height: ${sliderDesktopWidth}px;
 		width: ${sliderDesktopWidth}px;
 		border-radius: 50%;
-		border: 3px solid ${props => props.theme.ctaColor};
+		border: 3px solid ${props => props.theme.fontColor};
 		display: flex;
 		justify-content: center;
 		align-items: center;

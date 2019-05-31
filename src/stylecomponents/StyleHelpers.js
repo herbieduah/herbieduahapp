@@ -37,6 +37,8 @@ export const showMore = props => props.appValues.isShowingMore;
 export const appGradient = props => rgba(props.theme.bgColor, 0.0);
 export const appColor = props => props.theme.bgColor;
 export const ctaColor = props => props.theme.ctaColor;
+export const bgColor = props => props.theme.bgColor;
+export const fontColor = props => props.theme.fontColor;
 
 //BlockStyle.js
 export const blockBorderColor = props => rgba(props.theme.ctaColor, 0.3);
