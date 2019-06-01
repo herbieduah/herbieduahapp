@@ -1,13 +1,10 @@
 
-<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <g id="HerbieDuahLogo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Icons" transform="translate(-344.000000, -41.000000)">
-            <g id="logo-rounded" transform="translate(344.000000, 41.000000)">
-                <rect class="svg__fill" fill="#1D00FF" x="0" y="0" width="50" height="50" rx="5"></rect>
-                <rect id="Rectangle" stroke="#FFFFFF" fill="#FFFFFF" x="7.5" y="8.5" width="12" height="12"></rect>
-                <rect id="Rectangle-Copy" stroke="#FFFFFF" fill="#FFFFFF" x="7.5" y="29.5" width="12" height="12"></rect>
-                <path d="M18.0000017,33 C18.0157456,24.713411 25.8447292,18 35.5000009,18 C45.1552726,18 52.9842561,24.713411 53,33 L18,33 Z" id="Combined-Shape" stroke="#FFFFFF" fill="#FFFFFF" transform="translate(35.500000, 25.500000) rotate(-270.000000) translate(-35.500000, -25.500000) "></path>
-            </g>
-        </g>
+<svg width="50px" height="50px" class="hdlogo" viewBox="0 0 1000 1000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect class="outer-rect" fill="#000000" x="0" y="0" width="1000" height="1000"></rect>
+        <rect class="inner-rect" stroke="#FFFFFF" fill="#FFFFFF" x="150.5" y="150.5" width="249" height="274"></rect>
+        <rect class="inner-rect" stroke="#FFFFFF" fill="#FFFFFF" x="150.5" y="575.5" width="249" height="274"></rect>
+        <path class="inner-rect" d="M350.250493,649.749983 C350.565371,484.294422 507.144836,350.249983 700.250017,350.249983 C893.355198,350.249983 1049.93466,484.294422 1050.24954,649.749983 L350.250459,649.749983 Z" id="Combined-Shape" stroke="#FFFFFF" fill="#FFFFFF" transform="translate(700.250000, 499.999983) rotate(-270.000000) translate(-700.250000, -499.999983) "></path>
+        <path d="" id="Path" stroke="#979797"></path>
     </g>
 </svg>

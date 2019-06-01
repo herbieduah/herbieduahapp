@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { mobile, fontColor } from "./StyleHelpers";
+import { mobile, bgColor, fontColor } from "./StyleHelpers";
 
 const MenuContainer = styled.aside`
 	width: 100%;
@@ -7,6 +7,7 @@ const MenuContainer = styled.aside`
 	display: flex;
 	justify-content: right;
 	overflow: auto;
+
 	${mobile} {
 		padding: 0rem 1.5rem;
 	}
@@ -34,9 +35,15 @@ const MenuContainer = styled.aside`
 			margin-left: auto;
 			font-size: 1.5em;
 			text-transform: capitalize;
-		}
+		} 
 		&__logo {
-			width:20%;
+			.inner-rect, .half-circle {
+				fill: ${bgColor}
+				
+			}
+			.outer-rect {
+				fill: ${fontColor};
+			}
 		}
 
 		&__list {
