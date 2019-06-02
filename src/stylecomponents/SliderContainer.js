@@ -1,6 +1,12 @@
 import styled from "styled-components";
-import { mobile, absoluteOverlay } from "./StyleHelpers";
+import {
+	mobile,
+	absoluteOverlay,
+	fontColor,
+	mainTransition
+} from "./StyleHelpers";
 import { Gradients } from "./Animations";
+import { rgba } from "polished";
 import { sliderDesktopWidth, sliderMobileWidth } from "../helpers";
 
 export const SliderContainer = styled.div`
@@ -88,31 +94,50 @@ export const SliderContainer = styled.div`
 `;
 
 export const SliderController = styled.div`
-	.slider__circle {
-		height: ${sliderDesktopWidth}px;
-		width: ${sliderDesktopWidth}px;
-		border-radius: 50%;
-		border: 3px solid ${props => props.theme.fontColor};
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		transition: all .25s ease-in-out;
-		z-index: 10;
-		position: relative;
-		${props => (props.dragging ? `background-color: ${props.theme.ctaColor};` : ``)}
-		${mobile} {
+	.slider {
+		&__circle {
+			height: ${sliderDesktopWidth}px;
+			width: ${sliderDesktopWidth}px;
+			${props => {
+				if (props.isMobile) {
+					return `
 			height: ${sliderMobileWidth}px;
-			width: ${sliderMobileWidth}px;
+			width: ${sliderMobileWidth}px;`;
+				}
+			}}
+			margin: 0;
+			border-radius: 50%;
+			border: 3px solid ${fontColor};
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			${mainTransition}
+			z-index: 10;
+			position: relative;
+			&:hover,
+			&:focus {
+				background-color: ${props => props.theme.fontColor};
+			}
+			${props =>
+				props.dragging
+					? `
+				background-color: ${props.theme.fontColor};
+				box-shadow: 0 0 40px ${rgba(props.theme.bgColor, 0.6)};`
+					: ``}
+			${mobile} {
+				height: ${sliderMobileWidth}px;
+				width: ${sliderMobileWidth}px;
+			}
+		}
+		&__circle-line {
+			&:hover,
+			&:focus {
+				.slider__line-container {
+					opacity: 1;
+				}
+			}
 		}
 	}
-	
-	/* ${props =>
-		props.isMobile
-			? `
-	
-	`
-			: ``} */
-
 `;
 
 export const SliderLineContainer = styled.div`
@@ -121,7 +146,7 @@ export const SliderLineContainer = styled.div`
 	padding-bottom: 0;
 	padding-left: ${props => props.linePadding}px;
 	padding-right: ${props => props.linePadding}px + ${sliderDesktopWidth}px; */
-
+	${mainTransition}
 	padding: 0 ${props =>
 		props.linePadding - parseInt(sliderDesktopWidth)}px 0  ${props =>
 	props.linePadding}px;
@@ -136,25 +161,58 @@ export const SliderLineContainer = styled.div`
 	bottom: 0;
 	left: 0;
 	right: 0;
-	.gradient {
-		${absoluteOverlay};
+	opacity: 0;
+	
+	.slider {
+		&__line {
 		width: 100%;
-		animation: ${Gradients} .5s ease infinite;
-		background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-		background-size: 400% 400%;
-		z-index: 1;
-	}
-	hr {
-		width: 100%;
-		border-top: 4px solid ${props => props.theme.ctaColor};
-		box-shadow: 0px 0px 15px ${props => props.theme.ctaColor};
-		border-bottom: 0;
-		border-left: 0;
-		border-right: 0;
+		${mainTransition}
 		position:relative;
 		z-index: 6;
+		border: 1px solid ${fontColor};
+		background: ${fontColor};
+		opacity: 0.5;
+		height: 8px;
+		border-radius: 6px;
+		${props => {
+			if (props.isMobile) {
+				return `
+		width:8px;
+		height: 100%;`;
+			}
+		}}
 	}
-	${mobile} {
+	&__gradient{
+		${absoluteOverlay};
+	}
+	&__gradient-animation {
+		${absoluteOverlay};
+		${mainTransition}
+		width: 100%;
+		height:100%;
+		animation: ${Gradients} ${props => props.gradientValue}s ease-in-out ${props =>
+	props.isShowingMore ? "" : "infinite"};
+		background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+		background-size: 400% 400%;
+		${props =>
+			props.isShowingMore
+				? "background-size: 100% 100%;"
+				: "background-size: 400% 400%;"}
+		z-index: 1;
+	}
+
+	}
+	${props => {
+		if (props.isMobile) {
+			return `
+		padding: ${props.linePaddingMobile}px 0 ${props.linePaddingMobile -
+				parseInt(sliderMobileWidth)}px;
+		justify-content: center;
+		align-items: unset;
+		height: 100%;`;
+		}
+	}}
+	/* ${mobile} {
 		padding: ${props => props.linePaddingMobile}px 0
 			${props => props.linePaddingMobile}px;
 		justify-content: center;
@@ -170,7 +228,7 @@ export const SliderLineContainer = styled.div`
 			border-right: 0;
 			width: 100%;
 		}
-	}
+	} */
 `;
 
 export default SliderContainer;

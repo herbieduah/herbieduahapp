@@ -34,7 +34,7 @@ export const gutterSize = 30;
 export const sliderMinSize = 0.4;
 export const sliderMinSizeMobile = 0.35;
 export const sliderDesktopWidth = "60";
-export const sliderMobileWidth = "60";
+export const sliderMobileWidth = "70";
 
 let ww = window.innerWidth;
 let wh = window.innerHeight;
@@ -130,6 +130,8 @@ export function revealValues(revealValuesState = defaultRevealValues) {
 	let menuHeightPercentage = (menuHeight / wh) * 100;
 	let showingMoreDesktop = cwPercentage > 55 ? true : false;
 	let showingMoreMobile = chPercentage > 55 ? true : false;
+	let showingMoreDesktopValue = ww * 0.55;
+	let showingMoreMobileValue = cw * 0.55;
 	let isShowingMore = isMobile(ww, wh) ? showingMoreMobile : showingMoreDesktop;
 	let revealValuesObj = {
 		ww,
@@ -143,7 +145,9 @@ export function revealValues(revealValuesState = defaultRevealValues) {
 		menuHeightPercentage,
 		isShowingMore,
 		sliderMinSize,
-		sliderMinSizeMobile
+		sliderMinSizeMobile,
+		showingMoreDesktopValue,
+		showingMoreMobileValue
 	};
 	return revealValuesObj;
 }

@@ -3,7 +3,7 @@ import { mobile, bgColor, fontColor } from "./StyleHelpers";
 
 const MenuContainer = styled.aside`
 	width: 100%;
-	padding: 4rem;
+	padding: 4rem 2rem;
 	display: flex;
 	justify-content: right;
 	overflow: auto;

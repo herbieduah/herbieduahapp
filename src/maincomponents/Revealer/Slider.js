@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { SliderController } from "../../stylecomponents/SliderContainer";
 import { isMobile, useWindowResize } from "../../helpers";
+import SliderLine from "./SliderLine";
 import { globalState } from "../../State";
 
 export const Slider = () => {
@@ -11,7 +12,10 @@ export const Slider = () => {
 			className='slider__controller'
 			isMobile={isMobile(ww, wh)}
 			dragging={dragging}>
-			<div className='slider__circle' />
+			<div className='slider__circle-line'>
+				<div className='slider__circle' tabindex='0' />
+				<SliderLine />
+			</div>
 		</SliderController>
 	);
 };

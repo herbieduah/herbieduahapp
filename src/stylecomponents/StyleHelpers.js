@@ -39,9 +39,10 @@ export const appColor = props => props.theme.bgColor;
 export const ctaColor = props => props.theme.ctaColor;
 export const bgColor = props => props.theme.bgColor;
 export const fontColor = props => props.theme.fontColor;
+export const mainTransition = "transition: all .25s ease-in-out;";
 
 //BlockStyle.js
-export const blockBorderColor = props => rgba(props.theme.ctaColor, 0.3);
+export const sliderCircleShadow = props => rgba(props.theme.bgColor, 0.5);
 export const blockBorderColorHover = props => rgba(props.theme.ctaColor, 0.9);
 export const blockBorderRadius = props => props.theme.blockBorderRadius;
 export const blockBackground = props => props.theme.blockBackgroundColor;

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { ThemeProvider } from "styled-components";
 import { globalState } from "./State";
 import SplitPane from "./maincomponents/Revealer/SplitPane";
-import SliderLine from "./maincomponents/Revealer/SliderLine";
+// import SliderLine from "./maincomponents/Revealer/SliderLine";
 import { GlobalStyle, HerbieDuahApp } from "./stylecomponents/Base";
 import ContentMenu from "./maincomponents/ContentMenu";
 import { defaultAppTheme } from "./stylecomponents/Theme";
@@ -11,7 +11,8 @@ import {
 	splitDir,
 	useWindowResize,
 	minSliderSize,
-	defaultPaneSize
+	defaultPaneSize,
+	isMobile
 } from "./helpers";
 
 export const App = () => {
@@ -27,8 +28,8 @@ export const App = () => {
 	};
 	return (
 		<ThemeProvider theme={currentThemeObject}>
-			<HerbieDuahApp className='hdapp'>
-				<SliderLine />
+			<HerbieDuahApp className='hdapp' isMobile={isMobile(ww, wh)}>
+				{/* <SliderLine /> */}
 				<GlobalStyle />
 				<SplitPane
 					split={splitDir(ww, wh)}

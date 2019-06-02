@@ -18,6 +18,7 @@ export const ContentMenu = () => {
 								type='icon'
 								className='menu__logo svg'
 								src={HerbieDuahLogo}
+								tabindex='1'
 							/>
 						</li>
 						{/* <li className='menu__item'>

@@ -74,8 +74,6 @@ const HeadingFive = styled.h5`
 
 const Paragraph = styled.p`
 	${baseStyle};
-	font-family: "basic-sans", -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu,
-		Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 `;
 
 const Text = ({

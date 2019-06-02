@@ -1,9 +1,11 @@
 import styled from "styled-components";
-import { mobile } from "./StyleHelpers";
+import { mobile, mainTransition } from "./StyleHelpers";
 export const ContentMenuContainer = styled.section`
+	${mainTransition}
+	${props => (props.dragging ? "opacity: .4;" : "opacity: 1;")}
 	display: flex;
 	position: relative;
-	z-index: 1;
+	z-index: 2;
 	overflow: auto;
 	width: 100%;
 	height: 100vh;

@@ -51,7 +51,7 @@ export const Home = props => {
 							</header>
 						</Fade>
 						<article>
-							<div class='container'>
+							<div className='container'>
 								<Fade up duration={2000}>
 									<Text m>
 										Hello again. Don't bother with the menu links. I need to

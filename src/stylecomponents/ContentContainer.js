@@ -34,6 +34,7 @@ export const ContentContainer = styled.article`
 		&__more {
 			margin-top: 4rem;
 			transition: all 0.25s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+			padding: 0 2rem;
 			/* opacity: ${props => (props.isShowingMore ? `1` : `0`)}; */
 			${mobile} {
 				margin-top: 1.7rem;	

@@ -22,6 +22,9 @@ export const GlobalStyle = createGlobalStyle`
   body {
     /* @import url('https://fonts.googleapis.com/css?family=Roboto'); */
 		/* overflow: hidden; */
+		position: fixed;
+		width: 100%;
+		height: 100%;
 		@import url("https://use.typekit.net/zzt6omx.css");
 		font-family: 'commuters-sans',-apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 		button {
@@ -33,6 +36,10 @@ export const GlobalStyle = createGlobalStyle`
 		.sizer {
 			${absoluteOverlay};
 			height: 20vh;
+		}
+		#root {
+			width: 100%;
+			height:100%;
 		}
 
   }
@@ -61,8 +68,8 @@ export const HerbieDuahApp = styled.div`
 	background-color: ${bgColor};
 	position: relative;
 	margin: 0;
-	height: 100vh;
-	${mobile} {
+	height: 100%;
+	/* ${mobile} {
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -71,7 +78,21 @@ export const HerbieDuahApp = styled.div`
 		overflow: hidden;
 		border-bottom: 3px solid red;
 		z-index: 10;
-	}
+	} */
+	${props => {
+		if (props.isMobile) {
+			return `
+				position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		border-bottom: 3px solid red;
+		z-index: 10;`;
+		}
+	}}
+	
 
 	.container {
 		max-width: 740px;
