@@ -39,7 +39,7 @@ export const appColor = props => props.theme.bgColor;
 export const ctaColor = props => props.theme.ctaColor;
 export const bgColor = props => props.theme.bgColor;
 export const fontColor = props => props.theme.fontColor;
-export const mainTransition = "transition: all .25s ease-in-out;";
+export const mainTransition = "transition: all .2s ease-in-out;";
 
 //BlockStyle.js
 export const sliderCircleShadow = props => rgba(props.theme.bgColor, 0.5);

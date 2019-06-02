@@ -5,6 +5,7 @@ import SplitPane from "./maincomponents/Revealer/SplitPane";
 // import SliderLine from "./maincomponents/Revealer/SliderLine";
 import { GlobalStyle, HerbieDuahApp } from "./stylecomponents/Base";
 import ContentMenu from "./maincomponents/ContentMenu";
+import { DragInstructions } from "./Actions";
 import { defaultAppTheme } from "./stylecomponents/Theme";
 import {
 	getCurrentTheme,
@@ -30,6 +31,7 @@ export const App = () => {
 		<ThemeProvider theme={currentThemeObject}>
 			<HerbieDuahApp className='hdapp' isMobile={isMobile(ww, wh)}>
 				{/* <SliderLine /> */}
+				<DragInstructions />
 				<GlobalStyle />
 				<SplitPane
 					split={splitDir(ww, wh)}

@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 import { useGlobalState } from "./State";
-import { menu, revealValues, useWindowResize } from "./helpers";
+import { menu, revealValues, useWindowResize, isMobile } from "./helpers";
 import SubMenu from "./maincomponents/SubMenu";
+import Fade from "react-reveal/Fade";
+import Text from "./stylecomponents/Text";
 
 export const MenuAction = props => {
 	const [menuShow, setMenuShow] = useState("");
@@ -21,5 +23,36 @@ export const MenuAction = props => {
 				<SubMenu category={category} />
 			) : null}
 		</li>
+	);
+};
+
+export const DragInstructions = props => {
+	const {
+		dragging,
+		switchSides,
+		contentWidth: cw,
+		contentHeight: ch
+	} = useGlobalState();
+	const { width: ww, height: wh } = useWindowResize();
+	const values = { ww, wh, cw, ch };
+	const isShowingMore = revealValues(values).isShowingMore;
+	const desktopText = switchSides && !isShowingMore ? "right" : "left";
+	const mobileText = switchSides && !isShowingMore ? "bottom" : "top";
+	const instructionsText = isMobile(ww, wh) ? mobileText : desktopText;
+	const showingLessText = !isShowingMore ? "more" : "less";
+	return (
+		<Fragment>
+			{dragging ? (
+				<div className='instructions'>
+					<Fade duration={1000}>
+						<div>
+							<Text className='instructions__text'>
+								Drag to the {instructionsText} to reveal {showingLessText}
+							</Text>
+						</div>
+					</Fade>
+				</div>
+			) : null}
+		</Fragment>
 	);
 };

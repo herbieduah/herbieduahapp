@@ -13,7 +13,7 @@ export const Slider = () => {
 			isMobile={isMobile(ww, wh)}
 			dragging={dragging}>
 			<div className='slider__circle-line'>
-				<div className='slider__circle' tabindex='0' />
+				<button className='slider__circle' />
 				<SliderLine />
 			</div>
 		</SliderController>

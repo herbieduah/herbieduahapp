@@ -1,10 +1,14 @@
 import styled, { createGlobalStyle } from "styled-components";
+import { rgba } from "polished";
 // import { Gradients } from "./Animations";
 import {
 	mobile,
 	absoluteOverlay,
 	overlayBackground,
-	bgColor
+	bgColor,
+	fontColor,
+	mainTransition
+
 	// fluidTypeInfo,
 	// ctaColor,
 	// iconWidth
@@ -40,6 +44,26 @@ export const GlobalStyle = createGlobalStyle`
 		#root {
 			width: 100%;
 			height:100%;
+		}
+
+	
+		.instructions {
+			${absoluteOverlay};
+			/* height: 100%; */
+			display: flex;
+			margin-top: 4rem;
+			justify-content: center;
+			z-index: 10;
+			&__text {
+			${mainTransition}
+			color: ${bgColor};
+			background: ${fontColor};
+			${props => `box-shadow: 0 0 40px ${rgba(props.theme.bgColor, 0.6)};`}
+			padding: .5rem 1rem;
+			display: inline-block;
+			font-size: 1rem;
+			border-radius: 2rem;
+		}
 		}
 
   }

@@ -63,6 +63,12 @@ export const SliderContainer = styled.div`
 			${mobile} {
 				height: ${sliderMobileWidth};
 			}
+			${props => {
+				if (props.isMobile) {
+					return `
+					width: height: ${sliderMobileWidth};`;
+				}
+			}}
 		}
 
 		&__resizer.horizontal:hover {
@@ -155,20 +161,27 @@ export const SliderLineContainer = styled.div`
 	/* background: red; */
 	/* opacity: 1; */
 	pointer-events: none;
-	display: flex;
-	align-items: center;
 	top: 0;
 	bottom: 0;
 	left: 0;
 	right: 0;
 	opacity: 0;
+	${props => {
+		if (props.isMobile) {
+			return `
+		padding: ${props.linePaddingMobile}px 0 ${props.linePaddingMobile -
+				parseInt(sliderMobileWidth)}px;
+		justify-content: center;
+		align-items: unset;
+		height: 100%;`;
+		}
+	}}
 	
-	.slider {
-		&__line {
+	.slider__line {
 		width: 100%;
 		${mainTransition}
 		position:relative;
-		z-index: 6;
+		z-index: 10;
 		border: 1px solid ${fontColor};
 		background: ${fontColor};
 		opacity: 0.5;
@@ -182,9 +195,36 @@ export const SliderLineContainer = styled.div`
 			}
 		}}
 	}
+	.slider {
+	&__line-content {
+			width: 100%;
+			height: 100%;
+			display: flex;
+			position: relative;
+			z-index: 10;
+			align-items: center;
+			${props => {
+				if (props.isMobile) {
+					return `
+		justify-content: center;
+		align-items: unset;
+		height: 100%;`;
+				}
+			}}
+	}
+		
 	&__gradient{
 		${absoluteOverlay};
 	}
+	&__instructions-container {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		display:flex;
+		align-items: center;
+		z-index: 100;
+	}
+	
 	&__gradient-animation {
 		${absoluteOverlay};
 		${mainTransition}
@@ -201,34 +241,10 @@ export const SliderLineContainer = styled.div`
 		z-index: 1;
 	}
 
-	}
-	${props => {
-		if (props.isMobile) {
-			return `
-		padding: ${props.linePaddingMobile}px 0 ${props.linePaddingMobile -
-				parseInt(sliderMobileWidth)}px;
-		justify-content: center;
-		align-items: unset;
-		height: 100%;`;
-		}
-	}}
-	/* ${mobile} {
-		padding: ${props => props.linePaddingMobile}px 0
-			${props => props.linePaddingMobile}px;
-		justify-content: center;
-		align-items: unset;
-		height: 100%;
-		hr {
-			height: 100%;
-			margin: 0 0 0 49.7%;
-			border-top: 0;
-			border-bottom: 0;
-			box-shadow: none;
-			border-left: 4px solid ${props => props.theme.ctaColor};
-			border-right: 0;
-			width: 100%;
-		}
-	} */
+	
+	
+}
+
 `;
 
 export default SliderContainer;

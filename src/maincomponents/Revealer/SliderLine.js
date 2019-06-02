@@ -35,7 +35,9 @@ export const SliderLine = () => {
 				gradientValue={gradientValue}
 				linePadding={linePadding}
 				linePaddingMobile={linePaddingMobile}>
-				<div className='slider__line' />
+				<div className='slider__line-content'>
+					<div className='slider__line' />
+				</div>
 				{dragging ? (
 					<div className='slider__gradient'>
 						<div className='slider__gradient-animation' />

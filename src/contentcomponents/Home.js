@@ -32,10 +32,7 @@ export const Home = props => {
 				{!isShowingMore ? (
 					<aside className='content__less'>
 						<Fade bottom duration={2000}>
-							<Text l>
-								Hello. Thank you for testing my app. First drag down (drag right
-								on Desktop) the little circle to read more.
-							</Text>
+							<Text l>What up, it's yo boy Herbieeeee. This is my app yo!</Text>
 						</Fade>
 					</aside>
 				) : (
@@ -94,7 +91,7 @@ export const Home = props => {
 								</Fade>
 							</div>
 
-							<div class='container-full'>
+							<div className='container-full'>
 								<Fade up duration={2000}>
 									<Media
 										type='image'
