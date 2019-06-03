@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { mobile, bgColor, fontColor, mainTransition } from "./StyleHelpers";
+import { rgba } from "polished";
 
 const MenuContainer = styled.aside`
 
@@ -82,15 +83,17 @@ const MenuContainer = styled.aside`
 	}
 	.subMenu {
 		&__list {
-			margin-bottom: 1rem;
+			margin-bottom: 1.2rem;
 			width: 100%;
 			display: flex;
 			flex-wrap: wrap;
+			justify-content: flex-end;
 		}
 		&__item {
-			font-size: 1.1rem;
+			font-size: 1rem;
 			margin: 0.4rem 0;
 			margin-left: 1rem;
+			border-bottom: 1px solid ${props => rgba(props.theme.fontColor, 0.5)};
 		}
 	}
 

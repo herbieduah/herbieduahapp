@@ -33,7 +33,7 @@ export const Home = props => {
 					<aside className='content__less'>
 						<Fade bottom duration={2000}>
 							<Text l>
-								Nowadays, there is an app for everyting, in the future, I
+								Nowadays, there is an app for everything, in the future, I
 								believe there is going to be an app for everyone. I am Herbie
 								Duah, and this is my app.
 							</Text>
@@ -55,7 +55,7 @@ export const Home = props => {
 							<div className='container'>
 								<Fade up duration={2000}>
 									<Text m>
-										Hello again. Don't bother with the menu links. I need to
+										I am with Seth. Don't bother with the menu links. I need to
 										make sure this page is good before I copy and paste the code
 										to all the different menu items.
 									</Text>

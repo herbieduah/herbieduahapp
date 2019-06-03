@@ -6,7 +6,7 @@ export const SubMenu = props => {
 		case "work":
 			return (
 				<ul class='subMenu__list'>
-					<li class='subMenu__item'>Herbie Duah (this website)</li>
+					<li class='subMenu__item'>HerbieDuah.app</li>
 					<li class='subMenu__item'>Northern Arizona University</li>
 					<li class='subMenu__item'>UGG</li>
 					<li class='subMenu__item'>Discount Tire</li>
