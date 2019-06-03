@@ -165,7 +165,8 @@ export const SliderLineContainer = styled.div`
 	bottom: 0;
 	left: 0;
 	right: 0;
-	opacity: 0;
+	opacity: ${props => (props.dragging ? "1;" : "0;")};
+	
 	${props => {
 		if (props.isMobile) {
 			return `

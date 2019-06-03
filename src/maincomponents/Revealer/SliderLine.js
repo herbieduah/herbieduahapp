@@ -33,6 +33,7 @@ export const SliderLine = () => {
 				isMobile={isMobile(ww, wh)}
 				isShowingMore={isShowingMore}
 				gradientValue={gradientValue}
+				dragging={dragging}
 				linePadding={linePadding}
 				linePaddingMobile={linePaddingMobile}>
 				<div className='slider__line-content'>

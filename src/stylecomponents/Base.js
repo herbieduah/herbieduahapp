@@ -29,6 +29,7 @@ export const GlobalStyle = createGlobalStyle`
 		position: fixed;
 		width: 100%;
 		height: 100%;
+		overscroll-behavior: contain;
 		@import url("https://use.typekit.net/zzt6omx.css");
 		font-family: 'commuters-sans',-apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 		button {
