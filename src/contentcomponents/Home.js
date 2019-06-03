@@ -55,9 +55,9 @@ export const Home = props => {
 							<div className='container'>
 								<Fade up duration={2000}>
 									<Text m>
-										I am with Seth. Don't bother with the menu links. I need to
-										make sure this page is good before I copy and paste the code
-										to all the different menu items.
+										Don't bother with the menu links. I need to make sure this
+										page is good before I copy and paste the code to all the
+										different menu items.
 									</Text>
 									<Text m>
 										So yeah. I think I am done with the core functionality of

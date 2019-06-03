@@ -11,8 +11,8 @@ export const ContentMenu = () => {
 	return (
 		<MenuContainer isMobile={isMobile(ww, wh)}>
 			<nav className='menu'>
-				<Fade duration={2000}>
-					<ul className='menu__list'>
+				<ul className='menu__list'>
+					<Fade cascade duration={1000}>
 						<li>
 							<Media
 								type='icon'
@@ -33,8 +33,8 @@ export const ContentMenu = () => {
 						<MenuAction category='photography' />
 						<MenuAction category='about' />
 						<MenuAction category='fun' />
-					</ul>
-				</Fade>
+					</Fade>
+				</ul>
 			</nav>
 		</MenuContainer>
 	);

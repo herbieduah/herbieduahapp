@@ -64,6 +64,9 @@ export const GlobalStyle = createGlobalStyle`
 			display: inline-block;
 			font-size: 1rem;
 			border-radius: 2rem;
+			${mobile} {
+				margin-top: 2rem;	
+			}
 		}
 		}
 

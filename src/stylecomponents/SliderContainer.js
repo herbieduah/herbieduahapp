@@ -104,6 +104,7 @@ export const SliderController = styled.div`
 		&__circle {
 			height: ${sliderDesktopWidth}px;
 			width: ${sliderDesktopWidth}px;
+			cursor: col-resize;
 			${props => {
 				if (props.isMobile) {
 					return `
@@ -123,6 +124,7 @@ export const SliderController = styled.div`
 			&:hover,
 			&:focus {
 				background-color: ${props => props.theme.fontColor};
+				transform: scale(0.92);
 			}
 			${props =>
 				props.dragging

@@ -9,6 +9,13 @@ const MenuContainer = styled.aside`
 	display: flex;
 	justify-content: right;
 	overflow: auto;
+	${props => {
+		if (props.isMobile) {
+			return `
+				margin-top: 2rem;`;
+		}
+	}}
+	
 
 	${mobile} {
 		padding: 0rem 1.5rem;
@@ -74,6 +81,12 @@ const MenuContainer = styled.aside`
 			text-align: right;
 			margin-top: 0;
 			margin-left:auto;
+			${props => {
+				if (props.isMobile) {
+					return `
+			text-align: left;`;
+				}
+			}}
 		}
 		&__item {
 			margin-bottom: 0.3rem;
@@ -88,12 +101,26 @@ const MenuContainer = styled.aside`
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: flex-end;
+			${props => {
+				if (props.isMobile) {
+					return `
+					justify-content: flex-start;`;
+				}
+			}}
 		}
 		&__item {
 			font-size: 1rem;
 			margin: 0.4rem 0;
 			margin-left: 1rem;
 			border-bottom: 1px solid ${props => rgba(props.theme.fontColor, 0.5)};
+			${props => {
+				if (props.isMobile) {
+					return `
+					margin-left: 0;
+					margin-right: 1rem;
+					`;
+				}
+			}}
 		}
 	}
 
