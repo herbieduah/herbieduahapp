@@ -32,7 +32,11 @@ export const Home = props => {
 				{!isShowingMore ? (
 					<aside className='content__less'>
 						<Fade bottom duration={2000}>
-							<Text l>What up, it's yo boy Herbieeeee. This is my app yo!</Text>
+							<Text l>
+								Nowadays, there is an app for everyting, in the future, I
+								believe there is going to be an app for everyone. I am Herbie
+								Duah, and this is my app.
+							</Text>
 						</Fade>
 					</aside>
 				) : (
