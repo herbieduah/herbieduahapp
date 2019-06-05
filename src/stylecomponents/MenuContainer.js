@@ -29,14 +29,14 @@ const MenuContainer = styled.aside`
 		color: ${fontColor};
 		cursor: pointer;
 	}
-	button {
+	/* button {
 		border: 0;
 		padding: 0;
 		margin: 0.1rem 0;
 		background: none;
 		color: ${fontColor};
 		cursor: pointer;
-	}
+	} */
 
 	.menu {
 		width: 100%;
@@ -44,11 +44,12 @@ const MenuContainer = styled.aside`
     justify-content: flex-end; */
 		&__button {
 			margin-left: auto;
-			font-size: 1.5em;
 			text-transform: capitalize;
+			height: 1.7rem;
+			margin: 0 0 2%;
 		} 
 		&__logo {
-			margin-bottom: 0.3rem;
+			margin-bottom: 0.5rem;
 			.inner-rect, .half-circle {
 				${mainTransition}
 				fill: ${bgColor};

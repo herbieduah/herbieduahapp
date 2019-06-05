@@ -90,6 +90,7 @@ export const Image = styled.img`
 
 export const HerbieDuahApp = styled.div`
 	/* height: 90%; */
+
 	width: 100%;
 	content: "";
 	overflow: hidden;
@@ -134,6 +135,51 @@ export const HerbieDuahApp = styled.div`
 		width: 50%;
 		${mobile} {
 			width: 100%;
+		}
+	}
+	&:before {
+		content: "";
+		width: 100%;
+		max-width: 100%;
+		height: 0;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		z-index: 10;
+		pointer-events: none;
+		${props =>
+			props.dragging
+				? ""
+				: `box-shadow: 0 0 3rem 3rem ${bgColor}, 0 0 2rem 2rem ${bgColor};`}
+		${mobile} {
+			${props =>
+				props.dragging
+					? `box-shadow: 0 0 2rem 2rem ${bgColor}, 0 0 1rem 1rem ${bgColor};`
+					: ""}
+		}
+	}
+	&:after {
+		content: "";
+		width: 100%;
+		max-width: 100%;
+		height: 0;
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 10;
+		pointer-events: none;
+		
+		${props =>
+			props.dragging
+				? ""
+				: `box-shadow: 0 0 100px 100px ${bgColor}, 0 0 50px 50px ${bgColor};`}
+		${mobile} {
+			${props =>
+				props.dragging
+					? `box-shadow: 0 50px 50px ${bgColor}, 0 0 25px 25px ${bgColor};`
+					: ""}
 		}
 	}
 `;

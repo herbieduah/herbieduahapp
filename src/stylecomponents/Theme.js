@@ -7,8 +7,8 @@ export const themes = [
 	{
 		name: "default",
 		properties: {
-			bgColor: "#111111",
-			fontColor: "#ffffff",
+			bgColor: "#ffe01b",
+			fontColor: "#111111",
 			gradient1: "",
 			gradient2: "",
 			headingColor: "#000000",

@@ -15,24 +15,19 @@ export const SliderLine = () => {
 		globalState
 	);
 	const values = { ww, wh, cw, ch };
-	const {
-		showingMoreDesktopValue,
-		showingMoreMobileValue,
-		isShowingMore
-	} = revealValues(values);
+	const { isShowingMore, switchSides } = revealValues(values);
 	const linePadding = sliderMinSize;
 	const linePaddingMobile = sliderMinSize;
-	const gradientMobile = cw / showingMoreMobileValue;
-	const gradientDesktop = cw / showingMoreDesktopValue;
-	const gradientValue = isMobile(ww, wh) ? gradientMobile : gradientDesktop;
-	console.log(gradientValue);
+	const gradientDirDesktop = switchSides ? "to left" : "to right";
+	const gradientDirMobile = switchSides ? "to top" : "to bottom";
+	const gradientDir = isMobile(ww, wh) ? gradientDirMobile : gradientDirDesktop;
 	return (
 		<React.Fragment>
 			<SliderLineContainer
 				className='slider__line-container'
 				isMobile={isMobile(ww, wh)}
 				isShowingMore={isShowingMore}
-				gradientValue={gradientValue}
+				gradientDir={gradientDir}
 				dragging={dragging}
 				linePadding={linePadding}
 				linePaddingMobile={linePaddingMobile}>

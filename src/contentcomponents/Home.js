@@ -21,7 +21,6 @@ export const Home = props => {
 	const isShowingMore = revealValues(values).isShowingMore;
 	const showMe = uniqueID === currentContent ? true : false;
 	let subMenu = props.menu;
-	console.log(revealValues(values));
 
 	if (showMe) {
 		return (
@@ -33,9 +32,9 @@ export const Home = props => {
 					<aside className='content__less'>
 						<Fade bottom duration={2000}>
 							<Text l>
-								Nowadays, there is an app for everything, in the future, I
-								believe there is going to be an app for everyone. I am Herbie
-								Duah, and this is my app.
+								There is an app for everything, in the future, I believe there
+								is going to be an app for everyone. I am Herbie Duah, and this
+								is my app.
 							</Text>
 						</Fade>
 					</aside>

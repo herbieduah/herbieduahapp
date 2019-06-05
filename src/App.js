@@ -5,6 +5,7 @@ import SplitPane from "./maincomponents/Revealer/SplitPane";
 // import SliderLine from "./maincomponents/Revealer/SliderLine";
 import { GlobalStyle, HerbieDuahApp } from "./stylecomponents/Base";
 import ContentMenu from "./maincomponents/ContentMenu";
+import Content from "./maincomponents/ContentMenu";
 import { DragInstructions } from "./Actions";
 import { defaultAppTheme } from "./stylecomponents/Theme";
 import {
@@ -17,7 +18,13 @@ import {
 } from "./helpers";
 
 export const App = () => {
-	const { switchSides, currentTheme, setDragging } = useContext(globalState);
+	const {
+		switchSides,
+		currentTheme,
+		setDragging,
+		fullScreen,
+		dragging
+	} = useContext(globalState);
 	const currentThemeObject = getCurrentTheme(defaultAppTheme, currentTheme);
 	const { width: ww, height: wh } = useWindowResize();
 	const { minSize, maxSize } = minSliderSize(ww, wh);
@@ -29,10 +36,14 @@ export const App = () => {
 	};
 	return (
 		<ThemeProvider theme={currentThemeObject}>
-			<HerbieDuahApp className='hdapp' isMobile={isMobile(ww, wh)}>
+			<HerbieDuahApp
+				className='hdapp'
+				isMobile={isMobile(ww, wh)}
+				dragging={dragging}>
+				<GlobalStyle />
 				{/* <SliderLine /> */}
 				<DragInstructions />
-				<GlobalStyle />
+				{fullScreen ? <Content /> : null}
 				<SplitPane
 					split={splitDir(ww, wh)}
 					minSize={minSize}
@@ -44,8 +55,8 @@ export const App = () => {
 					// defaultSize={parseInt(localStorage.getItem("splitPos"), 500)}
 					// onChange={size => localStorage.setItem("splitPos", size)}>
 				>
-					<ContentMenu switchSides={switchSides} />
-					<ContentMenu switchSides={!switchSides} />
+					{!fullScreen ? <ContentMenu switchSides={switchSides} /> : null}
+					{!fullScreen ? <ContentMenu switchSides={!switchSides} /> : null}
 				</SplitPane>
 			</HerbieDuahApp>
 		</ThemeProvider>

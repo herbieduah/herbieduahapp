@@ -51,7 +51,7 @@ export const SliderContainer = styled.div`
 		}
 
 		&__resizer.horizontal {
-			height: ${sliderDesktopWidth};
+			height: ${sliderDesktopWidth}px;
 			/* margin: -5px 0; */
 			/* border-top: 5px solid rgba(255, 255, 255, 0);
 		border-bottom: 5px solid rgba(255, 255, 255, 0); */
@@ -61,14 +61,8 @@ export const SliderContainer = styled.div`
 			width: 100%;
 			/* background-color: red; */
 			${mobile} {
-				height: ${sliderMobileWidth};
+				height: ${sliderMobileWidth}px;
 			}
-			${props => {
-				if (props.isMobile) {
-					return `
-					width: height: ${sliderMobileWidth};`;
-				}
-			}}
 		}
 
 		&__resizer.horizontal:hover {
@@ -120,6 +114,7 @@ export const SliderController = styled.div`
 			align-items: center;
 			${mainTransition}
 			z-index: 10;
+			background-color: transparent;
 			position: relative;
 			&:hover,
 			&:focus {
@@ -227,15 +222,16 @@ export const SliderLineContainer = styled.div`
 		align-items: center;
 		z-index: 100;
 	}
-	
+	/* background-image: linear-gradient(to right bottom, #ffe01b, #f88947, #b3505e, #55334b, #111111); */
 	&__gradient-animation {
 		${absoluteOverlay};
 		${mainTransition}
 		width: 100%;
 		height:100%;
-		animation: ${Gradients} ${props => props.gradientValue}s ease-in-out ${props =>
+		animation: ${Gradients} 1.5s ease-in-out ${props =>
 	props.isShowingMore ? "" : "infinite"};
-		background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+		background: linear-gradient( ${props =>
+			props.gradientDir}, #ffe01b, #f88947, #b3505e, #55334b, #111111);
 		background-size: 400% 400%;
 		${props =>
 			props.isShowingMore

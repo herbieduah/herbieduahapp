@@ -19,6 +19,7 @@
     "react-sizeme": "^2.6.7",
     "react-style-proptype": "^3.2.2",
     "react-svg": "^10.0.4",
+    "react-transition-group": "^4.1.0",
     "styled-components": "^4.2.0"
   },
   "scripts": {

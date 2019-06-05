@@ -27,11 +27,11 @@ class Resizer extends React.Component {
 				style={style}
 				onMouseDown={event => onMouseDown(event)}
 				onTouchStart={event => {
-					event.preventDefault();
+					// event.preventDefault();
 					onTouchStart(event);
 				}}
 				onTouchEnd={event => {
-					event.preventDefault();
+					// event.preventDefault();
 					onTouchEnd(event);
 				}}
 				onClick={event => {

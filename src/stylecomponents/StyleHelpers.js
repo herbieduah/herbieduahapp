@@ -1,4 +1,4 @@
-import { rgba, stripUnit } from "polished";
+import { rgba, stripUnit, lighten } from "polished";
 export function fluidType(minVW, maxVW, minFontSize, maxFontSize) {
 	let u1 = stripUnit(minVW)[1];
 	let u2 = stripUnit(maxVW)[1];
@@ -40,6 +40,18 @@ export const ctaColor = props => props.theme.ctaColor;
 export const bgColor = props => props.theme.bgColor;
 export const fontColor = props => props.theme.fontColor;
 export const mainTransition = "transition: all .2s ease-in-out;";
+export const buttonColor = props => rgba(props.theme.fontColor, 0.75);
+// lighten(0.17, props.theme.fontColor);
+export const buttonColorHover = props => props.theme.fontColor;
+export const buttonColorActive = props => props.theme.fontColor;
+export const buttonBorderColor = props => rgba(props.theme.fontColor, 0.75);
+export const buttonBorderColorActive = props =>
+	lighten(0.15, props.theme.fontColor);
+export const linkColor = props => props.theme.fontColor;
+export const linkColorHover = props => props.theme.fontColor;
+export const linkColorActive = props => props.theme.fontColor;
+export const linkBorderColor = props => props.theme.fontColor;
+export const linkBorderColorActive = props => props.theme.fontColor;
 
 //BlockStyle.js
 export const sliderCircleShadow = props => rgba(props.theme.bgColor, 0.5);

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { mobile, mainTransition } from "./StyleHelpers";
+import { mobile, mainTransition, bgColor } from "./StyleHelpers";
 export const ContentMenuContainer = styled.section`
 	${mainTransition}
 	${props => (props.dragging ? "opacity: .4;" : "opacity: 1;")}
@@ -13,6 +13,28 @@ export const ContentMenuContainer = styled.section`
 	scrollbar-width: none;
 	&::-webkit-scrollbar { 
     	display: none; 
+	}
+	&:before {
+		content: "";
+		width: 100%;
+		max-width: 100%;
+		height: 0;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		z-index: 10;
+		pointer-events: none;
+		${props =>
+			props.dragging
+				? `box-shadow: 0 0 3rem 3rem ${bgColor}, 0 0 2rem 2rem ${bgColor};`
+				: ""}
+		${mobile} {
+			${props =>
+				props.dragging
+					? `box-shadow: 0 0 2rem 2rem ${bgColor}, 0 0 1rem 1rem ${bgColor};`
+					: ""}
+		}
 	}
 
 	/* &::-webkit-scrollbar-track {
