@@ -4,16 +4,11 @@ import "./index.css";
 import { StateProvider } from "./State";
 import { App } from "./App";
 import * as serviceWorker from "./serviceWorker";
-import { GlobalStyle } from "./stylecomponents/Base";
 const Main = () => {
 	return (
-		<React.Fragment>
-			<GlobalStyle />
-
-			<StateProvider>
-				<App />
-			</StateProvider>
-		</React.Fragment>
+		<StateProvider>
+			<App />
+		</StateProvider>
 	);
 };
 
