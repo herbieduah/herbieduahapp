@@ -42,7 +42,7 @@ export const App = () => {
 				dragging={dragging}>
 				<GlobalStyle />
 				{/* <SliderLine /> */}
-				<DragInstructions />
+				{/* <DragInstructions /> */}
 				{fullScreen ? <Content /> : null}
 				<SplitPane
 					split={splitDir(ww, wh)}

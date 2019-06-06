@@ -14,7 +14,7 @@ export const MenuAction = props => {
 	const category = props.category;
 	// const [category] = useState(props.category);
 	return (
-		<li className='menu__item'>
+		<Fragment>
 			<Text
 				l
 				button
@@ -25,7 +25,7 @@ export const MenuAction = props => {
 			{menuShow === category || isShowingMore ? (
 				<SubMenu category={category} />
 			) : null}
-		</li>
+		</Fragment>
 	);
 };
 

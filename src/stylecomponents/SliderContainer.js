@@ -95,6 +95,38 @@ export const SliderContainer = styled.div`
 
 export const SliderController = styled.div`
 	.slider {
+			&__triangle{
+				${mainTransition}
+				width: 0;
+				height: 0;
+				border: 0 solid transparent;
+				transform: ${props => (props.dragging ? "scale(2.1);" : "scale(1)")};
+
+				&.desktop {
+					border-top-width: 6px;
+					border-bottom-width: 6px;
+					margin: ${props => (props.dragging ? "0 60px" : "0 12px")};
+				}
+				&.mobile{
+					border-left-width: 6px;
+					border-right-width: 6px;
+					margin: ${props => (props.dragging ? "50px 0" : "12px 0")};
+				}
+				
+				&--left {
+					border-right: 8px solid black;
+				}
+				&--right {
+					border-left: 8px solid black;
+				}
+				&--top {
+					border-bottom: 8px solid black;
+				}
+				&--bottom {
+					border-top: 8px solid black;
+				}
+				
+			}
 		&__circle {
 			height: ${sliderDesktopWidth}px;
 			width: ${sliderDesktopWidth}px;
@@ -103,9 +135,15 @@ export const SliderController = styled.div`
 				if (props.isMobile) {
 					return `
 			height: ${sliderMobileWidth}px;
-			width: ${sliderMobileWidth}px;`;
+			width: ${sliderMobileWidth}px;
+			flex-direction: column;
+			`;
 				}
 			}}
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			
 			margin: 0;
 			border-radius: 50%;
 			border: 3px solid ${fontColor};
@@ -114,32 +152,36 @@ export const SliderController = styled.div`
 			align-items: center;
 			${mainTransition}
 			z-index: 10;
-			background-color: transparent;
+			background-color: ${props =>
+				props.dragging ? props.theme.fontColor : "transparent"};
 			position: relative;
 			&:hover,
 			&:focus {
-				background-color: ${props => props.theme.fontColor};
-				transform: scale(0.92);
+				transform: scale(0.95);
+				transform: ${props => (props.dragging ? "scale(0.6)" : "scale(.95)")};
 			}
-			${props =>
+			transform: ${props => (props.dragging ? "scale(0.6)" : "scale(1)")};
+			
+
+			/* ${props =>
 				props.dragging
 					? `
 				background-color: ${props.theme.fontColor};
 				box-shadow: 0 0 40px ${rgba(props.theme.bgColor, 0.6)};`
-					: ``}
+					: ``} */
 			${mobile} {
 				height: ${sliderMobileWidth}px;
 				width: ${sliderMobileWidth}px;
 			}
 		}
-		&__circle-line {
+		/* &__circle-line {
 			&:hover,
 			&:focus {
 				.slider__line-container {
 					opacity: 1;
 				}
 			}
-		}
+		} */
 	}
 `;
 
@@ -162,7 +204,8 @@ export const SliderLineContainer = styled.div`
 	bottom: 0;
 	left: 0;
 	right: 0;
-	opacity: ${props => (props.dragging ? "1;" : "0;")};
+	/* opacity: ${props => (props.dragging ? "1;" : "0;")}; */
+	opacity: 1;
 	
 	${props => {
 		if (props.isMobile) {
@@ -180,20 +223,48 @@ export const SliderLineContainer = styled.div`
 		${mainTransition}
 		position:relative;
 		z-index: 10;
-		border: 1px solid ${fontColor};
-		background: ${fontColor};
+		/* border: 1px solid ${fontColor};
+		background: ${fontColor}; */
 		opacity: 0.5;
 		height: 8px;
-		border-radius: 6px;
+		/* background-image: linear-gradient(to right, transparent 50%, ${fontColor} 50%);
+		   background-size: 25px 100% ; */
+		   background-image: ${props =>
+					props.isMobile
+						? `linear-gradient(to bottom, transparent 50%, ${
+								props.theme.fontColor
+						  } 50%);`
+						: `linear-gradient(to right, transparent 50%, ${
+								props.theme.fontColor
+						  } 50%);`};
+		background-size: ${props => (props.isMobile ? `100% 25px;` : `25px 100%;`)};;
+		
 		${props => {
 			if (props.isMobile) {
 				return `
 		width:8px;
-		height: 100%;`;
+		height: 100%;
+		`;
 			}
 		}}
 	}
 	.slider {
+	&__instructions {
+		p {
+			margin: 0;
+			padding: 0;
+			line-height: 1;
+			color: ${props => props.theme.bgColor};
+			text-align:center;
+			width:100%;
+		}
+		background-color: ${props => props.theme.fontColor};
+		display:flex;
+		align-items: center;
+		border-radius: 50%;
+		height: 100px;
+		width: 100px;
+	}
 	&__line-content {
 			width: 100%;
 			height: 100%;
@@ -205,7 +276,8 @@ export const SliderLineContainer = styled.div`
 				if (props.isMobile) {
 					return `
 		justify-content: center;
-		align-items: unset;
+		flex-direction: column;
+		width: 100%;
 		height: 100%;`;
 				}
 			}}
@@ -214,14 +286,14 @@ export const SliderLineContainer = styled.div`
 	&__gradient{
 		${absoluteOverlay};
 	}
-	&__instructions-container {
+	/* &__instructions-container {
 		position: relative;
 		width: 100%;
 		height: 100%;
 		display:flex;
 		align-items: center;
 		z-index: 100;
-	}
+	} */
 	/* background-image: linear-gradient(to right bottom, #ffe01b, #f88947, #b3505e, #55334b, #111111); */
 	&__gradient-animation {
 		${absoluteOverlay};

@@ -3,7 +3,7 @@ import { globalState } from "../State";
 import Text from "../stylecomponents/Text";
 import ContentContainer from "../stylecomponents/ContentContainer";
 import Media from "../maincomponents/Media";
-import { revealValues, useWindowResize } from "../helpers";
+import { revealValues, useWindowResize, isMobile } from "../helpers";
 import { browserName, mobileModel } from "react-device-detect";
 import Fade from "react-reveal/Fade";
 
@@ -21,6 +21,7 @@ export const Home = props => {
 	const isShowingMore = revealValues(values).isShowingMore;
 	const showMe = uniqueID === currentContent ? true : false;
 	let subMenu = props.menu;
+	const isContentMobile = isMobile(ww, wh);
 
 	if (showMe) {
 		return (
@@ -30,7 +31,10 @@ export const Home = props => {
 				dragging={dragging}>
 				{!isShowingMore ? (
 					<aside className='content__less'>
-						<Fade bottom duration={2000}>
+						<Fade
+							bottom={isContentMobile}
+							left={!isContentMobile}
+							duration={1500}>
 							<Text l>
 								There is an app for everything, in the future, I believe there
 								is going to be an app for everyone. I am Herbie Duah, and this
@@ -43,16 +47,17 @@ export const Home = props => {
 				)}
 				{isShowingMore ? (
 					<div className='content__more'>
-						<Fade bottom duration={2000}>
+						<Fade top={isContentMobile} right={!isContentMobile} duration={800}>
 							<header className='content__header container'>
 								<Text h1 xl bold>
 									Herbie Duah App Test
 								</Text>
+								<span class='content__fullscreen' />
 							</header>
 						</Fade>
 						<article>
 							<div className='container'>
-								<Fade up duration={2000}>
+								<Fade bottom duration={1500}>
 									<Text m>
 										Don't bother with the menu links. I need to make sure this
 										page is good before I copy and paste the code to all the
@@ -95,7 +100,7 @@ export const Home = props => {
 							</div>
 
 							<div className='container-full'>
-								<Fade up duration={2000}>
+								<Fade up duration={1500}>
 									<Media
 										type='image'
 										width='640'

@@ -12,28 +12,34 @@ export const ContentMenu = () => {
 		<MenuContainer isMobile={isMobile(ww, wh)}>
 			<nav className='menu'>
 				<ul className='menu__list'>
-					<Fade cascade duration={1000}>
-						<li>
-							<Media
-								type='icon'
-								className='menu__logo svg'
-								src={HerbieDuahLogo}
-								tabindex='1'
-							/>
-						</li>
+					<Fade
+						cascade
+						right={!isMobile(ww, wh)}
+						left={isMobile(ww, wh)}
+						duration={1000}>
+						<div>
+							<li>
+								<Media
+									type='icon'
+									className='menu__logo svg'
+									src={HerbieDuahLogo}
+									tabindex='1'
+								/>
+							</li>
 
-						{/* <li className='menu__item'>
-						<Media
-							type='icon'
-							className='menu__logo svg'
-							src={herbieDuahLogo}
-							onClick={localStorage.clear()}
-						/>
-					</li> */}
-						<MenuAction category='work' />
-						<MenuAction category='photography' />
-						<MenuAction category='about' />
-						<MenuAction category='fun' />
+							<li className='menu__item'>
+								<MenuAction category='work' />
+							</li>
+							<li className='menu__item'>
+								<MenuAction category='photography' />
+							</li>
+							<li className='menu__item'>
+								<MenuAction category='about' />
+							</li>
+							<li className='menu__item'>
+								<MenuAction category='fun' />
+							</li>
+						</div>
 					</Fade>
 				</ul>
 			</nav>

@@ -56,9 +56,11 @@ export const ContentContainer = styled.article`
 		}
 		&__less {
 			width: 100%;
+			max-width: 580px;
 			margin-top: 4rem;
 			padding: 0rem 2rem;
 			transition: all 0.25s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+			
 			/* opacity: ${props => (props.isShowingMore ? `0` : `1`)}; */
 			${mobile} {
 				margin-top: 1.7rem;	

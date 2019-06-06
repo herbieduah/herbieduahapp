@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { SliderLineContainer } from "../../stylecomponents/SliderContainer";
+import Text from "../../stylecomponents/Text";
 import {
 	isMobile,
 	useWindowResize,
@@ -32,7 +33,21 @@ export const SliderLine = () => {
 				linePadding={linePadding}
 				linePaddingMobile={linePaddingMobile}>
 				<div className='slider__line-content'>
-					<div className='slider__line' />
+					{isShowingMore ? (
+						<div className='slider__instructions-container'>
+							<span className='slider__instructions'>
+								<Text xs>Reveal less</Text>
+							</span>
+						</div>
+					) : null}
+					<span className='slider__line' />
+					{!isShowingMore ? (
+						<div className='slider__instructions-container'>
+							<span className='slider__instructions'>
+								<Text xs>Reveal more</Text>
+							</span>
+						</div>
+					) : null}
 				</div>
 				{dragging ? (
 					<div className='slider__gradient'>
