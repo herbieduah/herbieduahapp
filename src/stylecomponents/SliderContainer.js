@@ -5,7 +5,7 @@ import {
 	fontColor,
 	mainTransition
 } from "./StyleHelpers";
-import { Gradients } from "./Animations";
+import { Gradients, pulseRing } from "./Animations";
 import { rgba } from "polished";
 import { sliderDesktopWidth, sliderMobileWidth } from "../helpers";
 
@@ -264,6 +264,20 @@ export const SliderLineContainer = styled.div`
 		border-radius: 50%;
 		height: 50px;
 		width: 50px;
+		position:relative;
+		&:before {
+			content: '';
+			${absoluteOverlay}
+			display: block;
+			width: 300%;
+			height: 300%;
+			box-sizing: border-box;
+			margin-left: -100%;
+			margin-top: -100%;
+			border-radius: 50%;
+			background-color: ${props => rgba(props.theme.fontColor, 0.7)};
+			animation: ${pulseRing} 3.25s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+		}
 	}
 	&__line-content {
 			width: 100%;
