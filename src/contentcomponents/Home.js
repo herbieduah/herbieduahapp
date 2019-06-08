@@ -57,6 +57,14 @@ export const Home = props => {
 						</Fade>
 						<article>
 							<div className='container'>
+								<div className='container-full'>
+									<Fade up duration={1500}>
+										<Media
+											type='image'
+											src='https://scontent-lax3-2.cdninstagram.com/vp/2c0c284778f47e789fa8706d0d6adc8c/5D7B9E1F/t51.2885-15/e35/p1080x1080/60992958_365983194122426_8030120158390547331_n.jpg?_nc_ht=scontent-lax3-2.cdninstagram.com'
+										/>
+									</Fade>
+								</div>
 								<Fade bottom duration={1500}>
 									<Text m>
 										Don't bother with the menu links. I need to make sure this
@@ -105,7 +113,7 @@ export const Home = props => {
 										type='image'
 										width='640'
 										height='360'
-										src='https://placebear.com/640/360'
+										src='https://scontent-lax3-2.cdninstagram.com/vp/2c0c284778f47e789fa8706d0d6adc8c/5D7B9E1F/t51.2885-15/e35/p1080x1080/60992958_365983194122426_8030120158390547331_n.jpg'
 									/>
 								</Fade>
 							</div>

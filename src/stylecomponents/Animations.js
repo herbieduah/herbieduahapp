@@ -29,3 +29,25 @@ export const fadeIn = keyframes`
     opacity: 1;
   }
 `;
+
+export const pulseRing = keyframes`
+   0% {
+    transform: scale(.33);
+  }
+  80%, 100% {
+    opacity: 0;
+  }
+`;
+
+export const pulseDot = keyframes`
+   0% {
+    transform: scale(.8);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(.8);
+  }
+
+`;

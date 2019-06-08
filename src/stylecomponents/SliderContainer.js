@@ -114,16 +114,16 @@ export const SliderController = styled.div`
 				}
 				
 				&--left {
-					border-right: 8px solid black;
+					border-right: 8px solid ${fontColor};
 				}
 				&--right {
-					border-left: 8px solid black;
+					border-left: 8px solid ${fontColor};
 				}
 				&--top {
-					border-bottom: 8px solid black;
+					border-bottom: 8px solid ${fontColor};
 				}
 				&--bottom {
-					border-top: 8px solid black;
+					border-top: 8px solid ${fontColor};
 				}
 				
 			}
@@ -258,12 +258,12 @@ export const SliderLineContainer = styled.div`
 			text-align:center;
 			width:100%;
 		}
-		background-color: ${props => props.theme.fontColor};
+		background-color: ${props => rgba(props.theme.fontColor, 0.7)};
 		display:flex;
 		align-items: center;
 		border-radius: 50%;
-		height: 100px;
-		width: 100px;
+		height: 50px;
+		width: 50px;
 	}
 	&__line-content {
 			width: 100%;

@@ -6,7 +6,7 @@ import SplitPane from "./maincomponents/Revealer/SplitPane";
 import { GlobalStyle, HerbieDuahApp } from "./stylecomponents/Base";
 import ContentMenu from "./maincomponents/ContentMenu";
 import Content from "./maincomponents/ContentMenu";
-import { DragInstructions } from "./Actions";
+// import { DragInstructions } from "./Actions";
 import { defaultAppTheme } from "./stylecomponents/Theme";
 import {
 	getCurrentTheme,
