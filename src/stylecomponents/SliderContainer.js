@@ -226,7 +226,7 @@ export const SliderLineContainer = styled.div`
 		/* border: 1px solid ${fontColor};
 		background: ${fontColor}; */
 		opacity: 0.5;
-		height: 8px;
+		height: 4px;
 		/* background-image: linear-gradient(to right, transparent 50%, ${fontColor} 50%);
 		   background-size: 25px 100% ; */
 		   background-image: ${props =>
@@ -271,6 +271,7 @@ export const SliderLineContainer = styled.div`
 			display: block;
 			width: 300%;
 			height: 300%;
+			z-index: -1;
 			box-sizing: border-box;
 			margin-left: -100%;
 			margin-top: -100%;
