@@ -140,6 +140,53 @@ export const HerbieDuahApp = styled.div`
 			width: 100%;
 		}
 	}
+	.resizer-pane {
+		position: relative;
+		z-index: 20;
+		&:before {
+		content: "";
+		width: 100%;
+		max-width: 100%;
+		height: 0;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: -15px;
+		pointer-events: none;
+		display: ${props => (props.isMobile ? "block" : "none")};
+		opacity: ${props => (props.dragging ? "0" : "1")};
+		box-shadow: 0 0 3rem 3rem ${bgColor}, 0 0 2rem 2rem ${bgColor};
+		/* box-shadow: 0 0 3rem 3rem blue, 0 0 2rem 2rem blue; */
+		${mobile} {
+			box-shadow: 0 0 2.5rem 2.5rem ${bgColor}, 0 0 1.5rem 1.5rem ${bgColor};
+			/* box-shadow: 0 0 2rem 2rem blue, 0 0 1rem 1rem blue; */
+			opacity: ${props => (props.dragging ? "0" : "1")};
+			display: ${props => (props.isMobile ? "block" : "none")};
+		}
+	}
+		&:after {
+		content: "";
+		width: 100%;
+		max-width: 100%;
+		height: 0;
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: -15px;
+		pointer-events: none;
+		display: ${props => (props.isMobile ? "block" : "none")};
+		opacity: ${props => (props.dragging ? "0" : "1")};
+		box-shadow: 0 0 3rem 3rem ${bgColor}, 0 0 2rem 2rem ${bgColor};
+		/* box-shadow: 0 0 3rem 3rem blue, 0 0 2rem 2rem blue; */
+		${mobile} {
+			box-shadow: 0 0 2rem 2rem ${bgColor}, 0 0 1.5rem 1.5rem ${bgColor};
+			/* box-shadow: 0 0 2rem 2rem blue, 0 0 1rem 1rem blue; */
+			opacity: ${props => (props.dragging ? "0" : "1")};
+			display: ${props => (props.isMobile ? "block" : "none")};
+		}
+	}
+	}
+
 	&:before {
 		content: "";
 		width: 100%;
@@ -151,15 +198,11 @@ export const HerbieDuahApp = styled.div`
 		top: 0;
 		z-index: 10;
 		pointer-events: none;
-		${props =>
-			props.dragging
-				? ""
-				: `box-shadow: 0 0 3rem 3rem ${bgColor}, 0 0 2rem 2rem ${bgColor};`}
+		opacity: ${props => (props.dragging ? "0" : "1")};
+		box-shadow: 0 0 3rem 3rem ${bgColor}, 0 0 2rem 2rem ${bgColor};
 		${mobile} {
-			${props =>
-				props.dragging
-					? `box-shadow: 0 0 2rem 2rem ${bgColor}, 0 0 1rem 1rem ${bgColor};`
-					: ""}
+			box-shadow: 0 0 2rem 2rem ${bgColor}, 0 0 1rem 1rem ${bgColor};
+			opacity: ${props => (props.dragging ? "0" : "1")};
 		}
 	}
 	&:after {
@@ -172,17 +215,13 @@ export const HerbieDuahApp = styled.div`
 		right: 0;
 		bottom: 0;
 		z-index: 10;
+		opacity: ${props => (props.dragging ? "0" : "1")};
 		pointer-events: none;
-		
-		${props =>
-			props.dragging
-				? ""
-				: `box-shadow: 0 0 100px 100px ${bgColor}, 0 0 50px 50px ${bgColor};`}
+		box-shadow: 0 0 100px 100px ${bgColor}, 0 0 50px 50px ${bgColor};
 		${mobile} {
-			${props =>
-				props.dragging
-					? `box-shadow: 0 50px 50px ${bgColor}, 0 0 25px 25px ${bgColor};`
-					: ""}
-		}
+			box-shadow: 0 50px 50px ${bgColor}, 0 0 25px 25px ${bgColor};
+			opacity: ${props => (props.dragging ? "0" : "1")};
 	}
+		}
+	
 `;

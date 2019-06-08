@@ -1,7 +1,6 @@
 import React, { useContext, Fragment } from "react";
 import { SliderController } from "../../stylecomponents/SliderContainer";
 import { isMobile, useWindowResize } from "../../helpers";
-import SliderLine from "./SliderLine";
 import { globalState } from "../../State";
 
 export const Slider = () => {
@@ -27,7 +26,6 @@ export const Slider = () => {
 						</Fragment>
 					)}
 				</button>
-				{dragging ? <SliderLine /> : null}
 			</div>
 		</SliderController>
 	);

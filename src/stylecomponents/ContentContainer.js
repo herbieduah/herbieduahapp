@@ -63,7 +63,7 @@ export const ContentContainer = styled.article`
 			
 			/* opacity: ${props => (props.isShowingMore ? `0` : `1`)}; */
 			${mobile} {
-				margin-top: 1.7rem;	
+				margin-top: 2.5rem;	
 				padding: 0rem 1rem;
 			}
 			p {
@@ -79,7 +79,7 @@ export const ContentContainer = styled.article`
 			padding: 0 2rem;
 			/* opacity: ${props => (props.isShowingMore ? `1` : `0`)}; */
 			${mobile} {
-				margin-top: 1.7rem;	
+				margin-top: 2.5rem;	
 				padding: 0 1rem;
 			}
 		}

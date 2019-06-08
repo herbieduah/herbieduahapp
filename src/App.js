@@ -8,6 +8,7 @@ import ContentMenu from "./maincomponents/ContentMenu";
 import Content from "./maincomponents/ContentMenu";
 // import { DragInstructions } from "./Actions";
 import { defaultAppTheme } from "./stylecomponents/Theme";
+import SliderLine from "./maincomponents/Revealer/SliderLine";
 import {
 	getCurrentTheme,
 	splitDir,
@@ -44,6 +45,7 @@ export const App = () => {
 				{/* <SliderLine /> */}
 				{/* <DragInstructions /> */}
 				{fullScreen ? <Content /> : null}
+				{dragging ? <SliderLine /> : null}
 				<SplitPane
 					split={splitDir(ww, wh)}
 					minSize={minSize}

@@ -295,6 +295,7 @@ export const SliderLineContainer = styled.div`
 		z-index: 100;
 	} */
 	/* background-image: linear-gradient(to right bottom, #ffe01b, #f88947, #b3505e, #55334b, #111111); */
+	/* background-image: linear-gradient(to right top, #c2292b, #d35082, #c283c3, #afafe2, #bbd1e8); */
 	&__gradient-animation {
 		${absoluteOverlay};
 		${mainTransition}
@@ -303,7 +304,7 @@ export const SliderLineContainer = styled.div`
 		animation: ${Gradients} 1.5s ease-in-out ${props =>
 	props.isShowingMore ? "" : "infinite"};
 		background: linear-gradient( ${props =>
-			props.gradientDir}, #ffe01b, #f88947, #b3505e, #55334b, #111111);
+			props.gradientDir}, #c2292b, #d35082, #c283c3, #afafe2, #bbd1e8);
 		background-size: 400% 400%;
 		${props =>
 			props.isShowingMore

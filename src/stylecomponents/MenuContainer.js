@@ -12,7 +12,7 @@ const MenuContainer = styled.aside`
 	${props => {
 		if (props.isMobile) {
 			return `
-				margin-top: 2rem;`;
+				margin-top: 3.5rem;`;
 		}
 	}}
 	
@@ -45,8 +45,9 @@ const MenuContainer = styled.aside`
 		&__button {
 			margin-left: auto;
 			text-transform: capitalize;
-			height: 1.7rem;
-			margin: 0 0 2%;
+			/* height: 1.7rem; */
+			margin: 0 0 1.5%;
+			border-bottom: none;
 		} 
 		&__logo {
 			margin-bottom: 0.5rem;

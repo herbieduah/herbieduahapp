@@ -23,7 +23,7 @@ class Resizer extends React.Component {
 		return (
 			<span
 				role='presentation'
-				className={classes.join(" ")}
+				className={`${classes.join(" ")} resizer-pane`}
 				style={style}
 				onMouseDown={event => onMouseDown(event)}
 				onTouchStart={event => {
