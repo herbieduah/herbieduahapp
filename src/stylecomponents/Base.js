@@ -87,8 +87,44 @@ export const Overlay = styled.div`
 // 	return `${(height / width) * 100}%`;
 // }
 
-export const Image = styled.img`
+export const FullScreenContainer = styled.button`
+	font-weight: 700;
+	${mainTransition}
+	line-height: 1;
+	border: 0;
+	padding: 0;
+	width: 1.5rem;
+	background: none;
+	cursor: pointer;
+	border: 1px solid ${props => props.theme.fontColor};
+	&:hover,
+	&:focus {
+		background: ${props => props.theme.fontColor};
+	}
+	.fullScreen {
+		width: 100%;
+		&__icon {
+			width: ${props => props.ww}px;
+			height: ${props => props.wh}px;
+		}
+	}
+`;
+
+export const NavBarContainer = styled.div`
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
 	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	z-index: 10;
+	padding: 0 2rem;
+
+	height: 3rem;
+	${mobile} {
+		padding: 0 1.5rem;
+	}
 `;
 
 export const HerbieDuahApp = styled.div`
@@ -104,11 +140,7 @@ export const HerbieDuahApp = styled.div`
 	
 	.hdapp {
 		&__logo {
-			position: absolute;
-			top: 0;
-			left: 0;
-			right:0;
-			z-index: 10;
+			
 			
 			
 			.inner-rect, .half-circle {
@@ -123,9 +155,9 @@ export const HerbieDuahApp = styled.div`
 			svg {
 				${mainTransition}
 				border: none;
-				margin-left: 2rem;
+				/* margin-left: 2rem; */
 				${mobile} {
-					margin-left: 1.5rem;
+					/* margin-left: 1.5rem; */
 				}
 			${mainTransition}
 			&:hover,&:focus {

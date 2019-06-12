@@ -1,7 +1,7 @@
 import React from "react";
 import ReactSVG from "react-svg";
 import ReactPlayer from "react-player";
-import ImageLoader from "./ImageLoader";
+// import ImageLoader from "./ImageLoader";
 import LazyLoad from "react-lazyload";
 
 export const Media = props => {

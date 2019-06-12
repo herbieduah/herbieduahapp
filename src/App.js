@@ -9,8 +9,7 @@ import Content from "./maincomponents/ContentMenu";
 // import { DragInstructions } from "./Actions";
 import { defaultAppTheme } from "./stylecomponents/Theme";
 import SliderLine from "./maincomponents/Revealer/SliderLine";
-import HerbieDuahLogo from "./media/icons/HerbieDuahLogo.svg";
-import Media from "./maincomponents/Media";
+
 import {
 	getCurrentTheme,
 	splitDir,
@@ -19,6 +18,7 @@ import {
 	defaultPaneSize,
 	isMobile
 } from "./helpers";
+import { NavBar } from "./Actions";
 
 export const App = () => {
 	const {
@@ -44,7 +44,7 @@ export const App = () => {
 				isMobile={isMobile(ww, wh)}
 				dragging={dragging}>
 				<GlobalStyle />
-				<Media type='icon' className='hdapp__logo svg' src={HerbieDuahLogo} />
+				<NavBar />
 				{/* <SliderLine /> */}
 				{/* <DragInstructions /> */}
 				{fullScreen ? <Content /> : null}
