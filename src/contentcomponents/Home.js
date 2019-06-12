@@ -28,6 +28,7 @@ export const Home = props => {
 			<ContentContainer
 				className='content'
 				isShowingMore={isShowingMore}
+				isMobile={isContentMobile}
 				dragging={dragging}>
 				{!isShowingMore ? (
 					<aside className='content__less'>

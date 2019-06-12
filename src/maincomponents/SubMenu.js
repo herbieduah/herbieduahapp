@@ -1,120 +1,172 @@
 import React from "react";
 import Text from "../stylecomponents/Text";
 import Fade from "react-reveal/Fade";
+import { CSSTransition } from "react-transition-group";
 
 export const SubMenu = props => {
 	let category = props.category;
 	switch (category) {
 		case "work":
 			return (
-				<Fade duration={1500}>
-					<div>
-						<ul class='subMenu__list'>
-							<li class='subMenu__item'>
-								<Text m link href='#'>
-									HerbieDuah.app
-								</Text>
-							</li>
-							<li class='subMenu__item'>
-								<Text m link href='#'>
-									Northern Arizona University
-								</Text>
-							</li>
-							<li class='subMenu__item'>
-								<Text m link href='#'>
-									UGG
-								</Text>
-							</li>
-							<li class='subMenu__item'>
-								<Text m link href='#'>
-									Discount Tire
-								</Text>
-							</li>
-							<li class='subMenu__item'>
-								<Text m link href='#'>
-									Bedzin Exhibit
-								</Text>
-							</li>
-							<li class='subMenu__item'>
-								<Text m link href='#'>
-									Flagstaff Chamber of Commerce
-								</Text>
-							</li>
-						</ul>
-					</div>
-				</Fade>
+				<CSSTransition
+					// in={showMessage}
+					// timeout={300}
+					classNames='menu'
+					// unmountOnExit
+					// onEnter={() => setShowButton(false)}
+					// onExited={() => setShowButton(true)}
+				>
+					<ul class='subMenu__list'>
+						<Fade cascade up duration={1500}>
+							<div>
+								<li class='subMenu__item'>
+									<Text m link href='#'>
+										HerbieDuah.app
+									</Text>
+								</li>
+								<li class='subMenu__item'>
+									<Text m link href='#'>
+										Northern Arizona University
+									</Text>
+								</li>
+								<li class='subMenu__item'>
+									<Text m link href='#'>
+										UGG
+									</Text>
+								</li>
+								<li class='subMenu__item'>
+									<Text m link href='#'>
+										Discount Tire
+									</Text>
+								</li>
+								<li class='subMenu__item'>
+									<Text m link href='#'>
+										Bedzin Exhibit
+									</Text>
+								</li>
+								<li class='subMenu__item'>
+									<Text m link href='#'>
+										Flagstaff Chamber of Commerce
+									</Text>
+								</li>
+							</div>
+						</Fade>
+					</ul>
+				</CSSTransition>
 			);
 		case "about":
 			return (
-				<Fade duration={1500}>
-					<div>
-						<ul class='subMenu__list'>
-							<li class='subMenu__item'>
-								<Text m link href='#'>
-									About Me
-								</Text>
-							</li>
-							<li class='subMenu__item'>
-								<Text m link href='#'>
-									Recognition
-								</Text>
-							</li>
-							<li class='subMenu__item'>
-								<Text m link href='#'>
-									Special Thanks
-								</Text>
-							</li>
-							<li class='subMenu__item'>
-								<Text m link href='#'>
-									Contact
-								</Text>
-							</li>
-						</ul>
-					</div>
-				</Fade>
+				<CSSTransition
+					// in={showMessage}
+					// timeout={300}
+					classNames='menu'
+					// unmountOnExit
+					// onEnter={() => setShowButton(false)}
+					// onExited={() => setShowButton(true)}
+				>
+					<ul class='subMenu__list'>
+						<Fade cascade up duration={1500}>
+							<div>
+								<li class='subMenu__item'>
+									<Text m link href='#'>
+										About Me
+									</Text>
+								</li>
+								<li class='subMenu__item'>
+									<Text m link href='#'>
+										Special Thanks
+									</Text>
+								</li>
+								<li class='subMenu__item'>
+									<Text m link href='#'>
+										Photography
+									</Text>
+								</li>
+								<li class='subMenu__item'>
+									<Text m link href='#'>
+										Inspiration
+									</Text>
+								</li>
+								<li class='subMenu__item'>
+									<Text m link href='#'>
+										User Experience vs Human Experience
+									</Text>
+								</li>
+								<li class='subMenu__item'>
+									<Text m link href='#'>
+										Resume
+									</Text>
+								</li>
+							</div>
+						</Fade>
+					</ul>
+				</CSSTransition>
 			);
-		case "photography":
+		case "customize":
 			return (
-				<Fade duration={1500}>
-					<div>
-						<ul class='subMenu__list'>
-							<li class='subMenu__item'>
-								<Text m link href='#'>
-									People
-								</Text>
-							</li>
-							<li class='subMenu__item'>
-								<Text m link href='#'>
-									Landscapes
-								</Text>
-							</li>
-							<li class='subMenu__item'>
-								<Text m link href='#'>
-									Everything
-								</Text>
-							</li>
-						</ul>
-					</div>
-				</Fade>
+				<CSSTransition
+					// in={showMessage}
+					// timeout={300}
+					classNames='menu'
+					// unmountOnExit
+					// onEnter={() => setShowButton(false)}
+					// onExited={() => setShowButton(true)}
+				>
+					<ul class='subMenu__list'>
+						<Fade cascade up duration={1500}>
+							<div>
+								<li class='subMenu__item'>
+									<Text m link href='#'>
+										Colors
+									</Text>
+								</li>
+								<li class='subMenu__item'>
+									<Text m link href='#'>
+										Theme
+									</Text>
+								</li>
+								<li class='subMenu__item'>
+									<Text m link href='#'>
+										Tone
+									</Text>
+								</li>
+							</div>
+						</Fade>
+					</ul>
+				</CSSTransition>
 			);
-		case "fun":
+		case "contact":
 			return (
-				<Fade duration={1500}>
-					<div>
-						<ul class='subMenu__list'>
-							<li class='subMenu__item'>
-								<Text m link href='#'>
-									Customize this site
-								</Text>
-							</li>
-							<li class='subMenu__item'>
-								<Text m link href='#'>
-									Pun Generator
-								</Text>
-							</li>
-						</ul>
-					</div>
-				</Fade>
+				<CSSTransition
+					// in={showMessage}
+					// timeout={300}
+					classNames='menu'
+					// unmountOnExit
+					// onEnter={() => setShowButton(false)}
+					// onExited={() => setShowButton(true)}
+				>
+					<ul class='subMenu__list'>
+						<Fade cascade up duration={1500}>
+							<div>
+								<li class='subMenu__item'>
+									<Text m link href='#'>
+										Twitter
+									</Text>
+								</li>
+								<li class='subMenu__item'>
+									<Text m link href='#'>
+										Instagram
+									</Text>
+								</li>
+								<li class='subMenu__item'>
+									<Text m link href='#'>
+										LinkedIn
+									</Text>
+								</li>
+							</div>
+						</Fade>
+					</ul>
+				</CSSTransition>
 			);
 		default:
 			return null;

@@ -42,7 +42,7 @@ export const ContentContainer = styled.article`
 		}
 	} */
 
-	}
+	
 	
 	.LazyLoad {
 		width: 100%;
@@ -63,24 +63,21 @@ export const ContentContainer = styled.article`
 			
 			/* opacity: ${props => (props.isShowingMore ? `0` : `1`)}; */
 			${mobile} {
-				margin-top: 2.5rem;	
-				padding: 0rem 1rem;
+				margin-top: 4rem;	
+				padding: 0rem 1.5rem;
 			}
 			p {
 				font-family: 'commuters-sans',-apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-			}
-			${mobile} {
-				padding: 0rem 1rem;
 			}
 		}
 		&__more {
 			margin-top: 4rem;
 			transition: all 0.25s cubic-bezier(0.95, 0.05, 0.795, 0.035);
 			padding: 0 2rem;
-			/* opacity: ${props => (props.isShowingMore ? `1` : `0`)}; */
+			margin-bottom: ${props => (props.isMobile ? `70vh` : `0`)};
 			${mobile} {
-				margin-top: 2.5rem;	
-				padding: 0 1rem;
+				margin-top: 4rem;	
+				padding: 0 1.5rem;
 			}
 		}
 	}

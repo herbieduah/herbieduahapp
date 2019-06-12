@@ -101,16 +101,54 @@ export const HerbieDuahApp = styled.div`
 	position: relative;
 	margin: 0;
 	height: 100%;
-	/* ${mobile} {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		overflow: hidden;
-		border-bottom: 3px solid red;
-		z-index: 10;
-	} */
+	
+	.hdapp {
+		&__logo {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right:0;
+			z-index: 10;
+			
+			
+			.inner-rect, .half-circle {
+				${mainTransition}
+				fill: ${bgColor};
+				
+			}
+			.outer-rect {
+				${mainTransition}
+				fill: ${fontColor};
+			}
+			svg {
+				${mainTransition}
+				border: none;
+				margin-left: 2rem;
+				${mobile} {
+					margin-left: 1.5rem;
+				}
+			${mainTransition}
+			&:hover,&:focus {
+				transform: scale(1.1);
+				z-index: 10;
+			}
+			}
+			svg:hover,svg:focus  {
+				/* .inner-rect, .half-circle {
+					fill: ${fontColor};
+				}
+				.outer-rect {
+					fill: ${bgColor};
+				}
+				border: 1px solid ${fontColor}; */
+				
+			}
+		
+		}
+	}
+	button {
+			font-family: 'commuters-sans',-apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		}
 	${props => {
 		if (props.isMobile) {
 			return `
@@ -172,7 +210,7 @@ export const HerbieDuahApp = styled.div`
 		position: absolute;
 		left: 0;
 		right: 0;
-		bottom: -15px;
+		bottom: 40px;
 		pointer-events: none;
 		display: ${props => (props.isMobile ? "block" : "none")};
 		opacity: ${props => (props.dragging ? "0" : "1")};

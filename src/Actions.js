@@ -16,7 +16,8 @@ export const MenuAction = props => {
 	return (
 		<Fragment>
 			<Text
-				l
+				l={!isShowingMore}
+				s={isShowingMore}
 				button
 				onClick={() => setMenuShow(menu(category, menuShow))}
 				className='menu__button menu__button--active'>
