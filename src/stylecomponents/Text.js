@@ -15,7 +15,8 @@ import {
 } from "./StyleHelpers";
 
 const baseStyle = css`
-	font-family: 'commuters-sans',-apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-family: "commuters-sans", -apple-system, BlinkMacSystemFont, Oxygen,
+		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
 	margin-bottom: ${props => props.noMargin && "0"};
 	font-weight: 400;
 	margin-top: 0;
