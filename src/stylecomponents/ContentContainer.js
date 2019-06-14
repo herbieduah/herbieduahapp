@@ -1,9 +1,16 @@
 import styled from "styled-components";
-import { mobile, bgColor, absoluteOverlay } from "./StyleHelpers";
+import {
+	mobile,
+	bgColor,
+	absoluteOverlay,
+	hideScrollbar
+} from "./StyleHelpers";
 
 export const ContentContainer = styled.article`
 	height: 100%;
 	width: 100%;
+	${hideScrollbar};
+	overflow: auto;
 	/* .shadowOverlayContainer {
 		${absoluteOverlay}
 	}

@@ -1,4 +1,4 @@
-import React, { useContext, Fragment } from "react";
+import React, { useContext } from "react";
 import Home from "../contentcomponents/Home";
 import AboutMe from "../contentcomponents/AboutMe";
 import Ugg from "../contentcomponents/Ugg";
@@ -6,17 +6,19 @@ import ReactResizeDetector from "react-resize-detector";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { globalState } from "../State";
 
-export const Content = React.memo(props => {
-	const { onContentResizeWidth, onContentResizeHeight } = useContext(
-		globalState
-	);
+export const Content = () => {
+	const {
+		onContentResizeWidth,
+		onContentResizeHeight,
+		fullScreen
+	} = useContext(globalState);
 	const onResize = (width, height) => {
 		onContentResizeWidth(width);
 		onContentResizeHeight(height);
 	};
 	return (
-		<Fragment>
-			<Router>
+		<Router>
+			{!fullScreen ? (
 				<ReactResizeDetector
 					handleWidth
 					handleHeight
@@ -25,12 +27,12 @@ export const Content = React.memo(props => {
 					onResize={onResize}
 					// refreshOptions={{ leading: false, trailing: true }}
 				/>
-				<Route exact path='/' component={Home} />
-				<Route path='/AboutMe' component={AboutMe} />
-				<Route path='/Ugg' component={Ugg} />
-			</Router>
-		</Fragment>
+			) : null}
+			<Route exact path='/' component={Home} />
+			<Route path='/AboutMe' component={AboutMe} />
+			<Route path='/Ugg' component={Ugg} />
+		</Router>
 	);
-});
+};
 
 export default Content;

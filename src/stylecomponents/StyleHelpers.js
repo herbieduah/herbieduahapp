@@ -29,6 +29,11 @@ export const sliderHeight = "2rem";
 export const fluidTypeInfo = fluidType(minVW, maxVW, minFontSize, maxFontSize);
 export const mobile = "@media only screen and (max-width: 500px)";
 export const mobileHorizontal = "@media only screen and (max-width: 1200px)";
+export const hideScrollbar = `-ms-overflow-style: none;  
+scrollbar-width: none;
+&::-webkit-scrollbar { 
+	display: none; 
+}`;
 export const absoluteOverlay =
 	"position: absolute;width: 100%;height: 100%;top: 0;left: 0;right: 0;bottom: 0;";
 export const fiftyPixels = "3.47vw";

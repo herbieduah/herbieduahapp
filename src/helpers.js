@@ -217,3 +217,7 @@ export function useDimensions() {
 
 	return [ref, dimensions, node];
 }
+
+export function iconFullScreen(width, height) {
+	return `${(height / width) * 100}%`;
+}

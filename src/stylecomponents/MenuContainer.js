@@ -1,9 +1,15 @@
 import styled from "styled-components";
-import { mobile, bgColor, fontColor, mainTransition } from "./StyleHelpers";
+import {
+	mobile,
+	bgColor,
+	fontColor,
+	mainTransition,
+	hideScrollbar
+} from "./StyleHelpers";
 import { rgba } from "polished";
 
 const MenuContainer = styled.aside`
-
+	/* ${hideScrollbar}; */
 	width: 100%;
 	padding: 4rem 2rem;
 	display: flex;

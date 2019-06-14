@@ -51,3 +51,9 @@ export const pulseDot = keyframes`
   }
 
 `;
+
+export const fullScreenFill = keyframes`
+   to { 
+   background-size: 100% 100%;
+  }
+`;

@@ -24,7 +24,7 @@ export const StateProvider = ({ children }) => {
 	const [currentOverlay, setCurrentOverlay] = useState("");
 	const [dimensions, setDimensions] = useState({});
 	const [dragging, setDragging] = useState(false);
-	const [fullscreening, setFullScreening] = useState(false);
+	const [fullScreening, setFullScreening] = useState(false);
 	const [fullScreen, setFullscreen] = useState(false);
 
 	// currentLeftTop: "LandscapePhotography",
@@ -56,7 +56,7 @@ export const StateProvider = ({ children }) => {
 		setDragging,
 		fullScreen,
 		setFullscreen,
-		fullscreening,
+		fullScreening,
 		setFullScreening
 	};
 

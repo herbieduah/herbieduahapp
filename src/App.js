@@ -3,9 +3,13 @@ import { ThemeProvider } from "styled-components";
 import { globalState } from "./State";
 import SplitPane from "./maincomponents/Revealer/SplitPane";
 // import SliderLine from "./maincomponents/Revealer/SliderLine";
-import { GlobalStyle, HerbieDuahApp } from "./stylecomponents/Base";
+import {
+	GlobalStyle,
+	HerbieDuahApp,
+	FullScreeningBG
+} from "./stylecomponents/Base";
 import ContentMenu from "./maincomponents/ContentMenu";
-import Content from "./maincomponents/ContentMenu";
+import Content from "./maincomponents/Content";
 // import { DragInstructions } from "./Actions";
 import { defaultAppTheme } from "./stylecomponents/Theme";
 import SliderLine from "./maincomponents/Revealer/SliderLine";
@@ -26,7 +30,8 @@ export const App = () => {
 		currentTheme,
 		setDragging,
 		fullScreen,
-		dragging
+		dragging,
+		fullScreening
 	} = useContext(globalState);
 	const currentThemeObject = getCurrentTheme(defaultAppTheme, currentTheme);
 	const { width: ww, height: wh } = useWindowResize();
@@ -37,6 +42,8 @@ export const App = () => {
 	const onDraggingEnded = () => {
 		setDragging(false);
 	};
+	console.log(`Fullscreening: ${fullScreening}`);
+	console.log(`Fullscreen: ${fullScreen}`);
 	return (
 		<ThemeProvider theme={currentThemeObject}>
 			<HerbieDuahApp
@@ -48,21 +55,27 @@ export const App = () => {
 				{/* <SliderLine /> */}
 				{/* <DragInstructions /> */}
 				{fullScreen ? <Content /> : null}
+				{/* <Content /> */}
+				{/* {fullScreen ? <h1>Here I am</h1> : null} */}
 				{dragging ? <SliderLine /> : null}
-				<SplitPane
-					split={splitDir(ww, wh)}
-					minSize={minSize}
-					maxSize={maxSize}
-					defaultSize={defaultPaneSize(ww, wh)}
-					step={1}
-					onDragStarted={onDragging}
-					onDragFinished={onDraggingEnded}
-					// defaultSize={parseInt(localStorage.getItem("splitPos"), 500)}
-					// onChange={size => localStorage.setItem("splitPos", size)}>
-				>
-					{!fullScreen ? <ContentMenu switchSides={switchSides} /> : null}
-					{!fullScreen ? <ContentMenu switchSides={!switchSides} /> : null}
-				</SplitPane>
+				{fullScreening ? <FullScreeningBG /> : null}
+				{/* <FullScreeningBG /> */}
+				{!fullScreen ? (
+					<SplitPane
+						split={splitDir(ww, wh)}
+						minSize={minSize}
+						maxSize={maxSize}
+						defaultSize={defaultPaneSize(ww, wh)}
+						step={1}
+						onDragStarted={onDragging}
+						onDragFinished={onDraggingEnded}
+						// defaultSize={parseInt(localStorage.getItem("splitPos"), 500)}
+						// onChange={size => localStorage.setItem("splitPos", size)}>
+					>
+						<ContentMenu switchSides={switchSides} />
+						<ContentMenu switchSides={!switchSides} />
+					</SplitPane>
+				) : null}
 			</HerbieDuahApp>
 		</ThemeProvider>
 	);

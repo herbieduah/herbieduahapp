@@ -10,7 +10,7 @@ export const SubMenu = props => {
 			return (
 				<CSSTransition
 					// in={showMessage}
-					// timeout={300}
+					timeout={300}
 					classNames='menu'
 					// unmountOnExit
 					// onEnter={() => setShowButton(false)}
@@ -58,7 +58,7 @@ export const SubMenu = props => {
 			return (
 				<CSSTransition
 					// in={showMessage}
-					// timeout={300}
+					timeout={300}
 					classNames='menu'
 					// unmountOnExit
 					// onEnter={() => setShowButton(false)}
@@ -106,7 +106,7 @@ export const SubMenu = props => {
 			return (
 				<CSSTransition
 					// in={showMessage}
-					// timeout={300}
+					timeout={300}
 					classNames='menu'
 					// unmountOnExit
 					// onEnter={() => setShowButton(false)}

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { mobile, mainTransition, bgColor } from "./StyleHelpers";
+import { mobile, mainTransition, bgColor, hideScrollbar } from "./StyleHelpers";
 export const ContentMenuContainer = styled.section`
 	${mainTransition}
 	${props => (props.dragging ? "opacity: .4;" : "opacity: 1;")}
@@ -9,11 +9,7 @@ export const ContentMenuContainer = styled.section`
 	overflow: auto;
 	width: 100%;
 	height: 100%;
-    -ms-overflow-style: none;  
-	scrollbar-width: none;
-	&::-webkit-scrollbar { 
-    	display: none; 
-	}
+	${hideScrollbar}
 	&:before {
 		content: "";
 		width: 100%;

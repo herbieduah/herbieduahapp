@@ -1,6 +1,7 @@
 import styled, { createGlobalStyle } from "styled-components";
 import { rgba } from "polished";
-// import { Gradients } from "./Animations";
+import ClickNHold from "react-click-n-hold";
+import { fullScreenFill } from "./Animations";
 import {
 	mobile,
 	absoluteOverlay,
@@ -13,6 +14,7 @@ import {
 	// ctaColor,
 	// iconWidth
 } from "./StyleHelpers";
+// import { iconFullScreen } from "../helpers";
 
 export const GlobalStyle = createGlobalStyle`
   html {
@@ -87,26 +89,29 @@ export const Overlay = styled.div`
 // 	return `${(height / width) * 100}%`;
 // }
 
-export const FullScreenContainer = styled.button`
+export const FullScreenContainer = styled(ClickNHold)`
 	font-weight: 700;
 	${mainTransition}
 	line-height: 1;
 	border: 0;
 	padding: 0;
-	width: 1.5rem;
+	width:  ${props => (props.isMobile ? `2rem` : `3rem`)};
+	height: ${props => (props.isMobile ? `2.5rem` : `2rem`)};
+	border-radius: ${props => (props.isMobile ? `1rem` : `none`)};
+	display: flex;
 	background: none;
 	cursor: pointer;
-	border: 1px solid ${props => props.theme.fontColor};
-	&:hover,
-	&:focus {
-		background: ${props => props.theme.fontColor};
-	}
+
 	.fullScreen {
-		width: 100%;
-		&__icon {
-			width: ${props => props.ww}px;
-			height: ${props => props.wh}px;
-		}
+			/* width: ${props => props.ww}px; */
+			width: 100%;
+			/* width: 2rem; */
+			border: 2px solid ${props => props.theme.fontColor};
+			&:hover,
+			&:focus {
+				background: ${props => props.theme.fontColor};
+			}
+		
 	}
 `;
 
@@ -120,11 +125,22 @@ export const NavBarContainer = styled.div`
 	justify-content: space-between;
 	z-index: 10;
 	padding: 0 2rem;
-
+	align-items: center;
 	height: 3rem;
 	${mobile} {
 		padding: 0 1.5rem;
 	}
+`;
+
+export const FullScreeningBG = styled.div`
+	${absoluteOverlay}
+	background: linear-gradient(  #4a148c, #7352ad, #9e8bcb, #ccc4e6, #ffffff)  no-repeat 0 0;
+	/* mix-blend-mode: multiply; */
+	opacity: 0.7;
+	background-size: 100% 0%;
+	animation: ${fullScreenFill} 2s forwards;
+	pointer-events: none;
+	z-index: 30;
 `;
 
 export const HerbieDuahApp = styled.div`

@@ -4,8 +4,12 @@ import { menu, revealValues, useWindowResize, isMobile } from "./helpers";
 import SubMenu from "./maincomponents/SubMenu";
 import Fade from "react-reveal/Fade";
 import Text from "./stylecomponents/Text";
-import { FullScreenContainer, NavBarContainer } from "./stylecomponents/Base";
-import ClickNHold from "react-click-n-hold";
+import {
+	FullScreenContainer,
+	NavBarContainer
+	// FullScreeningBGContainer
+} from "./stylecomponents/Base";
+// import ClickNHold from "react-click-n-hold";
 import HerbieDuahLogo from "./media/icons/HerbieDuahLogo.svg";
 import Media from "./maincomponents/Media";
 
@@ -72,26 +76,38 @@ export const FullScreenButton = props => {
 	// const isShowingMore = revealValues(values).isShowingMore;
 	const onFullScreening = () => {
 		setFullScreening(true);
+		console.log("Holding!!!");
+	};
+	const onFullScreenTimeOutEnded = () => {
+		setFullScreening(false);
+		fullScreen ? setFullscreen(false) : setFullscreen(true);
+		console.log("Hold timeout ended!");
 	};
 	const onFullScreenEnded = () => {
 		setFullScreening(false);
-		setFullscreen(!false);
+		console.log("Hold ended!");
 	};
 	return (
-		<FullScreenContainer ww={ww} wh={wh} fullScreen={fullScreen}>
-			<ClickNHold
-				time={2} // Time to keep pressing. Default is 2
-				// onStart={this.start}
-				onClickNHold={onFullScreening} //Timeout callback
-				onEnd={onFullScreenEnded}
-				className='fullScreen'>
-				<span className='fullScreen__icon'>
-					<span className='fullScreen__dot' />
-				</span>
-			</ClickNHold>
+		<FullScreenContainer
+			time={2} // Time to keep pressing. Default is 2
+			isMobile={isMobile(ww, wh)}
+			fullScreen={fullScreen}
+			onStart={onFullScreening}
+			onClickNHold={onFullScreenTimeOutEnded} //Timeout callback
+			onEnd={onFullScreenEnded}>
+			{/* <span className="fullScreen"> */}
+			<span className='fullScreen'>
+				<span className='fullScreen__dot' />
+			</span>
+			{/* </span> */}
 		</FullScreenContainer>
 	);
 };
+
+// export const FullScreeningBackground = props => {
+// 	const { fullScreening } = useGlobalState();
+// 	return <FullScreeningBGContainer/>;
+// };
 
 export const NavBar = props => {
 	return (

@@ -95,6 +95,7 @@ export const SliderContainer = styled.div`
 
 export const SliderController = styled.div`
 	.slider {
+		user-select: none; 
 			&__triangle{
 				${mainTransition}
 				width: 0;
@@ -237,7 +238,7 @@ export const SliderLineContainer = styled.div`
 						: `linear-gradient(to right, transparent 50%, ${
 								props.theme.fontColor
 						  } 50%);`};
-		background-size: ${props => (props.isMobile ? `100% 25px;` : `25px 100%;`)};;
+		background-size: ${props => (props.isMobile ? `100% 25px;` : `25px 100%;`)};
 		
 		${props => {
 			if (props.isMobile) {
@@ -319,7 +320,7 @@ export const SliderLineContainer = styled.div`
 		animation: ${Gradients} 1.5s ease-in-out ${props =>
 	props.isShowingMore ? "" : "infinite"};
 		background: linear-gradient( ${props =>
-			props.gradientDir}, #c2292b, #d35082, #c283c3, #afafe2, #bbd1e8);
+			props.gradientDir}, #4a148c, #7352ad, #9e8bcb, #ccc4e6, #ffffff);
 		background-size: 400% 400%;
 		${props =>
 			props.isShowingMore

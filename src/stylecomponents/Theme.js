@@ -7,12 +7,12 @@ export const themes = [
 	{
 		name: "default",
 		properties: {
-			bgColor: "#c2292b",
-			fontColor: "#bbd1e8",
+			bgColor: "#4a148c",
+			fontColor: "#ffffff",
 			gradient1: "",
 			gradient2: "",
 			headingColor: "#000000",
-			ctaColor: "#bbd1e8"
+			ctaColor: "#ffffff"
 		}
 	},
 	{
