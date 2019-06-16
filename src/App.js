@@ -69,7 +69,10 @@ export const App = () => {
 						step={1}
 						onDragStarted={onDragging}
 						onDragFinished={onDraggingEnded}
-						// defaultSize={parseInt(localStorage.getItem("splitPos"), 500)}
+						// defaultSize={parseInt(
+						// 	localStorage.getItem("splitPos"),
+						// 	defaultPaneSize(ww, wh)
+						// )}
 						// onChange={size => localStorage.setItem("splitPos", size)}>
 					>
 						<ContentMenu switchSides={switchSides} />

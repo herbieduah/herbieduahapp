@@ -18,7 +18,7 @@ const MenuContainer = styled.aside`
 	${props => {
 		if (props.isMobile) {
 			return `
-				margin-top: 1rem;`;
+				margin-top: .5rem;`;
 		}
 	}}
 	
@@ -104,8 +104,8 @@ const MenuContainer = styled.aside`
 		}
 	}
 	.subMenu {
-		&__list {
-			.react-reveal{ margin-bottom: 1.2rem;
+		ul.react-reveal{ 
+			margin-bottom: 1.2rem;
 			width: 100%;
 			display: flex;
 			flex-wrap: wrap;
@@ -117,7 +117,6 @@ const MenuContainer = styled.aside`
 				}
 			}}
 			}
-		}
 		&__item {
 			font-size: 1rem;
 			margin: 0.4rem 0;
@@ -134,22 +133,22 @@ const MenuContainer = styled.aside`
 		}
 	}
 	.alert-enter {
-  opacity: 0;
-  transform: scale(0.9);
-}
-.alert-enter-active {
-  opacity: 1;
-  transform: translateX(0);
-  transition: opacity 300ms, transform 300ms;
-}
-.alert-exit {
-  opacity: 1;
-}
-.alert-exit-active {
-  opacity: 0;
-  transform: scale(0.9);
-  transition: opacity 300ms, transform 300ms;
-}
+	opacity: 0;
+	transform: scale(0.9);
+	}
+	.alert-enter-active {
+	opacity: 1;
+	transform: translateX(0);
+	transition: opacity 300ms, transform 300ms;
+	}
+	.alert-exit {
+	opacity: 1;
+	}
+	.alert-exit-active {
+	opacity: 0;
+	transform: scale(0.9);
+	transition: opacity 300ms, transform 300ms;
+	}
 
 `;
 

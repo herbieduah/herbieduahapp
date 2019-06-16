@@ -307,6 +307,7 @@ export const HerbieDuahApp = styled.div`
 		${mobile} {
 			box-shadow: 0 50px 50px ${bgColor}, 0 0 25px 25px ${bgColor};
 			opacity: ${props => (props.dragging ? "0" : "1")};
+			display: none;
 	}
 		}
 	

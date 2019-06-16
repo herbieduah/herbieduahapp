@@ -1,31 +1,20 @@
 /* eslint-disable no-unused-expressions */
-import React, { useContext } from "react";
-import { globalState } from "../State";
+import React from "react";
 import Text from "../stylecomponents/Text";
 import ContentContainer from "../stylecomponents/ContentContainer";
 import Media from "../maincomponents/Media";
-import { revealValues, useWindowResize, isMobile } from "../helpers";
-import { browserName, mobileModel } from "react-device-detect";
 import Fade from "react-reveal/Fade";
 
 export const Home = props => {
-	// const uniqueID = "home";
 	const {
-		// currentContent,
-		// setCurrentContent,
-		contentWidth: cw,
-		contentHeight: ch,
 		dragging,
-		fullScreen
-	} = useContext(globalState);
-	const { width: ww, height: wh } = useWindowResize();
-	const values = { ww, wh, cw, ch };
-	const isShowingMore = revealValues(values).isShowingMore;
-	// const showMe = uniqueID === currentContent ? true : false;
-	// let subMenu = props.menu;
-	const isContentMobile = isMobile(ww, wh);
-	const showMore = fullScreen ? true : isShowingMore;
-	const showLess = fullScreen ? false : !isShowingMore;
+		isShowingMore,
+		showMore,
+		showLess,
+		browserName,
+		mobileModel,
+		isContentMobile
+	} = props.contentProps;
 	return (
 		<ContentContainer
 			className='content'
@@ -51,9 +40,8 @@ export const Home = props => {
 					<Fade top={isContentMobile} right={!isContentMobile} duration={800}>
 						<header className='content__header container'>
 							<Text h1 xl bold>
-								Herbie Duah App Test
+								HerbieDuah.app {props.poop}
 							</Text>
-							<span class='content__fullscreen' />
 						</header>
 					</Fade>
 					<article>
@@ -123,15 +111,5 @@ export const Home = props => {
 			) : null}
 		</ContentContainer>
 	);
-	// 	);
-	// } else if (subMenu) {
-	// 	return (
-	// 		<li className='subMenu__link' onClick={() => setCurrentContent(uniqueID)}>
-	// 			Sub Menu
-	// 		</li>
-	// 	);
-	// } else {
-	// 	return null;
-	// }
 };
 export default Home;

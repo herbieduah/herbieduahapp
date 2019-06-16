@@ -1,5 +1,5 @@
-import React, { useState, Fragment } from "react";
-import { useGlobalState } from "./State";
+import React, { useState, Fragment, useContext } from "react";
+import { globalState } from "./State";
 import { menu, revealValues, useWindowResize, isMobile } from "./helpers";
 import SubMenu from "./maincomponents/SubMenu";
 import Fade from "react-reveal/Fade";
@@ -15,7 +15,7 @@ import Media from "./maincomponents/Media";
 
 export const MenuAction = props => {
 	const [menuShow, setMenuShow] = useState("");
-	const { contentWidth: cw, contentHeight: ch } = useGlobalState();
+	const { contentWidth: cw, contentHeight: ch } = useContext(globalState);
 	const { width: ww, height: wh } = useWindowResize();
 	const values = { ww, wh, cw, ch };
 	const isShowingMore = revealValues(values).isShowingMore;
@@ -32,7 +32,9 @@ export const MenuAction = props => {
 				{category}
 			</Text>
 			{menuShow === category || isShowingMore ? (
-				<SubMenu category={category} />
+				<div className='subMenu'>
+					<SubMenu category={category} />
+				</div>
 			) : null}
 		</Fragment>
 	);
@@ -44,7 +46,7 @@ export const DragInstructions = props => {
 		switchSides,
 		contentWidth: cw,
 		contentHeight: ch
-	} = useGlobalState();
+	} = useContext(globalState);
 	const { width: ww, height: wh } = useWindowResize();
 	const values = { ww, wh, cw, ch };
 	const isShowingMore = revealValues(values).isShowingMore;
@@ -69,8 +71,10 @@ export const DragInstructions = props => {
 	);
 };
 
-export const FullScreenButton = props => {
-	const { fullScreen, setFullScreening, setFullscreen } = useGlobalState();
+export const FullScreenButton = () => {
+	const { fullScreen, setFullScreening, setFullscreen } = useContext(
+		globalState
+	);
 	const { width: ww, height: wh } = useWindowResize();
 	// const values = { ww, wh, cw, ch };
 	// const isShowingMore = revealValues(values).isShowingMore;
@@ -109,7 +113,7 @@ export const FullScreenButton = props => {
 // 	return <FullScreeningBGContainer/>;
 // };
 
-export const NavBar = props => {
+export const NavBar = () => {
 	return (
 		<NavBarContainer>
 			<Media type='icon' className='hdapp__logo svg' src={HerbieDuahLogo} />
@@ -117,3 +121,25 @@ export const NavBar = props => {
 		</NavBarContainer>
 	);
 };
+
+// export const ContentProps = children => {
+// 	const {
+// 		// currentContent,
+// 		// setCurrentContent,
+// 		contentWidth: cw,
+// 		contentHeight: ch,
+// 		dragging,
+// 		fullScreen
+// 	} = useContext(globalState);
+// 	const { width: ww, height: wh } = useWindowResize();
+// 	const values = { ww, wh, cw, ch };
+// 	const isShowingMore = revealValues(values).isShowingMore;
+// 	const isContentMobile = isMobile(ww, wh);
+// 	const showMore = fullScreen ? true : isShowingMore;
+// 	const showLess = fullScreen ? false : !isShowingMore;
+// 	return (
+// 		<ContentProps>
+// 			{children}
+// 		</ContentProps>
+// 	);
+// };
