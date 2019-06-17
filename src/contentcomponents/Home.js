@@ -1,20 +1,26 @@
 /* eslint-disable no-unused-expressions */
-import React from "react";
+import React, { useContext } from "react";
 import Text from "../stylecomponents/Text";
 import ContentContainer from "../stylecomponents/ContentContainer";
 import Media from "../maincomponents/Media";
 import Fade from "react-reveal/Fade";
+import { globalState } from "../State";
+import { browserName, mobileModel } from "react-device-detect";
+import { revealValues, useWindowResize, isMobile } from "../helpers";
 
-export const Home = props => {
+export const Home = React.memo(props => {
 	const {
-		dragging,
-		isShowingMore,
-		showMore,
-		showLess,
-		browserName,
-		mobileModel,
-		isContentMobile
-	} = props.contentProps;
+		contentWidth: cw,
+		contentHeight: ch,
+		fullScreen,
+		dragging
+	} = useContext(globalState);
+	const { width: ww, height: wh } = useWindowResize();
+	const values = { ww, wh, cw, ch };
+	const isShowingMore = revealValues(values).isShowingMore;
+	const isContentMobile = isMobile(ww, wh);
+	const showMore = fullScreen ? true : isShowingMore;
+	const showLess = fullScreen ? false : !isShowingMore;
 	return (
 		<ContentContainer
 			className='content'
@@ -111,5 +117,5 @@ export const Home = props => {
 			) : null}
 		</ContentContainer>
 	);
-};
+});
 export default Home;

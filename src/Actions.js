@@ -22,21 +22,21 @@ export const MenuAction = props => {
 	const category = props.category;
 	// const [category] = useState(props.category);
 	return (
-		<Fragment>
-			<Text
-				l={!isShowingMore}
-				s={isShowingMore}
-				button
-				onClick={() => setMenuShow(menu(category, menuShow))}
-				className='menu__button menu__button--active'>
-				{category}
-			</Text>
-			{menuShow === category || isShowingMore ? (
-				<div className='subMenu'>
-					<SubMenu category={category} />
-				</div>
-			) : null}
-		</Fragment>
+		// <Fragment>
+		// 	<Text
+		// 		l={!isShowingMore}
+		// 		s={isShowingMore}
+		// 		button
+		// 		onClick={() => setMenuShow(menu(category, menuShow))}
+		// 		className='menu__button menu__button--active'>
+		// 		{category}
+		// 	</Text>
+		// 	{menuShow === category || isShowingMore ? (
+		<div className='subMenu'>
+			<SubMenu category={category} />
+		</div>
+		// ) : null}
+		// </Fragment>
 	);
 };
 
@@ -120,6 +120,14 @@ export const NavBar = () => {
 			<FullScreenButton />
 		</NavBarContainer>
 	);
+};
+export const RerenderStopper = props => {
+	return <div>{props.children}</div>;
+};
+
+export const Log = props => {
+	console.log(`rendering "${props.name}"`);
+	return null;
 };
 
 // export const ContentProps = children => {

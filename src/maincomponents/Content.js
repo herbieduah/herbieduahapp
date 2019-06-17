@@ -7,7 +7,7 @@ import ReactResizeDetector from "react-resize-detector";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { globalState } from "../State";
 import { browserName, mobileModel } from "react-device-detect";
-import { AnimatedSwitch } from "react-router-transition";
+// import { AnimatedSwitch } from "react-router-transition";
 
 export const Content = () => {
 	const {
@@ -54,25 +54,21 @@ export const Content = () => {
 					// refreshOptions={{ leading: false, trailing: true }}
 				/>
 			) : null}
-			<AnimatedSwitch
+			{/* <AnimatedSwitch
 				atEnter={{ opacity: 0 }}
 				atLeave={{ opacity: 0 }}
 				atActive={{ opacity: 1 }}
-				className='switch-wrapper'>
-				<Route
-					exact
-					path='/'
-					component={() => <Home contentProps={contentProps} />}
-				/>
-				<Route
-					path='/AboutMe'
-					component={() => <AboutMe contentProps={contentProps} />}
-				/>
-				<Route
-					path='/Ugg'
-					component={() => <Ugg scontentProps={contentProps} />}
-				/>
-			</AnimatedSwitch>
+				className='switch-wrapper'> */}
+			<Route exact path='/' component={Home} />
+			<Route
+				path='/AboutMe'
+				component={() => <AboutMe contentProps={contentProps} />}
+			/>
+			<Route
+				path='/Ugg'
+				component={() => <Ugg scontentProps={contentProps} />}
+			/>
+			{/* </AnimatedSwitch> */}
 		</Router>
 	);
 };

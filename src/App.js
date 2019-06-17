@@ -42,8 +42,8 @@ export const App = () => {
 	const onDraggingEnded = () => {
 		setDragging(false);
 	};
-	console.log(`Fullscreening: ${fullScreening}`);
-	console.log(`Fullscreen: ${fullScreen}`);
+	// console.log(`Fullscreening: ${fullScreening}`);
+	// console.log(`Fullscreen: ${fullScreen}`);
 	return (
 		<ThemeProvider theme={currentThemeObject}>
 			<HerbieDuahApp

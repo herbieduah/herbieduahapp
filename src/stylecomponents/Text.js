@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
+import { NavLink } from "react-router-dom";
 import {
 	mobile,
 	fontColor,
@@ -133,6 +134,26 @@ const HyperLink = styled.a`
 	text-decoration: none;
 `;
 
+const MenuLink = styled(NavLink)`
+	${baseStyle};
+	font-weight: 400;
+	${mainTransition}
+	line-height: 1;
+	border: 0;
+	padding: 0;
+	background: none;
+	color: ${linkColor};
+	cursor: pointer;
+	border-bottom: 1px solid ${linkBorderColor};
+	white-space: nowrap;
+	&:hover,
+	&:focus {
+		color: ${linkColorActive};
+		border-bottom: 3px solid ${linkBorderColorActive};
+	}
+	text-decoration: none;
+`;
+
 const Text = ({
 	h1,
 	h2,
@@ -145,6 +166,7 @@ const Text = ({
 	right,
 	center,
 	link,
+	menuLink,
 	...props
 }) => {
 	if (h1)
@@ -199,6 +221,10 @@ const Text = ({
 	if (link)
 		return (
 			<HyperLink noMargin={noMargin} right={right} center={center} {...props} />
+		);
+	if (menuLink)
+		return (
+			<MenuLink noMargin={noMargin} right={right} center={center} {...props} />
 		);
 	return (
 		<Paragraph noMargin={noMargin} right={right} center={center} {...props} />
