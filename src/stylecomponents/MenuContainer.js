@@ -11,14 +11,17 @@ import { rgba } from "polished";
 const MenuContainer = styled.aside`
 	/* ${hideScrollbar}; */
 	width: 100%;
+	max-width: 500px;
+	margin-left: auto;
 	padding: 4rem 2rem;
 	display: flex;
 	justify-content: right;
-	overflow: auto;
+	${props => (props.isShowingMore ? `overflow-x: auto` : `overflow: auto`)};
 	${props => {
 		if (props.isMobile) {
 			return `
-				margin-top: .5rem;`;
+				margin-top: ${props.isShowingMore ? `.0` : `1rem`};
+				`;
 		}
 	}}
 	
@@ -105,7 +108,7 @@ const MenuContainer = styled.aside`
 	}
 	.subMenu {
 		ul.react-reveal{ 
-			margin-bottom: 1.2rem;
+			margin: 0 1.2rem;
 			width: 100%;
 			display: flex;
 			flex-wrap: wrap;
@@ -119,14 +122,17 @@ const MenuContainer = styled.aside`
 			}
 		&__item {
 			font-size: 1rem;
-			margin: 0.4rem 0;
+			
+			margin: .7rem 0;
 			margin-left: 1rem;
-			border-bottom: 1px solid ${props => rgba(props.theme.fontColor, 0.5)};
+			/* border-bottom: 1px solid ${props => rgba(props.theme.fontColor, 0.5)}; */
 			${props => {
 				if (props.isMobile) {
 					return `
+					margin: 0.5rem 0;
 					margin-left: 0;
 					margin-right: 1rem;
+					
 					`;
 				}
 			}}
@@ -144,11 +150,63 @@ const MenuContainer = styled.aside`
 	.alert-exit {
 	opacity: 1;
 	}
-	.alert-exit-active {
+	.alert-exit-active  { 
 	opacity: 0;
 	transform: scale(0.9);
 	transition: opacity 300ms, transform 300ms;
 	}
+
+	.react-tabs {
+  	-webkit-tap-highlight-color: transparent;
+  	width: 100%;
+
+		&__tab-list {
+			/* border-bottom: 1px solid #aaa;
+			margin: 0 0 10px;
+			padding: 0; */
+			display:flex;
+			justify-content: space-between;
+			margin: 0;
+		}
+
+		&__tab {
+			/* display: inline-block;
+			border: 1px solid transparent;
+			border-bottom: none;
+			bottom: -1px;
+			position: relative;
+			list-style: none;
+			padding: 6px 12px; */
+			${mainTransition}
+			cursor: pointer;
+
+			&--selected {
+				border-bottom: 2px solid ${fontColor};
+				span {
+					font-weight: bold;
+				}
+			}
+
+			&--disabled {
+			/* color: GrayText; */
+			cursor: default;
+			}
+
+			&:focus {
+				span {
+					font-weight: bold;
+				}
+			}
+		}
+
+		&__tab-panel {
+			display: none;
+
+			&--selected {
+			display: block;
+			}
+		}
+}
 
 `;
 

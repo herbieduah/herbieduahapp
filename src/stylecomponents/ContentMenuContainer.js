@@ -6,10 +6,13 @@ export const ContentMenuContainer = styled.section`
 	display: flex;
 	position: relative;
 	z-index: 2;
-	overflow: auto;
+	/* overflow: auto; */
 	width: 100%;
 	height: 100%;
-	${hideScrollbar}
+	/* ${hideScrollbar} */
+	/* &.hdapp__menu {
+		${props => (props.isShowingMore ? `` : `overflow: auto`)};	
+	} */
 	&:before {
 		content: "";
 		width: 100%;

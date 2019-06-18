@@ -33,7 +33,7 @@ export const Home = React.memo(props => {
 						bottom={isContentMobile}
 						left={!isContentMobile}
 						duration={1500}>
-						<Text l>
+						<Text m>
 							There is an app for everything, in the future, I believe there is
 							going to be an app for everyone. I am Herbie Duah, and this is my
 							app.

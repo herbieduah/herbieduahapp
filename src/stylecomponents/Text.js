@@ -12,7 +12,10 @@ import {
 	buttonBorderColorActive,
 	buttonBorderColor,
 	linkBorderColorActive,
-	linkBorderColor
+	linkBorderColor,
+	navBorderColor,
+	navBorderColorActive,
+	navColor
 } from "./StyleHelpers";
 
 const baseStyle = css`
@@ -32,7 +35,7 @@ const baseStyle = css`
 	font-size: ${props => {
 		if (props.xs) return "0.8em";
 		if (props.s) return "0.9em";
-		if (props.m) return "1.1em";
+		if (props.m) return "1.2em";
 		if (props.l) return "1.5em";
 		if (props.xl) return "2em";
 		return "1em";
@@ -96,6 +99,9 @@ const HeadingFive = styled.h5`
 const Paragraph = styled.p`
 	${baseStyle};
 `;
+const TextFormatter = styled.span`
+	${baseStyle};
+`;
 const Button = styled.button`
 	${baseStyle};
 	font-weight: 700;
@@ -114,7 +120,7 @@ const Button = styled.button`
 		border-bottom: 3px solid ${buttonBorderColorActive};
 	}
 `;
-const HyperLink = styled.a`
+/* const HyperLink = styled.a`
 	${baseStyle};
 	font-weight: 400;
 	${mainTransition}
@@ -132,6 +138,32 @@ const HyperLink = styled.a`
 		border-bottom: 3px solid ${linkBorderColorActive};
 	}
 	text-decoration: none;
+`; */
+
+const HyperLink = styled.a`
+	${baseStyle};
+	font-weight: 400;
+	${mainTransition}
+	line-height: 1;
+	border: 0;
+	padding: 0.2rem 0.7rem;
+	background: none;
+	color: ${navColor};
+	cursor: pointer;
+	border: 1px solid ${navBorderColor};
+	white-space: nowrap;
+	border-radius: 1.1rem;
+	&:hover,
+	&:focus {
+		border: 1px solid ${navBorderColorActive};
+	}
+	&.active {
+		color: ${navBorderColorActive};
+		border: 1px solid ${navColor};
+		background-color: ${navColor};
+	}
+	text-decoration: none;
+	margin-bottom: 5%;
 `;
 
 const MenuLink = styled(NavLink)`
@@ -167,6 +199,7 @@ const Text = ({
 	center,
 	link,
 	menuLink,
+	format,
 	...props
 }) => {
 	if (h1)
@@ -225,6 +258,15 @@ const Text = ({
 	if (menuLink)
 		return (
 			<MenuLink noMargin={noMargin} right={right} center={center} {...props} />
+		);
+	if (format)
+		return (
+			<TextFormatter
+				noMargin={noMargin}
+				right={right}
+				center={center}
+				{...props}
+			/>
 		);
 	return (
 		<Paragraph noMargin={noMargin} right={right} center={center} {...props} />
