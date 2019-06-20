@@ -66,7 +66,7 @@ export const Content = () => {
 			/>
 			<Route
 				path='/Ugg'
-				component={() => <Ugg scontentProps={contentProps} />}
+				component={() => <Ugg contentProps={contentProps} />}
 			/>
 			{/* </AnimatedSwitch> */}
 		</Router>

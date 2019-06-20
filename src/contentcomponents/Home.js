@@ -1,32 +1,21 @@
 /* eslint-disable no-unused-expressions */
-import React, { useContext } from "react";
+import React, { Fragment } from "react";
 import Text from "../stylecomponents/Text";
 import ContentContainer from "../stylecomponents/ContentContainer";
 import Media from "../maincomponents/Media";
 import Fade from "react-reveal/Fade";
-import { globalState } from "../State";
-import { browserName, mobileModel } from "react-device-detect";
-import { revealValues, useWindowResize, isMobile } from "../helpers";
+import { ContentWrapper } from "../Actions";
 
-export const Home = React.memo(props => {
+export const HomePage = ({ contentProps }) => {
 	const {
-		contentWidth: cw,
-		contentHeight: ch,
-		fullScreen,
-		dragging
-	} = useContext(globalState);
-	const { width: ww, height: wh } = useWindowResize();
-	const values = { ww, wh, cw, ch };
-	const isShowingMore = revealValues(values).isShowingMore;
-	const isContentMobile = isMobile(ww, wh);
-	const showMore = fullScreen ? true : isShowingMore;
-	const showLess = fullScreen ? false : !isShowingMore;
+		showMore,
+		showLess,
+		browserName,
+		mobileModel,
+		isContentMobile
+	} = contentProps;
 	return (
-		<ContentContainer
-			className='content'
-			isShowingMore={isShowingMore}
-			isMobile={isContentMobile}
-			dragging={dragging}>
+		<Fragment>
 			{showLess ? (
 				<aside className='content__less'>
 					<Fade
@@ -34,9 +23,9 @@ export const Home = React.memo(props => {
 						left={!isContentMobile}
 						duration={1500}>
 						<Text m>
-							{ww}width {wh} heightThere is an app for everything, in the
-							future, I believe there is going to be an app for everyone. I am
-							Herbie Duah, and this is my app.
+							There is an app for everything, in the future, I believe there is
+							going to be an app for everyone. I am Herbie Duah, and this is my
+							app.
 						</Text>
 					</Fade>
 				</aside>
@@ -46,7 +35,7 @@ export const Home = React.memo(props => {
 					<Fade top={isContentMobile} right={!isContentMobile} duration={800}>
 						<header className='content__header container'>
 							<Text h1 xl bold>
-								HerbieDuah.app {props.poop}
+								HerbieDuah.app
 							</Text>
 						</header>
 					</Fade>
@@ -115,7 +104,15 @@ export const Home = React.memo(props => {
 					</article>
 				</div>
 			) : null}
-		</ContentContainer>
+		</Fragment>
 	);
-});
+};
+
+const Home = () => {
+	return (
+		<ContentWrapper>
+			<HomePage />
+		</ContentWrapper>
+	);
+};
 export default Home;

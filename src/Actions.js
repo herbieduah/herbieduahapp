@@ -3,6 +3,7 @@ import { globalState } from "./State";
 import { revealValues, useWindowResize, isMobile } from "./helpers";
 import Fade from "react-reveal/Fade";
 import Text from "./stylecomponents/Text";
+import { browserName, mobileModel } from "react-device-detect";
 import {
 	FullScreenContainer,
 	NavBarContainer
@@ -11,6 +12,7 @@ import {
 // import ClickNHold from "react-click-n-hold";
 import HerbieDuahLogo from "./media/icons/HerbieDuahLogo.svg";
 import Media from "./maincomponents/Media";
+import ContentContainer from "./stylecomponents/ContentContainer";
 
 export const DragInstructions = props => {
 	const {
@@ -110,24 +112,47 @@ export const Log = props => {
 	return null;
 };
 
-// export const ContentProps = children => {
-// 	const {
-// 		// currentContent,
-// 		// setCurrentContent,
-// 		contentWidth: cw,
-// 		contentHeight: ch,
-// 		dragging,
-// 		fullScreen
-// 	} = useContext(globalState);
-// 	const { width: ww, height: wh } = useWindowResize();
-// 	const values = { ww, wh, cw, ch };
-// 	const isShowingMore = revealValues(values).isShowingMore;
-// 	const isContentMobile = isMobile(ww, wh);
-// 	const showMore = fullScreen ? true : isShowingMore;
-// 	const showLess = fullScreen ? false : !isShowingMore;
-// 	return (
-// 		<ContentProps>
-// 			{children}
-// 		</ContentProps>
-// 	);
-// };
+export const ContentWrapper = props => {
+	const {
+		// currentContent,
+		// setCurrentContent,
+		contentWidth: cw,
+		contentHeight: ch,
+		dragging,
+		fullScreen
+	} = useContext(globalState);
+	const { width: ww, height: wh } = useWindowResize();
+	const values = { ww, wh, cw, ch };
+	const isShowingMore = revealValues(values).isShowingMore;
+	const isContentMobile = isMobile(ww, wh);
+	const showMore = fullScreen ? true : isShowingMore;
+	const showLess = fullScreen ? false : !isShowingMore;
+	const contentProps = {
+		cw,
+		ch,
+		ww,
+		wh,
+		dragging,
+		isShowingMore,
+		showMore,
+		showLess,
+		browserName,
+		mobileModel,
+		isContentMobile,
+		fullScreen
+	};
+	const children = React.Children.map(props.children, (child, index) => {
+		return React.cloneElement(child, {
+			contentProps
+		});
+	});
+	return (
+		<ContentContainer
+			className='content'
+			isShowingMore={isShowingMore}
+			isMobile={isContentMobile}
+			dragging={dragging}>
+			{children}
+		</ContentContainer>
+	);
+};
