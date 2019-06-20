@@ -1,7 +1,6 @@
-import React, { useState, Fragment, useContext } from "react";
+import React, { Fragment, useContext } from "react";
 import { globalState } from "./State";
-import { menu, revealValues, useWindowResize, isMobile } from "./helpers";
-import SubMenu from "./maincomponents/SubMenu";
+import { revealValues, useWindowResize, isMobile } from "./helpers";
 import Fade from "react-reveal/Fade";
 import Text from "./stylecomponents/Text";
 import {
@@ -12,33 +11,6 @@ import {
 // import ClickNHold from "react-click-n-hold";
 import HerbieDuahLogo from "./media/icons/HerbieDuahLogo.svg";
 import Media from "./maincomponents/Media";
-
-export const MenuAction = props => {
-	const [menuShow, setMenuShow] = useState("");
-	const { contentWidth: cw, contentHeight: ch } = useContext(globalState);
-	const { width: ww, height: wh } = useWindowResize();
-	const values = { ww, wh, cw, ch };
-	const isShowingMore = revealValues(values).isShowingMore;
-	const category = props.category;
-	// const [category] = useState(props.category);
-	return (
-		// <Fragment>
-		// 	<Text
-		// 		l={!isShowingMore}
-		// 		s={isShowingMore}
-		// 		button
-		// 		onClick={() => setMenuShow(menu(category, menuShow))}
-		// 		className='menu__button menu__button--active'>
-		// 		{category}
-		// 	</Text>
-		// 	{menuShow === category || isShowingMore ? (
-		<div className='subMenu'>
-			<SubMenu category={category} />
-		</div>
-		// ) : null}
-		// </Fragment>
-	);
-};
 
 export const DragInstructions = props => {
 	const {
@@ -123,6 +95,14 @@ export const NavBar = () => {
 };
 export const RerenderStopper = props => {
 	return <div>{props.children}</div>;
+};
+
+export const SubMenuWrapper = props => {
+	return (
+		<Fade cascade up duration={1500}>
+			<ul className='subMenu'>{props.children}</ul>
+		</Fade>
+	);
 };
 
 export const Log = props => {

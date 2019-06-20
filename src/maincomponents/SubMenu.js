@@ -1,164 +1,152 @@
 import React from "react";
 import Text from "../stylecomponents/Text";
-import Fade from "react-reveal/Fade";
-import { CSSTransition } from "react-transition-group";
+// import Fade from "react-reveal/Fade";
+// import { CSSTransition } from "react-transition-group";
+import { SubMenuWrapper } from "../Actions";
+import { BrowserRouter as Router } from "react-router-dom";
 
 export const SubMenu = props => {
 	let category = props.category;
+	const isShowingMore = props.isShowingMore;
 	switch (category) {
 		case "work":
 			return (
-				<CSSTransition
-					// in={showMessage}
-					timeout={300}
-					classNames='menu'
-					// unmountOnExit
-					// onEnter={() => setShowButton(false)}
-					// onExited={() => setShowButton(true)}
-				>
-					<Fade cascade up duration={1500} className='subMenu__list'>
-						<ul className='subMenu__list'>
-							<li className='subMenu__item'>
-								<Text s link href='#'>
-									HerbieDuah.app
-								</Text>
-							</li>
-							<li className='subMenu__item'>
-								<Text s link href='#'>
-									Northern Arizona University
-								</Text>
-							</li>
-							<li className='subMenu__item'>
-								<Text s link href='#'>
-									UGG
-								</Text>
-							</li>
-							<li className='subMenu__item'>
-								<Text s link href='#'>
-									Discount Tire
-								</Text>
-							</li>
-							<li className='subMenu__item'>
-								<Text s link href='#'>
-									Bedzin Exhibit
-								</Text>
-							</li>
-							<li className='subMenu__item'>
-								<Text s link href='#'>
-									Flagstaff Chamber of Commerce
-								</Text>
-							</li>
-						</ul>
-					</Fade>
-				</CSSTransition>
+				<Router>
+					{isShowingMore ? (
+						<Text format m className='subMenu__text'>
+							Work
+						</Text>
+					) : null}
+					<SubMenuWrapper isShowingMore={isShowingMore}>
+						<li className='subMenu__item'>
+							<Text s menuLink to='/'>
+								HerbieDuah.app
+							</Text>
+						</li>
+						<li className='subMenu__item'>
+							<Text s menuLink to='/'>
+								UGG
+							</Text>
+						</li>
+						<li className='subMenu__item'>
+							<Text s menuLink to='/'>
+								Discount Tire
+							</Text>
+						</li>
+						<li className='subMenu__item'>
+							<Text s menuLink to='/'>
+								Bedzin Exhibit
+							</Text>
+						</li>
+						<li className='subMenu__item'>
+							<Text s menuLink to='/'>
+								Flagstaff Chamber of Commerce
+							</Text>
+						</li>
+
+						<li className='subMenu__item'>
+							<Text s menuLink to='/'>
+								Northern Arizona University
+							</Text>
+						</li>
+					</SubMenuWrapper>
+				</Router>
 			);
 		case "about":
 			return (
-				<CSSTransition
-					// in={showMessage}
-					timeout={300}
-					classNames='menu'
-					// unmountOnExit
-					// onEnter={() => setShowButton(false)}
-					// onExited={() => setShowButton(true)}
-				>
-					<Fade cascade up duration={1500} className='subMenu__list'>
-						<ul className='subMenu__list'>
-							<li className='subMenu__item'>
-								<Text s link href='#'>
-									About Me
-								</Text>
-							</li>
-							<li className='subMenu__item'>
-								<Text s link href='#'>
-									Special Thanks
-								</Text>
-							</li>
-							<li className='subMenu__item'>
-								<Text s link href='#'>
-									Photography
-								</Text>
-							</li>
-							<li className='subMenu__item'>
-								<Text s link href='#'>
-									Inspiration
-								</Text>
-							</li>
-							<li className='subMenu__item'>
-								<Text s link href='#'>
-									User Experience vs Human Experience
-								</Text>
-							</li>
-							<li className='subMenu__item'>
-								<Text s link href='#'>
-									Resume
-								</Text>
-							</li>
-						</ul>
-					</Fade>
-				</CSSTransition>
+				<Router>
+					{isShowingMore ? (
+						<Text format m className='subMenu__text'>
+							About
+						</Text>
+					) : null}
+					<SubMenuWrapper isShowingMore={isShowingMore}>
+						<li className='subMenu__item'>
+							<Text s menuLink to='/'>
+								About Me
+							</Text>
+						</li>
+						<li className='subMenu__item'>
+							<Text s menuLink to='/'>
+								Special Thanks
+							</Text>
+						</li>
+						<li className='subMenu__item'>
+							<Text s menuLink to='/'>
+								Photography
+							</Text>
+						</li>
+						<li className='subMenu__item'>
+							<Text s menuLink to='/'>
+								Inspiration
+							</Text>
+						</li>
+						<li className='subMenu__item'>
+							<Text s menuLink to='/'>
+								Resume
+							</Text>
+						</li>
+						<li className='subMenu__item'>
+							<Text s menuLink to='/'>
+								User Experience vs Human Experience
+							</Text>
+						</li>
+					</SubMenuWrapper>
+				</Router>
 			);
 		case "customize":
 			return (
-				<CSSTransition
-					// in={showMessage}
-					timeout={300}
-					classNames='menu'
-					// unmountOnExit
-					// onEnter={() => setShowButton(false)}
-					// onExited={() => setShowButton(true)}
-				>
-					<Fade cascade up duration={1500}>
-						<ul className='subMenu__list'>
-							<li className='subMenu__item'>
-								<Text s link href='#'>
-									Colors
-								</Text>
-							</li>
-							<li className='subMenu__item'>
-								<Text s link href='#'>
-									Theme
-								</Text>
-							</li>
-							<li className='subMenu__item'>
-								<Text s link href='#'>
-									Tone
-								</Text>
-							</li>
-						</ul>
-					</Fade>
-				</CSSTransition>
+				<Router>
+					{isShowingMore ? (
+						<Text format m className='subMenu__text'>
+							Customize
+						</Text>
+					) : null}
+					<SubMenuWrapper isShowingMore={isShowingMore}>
+						<li className='subMenu__item'>
+							<Text s menuLink to='/'>
+								Colors
+							</Text>
+						</li>
+						<li className='subMenu__item'>
+							<Text s menuLink to='/'>
+								Theme
+							</Text>
+						</li>
+						<li className='subMenu__item'>
+							<Text s menuLink to='/'>
+								Tone
+							</Text>
+						</li>
+					</SubMenuWrapper>
+				</Router>
 			);
 		case "contact":
 			return (
-				<CSSTransition
-					// in={showMessage}
-					// timeout={300}
-					classNames='menu'
-					// unmountOnExit
-					// onEnter={() => setShowButton(false)}
-					// onExited={() => setShowButton(true)}
-				>
-					<Fade cascade up duration={1500}>
-						<ul className='subMenu__list'>
-							<li className='subMenu__item'>
-								<Text s link href='#'>
-									Twitter
-								</Text>
-							</li>
-							<li className='subMenu__item'>
-								<Text s link href='#'>
-									Instagram
-								</Text>
-							</li>
-							<li className='subMenu__item'>
-								<Text s link href='#'>
-									LinkedIn
-								</Text>
-							</li>
-						</ul>
-					</Fade>
-				</CSSTransition>
+				<Router>
+					{isShowingMore ? (
+						<Text format m className='subMenu__text'>
+							Contact
+						</Text>
+					) : null}
+					<SubMenuWrapper isShowingMore={isShowingMore}>
+						<li className='subMenu__item'>
+							<Text s menuLink to='/'>
+								Twitter
+							</Text>
+						</li>
+						<li className='subMenu__item'>
+							<Text s menuLink to='/'>
+								Instagram
+							</Text>
+						</li>
+						<li className='subMenu__item'>
+							<Text s menuLink to='/'>
+								LinkedIn
+							</Text>
+						</li>
+					</SubMenuWrapper>
+				</Router>
 			);
 		default:
 			return null;

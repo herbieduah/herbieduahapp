@@ -120,7 +120,7 @@ const Button = styled.button`
 		border-bottom: 3px solid ${buttonBorderColorActive};
 	}
 `;
-/* const HyperLink = styled.a`
+const HyperLink = styled.a`
 	${baseStyle};
 	font-weight: 400;
 	${mainTransition}
@@ -138,21 +138,30 @@ const Button = styled.button`
 		border-bottom: 3px solid ${linkBorderColorActive};
 	}
 	text-decoration: none;
-`; */
+`;
 
-const HyperLink = styled.a`
-	${baseStyle};
+const MenuLink = styled(NavLink)`
+${baseStyle};
 	font-weight: 400;
 	${mainTransition}
 	line-height: 1;
 	border: 0;
-	padding: 0.2rem 0.7rem;
+	padding: 0.4rem 0.7rem;
 	background: none;
 	color: ${navColor};
 	cursor: pointer;
 	border: 1px solid ${navBorderColor};
 	white-space: nowrap;
-	border-radius: 1.1rem;
+	border-radius: .3rem;
+	/* ${mobile} {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: flex;
+		width: 9rem;
+		text-align: center;
+	} */
+
 	&:hover,
 	&:focus {
 		border: 1px solid ${navBorderColorActive};
@@ -164,26 +173,6 @@ const HyperLink = styled.a`
 	}
 	text-decoration: none;
 	margin-bottom: 5%;
-`;
-
-const MenuLink = styled(NavLink)`
-	${baseStyle};
-	font-weight: 400;
-	${mainTransition}
-	line-height: 1;
-	border: 0;
-	padding: 0;
-	background: none;
-	color: ${linkColor};
-	cursor: pointer;
-	border-bottom: 1px solid ${linkBorderColor};
-	white-space: nowrap;
-	&:hover,
-	&:focus {
-		color: ${linkColorActive};
-		border-bottom: 3px solid ${linkBorderColorActive};
-	}
-	text-decoration: none;
 `;
 
 const Text = ({

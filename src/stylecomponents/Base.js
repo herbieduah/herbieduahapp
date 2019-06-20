@@ -305,10 +305,71 @@ export const HerbieDuahApp = styled.div`
 		pointer-events: none;
 		box-shadow: 0 0 100px 100px ${bgColor}, 0 0 50px 50px ${bgColor};
 		${mobile} {
-			box-shadow: 0 50px 50px ${bgColor}, 0 0 25px 25px ${bgColor};
+			box-shadow: 0 30px 30px ${bgColor}, 0 0 15px 15px ${bgColor};
 			opacity: ${props => (props.dragging ? "0" : "1")};
-			display: none;
 	}
 		}
+
+		.react-tabs {
+  	-webkit-tap-highlight-color: transparent;
+  	width: 100%;
+
+		&__tab-list {
+			/* border-bottom: 1px solid #aaa;
+			margin: 0 0 10px;
+			padding: 0; */
+			display:flex;
+			justify-content: space-between;
+			margin: 0 0 3%;
+			width: 100%;
+			border-bottom: 1px solid ${props => rgba(props.theme.fontColor, 0.3)};
+		}
+
+		&__tab {
+			/* display: inline-block;
+			border: 1px solid transparent;
+			border-bottom: none;
+			bottom: -1px;
+			position: relative;
+			list-style: none;
+			padding: 6px 12px; */
+			${mainTransition}
+			cursor: pointer;
+			span {
+				color: ${props => rgba(props.theme.fontColor, 0.7)};
+				&:focus,&:hover {
+					color: ${fontColor};
+				}
+			}
+			
+			&--selected {
+				border-bottom: 2px solid ${fontColor};
+				span {
+					font-weight: bold;
+					color: ${fontColor};
+					&:hover {
+						color: ${fontColor};
+					};
+				}
+				}
+			
+
+			&--disabled {
+			/* color: GrayText; */
+			cursor: default;
+			}
+
+			
+			
+		}
+
+		&__tab-panel {
+			display: none;
+
+			&--selected {
+			display: block;
+			}
+		}
+}
 	
 `;

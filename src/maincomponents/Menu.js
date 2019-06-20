@@ -1,9 +1,9 @@
 import React, { useContext, Fragment } from "react";
 import MenuContainer from "../stylecomponents/MenuContainer";
 import { isMobile, useWindowResize, revealValues } from "../helpers";
-import { MenuAction } from "../Actions";
+import SubMenu from "./SubMenu";
 import { globalState } from "../State";
-import Fade from "react-reveal/Fade";
+// import Fade from "react-reveal/Fade";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import Text from "../stylecomponents/Text";
 
@@ -15,7 +15,7 @@ export const ContentMenu = () => {
 	return (
 		<MenuContainer isMobile={isMobile(ww, wh)} isShowingMore={isShowingMore}>
 			{!isShowingMore ? (
-				<Tabs>
+				<Tabs defaultIndex={3}>
 					<TabList>
 						<Tab>
 							<Text format m>
@@ -29,34 +29,35 @@ export const ContentMenu = () => {
 						</Tab>
 						<Tab>
 							<Text format m>
-								Contact
+								Customize
 							</Text>
 						</Tab>
 						<Tab>
 							<Text format m>
-								Customize
+								Contact
 							</Text>
 						</Tab>
 					</TabList>
 					<TabPanel>
-						<MenuAction category='work' />
+						<SubMenu isShowingMore={isShowingMore} category='work' />
 					</TabPanel>
 					<TabPanel>
-						<MenuAction category='about' />
+						<SubMenu isShowingMore={isShowingMore} category='about' />
 					</TabPanel>
 					<TabPanel>
-						<MenuAction category='contact' />
+						<SubMenu isShowingMore={isShowingMore} category='customize' />
 					</TabPanel>
 					<TabPanel>
-						<MenuAction category='customize' />
+						<SubMenu isShowingMore={isShowingMore} category='contact' />
 					</TabPanel>
 				</Tabs>
 			) : (
 				<Fragment>
-					<MenuAction category='work' />
-					<MenuAction category='about' />
-					<MenuAction category='customize' />
-					<MenuAction category='contact' />
+					<SubMenu isShowingMore={isShowingMore} category='work' />
+					<SubMenu isShowingMore={isShowingMore} category='about' />
+					<SubMenu isShowingMore={isShowingMore} category='customize' />
+					<SubMenu isShowingMore={isShowingMore} category='contact' />
+					<div className='offset' />
 				</Fragment>
 			)}
 			{/* <nav className='menu'>
@@ -68,16 +69,16 @@ export const ContentMenu = () => {
 						duration={1000}>
 						<div>
 							<li className='menu__item'>
-								<MenuAction category='work' />
+								<SubMenu  isShowingMore={isShowingMore} category='work' />
 							</li>
 							<li className='menu__item'>
-								<MenuAction category='about' />
+								<SubMenu  isShowingMore={isShowingMore} category='about' />
 							</li>
 							<li className='menu__item'>
-								<MenuAction category='customize' />
+								<SubMenu  isShowingMore={isShowingMore} category='customize' />
 							</li>
 							<li className='menu__item'>
-								<MenuAction category='contact' />
+								<SubMenu  isShowingMore={isShowingMore} category='contact' />
 							</li>
 						</div>
 					</Fade>

@@ -34,9 +34,9 @@ export const Home = React.memo(props => {
 						left={!isContentMobile}
 						duration={1500}>
 						<Text m>
-							There is an app for everything, in the future, I believe there is
-							going to be an app for everyone. I am Herbie Duah, and this is my
-							app.
+							{ww}width {wh} heightThere is an app for everything, in the
+							future, I believe there is going to be an app for everyone. I am
+							Herbie Duah, and this is my app.
 						</Text>
 					</Fade>
 				</aside>

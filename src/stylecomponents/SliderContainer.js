@@ -147,7 +147,7 @@ export const SliderController = styled.div`
 			
 			margin: 0;
 			border-radius: 50%;
-			border: 3px solid ${fontColor};
+			border: 1px solid ${props => rgba(props.theme.fontColor, 0.5)};
 			display: flex;
 			justify-content: center;
 			align-items: center;

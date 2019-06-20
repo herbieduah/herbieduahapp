@@ -62,7 +62,7 @@ export const navColor = props => props.theme.fontColor;
 export const navColorHover = props => props.theme.fontColor;
 export const navColorActive = props => props.theme.fontColor;
 export const navBorderColor = props => rgba(props.theme.fontColor, 0.3);
-export const navBorderColorActive = props => props.theme.fontColor;
+export const navBorderColorActive = props => props.theme.bgColor;
 
 //BlockStyle.js
 export const sliderCircleShadow = props => rgba(props.theme.bgColor, 0.5);
