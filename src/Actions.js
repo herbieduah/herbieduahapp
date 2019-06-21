@@ -14,6 +14,8 @@ import HerbieDuahLogo from "./media/icons/HerbieDuahLogo.svg";
 import Media from "./maincomponents/Media";
 import ContentContainer from "./stylecomponents/ContentContainer";
 
+let windowwidth = 0;
+
 export const DragInstructions = props => {
 	const {
 		dragging,
@@ -114,8 +116,6 @@ export const Log = props => {
 
 export const ContentWrapper = props => {
 	const {
-		// currentContent,
-		// setCurrentContent,
 		contentWidth: cw,
 		contentHeight: ch,
 		dragging,
@@ -154,5 +154,63 @@ export const ContentWrapper = props => {
 			dragging={dragging}>
 			{children}
 		</ContentContainer>
+	);
+};
+
+export const ContentShow = props => {
+	const {
+		contentWidth: cw,
+		contentHeight: ch,
+		dragging,
+		fullScreen
+	} = useContext(globalState);
+	const { width: ww, height: wh } = useWindowResize();
+	const values = { ww, wh, cw, ch };
+	const isShowingMore = revealValues(values).isShowingMore;
+	const isContentMobile = isMobile(ww, wh);
+	const showMore = fullScreen ? true : isShowingMore;
+	const showLess = fullScreen ? false : !isShowingMore;
+
+	if (props.less) {
+		return (
+			<Fragment>
+				{showLess ? (
+					<aside className='content__less'>
+						<Fade
+							bottom={isContentMobile}
+							left={!isContentMobile}
+							duration={1500}>
+							{props.children}
+						</Fade>
+					</aside>
+				) : null}
+			</Fragment>
+		);
+	}
+	if (props.more) {
+		return (
+			<Fragment>
+				{showMore ? <article>{props.children}</article> : null}
+			</Fragment>
+		);
+	}
+	if (props.header) {
+		return (
+			<Fade top={isContentMobile} right={!isContentMobile} duration={800}>
+				<header className='content__header container'>
+					<Text h1 xl={showMore} s={showLess} bold>
+						{props.header}
+					</Text>
+				</header>
+			</Fade>
+		);
+	}
+};
+
+export const ComingSoon = props => {
+	return (
+		<Fade up duration={1500}>
+			<Text m>Working on the content for {props.header}.</Text>
+		</Fade>
 	);
 };

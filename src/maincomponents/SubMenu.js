@@ -3,15 +3,14 @@ import Text from "../stylecomponents/Text";
 // import Fade from "react-reveal/Fade";
 // import { CSSTransition } from "react-transition-group";
 import { SubMenuWrapper } from "../Actions";
-import { BrowserRouter as Router } from "react-router-dom";
-
+import { BrowserRouter, NavLink } from "react-router-dom";
 export const SubMenu = props => {
 	let category = props.category;
 	const isShowingMore = props.isShowingMore;
 	switch (category) {
 		case "work":
 			return (
-				<Router>
+				<BrowserRouter>
 					{isShowingMore ? (
 						<Text format m className='subMenu__text'>
 							Work
@@ -19,42 +18,34 @@ export const SubMenu = props => {
 					) : null}
 					<SubMenuWrapper isShowingMore={isShowingMore}>
 						<li className='subMenu__item'>
-							<Text s menuLink to='/'>
-								HerbieDuah.app
-							</Text>
+							<NavLink to='/'>HerbieDuah.app</NavLink>
 						</li>
 						<li className='subMenu__item'>
-							<Text s menuLink to='/'>
-								UGG
-							</Text>
+							<NavLink to='/UGG'>UGG</NavLink>
 						</li>
 						<li className='subMenu__item'>
-							<Text s menuLink to='/'>
-								Discount Tire
-							</Text>
+							<NavLink to='/DiscountTire'>Discount Tire</NavLink>
 						</li>
 						<li className='subMenu__item'>
-							<Text s menuLink to='/'>
-								Bedzin Exhibit
-							</Text>
+							<NavLink to='/BedzinExhibit'>Bedzin Exhibit</NavLink>
 						</li>
 						<li className='subMenu__item'>
-							<Text s menuLink to='/'>
+							<NavLink to='/FlagstaffChamberofCommerce'>
 								Flagstaff Chamber of Commerce
-							</Text>
+							</NavLink>
 						</li>
 
 						<li className='subMenu__item'>
-							<Text s menuLink to='/'>
+							<NavLink to='/NorthernArizonaUniversity'>
 								Northern Arizona University
-							</Text>
+							</NavLink>
 						</li>
 					</SubMenuWrapper>
-				</Router>
+				</BrowserRouter>
 			);
 		case "about":
 			return (
-				<Router>
+				<BrowserRouter>
 					{isShowingMore ? (
 						<Text format m className='subMenu__text'>
 							About
@@ -62,41 +53,31 @@ export const SubMenu = props => {
 					) : null}
 					<SubMenuWrapper isShowingMore={isShowingMore}>
 						<li className='subMenu__item'>
-							<Text s menuLink to='/'>
-								About Me
-							</Text>
+							<NavLink to='/AboutMe'>About Me</NavLink>
 						</li>
 						<li className='subMenu__item'>
-							<Text s menuLink to='/'>
-								Special Thanks
-							</Text>
+							<NavLink to='/SpecialThanks'>Special Thanks</NavLink>
 						</li>
 						<li className='subMenu__item'>
-							<Text s menuLink to='/'>
-								Photography
-							</Text>
+							<NavLink to='/Photography'>Photography</NavLink>
 						</li>
 						<li className='subMenu__item'>
-							<Text s menuLink to='/'>
-								Inspiration
-							</Text>
+							<NavLink to='/Inspiration'>Inspiration</NavLink>
 						</li>
 						<li className='subMenu__item'>
-							<Text s menuLink to='/'>
-								Resume
-							</Text>
+							<NavLink to='/Resume'>Resume</NavLink>
 						</li>
 						<li className='subMenu__item'>
-							<Text s menuLink to='/'>
+							<NavLink to='/UXvsHX'>
 								User Experience vs Human Experience
-							</Text>
+							</NavLink>
 						</li>
 					</SubMenuWrapper>
-				</Router>
+				</BrowserRouter>
 			);
 		case "customize":
 			return (
-				<Router>
+				<BrowserRouter>
 					{isShowingMore ? (
 						<Text format m className='subMenu__text'>
 							Customize
@@ -104,26 +85,20 @@ export const SubMenu = props => {
 					) : null}
 					<SubMenuWrapper isShowingMore={isShowingMore}>
 						<li className='subMenu__item'>
-							<Text s menuLink to='/'>
-								Colors
-							</Text>
+							<NavLink to='/colors'>Colors</NavLink>
 						</li>
 						<li className='subMenu__item'>
-							<Text s menuLink to='/'>
-								Theme
-							</Text>
+							<NavLink to='/theme'>Theme</NavLink>
 						</li>
 						<li className='subMenu__item'>
-							<Text s menuLink to='/'>
-								Tone
-							</Text>
+							<NavLink to='/tone'>Tone</NavLink>
 						</li>
 					</SubMenuWrapper>
-				</Router>
+				</BrowserRouter>
 			);
 		case "contact":
 			return (
-				<Router>
+				<BrowserRouter>
 					{isShowingMore ? (
 						<Text format m className='subMenu__text'>
 							Contact
@@ -131,22 +106,16 @@ export const SubMenu = props => {
 					) : null}
 					<SubMenuWrapper isShowingMore={isShowingMore}>
 						<li className='subMenu__item'>
-							<Text s menuLink to='/'>
-								Twitter
-							</Text>
+							<NavLink to='/twitter'>Twitter</NavLink>
 						</li>
 						<li className='subMenu__item'>
-							<Text s menuLink to='/'>
-								Instagram
-							</Text>
+							<NavLink to='/instagram'>Instagram</NavLink>
 						</li>
 						<li className='subMenu__item'>
-							<Text s menuLink to='/'>
-								LinkedIn
-							</Text>
+							<NavLink to='/linkedin'>LinkedIn</NavLink>
 						</li>
 					</SubMenuWrapper>
-				</Router>
+				</BrowserRouter>
 			);
 		default:
 			return null;

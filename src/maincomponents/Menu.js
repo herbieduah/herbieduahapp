@@ -15,7 +15,7 @@ export const ContentMenu = () => {
 	return (
 		<MenuContainer isMobile={isMobile(ww, wh)} isShowingMore={isShowingMore}>
 			{!isShowingMore ? (
-				<Tabs defaultIndex={3}>
+				<Tabs defaultIndex={0}>
 					<TabList>
 						<Tab>
 							<Text format m>

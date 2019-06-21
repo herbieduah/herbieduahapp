@@ -5,17 +5,19 @@ import Text from "../stylecomponents/Text";
 // import Fade from "react-reveal/Fade";
 import { ContentShow, ComingSoon } from "../Actions";
 
-const header = "Ugg";
+const header = "Bedzin Exhibit";
 
-const UggPage = () => {
+const BedzinExhibitPage = () => {
 	return (
 		<Fragment>
 			<ContentShow header={header} />
 			<ContentShow less>
 				<Text m>
-					At Deckers Brand, I had a wonderful opportunity learn about digital
-					marketing, developing wonderful User Interfaces for email and web for
-					Ugg, and getting my parking ticket paid for by a secret admirer.
+					For my senior capstone for Northern Arizona University, my group had
+					the incredible opportunity revamping bedzinexhibit.org. The
+					exhibit Through the Eyes of Youth: Life and Death in the Będzin
+					Ghetto tells the story of young people in the Jewish ghetto of Będzin
+					(Poland) before, during, and after the Holocaust.
 				</Text>
 			</ContentShow>
 			<ContentShow more>
@@ -25,4 +27,4 @@ const UggPage = () => {
 	);
 };
 
-export default UggPage;
+export default BedzinExhibitPage;

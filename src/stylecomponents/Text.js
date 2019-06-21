@@ -21,7 +21,7 @@ import {
 const baseStyle = css`
 	font-family: "commuters-sans", -apple-system, BlinkMacSystemFont, Oxygen,
 		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
-	margin-bottom: ${props => props.noMargin && "0"};
+	margin-bottom: ${props => props.nomargin && "0"};
 	font-weight: 400;
 	margin-top: 0;
 	line-height: 1.5;
@@ -182,7 +182,7 @@ const Text = ({
 	h4,
 	h5,
 	paragraph,
-	noMargin,
+	nomargin,
 	button,
 	right,
 	center,
@@ -194,7 +194,7 @@ const Text = ({
 	if (h1)
 		return (
 			<HeadingOne
-				noMargin={noMargin}
+				nomargin={nomargin}
 				right={right}
 				center={center}
 				{...props}
@@ -203,7 +203,7 @@ const Text = ({
 	if (h2)
 		return (
 			<HeadingTwo
-				noMargin={noMargin}
+				nomargin={nomargin}
 				right={right}
 				center={center}
 				{...props}
@@ -212,7 +212,7 @@ const Text = ({
 	if (h3)
 		return (
 			<HeadingThree
-				noMargin={noMargin}
+				nomargin={nomargin}
 				right={right}
 				center={center}
 				{...props}
@@ -221,7 +221,7 @@ const Text = ({
 	if (h4)
 		return (
 			<HeadingFour
-				noMargin={noMargin}
+				nomargin={nomargin}
 				right={right}
 				center={center}
 				{...props}
@@ -230,7 +230,7 @@ const Text = ({
 	if (h5)
 		return (
 			<HeadingFive
-				noMargin={noMargin}
+				nomargin={nomargin}
 				right={right}
 				center={center}
 				{...props}
@@ -238,27 +238,27 @@ const Text = ({
 		);
 	if (button)
 		return (
-			<Button noMargin={noMargin} right={right} center={center} {...props} />
+			<Button nomargin={nomargin} right={right} center={center} {...props} />
 		);
 	if (link)
 		return (
-			<HyperLink noMargin={noMargin} right={right} center={center} {...props} />
+			<HyperLink nomargin={nomargin} right={right} center={center} {...props} />
 		);
 	if (menuLink)
 		return (
-			<MenuLink noMargin={noMargin} right={right} center={center} {...props} />
+			<MenuLink nomargin={nomargin} right={right} center={center} {...props} />
 		);
 	if (format)
 		return (
 			<TextFormatter
-				noMargin={noMargin}
+				nomargin={nomargin}
 				right={right}
 				center={center}
 				{...props}
 			/>
 		);
 	return (
-		<Paragraph noMargin={noMargin} right={right} center={center} {...props} />
+		<Paragraph nomargin={nomargin} right={right} center={center} {...props} />
 	);
 };
 

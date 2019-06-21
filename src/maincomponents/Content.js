@@ -1,12 +1,29 @@
 import React, { useContext } from "react";
-import Home from "../contentcomponents/Home";
-import AboutMe from "../contentcomponents/AboutMe";
-import Ugg from "../contentcomponents/Ugg";
 import { revealValues, useWindowResize, isMobile } from "../helpers";
 import ReactResizeDetector from "react-resize-detector";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 import { globalState } from "../State";
 import { browserName, mobileModel } from "react-device-detect";
+import {
+	AboutMe,
+	BedzinExhibit,
+	Colors,
+	DiscountTire,
+	FlagstaffChamberofCommerce,
+	Home,
+	Inspiration,
+	Instagram,
+	LinkedIn,
+	NorthernArizonaUniversity,
+	Photography,
+	Resume,
+	SpecialThanks,
+	Theme,
+	Tone,
+	Twitter,
+	Ugg,
+	UXvsHX
+} from "../Pages";
 // import { AnimatedSwitch } from "react-router-transition";
 
 export const Content = () => {
@@ -43,7 +60,7 @@ export const Content = () => {
 		fullScreen
 	};
 	return (
-		<Router>
+		<BrowserRouter>
 			{!fullScreen ? (
 				<ReactResizeDetector
 					handleWidth
@@ -59,17 +76,32 @@ export const Content = () => {
 				atLeave={{ opacity: 0 }}
 				atActive={{ opacity: 1 }}
 				className='switch-wrapper'> */}
+			<Route path='/AboutMe' component={AboutMe} />
+			<Route path='/BedzinExhibit' component={BedzinExhibit} />
+			<Route path='/Colors' component={Colors} />
+			<Route path='/DiscountTire' component={DiscountTire} />
+			<Route
+				path='/FlagstaffChamberofCommerce'
+				component={FlagstaffChamberofCommerce}
+			/>
 			<Route exact path='/' component={Home} />
+			<Route exact path='/Inspiration' component={Inspiration} />
+			<Route path='/Instagram' component={Instagram} />
+			<Route path='/LinkedIn' component={LinkedIn} />
 			<Route
-				path='/AboutMe'
-				component={() => <AboutMe contentProps={contentProps} />}
+				path='/NorthernArizonaUniversity'
+				component={NorthernArizonaUniversity}
 			/>
-			<Route
-				path='/Ugg'
-				component={() => <Ugg contentProps={contentProps} />}
-			/>
+			<Route path='/Photography' component={Photography} />
+			<Route path='/Resume' component={Resume} />
+			<Route path='/SpecialThanks' component={SpecialThanks} />
+			<Route path='/Theme' component={Theme} />
+			<Route path='/Tone' component={Tone} />
+			<Route path='/Twitter' component={Twitter} />
+			<Route path='/Ugg' component={Ugg} />
+			<Route path='/UXvsHX' component={UXvsHX} />
 			{/* </AnimatedSwitch> */}
-		</Router>
+		</BrowserRouter>
 	);
 };
 

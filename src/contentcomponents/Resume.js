@@ -5,18 +5,14 @@ import Text from "../stylecomponents/Text";
 // import Fade from "react-reveal/Fade";
 import { ContentShow, ComingSoon } from "../Actions";
 
-const header = "Ugg";
+const header = "Special Thanks";
 
-const UggPage = () => {
+const SpecialThanksPage = () => {
 	return (
 		<Fragment>
 			<ContentShow header={header} />
 			<ContentShow less>
-				<Text m>
-					At Deckers Brand, I had a wonderful opportunity learn about digital
-					marketing, developing wonderful User Interfaces for email and web for
-					Ugg, and getting my parking ticket paid for by a secret admirer.
-				</Text>
+				<ComingSoon header={header} />
 			</ContentShow>
 			<ContentShow more>
 				<ComingSoon header={header} />
@@ -25,4 +21,4 @@ const UggPage = () => {
 	);
 };
 
-export default UggPage;
+export default SpecialThanksPage;
