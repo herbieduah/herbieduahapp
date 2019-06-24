@@ -14,8 +14,6 @@ import HerbieDuahLogo from "./media/icons/HerbieDuahLogo.svg";
 import Media from "./maincomponents/Media";
 import ContentContainer from "./stylecomponents/ContentContainer";
 
-let windowwidth = 0;
-
 export const DragInstructions = props => {
 	const {
 		dragging,
@@ -158,12 +156,9 @@ export const ContentWrapper = props => {
 };
 
 export const ContentShow = props => {
-	const {
-		contentWidth: cw,
-		contentHeight: ch,
-		dragging,
-		fullScreen
-	} = useContext(globalState);
+	const { contentWidth: cw, contentHeight: ch, fullScreen } = useContext(
+		globalState
+	);
 	const { width: ww, height: wh } = useWindowResize();
 	const values = { ww, wh, cw, ch };
 	const isShowingMore = revealValues(values).isShowingMore;

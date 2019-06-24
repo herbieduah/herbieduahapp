@@ -3,7 +3,6 @@ import Text from "../stylecomponents/Text";
 // import Fade from "react-reveal/Fade";
 // import { CSSTransition } from "react-transition-group";
 import { SubMenuWrapper } from "../Actions";
-import { NavLink } from "react-router-dom";
 export const SubMenu = props => {
 	let category = props.category;
 	const isShowingMore = props.isShowingMore;
@@ -18,27 +17,35 @@ export const SubMenu = props => {
 					) : null}
 					<SubMenuWrapper isShowingMore={isShowingMore}>
 						<li className='subMenu__item'>
-							<NavLink to='/'>HerbieDuah.app</NavLink>
+							<Text menuLink to='/'>
+								HerbieDuah.app
+							</Text>
 						</li>
 						<li className='subMenu__item'>
-							<NavLink to='/UGG'>UGG</NavLink>
+							<Text menuLink to='/UGG'>
+								UGG
+							</Text>
 						</li>
 						<li className='subMenu__item'>
-							<NavLink to='/DiscountTire'>Discount Tire</NavLink>
+							<Text menuLink to='/DiscountTire'>
+								Discount Tire
+							</Text>
 						</li>
 						<li className='subMenu__item'>
-							<NavLink to='/BedzinExhibit'>Bedzin Exhibit</NavLink>
+							<Text menuLink to='/BedzinExhibit'>
+								Bedzin Exhibit
+							</Text>
 						</li>
 						<li className='subMenu__item'>
-							<NavLink to='/FlagstaffChamberofCommerce'>
+							<Text menuLink to='/FlagstaffChamberofCommerce'>
 								Flagstaff Chamber of Commerce
-							</NavLink>
+							</Text>
 						</li>
 
 						<li className='subMenu__item'>
-							<NavLink to='/NorthernArizonaUniversity'>
+							<Text menuLink to='/NorthernArizonaUniversity'>
 								Northern Arizona University
-							</NavLink>
+							</Text>
 						</li>
 					</SubMenuWrapper>
 				</div>
@@ -53,24 +60,34 @@ export const SubMenu = props => {
 					) : null}
 					<SubMenuWrapper isShowingMore={isShowingMore}>
 						<li className='subMenu__item'>
-							<NavLink to='/AboutMe'>About Me</NavLink>
+							<Text menuLink to='/AboutMe'>
+								About Me
+							</Text>
 						</li>
 						<li className='subMenu__item'>
-							<NavLink to='/SpecialThanks'>Special Thanks</NavLink>
+							<Text menuLink to='/SpecialThanks'>
+								Special Thanks
+							</Text>
 						</li>
 						<li className='subMenu__item'>
-							<NavLink to='/Photography'>Photography</NavLink>
+							<Text menuLink to='/Photography'>
+								Photography
+							</Text>
 						</li>
 						<li className='subMenu__item'>
-							<NavLink to='/Inspiration'>Inspiration</NavLink>
+							<Text menuLink to='/Inspiration'>
+								Inspiration
+							</Text>
 						</li>
 						<li className='subMenu__item'>
-							<NavLink to='/Resume'>Resume</NavLink>
+							<Text menuLink to='/Resume'>
+								Resume
+							</Text>
 						</li>
 						<li className='subMenu__item'>
-							<NavLink to='/UXvsHX'>
+							<Text menuLink to='/UXvsHX'>
 								User Experience vs Human Experience
-							</NavLink>
+							</Text>
 						</li>
 					</SubMenuWrapper>
 				</div>
@@ -85,13 +102,19 @@ export const SubMenu = props => {
 					) : null}
 					<SubMenuWrapper isShowingMore={isShowingMore}>
 						<li className='subMenu__item'>
-							<NavLink to='/colors'>Colors</NavLink>
+							<Text menuLink to='/colors'>
+								Colors
+							</Text>
 						</li>
 						<li className='subMenu__item'>
-							<NavLink to='/theme'>Theme</NavLink>
+							<Text menuLink to='/theme'>
+								Theme
+							</Text>
 						</li>
 						<li className='subMenu__item'>
-							<NavLink to='/tone'>Tone</NavLink>
+							<Text menuLink to='/tone'>
+								Tone
+							</Text>
 						</li>
 					</SubMenuWrapper>
 				</div>
@@ -106,13 +129,19 @@ export const SubMenu = props => {
 					) : null}
 					<SubMenuWrapper isShowingMore={isShowingMore}>
 						<li className='subMenu__item'>
-							<NavLink to='/twitter'>Twitter</NavLink>
+							<Text menuLink to='/twitter'>
+								Twitter
+							</Text>
 						</li>
 						<li className='subMenu__item'>
-							<NavLink to='/instagram'>Instagram</NavLink>
+							<Text menuLink to='/instagram'>
+								Instagram
+							</Text>
 						</li>
 						<li className='subMenu__item'>
-							<NavLink to='/linkedin'>LinkedIn</NavLink>
+							<Text menuLink to='/linkedin'>
+								LinkedIn
+							</Text>
 						</li>
 					</SubMenuWrapper>
 				</div>

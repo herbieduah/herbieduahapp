@@ -8,7 +8,7 @@ import { ContentShow } from "../Actions";
 const header = "HerbieDuah.app";
 
 const HomePage = ({ contentProps }) => {
-	const { browserName, mobileModel } = contentProps;
+	// const { browserName, mobileModel } = contentProps;
 	return (
 		<Fragment>
 			<ContentShow header={header} />
@@ -58,10 +58,10 @@ const HomePage = ({ contentProps }) => {
 								🤯
 							</span>
 						</Text>
-						<Text m>
+						{/* <Text m>
 							Wanna see something crazy, my website knows that you on an{" "}
 							{mobileModel} scrolling through my site on {browserName}
-						</Text>
+						</Text> */}
 
 						<Text m>
 							I am gonna be texting/messaging to check out some things for me.
