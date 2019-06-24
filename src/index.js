@@ -4,10 +4,13 @@ import "./index.css";
 import { StateProvider } from "./State";
 import { App } from "./App";
 import * as serviceWorker from "./serviceWorker";
+import { BrowserRouter } from "react-router-dom";
 const Main = () => {
 	return (
 		<StateProvider>
-			<App />
+			<BrowserRouter>
+				<App />
+			</BrowserRouter>
 		</StateProvider>
 	);
 };

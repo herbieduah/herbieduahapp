@@ -3,14 +3,14 @@ import Text from "../stylecomponents/Text";
 // import Fade from "react-reveal/Fade";
 // import { CSSTransition } from "react-transition-group";
 import { SubMenuWrapper } from "../Actions";
-import { BrowserRouter, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 export const SubMenu = props => {
 	let category = props.category;
 	const isShowingMore = props.isShowingMore;
 	switch (category) {
 		case "work":
 			return (
-				<BrowserRouter>
+				<div>
 					{isShowingMore ? (
 						<Text format m className='subMenu__text'>
 							Work
@@ -41,11 +41,11 @@ export const SubMenu = props => {
 							</NavLink>
 						</li>
 					</SubMenuWrapper>
-				</BrowserRouter>
+				</div>
 			);
 		case "about":
 			return (
-				<BrowserRouter>
+				<div>
 					{isShowingMore ? (
 						<Text format m className='subMenu__text'>
 							About
@@ -73,11 +73,11 @@ export const SubMenu = props => {
 							</NavLink>
 						</li>
 					</SubMenuWrapper>
-				</BrowserRouter>
+				</div>
 			);
 		case "customize":
 			return (
-				<BrowserRouter>
+				<div>
 					{isShowingMore ? (
 						<Text format m className='subMenu__text'>
 							Customize
@@ -94,11 +94,11 @@ export const SubMenu = props => {
 							<NavLink to='/tone'>Tone</NavLink>
 						</li>
 					</SubMenuWrapper>
-				</BrowserRouter>
+				</div>
 			);
 		case "contact":
 			return (
-				<BrowserRouter>
+				<div>
 					{isShowingMore ? (
 						<Text format m className='subMenu__text'>
 							Contact
@@ -115,7 +115,7 @@ export const SubMenu = props => {
 							<NavLink to='/linkedin'>LinkedIn</NavLink>
 						</li>
 					</SubMenuWrapper>
-				</BrowserRouter>
+				</div>
 			);
 		default:
 			return null;

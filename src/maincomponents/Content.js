@@ -1,29 +1,28 @@
-import React, { useContext } from "react";
+import React, { useContext, Fragment } from "react";
 import { revealValues, useWindowResize, isMobile } from "../helpers";
 import ReactResizeDetector from "react-resize-detector";
-import { BrowserRouter, Route } from "react-router-dom";
+import { Route, Switch, withRouter } from "react-router-dom";
 import { globalState } from "../State";
 import { browserName, mobileModel } from "react-device-detect";
-import {
-	AboutMe,
-	BedzinExhibit,
-	Colors,
-	DiscountTire,
-	FlagstaffChamberofCommerce,
-	Home,
-	Inspiration,
-	Instagram,
-	LinkedIn,
-	NorthernArizonaUniversity,
-	Photography,
-	Resume,
-	SpecialThanks,
-	Theme,
-	Tone,
-	Twitter,
-	Ugg,
-	UXvsHX
-} from "../Pages";
+import AboutMePage from "../contentcomponents/AboutMe";
+import BedzinExhibitPage from "../contentcomponents/BedzinExhibit";
+import ColorsPage from "../contentcomponents/Colors";
+import DiscountTirePage from "../contentcomponents/DiscountTire";
+import FlagstaffChamberofCommercePage from "../contentcomponents/FlagstaffChamberofCommerce";
+import HomePage from "../contentcomponents/Home";
+import InspirationPage from "../contentcomponents/Inspiration";
+import InstagramPage from "../contentcomponents/Instagram";
+import LinkedInPage from "../contentcomponents/LinkedIn";
+import NorthernArizonaUniversityPage from "../contentcomponents/NorthernArizonaUniversity";
+import PhotographyPage from "../contentcomponents/Photography";
+import ResumePage from "../contentcomponents/Resume";
+import SpecialThanksPage from "../contentcomponents/SpecialThanks";
+import ThemePage from "../contentcomponents/Theme";
+import TonePage from "../contentcomponents/Tone";
+import TwitterPage from "../contentcomponents/Twitter";
+import UggPage from "../contentcomponents/Ugg";
+import UXvsHXPage from "../contentcomponents/UXvsHX";
+import { ContentWrapper } from "../Actions";
 // import { AnimatedSwitch } from "react-router-transition";
 
 export const Content = () => {
@@ -60,7 +59,7 @@ export const Content = () => {
 		fullScreen
 	};
 	return (
-		<BrowserRouter>
+		<Fragment>
 			{!fullScreen ? (
 				<ReactResizeDetector
 					handleWidth
@@ -76,32 +75,40 @@ export const Content = () => {
 				atLeave={{ opacity: 0 }}
 				atActive={{ opacity: 1 }}
 				className='switch-wrapper'> */}
-			<Route path='/AboutMe' component={AboutMe} />
-			<Route path='/BedzinExhibit' component={BedzinExhibit} />
-			<Route path='/Colors' component={Colors} />
-			<Route path='/DiscountTire' component={DiscountTire} />
-			<Route
-				path='/FlagstaffChamberofCommerce'
-				component={FlagstaffChamberofCommerce}
-			/>
-			<Route exact path='/' component={Home} />
-			<Route exact path='/Inspiration' component={Inspiration} />
-			<Route path='/Instagram' component={Instagram} />
-			<Route path='/LinkedIn' component={LinkedIn} />
-			<Route
-				path='/NorthernArizonaUniversity'
-				component={NorthernArizonaUniversity}
-			/>
-			<Route path='/Photography' component={Photography} />
-			<Route path='/Resume' component={Resume} />
-			<Route path='/SpecialThanks' component={SpecialThanks} />
-			<Route path='/Theme' component={Theme} />
-			<Route path='/Tone' component={Tone} />
-			<Route path='/Twitter' component={Twitter} />
-			<Route path='/Ugg' component={Ugg} />
-			<Route path='/UXvsHX' component={UXvsHX} />
-			{/* </AnimatedSwitch> */}
-		</BrowserRouter>
+			<ContentWrapper>
+				<div>
+					<Switch>
+						<Route path='/AboutMe' component={AboutMePage} />
+						<Route path='/BedzinExhibit' component={BedzinExhibitPage} />
+						<Route path='/Colors' component={ColorsPage} />
+						<Route path='/DiscountTire' component={DiscountTirePage} />
+						<Route
+							path='/FlagstaffChamberofCommerce'
+							component={FlagstaffChamberofCommercePage}
+						/>
+						<Route exact path='/' component={HomePage} />
+						<Route
+							path='/Inspiration'
+							component={withRouter(InspirationPage)}
+						/>
+						<Route path='/Instagram' component={InstagramPage} />
+						<Route path='/LinkedIn' component={LinkedInPage} />
+						<Route
+							path='/NorthernArizonaUniversity'
+							component={NorthernArizonaUniversityPage}
+						/>
+						<Route path='/Photography' component={PhotographyPage} />
+						<Route path='/Resume' component={ResumePage} />
+						<Route path='/SpecialThanks' component={SpecialThanksPage} />
+						<Route path='/Theme' component={ThemePage} />
+						<Route path='/Tone' component={TonePage} />
+						<Route path='/Twitter' component={TwitterPage} />
+						<Route path='/Ugg' component={UggPage} />
+						<Route path='/UXvsHX' component={UXvsHXPage} />
+					</Switch>
+				</div>
+			</ContentWrapper>
+		</Fragment>
 	);
 };
 
