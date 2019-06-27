@@ -43,6 +43,7 @@ export const appGradient = props => rgba(props.theme.bgColor, 0.0);
 export const appColor = props => props.theme.bgColor;
 export const ctaColor = props => props.theme.ctaColor;
 export const bgColor = props => props.theme.bgColor;
+export const bgColorGradient = props => props.theme.bgColorGradient;
 export const fontColor = props => props.theme.fontColor;
 export const mainTransition = "transition: all .2s ease-in-out;";
 export const buttonColor = props => rgba(props.theme.fontColor, 0.75);

@@ -8,7 +8,8 @@ import {
 	overlayBackground,
 	bgColor,
 	fontColor,
-	mainTransition
+	mainTransition,
+	bgColorGradient
 
 	// fluidTypeInfo,
 	// ctaColor,
@@ -149,7 +150,7 @@ export const HerbieDuahApp = styled.div`
 	width: 100%;
 	content: "";
 	overflow: hidden;
-	background-color: ${bgColor};
+	background-image: ${bgColorGradient};
 	position: relative;
 	margin: 0;
 	height: 100%;

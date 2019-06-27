@@ -8,6 +8,7 @@ export const themes = [
 		name: "default",
 		properties: {
 			bgColor: "#ffffff",
+			bgColorGradient: "linear-gradient(to top, #dfe9f3 0%, white 100%)",
 			fontColor: "#111111",
 			gradient1: "",
 			gradient2: "",
