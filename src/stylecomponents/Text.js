@@ -15,12 +15,13 @@ import {
 	linkBorderColor,
 	navBorderColor,
 	navBorderColorActive,
-	navColor
+	navColor,
+	navColorActive
 } from "./StyleHelpers";
 
 const baseStyle = css`
-	font-family: "commuters-sans", -apple-system, BlinkMacSystemFont, Oxygen,
-		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
+	font-family: "nimbus-sans", -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu,
+		Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
 	margin-bottom: ${props => props.nomargin && "0"};
 	font-weight: 400;
 	margin-top: 0;
@@ -44,8 +45,8 @@ const baseStyle = css`
 		font-size: ${props => {
 			if (props.xs) return "0.7em";
 			if (props.s) return "0.8em";
-			if (props.m) return "1em";
-			if (props.l) return "1.35em";
+			if (props.m) return "1.1em";
+			if (props.l) return "1.45em";
 			if (props.xl) return "1.7em";
 			return ".85em";
 		}};
@@ -72,6 +73,8 @@ baseStyle.defaultProps = {
 
 const HeadingOne = styled.h1`
 	${baseStyle};
+	font-family: "nimbus-sans-extended", -apple-system, BlinkMacSystemFont, Oxygen,
+		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
 
 	/* @media (max-width: 480px) {
     font-size: 40px;
@@ -82,6 +85,8 @@ const HeadingTwo = styled.h2`
 	line-height: 1;
 	line-height: 1.25;
 	${baseStyle};
+	font-family: "nimbus-sans-extended", -apple-system, BlinkMacSystemFont, Oxygen,
+		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
 `;
 
 const HeadingThree = styled.h3`
@@ -101,6 +106,8 @@ const Paragraph = styled.p`
 `;
 const TextFormatter = styled.span`
 	${baseStyle};
+	font-family: "nimbus-sans-extended", -apple-system, BlinkMacSystemFont, Oxygen,
+		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
 `;
 const Button = styled.button`
 	${baseStyle};
@@ -141,7 +148,7 @@ const HyperLink = styled.a`
 `;
 
 const MenuLink = styled(NavLink)`
-${baseStyle};
+	${baseStyle};
 	font-weight: 400;
 	${mainTransition}
 	line-height: 1;
@@ -150,7 +157,11 @@ ${baseStyle};
 	background: none;
 	color: ${navColor};
 	cursor: pointer;
-	border: 1px solid ${navBorderColor};
+	font-size: 1.2em;
+	${mobile}{
+		font-size:1em;
+	}
+	/* border: 1px solid ${navBorderColor}; */
 	white-space: nowrap;
 	border-radius: .3rem;
 	/* ${mobile} {
@@ -164,15 +175,16 @@ ${baseStyle};
 
 	&:hover,
 	&:focus {
-		border: 1px solid ${navBorderColorActive};
+		color: ${navColorActive};
 	}
 	&.active {
-		color: ${navBorderColorActive};
-		border: 1px solid ${navColor};
-		background-color: ${navColor};
+		color: ${navColorActive};
+		font-weight: bold;
+		/* border: 1px solid ${navColor};
+		background-color: ${navColor}; */
 	}
 	text-decoration: none;
-	margin-bottom: 5%;
+	margin-bottom: 3%;
 `;
 
 const Text = ({

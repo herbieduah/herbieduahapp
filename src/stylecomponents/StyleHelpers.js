@@ -58,7 +58,7 @@ export const linkColorActive = props => props.theme.fontColor;
 export const linkBorderColor = props => rgba(props.theme.fontColor, 0.3);
 export const linkBorderColorActive = props => props.theme.fontColor;
 
-export const navColor = props => props.theme.fontColor;
+export const navColor = props => lighten(0.3, props.theme.fontColor);
 export const navColorHover = props => props.theme.fontColor;
 export const navColorActive = props => props.theme.fontColor;
 export const navBorderColor = props => rgba(props.theme.fontColor, 0.3);

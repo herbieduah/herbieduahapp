@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bootstrap": "^4.3.1",
     "parallax-js": "^3.1.0",
     "polished": "^3.3.2",
     "prop-types": "^15.7.2",

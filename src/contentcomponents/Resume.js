@@ -5,9 +5,9 @@ import Text from "../stylecomponents/Text";
 // import Fade from "react-reveal/Fade";
 import { ContentShow, ComingSoon } from "../Actions";
 
-const header = "Special Thanks";
+const header = "Resume";
 
-const SpecialThanksPage = () => {
+const Resume = () => {
 	return (
 		<Fragment>
 			<ContentShow header={header} />
@@ -21,4 +21,4 @@ const SpecialThanksPage = () => {
 	);
 };
 
-export default SpecialThanksPage;
+export default Resume;

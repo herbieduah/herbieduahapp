@@ -311,18 +311,25 @@ export const HerbieDuahApp = styled.div`
 		}
 
 		.react-tabs {
-  	-webkit-tap-highlight-color: transparent;
-  	width: 100%;
+  		-webkit-tap-highlight-color: transparent;
+  		width: 100%;
+		overflow:hidden;
+
 
 		&__tab-list {
 			/* border-bottom: 1px solid #aaa;
 			margin: 0 0 10px;
 			padding: 0; */
 			display:flex;
+			/* margin: 0 0 3%; */
 			justify-content: space-between;
-			margin: 0 0 3%;
 			width: 100%;
-			border-bottom: 1px solid ${props => rgba(props.theme.fontColor, 0.3)};
+			margin-right: auto;
+			${mobile}{
+				width: 300px;
+				overflow-x: auto;
+			}
+			
 		}
 
 		&__tab {
@@ -335,8 +342,12 @@ export const HerbieDuahApp = styled.div`
 			padding: 6px 12px; */
 			${mainTransition}
 			cursor: pointer;
+			margin: 0 1rem;
+			${mobile} {
+				margin: 0 .3rem;
+			}
 			span {
-				color: ${props => rgba(props.theme.fontColor, 0.7)};
+				color: ${props => rgba(props.theme.fontColor, 0.6)};
 				&:focus,&:hover {
 					color: ${fontColor};
 				}
@@ -365,9 +376,12 @@ export const HerbieDuahApp = styled.div`
 
 		&__tab-panel {
 			display: none;
-
+			width: 100%;
+			overflow:hidden;
 			&--selected {
 			display: block;
+			width: 100%;
+			overflow:hidden;
 			}
 		}
 }

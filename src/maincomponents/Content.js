@@ -1,9 +1,7 @@
 import React, { useContext, Fragment } from "react";
-import { revealValues, useWindowResize, isMobile } from "../helpers";
 import ReactResizeDetector from "react-resize-detector";
 import { Route, Switch } from "react-router-dom";
 import { globalState } from "../State";
-import { browserName, mobileModel } from "react-device-detect";
 import {
 	AboutMe,
 	BedzinExhibit,

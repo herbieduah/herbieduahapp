@@ -85,11 +85,10 @@ const MenuContainer = styled.aside`
 		}
 		
 		&__item {
-			font-size: 1rem;
 			
-			margin: .7rem 0;
+			margin: .4rem 0;
 			
-			${props => (props.isMobile ? `margin-right: 1rem;` : `margin-left: 1rem;`)};
+			${props => (props.isMobile ? `margin-right: 0.5rem;` : `margin-left: 0.1rem;`)};
 			/* border-bottom: 1px solid ${props => rgba(props.theme.fontColor, 0.5)}; */
 			/* ${props => {
 				if (props.isMobile) {
