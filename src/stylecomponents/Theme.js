@@ -7,13 +7,14 @@ export const themes = [
 	{
 		name: "default",
 		properties: {
-			bgColor: "#ffffff",
-			bgColorGradient: "linear-gradient(to top, #dfe9f3 0%, white 100%)",
-			fontColor: "#111111",
+			bgColor: "#2a5298",
+			bgColorGradient:
+				"linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);",
+			fontColor: "#ffffff",
 			gradient1: "",
 			gradient2: "",
-			headingColor: "#000000",
-			ctaColor: "#111111"
+			headingColor: "#ffffff",
+			ctaColor: "#ffffff"
 		}
 	},
 	{
