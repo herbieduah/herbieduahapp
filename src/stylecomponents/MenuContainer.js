@@ -31,7 +31,7 @@ const MenuContainer = styled.aside`
 		max-width: none;	
 		width: 100%;
 		${props => (props.isShowingMore ? `display: block;` : `display: flex;`)};
-	padding: 0rem 1.5rem;
+	padding: 0rem 1rem;
 		/* height: 120px; */
 	}
 	
