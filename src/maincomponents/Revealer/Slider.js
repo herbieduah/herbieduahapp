@@ -2,6 +2,7 @@ import React, { useContext, Fragment } from "react";
 import { SliderController } from "../../stylecomponents/SliderContainer";
 import { isMobile, useWindowResize } from "../../helpers";
 import { globalState } from "../../State";
+import Media from "../Media";
 
 export const Slider = () => {
 	const { width: ww, height: wh } = useWindowResize();

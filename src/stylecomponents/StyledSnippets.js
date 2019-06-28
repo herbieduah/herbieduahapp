@@ -9,8 +9,7 @@ import {
 	bgColor,
 	fontColor,
 	mainTransition,
-	bgColorGradient,
-	hideScrollbar
+	bgColorGradient
 
 	// fluidTypeInfo,
 	// ctaColor,
@@ -52,6 +51,29 @@ export const GlobalStyle = createGlobalStyle`
 		}
 		button:focus {
 			outline: 0;
+		}
+
+	
+		.instructions {
+			${absoluteOverlay};
+			/* height: 100%; */
+			display: flex;
+			margin-top: 4rem;
+			justify-content: center;
+			z-index: 10;
+			&__text {
+			${mainTransition}
+			color: ${bgColor};
+			background: ${fontColor};
+			${props => `box-shadow: 0 0 40px ${rgba(props.theme.bgColor, 0.6)};`}
+			padding: .5rem 1rem;
+			display: inline-block;
+			font-size: 1rem;
+			border-radius: 2rem;
+			${mobile} {
+				margin-top: 2rem;	
+			}
+		}
 		}
 
   }
@@ -105,11 +127,9 @@ export const NavBarContainer = styled.div`
 	z-index: 10;
 	padding: 0 2rem;
 	align-items: center;
-	height: 4rem;
-	user-select: none;
+	height: 3rem;
 	${mobile} {
-		padding: 0 1rem;
-		height: 4rem;
+		padding: 0 1.5rem;
 	}
 `;
 
@@ -126,12 +146,7 @@ export const FullScreeningBG = styled.div`
 
 export const HerbieDuahApp = styled.div`
 	/* height: 90%; */
-	@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portait) {
-		.hdapp {
-			display: none;
-		}
-	}
-	
+
 	width: 100%;
 	content: "";
 	overflow: hidden;
@@ -141,11 +156,10 @@ export const HerbieDuahApp = styled.div`
 	height: 100%;
 	
 	.hdapp {
-		&__pane {
-			overflow: ${props => props.isMobile ? `initial`: `hidden`};
-		}
-		
 		&__logo {
+			
+			
+			
 			.inner-rect, .half-circle {
 				${mainTransition}
 				fill: ${bgColor};
@@ -154,25 +168,18 @@ export const HerbieDuahApp = styled.div`
 			.outer-rect {
 				${mainTransition}
 				fill: ${fontColor};
-				fill-opacity: .8;
 			}
 			svg {
-				width: 2.5rem;
 				${mainTransition}
 				border: none;
-				
 				/* margin-left: 2rem; */
 				${mobile} {
 					/* margin-left: 1.5rem; */
-					width: 2.5rem;
 				}
 			${mainTransition}
 			&:hover,&:focus {
 				transform: scale(1.1);
 				z-index: 10;
-				.outer-rect {
-				fill-opacity: 1;
-			}
 			}
 			}
 			svg:hover,svg:focus  {
@@ -220,6 +227,89 @@ export const HerbieDuahApp = styled.div`
 			width: 100%;
 		}
 	}
+	.resizer-pane {
+		position: relative;
+		z-index: 20;
+		&:before {
+		content: "";
+		width: 100%;
+		max-width: 100%;
+		height: 0;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: -15px;
+		pointer-events: none;
+		display: ${props => (props.isMobile ? "block" : "none")};
+		opacity: ${props => (props.dragging ? "0" : "1")};
+		box-shadow: 0 0 3rem 3rem ${bgColor}, 0 0 2rem 2rem ${bgColor};
+		/* box-shadow: 0 0 3rem 3rem blue, 0 0 2rem 2rem blue; */
+		${mobile} {
+			box-shadow: 0 0 2.5rem 2.5rem ${bgColor}, 0 0 1.5rem 1.5rem ${bgColor};
+			/* box-shadow: 0 0 2rem 2rem blue, 0 0 1rem 1rem blue; */
+			opacity: ${props => (props.dragging ? "0" : "1")};
+			display: ${props => (props.isMobile ? "block" : "none")};
+		}
+	}
+		&:after {
+		content: "";
+		width: 100%;
+		max-width: 100%;
+		height: 0;
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 40px;
+		pointer-events: none;
+		display: ${props => (props.isMobile ? "block" : "none")};
+		opacity: ${props => (props.dragging ? "0" : "1")};
+		box-shadow: 0 0 3rem 3rem ${bgColor}, 0 0 2rem 2rem ${bgColor};
+		/* box-shadow: 0 0 3rem 3rem blue, 0 0 2rem 2rem blue; */
+		${mobile} {
+			box-shadow: 0 0 2rem 2rem ${bgColor}, 0 0 1.5rem 1.5rem ${bgColor};
+			/* box-shadow: 0 0 2rem 2rem blue, 0 0 1rem 1rem blue; */
+			opacity: ${props => (props.dragging ? "0" : "1")};
+			display: ${props => (props.isMobile ? "block" : "none")};
+		}
+	}
+	}
+
+	&:before {
+		content: "";
+		width: 100%;
+		max-width: 100%;
+		height: 0;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		z-index: 10;
+		pointer-events: none;
+		opacity: ${props => (props.dragging ? "0" : "1")};
+		box-shadow: 0 0 3rem 3rem ${bgColor}, 0 0 2rem 2rem ${bgColor};
+		${mobile} {
+			box-shadow: 0 0 2rem 2rem ${bgColor}, 0 0 1rem 1rem ${bgColor};
+			opacity: ${props => (props.dragging ? "0" : "1")};
+		}
+	}
+	&:after {
+		content: "";
+		width: 100%;
+		max-width: 100%;
+		height: 0;
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 10;
+		opacity: ${props => (props.dragging ? "0" : "1")};
+		pointer-events: none;
+		box-shadow: 0 0 100px 100px ${bgColor}, 0 0 50px 50px ${bgColor};
+		${mobile} {
+			box-shadow: 0 30px 30px ${bgColor}, 0 0 15px 15px ${bgColor};
+			opacity: ${props => (props.dragging ? "0" : "1")};
+	}
+		}
 
 		.react-tabs {
   		-webkit-tap-highlight-color: transparent;
@@ -236,10 +326,9 @@ export const HerbieDuahApp = styled.div`
 			justify-content: space-between;
 			width: 100%;
 			margin-right: auto;
-			overflow-x: auto;
-			${hideScrollbar}
 			${mobile}{
-				
+				width: 300px;
+				overflow-x: auto;
 			}
 			
 		}
@@ -255,9 +344,6 @@ export const HerbieDuahApp = styled.div`
 			${mainTransition}
 			cursor: pointer;
 			margin: 0 1rem;
-			&:last-child {
-				margin-right: 0;
-			}
 			${mobile} {
 				margin: 0 .3rem;
 			}
@@ -278,6 +364,8 @@ export const HerbieDuahApp = styled.div`
 					};
 				}
 				}
+			
+
 			&--disabled {
 			/* color: GrayText; */
 			cursor: default;

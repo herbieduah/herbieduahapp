@@ -12,7 +12,7 @@ const DiscountTirePage = () => {
 		<Fragment>
 			<ContentShow header={header} />
 			<ContentShow less>
-				<Text m>
+				<Text>
 					Currently at Discount Tire as a model, athlete and occasionally a
 					Front End Developer.
 				</Text>

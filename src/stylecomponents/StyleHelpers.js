@@ -1,4 +1,5 @@
 import { rgba, stripUnit, lighten } from "polished";
+import { sliderMobileWidth } from "../helpers";
 export function fluidType(minVW, maxVW, minFontSize, maxFontSize) {
 	let u1 = stripUnit(minVW)[1];
 	let u2 = stripUnit(maxVW)[1];
@@ -36,6 +37,15 @@ scrollbar-width: none;
 }`;
 export const absoluteOverlay =
 	"position: absolute;width: 100%;height: 100%;top: 0;left: 0;right: 0;bottom: 0;";
+
+export const mobileSliderOnTop = `height: calc(100% + ${sliderMobileWidth}px);
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+z-index: 1;
+position: absolute;
+`;
 export const fiftyPixels = "3.47vw";
 export const iconWidth = "2.5rem";
 export const showMore = props => props.appValues.isShowingMore;
@@ -59,10 +69,10 @@ export const linkColorActive = props => props.theme.fontColor;
 export const linkBorderColor = props => rgba(props.theme.fontColor, 0.3);
 export const linkBorderColorActive = props => props.theme.fontColor;
 
-export const navColor = props => lighten(0.3, props.theme.fontColor);
+export const navColor = props => rgba(props.theme.fontColor, 0.7);
 export const navColorHover = props => props.theme.fontColor;
 export const navColorActive = props => props.theme.fontColor;
-export const navBorderColor = props => rgba(props.theme.fontColor, 0.3);
+export const navBorderColor = props => rgba(props.theme.fontColor, 0.5);
 export const navBorderColorActive = props => props.theme.bgColor;
 
 //BlockStyle.js

@@ -3,11 +3,17 @@ import {
 	mobile,
 	fontColor,
 	mainTransition,
-	hideScrollbar
+	hideScrollbar,
+	mobileSliderOnTop
 } from "./StyleHelpers";
 import { rgba } from "polished";
-
+import { sliderMobileWidth } from "../helpers";
+// ${props =>
+// 		props.isShowingMore
+// 			? `box-shadow: 0 -3px 15px rgba(0,0,0,0.16), 0 -3px 15px rgba(0,0,0,0.23);`
+// 			: ``};
 const MenuContainer = styled.aside`
+  
 	${hideScrollbar};
 	width: 100%;
 	max-width: 500px;
@@ -16,10 +22,16 @@ const MenuContainer = styled.aside`
 	margin-left: auto;
 	padding: 4rem 2rem;
 	display: flex;
+	position: absolute;
+	width: 100%;
+	${props => (props.isMobile ? mobileSliderOnTop : ``)};
+	${props =>
+		props.isShowingMore ? `border-top: 1px solid rgba(255,255,255,.5)` : ``};
 	${mobile} {
 		max-width: none;	
 		width: 100%;
 		${props => (props.isShowingMore ? `display: block;` : `display: flex;`)};
+	padding: 0rem 1.5rem;
 		/* height: 120px; */
 	}
 	
@@ -36,9 +48,7 @@ const MenuContainer = styled.aside`
 	}}
 	
 
-	${mobile} {
-		padding: 0rem 1.5rem;
-	}
+	
 	/* align-items: ${props => (props.isMobile ? `initial` : `center`)}; */
 	ul {
 		padding: 0;
@@ -80,7 +90,7 @@ const MenuContainer = styled.aside`
 			margin-bottom: 1%;
 			margin-top: 5%;
 			width: 100%;
-			border-bottom: 1px solid ${props => rgba(props.theme.fontColor, 0.3)};
+			opacity: 0.7;
 			display: block;
 		}
 		
@@ -88,7 +98,7 @@ const MenuContainer = styled.aside`
 			
 			margin: .4rem 0;
 			
-			${props => (props.isMobile ? `margin-right: 0.5rem;` : `margin-left: 0.1rem;`)};
+			${props => (props.isMobile ? `margin-right: 1rem;` : `margin-left: 1rem;`)};
 			/* border-bottom: 1px solid ${props => rgba(props.theme.fontColor, 0.5)}; */
 			/* ${props => {
 				if (props.isMobile) {

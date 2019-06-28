@@ -12,7 +12,7 @@ const UggPage = () => {
 		<Fragment>
 			<ContentShow header={header} />
 			<ContentShow less>
-				<Text m>
+				<Text>
 					At Deckers Brand, I had a wonderful opportunity learn about digital
 					marketing, developing wonderful User Interfaces for email and web for
 					Ugg, and getting my parking ticket paid for by a secret admirer.

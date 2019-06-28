@@ -53,13 +53,13 @@ export const SliderLine = () => {
 						</div>
 					) : null}
 				</div>
-				{dragging ? (
+				{/* {dragging ? (
 					<div className='slider__gradient'>
 						<div className='slider__gradient-animation' />
 					</div>
 				) : (
 					""
-				)}
+				)} */}
 			</SliderLineContainer>
 		</React.Fragment>
 	);

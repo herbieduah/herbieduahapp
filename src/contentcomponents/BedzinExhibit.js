@@ -12,7 +12,7 @@ const BedzinExhibitPage = () => {
 		<Fragment>
 			<ContentShow header={header} />
 			<ContentShow less>
-				<Text m>
+				<Text>
 					For my senior capstone for Northern Arizona University, my group had
 					the incredible opportunity revamping bedzinexhibit.org. The
 					exhibit Through the Eyes of Youth: Life and Death in the Będzin

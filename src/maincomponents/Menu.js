@@ -1,9 +1,14 @@
 import React, { useContext, Fragment } from "react";
 import MenuContainer from "../stylecomponents/MenuContainer";
-import { isMobile, useWindowResize, revealValues } from "../helpers";
+import {
+	isMobile,
+	useWindowResize,
+	revealValues,
+	revealSecs
+} from "../helpers";
 import SubMenu from "./SubMenu";
 import { globalState } from "../State";
-// import Fade from "react-reveal/Fade";
+import Fade from "react-reveal/Fade";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import Text from "../stylecomponents/Text";
 
@@ -14,53 +19,55 @@ export const ContentMenu = () => {
 	const isShowingMore = revealValues(values).isShowingMore;
 	return (
 		<MenuContainer isMobile={isMobile(ww, wh)} isShowingMore={isShowingMore}>
-			{!isShowingMore ? (
-				<Tabs defaultIndex={0}>
-					<TabList>
-						<Tab>
-							<Text format m>
-								Work
-							</Text>
-						</Tab>
-						<Tab>
-							<Text format m>
-								About
-							</Text>
-						</Tab>
-						<Tab>
-							<Text format m>
-								Customize
-							</Text>
-						</Tab>
-						<Tab>
-							<Text format m>
-								Contact
-							</Text>
-						</Tab>
-					</TabList>
-					<TabPanel>
+			<Fade up duration={revealSecs}>
+				{!isShowingMore ? (
+					<Tabs defaultIndex={-1}>
+						<TabList>
+							<Tab>
+								<Text format extrabold m>
+									Work
+								</Text>
+							</Tab>
+							<Tab>
+								<Text format extrabold m>
+									About
+								</Text>
+							</Tab>
+							<Tab>
+								<Text format extrabold m>
+									Customize
+								</Text>
+							</Tab>
+							<Tab>
+								<Text format extrabold m>
+									Contact
+								</Text>
+							</Tab>
+						</TabList>
+
+						<TabPanel>
+							<SubMenu isShowingMore={isShowingMore} category='work' />
+						</TabPanel>
+						<TabPanel>
+							<SubMenu isShowingMore={isShowingMore} category='about' />
+						</TabPanel>
+						<TabPanel>
+							<SubMenu isShowingMore={isShowingMore} category='customize' />
+						</TabPanel>
+						<TabPanel>
+							<SubMenu isShowingMore={isShowingMore} category='contact' />
+						</TabPanel>
+					</Tabs>
+				) : (
+					<Fragment>
 						<SubMenu isShowingMore={isShowingMore} category='work' />
-					</TabPanel>
-					<TabPanel>
 						<SubMenu isShowingMore={isShowingMore} category='about' />
-					</TabPanel>
-					<TabPanel>
 						<SubMenu isShowingMore={isShowingMore} category='customize' />
-					</TabPanel>
-					<TabPanel>
 						<SubMenu isShowingMore={isShowingMore} category='contact' />
-					</TabPanel>
-				</Tabs>
-			) : (
-				<Fragment>
-					<SubMenu isShowingMore={isShowingMore} category='work' />
-					<SubMenu isShowingMore={isShowingMore} category='about' />
-					<SubMenu isShowingMore={isShowingMore} category='customize' />
-					<SubMenu isShowingMore={isShowingMore} category='contact' />
-					<div className='offset' />
-				</Fragment>
-			)}
-			{/* <nav className='menu'>
+						<div className='offset' />
+					</Fragment>
+				)}
+				{/* <nav className='menu'>
 				<ul className='menu__list'>
 					<Fade
 						cascade
@@ -84,6 +91,7 @@ export const ContentMenu = () => {
 					</Fade>
 				</ul>
 			</nav> */}
+			</Fade>
 		</MenuContainer>
 	);
 };

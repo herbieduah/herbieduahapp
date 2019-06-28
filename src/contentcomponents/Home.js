@@ -13,7 +13,7 @@ const HomePage = ({ contentProps }) => {
 		<Fragment>
 			<ContentShow header={header} />
 			<ContentShow less>
-				<Text m>
+				<Text>
 					There is an app for everything, in the future, I believe there is
 					going to be an app for everyone. I am Herbie Duah, and this is my app.
 				</Text>

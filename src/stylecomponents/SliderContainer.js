@@ -3,7 +3,8 @@ import {
 	mobile,
 	absoluteOverlay,
 	fontColor,
-	mainTransition
+	mainTransition,
+	bgColor
 } from "./StyleHelpers";
 import { Gradients, pulseRing } from "./Animations";
 import { rgba } from "polished";
@@ -16,7 +17,7 @@ export const SliderContainer = styled.div`
 	position: absolute;
 	outline: none;
 	overflow: hidden;
-	user-select: text;
+	user-select: none;
 	${props =>
 		props.direction === "vertical"
 			? `flex-direction: row;
@@ -34,22 +35,12 @@ export const SliderContainer = styled.div`
 		&__resizer {
 			/* background: #000; */
 			/* opacity: 0.2; */
-			z-index: 1;
+			z-index: 3;
 			display: flex;
 			align-items: center;
-			/* -moz-box-sizing: border-box;
-		-webkit-box-sizing: border-box;
-		box-sizing: border-box;
-		-moz-background-clip: padding;
-		-webkit-background-clip: padding;
-		background-clip: padding-box; */
+			user-select: none;
+			position: relative;
 		}
-
-		&__resizer:hover {
-			/* -webkit-transition: all 2s ease;
-		transition: all 2s ease; */
-		}
-
 		&__resizer.horizontal {
 			height: ${sliderDesktopWidth}px;
 			/* margin: -5px 0; */
@@ -95,7 +86,8 @@ export const SliderContainer = styled.div`
 
 export const SliderController = styled.div`
 	.slider {
-		user-select: none; 
+			
+			user-select: none; 
 			&__triangle{
 				${mainTransition}
 				width: 0;

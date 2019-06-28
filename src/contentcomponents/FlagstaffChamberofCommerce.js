@@ -12,7 +12,7 @@ const FCCPage = () => {
 		<Fragment>
 			<ContentShow header={header} />
 			<ContentShow less>
-				<Text m>Graphic Design for Flagstaff Chamber of Commerce.</Text>
+				<Text>Graphic Design for Flagstaff Chamber of Commerce.</Text>
 			</ContentShow>
 			<ContentShow more>
 				<ComingSoon header={header} />

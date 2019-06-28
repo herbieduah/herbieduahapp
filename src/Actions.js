@@ -1,6 +1,6 @@
 import React, { Fragment, useContext } from "react";
 import { globalState } from "./State";
-import { revealValues, useWindowResize, isMobile } from "./helpers";
+import { revealValues, useWindowResize, isMobile, revealSecs } from "./helpers";
 import Fade from "react-reveal/Fade";
 import Text from "./stylecomponents/Text";
 import { browserName, mobileModel } from "react-device-detect";
@@ -9,10 +9,11 @@ import {
 	NavBarContainer
 	// FullScreeningBGContainer
 } from "./stylecomponents/Base";
-// import ClickNHold from "react-click-n-hold";
+import ClickNHold from "react-click-n-hold";
 import HerbieDuahLogo from "./media/icons/HerbieDuahLogo.svg";
 import Media from "./maincomponents/Media";
 import ContentContainer from "./stylecomponents/ContentContainer";
+import { NavLink } from "react-router-dom";
 
 export const DragInstructions = props => {
 	const {
@@ -90,8 +91,10 @@ export const FullScreenButton = () => {
 export const NavBar = () => {
 	return (
 		<NavBarContainer>
-			<Media type='icon' className='hdapp__logo svg' src={HerbieDuahLogo} />
-			<FullScreenButton />
+			<NavLink to='/'>
+				<Media type='icon' className='hdapp__logo svg' src={HerbieDuahLogo} />
+			</NavLink>
+			{/* <FullScreenButton /> */}
 		</NavBarContainer>
 	);
 };
@@ -101,7 +104,7 @@ export const RerenderStopper = props => {
 
 export const SubMenuWrapper = props => {
 	return (
-		<Fade cascade up duration={1500}>
+		<Fade cascade up duration={revealSecs}>
 			<ul className='subMenu'>{props.children}</ul>
 		</Fade>
 	);
@@ -149,36 +152,54 @@ export const ContentWrapper = props => {
 			className='content'
 			isShowingMore={isShowingMore}
 			isMobile={isContentMobile}
-			dragging={dragging}>
+			dragging={dragging}
+			showLess={showLess}>
 			{children}
+			{showMore && isContentMobile ? (
+				<div className='content__slider-bg' />
+			) : null}
 		</ContentContainer>
 	);
 };
 
 export const ContentShow = props => {
-	const { contentWidth: cw, contentHeight: ch, fullScreen } = useContext(
-		globalState
-	);
+	const {
+		contentWidth: cw,
+		contentHeight: ch,
+		fullScreen,
+		setFullScreening,
+		setFullscreen
+	} = useContext(globalState);
 	const { width: ww, height: wh } = useWindowResize();
 	const values = { ww, wh, cw, ch };
 	const isShowingMore = revealValues(values).isShowingMore;
 	const isContentMobile = isMobile(ww, wh);
 	const showMore = fullScreen ? true : isShowingMore;
 	const showLess = fullScreen ? false : !isShowingMore;
+	// const values = { ww, wh, cw, ch };
+	// const isShowingMore = revealValues(values).isShowingMore;
+	const onFullScreening = () => {
+		setFullScreening(true);
+		console.log("Holding!!!");
+	};
+	const onFullScreenTimeOutEnded = () => {
+		setFullScreening(false);
+		fullScreen ? setFullscreen(false) : setFullscreen(true);
+		console.log("Hold timeout ended!");
+	};
+	const onFullScreenEnded = () => {
+		setFullScreening(false);
+		console.log("Hold ended!");
+	};
 
 	if (props.less) {
 		return (
 			<Fragment>
-				{showLess ? (
-					<aside className='content__less'>
-						<Fade
-							bottom={isContentMobile}
-							left={!isContentMobile}
-							duration={1500}>
-							{props.children}
-						</Fade>
-					</aside>
-				) : null}
+				<aside className='content__less'>
+					<Fade up duration={revealSecs}>
+						{props.children}
+					</Fade>
+				</aside>
 			</Fragment>
 		);
 	}
@@ -191,12 +212,20 @@ export const ContentShow = props => {
 	}
 	if (props.header) {
 		return (
-			<Fade top={isContentMobile} right={!isContentMobile} duration={800}>
-				<header className='content__header container'>
-					<Text h1 xl={showMore} s={showLess} bold>
-						{props.header}
-					</Text>
-				</header>
+			<Fade up duration={revealSecs}>
+				<ClickNHold
+					time={2} // Time to keep pressing. Default is 2
+					isMobile={isMobile(ww, wh)}
+					fullScreen={fullScreen}
+					onStart={onFullScreening}
+					onClickNHold={onFullScreenTimeOutEnded} //Timeout callback
+					onEnd={onFullScreenEnded}>
+					<header className='content__header container'>
+						<Text h1 xl={showMore} s={showLess} extrabold>
+							{props.header}
+						</Text>
+					</header>
+				</ClickNHold>
 			</Fade>
 		);
 	}
@@ -204,8 +233,41 @@ export const ContentShow = props => {
 
 export const ComingSoon = props => {
 	return (
-		<Fade up duration={1500}>
+		<Fade up duration={revealSecs}>
 			<Text m>Working on the content for {props.header}.</Text>
 		</Fade>
+	);
+};
+
+export const HeaderFullScreen = props => {
+	const { fullScreen, setFullScreening, setFullscreen } = useContext(
+		globalState
+	);
+	const { width: ww, height: wh } = useWindowResize();
+	// const values = { ww, wh, cw, ch };
+	// const isShowingMore = revealValues(values).isShowingMore;
+	const onFullScreening = () => {
+		setFullScreening(true);
+		console.log("Holding!!!");
+	};
+	const onFullScreenTimeOutEnded = () => {
+		setFullScreening(false);
+		fullScreen ? setFullscreen(false) : setFullscreen(true);
+		console.log("Hold timeout ended!");
+	};
+	const onFullScreenEnded = () => {
+		setFullScreening(false);
+		console.log("Hold ended!");
+	};
+	return (
+		<ClickNHold
+			time={2} // Time to keep pressing. Default is 2
+			isMobile={isMobile(ww, wh)}
+			fullScreen={fullScreen}
+			onStart={onFullScreening}
+			onClickNHold={onFullScreenTimeOutEnded} //Timeout callback
+			onEnd={onFullScreenEnded}>
+			{props.children}
+		</ClickNHold>
 	);
 };

@@ -20,8 +20,8 @@ import {
 } from "./StyleHelpers";
 
 const baseStyle = css`
-	font-family: "nimbus-sans", -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu,
-		Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
+	font-family: "commuters-sans", -apple-system, BlinkMacSystemFont, Oxygen,
+		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
 	margin-bottom: ${props => props.nomargin && "0"};
 	font-weight: 400;
 	margin-top: 0;
@@ -45,14 +45,15 @@ const baseStyle = css`
 		font-size: ${props => {
 			if (props.xs) return "0.7em";
 			if (props.s) return "0.8em";
-			if (props.m) return "1.1em";
-			if (props.l) return "1.45em";
+			if (props.m) return "1em";
+			if (props.l) return "1.35em";
 			if (props.xl) return "1.7em";
 			return ".85em";
 		}};
 	}
 	font-weight: ${props => {
 		if (props.bold) return "700";
+		if (props.extrabold) return "900";
 		return "400";
 	}};
 	font-style: ${props => {
@@ -73,7 +74,7 @@ baseStyle.defaultProps = {
 
 const HeadingOne = styled.h1`
 	${baseStyle};
-	font-family: "nimbus-sans-extended", -apple-system, BlinkMacSystemFont, Oxygen,
+	font-family: "commuters-sans", -apple-system, BlinkMacSystemFont, Oxygen,
 		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
 
 	/* @media (max-width: 480px) {
@@ -85,8 +86,6 @@ const HeadingTwo = styled.h2`
 	line-height: 1;
 	line-height: 1.25;
 	${baseStyle};
-	font-family: "nimbus-sans-extended", -apple-system, BlinkMacSystemFont, Oxygen,
-		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
 `;
 
 const HeadingThree = styled.h3`
@@ -106,8 +105,6 @@ const Paragraph = styled.p`
 `;
 const TextFormatter = styled.span`
 	${baseStyle};
-	font-family: "nimbus-sans-extended", -apple-system, BlinkMacSystemFont, Oxygen,
-		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
 `;
 const Button = styled.button`
 	${baseStyle};
@@ -153,7 +150,6 @@ const MenuLink = styled(NavLink)`
 	${mainTransition}
 	line-height: 1;
 	border: 0;
-	padding: 0.4rem 0.7rem;
 	background: none;
 	color: ${navColor};
 	cursor: pointer;
@@ -163,7 +159,6 @@ const MenuLink = styled(NavLink)`
 	}
 	/* border: 1px solid ${navBorderColor}; */
 	white-space: nowrap;
-	border-radius: .3rem;
 	/* ${mobile} {
 		white-space: nowrap;
 		overflow: hidden;
@@ -176,12 +171,12 @@ const MenuLink = styled(NavLink)`
 	&:hover,
 	&:focus {
 		color: ${navColorActive};
+		transform: scale(1.2);
 	}
 	&.active {
 		color: ${navColorActive};
-		font-weight: bold;
-		/* border: 1px solid ${navColor};
-		background-color: ${navColor}; */
+		border-bottom: 2px solid ${navColorActive};
+		transform: scale(1.2);
 	}
 	text-decoration: none;
 	margin-bottom: 3%;

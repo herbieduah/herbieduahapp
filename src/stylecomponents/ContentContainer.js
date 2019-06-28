@@ -1,16 +1,21 @@
 import styled from "styled-components";
-import { mobile, hideScrollbar } from "./StyleHelpers";
+import {
+	mobile,
+	hideScrollbar,
+	mainTransition,
+	mobileSliderOnTop
+} from "./StyleHelpers";
+import { sliderMobileWidth } from "../helpers";
 
 export const ContentContainer = styled.article`
-	height: 100%;
 	width: 100%;
+	${props => (props.isMobile ? mobileSliderOnTop : ``)};
+	
 	${hideScrollbar};
 	overflow: auto;
-	margin-top: 4rem;
-	padding: 0rem 2rem;
+	padding: 4rem 2rem;
 	${mobile} {
-		margin-top: 4rem;
-		padding: 0 1.5rem;
+		padding: 4rem 1rem;
 	}
 	.LazyLoad {
 		width: 100%;
@@ -19,20 +24,41 @@ export const ContentContainer = styled.article`
 		width: 100%;
 	}
 	.content {
+		&__header {
+			h1 {
+				${mainTransition}
+				user-select: none;
+				cursor: pointer;
+			}
+		}
 		&__less {
 			width: 100%;
 			max-width: 580px;
-			transition: all 0.25s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+			
 			p {
-				font-family: "commuters-sans", -apple-system, BlinkMacSystemFont, Oxygen,
-					Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+				${mainTransition}
+				font-size: ${props => (props.showLess ? `1.2em` : `.9em`)};
+			}
+			${mobile} {
+				font-size: ${props => (props.showLess ? `1em` : `.8em`)};
 			}
 		}
 		&__more {
-			transition: all 0.25s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+			${mainTransition}
 			padding: 0 2rem;
 			margin-bottom: ${props => (props.isMobile ? `70vh` : `0`)};
 		}
+		/* &__slider-bg {
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				left: 0;
+				width: 100%;
+				opacity: .8;
+				height: ${sliderMobileWidth}px;
+				z-index: 3;
+				background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
+		} */
 	}
 `;
 

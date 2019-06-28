@@ -12,7 +12,7 @@ const AboutMePage = () => {
 		<Fragment>
 			<ContentShow header={header} />
 			<ContentShow less>
-				<Text m>Yo what's up it's yo boy!</Text>
+				<Text>Yo what's up it's yo boy!</Text>
 			</ContentShow>
 			<ContentShow more>
 				<ComingSoon header={header} />

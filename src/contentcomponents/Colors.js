@@ -12,7 +12,7 @@ const ColorsPage = () => {
 		<Fragment>
 			<ContentShow header={header} />
 			<ContentShow less>
-				<Text m>Here you can change colors and stuff</Text>
+				<Text>Here you can change colors and stuff</Text>
 			</ContentShow>
 			<ContentShow more>
 				<ComingSoon header={header} />
