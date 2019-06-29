@@ -27,6 +27,7 @@
     "react-svg": "^10.0.4",
     "react-tabs": "^3.0.0",
     "react-transition-group": "^4.1.0",
+    "rodal": "^1.6.3",
     "styled-components": "^4.2.0"
   },
   "scripts": {

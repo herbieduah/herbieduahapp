@@ -24,48 +24,56 @@ export const ContentMenu = () => {
 					<Tabs defaultIndex={-1}>
 						<TabList>
 							<Tab>
-								<Text format extrabold m>
+								<Text format m>
 									Work
 								</Text>
 							</Tab>
 							<Tab>
-								<Text format extrabold m>
+								<Text format m>
 									About
 								</Text>
 							</Tab>
 							<Tab>
-								<Text format extrabold m>
+								<Text format m>
 									Customize
 								</Text>
 							</Tab>
 							<Tab>
-								<Text format extrabold m>
+								<Text format m>
 									Contact
 								</Text>
 							</Tab>
 						</TabList>
 
 						<TabPanel>
-							<SubMenu isShowingMore={isShowingMore} category='work' />
+							<nav>
+								<SubMenu isShowingMore={isShowingMore} category='work' />
+							</nav>
 						</TabPanel>
 						<TabPanel>
-							<SubMenu isShowingMore={isShowingMore} category='about' />
+							<nav>
+								<SubMenu isShowingMore={isShowingMore} category='about' />
+							</nav>
 						</TabPanel>
 						<TabPanel>
-							<SubMenu isShowingMore={isShowingMore} category='customize' />
+							<nav>
+								<SubMenu isShowingMore={isShowingMore} category='customize' />
+							</nav>
 						</TabPanel>
 						<TabPanel>
-							<SubMenu isShowingMore={isShowingMore} category='contact' />
+							<nav>
+								<SubMenu isShowingMore={isShowingMore} category='contact' />
+							</nav>
 						</TabPanel>
 					</Tabs>
 				) : (
-					<Fragment>
+					<nav className='menu__more'>
 						<SubMenu isShowingMore={isShowingMore} category='work' />
 						<SubMenu isShowingMore={isShowingMore} category='about' />
 						<SubMenu isShowingMore={isShowingMore} category='customize' />
 						<SubMenu isShowingMore={isShowingMore} category='contact' />
 						<div className='offset' />
-					</Fragment>
+					</nav>
 				)}
 				{/* <nav className='menu'>
 				<ul className='menu__list'>

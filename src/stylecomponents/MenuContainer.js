@@ -8,44 +8,51 @@ import {
 } from "./StyleHelpers";
 import { rgba } from "polished";
 import { sliderMobileWidth } from "../helpers";
+
 // ${props =>
-// 		props.isShowingMore
-// 			? `box-shadow: 0 -3px 15px rgba(0,0,0,0.16), 0 -3px 15px rgba(0,0,0,0.23);`
-// 			: ``};
+// 	props.isShowingMore ? `border-top: 1px solid rgba(255,255,255,.5)` : ``};
 const MenuContainer = styled.aside`
   
 	${hideScrollbar};
 	width: 100%;
-	max-width: 500px;
+	/* max-width: 500px; */
 	height: auto;
 	overflow: auto;
 	margin-left: auto;
 	padding: 4rem 2rem;
 	display: flex;
-	position: absolute;
 	width: 100%;
+	${mainTransition}
 	${props => (props.isMobile ? mobileSliderOnTop : ``)};
-	${props =>
-		props.isShowingMore ? `border-top: 1px solid rgba(255,255,255,.5)` : ``};
+	
 	${mobile} {
 		max-width: none;	
+		${props =>
+			props.isShowingMore
+				? `box-shadow: 0 -3px 15px rgba(0,0,0,0.10), 0 -3px 15px rgba(0,0,0,0.18);`
+				: ``};
 		width: 100%;
 		${props => (props.isShowingMore ? `display: block;` : `display: flex;`)};
-	padding: 0rem 1rem;
+		padding: 0 0 0 1rem;
+	.react-tabs {
+		padding: 1rem 0;
+		&__tab-list {
+			padding: 0 1rem 0 0;
+		}
+	}
+	.menu__more {
+		padding: 1rem 0;
+	}
+		
 		/* height: 120px; */
 	}
 	
 	
+	
 	justify-content: right;
 	flex-direction: column;
-	/* ${props => (props.isShowingMore ? `overflow-x: auto` : `overflow: auto`)}; */
-	${props => {
-		if (props.isMobile) {
-			return `
-				margin-top: ${props.isShowingMore ? `0rem;` : `1rem;`}
-				`;
-		}
-	}}
+	/* ${props => (props.isMobile ? `margin-top: 1rem` : ``)}; */
+	
 	
 
 	
@@ -69,47 +76,45 @@ const MenuContainer = styled.aside`
 
 			
 	.subMenu {
-			/* ${props => (props.isMobile ? `margin: 0 0rem;` : `margin: 0 1.2rem;`)}; */
 			width: 100%;
-
+			flex-direction: column;
+			${props => (props.isMobile ? `text-align: left;` : `text-align: right;`)};
 			${mobile} {
-				/* width: 132%;
-				height: 7rem;
-				${props => (props.isShowingMore ? `width 367%` : `width: 132%;`)};
-				${props => (props.isShowingMore ? `height: 5rem;` : `height: 7rem;`)};
-				overflow-x: auto; */
+				overflow-x: auto;
+				${hideScrollbar};
+				flex-direction: row;
+			
 			}
 			display: flex;
-			flex-wrap: wrap;
 			margin: 0;
 			${props => (props.isMobile ? `margin-left: auto;` : `margin-right: auto;`)};
-			justify-content: ${props => (props.isMobile ? `flex-start;` : `flex-end;`)};
+			/* justify-content: ${props =>
+				props.isMobile ? `flex-start;` : `flex-end;`}; */
 		&__text {
 			${mainTransition}
 			text-align: ${props => (props.isMobile ? `left;` : `right;`)};
-			margin-bottom: 1%;
-			margin-top: 5%;
+			margin-bottom: 0;
+			margin-top: 2rem;
 			width: 100%;
 			opacity: 0.7;
 			display: block;
+			${mobile}{
+				margin-top: 0;
+			}
 		}
 		
 		&__item {
-			
-			margin: .4rem 0;
-			
-			${props => (props.isMobile ? `margin-right: 1rem;` : `margin-left: 1rem;`)};
-			/* border-bottom: 1px solid ${props => rgba(props.theme.fontColor, 0.5)}; */
-			/* ${props => {
-				if (props.isMobile) {
-					return `
-					margin: 0.5rem 0;
-					margin-left: 0;
-					margin-right: .7rem;
-					
-					`;
+			margin: .4rem 0 1rem;
+			${mobile} {
+				margin: .2rem 0 .5rem;
+				${props =>
+					props.isShowingMore ? `margin: 0 0 .5rem` : `margin: .2rem 0 .5rem`};
+				margin-right: 1.5rem
+				a {
+					white-space: nowrap;
 				}
-			}} */
+			}
+			${props => (props.isMobile ? `margin-right: 1rem;` : `margin-left: 1rem;`)};
 		}
 	}
 	
@@ -133,7 +138,7 @@ const MenuContainer = styled.aside`
 
 	.offset {
 		width:100%;
-		margin-top: ${props => (props.isMobile ? `5vh;` : `40vh;`)};
+		margin-top: ${props => (props.isMobile ? `20vh;` : `40vh;`)};
 	}
 
 `;

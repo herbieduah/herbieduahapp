@@ -142,7 +142,7 @@ export const HerbieDuahApp = styled.div`
 	
 	.hdapp {
 		&__pane {
-			overflow: ${props => props.isMobile ? `initial`: `hidden`};
+			overflow: ${props => (props.isMobile ? `initial` : `hidden`)};
 		}
 		
 		&__logo {
@@ -206,25 +206,12 @@ export const HerbieDuahApp = styled.div`
 	}}
 	
 
-	.container {
-		max-width: 740px;
-		width: 100%;
-		margin: 0 auto;
-	}
-	.container-full {
-		width: 100%;
-	}
-	.col-50 {
-		width: 50%;
-		${mobile} {
-			width: 100%;
-		}
-	}
 
 		.react-tabs {
   		-webkit-tap-highlight-color: transparent;
   		width: 100%;
 		overflow:hidden;
+		
 
 
 		&__tab-list {
@@ -232,11 +219,14 @@ export const HerbieDuahApp = styled.div`
 			margin: 0 0 10px;
 			padding: 0; */
 			display:flex;
+			margin-top: 0;
 			/* margin: 0 0 3%; */
 			justify-content: space-between;
 			width: 100%;
-			margin-right: auto;
+			margin-left: auto;
+			${props => (props.isMobile ? `margin-left: right;` : `margin-left: auto`)};
 			overflow-x: auto;
+			max-width: 500px;
 			${hideScrollbar}
 			${mobile}{
 				
@@ -255,11 +245,15 @@ export const HerbieDuahApp = styled.div`
 			${mainTransition}
 			cursor: pointer;
 			margin: 0 1rem;
+			
 			&:last-child {
 				margin-right: 0;
 			}
+			&:first-child {
+				margin-left: 0;
+			}
 			${mobile} {
-				margin: 0 .3rem;
+				margin: 0 .4rem;
 			}
 			span {
 				color: ${props => rgba(props.theme.fontColor, 0.6)};

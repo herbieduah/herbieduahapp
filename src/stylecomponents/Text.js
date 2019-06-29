@@ -146,19 +146,19 @@ const HyperLink = styled.a`
 
 const MenuLink = styled(NavLink)`
 	${baseStyle};
-	font-weight: 400;
+	font-weight: 700;
 	${mainTransition}
-	line-height: 1;
+	line-height: 1.2;
 	border: 0;
 	background: none;
 	color: ${navColor};
 	cursor: pointer;
-	font-size: 1.2em;
+	font-size: 2em;
 	${mobile}{
-		font-size:1em;
+		font-size:1.7em;
 	}
 	/* border: 1px solid ${navBorderColor}; */
-	white-space: nowrap;
+	/* white-space: nowrap; */
 	/* ${mobile} {
 		white-space: nowrap;
 		overflow: hidden;
@@ -171,15 +171,11 @@ const MenuLink = styled(NavLink)`
 	&:hover,
 	&:focus {
 		color: ${navColorActive};
-		transform: scale(1.2);
 	}
 	&.active {
 		color: ${navColorActive};
-		border-bottom: 2px solid ${navColorActive};
-		transform: scale(1.2);
 	}
 	text-decoration: none;
-	margin-bottom: 3%;
 `;
 
 const Text = ({

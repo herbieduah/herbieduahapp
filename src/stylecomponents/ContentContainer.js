@@ -9,6 +9,7 @@ import { sliderMobileWidth } from "../helpers";
 
 export const ContentContainer = styled.article`
 	width: 100%;
+	height: 100%;
 	${props => (props.isMobile ? mobileSliderOnTop : ``)};
 	
 	${hideScrollbar};
@@ -23,6 +24,20 @@ export const ContentContainer = styled.article`
 	img {
 		width: 100%;
 	}
+	.container {
+			max-width: 740px;
+			width: 100%;
+			${props => (props.fullScreen ? `margin 0 auto` : ``)};
+		}
+	.container-full {
+		width: 100%;
+	}
+	.col-50 {
+		width: 50%;
+		${mobile} {
+			width: 100%;
+		}
+	}
 	.content {
 		&__header {
 			h1 {
@@ -33,14 +48,16 @@ export const ContentContainer = styled.article`
 		}
 		&__less {
 			width: 100%;
-			max-width: 580px;
-			
+			max-width:  ${props => (props.showLess ? `580px` : `740px`)};
+			${props => (props.fullScreen ? `margin 0 auto` : ``)};
+			/* margin: 0 auto; */
 			p {
 				${mainTransition}
 				font-size: ${props => (props.showLess ? `1.2em` : `.9em`)};
+				margin: 0 auto;
 			}
 			${mobile} {
-				font-size: ${props => (props.showLess ? `1em` : `.8em`)};
+				font-size: ${props => (props.showLess ? `1em` : `.85em`)};
 			}
 		}
 		&__more {
@@ -48,6 +65,7 @@ export const ContentContainer = styled.article`
 			padding: 0 2rem;
 			margin-bottom: ${props => (props.isMobile ? `70vh` : `0`)};
 		}
+		
 		/* &__slider-bg {
 				position: absolute;
 				bottom: 0;

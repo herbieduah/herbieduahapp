@@ -11,7 +11,7 @@ export const SubMenu = props => {
 			return (
 				<div>
 					{isShowingMore ? (
-						<Text format m extrabold className='subMenu__text'>
+						<Text format m className='subMenu__text'>
 							Work
 						</Text>
 					) : null}
@@ -54,7 +54,7 @@ export const SubMenu = props => {
 			return (
 				<div>
 					{isShowingMore ? (
-						<Text format m extrabold className='subMenu__text'>
+						<Text format m className='subMenu__text'>
 							About
 						</Text>
 					) : null}
@@ -96,7 +96,7 @@ export const SubMenu = props => {
 			return (
 				<div>
 					{isShowingMore ? (
-						<Text format m extrabold className='subMenu__text'>
+						<Text format m className='subMenu__text'>
 							Customize
 						</Text>
 					) : null}
@@ -123,7 +123,7 @@ export const SubMenu = props => {
 			return (
 				<div>
 					{isShowingMore ? (
-						<Text format m extrabold className='subMenu__text'>
+						<Text format m className='subMenu__text'>
 							Contact
 						</Text>
 					) : null}

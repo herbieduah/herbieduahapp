@@ -153,11 +153,13 @@ export const ContentWrapper = props => {
 			isShowingMore={isShowingMore}
 			isMobile={isContentMobile}
 			dragging={dragging}
-			showLess={showLess}>
+			fullScreen={fullScreen}
+			showLess={showLess}
+			showMore={showMore}>
 			{children}
-			{showMore && isContentMobile ? (
+			{/* {showMore && isContentMobile ? (
 				<div className='content__slider-bg' />
-			) : null}
+			) : null} */}
 		</ContentContainer>
 	);
 };
@@ -206,7 +208,7 @@ export const ContentShow = props => {
 	if (props.more) {
 		return (
 			<Fragment>
-				{showMore ? <article>{props.children}</article> : null}
+				{showMore ? <Fragment>{props.children}</Fragment> : null}
 			</Fragment>
 		);
 	}
