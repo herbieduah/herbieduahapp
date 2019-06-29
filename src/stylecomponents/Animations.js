@@ -57,3 +57,52 @@ export const fullScreenFill = keyframes`
    background-size: 100% 100%;
   }
 `;
+
+export const fadeEnter = keyframes`
+   from {
+			opacity: 0;
+	}
+`;
+export const fadeLeave = keyframes`
+  to {
+			opacity: 0;
+	}
+`;
+
+export const zoomEnter = keyframes`
+  from {
+			transform: scale3d(0.3, 0.3, 0.3);
+		}
+`;
+
+export const zoomLeave = keyframes`
+  to {
+			transform: scale3d(0.3, 0.3, 0.3);
+	}
+`;
+
+export const slideDownEnter = keyframes`
+  from {
+			transform: translate3d(0, -100px, 0);
+		}
+`;
+
+export const slideDownLeave = keyframes`
+  to {
+			transform: translate3d(0, -100px, 0);
+		}
+`;
+
+export const slideLeftEnter = keyframes`
+  from {
+			-webkit-transform: translate3d(-150px, 0, 0);
+			transform: translate3d(-150px, 0, 0);
+		}
+`;
+
+export const slideLeftLeave = keyframes`
+  to {
+			-webkit-transform: translate3d(-150px, 0, 0);
+			transform: translate3d(-150px, 0, 0);
+		}
+`;

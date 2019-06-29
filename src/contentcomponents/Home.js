@@ -1,14 +1,16 @@
 /* eslint-disable no-unused-expressions */
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import Text from "../stylecomponents/Text";
 import Media from "../maincomponents/Media";
 import Fade from "react-reveal/Fade";
 import { ContentShow } from "../Actions";
+import Modal from "../maincomponents/Modal";
 
 const header = "HerbieDuah.app";
 
 const HomePage = ({ contentProps }) => {
 	// const { browserName, mobileModel } = contentProps;
+
 	return (
 		<Fragment>
 			<ContentShow header={header} />

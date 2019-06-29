@@ -1,4 +1,4 @@
-import React, { Fragment, useContext } from "react";
+import React, { Fragment, useContext, useState } from "react";
 import { globalState } from "./State";
 import { revealValues, useWindowResize, isMobile, revealSecs } from "./helpers";
 import Fade from "react-reveal/Fade";
@@ -14,6 +14,7 @@ import HerbieDuahLogo from "./media/icons/HerbieDuahLogo.svg";
 import Media from "./maincomponents/Media";
 import ContentContainer from "./stylecomponents/ContentContainer";
 import { NavLink } from "react-router-dom";
+import Modal from "./maincomponents/Modal";
 
 export const DragInstructions = props => {
 	const {
@@ -89,12 +90,26 @@ export const FullScreenButton = () => {
 // };
 
 export const NavBar = () => {
+	const [visible, setVisible] = useState(false);
+	const { width: ww, height: wh } = useWindowResize();
+	const hide = () => {
+		setVisible(false);
+	};
+	const show = () => {
+		setVisible(true);
+	};
 	return (
 		<NavBarContainer>
 			<NavLink to='/'>
 				<Media type='icon' className='hdapp__logo svg' src={HerbieDuahLogo} />
 			</NavLink>
 			{/* <FullScreenButton /> */}
+			<button onClick={show}>show</button>
+			<Modal visible={visible} onClose={hide} width={ww} height={wh}>
+				<div>
+					<p>Testing!!!!</p>
+				</div>
+			</Modal>
 		</NavBarContainer>
 	);
 };
