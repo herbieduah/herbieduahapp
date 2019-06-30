@@ -35,6 +35,11 @@ scrollbar-width: none;
 &::-webkit-scrollbar { 
 	display: none; 
 }`;
+export const slightBoxShadowAbove =
+	"box-shadow: 0 -3px 15px rgba(0,0,0,0.10), 0 -3px 15px rgba(0,0,0,0.18);";
+export const slightBoxShadowBelow =
+	"box-shadow: 0 3px 15px rgba(0,0,0,0.10), 0 3px 15px rgba(0,0,0,0.18);";
+
 export const absoluteOverlay =
 	"position: absolute;width: 100%;height: 100%;top: 0;left: 0;right: 0;bottom: 0;";
 
@@ -46,8 +51,13 @@ bottom: 0;
 z-index: 1;
 position: absolute;
 `;
+
 export const fiftyPixels = "3.47vw";
-export const iconWidth = "2.5rem";
+export const navBarSize = "2.5rem";
+export const contentMenuPadding = `padding: ${navBarSize};
+${mobile} {
+	padding: ${navBarSize} 0 ${navBarSize}   ${navBarSize};
+}`;
 export const showMore = props => props.appValues.isShowingMore;
 export const appGradient = props => rgba(props.theme.bgColor, 0.0);
 export const appColor = props => props.theme.bgColor;
@@ -56,7 +66,7 @@ export const bgColor = props => props.theme.bgColor;
 export const bgColorGradient = props => props.theme.bgColorGradient;
 export const fontColor = props => props.theme.fontColor;
 export const mainTransition = "transition: all .2s ease-in-out;";
-export const buttonColor = props => rgba(props.theme.fontColor, 0.75);
+export const buttonColor = props => props.theme.fontColor;
 // lighten(0.17, props.theme.fontColor);
 export const buttonColorHover = props => props.theme.fontColor;
 export const buttonColorActive = props => props.theme.fontColor;

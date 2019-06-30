@@ -3,11 +3,8 @@ import { ThemeProvider } from "styled-components";
 import { globalState } from "./State";
 import SplitPane from "./maincomponents/Revealer/SplitPane";
 // import SliderLine from "./maincomponents/Revealer/SliderLine";
-import {
-	GlobalStyle,
-	HerbieDuahApp,
-	FullScreeningBG
-} from "./stylecomponents/Base";
+import { GlobalStyle, FullScreeningBG } from "./stylecomponents/Base";
+import { HerbieDuahApp } from "./stylecomponents/AppStyles";
 import ContentMenu from "./maincomponents/ContentMenu";
 import Content from "./maincomponents/Content";
 // import { DragInstructions } from "./Actions";
@@ -22,7 +19,6 @@ import {
 	defaultPaneSize,
 	isMobile
 } from "./helpers";
-import { NavBar } from "./Actions";
 
 export const App = () => {
 	const {
@@ -51,7 +47,7 @@ export const App = () => {
 				isMobile={isMobile(ww, wh)}
 				dragging={dragging}>
 				<GlobalStyle />
-				<NavBar />
+
 				{/* <SliderLine /> */}
 				{/* <DragInstructions /> */}
 				{fullScreen ? <Content /> : null}

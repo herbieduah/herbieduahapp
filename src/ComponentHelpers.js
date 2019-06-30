@@ -15,6 +15,9 @@ import Media from "./maincomponents/Media";
 import ContentContainer from "./stylecomponents/ContentContainer";
 import { NavLink } from "react-router-dom";
 import Modal from "./maincomponents/Modal";
+import { Tab, TabList, TabPanel } from "react-tabs";
+import { ReactTabs } from "./stylecomponents/Base";
+import SubMenu from "./maincomponents/SubMenu";
 
 export const DragInstructions = props => {
 	const {
@@ -91,7 +94,8 @@ export const FullScreenButton = () => {
 
 export const NavBar = () => {
 	const [visible, setVisible] = useState(false);
-	const { width: ww, height: wh } = useWindowResize();
+	const { fullScreen } = useContext(globalState);
+	const { height: wh } = useWindowResize();
 	const hide = () => {
 		setVisible(false);
 	};
@@ -99,17 +103,45 @@ export const NavBar = () => {
 		setVisible(true);
 	};
 	return (
-		<NavBarContainer>
-			<NavLink to='/'>
-				<Media type='icon' className='hdapp__logo svg' src={HerbieDuahLogo} />
-			</NavLink>
-			{/* <FullScreenButton /> */}
-			<button onClick={show}>show</button>
-			<Modal visible={visible} onClose={hide} width={ww} height={wh}>
-				<div>
-					<p>Testing!!!!</p>
-				</div>
-			</Modal>
+		<NavBarContainer className='navbar' fullScreen={fullScreen} appHeight={wh}>
+			<div className='navbar__logo-menu'>
+				<Text m button>
+					Menu
+				</Text>
+				<NavLink to='/'>
+					<Media
+						type='icon'
+						className='navbar__logo svg'
+						src={HerbieDuahLogo}
+					/>
+				</NavLink>
+			</div>
+
+			<Text m button>
+				Maximize
+			</Text>
+			<Text m button>
+				Contact
+			</Text>
+			{/*
+			{fullScreen ? (
+				<Fragment>
+					<Fade up duration={revealSecs}>
+						<Text
+							button
+							m
+							className='navbar__menu-text'
+							onClick={visible ? hide : show}>
+							{visible ? `Back` : `Menu`}
+						</Text>
+					</Fade>
+					<Modal visible={visible} onClose={hide} animation={`fade`}>
+						<section className='navbar__fullScreen'>
+							<MenuTabs showCategory={false} />
+						</section>
+					</Modal>
+				</Fragment>
+			) : null} */}
 		</NavBarContainer>
 	);
 };
@@ -122,6 +154,56 @@ export const SubMenuWrapper = props => {
 		<Fade cascade up duration={revealSecs}>
 			<ul className='subMenu'>{props.children}</ul>
 		</Fade>
+	);
+};
+
+export const MenuTabs = props => {
+	const showCategory = props.showCategory;
+	return (
+		<ReactTabs defaultIndex={-1}>
+			<TabList>
+				<Tab>
+					<Text format bold m>
+						Work
+					</Text>
+				</Tab>
+				<Tab>
+					<Text format bold m>
+						About
+					</Text>
+				</Tab>
+				<Tab>
+					<Text format bold m>
+						Customize
+					</Text>
+				</Tab>
+				<Tab>
+					<Text format bold m>
+						Contact
+					</Text>
+				</Tab>
+			</TabList>
+			<TabPanel>
+				<nav>
+					<SubMenu showCategory={showCategory} category='work' />
+				</nav>
+			</TabPanel>
+			<TabPanel>
+				<nav>
+					<SubMenu showCategory={showCategory} category='about' />
+				</nav>
+			</TabPanel>
+			<TabPanel>
+				<nav>
+					<SubMenu showCategory={showCategory} category='customize' />
+				</nav>
+			</TabPanel>
+			<TabPanel>
+				<nav>
+					<SubMenu showCategory={showCategory} category='contact' />
+				</nav>
+			</TabPanel>
+		</ReactTabs>
 	);
 };
 

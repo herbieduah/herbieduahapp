@@ -3,7 +3,9 @@ import {
 	mobile,
 	hideScrollbar,
 	mainTransition,
-	mobileSliderOnTop
+	mobileSliderOnTop,
+	navBarSize,
+	contentMenuPadding
 } from "./StyleHelpers";
 import { sliderMobileWidth } from "../helpers";
 
@@ -14,10 +16,7 @@ export const ContentContainer = styled.article`
 	
 	${hideScrollbar};
 	overflow: auto;
-	padding: 4rem 2rem;
-	${mobile} {
-		padding: 4rem 1rem;
-	}
+	${contentMenuPadding}
 	.LazyLoad {
 		width: 100%;
 	}
@@ -27,8 +26,8 @@ export const ContentContainer = styled.article`
 	.container {
 			max-width: 740px;
 			width: 100%;
-			${props => (props.fullScreen ? `margin 0 auto` : ``)};
-		}
+			${props => (props.fullScreen ? `margin: 0 auto` : ``)};
+	}
 	.container-full {
 		width: 100%;
 	}
@@ -47,8 +46,8 @@ export const ContentContainer = styled.article`
 			}
 		}
 		&__less {
-			width: 100%;
-			max-width:  ${props => (props.showLess ? `580px` : `740px`)};
+			width:  ${props => (props.showLess ? `500px` : `100%`)};
+			max-width:  ${props => (props.showLess ? `500px` : `740px`)};
 			${props => (props.fullScreen ? `margin 0 auto` : ``)};
 			/* margin: 0 auto; */
 			p {
@@ -58,6 +57,7 @@ export const ContentContainer = styled.article`
 			}
 			${mobile} {
 				font-size: ${props => (props.showLess ? `1em` : `.85em`)};
+				width: 100%;
 			}
 		}
 		&__more {

@@ -2,20 +2,20 @@ import React from "react";
 import Text from "../stylecomponents/Text";
 // import Fade from "react-reveal/Fade";
 // import { CSSTransition } from "react-transition-group";
-import { SubMenuWrapper } from "../Actions";
+import { SubMenuWrapper } from "../ComponentHelpers";
 export const SubMenu = props => {
 	let category = props.category;
-	const isShowingMore = props.isShowingMore;
+	const showCategory = props.showCategory;
 	switch (category) {
 		case "work":
 			return (
 				<div>
-					{isShowingMore ? (
-						<Text format m className='subMenu__text'>
+					{showCategory ? (
+						<Text format m bold className='subMenu__text'>
 							Work
 						</Text>
 					) : null}
-					<SubMenuWrapper isShowingMore={isShowingMore}>
+					<SubMenuWrapper showCategory={showCategory}>
 						<li className='subMenu__item'>
 							<Text menuLink to='/'>
 								HerbieDuah.app
@@ -53,12 +53,12 @@ export const SubMenu = props => {
 		case "about":
 			return (
 				<div>
-					{isShowingMore ? (
-						<Text format m className='subMenu__text'>
+					{showCategory ? (
+						<Text format m bold className='subMenu__text'>
 							About
 						</Text>
 					) : null}
-					<SubMenuWrapper isShowingMore={isShowingMore}>
+					<SubMenuWrapper showCategory={showCategory}>
 						<li className='subMenu__item'>
 							<Text menuLink to='/AboutMe'>
 								About Me
@@ -95,12 +95,12 @@ export const SubMenu = props => {
 		case "customize":
 			return (
 				<div>
-					{isShowingMore ? (
-						<Text format m className='subMenu__text'>
+					{showCategory ? (
+						<Text format m bold className='subMenu__text'>
 							Customize
 						</Text>
 					) : null}
-					<SubMenuWrapper isShowingMore={isShowingMore}>
+					<SubMenuWrapper showCategory={showCategory}>
 						<li className='subMenu__item'>
 							<Text menuLink to='/colors'>
 								Colors
@@ -122,12 +122,12 @@ export const SubMenu = props => {
 		case "contact":
 			return (
 				<div>
-					{isShowingMore ? (
-						<Text format m className='subMenu__text'>
+					{showCategory ? (
+						<Text format m bold className='subMenu__text'>
 							Contact
 						</Text>
 					) : null}
-					<SubMenuWrapper isShowingMore={isShowingMore}>
+					<SubMenuWrapper showCategory={showCategory}>
 						<li className='subMenu__item'>
 							<Text menuLink to='/twitter'>
 								Twitter

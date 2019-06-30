@@ -22,6 +22,7 @@ import {
 	Ugg,
 	UXvsHX
 } from "../Pages";
+import { NavBar } from "../ComponentHelpers";
 // import { AnimatedSwitch } from "react-router-transition";
 
 export const Content = () => {
@@ -51,6 +52,7 @@ export const Content = () => {
 				atLeave={{ opacity: 0 }}
 				atActive={{ opacity: 1 }}
 				className='switch-wrapper'> */}
+			<NavBar />
 			<Switch>
 				<Route path='/AboutMe' component={AboutMe} />
 				<Route path='/BedzinExhibit' component={BedzinExhibit} />

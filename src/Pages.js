@@ -17,7 +17,7 @@ import TonePage from "./contentcomponents/Tone";
 import TwitterPage from "./contentcomponents/Twitter";
 import UggPage from "./contentcomponents/Ugg";
 import UXvsHXPage from "./contentcomponents/UXvsHX";
-import { ContentWrapper } from "./Actions";
+import { ContentWrapper } from "./ComponentHelpers";
 
 export const AboutMe = () => (
 	<ContentWrapper>

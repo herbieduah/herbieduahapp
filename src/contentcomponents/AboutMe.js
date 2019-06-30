@@ -3,7 +3,7 @@ import React, { Fragment } from "react";
 import Text from "../stylecomponents/Text";
 // import Media from "../maincomponents/Media";
 // import Fade from "react-reveal/Fade";
-import { ContentShow, ComingSoon } from "../Actions";
+import { ContentShow, ComingSoon } from "../ComponentHelpers";
 
 const header = "About Me";
 

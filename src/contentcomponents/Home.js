@@ -3,7 +3,7 @@ import React, { Fragment, useState } from "react";
 import Text from "../stylecomponents/Text";
 import Media from "../maincomponents/Media";
 import Fade from "react-reveal/Fade";
-import { ContentShow } from "../Actions";
+import { ContentShow } from "../ComponentHelpers";
 import Modal from "../maincomponents/Modal";
 
 const header = "HerbieDuah.app";

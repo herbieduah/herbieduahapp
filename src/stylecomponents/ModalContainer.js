@@ -5,18 +5,22 @@ import {
 	zoomEnter,
 	zoomLeave,
 	slideDownEnter,
-	slideLeftEnter
+	slideLeftEnter,
+	slideDownLeave,
+	slideLeftLeave
 } from "./Animations";
+import { absoluteOverlay, bgColorGradient } from "./StyleHelpers";
 
 export const ModalContainer = styled.div`
-	animation-duration: ${props => props.duration}ms;
+	${absoluteOverlay};
+	z-index: 50;
 	.modal,
 	.modal-mask {
 		top: 0;
 		left: 0;
 		width: 100%;
 		height: 100%;
-		z-index: 100;
+		z-index: 50;
 	}
 
 	.modal {
@@ -37,13 +41,14 @@ export const ModalContainer = styled.div`
 		right: 0;
 		bottom: 0;
 		/* margin: auto; */
-		z-index: 101;
+		z-index: 50;
 		padding: 15px;
 		background: #fff;
 		border-radius: 3px;
 		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 		width: 100vw;
 		height: 100vh;
+		background-color: black;
 	}
 
 	.modal-dialog:focus {
@@ -113,7 +118,7 @@ export const ModalContainer = styled.div`
 	}
 
 	.modal-slideDown-leave {
-		animation: ${slideDownEnter} both;
+		animation: ${slideDownLeave} both;
 	}
 
 	/* -- slideLeft -- */
@@ -123,7 +128,7 @@ export const ModalContainer = styled.div`
 	}
 
 	.modal-slideLeft-leave {
-		animation: ${slideLeftEnter} both;
+		animation: ${slideLeftLeave} both;
 	}
 
 	/* -- slideRight -- */

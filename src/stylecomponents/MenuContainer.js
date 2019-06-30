@@ -4,7 +4,10 @@ import {
 	fontColor,
 	mainTransition,
 	hideScrollbar,
-	mobileSliderOnTop
+	mobileSliderOnTop,
+	slightBoxShadowAbove,
+	navBarSize,
+	contentMenuPadding
 } from "./StyleHelpers";
 import { rgba } from "polished";
 import { sliderMobileWidth } from "../helpers";
@@ -22,30 +25,29 @@ const MenuContainer = styled.aside`
 	padding: 4rem 2rem;
 	display: flex;
 	width: 100%;
+	${contentMenuPadding}
 	${mainTransition}
 	${props => (props.isMobile ? mobileSliderOnTop : ``)};
-	
-	${mobile} {
-		max-width: none;	
-		${props =>
-			props.isShowingMore
-				? `box-shadow: 0 -3px 15px rgba(0,0,0,0.10), 0 -3px 15px rgba(0,0,0,0.18);`
-				: ``};
-		width: 100%;
-		${props => (props.isShowingMore ? `display: block;` : `display: flex;`)};
-		padding: 0 0 0 1rem;
 	.react-tabs {
 		padding: 1rem 0;
+		
 		&__tab-list {
-			padding: 0 1rem 0 0;
+			${props => (props.isMobile ? `margin-right: auto;` : `margin-left: auto`)};
+			max-width: 500px;
+			padding-right: 1rem;
+			${props => (props.isMobile ? `margin-top: 4rem;` : ``)};
 		}
+	}
+	
+	${mobile} {
+		${props => (props.isShowingMore ? slightBoxShadowAbove : ``)};
+		width: 100%;
+		${props => (props.isShowingMore ? `display: block;` : `display: flex;`)};
 	}
 	.menu__more {
 		padding: 1rem 0;
 	}
 		
-		/* height: 120px; */
-	}
 	
 	
 	

@@ -2,20 +2,19 @@ import styled, { createGlobalStyle } from "styled-components";
 import { rgba } from "polished";
 import ClickNHold from "react-click-n-hold";
 import { fullScreenFill } from "./Animations";
+import { Tabs } from "react-tabs";
 import {
 	mobile,
 	absoluteOverlay,
 	overlayBackground,
-	bgColor,
-	fontColor,
 	mainTransition,
-	bgColorGradient,
-	hideScrollbar
-
-	// fluidTypeInfo,
-	// ctaColor,
-	// iconWidth
+	fontColor,
+	bgColor,
+	hideScrollbar,
+	navBarSize,
+	slightBoxShadowBelow
 } from "./StyleHelpers";
+import { Colors } from "../Pages";
 // import { iconFullScreen } from "../helpers";
 
 export const GlobalStyle = createGlobalStyle`
@@ -95,21 +94,172 @@ export const FullScreenContainer = styled(ClickNHold)`
 `;
 
 export const NavBarContainer = styled.div`
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	width: 100%;
-	display: flex;
+	position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 10000;
+    display: flex;
+    overflow: hidden;
+    /* margin-top: auto;
+    margin-left: auto; */
+    flex-direction: row-reverse;
+	transform-origin: left top;
+	align-items:center;
+  	transform: rotate(-90deg) translateX(-100%);  
+ 	width: ${props => props.appHeight}px;
+	height: ${navBarSize};
 	justify-content: space-between;
-	z-index: 10;
-	padding: 0 2rem;
-	align-items: center;
-	height: 4rem;
 	user-select: none;
-	${mobile} {
-		padding: 0 1rem;
-		height: 4rem;
+	button {
+		border-bottom: 0;
+		margin:0 ${navBarSize};
+		${mainTransition}
+		color: ${props => rgba(props.theme.fontColor, 0.6)};
+		&:hover,&:focus {
+			border-bottom: 0;
+			 transform: scale(1.1);
+			color: ${props => props.theme.fontColor};
+		}
+	}
+	.react-reveal {
+			z-index: 100;
+			position: relative;
+	}
+	.navbar {
+		&__menu-text, &__logo {
+			position:relative;
+			z-index: 100;
+		}
+		&__logo-menu{
+			display: flex;
+		}
+			
+		&__menu-text {
+			margin: 0;
+			display: flex;
+			${mainTransition}
+			&:hover {
+				transform: scale(1.1);
+			}
+		}
+
+		&__fullScreen{
+			max-width: 740px;
+			width: 100%;
+			margin: 0 auto;
+			padding-top: 4rem;
+			${hideScrollbar}
+			overflow: auto;
+			.react-tabs {
+				&__tab-list {
+					padding:0;
+				}
+			}
+			.subMenu {
+				padding: 0;
+				&__item {
+					margin-bottom: 1.5rem;
+				}
+			}
+		}
+		
+		
+		&__logo {
+			/* margin: 0 ${navBarSize}; */
+			.inner-rect, .half-circle {
+				${mainTransition}
+				fill: ${bgColor};
+				
+			}
+			.outer-rect {
+				${mainTransition}
+				fill: ${fontColor};
+			}
+			svg {
+				${mainTransition}
+				border: none;
+				width: ${navBarSize};
+				
+				${mainTransition}
+			&:hover,&:focus {
+				transform: scale(1.1);
+				.outer-rect {
+				fill-opacity: 1;
+			}
+			}
+		}
+
+		
+		
+	}
+}
+	
+`;
+
+export const ReactTabs = styled(Tabs)`
+	-webkit-tap-highlight-color: transparent;
+	width: 100%;
+	overflow: hidden;
+
+	.react-tabs {
+		&__tab-list {
+			display: flex;
+			margin-top: 0;
+			justify-content: space-between;
+			width: 100%;
+			overflow-x: auto;
+			${hideScrollbar}
+			${mobile} {
+			}
+		}
+
+		&__tab {
+			${mainTransition}
+			cursor: pointer;
+			margin: 0 1rem;
+
+			&:last-child {
+				margin-right: 0;
+			}
+			&:first-child {
+				margin-left: 0;
+			}
+			${mobile} {
+				margin: 0 0.4rem;
+			}
+			span {
+				color: ${props => rgba(props.theme.fontColor, 0.6)};
+				&:focus,
+				&:hover {
+					color: ${fontColor};
+				}
+			}
+
+			&--selected {
+				border-bottom: 2px solid ${fontColor};
+				span {
+					font-weight: bold;
+					color: ${fontColor};
+					&:hover {
+						color: ${fontColor};
+					}
+				}
+			}
+			&--disabled {
+				cursor: default;
+			}
+		}
+
+		&__tab-panel {
+			display: none;
+			width: 100%;
+			overflow: hidden;
+			&--selected {
+				display: block;
+				width: 100%;
+				overflow: hidden;
+			}
+		}
 	}
 `;
 
@@ -122,175 +272,4 @@ export const FullScreeningBG = styled.div`
 	animation: ${fullScreenFill} 2s forwards;
 	pointer-events: none;
 	z-index: 30;
-`;
-
-export const HerbieDuahApp = styled.div`
-	/* height: 90%; */
-	@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portait) {
-		.hdapp {
-			display: none;
-		}
-	}
-	
-	width: 100%;
-	content: "";
-	overflow: hidden;
-	background-image: ${bgColorGradient};
-	position: relative;
-	margin: 0;
-	height: 100%;
-	
-	.hdapp {
-		&__pane {
-			overflow: ${props => (props.isMobile ? `initial` : `hidden`)};
-		}
-		
-		&__logo {
-			.inner-rect, .half-circle {
-				${mainTransition}
-				fill: ${bgColor};
-				
-			}
-			.outer-rect {
-				${mainTransition}
-				fill: ${fontColor};
-				fill-opacity: .8;
-			}
-			svg {
-				width: 2.5rem;
-				${mainTransition}
-				border: none;
-				
-				/* margin-left: 2rem; */
-				${mobile} {
-					/* margin-left: 1.5rem; */
-					width: 2.5rem;
-				}
-			${mainTransition}
-			&:hover,&:focus {
-				transform: scale(1.1);
-				z-index: 10;
-				.outer-rect {
-				fill-opacity: 1;
-			}
-			}
-			}
-			svg:hover,svg:focus  {
-				/* .inner-rect, .half-circle {
-					fill: ${fontColor};
-				}
-				.outer-rect {
-					fill: ${bgColor};
-				}
-				border: 1px solid ${fontColor}; */
-				
-			}
-		
-		}
-	}
-	button {
-			font-family: 'commuters-sans',-apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-		}
-	${props => {
-		if (props.isMobile) {
-			return `
-				position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		overflow: hidden;
-		border-bottom: 3px solid red;
-		z-index: 10;`;
-		}
-	}}
-	
-
-
-		.react-tabs {
-  		-webkit-tap-highlight-color: transparent;
-  		width: 100%;
-		overflow:hidden;
-		
-
-
-		&__tab-list {
-			/* border-bottom: 1px solid #aaa;
-			margin: 0 0 10px;
-			padding: 0; */
-			display:flex;
-			margin-top: 0;
-			/* margin: 0 0 3%; */
-			justify-content: space-between;
-			width: 100%;
-			margin-left: auto;
-			${props => (props.isMobile ? `margin-left: right;` : `margin-left: auto`)};
-			overflow-x: auto;
-			max-width: 500px;
-			${hideScrollbar}
-			${mobile}{
-				
-			}
-			
-		}
-
-		&__tab {
-			/* display: inline-block;
-			border: 1px solid transparent;
-			border-bottom: none;
-			bottom: -1px;
-			position: relative;
-			list-style: none;
-			padding: 6px 12px; */
-			${mainTransition}
-			cursor: pointer;
-			margin: 0 1rem;
-			
-			&:last-child {
-				margin-right: 0;
-			}
-			&:first-child {
-				margin-left: 0;
-			}
-			${mobile} {
-				margin: 0 .4rem;
-			}
-			span {
-				color: ${props => rgba(props.theme.fontColor, 0.6)};
-				&:focus,&:hover {
-					color: ${fontColor};
-				}
-			}
-			
-			&--selected {
-				border-bottom: 2px solid ${fontColor};
-				span {
-					font-weight: bold;
-					color: ${fontColor};
-					&:hover {
-						color: ${fontColor};
-					};
-				}
-				}
-			&--disabled {
-			/* color: GrayText; */
-			cursor: default;
-			}
-
-			
-			
-		}
-
-		&__tab-panel {
-			display: none;
-			width: 100%;
-			overflow:hidden;
-			&--selected {
-			display: block;
-			width: 100%;
-			overflow:hidden;
-			}
-		}
-}
-	
 `;

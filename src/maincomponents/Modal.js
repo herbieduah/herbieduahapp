@@ -13,9 +13,7 @@ const Dialog = props => {
 			? props.enterAnimation
 			: props.leaveAnimation) || props.animation;
 	const className = `modal-dialog modal-${animation}-${props.animationType}`;
-	const CloseButton = props.showCloseButton ? (
-		<span className='modal-close' onClick={props.onClose} />
-	) : null;
+	// const CloseButton = props.showCloseButton ? <span className="modal-close" onClick={props.onClose} /> : null;
 	const { duration, customStyles } = props;
 	const style = {
 		animationDuration: duration + "ms",
@@ -26,7 +24,6 @@ const Dialog = props => {
 	return (
 		<div style={mergedStyles} className={className}>
 			{props.children}
-			{CloseButton}
 		</div>
 	);
 };
@@ -86,6 +83,7 @@ class Modal extends React.Component {
 			this.enter();
 		} else if (this.props.visible && !nextProps.visible) {
 			this.leave();
+			this.disappear();
 		}
 	}
 
@@ -97,7 +95,17 @@ class Modal extends React.Component {
 	}
 
 	leave() {
-		this.setState(isIE9 ? { isShow: false } : { animationType: "leave" });
+		this.setState({
+			animationType: "leave"
+		});
+	}
+	disappear() {
+		setTimeout(
+			function() {
+				this.setState({ isShow: false });
+			}.bind(this),
+			this.props.duration
+		);
 	}
 
 	onKeyUp = event => {
@@ -122,13 +130,13 @@ class Modal extends React.Component {
 	render() {
 		const { props, state } = this;
 		const onClick = props.closeMaskOnClick ? props.onClose : null;
-		const mask = props.showMask ? (
-			<div
-				className='modal-mask'
-				style={props.customMaskStyles}
-				onClick={onClick}
-			/>
-		) : null;
+		// const mask = props.showMask ? (
+		// 	<div
+		// 		className='modal-mask'
+		// 		style={props.customMaskStyles}
+		// 		onClick={onClick}
+		// 	/>
+		// ) : null;
 		const style = {
 			display: state.isShow ? "" : "none",
 			animationDuration: props.duration + "ms",
@@ -138,9 +146,6 @@ class Modal extends React.Component {
 		return (
 			<ModalContainer
 				style={style}
-				duration={this.props.duration}
-				width={this.props.width}
-				height={this.props.height}
 				className={
 					"modal modal-fade-" + state.animationType + " " + props.className
 				}
@@ -150,7 +155,7 @@ class Modal extends React.Component {
 					this.el = el;
 				}}
 				onKeyUp={this.onKeyUp}>
-				{mask}
+				{/* {mask} */}
 				<Dialog {...props} animationType={state.animationType}>
 					{props.children}
 				</Dialog>
