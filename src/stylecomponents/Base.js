@@ -113,6 +113,7 @@ export const NavBarContainer = styled.div`
 	button {
 		border-bottom: 0;
 		margin:0 ${navBarSize};
+		height: 100%;
 		${mainTransition}
 		color: ${props => rgba(props.theme.fontColor, 0.6)};
 		&:hover,&:focus {
@@ -121,10 +122,10 @@ export const NavBarContainer = styled.div`
 			color: ${props => props.theme.fontColor};
 		}
 	}
-	.react-reveal {
+	/* .react-reveal {
 			z-index: 100;
 			position: relative;
-	}
+	} */
 	.navbar {
 		&__menu-text, &__logo {
 			position:relative;
@@ -134,14 +135,14 @@ export const NavBarContainer = styled.div`
 			display: flex;
 		}
 			
-		&__menu-text {
+		/* &__menu-text {
 			margin: 0;
 			display: flex;
 			${mainTransition}
 			&:hover {
 				transform: scale(1.1);
 			}
-		}
+		} */
 
 		&__fullScreen{
 			max-width: 740px;

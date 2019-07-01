@@ -98,7 +98,7 @@ export const SliderController = styled.div`
 				&.desktop {
 					border-top-width: 6px;
 					border-bottom-width: 6px;
-					margin: ${props => (props.dragging ? "0 60px" : "0 12px")};
+					margin: ${props => (props.dragging ? "0 50px" : "0 9px")};
 				}
 				&.mobile{
 					border-left-width: 6px;

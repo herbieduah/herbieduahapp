@@ -9,7 +9,12 @@ import {
 	slideDownLeave,
 	slideLeftLeave
 } from "./Animations";
-import { absoluteOverlay, bgColorGradient } from "./StyleHelpers";
+import {
+	absoluteOverlay,
+	bgColorGradient,
+	navBarSize,
+	hideScrollbar
+} from "./StyleHelpers";
 
 export const ModalContainer = styled.div`
 	${absoluteOverlay};
@@ -49,6 +54,25 @@ export const ModalContainer = styled.div`
 		width: 100vw;
 		height: 100vh;
 		background-color: black;
+	}
+	.modal__container {
+		max-width: 740px;
+		width: 100%;
+		margin: 0 auto;
+		padding-top: ${navBarSize};
+		${hideScrollbar}
+		overflow: auto;
+		.react-tabs {
+			&__tab-list {
+				padding: 0;
+			}
+		}
+		.subMenu {
+			padding: 0;
+			&__item {
+				margin-bottom: 1.5rem;
+			}
+		}
 	}
 
 	.modal-dialog:focus {

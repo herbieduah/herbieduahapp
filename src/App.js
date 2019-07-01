@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { ThemeProvider } from "styled-components";
 import { globalState } from "./State";
 import SplitPane from "./maincomponents/Revealer/SplitPane";
@@ -10,6 +10,8 @@ import Content from "./maincomponents/Content";
 // import { DragInstructions } from "./Actions";
 import { defaultAppTheme } from "./stylecomponents/Theme";
 import SliderLine from "./maincomponents/Revealer/SliderLine";
+import { FullScreenModal } from "./ComponentHelpers";
+import { withRouter } from "react-router-dom";
 
 import {
 	getCurrentTheme,
@@ -47,7 +49,7 @@ export const App = () => {
 				isMobile={isMobile(ww, wh)}
 				dragging={dragging}>
 				<GlobalStyle />
-
+				<FullScreenModal />
 				{/* <SliderLine /> */}
 				{/* <DragInstructions /> */}
 				{fullScreen ? <Content /> : null}
@@ -55,6 +57,7 @@ export const App = () => {
 				{/* {fullScreen ? <h1>Here I am</h1> : null} */}
 				{dragging ? <SliderLine /> : null}
 				{fullScreening ? <FullScreeningBG /> : null}
+
 				{/* <FullScreeningBG /> */}
 				{!fullScreen ? (
 					<SplitPane
@@ -79,3 +82,4 @@ export const App = () => {
 		</ThemeProvider>
 	);
 };
+export default App;

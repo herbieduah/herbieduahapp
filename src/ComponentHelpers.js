@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useState } from "react";
+import React, { Fragment, useContext } from "react";
 import { globalState } from "./State";
 import { revealValues, useWindowResize, isMobile, revealSecs } from "./helpers";
 import Fade from "react-reveal/Fade";
@@ -50,64 +50,48 @@ export const DragInstructions = props => {
 	);
 };
 
-export const FullScreenButton = () => {
-	const { fullScreen, setFullScreening, setFullscreen } = useContext(
-		globalState
-	);
-	const { width: ww, height: wh } = useWindowResize();
-	// const values = { ww, wh, cw, ch };
-	// const isShowingMore = revealValues(values).isShowingMore;
-	const onFullScreening = () => {
-		setFullScreening(true);
-		console.log("Holding!!!");
-	};
-	const onFullScreenTimeOutEnded = () => {
-		setFullScreening(false);
-		fullScreen ? setFullscreen(false) : setFullscreen(true);
-		console.log("Hold timeout ended!");
-	};
-	const onFullScreenEnded = () => {
-		setFullScreening(false);
-		console.log("Hold ended!");
-	};
-	return (
-		<FullScreenContainer
-			time={2} // Time to keep pressing. Default is 2
-			isMobile={isMobile(ww, wh)}
-			fullScreen={fullScreen}
-			onStart={onFullScreening}
-			onClickNHold={onFullScreenTimeOutEnded} //Timeout callback
-			onEnd={onFullScreenEnded}>
-			{/* <span className="fullScreen"> */}
-			<span className='fullScreen'>
-				<span className='fullScreen__dot' />
-			</span>
-			{/* </span> */}
-		</FullScreenContainer>
-	);
-};
-
-// export const FullScreeningBackground = props => {
-// 	const { fullScreening } = useGlobalState();
-// 	return <FullScreeningBGContainer/>;
-// };
-
 export const NavBar = () => {
-	const [visible, setVisible] = useState(false);
-	const { fullScreen } = useContext(globalState);
-	const { height: wh } = useWindowResize();
-	const hide = () => {
-		setVisible(false);
+	const {
+		contentWidth: cw,
+		contentHeight: ch,
+		setFullscreen,
+		fullScreen,
+		setModalVisible,
+		modalVisible,
+		setModalContent
+	} = useContext(globalState);
+	const { height: wh, width: ww } = useWindowResize();
+	const values = { ww, wh, cw, ch };
+	const isShowingMore = revealValues(values).isShowingMore;
+	const showLess = fullScreen ? false : !isShowingMore;
+
+	const setMenuModalContent = () => {
+		setModalContent("menu");
+		modalVisible ? setModalVisible(false) : setModalVisible(true);
 	};
-	const show = () => {
-		setVisible(true);
+	const setMaximizeAndMinimize = () => {
+		fullScreen ? setFullscreen(false) : setFullscreen(true);
 	};
 	return (
-		<NavBarContainer className='navbar' fullScreen={fullScreen} appHeight={wh}>
+		<NavBarContainer
+			className='navbar'
+			fullScreen={fullScreen}
+			hideMaximize={showLess}
+			appHeight={wh}>
 			<div className='navbar__logo-menu'>
-				<Text m button>
-					Menu
-				</Text>
+				{fullScreen ? (
+					<Fragment>
+						<Fade bottom duration={revealSecs}>
+							<Text
+								button
+								m
+								className='navbar__menu-text'
+								onClick={setMenuModalContent}>
+								{modalVisible ? `Back` : `Menu`}
+							</Text>
+						</Fade>
+					</Fragment>
+				) : null}
 				<NavLink to='/'>
 					<Media
 						type='icon'
@@ -116,10 +100,19 @@ export const NavBar = () => {
 					/>
 				</NavLink>
 			</div>
+			{!showLess ? (
+				<Fade bottom duration={revealSecs}>
+					<Text
+						m
+						button
+						className='navbar__maximize'
+						onClick={setMaximizeAndMinimize}
+						aria-hidden={showLess ? `true` : `false`}>
+						M{fullScreen ? `in` : `ax`}imize
+					</Text>
+				</Fade>
+			) : null}
 
-			<Text m button>
-				Maximize
-			</Text>
 			<Text m button>
 				Contact
 			</Text>
@@ -145,8 +138,34 @@ export const NavBar = () => {
 		</NavBarContainer>
 	);
 };
-export const RerenderStopper = props => {
-	return <div>{props.children}</div>;
+export const FullScreenModal = () => {
+	const { modalVisible, modalContent, setModalVisible } = useContext(
+		globalState
+	);
+
+	const hide = () => {
+		setModalVisible(false);
+	};
+	return (
+		<Modal visible={modalVisible} animation={`fade`} onClose={hide}>
+			<ThisValueEqualsState thisValue='menu' stateValue={modalContent}>
+				<section className='modal__container'>
+					<MenuTabs showCategory={false} />
+				</section>
+			</ThisValueEqualsState>
+		</Modal>
+	);
+};
+
+export const ThisValueEqualsState = props => {
+	const thisValue = props.thisValue;
+	const stateValue = props.stateValue;
+	const renderMe = thisValue === stateValue ? true : false;
+	return (
+		<Fragment>
+			{renderMe ? <Fragment>{props.children}</Fragment> : null}
+		</Fragment>
+	);
 };
 
 export const SubMenuWrapper = props => {
@@ -333,7 +352,9 @@ export const ContentShow = props => {
 export const ComingSoon = props => {
 	return (
 		<Fade up duration={revealSecs}>
-			<Text m>Working on the content for {props.header}.</Text>
+			<div className='container'>
+				<Text m>Working on the content for {props.header}.</Text>
+			</div>
 		</Fade>
 	);
 };

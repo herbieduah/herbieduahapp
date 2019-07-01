@@ -26,7 +26,8 @@ export const StateProvider = ({ children }) => {
 	const [dragging, setDragging] = useState(false);
 	const [fullScreening, setFullScreening] = useState(false);
 	const [fullScreen, setFullscreen] = useState(false);
-	const [poop, setPoop] = useState(false);
+	const [modalVisible, setModalVisible] = useState(false);
+	const [modalContent, setModalContent] = useState("");
 
 	// currentLeftTop: "LandscapePhotography",
 	//   currentTheme: "default",
@@ -59,8 +60,10 @@ export const StateProvider = ({ children }) => {
 		setFullscreen,
 		fullScreening,
 		setFullScreening,
-		poop,
-		setPoop
+		modalVisible,
+		setModalVisible,
+		modalContent,
+		setModalContent
 	};
 
 	// and we pass it down. Done!
