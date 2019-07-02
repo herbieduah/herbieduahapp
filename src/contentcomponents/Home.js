@@ -34,7 +34,7 @@ const HomePage = ({ contentProps }) => {
 					<ThisValueEqualsState thisValue='Mel' stateValue={whom}>
 						<Text xl>
 							Yo Mel, can't wait to be done with this shit so we can get REALLY
-							get to work on C${" "}
+							get to work on C$. I have it as a coming soon on my site.
 						</Text>
 					</ThisValueEqualsState>
 					<ThisValueEqualsState thisValue='George' stateValue={whom}>
