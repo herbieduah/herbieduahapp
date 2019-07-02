@@ -32,7 +32,10 @@ const HomePage = ({ contentProps }) => {
 						<Text xl>How di do McDimple face</Text>
 					</ThisValueEqualsState>
 					<ThisValueEqualsState thisValue='Mel' stateValue={whom}>
-						<Text xl>Yo Mel, can't wait to be working with you on C$ man!</Text>
+						<Text xl>
+							Yo Mel, can't wait to be done with this shit so we can get REALLY
+							get to work on C${" "}
+						</Text>
 					</ThisValueEqualsState>
 					<ThisValueEqualsState thisValue='George' stateValue={whom}>
 						<Text xl>You a clown George</Text>
@@ -48,6 +51,9 @@ const HomePage = ({ contentProps }) => {
 					</ThisValueEqualsState>
 					<ThisValueEqualsState thisValue='Mooney' stateValue={whom}>
 						<Text xl>If you're grinning, you're winning!</Text>
+					</ThisValueEqualsState>
+					<ThisValueEqualsState thisValue='Johnny' stateValue={whom}>
+						<Text xl>Johnny why you so ugly bro?</Text>
 					</ThisValueEqualsState>
 					<div className='container-full'>
 						<Fade up duration={1500}>

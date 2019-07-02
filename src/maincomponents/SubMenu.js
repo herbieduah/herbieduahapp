@@ -43,8 +43,8 @@ export const SubMenu = props => {
 							</Text>
 						</li>
 						<li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink to='/FlagstaffChamberofCommerce'>
-								Flagstaff Chamber of Commerce
+							<Text menuLink to='/CulturalSuicide'>
+								Cultural Suicide
 							</Text>
 						</li>
 
