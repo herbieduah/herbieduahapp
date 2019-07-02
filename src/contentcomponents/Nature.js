@@ -5,9 +5,9 @@ import Text from "../stylecomponents/Text";
 // import Fade from "react-reveal/Fade";
 import { ContentShow, ComingSoon } from "../ComponentHelpers";
 
-const header = "Twitter";
+const header = "Nature";
 
-const TwitterPage = () => {
+const NaturePage = () => {
 	return (
 		<Fragment>
 			<ContentShow header={header} />
@@ -21,4 +21,4 @@ const TwitterPage = () => {
 	);
 };
 
-export default TwitterPage;
+export default NaturePage;

@@ -5,14 +5,14 @@ import Text from "../stylecomponents/Text";
 // import Fade from "react-reveal/Fade";
 import { ContentShow, ComingSoon } from "../ComponentHelpers";
 
-const header = "LinkedIn";
+const header = "Modeling";
 
-const LinkedInPage = () => {
+const Modeling = () => {
 	return (
 		<Fragment>
 			<ContentShow header={header} />
 			<ContentShow less>
-				<ComingSoon header={header} />
+				<Text>Infront of the Camera</Text>
 			</ContentShow>
 			<ContentShow more>
 				<ComingSoon header={header} />
@@ -21,4 +21,4 @@ const LinkedInPage = () => {
 	);
 };
 
-export default LinkedInPage;
+export default Modeling;

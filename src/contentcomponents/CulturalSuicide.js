@@ -5,14 +5,14 @@ import Text from "../stylecomponents/Text";
 // import Fade from "react-reveal/Fade";
 import { ContentShow, ComingSoon } from "../ComponentHelpers";
 
-const header = "Flagstaff Chamber of Commerce";
+const header = "Cultural Suicide";
 
-const FCCPage = () => {
+const CulturalSuicide = () => {
 	return (
 		<Fragment>
 			<ContentShow header={header} />
 			<ContentShow less>
-				<Text>Graphic Design for Flagstaff Chamber of Commerce.</Text>
+				<Text>Cultural Suicide Web Page coming soon</Text>
 			</ContentShow>
 			<ContentShow more>
 				<ComingSoon header={header} />
@@ -21,4 +21,4 @@ const FCCPage = () => {
 	);
 };
 
-export default FCCPage;
+export default CulturalSuicide;

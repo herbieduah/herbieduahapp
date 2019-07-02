@@ -28,6 +28,7 @@ export const StateProvider = ({ children }) => {
 	const [fullScreen, setFullscreen] = useState(false);
 	const [modalVisible, setModalVisible] = useState(false);
 	const [modalContent, setModalContent] = useState("");
+	const [whom, setWhom] = useState("");
 
 	// currentLeftTop: "LandscapePhotography",
 	//   currentTheme: "default",
@@ -63,7 +64,9 @@ export const StateProvider = ({ children }) => {
 		modalVisible,
 		setModalVisible,
 		modalContent,
-		setModalContent
+		setModalContent,
+		whom,
+		setWhom
 	};
 
 	// and we pass it down. Done!

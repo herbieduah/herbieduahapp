@@ -198,7 +198,7 @@ export const MenuTabs = props => {
 				</Tab>
 				<Tab>
 					<Text format bold m>
-						Contact
+						Photography
 					</Text>
 				</Tab>
 			</TabList>
@@ -236,7 +236,8 @@ export const ContentWrapper = props => {
 		contentWidth: cw,
 		contentHeight: ch,
 		dragging,
-		fullScreen
+		fullScreen,
+		whom
 	} = useContext(globalState);
 	const { width: ww, height: wh } = useWindowResize();
 	const values = { ww, wh, cw, ch };
@@ -256,7 +257,8 @@ export const ContentWrapper = props => {
 		browserName,
 		mobileModel,
 		isContentMobile,
-		fullScreen
+		fullScreen,
+		whom
 	};
 	const children = React.Children.map(props.children, (child, index) => {
 		return React.cloneElement(child, {

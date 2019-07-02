@@ -26,7 +26,7 @@ export const ContentMenu = () => {
 						<SubMenu showCategory={isShowingMore} category='work' />
 						<SubMenu showCategory={isShowingMore} category='about' />
 						<SubMenu showCategory={isShowingMore} category='customize' />
-						<SubMenu showCategory={isShowingMore} category='contact' />
+						<SubMenu showCategory={isShowingMore} category='photography' />
 						<div className='offset' />
 					</nav>
 				)}

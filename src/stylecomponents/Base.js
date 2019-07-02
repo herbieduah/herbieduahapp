@@ -144,25 +144,6 @@ export const NavBarContainer = styled.div`
 			}
 		} */
 
-		&__fullScreen{
-			max-width: 740px;
-			width: 100%;
-			margin: 0 auto;
-			padding-top: 4rem;
-			${hideScrollbar}
-			overflow: auto;
-			.react-tabs {
-				&__tab-list {
-					padding:0;
-				}
-			}
-			.subMenu {
-				padding: 0;
-				&__item {
-					margin-bottom: 1.5rem;
-				}
-			}
-		}
 		
 		
 		&__logo {
@@ -226,7 +207,7 @@ export const ReactTabs = styled(Tabs)`
 				margin-left: 0;
 			}
 			${mobile} {
-				margin: 0 0.4rem;
+				margin: 0 0.5rem;
 			}
 			span {
 				color: ${props => rgba(props.theme.fontColor, 0.6)};

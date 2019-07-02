@@ -4,10 +4,11 @@ import {
 	fontColor,
 	mainTransition,
 	hideScrollbar,
-	mobileSliderOnTop,
+	mobileSliderOnBottom,
 	slightBoxShadowAbove,
 	navBarSize,
-	contentMenuPadding
+	contentMenuPadding,
+	stupidNegativeMargin
 } from "./StyleHelpers";
 import { rgba } from "polished";
 import { sliderMobileWidth } from "../helpers";
@@ -27,7 +28,7 @@ const MenuContainer = styled.aside`
 	width: 100%;
 	${contentMenuPadding}
 	${mainTransition}
-	${props => (props.isMobile ? mobileSliderOnTop : ``)};
+	${props => (props.isMobile ? mobileSliderOnBottom : ``)};
 	.react-tabs {
 		padding: 1rem 0;
 		
@@ -43,6 +44,7 @@ const MenuContainer = styled.aside`
 		${props => (props.isShowingMore ? slightBoxShadowAbove : ``)};
 		width: 100%;
 		${props => (props.isShowingMore ? `display: block;` : `display: flex;`)};
+		margin-top: ${stupidNegativeMargin};
 	}
 	.menu__more {
 		padding: 1rem 0;

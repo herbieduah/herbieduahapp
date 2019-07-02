@@ -6,19 +6,19 @@ import {
 	AboutMe,
 	BedzinExhibit,
 	Colors,
+	CulturalSuicide,
 	DiscountTire,
-	FlagstaffChamberofCommerce,
 	Home,
 	Inspiration,
-	Instagram,
-	LinkedIn,
+	Portrait,
+	IPhone,
 	NorthernArizonaUniversity,
 	Photography,
 	Resume,
 	SpecialThanks,
 	Theme,
 	Tone,
-	Twitter,
+	Nature,
 	Ugg,
 	UXvsHX
 } from "../Pages";
@@ -58,14 +58,11 @@ export const Content = () => {
 				<Route path='/BedzinExhibit' component={BedzinExhibit} />
 				<Route path='/Colors' component={Colors} />
 				<Route path='/DiscountTire' component={DiscountTire} />
-				<Route
-					path='/FlagstaffChamberofCommerce'
-					component={FlagstaffChamberofCommerce}
-				/>
+				<Route path='/CulturalSuicide' component={CulturalSuicide} />
 				<Route exact path='/' component={Home} />
 				<Route path='/Inspiration' component={Inspiration} />
-				<Route path='/Instagram' component={Instagram} />
-				<Route path='/LinkedIn' component={LinkedIn} />
+				<Route path='/Portrait' component={Portrait} />
+				<Route path='/iPhone' component={IPhone} />
 				<Route
 					path='/NorthernArizonaUniversity'
 					component={NorthernArizonaUniversity}
@@ -75,7 +72,7 @@ export const Content = () => {
 				<Route path='/SpecialThanks' component={SpecialThanks} />
 				<Route path='/Theme' component={Theme} />
 				<Route path='/Tone' component={Tone} />
-				<Route path='/Twitter' component={Twitter} />
+				<Route path='/Nature' component={Nature} />
 				<Route path='/Ugg' component={Ugg} />
 				<Route path='/UXvsHX' component={UXvsHX} />
 			</Switch>

@@ -13,7 +13,8 @@ import {
 	absoluteOverlay,
 	bgColorGradient,
 	navBarSize,
-	hideScrollbar
+	hideScrollbar,
+	contentMenuPadding
 } from "./StyleHelpers";
 
 export const ModalContainer = styled.div`
@@ -61,6 +62,7 @@ export const ModalContainer = styled.div`
 		margin: 0 auto;
 		padding-top: ${navBarSize};
 		${hideScrollbar}
+		${contentMenuPadding}
 		overflow: auto;
 		.react-tabs {
 			&__tab-list {

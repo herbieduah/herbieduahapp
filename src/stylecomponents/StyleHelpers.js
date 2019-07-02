@@ -39,11 +39,14 @@ export const slightBoxShadowAbove =
 	"box-shadow: 0 -3px 15px rgba(0,0,0,0.10), 0 -3px 15px rgba(0,0,0,0.18);";
 export const slightBoxShadowBelow =
 	"box-shadow: 0 3px 15px rgba(0,0,0,0.10), 0 3px 15px rgba(0,0,0,0.18);";
+export const slightCircleBoxShadow =
+	"box-shadow: 0 3px 15px rgba(0,0,0,0.10), 0 3px 15px rgba(0,0,0,0.18);";
 
 export const absoluteOverlay =
 	"position: absolute;width: 100%;height: 100%;top: 0;left: 0;right: 0;bottom: 0;";
 
-export const mobileSliderOnTop = `height: calc(100% + ${sliderMobileWidth}px);
+export const mobileSliderOnTop = `height: calc(100% + ${sliderMobileWidth /
+	2}px);
 top: 0;
 left: 0;
 right: 0;
@@ -51,6 +54,16 @@ bottom: 0;
 z-index: 1;
 position: absolute;
 `;
+export const mobileSliderOnBottom = `height: calc(100% + ${sliderMobileWidth}px);
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+z-index: 1;
+position: absolute;
+`;
+
+export const stupidNegativeMargin = `-${sliderMobileWidth / 2}px`;
 
 export const fiftyPixels = "3.47vw";
 export const navBarSize = "2.5rem";

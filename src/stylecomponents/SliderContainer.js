@@ -4,7 +4,8 @@ import {
 	absoluteOverlay,
 	fontColor,
 	mainTransition,
-	bgColor
+	bgColor,
+	slightCircleBoxShadow
 } from "./StyleHelpers";
 import { Gradients, pulseRing } from "./Animations";
 import { rgba } from "polished";
@@ -146,8 +147,11 @@ export const SliderController = styled.div`
 			${mainTransition}
 			z-index: 10;
 			background-color: ${props =>
-				props.dragging ? props.theme.fontColor : "transparent"};
+				props.dragging
+					? props.theme.fontColor
+					: rgba(props.theme.fontColor, 0.7)};
 			position: relative;
+			${slightCircleBoxShadow};
 			&:hover,
 			&:focus {
 				transform: scale(0.95);

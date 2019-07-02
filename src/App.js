@@ -12,6 +12,7 @@ import { defaultAppTheme } from "./stylecomponents/Theme";
 import SliderLine from "./maincomponents/Revealer/SliderLine";
 import { FullScreenModal } from "./ComponentHelpers";
 import { withRouter } from "react-router-dom";
+import queryString from "query-string";
 
 import {
 	getCurrentTheme,
@@ -29,7 +30,8 @@ export const App = () => {
 		setDragging,
 		fullScreen,
 		dragging,
-		fullScreening
+		fullScreening,
+		setWhom
 	} = useContext(globalState);
 	const currentThemeObject = getCurrentTheme(defaultAppTheme, currentTheme);
 	const { width: ww, height: wh } = useWindowResize();
@@ -40,6 +42,15 @@ export const App = () => {
 	const onDraggingEnded = () => {
 		setDragging(false);
 	};
+
+	const whoIsOnMyPage = who => {
+		setWhom(who);
+	};
+
+	useEffect(() => {
+		const values = queryString.parse(window.location.search);
+		values.whom ? whoIsOnMyPage(values.whom) : console.log("no one");
+	});
 	// console.log(`Fullscreening: ${fullScreening}`);
 	// console.log(`Fullscreen: ${fullScreen}`);
 	return (

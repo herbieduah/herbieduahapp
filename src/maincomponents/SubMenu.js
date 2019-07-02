@@ -125,7 +125,7 @@ export const SubMenu = props => {
 					</SubMenuWrapper>
 				</div>
 			);
-		case "contact":
+		case "photography":
 			return (
 				<div>
 					{showCategory ? (
@@ -136,17 +136,17 @@ export const SubMenu = props => {
 					<SubMenuWrapper showCategory={showCategory}>
 						<li onClick={hideModal} className='subMenu__item'>
 							<Text menuLink to='/naturephotography'>
-								Nature Photography
+								Nature
 							</Text>
 						</li>
 						<li onClick={hideModal} className='subMenu__item'>
 							<Text menuLink to='/portraitphotography'>
-								Portrait Photography
+								Portrait
 							</Text>
 						</li>
 						<li onClick={hideModal} className='subMenu__item'>
 							<Text menuLink to='/iphonephotography'>
-								iPhone Photography
+								iPhone
 							</Text>
 						</li>
 						<li onClick={hideModal} className='subMenu__item'>

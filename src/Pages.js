@@ -3,20 +3,21 @@ import AboutMePage from "./contentcomponents/AboutMe";
 import BedzinExhibitPage from "./contentcomponents/BedzinExhibit";
 import ColorsPage from "./contentcomponents/Colors";
 import DiscountTirePage from "./contentcomponents/DiscountTire";
-import FlagstaffChamberofCommercePage from "./contentcomponents/FlagstaffChamberofCommerce";
+import CulturalSuicidePage from "./contentcomponents/CulturalSuicide";
 import HomePage from "./contentcomponents/Home";
 import InspirationPage from "./contentcomponents/Inspiration";
-import InstagramPage from "./contentcomponents/Instagram";
-import LinkedInPage from "./contentcomponents/LinkedIn";
+import PortraitPage from "./contentcomponents/Portrait";
+import IPhonePage from "./contentcomponents/IPhone";
 import NorthernArizonaUniversityPage from "./contentcomponents/NorthernArizonaUniversity";
 import PhotographyPage from "./contentcomponents/Photography";
 import ResumePage from "./contentcomponents/Resume";
 import SpecialThanksPage from "./contentcomponents/SpecialThanks";
 import ThemePage from "./contentcomponents/Theme";
 import TonePage from "./contentcomponents/Tone";
-import TwitterPage from "./contentcomponents/Twitter";
+import NaturePage from "./contentcomponents/Nature";
 import UggPage from "./contentcomponents/Ugg";
 import UXvsHXPage from "./contentcomponents/UXvsHX";
+import ModelingPage from "./contentcomponents/Modeling";
 import { ContentWrapper } from "./ComponentHelpers";
 
 export const AboutMe = () => (
@@ -40,9 +41,9 @@ export const DiscountTire = () => (
 		<DiscountTirePage />
 	</ContentWrapper>
 );
-export const FlagstaffChamberofCommerce = () => (
+export const CulturalSuicide = () => (
 	<ContentWrapper>
-		<FlagstaffChamberofCommercePage />
+		<CulturalSuicidePage />
 	</ContentWrapper>
 );
 export const Inspiration = () => (
@@ -55,14 +56,14 @@ export const Home = () => (
 		<HomePage />
 	</ContentWrapper>
 );
-export const Instagram = () => (
+export const Portrait = () => (
 	<ContentWrapper>
-		<InstagramPage />
+		<PortraitPage />
 	</ContentWrapper>
 );
-export const LinkedIn = () => (
+export const IPhone = () => (
 	<ContentWrapper>
-		<LinkedInPage />
+		<IPhonePage />
 	</ContentWrapper>
 );
 export const NorthernArizonaUniversity = () => (
@@ -100,9 +101,15 @@ export const Tone = () => (
 	</ContentWrapper>
 );
 
-export const Twitter = () => (
+export const Nature = () => (
 	<ContentWrapper>
-		<TwitterPage />
+		<NaturePage />
+	</ContentWrapper>
+);
+
+export const Modeling = () => (
+	<ContentWrapper>
+		<ModelingPage />
 	</ContentWrapper>
 );
 

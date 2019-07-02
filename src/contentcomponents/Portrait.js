@@ -5,9 +5,9 @@ import Text from "../stylecomponents/Text";
 // import Fade from "react-reveal/Fade";
 import { ContentShow, ComingSoon } from "../ComponentHelpers";
 
-const header = "Instagram";
+const header = "Portrait";
 
-const InstagramPage = () => {
+const PortraitPage = () => {
 	return (
 		<Fragment>
 			<ContentShow header={header} />
@@ -21,4 +21,4 @@ const InstagramPage = () => {
 	);
 };
 
-export default InstagramPage;
+export default PortraitPage;
