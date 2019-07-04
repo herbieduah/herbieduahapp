@@ -10,7 +10,7 @@ import Content from "./maincomponents/Content";
 // import { DragInstructions } from "./Actions";
 import { defaultAppTheme } from "./stylecomponents/Theme";
 import SliderLine from "./maincomponents/Revealer/SliderLine";
-import { FullScreenModal } from "./ComponentHelpers";
+import { FullScreenModal, DragInstructions } from "./ComponentHelpers";
 import { withRouter } from "react-router-dom";
 import queryString from "query-string";
 
@@ -20,7 +20,7 @@ import {
 	useWindowResize,
 	minSliderSize,
 	defaultPaneSize,
-	isMobile
+	isPortrait
 } from "./helpers";
 
 export const App = () => {
@@ -57,12 +57,13 @@ export const App = () => {
 		<ThemeProvider theme={currentThemeObject}>
 			<HerbieDuahApp
 				className='hdapp'
-				isMobile={isMobile(ww, wh)}
+				isPortrait={isPortrait(ww, wh)}
 				dragging={dragging}>
 				<GlobalStyle />
 				<FullScreenModal />
 				{/* <SliderLine /> */}
-				{/* <DragInstructions /> */}
+				{/* {dragging ? <DragInstructions /> : null} */}
+
 				{fullScreen ? <Content /> : null}
 				{/* <Content /> */}
 				{/* {fullScreen ? <h1>Here I am</h1> : null} */}

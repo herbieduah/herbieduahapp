@@ -96,9 +96,9 @@ export const FullScreenContainer = styled(ClickNHold)`
 	line-height: 1;
 	border: 0;
 	padding: 0;
-	width:  ${props => (props.isMobile ? `2rem` : `3rem`)};
-	height: ${props => (props.isMobile ? `2.5rem` : `2rem`)};
-	border-radius: ${props => (props.isMobile ? `1rem` : `none`)};
+	width:  ${props => (props.isPortrait ? `2rem` : `3rem`)};
+	height: ${props => (props.isPortrait ? `2.5rem` : `2rem`)};
+	border-radius: ${props => (props.isPortrait ? `1rem` : `none`)};
 	display: flex;
 	background: none;
 	cursor: pointer;
@@ -199,7 +199,7 @@ export const HerbieDuahApp = styled.div`
 			font-family: 'commuters-sans',-apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 		}
 	${props => {
-		if (props.isMobile) {
+		if (props.isPortrait) {
 			return `
 				position: fixed;
 		top: 0;
@@ -240,7 +240,7 @@ export const HerbieDuahApp = styled.div`
 		right: 0;
 		top: -15px;
 		pointer-events: none;
-		display: ${props => (props.isMobile ? "block" : "none")};
+		display: ${props => (props.isPortrait ? "block" : "none")};
 		opacity: ${props => (props.dragging ? "0" : "1")};
 		box-shadow: 0 0 3rem 3rem ${bgColor}, 0 0 2rem 2rem ${bgColor};
 		/* box-shadow: 0 0 3rem 3rem blue, 0 0 2rem 2rem blue; */
@@ -248,7 +248,7 @@ export const HerbieDuahApp = styled.div`
 			box-shadow: 0 0 2.5rem 2.5rem ${bgColor}, 0 0 1.5rem 1.5rem ${bgColor};
 			/* box-shadow: 0 0 2rem 2rem blue, 0 0 1rem 1rem blue; */
 			opacity: ${props => (props.dragging ? "0" : "1")};
-			display: ${props => (props.isMobile ? "block" : "none")};
+			display: ${props => (props.isPortrait ? "block" : "none")};
 		}
 	}
 		&:after {
@@ -261,7 +261,7 @@ export const HerbieDuahApp = styled.div`
 		right: 0;
 		bottom: 40px;
 		pointer-events: none;
-		display: ${props => (props.isMobile ? "block" : "none")};
+		display: ${props => (props.isPortrait ? "block" : "none")};
 		opacity: ${props => (props.dragging ? "0" : "1")};
 		box-shadow: 0 0 3rem 3rem ${bgColor}, 0 0 2rem 2rem ${bgColor};
 		/* box-shadow: 0 0 3rem 3rem blue, 0 0 2rem 2rem blue; */
@@ -269,7 +269,7 @@ export const HerbieDuahApp = styled.div`
 			box-shadow: 0 0 2rem 2rem ${bgColor}, 0 0 1.5rem 1.5rem ${bgColor};
 			/* box-shadow: 0 0 2rem 2rem blue, 0 0 1rem 1rem blue; */
 			opacity: ${props => (props.dragging ? "0" : "1")};
-			display: ${props => (props.isMobile ? "block" : "none")};
+			display: ${props => (props.isPortrait ? "block" : "none")};
 		}
 	}
 	}

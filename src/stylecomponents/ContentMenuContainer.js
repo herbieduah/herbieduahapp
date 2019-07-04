@@ -48,7 +48,7 @@ export const ContentMenuContainer = styled.section`
 	&::-webkit-scrollbar-thumb {
 		background-color: ${props => props.theme.bgColor};
 	} */
-	ul.blocks {
+	/* ul.blocks {
 		margin: 0;
 		padding: 0;
 		display: block;
@@ -61,5 +61,5 @@ export const ContentMenuContainer = styled.section`
 		padding: 0;
 		height: 100%;
 		-webkit-overflow-scrolling: touch;
-	}
+	} */
 `;

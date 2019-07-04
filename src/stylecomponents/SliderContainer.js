@@ -44,9 +44,6 @@ export const SliderContainer = styled.div`
 		}
 		&__resizer.horizontal {
 			height: ${sliderDesktopWidth}px;
-			/* margin: -5px 0; */
-			/* border-top: 5px solid rgba(255, 255, 255, 0);
-		border-bottom: 5px solid rgba(255, 255, 255, 0); */
 			display: flex;
 			justify-content: center;
 			cursor: row-resize;
@@ -65,9 +62,6 @@ export const SliderContainer = styled.div`
 
 		&__resizer.vertical {
 			width: ${sliderDesktopWidth}px;
-			/* margin: 0 -5px; */
-			/* border-left: 5px solid rgba(255, 255, 255, 0);
-		border-right: 5px solid rgba(255, 255, 255, 0); */
 			cursor: col-resize;
 			/* background-color: red; */
 		}
@@ -85,6 +79,15 @@ export const SliderContainer = styled.div`
 	}
 `;
 
+// *TODO sliderArrow: `${bgColor}`,
+// *TODO sliderArrowSecondary: `${bgColorSecondary}`,
+// *TODO sliderArrowActive: `${fontColor}`,
+// *TODO sliderArrowOpacity: "1",
+// *TODO sliderCircleBorder: `1px solid ${fontColor}`,
+// *TODO sliderCircleBG: `${CTAColor}`,
+// *TODO sliderCircleHoverFocus: `${fontColor}`,
+// *TODO sliderCircleActive: `${fontColor}`,
+// *TODO sliderCircleOpacity: `0`,
 export const SliderController = styled.div`
 	.slider {
 			
@@ -126,11 +129,11 @@ export const SliderController = styled.div`
 			width: ${sliderDesktopWidth}px;
 			cursor: col-resize;
 			${props => {
-				if (props.isMobile) {
+				if (props.isPortrait) {
 					return `
-			height: ${sliderMobileWidth}px;
-			width: ${sliderMobileWidth}px;
-			flex-direction: column;
+					height: ${sliderMobileWidth}px;
+					width: ${sliderMobileWidth}px;
+					flex-direction: column;
 			`;
 				}
 			}}
@@ -183,29 +186,21 @@ export const SliderController = styled.div`
 `;
 
 export const SliderLineContainer = styled.div`
-	/* padding: 0 ${props => props.linePadding}px 0; */
-	/* padding-top: 0;
-	padding-bottom: 0;
-	padding-left: ${props => props.linePadding}px;
-	padding-right: ${props => props.linePadding}px + ${sliderDesktopWidth}px; */
 	${mainTransition}
 	padding: 0 ${props =>
 		props.linePadding - parseInt(sliderDesktopWidth)}px 0  ${props =>
 	props.linePadding}px;
 	position: absolute;
 	width: 100%;
-	/* background: red; */
-	/* opacity: 1; */
 	pointer-events: none;
 	top: 0;
 	bottom: 0;
 	left: 0;
 	right: 0;
-	/* opacity: ${props => (props.dragging ? "1;" : "0;")}; */
 	opacity: 1;
 	
 	${props => {
-		if (props.isMobile) {
+		if (props.isPortrait) {
 			return `
 		padding: ${props.linePaddingMobile}px 0 ${props.linePaddingMobile -
 				parseInt(sliderMobileWidth)}px;
@@ -223,23 +218,24 @@ export const SliderLineContainer = styled.div`
 		/* border: 1px solid ${fontColor};
 		background: ${fontColor}; */
 		opacity: 0.5;
-		height: 4px;
+		height: 2px;
+		user-select: none;
 		/* background-image: linear-gradient(to right, transparent 50%, ${fontColor} 50%);
 		   background-size: 25px 100% ; */
-		   background-image: ${props =>
-					props.isMobile
-						? `linear-gradient(to bottom, transparent 50%, ${
-								props.theme.fontColor
-						  } 50%);`
-						: `linear-gradient(to right, transparent 50%, ${
-								props.theme.fontColor
-						  } 50%);`};
-		background-size: ${props => (props.isMobile ? `100% 25px;` : `25px 100%;`)};
+		 background-image: ${props =>
+				props.isPortrait
+					? `linear-gradient(to bottom, transparent 50%, ${
+							props.theme.fontColor
+					  } 50%);`
+					: `linear-gradient(to right, transparent 50%, ${
+							props.theme.fontColor
+					  } 50%);`};
+		background-size: ${props => (props.isPortrait ? `100% 25px;` : `25px 100%;`)};
 		
 		${props => {
-			if (props.isMobile) {
+			if (props.isPortrait) {
 				return `
-		width:8px;
+		width:4px;
 		height: 100%;
 		`;
 			}
@@ -285,7 +281,7 @@ export const SliderLineContainer = styled.div`
 			z-index: 10;
 			align-items: center;
 			${props => {
-				if (props.isMobile) {
+				if (props.isPortrait) {
 					return `
 		justify-content: center;
 		flex-direction: column;

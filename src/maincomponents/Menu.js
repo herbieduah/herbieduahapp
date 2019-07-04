@@ -1,7 +1,7 @@
 import React, { useContext, Fragment } from "react";
 import MenuContainer from "../stylecomponents/MenuContainer";
 import {
-	isMobile,
+	isPortrait,
 	useWindowResize,
 	revealValues,
 	revealSecs
@@ -17,7 +17,7 @@ export const ContentMenu = () => {
 	const values = { ww, wh, cw, ch };
 	const isShowingMore = revealValues(values).isShowingMore;
 	return (
-		<MenuContainer isMobile={isMobile(ww, wh)} isShowingMore={isShowingMore}>
+		<MenuContainer isPortrait={isPortrait(ww, wh)} isShowingMore={isShowingMore}>
 			<Fade up duration={revealSecs}>
 				{!isShowingMore ? (
 					<MenuTabs showCategory={isShowingMore} />
@@ -34,8 +34,8 @@ export const ContentMenu = () => {
 				<ul className='menu__list'>
 					<Fade
 						cascade
-						right={!isMobile(ww, wh)}
-						left={isMobile(ww, wh)}
+						right={!isPortrait(ww, wh)}
+						left={isPortrait(ww, wh)}
 						duration={1000}>
 						<div>
 							<li className='menu__item'>

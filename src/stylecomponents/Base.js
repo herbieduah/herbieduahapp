@@ -73,9 +73,9 @@ export const GlobalStyle = createGlobalStyle`
 // 	line-height: 1;
 // 	border: 0;
 // 	padding: 0;
-// 	width:  ${props => (props.isMobile ? `2rem` : `3rem`)};
-// 	height: ${props => (props.isMobile ? `2.5rem` : `2rem`)};
-// 	border-radius: ${props => (props.isMobile ? `1rem` : `none`)};
+// 	width:  ${props => (props.isPortrait ? `2rem` : `3rem`)};
+// 	height: ${props => (props.isPortrait ? `2.5rem` : `2rem`)};
+// 	border-radius: ${props => (props.isPortrait ? `1rem` : `none`)};
 // 	display: flex;
 // 	background: none;
 // 	cursor: pointer;
@@ -248,13 +248,27 @@ export const ReactTabs = styled(Tabs)`
 // *TODO 	fullScreenHoldBG:` linear-gradient( ${invert(bgColor)}, ${invert(bgColor)}),
 export const FullScreeningBG = styled.div`
 	${absoluteOverlay}
-	background: linear-gradient(  ${props =>
-		props.theme.fullScreenBG}, #ffffff)  no-repeat 0 0;
+	background: linear-gradient(  ${props => props.theme.fullScreenBG}, ${props =>
+	props.theme.fullScreenBG})  no-repeat 0 0;
 	/* mix-blend-mode: multiply; */
-	opacity: 0.7;
+	opacity: 1;
 	background-size: 100% 0%;
 	animation: ${fullScreenFill} 2s forwards;
 	pointer-events: none;
 	z-index: 30;
+`;
 
+export const DragInstructionsContainer = styled.div`
+	${absoluteOverlay}
+	height: ${navBarSize}
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	background-color: ${fontColor};
+	p {
+		color: ${bgColor};
+		padding: 0.6rem 0.7rem;
+		text-align: center;
+		margin: 0  ${navBarSize};
+	}
 `;

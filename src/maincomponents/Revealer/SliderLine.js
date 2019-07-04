@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { SliderLineContainer } from "../../stylecomponents/SliderContainer";
 import Text from "../../stylecomponents/Text";
 import {
-	isMobile,
+	isPortrait,
 	useWindowResize,
 	minSliderSize,
 	revealValues
@@ -21,12 +21,14 @@ export const SliderLine = () => {
 	const linePaddingMobile = sliderMinSize;
 	const gradientDirDesktop = switchSides ? "to left" : "to right";
 	const gradientDirMobile = switchSides ? "to top" : "to bottom";
-	const gradientDir = isMobile(ww, wh) ? gradientDirMobile : gradientDirDesktop;
+	const gradientDir = isPortrait(ww, wh)
+		? gradientDirMobile
+		: gradientDirDesktop;
 	return (
 		<React.Fragment>
 			<SliderLineContainer
 				className='slider__line-container'
-				isMobile={isMobile(ww, wh)}
+				isPortrait={isPortrait(ww, wh)}
 				isShowingMore={isShowingMore}
 				gradientDir={gradientDir}
 				dragging={dragging}

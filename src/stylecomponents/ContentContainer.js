@@ -12,7 +12,7 @@ import { sliderMobileWidth } from "../helpers";
 export const ContentContainer = styled.article`
 	width: 100%;
 	height: 100%;
-	${props => (props.isMobile ? mobileSliderOnTop : ``)};
+	${props => (props.isPortrait ? mobileSliderOnTop : ``)};
 	
 	${hideScrollbar};
 	overflow: auto;
@@ -63,7 +63,7 @@ export const ContentContainer = styled.article`
 		&__more {
 			${mainTransition}
 			padding: 0 2rem;
-			margin-bottom: ${props => (props.isMobile ? `70vh` : `0`)};
+			margin-bottom: ${props => (props.isPortrait ? `70vh` : `0`)};
 		}
 		
 		/* &__slider-bg {
