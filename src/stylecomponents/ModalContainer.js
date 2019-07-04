@@ -14,7 +14,8 @@ import {
 	bgColorGradient,
 	navBarSize,
 	hideScrollbar,
-	contentMenuPadding
+	contentMenuPadding,
+	bgColor
 } from "./StyleHelpers";
 
 export const ModalContainer = styled.div`
@@ -48,13 +49,21 @@ export const ModalContainer = styled.div`
 		bottom: 0;
 		/* margin: auto; */
 		z-index: 50;
-		padding: 15px;
-		background: #fff;
-		border-radius: 3px;
-		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+		/* padding: 15px;
+		background: #fff; */
+		/* border-radius: 3px;
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); */
 		width: 100vw;
 		height: 100vh;
-		background-color: black;
+		
+		&::before {
+			content:'';
+			/* filter: blur(5px); */
+			${absoluteOverlay}
+			background: ${props => props.theme.bgColorGradient};
+			opacity: .8;
+			z-index: -1;
+		}
 	}
 	.modal__container {
 		max-width: 740px;

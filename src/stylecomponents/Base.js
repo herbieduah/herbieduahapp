@@ -29,26 +29,26 @@ export const GlobalStyle = createGlobalStyle`
   body {
     /* @import url('https://fonts.googleapis.com/css?family=Roboto'); */
 		/* overflow: hidden; */
-		position: fixed;
+		/* position: fixed;
 		width: 100%;
-		height: 100%;
-		overscroll-behavior: contain;
-		@import url("https://use.typekit.net/zzt6omx.css");
-		font-family: 'commuters-sans',-apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-		button {
+		height: 100%; */
+		/* overscroll-behavior: contain; */
+		/* ${props => props.theme.appFontImport} */
+		/* font-family: 'commuters-sans',-apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+		/* button {
 			font-family: 'commuters-sans',-apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-		}
-    -webkit-overflow-scrolling: touch;
-    -webkit-font-smoothing: antialiased;
+		} */
+    	/* -webkit-overflow-scrolling: touch;
+    	-webkit-font-smoothing: antialiased; */
 		/* position: relative; */
-		.sizer {
+		/* .sizer {
 			${absoluteOverlay};
 			height: 20vh;
-		}
-		#root {
+		} */
+		/* #root {
 			width: 100%;
 			height:100%;
-		}
+		} */
 		button:focus {
 			outline: 0;
 		}
@@ -57,41 +57,51 @@ export const GlobalStyle = createGlobalStyle`
   
 `;
 
-export const Overlay = styled.div`
-  ${absoluteOverlay}
-  background-color: ${overlayBackground};
-  z-index: 10;
-`;
+// export const Overlay = styled.div`
+//   ${absoluteOverlay}
+//   background-color: ${overlayBackground};
+//   z-index: 10;
+// `;
 
 // export function imgLoad(width, height) {
 // 	return `${(height / width) * 100}%`;
 // }
 
-export const FullScreenContainer = styled(ClickNHold)`
-	font-weight: 700;
-	${mainTransition}
-	line-height: 1;
-	border: 0;
-	padding: 0;
-	width:  ${props => (props.isMobile ? `2rem` : `3rem`)};
-	height: ${props => (props.isMobile ? `2.5rem` : `2rem`)};
-	border-radius: ${props => (props.isMobile ? `1rem` : `none`)};
-	display: flex;
-	background: none;
-	cursor: pointer;
+// export const FullScreenContainer = styled(ClickNHold)`
+// 	font-weight: 700;
+// 	${mainTransition}
+// 	line-height: 1;
+// 	border: 0;
+// 	padding: 0;
+// 	width:  ${props => (props.isMobile ? `2rem` : `3rem`)};
+// 	height: ${props => (props.isMobile ? `2.5rem` : `2rem`)};
+// 	border-radius: ${props => (props.isMobile ? `1rem` : `none`)};
+// 	display: flex;
+// 	background: none;
+// 	cursor: pointer;
 
-	.fullScreen {
-			/* width: ${props => props.ww}px; */
-			width: 100%;
-			/* width: 2rem; */
-			border: 2px solid ${props => props.theme.fontColor};
-			&:hover,
-			&:focus {
-				background: ${props => props.theme.fontColor};
-			}
-		
-	}
-`;
+// 	.fullScreen {
+// 			/* width: ${props => props.ww}px; */
+// 			width: 100%;
+// 			/* width: 2rem; */
+// 			border: 2px solid ${props => props.theme.fontColor};
+// 			&:hover,
+// 			&:focus {
+// 				background: ${props => props.theme.fontColor};
+// 			}
+
+// 	}
+// `;
+
+// *TODO navBarBG: 'transparent',
+// *TODO navBarButtonColor: `${mainCTAColor}`,
+// *TODO navBarHoverFocus: `${fontColor}`,
+// *TODO navBarHoverFocusAction: 'scale(1.1)',
+// *TODO logoInnerFillColor: `${bgColor}`,
+// *TODO logoInnerFillColorHoverActive: `${bgColor}`,
+// *TODO logoOuterFillColor: `${fontColor}`,
+// *TODO logoBGColor: `${mainCTAColor}`,
+// *TODO logoBGHoverColor: `${fontColor}`,
 
 export const NavBarContainer = styled.div`
 	position: fixed;
@@ -99,7 +109,9 @@ export const NavBarContainer = styled.div`
     left: 0px;
     z-index: 10000;
     display: flex;
-    overflow: hidden;
+	overflow-x: auto;
+	${hideScrollbar}
+	background: transparent;
     /* margin-top: auto;
     margin-left: auto; */
     flex-direction: row-reverse;
@@ -118,66 +130,54 @@ export const NavBarContainer = styled.div`
 		color: ${props => rgba(props.theme.fontColor, 0.6)};
 		&:hover,&:focus {
 			border-bottom: 0;
-			 transform: scale(1.1);
+			transform: scale(1.1);
 			color: ${props => props.theme.fontColor};
 		}
 	}
-	/* .react-reveal {
-			z-index: 100;
-			position: relative;
-	} */
 	.navbar {
 		&__menu-text, &__logo {
 			position:relative;
 			z-index: 100;
+			
 		}
 		&__logo-menu{
 			display: flex;
 		}
-			
-		/* &__menu-text {
-			margin: 0;
-			display: flex;
-			${mainTransition}
-			&:hover {
-				transform: scale(1.1);
-			}
-		} */
-
-		
 		
 		&__logo {
+			transform: rotate(90deg);
 			/* margin: 0 ${navBarSize}; */
 			.inner-rect, .half-circle {
 				${mainTransition}
-				fill: ${bgColor};
-				
+				fill: ${bgColor};	
 			}
 			.outer-rect {
 				${mainTransition}
 				fill: ${fontColor};
+				fill-opacity: 0;
 			}
 			svg {
 				${mainTransition}
 				border: none;
 				width: ${navBarSize};
-				
+				height: ${navBarSize};
+				background: ${fontColor};
 				${mainTransition}
-			&:hover,&:focus {
-				transform: scale(1.1);
-				.outer-rect {
-				fill-opacity: 1;
-			}
-			}
+				&:hover,&:focus {
+				background: ${fontColor};
+				}
 		}
-
-		
-		
 	}
 }
 	
 `;
 
+// *TODO tabHeadingsJustifyContent:`space-between`,
+// *TODO tabHeadingsBorderRadius:`0`,
+// *TODO tabHeadingsBorder:`0`,
+// *TODO tabHeadingsColor:`${CTAColorSecondary}`,
+// *TODO tabHeadingsColorHoverFocus:`${fontColorSecondary}`,
+// *TODO tabHeadingsColorActive:`${fontColorSecondary}`,
 export const ReactTabs = styled(Tabs)`
 	-webkit-tap-highlight-color: transparent;
 	width: 100%;
@@ -190,16 +190,16 @@ export const ReactTabs = styled(Tabs)`
 			justify-content: space-between;
 			width: 100%;
 			overflow-x: auto;
+			list-style-type: none;
 			${hideScrollbar}
-			${mobile} {
-			}
+			border:0;
+			border-radius: 0;
 		}
 
 		&__tab {
 			${mainTransition}
 			cursor: pointer;
 			margin: 0 1rem;
-
 			&:last-child {
 				margin-right: 0;
 			}
@@ -245,13 +245,16 @@ export const ReactTabs = styled(Tabs)`
 	}
 `;
 
+// *TODO 	fullScreenHoldBG:` linear-gradient( ${invert(bgColor)}, ${invert(bgColor)}),
 export const FullScreeningBG = styled.div`
 	${absoluteOverlay}
-	background: linear-gradient(  #4a148c, #7352ad, #9e8bcb, #ccc4e6, #ffffff)  no-repeat 0 0;
+	background: linear-gradient(  ${props =>
+		props.theme.fullScreenBG}, #ffffff)  no-repeat 0 0;
 	/* mix-blend-mode: multiply; */
 	opacity: 0.7;
 	background-size: 100% 0%;
 	animation: ${fullScreenFill} 2s forwards;
 	pointer-events: none;
 	z-index: 30;
+
 `;

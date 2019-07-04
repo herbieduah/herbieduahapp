@@ -219,7 +219,7 @@ export const MenuTabs = props => {
 			</TabPanel>
 			<TabPanel>
 				<nav>
-					<SubMenu showCategory={showCategory} category='contact' />
+					<SubMenu showCategory={showCategory} category='photography' />
 				</nav>
 			</TabPanel>
 		</ReactTabs>

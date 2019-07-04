@@ -37,7 +37,9 @@ const HomePage = ({ contentProps }) => {
 							get to work on C$. I have it as a coming soon on my site.
 						</Text>
 					</ThisValueEqualsState>
-					<ThisValueEqualsState thisValue='George' stateValue={whom}>
+					<ThisValueEqualsState
+						thisValue={"George" || "Clown"}
+						stateValue={whom}>
 						<Text xl>You a clown George</Text>
 					</ThisValueEqualsState>
 					<ThisValueEqualsState thisValue='Wieland' stateValue={whom}>

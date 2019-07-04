@@ -35,7 +35,7 @@ const MenuContainer = styled.aside`
 		&__tab-list {
 			${props => (props.isMobile ? `margin-right: auto;` : `margin-left: auto`)};
 			max-width: 500px;
-			padding-right: 1rem;
+			${props => (props.isMobile ? `padding-right: 1rem;` : ``)};
 			${props => (props.isMobile ? `margin-top: 4rem;` : ``)};
 		}
 	}

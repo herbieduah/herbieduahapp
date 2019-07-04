@@ -9,17 +9,16 @@ import {
 	hideScrollbar
 } from "./StyleHelpers";
 import { sliderDesktopWidth, sliderMobileWidth } from "../helpers";
-
+// *TODO appBg: `linear-gradient(to top, #cc208e 0%, #6713d2 100%)`,
+// *TODO appBgMobile: `linear-gradient(to bottom, #cc208e 0%, #6713d2 100%)
+//  *TODO appBGColor:`transparent`,
 export const HerbieDuahApp = styled.div`
-	@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portait) {
-		.hdapp {
-			display: none;
-		}
-	}
 	width: 100%;
 	content: "";
 	overflow: hidden;
-	background-image: ${bgColorGradient};
+	
+	background: ${bgColorGradient};
+	background-color: transparent;
 	position: relative;
 	margin: 0;
 	height: 100%;
@@ -30,11 +29,7 @@ export const HerbieDuahApp = styled.div`
 		}
 	}
 
-	button {
-		font-family: "commuters-sans", -apple-system, BlinkMacSystemFont, Oxygen,
-			Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-	}
-	${props => {
+	/* ${props => {
 		if (props.isMobile) {
 			return `
 				position: fixed;
@@ -46,5 +41,5 @@ export const HerbieDuahApp = styled.div`
 		border-bottom: 3px solid red;
 		z-index: 10;`;
 		}
-	}}
+	}} */
 `;

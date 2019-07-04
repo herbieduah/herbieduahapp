@@ -3,17 +3,20 @@
 // bgColor
 // headingColor
 // ctaColor
+import { rgba, invert } from "polished";
 export const themes = [
 	{
 		name: "default",
 		properties: {
-			bgColor: "#2a5298",
+			bgColor: `${rgba("#6713d2", 0.9)}`,
 			bgColorGradient: "linear-gradient(to top, #cc208e 0%, #6713d2 100%);",
 			fontColor: "#ffffff",
 			gradient1: "",
 			gradient2: "",
 			headingColor: "#ffffff",
-			ctaColor: "#ffffff"
+			ctaColor: "#ffffff",
+			fullScreenBG: `${invert("#6713d2")}`,
+			appFontImport: `url("https://use.typekit.net/zzt6omx.css")`
 		}
 	},
 	{
