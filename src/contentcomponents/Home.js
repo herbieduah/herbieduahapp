@@ -19,12 +19,17 @@ const HomePage = ({ contentProps }) => {
 			<ContentShow header={header} />
 			<ContentShow less>
 				<Text>
-					Hi I am Herbie and you areeeeee....{whom}. You know the drill, drag
-					and release to show more.
+					Still in development...{whom}.
+					<ThisValueEqualsState thisValue='Connor' stateValue={whom}>
+						<Text xl>BIG DOGGG</Text>
+					</ThisValueEqualsState>
 				</Text>
 			</ContentShow>
 			<ContentShow more>
 				<div className='container'>
+					<ThisValueEqualsState thisValue='Connor' stateValue={whom}>
+						<Text xl>ROOF ROOF</Text>
+					</ThisValueEqualsState>
 					<ThisValueEqualsState thisValue='Nuvi' stateValue={whom}>
 						<Text xl>How is it going in Bunkston</Text>
 					</ThisValueEqualsState>
