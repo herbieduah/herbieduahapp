@@ -13,7 +13,6 @@ export const ContentContainer = styled.article`
 	width: 100%;
 	height: 100%;
 	${props => (props.isPortrait ? mobileSliderOnTop : ``)};
-	
 	${hideScrollbar};
 	overflow: auto;
 	${contentMenuPadding}
@@ -46,7 +45,7 @@ export const ContentContainer = styled.article`
 			}
 		}
 		&__less {
-			width:  ${props => (props.showLess ? `500px` : `100%`)};
+			width:  100%;
 			max-width:  ${props => (props.showLess ? `500px` : `740px`)};
 			${props => (props.fullScreen ? `margin 0 auto` : ``)};
 			/* margin: 0 auto; */
@@ -66,17 +65,7 @@ export const ContentContainer = styled.article`
 			margin-bottom: ${props => (props.isPortrait ? `70vh` : `0`)};
 		}
 		
-		/* &__slider-bg {
-				position: absolute;
-				bottom: 0;
-				right: 0;
-				left: 0;
-				width: 100%;
-				opacity: .8;
-				height: ${sliderMobileWidth}px;
-				z-index: 3;
-				background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
-		} */
+		
 	}
 `;
 

@@ -51,13 +51,3 @@ export const themesMaster = {
 	sliderCircleActive: `${fontColor}`,
 	sliderCircleOpacity: `0`
 };
-
-// export const themesMaster = {
-// 	bgColor: `${rgba("#6713d2", 0.9)}`,
-// 	bgColorGradient: "linear-gradient(to top, #cc208e 0%, #6713d2 100%);",
-// 	fontColor: "#ffffff",
-// 	gradient1: "",
-// 	gradient2: "",
-// 	headingColor: "#ffffff",
-// 	ctaColor: "#ffffff"
-// };
