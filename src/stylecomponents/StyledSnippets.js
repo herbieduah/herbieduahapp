@@ -1,7 +1,7 @@
 import styled, { createGlobalStyle } from "styled-components";
 import { rgba } from "polished";
 import ClickNHold from "react-click-n-hold";
-import { fullScreenFill } from "./Animations";
+import { fullScreenFill, Gradients } from "./Animations";
 import {
 	mobile,
 	absoluteOverlay,
@@ -10,10 +10,6 @@ import {
 	fontColor,
 	mainTransition,
 	bgColorGradient
-
-	// fluidTypeInfo,
-	// ctaColor,
-	// iconWidth
 } from "./StyleHelpers";
 // import { iconFullScreen } from "../helpers";
 
@@ -96,9 +92,9 @@ export const FullScreenContainer = styled(ClickNHold)`
 	line-height: 1;
 	border: 0;
 	padding: 0;
-	width:  ${props => (props.isMobile ? `2rem` : `3rem`)};
-	height: ${props => (props.isMobile ? `2.5rem` : `2rem`)};
-	border-radius: ${props => (props.isMobile ? `1rem` : `none`)};
+	width:  ${props => (props.isPortrait ? `2rem` : `3rem`)};
+	height: ${props => (props.isPortrait ? `2.5rem` : `2rem`)};
+	border-radius: ${props => (props.isPortrait ? `1rem` : `none`)};
 	display: flex;
 	background: none;
 	cursor: pointer;
@@ -199,7 +195,7 @@ export const HerbieDuahApp = styled.div`
 			font-family: 'commuters-sans',-apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 		}
 	${props => {
-		if (props.isMobile) {
+		if (props.isPortrait) {
 			return `
 				position: fixed;
 		top: 0;
@@ -240,7 +236,7 @@ export const HerbieDuahApp = styled.div`
 		right: 0;
 		top: -15px;
 		pointer-events: none;
-		display: ${props => (props.isMobile ? "block" : "none")};
+		display: ${props => (props.isPortrait ? "block" : "none")};
 		opacity: ${props => (props.dragging ? "0" : "1")};
 		box-shadow: 0 0 3rem 3rem ${bgColor}, 0 0 2rem 2rem ${bgColor};
 		/* box-shadow: 0 0 3rem 3rem blue, 0 0 2rem 2rem blue; */
@@ -248,7 +244,7 @@ export const HerbieDuahApp = styled.div`
 			box-shadow: 0 0 2.5rem 2.5rem ${bgColor}, 0 0 1.5rem 1.5rem ${bgColor};
 			/* box-shadow: 0 0 2rem 2rem blue, 0 0 1rem 1rem blue; */
 			opacity: ${props => (props.dragging ? "0" : "1")};
-			display: ${props => (props.isMobile ? "block" : "none")};
+			display: ${props => (props.isPortrait ? "block" : "none")};
 		}
 	}
 		&:after {
@@ -261,7 +257,7 @@ export const HerbieDuahApp = styled.div`
 		right: 0;
 		bottom: 40px;
 		pointer-events: none;
-		display: ${props => (props.isMobile ? "block" : "none")};
+		display: ${props => (props.isPortrait ? "block" : "none")};
 		opacity: ${props => (props.dragging ? "0" : "1")};
 		box-shadow: 0 0 3rem 3rem ${bgColor}, 0 0 2rem 2rem ${bgColor};
 		/* box-shadow: 0 0 3rem 3rem blue, 0 0 2rem 2rem blue; */
@@ -269,7 +265,7 @@ export const HerbieDuahApp = styled.div`
 			box-shadow: 0 0 2rem 2rem ${bgColor}, 0 0 1.5rem 1.5rem ${bgColor};
 			/* box-shadow: 0 0 2rem 2rem blue, 0 0 1rem 1rem blue; */
 			opacity: ${props => (props.dragging ? "0" : "1")};
-			display: ${props => (props.isMobile ? "block" : "none")};
+			display: ${props => (props.isPortrait ? "block" : "none")};
 		}
 	}
 	}
@@ -385,6 +381,33 @@ export const HerbieDuahApp = styled.div`
 			overflow:hidden;
 			}
 		}
+
+		/* &__instructions-container {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		display:flex;
+		align-items: center;
+		z-index: 100;
+	} */
+	/* background-image: linear-gradient(to right bottom, #ffe01b, #f88947, #b3505e, #55334b, #111111); */
+	/* background-image: linear-gradient(to right top, #c2292b, #d35082, #c283c3, #afafe2, #bbd1e8); */
+	&__gradient-animation {
+		${absoluteOverlay};
+		${mainTransition}
+		width: 100%;
+		height:100%;
+		animation: ${Gradients} 1.5s ease-in-out ${props =>
+	props.isShowingMore ? "" : "infinite"};
+		background: linear-gradient( ${props =>
+			props.gradientDir}, #4a148c, #7352ad, #9e8bcb, #ccc4e6, #ffffff);
+		background-size: 400% 400%;
+		${props =>
+			props.isShowingMore
+				? "background-size: 100% 100%;"
+				: "background-size: 400% 400%;"}
+		z-index: 1;
+	}
 }
 	
 `;

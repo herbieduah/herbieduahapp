@@ -45,8 +45,7 @@ export const slightCircleBoxShadow =
 export const absoluteOverlay =
 	"position: absolute;width: 100%;height: 100%;top: 0;left: 0;right: 0;bottom: 0;";
 
-export const mobileSliderOnTop = `height: calc(100% + ${sliderMobileWidth /
-	2}px);
+export const mobileSliderOnTop = `height: 100%;
 top: 0;
 left: 0;
 right: 0;
@@ -54,7 +53,7 @@ bottom: 0;
 z-index: 1;
 position: absolute;
 `;
-export const mobileSliderOnBottom = `height: calc(100% + ${sliderMobileWidth}px);
+export const mobileSliderOnBottom = `height: 100%;
 top: 0;
 left: 0;
 right: 0;
@@ -109,3 +108,18 @@ export const sliderCircle = props => rgba(props.theme.ctaColor, 1);
 
 //Overlay
 export const overlayBackground = props => rgba(props.theme.bgColor, 0.8);
+
+export const niceShadow = `
+&:before {
+	content: "";
+	width: 100%;
+	max-width: 100%;
+	height: 0;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	z-index: 10;
+	pointer-events: none;
+	box-shadow: 0 0 3rem 3rem ${bgColor}, 0 0 2rem 2rem ${bgColor};
+}`;

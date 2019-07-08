@@ -3,7 +3,7 @@ import React, { Fragment } from "react";
 import Text from "../stylecomponents/Text";
 // import Media from "../maincomponents/Media";
 // import Fade from "react-reveal/Fade";
-import { ContentShow, ComingSoon } from "../ComponentHelpers";
+import { ContentShow, ComingSoon, GradientTheme } from "../ComponentHelpers";
 
 const header = "App Colors";
 
@@ -15,7 +15,13 @@ const ColorsPage = () => {
 				<Text>Here you can change colors and stuff</Text>
 			</ContentShow>
 			<ContentShow more>
-				<ComingSoon header={header} />
+				<GradientTheme themeValue={"default"} />
+				<GradientTheme themeValue={"snowAgain"} />
+				<GradientTheme themeValue={"bigMango"} />
+				<GradientTheme themeValue={"strongBliss"} />
+				<GradientTheme themeValue={"newYork"} />
+				<GradientTheme themeValue={"temptingAzure"} />
+				<GradientTheme themeValue={"viciousStance"} />
 			</ContentShow>
 		</Fragment>
 	);

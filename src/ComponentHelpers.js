@@ -1,12 +1,20 @@
 import React, { Fragment, useContext } from "react";
 import { globalState } from "./State";
-import { revealValues, useWindowResize, isMobile, revealSecs } from "./helpers";
+import {
+	revealValues,
+	useWindowResize,
+	isPortrait,
+	revealSecs,
+	getTheGradient
+} from "./helpers";
 import Fade from "react-reveal/Fade";
 import Text from "./stylecomponents/Text";
 import { browserName, mobileModel } from "react-device-detect";
 import {
 	FullScreenContainer,
-	NavBarContainer
+	NavBarContainer,
+	DragInstructionsContainer,
+	GradientCircle
 	// FullScreeningBGContainer
 } from "./stylecomponents/Base";
 import ClickNHold from "react-click-n-hold";
@@ -31,22 +39,16 @@ export const DragInstructions = props => {
 	const isShowingMore = revealValues(values).isShowingMore;
 	const desktopText = switchSides && !isShowingMore ? "right" : "left";
 	const mobileText = switchSides && !isShowingMore ? "bottom" : "top";
-	const instructionsText = isMobile(ww, wh) ? mobileText : desktopText;
+	const instructionsText = isPortrait(ww, wh) ? mobileText : desktopText;
 	const showingLessText = !isShowingMore ? "more" : "less";
 	return (
-		<Fragment>
-			{dragging ? (
-				<div className='instructions'>
-					<Fade duration={1000}>
-						<div>
-							<Text className='instructions__text'>
-								Drag to the {instructionsText} to reveal {showingLessText}
-							</Text>
-						</div>
-					</Fade>
-				</div>
-			) : null}
-		</Fragment>
+		<DragInstructionsContainer>
+			<Fade top duration={revealSecs}>
+				<Text s className='instructions__text'>
+					Drag to the {instructionsText} and release to reveal {showingLessText}
+				</Text>
+			</Fade>
+		</DragInstructionsContainer>
 	);
 };
 
@@ -176,6 +178,21 @@ export const SubMenuWrapper = props => {
 	);
 };
 
+export const GradientTheme = props => {
+	const { setTheme } = useContext(globalState);
+	const { width: ww, height: wh } = useWindowResize();
+	const isContentPortrait = isPortrait(ww, wh);
+	const themeValues = getTheGradient(props.themeValue);
+	const changeTheme = () => setTheme(props.themeValue);
+	return (
+		<GradientCircle
+			onClick={changeTheme}
+			isPortrait={isContentPortrait}
+			themeValues={themeValues}
+		/>
+	);
+};
+
 export const MenuTabs = props => {
 	const showCategory = props.showCategory;
 	return (
@@ -242,7 +259,7 @@ export const ContentWrapper = props => {
 	const { width: ww, height: wh } = useWindowResize();
 	const values = { ww, wh, cw, ch };
 	const isShowingMore = revealValues(values).isShowingMore;
-	const isContentMobile = isMobile(ww, wh);
+	const isContentPortrait = isPortrait(ww, wh);
 	const showMore = fullScreen ? true : isShowingMore;
 	const showLess = fullScreen ? false : !isShowingMore;
 	const contentProps = {
@@ -256,7 +273,7 @@ export const ContentWrapper = props => {
 		showLess,
 		browserName,
 		mobileModel,
-		isContentMobile,
+		isContentPortrait,
 		fullScreen,
 		whom
 	};
@@ -269,13 +286,13 @@ export const ContentWrapper = props => {
 		<ContentContainer
 			className='content'
 			isShowingMore={isShowingMore}
-			isMobile={isContentMobile}
+			isPortrait={isContentPortrait}
 			dragging={dragging}
 			fullScreen={fullScreen}
 			showLess={showLess}
 			showMore={showMore}>
 			{children}
-			{/* {showMore && isContentMobile ? (
+			{/* {showMore && isContentPortrait ? (
 				<div className='content__slider-bg' />
 			) : null} */}
 		</ContentContainer>
@@ -293,7 +310,7 @@ export const ContentShow = props => {
 	const { width: ww, height: wh } = useWindowResize();
 	const values = { ww, wh, cw, ch };
 	const isShowingMore = revealValues(values).isShowingMore;
-	const isContentMobile = isMobile(ww, wh);
+	const isContentPortrait = isPortrait(ww, wh);
 	const showMore = fullScreen ? true : isShowingMore;
 	const showLess = fullScreen ? false : !isShowingMore;
 	// const values = { ww, wh, cw, ch };
@@ -335,7 +352,7 @@ export const ContentShow = props => {
 			<Fade up duration={revealSecs}>
 				<ClickNHold
 					time={2} // Time to keep pressing. Default is 2
-					isMobile={isMobile(ww, wh)}
+					isPortrait={isPortrait(ww, wh)}
 					fullScreen={fullScreen}
 					onStart={onFullScreening}
 					onClickNHold={onFullScreenTimeOutEnded} //Timeout callback
@@ -384,7 +401,7 @@ export const HeaderFullScreen = props => {
 	return (
 		<ClickNHold
 			time={2} // Time to keep pressing. Default is 2
-			isMobile={isMobile(ww, wh)}
+			isPortrait={isPortrait(ww, wh)}
 			fullScreen={fullScreen}
 			onStart={onFullScreening}
 			onClickNHold={onFullScreenTimeOutEnded} //Timeout callback

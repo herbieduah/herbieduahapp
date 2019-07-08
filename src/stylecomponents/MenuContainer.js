@@ -6,17 +6,13 @@ import {
 	hideScrollbar,
 	mobileSliderOnBottom,
 	slightBoxShadowAbove,
-	navBarSize,
 	contentMenuPadding,
 	stupidNegativeMargin
 } from "./StyleHelpers";
-import { rgba } from "polished";
-import { sliderMobileWidth } from "../helpers";
 
 // ${props =>
 // 	props.isShowingMore ? `border-top: 1px solid rgba(255,255,255,.5)` : ``};
 const MenuContainer = styled.aside`
-  
 	${hideScrollbar};
 	width: 100%;
 	/* max-width: 500px; */
@@ -26,41 +22,38 @@ const MenuContainer = styled.aside`
 	padding: 4rem 2rem;
 	display: flex;
 	width: 100%;
+	z-index: 10;
 	${contentMenuPadding}
 	${mainTransition}
-	${props => (props.isMobile ? mobileSliderOnBottom : ``)};
+	${props => (props.isPortrait ? mobileSliderOnBottom : ``)};
+	${props =>
+		props.isShowingMore && props.isPortrait ? slightBoxShadowAbove : ``};
+	/* ${props =>
+		props.isPortrait ? `margin-top: ${stupidNegativeMargin}` : ``} */
+	
 	.react-tabs {
 		padding: 1rem 0;
 		
 		&__tab-list {
-			${props => (props.isMobile ? `margin-right: auto;` : `margin-left: auto`)};
+			${props => (props.isPortrait ? `margin-right: auto;` : `margin-left: auto`)};
 			max-width: 500px;
-			${props => (props.isMobile ? `padding-right: 1rem;` : ``)};
-			${props => (props.isMobile ? `margin-top: 4rem;` : ``)};
+			${props => (props.isPortrait ? `padding-right: 1rem;` : ``)};
+			${props => (props.isPortrait ? `margin-top: 4rem;` : ``)};
 		}
 	}
 	
 	${mobile} {
-		${props => (props.isShowingMore ? slightBoxShadowAbove : ``)};
+		
 		width: 100%;
 		${props => (props.isShowingMore ? `display: block;` : `display: flex;`)};
-		margin-top: ${stupidNegativeMargin};
+		
 	}
 	.menu__more {
 		padding: 1rem 0;
 	}
-		
-	
-	
 	
 	justify-content: right;
 	flex-direction: column;
-	/* ${props => (props.isMobile ? `margin-top: 1rem` : ``)}; */
-	
-	
-
-	
-	/* align-items: ${props => (props.isMobile ? `initial` : `center`)}; */
 	ul {
 		padding: 0;
 	}
@@ -69,20 +62,11 @@ const MenuContainer = styled.aside`
 		color: ${fontColor};
 		cursor: pointer;
 	}
-	/* button {
-		border: 0;
-		padding: 0;
-		margin: 0.1rem 0;
-		background: none;
-		color: ${fontColor};
-		cursor: pointer;
-	} */
-
-			
+	
 	.subMenu {
 			width: 100%;
 			flex-direction: column;
-			${props => (props.isMobile ? `text-align: left;` : `text-align: right;`)};
+			${props => (props.isPortrait ? `text-align: left;` : `text-align: right;`)};
 			${mobile} {
 				overflow-x: auto;
 				${hideScrollbar};
@@ -91,12 +75,11 @@ const MenuContainer = styled.aside`
 			}
 			display: flex;
 			margin: 0;
-			${props => (props.isMobile ? `margin-left: auto;` : `margin-right: auto;`)};
-			/* justify-content: ${props =>
-				props.isMobile ? `flex-start;` : `flex-end;`}; */
+			${props => (props.isPortrait ? `margin-left: auto;` : `margin-right: auto;`)};
+
 		&__text {
 			${mainTransition}
-			text-align: ${props => (props.isMobile ? `left;` : `right;`)};
+			text-align: ${props => (props.isPortrait ? `left;` : `right;`)};
 			margin-bottom: 0;
 			margin-top: 2rem;
 			width: 100%;
@@ -118,7 +101,7 @@ const MenuContainer = styled.aside`
 					white-space: nowrap;
 				}
 			}
-			${props => (props.isMobile ? `margin-right: 1rem;` : `margin-left: 1rem;`)};
+			${props => (props.isPortrait ? `margin-right: 1rem;` : `margin-left: 1rem;`)};
 		}
 	}
 	
@@ -142,7 +125,7 @@ const MenuContainer = styled.aside`
 
 	.offset {
 		width:100%;
-		margin-top: ${props => (props.isMobile ? `20vh;` : `40vh;`)};
+		margin-top: ${props => (props.isPortrait ? `20vh;` : `40vh;`)};
 	}
 
 `;

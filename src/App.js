@@ -10,7 +10,7 @@ import Content from "./maincomponents/Content";
 // import { DragInstructions } from "./Actions";
 import { defaultAppTheme } from "./stylecomponents/Theme";
 import SliderLine from "./maincomponents/Revealer/SliderLine";
-import { FullScreenModal } from "./ComponentHelpers";
+import { FullScreenModal, DragInstructions } from "./ComponentHelpers";
 import { withRouter } from "react-router-dom";
 import queryString from "query-string";
 
@@ -20,7 +20,7 @@ import {
 	useWindowResize,
 	minSliderSize,
 	defaultPaneSize,
-	isMobile
+	isPortrait
 } from "./helpers";
 
 export const App = () => {
@@ -53,20 +53,27 @@ export const App = () => {
 	});
 	// console.log(`Fullscreening: ${fullScreening}`);
 	// console.log(`Fullscreen: ${fullScreen}`);
+	const splitSize = parseInt(localStorage.getItem("splitPos"))
+		? parseInt(localStorage.getItem("splitPos"))
+		: defaultPaneSize(ww, wh);
+	console.log(splitSize);
 	return (
 		<ThemeProvider theme={currentThemeObject}>
 			<HerbieDuahApp
 				className='hdapp'
-				isMobile={isMobile(ww, wh)}
+				isPortrait={isPortrait(ww, wh)}
+				splitSize={splitSize}
 				dragging={dragging}>
 				<GlobalStyle />
 				<FullScreenModal />
 				{/* <SliderLine /> */}
-				{/* <DragInstructions /> */}
+				{/* {dragging ? <DragInstructions /> : null} */}
+
 				{fullScreen ? <Content /> : null}
 				{/* <Content /> */}
 				{/* {fullScreen ? <h1>Here I am</h1> : null} */}
 				{dragging ? <SliderLine /> : null}
+
 				{fullScreening ? <FullScreeningBG /> : null}
 
 				{/* <FullScreeningBG /> */}
@@ -79,12 +86,11 @@ export const App = () => {
 						step={1}
 						onDragStarted={onDragging}
 						onDragFinished={onDraggingEnded}
-						// defaultSize={parseInt(
-						// 	localStorage.getItem("splitPos"),
-						// 	defaultPaneSize(ww, wh)
-						// )}
-						// onChange={size => localStorage.setItem("splitPos", size)}>
-					>
+						defaultSize={parseInt(
+							localStorage.getItem("splitPos"),
+							defaultPaneSize(ww, wh)
+						)}
+						onChange={size => localStorage.setItem("splitPos", size)}>
 						<ContentMenu switchSides={switchSides} />
 						<ContentMenu switchSides={!switchSides} />
 					</SplitPane>

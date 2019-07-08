@@ -53,7 +53,7 @@ const defaultRevealValues = {
 	ch: defaultContentHeight
 };
 
-export function isMobile(width, height) {
+export function isPortrait(width, height) {
 	if (height > width) {
 		return true;
 	} else {
@@ -67,16 +67,16 @@ export function count(counter) {
 
 export function splitDir(width, height) {
 	let value;
-	isMobile(width, height) ? (value = "horizontal") : (value = "vertical");
+	isPortrait(width, height) ? (value = "horizontal") : (value = "vertical");
 	return value;
 }
 
 export function minSliderSize(width, height) {
 	let minSize, maxSize;
-	isMobile(width, height)
+	isPortrait(width, height)
 		? (minSize = height * sliderMinSizeMobile)
 		: (minSize = width * sliderMinSize);
-	isMobile(width, height)
+	isPortrait(width, height)
 		? (maxSize = height - minSize)
 		: (maxSize = width - minSize);
 	return {
@@ -87,7 +87,7 @@ export function minSliderSize(width, height) {
 
 export function defaultPaneSize(ww, wh) {
 	let defaultSize;
-	isMobile(ww, wh)
+	isPortrait(ww, wh)
 		? (defaultSize = defaultContentHeight)
 		: (defaultSize = defaultContentWidth);
 	return defaultSize;
@@ -105,7 +105,7 @@ export function showMore(dimensions) {
 	let leftTopHeight = dimensions.leftTopHeight;
 	let ww = dimensions.ww;
 	let wh = dimensions.wh;
-	if (isMobile(ww, wh)) {
+	if (isPortrait(ww, wh)) {
 		if (leftTopHeight > wh * 0.55) {
 			showingMore = true;
 		} else {
@@ -123,8 +123,8 @@ export function showMore(dimensions) {
 
 export function revealValues(revealValuesState = defaultRevealValues) {
 	let { ww, wh, cw, ch } = revealValuesState;
-	let menuWidth = isMobile(ww, wh) ? cw : ww - cw - gutterSize;
-	let menuHeight = isMobile(ww, wh) ? wh - ch - gutterSize : ch;
+	let menuWidth = isPortrait(ww, wh) ? cw : ww - cw - gutterSize;
+	let menuHeight = isPortrait(ww, wh) ? wh - ch - gutterSize : ch;
 	let cwPercentage = (cw / ww) * 100;
 	let chPercentage = (ch / wh) * 100;
 	let menuWidthPercentage = (menuWidth / ww) * 100;
@@ -133,7 +133,9 @@ export function revealValues(revealValuesState = defaultRevealValues) {
 	let showingMoreMobile = chPercentage > 55 ? true : false;
 	let showingMoreDesktopValue = ww * 0.55;
 	let showingMoreMobileValue = cw * 0.55;
-	let isShowingMore = isMobile(ww, wh) ? showingMoreMobile : showingMoreDesktop;
+	let isShowingMore = isPortrait(ww, wh)
+		? showingMoreMobile
+		: showingMoreDesktop;
 	let revealValuesObj = {
 		ww,
 		wh,
@@ -168,6 +170,20 @@ export function getCurrentTheme(theDefaultTheme, theTheme) {
 		localStorage.getItem("currentThemeObject")
 	);
 	return currentThemeObject;
+}
+
+export function getTheGradient(theTheme = "default") {
+	const found = themes.find(function(element) {
+		return element.name === theTheme;
+	});
+	const gradient = found.properties.appBg;
+	const gradientPortrait = found.properties.appBgMobile;
+	const borderColor = found.properties.fontColor;
+	return {
+		gradient,
+		gradientPortrait,
+		borderColor
+	};
 }
 
 export function getDimensionObject(node) {
