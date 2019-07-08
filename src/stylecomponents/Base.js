@@ -222,3 +222,14 @@ export const DragInstructionsContainer = styled.div`
 		margin: 0  ${navBarSize};
 	}
 `;
+
+export const GradientCircle = styled.button`
+	width: 5rem;
+	height: 5rem;
+	border-radius: 50%;
+	background: ${props =>
+		props.isPortrait
+			? props.themeValues.gradientPortrait
+			: props.themeValues.gradient};
+	border: 1 px solid ${props => props.themeValues.borderColor};
+`;

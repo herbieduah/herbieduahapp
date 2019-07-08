@@ -133,7 +133,9 @@ export function revealValues(revealValuesState = defaultRevealValues) {
 	let showingMoreMobile = chPercentage > 55 ? true : false;
 	let showingMoreDesktopValue = ww * 0.55;
 	let showingMoreMobileValue = cw * 0.55;
-	let isShowingMore = isPortrait(ww, wh) ? showingMoreMobile : showingMoreDesktop;
+	let isShowingMore = isPortrait(ww, wh)
+		? showingMoreMobile
+		: showingMoreDesktop;
 	let revealValuesObj = {
 		ww,
 		wh,
@@ -168,6 +170,20 @@ export function getCurrentTheme(theDefaultTheme, theTheme) {
 		localStorage.getItem("currentThemeObject")
 	);
 	return currentThemeObject;
+}
+
+export function getTheGradient(theTheme = "default") {
+	const found = themes.find(function(element) {
+		return element.name === theTheme;
+	});
+	const gradient = found.properties.appBg;
+	const gradientPortrait = found.properties.appBgMobile;
+	const borderColor = found.properties.fontColor;
+	return {
+		gradient,
+		gradientPortrait,
+		borderColor
+	};
 }
 
 export function getDimensionObject(node) {

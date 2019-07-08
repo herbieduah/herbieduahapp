@@ -4,12 +4,20 @@
 // headingColor
 // ctaColor
 import { rgba, invert } from "polished";
-import { defaultTheme, snowAgainTheme } from "./Themes/ThemeFactory";
+import {
+	defaultTheme,
+	snowAgainTheme,
+	bigMangoTheme,
+	strongBlissTheme,
+	newYorkTheme,
+	temptingAzureTheme,
+	viciousStanceTheme
+} from "./Themes/ThemeFactory";
 export const themes = [
 	{
 		name: "default",
 		properties: {
-			...snowAgainTheme
+			...defaultTheme
 		}
 	},
 	{
@@ -19,31 +27,33 @@ export const themes = [
 		}
 	},
 	{
-		name: "darkmode",
+		name: "bigMango",
 		properties: {
-			bgColor: "#111111",
-			fontColor: "#FFFFFF",
-			blockBorderColor: "#FFFFFF",
-			headingColor: "#FFFFFF",
-			blockBackgroundColor: "#242424"
+			...bigMangoTheme
 		}
 	},
 	{
-		name: "blue",
+		name: "strongBliss",
 		properties: {
-			ctaColor: "#304ffe"
+			...strongBlissTheme
 		}
 	},
 	{
-		name: "red",
+		name: "newYork",
 		properties: {
-			ctaColor: "#d50000"
+			...newYorkTheme
 		}
 	},
 	{
-		name: "circle",
+		name: "temptingAzure",
 		properties: {
-			blockBorderRadius: "50%"
+			...temptingAzureTheme
+		}
+	},
+	{
+		name: "viciousStance",
+		properties: {
+			...viciousStanceTheme
 		}
 	}
 ];

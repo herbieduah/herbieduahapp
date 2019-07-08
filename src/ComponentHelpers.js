@@ -4,7 +4,8 @@ import {
 	revealValues,
 	useWindowResize,
 	isPortrait,
-	revealSecs
+	revealSecs,
+	getTheGradient
 } from "./helpers";
 import Fade from "react-reveal/Fade";
 import Text from "./stylecomponents/Text";
@@ -12,7 +13,8 @@ import { browserName, mobileModel } from "react-device-detect";
 import {
 	FullScreenContainer,
 	NavBarContainer,
-	DragInstructionsContainer
+	DragInstructionsContainer,
+	GradientCircle
 	// FullScreeningBGContainer
 } from "./stylecomponents/Base";
 import ClickNHold from "react-click-n-hold";
@@ -173,6 +175,21 @@ export const SubMenuWrapper = props => {
 		<Fade cascade up duration={revealSecs}>
 			<ul className='subMenu'>{props.children}</ul>
 		</Fade>
+	);
+};
+
+export const GradientTheme = props => {
+	const { setTheme } = useContext(globalState);
+	const { width: ww, height: wh } = useWindowResize();
+	const isContentPortrait = isPortrait(ww, wh);
+	const themeValues = getTheGradient(props.themeValue);
+	const changeTheme = () => setTheme(props.themeValue);
+	return (
+		<GradientCircle
+			onClick={changeTheme}
+			isPortrait={isContentPortrait}
+			themeValues={themeValues}
+		/>
 	);
 };
 
