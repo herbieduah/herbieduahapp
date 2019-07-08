@@ -11,12 +11,18 @@ import {
 } from "./Animations";
 import {
 	absoluteOverlay,
-	bgColorGradient,
 	navBarSize,
 	hideScrollbar,
 	contentMenuPadding,
-	bgColor
+	mainTransition,
+	mobile
 } from "./StyleHelpers";
+
+import {
+	modalFullScreenBg,
+	modalFullScreenBgColor,
+	modalFullScreenBgMobile
+} from "./Themes/ThemeVariables";
 
 export const ModalContainer = styled.div`
 	${absoluteOverlay};
@@ -47,12 +53,7 @@ export const ModalContainer = styled.div`
 		left: 0;
 		right: 0;
 		bottom: 0;
-		/* margin: auto; */
 		z-index: 50;
-		/* padding: 15px;
-		background: #fff; */
-		/* border-radius: 3px;
-		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); */
 		width: 100vw;
 		height: 100vh;
 		
@@ -60,8 +61,12 @@ export const ModalContainer = styled.div`
 			content:'';
 			/* filter: blur(5px); */
 			${absoluteOverlay}
-			background: ${props => props.theme.bgColorGradient};
-			opacity: .8;
+			background: ${modalFullScreenBg};
+			background-color: ${modalFullScreenBgColor};
+			${mobile} {
+				background: ${modalFullScreenBgMobile};	
+			}
+			opacity: .9;
 			z-index: -1;
 		}
 	}
@@ -111,8 +116,7 @@ export const ModalContainer = styled.div`
 		margin-top: -1px;
 		background: #999;
 		border-radius: 100%;
-		-webkit-transition: background 0.2s;
-		transition: background 0.2s;
+		${mainTransition};
 	}
 
 	.modal-close:before {

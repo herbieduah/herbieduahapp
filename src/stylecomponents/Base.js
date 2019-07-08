@@ -1,21 +1,36 @@
 import styled, { createGlobalStyle } from "styled-components";
-import { rgba } from "polished";
-import ClickNHold from "react-click-n-hold";
 import { fullScreenFill } from "./Animations";
 import { Tabs } from "react-tabs";
 import {
+	navBarBg,
+	navBarButtonColor,
+	navBarHoverFocus,
+	navBarHoverFocusAction,
+	logoInnerFillColor,
+	logoInnerFillColorHoverFocus,
+	logoOuterFillColor,
+	logoBgColor,
+	logoBgHoverColor,
+	tabHeadingsJustifyContent,
+	tabHeadingsBorderRadius,
+	tabHeadingsBorder,
+	tabHeadingsColor,
+	tabHeadingsColorHoverFocus,
+	tabHeadingsColorActive,
+	tabHeadingsBorderBottomActive,
+	tabHeadingsBorderActive,
+	fullScreenHoldBg,
+	logoBorderRadius
+} from "./Themes/ThemeVariables";
+import {
 	mobile,
 	absoluteOverlay,
-	overlayBackground,
 	mainTransition,
 	fontColor,
 	bgColor,
 	hideScrollbar,
-	navBarSize,
-	slightBoxShadowBelow
+	navBarSize
 } from "./StyleHelpers";
-import { Colors } from "../Pages";
-// import { iconFullScreen } from "../helpers";
 
 export const GlobalStyle = createGlobalStyle`
   html {
@@ -27,81 +42,12 @@ export const GlobalStyle = createGlobalStyle`
 }
 
   body {
-    /* @import url('https://fonts.googleapis.com/css?family=Roboto'); */
-		/* overflow: hidden; */
-		/* position: fixed;
-		width: 100%;
-		height: 100%; */
-		/* overscroll-behavior: contain; */
-		/* ${props => props.theme.appFontImport} */
-		/* font-family: 'commuters-sans',-apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
-		/* button {
-			font-family: 'commuters-sans',-apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-		} */
-    	/* -webkit-overflow-scrolling: touch;
-    	-webkit-font-smoothing: antialiased; */
-		/* position: relative; */
-		/* .sizer {
-			${absoluteOverlay};
-			height: 20vh;
-		} */
-		/* #root {
-			width: 100%;
-			height:100%;
-		} */
 		button:focus {
 			outline: 0;
 		}
-
   }
   
 `;
-
-// export const Overlay = styled.div`
-//   ${absoluteOverlay}
-//   background-color: ${overlayBackground};
-//   z-index: 10;
-// `;
-
-// export function imgLoad(width, height) {
-// 	return `${(height / width) * 100}%`;
-// }
-
-// export const FullScreenContainer = styled(ClickNHold)`
-// 	font-weight: 700;
-// 	${mainTransition}
-// 	line-height: 1;
-// 	border: 0;
-// 	padding: 0;
-// 	width:  ${props => (props.isPortrait ? `2rem` : `3rem`)};
-// 	height: ${props => (props.isPortrait ? `2.5rem` : `2rem`)};
-// 	border-radius: ${props => (props.isPortrait ? `1rem` : `none`)};
-// 	display: flex;
-// 	background: none;
-// 	cursor: pointer;
-
-// 	.fullScreen {
-// 			/* width: ${props => props.ww}px; */
-// 			width: 100%;
-// 			/* width: 2rem; */
-// 			border: 2px solid ${props => props.theme.fontColor};
-// 			&:hover,
-// 			&:focus {
-// 				background: ${props => props.theme.fontColor};
-// 			}
-
-// 	}
-// `;
-
-// *TODO navBarBG: 'transparent',
-// *TODO navBarButtonColor: `${mainCTAColor}`,
-// *TODO navBarHoverFocus: `${fontColor}`,
-// *TODO navBarHoverFocusAction: 'scale(1.1)',
-// *TODO logoInnerFillColor: `${bgColor}`,
-// *TODO logoInnerFillColorHoverActive: `${bgColor}`,
-// *TODO logoOuterFillColor: `${fontColor}`,
-// *TODO logoBGColor: `${mainCTAColor}`,
-// *TODO logoBGHoverColor: `${fontColor}`,
 
 export const NavBarContainer = styled.div`
 	position: fixed;
@@ -111,13 +57,13 @@ export const NavBarContainer = styled.div`
     display: flex;
 	overflow-x: auto;
 	${hideScrollbar}
-	background: transparent;
+	background: ${navBarBg};
     /* margin-top: auto;
     margin-left: auto; */
     flex-direction: row-reverse;
 	transform-origin: left top;
 	align-items:center;
-  	transform: rotate(-90deg) translateX(-100%);  
+	transform: rotate(-90deg) translateX(-100%);  
  	width: ${props => props.appHeight}px;
 	height: ${navBarSize};
 	justify-content: space-between;
@@ -127,44 +73,50 @@ export const NavBarContainer = styled.div`
 		margin:0 ${navBarSize};
 		height: 100%;
 		${mainTransition}
-		color: ${props => rgba(props.theme.fontColor, 0.6)};
+		color: ${navBarButtonColor};
 		&:hover,&:focus {
 			border-bottom: 0;
-			transform: scale(1.1);
-			color: ${props => props.theme.fontColor};
+			transform: ${navBarHoverFocusAction};
+			color: ${navBarHoverFocus};
 		}
 	}
 	.navbar {
 		&__menu-text, &__logo {
 			position:relative;
-			z-index: 100;
-			
+			z-index: 100;	
 		}
+
 		&__logo-menu{
 			display: flex;
 		}
 		
 		&__logo {
 			transform: rotate(90deg);
+			margin-right: 2.5rem;
 			/* margin: 0 ${navBarSize}; */
 			.inner-rect, .half-circle {
 				${mainTransition}
-				fill: ${bgColor};	
+				fill: ${logoInnerFillColor};	
 			}
 			.outer-rect {
 				${mainTransition}
-				fill: ${fontColor};
+				fill: ${logoOuterFillColor}
 				fill-opacity: 0;
 			}
 			svg {
 				${mainTransition}
+				transform: scale(.95);
 				border: none;
 				width: ${navBarSize};
 				height: ${navBarSize};
-				background: ${fontColor};
+				background: ${logoBgColor};
+				border-radius: ${logoBorderRadius};
 				${mainTransition}
 				&:hover,&:focus {
-				background: ${fontColor};
+					background: ${logoBgHoverColor};
+					.inner-rect, .half-circle {
+						fill: ${logoInnerFillColorHoverFocus};
+					}
 				}
 		}
 	}
@@ -172,10 +124,6 @@ export const NavBarContainer = styled.div`
 	
 `;
 
-// *TODO tabHeadingsJustifyContent:`space-between`,
-// *TODO tabHeadingsBorderRadius:`0`,
-// *TODO tabHeadingsBorder:`0`,
-// *TODO tabHeadingsColor:`${CTAColorSecondary}`,
 // *TODO tabHeadingsColorHoverFocus:`${fontColorSecondary}`,
 // *TODO tabHeadingsColorActive:`${fontColorSecondary}`,
 export const ReactTabs = styled(Tabs)`
@@ -187,7 +135,7 @@ export const ReactTabs = styled(Tabs)`
 		&__tab-list {
 			display: flex;
 			margin-top: 0;
-			justify-content: space-between;
+			justify-content: ${tabHeadingsJustifyContent};
 			width: 100%;
 			overflow-x: auto;
 			list-style-type: none;
@@ -200,6 +148,8 @@ export const ReactTabs = styled(Tabs)`
 			${mainTransition}
 			cursor: pointer;
 			margin: 0 1rem;
+			border: ${tabHeadingsBorder};
+			border-radius: ${tabHeadingsBorderRadius};
 			&:last-child {
 				margin-right: 0;
 			}
@@ -210,20 +160,21 @@ export const ReactTabs = styled(Tabs)`
 				margin: 0 0.5rem;
 			}
 			span {
-				color: ${props => rgba(props.theme.fontColor, 0.6)};
+				color: ${tabHeadingsColor};
 				&:focus,
 				&:hover {
-					color: ${fontColor};
+					color: ${tabHeadingsColorHoverFocus};
 				}
 			}
 
 			&--selected {
-				border-bottom: 2px solid ${fontColor};
+				border: ${tabHeadingsBorderActive};
+				border-bottom: ${tabHeadingsBorderBottomActive};
 				span {
 					font-weight: bold;
-					color: ${fontColor};
+					color: ${tabHeadingsColorActive};
 					&:hover {
-						color: ${fontColor};
+						color: ${tabHeadingsColorActive};
 					}
 				}
 			}
@@ -245,11 +196,10 @@ export const ReactTabs = styled(Tabs)`
 	}
 `;
 
-// *TODO 	fullScreenHoldBG:` linear-gradient( ${invert(bgColor)}, ${invert(bgColor)}),
+// *TODO 	fullScreenHoldBg:` linear-gradient( ${invert(bgColor)}, ${invert(bgColor)}),
 export const FullScreeningBG = styled.div`
 	${absoluteOverlay}
-	background: linear-gradient(  ${props => props.theme.fullScreenBG}, ${props =>
-	props.theme.fullScreenBG})  no-repeat 0 0;
+	background: ${fullScreenHoldBg}  no-repeat 0 0;
 	/* mix-blend-mode: multiply; */
 	opacity: 1;
 	background-size: 100% 0%;

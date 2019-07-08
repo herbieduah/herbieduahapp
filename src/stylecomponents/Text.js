@@ -154,20 +154,9 @@ const MenuLink = styled(NavLink)`
 	color: ${navColor};
 	cursor: pointer;
 	font-size: 2em;
-	${mobile}{
-		font-size:1.7em;
+	${mobile} {
+		font-size: 1.7em;
 	}
-	/* border: 1px solid ${navBorderColor}; */
-	/* white-space: nowrap; */
-	/* ${mobile} {
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		display: flex;
-		width: 9rem;
-		text-align: center;
-	} */
-
 	&:hover,
 	&:focus {
 		color: ${navColorActive};

@@ -53,11 +53,16 @@ export const App = () => {
 	});
 	// console.log(`Fullscreening: ${fullScreening}`);
 	// console.log(`Fullscreen: ${fullScreen}`);
+	const splitSize = parseInt(localStorage.getItem("splitPos"))
+		? parseInt(localStorage.getItem("splitPos"))
+		: defaultPaneSize(ww, wh);
+	console.log(splitSize);
 	return (
 		<ThemeProvider theme={currentThemeObject}>
 			<HerbieDuahApp
 				className='hdapp'
 				isPortrait={isPortrait(ww, wh)}
+				splitSize={splitSize}
 				dragging={dragging}>
 				<GlobalStyle />
 				<FullScreenModal />
@@ -68,6 +73,7 @@ export const App = () => {
 				{/* <Content /> */}
 				{/* {fullScreen ? <h1>Here I am</h1> : null} */}
 				{dragging ? <SliderLine /> : null}
+
 				{fullScreening ? <FullScreeningBG /> : null}
 
 				{/* <FullScreeningBG /> */}
@@ -80,12 +86,11 @@ export const App = () => {
 						step={1}
 						onDragStarted={onDragging}
 						onDragFinished={onDraggingEnded}
-						// defaultSize={parseInt(
-						// 	localStorage.getItem("splitPos"),
-						// 	defaultPaneSize(ww, wh)
-						// )}
-						// onChange={size => localStorage.setItem("splitPos", size)}>
-					>
+						defaultSize={parseInt(
+							localStorage.getItem("splitPos"),
+							defaultPaneSize(ww, wh)
+						)}
+						onChange={size => localStorage.setItem("splitPos", size)}>
 						<ContentMenu switchSides={switchSides} />
 						<ContentMenu switchSides={!switchSides} />
 					</SplitPane>

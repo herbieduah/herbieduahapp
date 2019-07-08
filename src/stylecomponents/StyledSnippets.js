@@ -1,7 +1,7 @@
 import styled, { createGlobalStyle } from "styled-components";
 import { rgba } from "polished";
 import ClickNHold from "react-click-n-hold";
-import { fullScreenFill } from "./Animations";
+import { fullScreenFill, Gradients } from "./Animations";
 import {
 	mobile,
 	absoluteOverlay,
@@ -10,10 +10,6 @@ import {
 	fontColor,
 	mainTransition,
 	bgColorGradient
-
-	// fluidTypeInfo,
-	// ctaColor,
-	// iconWidth
 } from "./StyleHelpers";
 // import { iconFullScreen } from "../helpers";
 
@@ -385,6 +381,33 @@ export const HerbieDuahApp = styled.div`
 			overflow:hidden;
 			}
 		}
+
+		/* &__instructions-container {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		display:flex;
+		align-items: center;
+		z-index: 100;
+	} */
+	/* background-image: linear-gradient(to right bottom, #ffe01b, #f88947, #b3505e, #55334b, #111111); */
+	/* background-image: linear-gradient(to right top, #c2292b, #d35082, #c283c3, #afafe2, #bbd1e8); */
+	&__gradient-animation {
+		${absoluteOverlay};
+		${mainTransition}
+		width: 100%;
+		height:100%;
+		animation: ${Gradients} 1.5s ease-in-out ${props =>
+	props.isShowingMore ? "" : "infinite"};
+		background: linear-gradient( ${props =>
+			props.gradientDir}, #4a148c, #7352ad, #9e8bcb, #ccc4e6, #ffffff);
+		background-size: 400% 400%;
+		${props =>
+			props.isShowingMore
+				? "background-size: 100% 100%;"
+				: "background-size: 400% 400%;"}
+		z-index: 1;
+	}
 }
 	
 `;

@@ -6,17 +6,13 @@ import {
 	hideScrollbar,
 	mobileSliderOnBottom,
 	slightBoxShadowAbove,
-	navBarSize,
 	contentMenuPadding,
 	stupidNegativeMargin
 } from "./StyleHelpers";
-import { rgba } from "polished";
-import { sliderMobileWidth } from "../helpers";
 
 // ${props =>
 // 	props.isShowingMore ? `border-top: 1px solid rgba(255,255,255,.5)` : ``};
 const MenuContainer = styled.aside`
-  
 	${hideScrollbar};
 	width: 100%;
 	/* max-width: 500px; */
@@ -26,12 +22,14 @@ const MenuContainer = styled.aside`
 	padding: 4rem 2rem;
 	display: flex;
 	width: 100%;
+	z-index: 10;
 	${contentMenuPadding}
 	${mainTransition}
 	${props => (props.isPortrait ? mobileSliderOnBottom : ``)};
 	${props =>
 		props.isShowingMore && props.isPortrait ? slightBoxShadowAbove : ``};
-	${props => (props.isPortrait ? `margin-top: ${stupidNegativeMargin}` : ``)}
+	/* ${props =>
+		props.isPortrait ? `margin-top: ${stupidNegativeMargin}` : ``} */
 	
 	.react-tabs {
 		padding: 1rem 0;
@@ -53,18 +51,9 @@ const MenuContainer = styled.aside`
 	.menu__more {
 		padding: 1rem 0;
 	}
-		
-	
-	
 	
 	justify-content: right;
 	flex-direction: column;
-	/* ${props => (props.isPortrait ? `margin-top: 1rem` : ``)}; */
-	
-	
-
-	
-	/* align-items: ${props => (props.isPortrait ? `initial` : `center`)}; */
 	ul {
 		padding: 0;
 	}
@@ -73,16 +62,7 @@ const MenuContainer = styled.aside`
 		color: ${fontColor};
 		cursor: pointer;
 	}
-	/* button {
-		border: 0;
-		padding: 0;
-		margin: 0.1rem 0;
-		background: none;
-		color: ${fontColor};
-		cursor: pointer;
-	} */
-
-			
+	
 	.subMenu {
 			width: 100%;
 			flex-direction: column;
@@ -96,8 +76,7 @@ const MenuContainer = styled.aside`
 			display: flex;
 			margin: 0;
 			${props => (props.isPortrait ? `margin-left: auto;` : `margin-right: auto;`)};
-			/* justify-content: ${props =>
-				props.isPortrait ? `flex-start;` : `flex-end;`}; */
+
 		&__text {
 			${mainTransition}
 			text-align: ${props => (props.isPortrait ? `left;` : `right;`)};

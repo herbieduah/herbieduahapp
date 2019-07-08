@@ -1,51 +1,39 @@
 import styled from "styled-components";
-import { rgba } from "polished";
 import { Gradients } from "./Animations";
+import { fluidTypeInfo } from "./StyleHelpers";
 import {
-	mobile,
-	bgColor,
-	fontColor,
-	mainTransition,
-	bgColorGradient,
-	hideScrollbar,
-	fluidTypeInfo
-} from "./StyleHelpers";
-import { sliderDesktopWidth, sliderMobileWidth } from "../helpers";
-// *TODO appBg: `linear-gradient(to top, #cc208e 0%, #6713d2 100%)`,
-// *TODO appBgMobile: `linear-gradient(to bottom, #cc208e 0%, #6713d2 100%)
-//  *TODO appBGColor:`transparent`,
+	appBg,
+	appBgMobile,
+	appBgColor,
+	appBgAnimation
+} from "./Themes/ThemeVariables";
+
+const dragging = props => props.dragging;
+const isPortrait = props => props.isPortrait;
+
 export const HerbieDuahApp = styled.div`
 	width: 100%;
-	content: "";
 	overflow: hidden;
+	overscroll-behavior: none;
 	${fluidTypeInfo}
-	background: ${bgColorGradient};
+	background: ${props =>
+		props.dragging ? appBgAnimation : props.isPortrait ? appBgMobile : appBg};
 	animation: ${Gradients} 1.5s ease-in-out ${props =>
 	props.dragging ? "infinite" : ""};
-	${props => (props.dragging ? `background-size: 400% 400%;` : "")}
-	background-color: transparent;
+	background-size: ${props => (props.dragging ? `400% 400%` : "contain")};
+	background-color: ${appBgColor};
 	position: relative;
 	margin: 0;
 	height: 100%;
-	
-
 	.hdapp {
 		&__pane {
 			overflow: ${props => (props.isPortrait ? `initial` : `hidden`)};
+			&.vertical {
+				width: ${props => props.splitSize}px;
+			}
+			&.horizontal {
+				height: ${props => props.splitSize}px;
+			}
 		}
 	}
-
-	/* ${props => {
-		if (props.isPortrait) {
-			return `
-				position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		overflow: hidden;
-		border-bottom: 3px solid red;
-		z-index: 10;`;
-		}
-	}} */
 `;

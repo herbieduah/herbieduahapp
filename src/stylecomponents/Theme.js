@@ -4,29 +4,18 @@
 // headingColor
 // ctaColor
 import { rgba, invert } from "polished";
+import { defaultTheme, snowAgainTheme } from "./Themes/ThemeFactory";
 export const themes = [
 	{
 		name: "default",
 		properties: {
-			bgColor: `${rgba("#6713d2", 0.9)}`,
-			bgColorGradient: "linear-gradient(to top, #cc208e 0%, #6713d2 100%);",
-			fontColor: "#ffffff",
-			gradient1: "",
-			gradient2: "",
-			headingColor: "#ffffff",
-			ctaColor: "#ffffff",
-			fullScreenBG: `${invert("#6713d2")}`,
-			appFontImport: `url("https://use.typekit.net/zzt6omx.css")`
+			...snowAgainTheme
 		}
 	},
 	{
-		name: "lightmode",
+		name: "snowAgain",
 		properties: {
-			bgColor: "#FFFFFF",
-			fontColor: "#000000",
-			blockBorderColor: "#111111",
-			headingColor: "#000000",
-			blockBackgroundColor: "#eeeeee"
+			...snowAgainTheme
 		}
 	},
 	{

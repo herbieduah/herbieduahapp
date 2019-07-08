@@ -4,10 +4,8 @@ import {
 	hideScrollbar,
 	mainTransition,
 	mobileSliderOnTop,
-	navBarSize,
 	contentMenuPadding
 } from "./StyleHelpers";
-import { sliderMobileWidth } from "../helpers";
 
 export const ContentContainer = styled.article`
 	width: 100%;
@@ -51,7 +49,7 @@ export const ContentContainer = styled.article`
 			/* margin: 0 auto; */
 			p {
 				${mainTransition}
-				font-size: ${props => (props.showLess ? `1.2em` : `.9em`)};
+				font-size: ${props => (props.showLess ? `3em` : `.9em`)};
 				margin: 0 auto;
 			}
 			${mobile} {
@@ -63,9 +61,7 @@ export const ContentContainer = styled.article`
 			${mainTransition}
 			padding: 0 2rem;
 			margin-bottom: ${props => (props.isPortrait ? `70vh` : `0`)};
-		}
-		
-		
+		}		
 	}
 `;
 
