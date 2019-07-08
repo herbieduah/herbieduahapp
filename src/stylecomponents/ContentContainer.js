@@ -49,7 +49,7 @@ export const ContentContainer = styled.article`
 			/* margin: 0 auto; */
 			p {
 				${mainTransition}
-				font-size: ${props => (props.showLess ? `3em` : `.9em`)};
+				font-size: ${props => (props.showLess ? `1.5em` : `.9em`)};
 				margin: 0 auto;
 			}
 			${mobile} {
