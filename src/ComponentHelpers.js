@@ -1,4 +1,4 @@
-import React, { Fragment, useContext } from "react";
+import React, { Fragment, useContext, useEffect, useRef } from "react";
 import { globalState } from "./State";
 import {
 	revealValues,
@@ -9,12 +9,14 @@ import {
 } from "./helpers";
 import Fade from "react-reveal/Fade";
 import Text from "./stylecomponents/Text";
+import Parallax from "parallax-js";
 import { browserName, mobileModel } from "react-device-detect";
 import {
 	FullScreenContainer,
 	NavBarContainer,
 	DragInstructionsContainer,
-	GradientCircle
+	GradientCircle,
+	ParallaxContainer
 	// FullScreeningBGContainer
 } from "./stylecomponents/Base";
 import ClickNHold from "react-click-n-hold";
@@ -410,3 +412,21 @@ export const HeaderFullScreen = props => {
 		</ClickNHold>
 	);
 };
+
+// export const ParallaxTest = () => {
+// 	const parallaxRef = useRef();
+// 	useEffect(() => {
+// 		const parallax = new Parallax(parallaxRef.current);
+// 		return () => {
+// 			parallax.disable();
+// 		};
+// 	}, []);
+
+// 	return (
+// 		<ParallaxContainer className='parallax'>
+// 			<div className='parallax__container' ref={parallaxRef}>
+// 				<div className='parallax__bg' data-depth='1.00' />
+// 			</div>
+// 		</ParallaxContainer>
+// 	);
+// };

@@ -11,7 +11,6 @@ import Content from "./maincomponents/Content";
 import { defaultAppTheme } from "./stylecomponents/Theme";
 import SliderLine from "./maincomponents/Revealer/SliderLine";
 import { FullScreenModal, DragInstructions } from "./ComponentHelpers";
-import { withRouter } from "react-router-dom";
 import queryString from "query-string";
 
 import {
@@ -65,6 +64,7 @@ export const App = () => {
 				splitSize={splitSize}
 				dragging={dragging}>
 				<GlobalStyle />
+				{/* <ParallaxTest /> */}
 				<FullScreenModal />
 				{/* <SliderLine /> */}
 				{/* {dragging ? <DragInstructions /> : null} */}

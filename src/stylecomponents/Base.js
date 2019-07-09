@@ -20,7 +20,8 @@ import {
 	tabHeadingsBorderBottomActive,
 	tabHeadingsBorderActive,
 	fullScreenHoldBg,
-	logoBorderRadius
+	logoBorderRadius,
+	appBgAnimation
 } from "./Themes/ThemeVariables";
 import {
 	mobile,
@@ -232,4 +233,22 @@ export const GradientCircle = styled.button`
 			? props.themeValues.gradientPortrait
 			: props.themeValues.gradient};
 	border: 1 px solid ${props => props.themeValues.borderColor};
+`;
+
+export const ParallaxContainer = styled.div`
+	${absoluteOverlay};
+	overflow: hidden;
+	z-index: 1000;
+	.parallax {
+		&__container {
+			width: 100%;
+			height: 100%;
+		}
+		&__bg {
+			width: 90%;
+			height: 90%;
+			background: url("https://fillmurray.com/400/800");
+			background-size: contain;
+		}
+	}
 `;

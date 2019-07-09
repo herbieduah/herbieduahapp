@@ -5,6 +5,8 @@ import Media from "../maincomponents/Media";
 import Fade from "react-reveal/Fade";
 import { ContentShow, ThisValueEqualsState } from "../ComponentHelpers";
 import Modal from "../maincomponents/Modal";
+import testVideo from "../media/videos/millyrockgrandcanyon_2.mp4";
+import ReactPlayer from "react-player";
 
 const header = "HerbieDuah.app";
 // There is an app for everything, in
@@ -64,9 +66,13 @@ const HomePage = ({ contentProps }) => {
 					</ThisValueEqualsState>
 					<div className='container-full'>
 						<Fade up duration={1500}>
-							<Media
-								type='image'
-								src='https://scontent-lax3-2.cdninstagram.com/vp/2c0c284778f47e789fa8706d0d6adc8c/5D7B9E1F/t51.2885-15/e35/p1080x1080/60992958_365983194122426_8030120158390547331_n.jpg?_nc_ht=scontent-lax3-2.cdninstagram.com'
+							<ReactPlayer
+								url={testVideo}
+								width='100%'
+								height='100%'
+								playing
+								loop
+								muted
 							/>
 						</Fade>
 					</div>
