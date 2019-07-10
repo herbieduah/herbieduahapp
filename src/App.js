@@ -1,9 +1,9 @@
 import React, { useContext, useEffect } from "react";
 import { ThemeProvider } from "styled-components";
+import { GlobalStyle, FullScreeningBG } from "./stylecomponents/Base";
 import { globalState } from "./State";
 import SplitPane from "./maincomponents/Revealer/SplitPane";
 // import SliderLine from "./maincomponents/Revealer/SliderLine";
-import { GlobalStyle, FullScreeningBG } from "./stylecomponents/Base";
 import { HerbieDuahApp } from "./stylecomponents/AppStyles";
 import ContentMenu from "./maincomponents/ContentMenu";
 import Content from "./maincomponents/Content";
@@ -82,7 +82,6 @@ export const App = () => {
 						split={splitDir(ww, wh)}
 						minSize={minSize}
 						maxSize={maxSize}
-						defaultSize={defaultPaneSize(ww, wh)}
 						step={1}
 						onDragStarted={onDragging}
 						onDragFinished={onDraggingEnded}

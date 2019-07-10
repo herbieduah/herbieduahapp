@@ -5,7 +5,7 @@ import Media from "../maincomponents/Media";
 import Fade from "react-reveal/Fade";
 import { ContentShow, ThisValueEqualsState } from "../ComponentHelpers";
 import Modal from "../maincomponents/Modal";
-import testVideo from "../media/videos/millyrockgrandcanyon_2.mp4";
+import testVideo from "../media/videos/JeremyScottDesktop_9.mp4";
 import ReactPlayer from "react-player";
 
 const header = "HerbieDuah.app";
@@ -29,6 +29,30 @@ const HomePage = ({ contentProps }) => {
 			</ContentShow>
 			<ContentShow more>
 				<div className='container'>
+					<Text xs>
+						XS Nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus
+						sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+					</Text>
+					<Text s>
+						S Nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus
+						sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+					</Text>
+					<Text m>
+						M Nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus
+						sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+					</Text>
+					<Text l>
+						L Nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus
+						sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+					</Text>
+					<Text xl>
+						XL Nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus
+						sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+					</Text>
+					<Text xxl>
+						XXL Nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus
+						sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+					</Text>
 					<ThisValueEqualsState thisValue='Connor' stateValue={whom}>
 						<Text xl>ROOF ROOF</Text>
 					</ThisValueEqualsState>
@@ -73,6 +97,7 @@ const HomePage = ({ contentProps }) => {
 								playing
 								loop
 								muted
+								playsinline
 							/>
 						</Fade>
 					</div>

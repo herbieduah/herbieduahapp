@@ -15,7 +15,7 @@ export const HerbieDuahApp = styled.div`
 	width: 100%;
 	overflow: hidden;
 	overscroll-behavior: none;
-	${fluidTypeInfo}
+	/* ${fluidTypeInfo} */
 	background: ${props =>
 		props.dragging ? appBgAnimation : props.isPortrait ? appBgMobile : appBg};
 	animation: ${Gradients} 1.5s ease-in-out ${props =>

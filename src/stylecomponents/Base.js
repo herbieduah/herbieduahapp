@@ -30,7 +30,8 @@ import {
 	fontColor,
 	bgColor,
 	hideScrollbar,
-	navBarSize
+	navBarSize,
+	fluidTypeInfo
 } from "./StyleHelpers";
 
 export const GlobalStyle = createGlobalStyle`
@@ -46,6 +47,7 @@ export const GlobalStyle = createGlobalStyle`
 		button:focus {
 			outline: 0;
 		}
+		${fluidTypeInfo}
   }
   
 `;

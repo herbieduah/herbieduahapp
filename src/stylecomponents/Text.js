@@ -35,20 +35,22 @@ const baseStyle = css`
 
 	font-size: ${props => {
 		if (props.xs) return "0.8em";
-		if (props.s) return "0.9em";
+		if (props.s) return "1em";
 		if (props.m) return "1.2em";
 		if (props.l) return "1.5em";
 		if (props.xl) return "2em";
+		if (props.xxl) return "2em";
 		return "1em";
 	}};
 	${mobile} {
 		font-size: ${props => {
-			if (props.xs) return "0.7em";
-			if (props.s) return "0.8em";
-			if (props.m) return "1em";
-			if (props.l) return "1.35em";
-			if (props.xl) return "1.7em";
-			return ".85em";
+			if (props.xs) return "0.8em";
+			if (props.s) return "0.85em";
+			if (props.m) return "1.05em";
+			if (props.l) return "1.2em";
+			if (props.xl) return "1.4em";
+			if (props.xxl) return "1.6em";
+			return "1em";
 		}};
 	}
 	font-weight: ${props => {
@@ -103,6 +105,10 @@ const HeadingFive = styled.h5`
 const Paragraph = styled.p`
 	${baseStyle};
 `;
+
+const Figcaption = styled.figcaption`
+	${baseStyle};
+`;
 const TextFormatter = styled.span`
 	${baseStyle};
 `;
@@ -131,6 +137,7 @@ const HyperLink = styled.a`
 	line-height: 1;
 	border: 0;
 	padding: 0;
+	hyphens: auto;
 	background: none;
 	color: ${linkColor};
 	cursor: pointer;
@@ -180,6 +187,7 @@ const Text = ({
 	center,
 	link,
 	menuLink,
+	figcaption,
 	format,
 	...props
 }) => {
@@ -239,6 +247,15 @@ const Text = ({
 	if (menuLink)
 		return (
 			<MenuLink nomargin={nomargin} right={right} center={center} {...props} />
+		);
+	if (figcaption)
+		return (
+			<Figcaption
+				nomargin={nomargin}
+				right={right}
+				center={center}
+				{...props}
+			/>
 		);
 	if (format)
 		return (

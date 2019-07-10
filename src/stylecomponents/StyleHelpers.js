@@ -18,6 +18,8 @@ export function fluidType(minVW, maxVW, minFontSize, maxFontSize) {
         font-size: ${maxFontSize};
       }
     `;
+	} else {
+		finalFontSize = `font-size: 16px`;
 	}
 	return finalFontSize;
 }
@@ -28,6 +30,7 @@ const maxFontSize = `24px`;
 export const sliderWidth = "3.4rem";
 export const sliderHeight = "2rem";
 export const fluidTypeInfo = fluidType(minVW, maxVW, minFontSize, maxFontSize);
+
 export const mobile = "@media only screen and (max-width: 500px)";
 export const mobileHorizontal = "@media only screen and (max-width: 1200px)";
 export const hideScrollbar = `-ms-overflow-style: none;  

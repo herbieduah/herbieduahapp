@@ -13,11 +13,23 @@ export const Media = props => {
 					<ReactSVG src={props.src} className={props.className} />
 				</i>
 			);
+		case "gif":
+			return (
+				<ReactPlayer
+					url={props.url}
+					width='100%'
+					height='100%'
+					playing
+					loop
+					muted
+					playsinline
+				/>
+			);
 		case "video":
 			return <ReactPlayer url={props.url} />;
 		case "image":
 			return (
-				<LazyLoad height={props.height ? props.height : "50%"} offset={200}>
+				<LazyLoad height={props.height ? props.height : "auto"} offset={200}>
 					<img
 						src={props.src}
 						// height={props.height}
@@ -34,3 +46,15 @@ export const Media = props => {
 };
 
 export default Media;
+
+{
+	/* <ReactPlayer
+								url={testVideo}
+								width='100%'
+								height='100%'
+								playing
+								loop
+								muted
+								playsinline
+							/> */
+}
