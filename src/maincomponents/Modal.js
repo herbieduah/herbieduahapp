@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 import ModalContainer from "../stylecomponents/ModalContainer";
 
 // env
-const inBrowser = typeof window !== "undefined";
-const UA = inBrowser && window.navigator.userAgent.toLowerCase();
-const isIE9 = UA && UA.indexOf("msie 9.0") > 0;
+// const inBrowser = typeof window !== "undefined";
+// const UA = inBrowser && window.navigator.userAgent.toLowerCase();
+// const isIE9 = UA && UA.indexOf("msie 9.0") > 0;
 
 const Dialog = props => {
 	const animation =
@@ -129,7 +129,7 @@ class Modal extends React.Component {
 
 	render() {
 		const { props, state } = this;
-		const onClick = props.closeMaskOnClick ? props.onClose : null;
+		// const onClick = props.closeMaskOnClick ? props.onClose : null;
 		// const mask = props.showMask ? (
 		// 	<div
 		// 		className='modal-mask'

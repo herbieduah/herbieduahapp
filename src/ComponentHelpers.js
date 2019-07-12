@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useEffect, useRef } from "react";
+import React, { Fragment, useContext } from "react";
 import { globalState } from "./State";
 import {
 	revealValues,
@@ -9,14 +9,13 @@ import {
 } from "./helpers";
 import Fade from "react-reveal/Fade";
 import Text from "./stylecomponents/Text";
-import Parallax from "parallax-js";
+// import Parallax from "parallax-js";
 import { browserName, mobileModel } from "react-device-detect";
 import {
-	FullScreenContainer,
 	NavBarContainer,
-	DragInstructionsContainer,
-	GradientCircle,
-	ParallaxContainer
+	// DragInstructionsContainer,
+	GradientCircle
+	// ParallaxContainer
 	// FullScreeningBGContainer
 } from "./stylecomponents/Base";
 import ClickNHold from "react-click-n-hold";
@@ -28,31 +27,32 @@ import Modal from "./maincomponents/Modal";
 import { Tab, TabList, TabPanel } from "react-tabs";
 import { ReactTabs } from "./stylecomponents/Base";
 import SubMenu from "./maincomponents/SubMenu";
+import { trackWindowScroll } from "react-lazy-load-image-component";
 
-export const DragInstructions = props => {
-	const {
-		dragging,
-		switchSides,
-		contentWidth: cw,
-		contentHeight: ch
-	} = useContext(globalState);
-	const { width: ww, height: wh } = useWindowResize();
-	const values = { ww, wh, cw, ch };
-	const isShowingMore = revealValues(values).isShowingMore;
-	const desktopText = switchSides && !isShowingMore ? "right" : "left";
-	const mobileText = switchSides && !isShowingMore ? "bottom" : "top";
-	const instructionsText = isPortrait(ww, wh) ? mobileText : desktopText;
-	const showingLessText = !isShowingMore ? "more" : "less";
-	return (
-		<DragInstructionsContainer>
-			<Fade top duration={revealSecs}>
-				<Text s className='instructions__text'>
-					Drag to the {instructionsText} and release to reveal {showingLessText}
-				</Text>
-			</Fade>
-		</DragInstructionsContainer>
-	);
-};
+// export const DragInstructions = props => {
+// 	const {
+// 		dragging,
+// 		switchSides,
+// 		contentWidth: cw,
+// 		contentHeight: ch
+// 	} = useContext(globalState);
+// 	const { width: ww, height: wh } = useWindowResize();
+// 	const values = { ww, wh, cw, ch };
+// 	const isShowingMore = revealValues(values).isShowingMore;
+// 	const desktopText = switchSides && !isShowingMore ? "right" : "left";
+// 	const mobileText = switchSides && !isShowingMore ? "bottom" : "top";
+// 	const instructionsText = isPortrait(ww, wh) ? mobileText : desktopText;
+// 	const showingLessText = !isShowingMore ? "more" : "less";
+// 	return (
+// 		<DragInstructionsContainer>
+// 			<Fade top duration={revealSecs}>
+// 				<Text s className='instructions__text'>
+// 					Drag to the {instructionsText} and release to reveal {showingLessText}
+// 				</Text>
+// 			</Fade>
+// 		</DragInstructionsContainer>
+// 	);
+// };
 
 export const NavBar = () => {
 	const {
@@ -250,7 +250,7 @@ export const Log = props => {
 	return null;
 };
 
-export const ContentWrapper = props => {
+const ContentWrapperContainer = props => {
 	const {
 		contentWidth: cw,
 		contentHeight: ch,
@@ -301,6 +301,8 @@ export const ContentWrapper = props => {
 	);
 };
 
+export const ContentWrapper = trackWindowScroll(ContentWrapperContainer);
+
 export const ContentShow = props => {
 	const {
 		contentWidth: cw,
@@ -312,7 +314,7 @@ export const ContentShow = props => {
 	const { width: ww, height: wh } = useWindowResize();
 	const values = { ww, wh, cw, ch };
 	const isShowingMore = revealValues(values).isShowingMore;
-	const isContentPortrait = isPortrait(ww, wh);
+	// const isContentPortrait = isPortrait(ww, wh);
 	const showMore = fullScreen ? true : isShowingMore;
 	const showLess = fullScreen ? false : !isShowingMore;
 	// const values = { ww, wh, cw, ch };
@@ -334,11 +336,7 @@ export const ContentShow = props => {
 	if (props.less) {
 		return (
 			<Fragment>
-				<aside className='content__less'>
-					<Fade up duration={revealSecs}>
-						{props.children}
-					</Fade>
-				</aside>
+				<aside className='content__less'>{props.children}</aside>
 			</Fragment>
 		);
 	}
@@ -351,7 +349,7 @@ export const ContentShow = props => {
 	}
 	if (props.header) {
 		return (
-			<Fade up duration={revealSecs}>
+			<Fade duration={revealSecs}>
 				<ClickNHold
 					time={2} // Time to keep pressing. Default is 2
 					isPortrait={isPortrait(ww, wh)}

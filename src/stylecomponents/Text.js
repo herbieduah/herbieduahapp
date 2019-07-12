@@ -13,8 +13,6 @@ import {
 	buttonBorderColor,
 	linkBorderColorActive,
 	linkBorderColor,
-	navBorderColor,
-	navBorderColorActive,
 	navColor,
 	navColorActive
 } from "./StyleHelpers";
@@ -22,9 +20,8 @@ import {
 const baseStyle = css`
 	font-family: "commuters-sans", -apple-system, BlinkMacSystemFont, Oxygen,
 		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
-	margin-bottom: ${props => props.nomargin && "0"};
 	font-weight: 400;
-	margin-top: 0;
+	margin: 0;
 	line-height: 1.5;
 	color: ${fontColor};
 	text-align: ${props => {
@@ -39,17 +36,17 @@ const baseStyle = css`
 		if (props.m) return "1.2em";
 		if (props.l) return "1.5em";
 		if (props.xl) return "2em";
-		if (props.xxl) return "2em";
+		if (props.xxl) return "2.5em";
 		return "1em";
 	}};
 	${mobile} {
 		font-size: ${props => {
 			if (props.xs) return "0.8em";
 			if (props.s) return "0.85em";
-			if (props.m) return "1.05em";
-			if (props.l) return "1.2em";
-			if (props.xl) return "1.4em";
-			if (props.xxl) return "1.6em";
+			if (props.m) return "1em";
+			if (props.l) return "1.3em";
+			if (props.xl) return "1.6em";
+			if (props.xxl) return "1.9em";
 			return "1em";
 		}};
 	}
@@ -63,7 +60,6 @@ const baseStyle = css`
 		return "normal";
 	}};
 	max-width: 100%;
-	margin: 0 0 3%;
 `;
 
 baseStyle.defaultProps = {
@@ -150,13 +146,13 @@ const HyperLink = styled.a`
 	}
 	text-decoration: none;
 `;
-
 const MenuLink = styled(NavLink)`
 	${baseStyle};
 	font-weight: 700;
 	${mainTransition}
 	line-height: 1.2;
 	border: 0;
+	hyphens: manual;
 	background: none;
 	color: ${navColor};
 	cursor: pointer;

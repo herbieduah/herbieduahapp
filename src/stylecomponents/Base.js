@@ -20,8 +20,7 @@ import {
 	tabHeadingsBorderBottomActive,
 	tabHeadingsBorderActive,
 	fullScreenHoldBg,
-	logoBorderRadius,
-	appBgAnimation
+	logoBorderRadius
 } from "./Themes/ThemeVariables";
 import {
 	mobile,
@@ -73,7 +72,7 @@ export const NavBarContainer = styled.div`
 	user-select: none;
 	button {
 		border-bottom: 0;
-		margin:0 ${navBarSize};
+		margin: 0 ${navBarSize};
 		height: 100%;
 		${mainTransition}
 		color: ${navBarButtonColor};
@@ -103,7 +102,7 @@ export const NavBarContainer = styled.div`
 			}
 			.outer-rect {
 				${mainTransition}
-				fill: ${logoOuterFillColor}
+				fill: ${logoOuterFillColor};
 				fill-opacity: 0;
 			}
 			svg {

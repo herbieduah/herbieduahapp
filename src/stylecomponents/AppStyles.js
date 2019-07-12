@@ -8,9 +8,6 @@ import {
 	appBgAnimation
 } from "./Themes/ThemeVariables";
 
-const dragging = props => props.dragging;
-const isPortrait = props => props.isPortrait;
-
 export const HerbieDuahApp = styled.div`
 	width: 100%;
 	overflow: hidden;

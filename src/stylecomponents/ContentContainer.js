@@ -20,6 +20,9 @@ export const ContentContainer = styled.article`
 	img {
 		width: 100%;
 	}
+	figure {
+		margin: 0;
+	}
 	.container {
 			max-width: 740px;
 			width: 100%;
@@ -62,6 +65,19 @@ export const ContentContainer = styled.article`
 			padding: 0 2rem;
 			margin-bottom: ${props => (props.isPortrait ? `70vh` : `0`)};
 		}		
+	}
+
+	.c-margin-bottom {
+		margin-bottom: 36px;
+		${mobile} {
+			margin-bottom: 30px;
+		}
+	}
+	.c-margin-top {
+		margin-top: 36px;
+		${mobile} {
+			margin-top: 30px;
+		}
 	}
 `;
 

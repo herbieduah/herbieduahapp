@@ -6,7 +6,6 @@ import {
 	slightCircleBoxShadow
 } from "./StyleHelpers";
 import {
-	fontColor,
 	sliderArrow,
 	CTAColor,
 	bgColor,

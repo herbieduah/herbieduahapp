@@ -35,7 +35,7 @@ export const sliderMinSize = 0.4;
 export const sliderMinSizeMobile = 0.35;
 export const sliderDesktopWidth = "60";
 export const sliderMobileWidth = "60";
-export const revealSecs = 1000;
+export const revealSecs = 2000;
 
 let ww = window.innerWidth;
 let wh = window.innerHeight;

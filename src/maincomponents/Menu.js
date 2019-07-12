@@ -1,4 +1,4 @@
-import React, { useContext, Fragment } from "react";
+import React, { useContext } from "react";
 import MenuContainer from "../stylecomponents/MenuContainer";
 import {
 	isPortrait,
@@ -17,7 +17,9 @@ export const ContentMenu = () => {
 	const values = { ww, wh, cw, ch };
 	const isShowingMore = revealValues(values).isShowingMore;
 	return (
-		<MenuContainer isPortrait={isPortrait(ww, wh)} isShowingMore={isShowingMore}>
+		<MenuContainer
+			isPortrait={isPortrait(ww, wh)}
+			isShowingMore={isShowingMore}>
 			<Fade up duration={revealSecs}>
 				{!isShowingMore ? (
 					<MenuTabs showCategory={isShowingMore} />

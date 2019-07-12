@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Modal from "../maincomponents/Modal";
+// import Modal from "../maincomponents/Modal";
 import {
 	fadeEnter,
 	zoomEnter,

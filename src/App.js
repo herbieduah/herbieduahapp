@@ -10,7 +10,7 @@ import Content from "./maincomponents/Content";
 // import { DragInstructions } from "./Actions";
 import { defaultAppTheme } from "./stylecomponents/Theme";
 import SliderLine from "./maincomponents/Revealer/SliderLine";
-import { FullScreenModal, DragInstructions } from "./ComponentHelpers";
+import { FullScreenModal } from "./ComponentHelpers";
 import queryString from "query-string";
 
 import {

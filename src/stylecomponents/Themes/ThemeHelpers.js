@@ -1,27 +1,19 @@
-import { rgba, invert } from "polished";
+import { rgba, invert, readableColor } from "polished";
 // ** bgColor is first color;
 // ** fontColorSecondary;
-const fontColor = "#ffffff";
-const fontColorSecondary = fontColor;
+// const fontColor = readableColor("#cc208e");
+// const fontColorSecondary = fontColor;
 const bgColor = "#cc208e";
-const bgColorSecondary = "#6713d2";
+// const bgColorSecondary = "#6713d2";
 const gradientValues = `#cc208e 0%, #6713d2 100%`;
 
 const defaultBaseValues = {
-	fontColor,
-	fontColorSecondary,
 	bgColor,
-	bgColorSecondary,
 	gradientValues
 };
 export const themeMaker = (theme = defaultBaseValues) => {
-	const {
-		fontColor,
-		fontColorSecondary,
-		bgColor,
-		bgColorSecondary,
-		gradientValues
-	} = theme;
+	const { bgColor, gradientValues } = theme;
+	const fontColor = readableColor(bgColor);
 	return {
 		appBg: `linear-gradient(to right, ${gradientValues})`,
 		appBgAnimation: `linear-gradient(-45deg, ${gradientValues})`,
@@ -29,14 +21,14 @@ export const themeMaker = (theme = defaultBaseValues) => {
 		appBgMobile: `linear-gradient(to bottom, ${gradientValues})`,
 		appfontFamily: `"commuters-sans", -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif`,
 		bgColor: `${bgColor}`,
-		bgColorSecondary: `${bgColorSecondary}`,
+		bgColorSecondary: `${bgColor}`,
 		CTAColor: `${rgba(fontColor, 0.65)}`,
-		CTAColorSecondary: `${rgba(fontColorSecondary, 0.65)}`,
+		CTAColorSecondary: `${rgba(fontColor, 0.65)}`,
 		fontColor: `${fontColor}`,
 		fontColorSecondary: `${fontColor}`,
 		fontSelection: `${invert(fontColor)}`,
 		fullScreenHoldBg: ` linear-gradient( ${invert(bgColor)}, ${invert(
-			bgColorSecondary
+			bgColor
 		)})`,
 		logoBgColor: `${rgba(fontColor, 0.65)}`,
 		logoBgHoverColor: `${fontColor}`,

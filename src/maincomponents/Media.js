@@ -2,9 +2,13 @@ import React from "react";
 import ReactSVG from "react-svg";
 import ReactPlayer from "react-player";
 // import ImageLoader from "./ImageLoader";
-import LazyLoad from "react-lazyload";
+import {
+	LazyLoadImage,
+	LazyLoadComponent
+} from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
-export const Media = props => {
+const Media = props => {
 	const type = props.type;
 	switch (type) {
 		case "icon":
@@ -15,30 +19,37 @@ export const Media = props => {
 			);
 		case "gif":
 			return (
-				<ReactPlayer
-					url={props.url}
-					width='100%'
-					height='100%'
-					playing
-					loop
-					muted
-					playsinline
-				/>
+				<LazyLoadComponent>
+					<ReactPlayer
+						url={props.url}
+						width='100%'
+						height='100%'
+						playing
+						loop
+						muted
+						playsinline
+						aria-describedby={props.desc}
+						className={props.className}
+					/>
+				</LazyLoadComponent>
 			);
 		case "video":
-			return <ReactPlayer url={props.url} />;
+			return (
+				<LazyLoadComponent>
+					<div aria-describedby={props.desc}>
+						<ReactPlayer url={props.url} className={props.className} />
+					</div>
+				</LazyLoadComponent>
+			);
 		case "image":
 			return (
-				<LazyLoad height={props.height ? props.height : "auto"} offset={200}>
-					<img
-						src={props.src}
-						// height={props.height}
-						// width={props.width}
-						// onClick={props.onClick}
-						// onLoad={props.onLoad}
-						alt={props.alt}
-					/>
-				</LazyLoad>
+				<LazyLoadImage
+					alt={props.alt}
+					effect='blur'
+					src={props.src}
+					className={props.className}
+					threshold={250}
+				/>
 			);
 		default:
 			return null;
@@ -47,8 +58,7 @@ export const Media = props => {
 
 export default Media;
 
-{
-	/* <ReactPlayer
+/* <ReactPlayer
 								url={testVideo}
 								width='100%'
 								height='100%'
@@ -57,4 +67,3 @@ export default Media;
 								muted
 								playsinline
 							/> */
-}

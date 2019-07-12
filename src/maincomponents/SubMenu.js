@@ -17,14 +17,14 @@ export const SubMenu = props => {
 			return (
 				<div>
 					{showCategory ? (
-						<Text format m bold className='subMenu__text'>
+						<Text format m className='subMenu__text'>
 							Work
 						</Text>
 					) : null}
 					<SubMenuWrapper showCategory={showCategory}>
 						<li onClick={hideModal} className='subMenu__item'>
 							<Text menuLink to='/'>
-								HerbieDuah.app
+								Herbie&shy;Duah.app
 							</Text>
 						</li>
 						<li onClick={hideModal} className='subMenu__item'>
@@ -60,7 +60,7 @@ export const SubMenu = props => {
 			return (
 				<div>
 					{showCategory ? (
-						<Text format m bold className='subMenu__text'>
+						<Text format m className='subMenu__text'>
 							About
 						</Text>
 					) : null}
@@ -72,7 +72,7 @@ export const SubMenu = props => {
 						</li>
 						<li onClick={hideModal} className='subMenu__item'>
 							<Text menuLink to='/SpecialThanks'>
-								Special Thanks
+								Special&shy; Thanks
 							</Text>
 						</li>
 						<li onClick={hideModal} className='subMenu__item'>
@@ -87,12 +87,12 @@ export const SubMenu = props => {
 						</li>
 						<li onClick={hideModal} className='subMenu__item'>
 							<Text menuLink to='/Resume'>
-								Resume
+								Experience
 							</Text>
 						</li>
 						<li onClick={hideModal} className='subMenu__item'>
 							<Text menuLink to='/UXvsHX'>
-								User Experience vs Human Experience
+								An App For Everyone
 							</Text>
 						</li>
 					</SubMenuWrapper>
@@ -102,7 +102,7 @@ export const SubMenu = props => {
 			return (
 				<div>
 					{showCategory ? (
-						<Text format m bold className='subMenu__text'>
+						<Text format m className='subMenu__text'>
 							Customize
 						</Text>
 					) : null}
@@ -129,7 +129,7 @@ export const SubMenu = props => {
 			return (
 				<div>
 					{showCategory ? (
-						<Text format m bold className='subMenu__text'>
+						<Text format m className='subMenu__text'>
 							Photography
 						</Text>
 					) : null}

@@ -1,7 +1,8 @@
 import React, { useContext, Fragment } from "react";
 import ReactResizeDetector from "react-resize-detector";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, withRouter } from "react-router-dom";
 import { globalState } from "../State";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 import {
 	AboutMe,
 	BedzinExhibit,
@@ -23,9 +24,10 @@ import {
 	UXvsHX
 } from "../Pages";
 import { NavBar } from "../ComponentHelpers";
+import { revealSecs } from "../helpers";
 // import { AnimatedSwitch } from "react-router-transition";
 
-export const Content = () => {
+export const Content = ({ location }) => {
 	const {
 		onContentResizeWidth,
 		onContentResizeHeight,
@@ -53,31 +55,40 @@ export const Content = () => {
 				atActive={{ opacity: 1 }}
 				className='switch-wrapper'> */}
 			<NavBar />
-			<Switch>
-				<Route path='/AboutMe' component={AboutMe} />
-				<Route path='/BedzinExhibit' component={BedzinExhibit} />
-				<Route path='/Colors' component={Colors} />
-				<Route path='/DiscountTire' component={DiscountTire} />
-				<Route path='/CulturalSuicide' component={CulturalSuicide} />
-				<Route exact path='/' component={Home} />
-				<Route path='/Inspiration' component={Inspiration} />
-				<Route path='/Portrait' component={Portrait} />
-				<Route path='/iPhone' component={IPhone} />
-				<Route
-					path='/NorthernArizonaUniversity'
-					component={NorthernArizonaUniversity}
-				/>
-				<Route path='/Photography' component={Photography} />
-				<Route path='/Resume' component={Resume} />
-				<Route path='/SpecialThanks' component={SpecialThanks} />
-				<Route path='/Theme' component={Theme} />
-				<Route path='/Tone' component={Tone} />
-				<Route path='/Nature' component={Nature} />
-				<Route path='/Ugg' component={Ugg} />
-				<Route path='/UXvsHX' component={UXvsHX} />
-			</Switch>
+			<TransitionGroup>
+				<CSSTransition
+					key={location.key}
+					timeout={{ enter: revealSecs, exit: revealSecs }}
+					classNames={"fade"}>
+					{/* <div className='route-section'> */}
+					<Switch location={location}>
+						<Route path='/AboutMe' component={AboutMe} />
+						<Route path='/BedzinExhibit' component={BedzinExhibit} />
+						<Route path='/Colors' component={Colors} />
+						<Route path='/DiscountTire' component={DiscountTire} />
+						<Route path='/CulturalSuicide' component={CulturalSuicide} />
+						<Route exact path='/' component={Home} />
+						<Route path='/Inspiration' component={Inspiration} />
+						<Route path='/Portrait' component={Portrait} />
+						<Route path='/iPhone' component={IPhone} />
+						<Route
+							path='/NorthernArizonaUniversity'
+							component={NorthernArizonaUniversity}
+						/>
+						<Route path='/Photography' component={Photography} />
+						<Route path='/Resume' component={Resume} />
+						<Route path='/SpecialThanks' component={SpecialThanks} />
+						<Route path='/Theme' component={Theme} />
+						<Route path='/Tone' component={Tone} />
+						<Route path='/Nature' component={Nature} />
+						<Route path='/Ugg' component={Ugg} />
+						<Route path='/UXvsHX' component={UXvsHX} />
+					</Switch>
+					{/* </div> */}
+				</CSSTransition>
+			</TransitionGroup>
 		</Fragment>
 	);
 };
 
-export default Content;
+export default withRouter(Content);
