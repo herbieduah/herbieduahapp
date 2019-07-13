@@ -10,9 +10,9 @@ import Content from "./maincomponents/Content";
 // import { DragInstructions } from "./Actions";
 import { defaultAppTheme } from "./stylecomponents/Theme";
 import SliderLine from "./maincomponents/Revealer/SliderLine";
-import { FullScreenModal } from "./ComponentHelpers";
+import { FullScreenModal, NavBar } from "./ComponentHelpers";
 import queryString from "query-string";
-
+import { isMobileOnly } from "react-device-detect";
 import {
 	getCurrentTheme,
 	splitDir,
@@ -35,6 +35,8 @@ export const App = () => {
 	const currentThemeObject = getCurrentTheme(defaultAppTheme, currentTheme);
 	const { width: ww, height: wh } = useWindowResize();
 	const { minSize, maxSize } = minSliderSize(ww, wh);
+	const mobileOveriPhone5Horizontal = ww > 453;
+	const showFSMobileHorizontal = mobileOveriPhone5Horizontal && isMobileOnly;
 	const onDragging = () => {
 		setDragging(true);
 	};
@@ -48,14 +50,14 @@ export const App = () => {
 
 	useEffect(() => {
 		const values = queryString.parse(window.location.search);
-		values.whom ? whoIsOnMyPage(values.whom) : console.log("no one");
+		// values.whom ? whoIsOnMyPage(values.whom) : console.log("no one");
 	});
 	// console.log(`Fullscreening: ${fullScreening}`);
 	// console.log(`Fullscreen: ${fullScreen}`);
 	const splitSize = parseInt(localStorage.getItem("splitPos"))
 		? parseInt(localStorage.getItem("splitPos"))
 		: defaultPaneSize(ww, wh);
-	console.log(splitSize);
+	// console.log(splitSize);
 	return (
 		<ThemeProvider theme={currentThemeObject}>
 			<HerbieDuahApp
@@ -64,12 +66,13 @@ export const App = () => {
 				splitSize={splitSize}
 				dragging={dragging}>
 				<GlobalStyle />
+				<NavBar />
 				{/* <ParallaxTest /> */}
 				<FullScreenModal />
 				{/* <SliderLine /> */}
 				{/* {dragging ? <DragInstructions /> : null} */}
 
-				{fullScreen ? <Content /> : null}
+				{fullScreen || showFSMobileHorizontal ? <Content /> : null}
 				{/* <Content /> */}
 				{/* {fullScreen ? <h1>Here I am</h1> : null} */}
 				{dragging ? <SliderLine /> : null}
@@ -77,7 +80,7 @@ export const App = () => {
 				{fullScreening ? <FullScreeningBG /> : null}
 
 				{/* <FullScreeningBG /> */}
-				{!fullScreen ? (
+				{!fullScreen && !showFSMobileHorizontal ? (
 					<SplitPane
 						split={splitDir(ww, wh)}
 						minSize={minSize}

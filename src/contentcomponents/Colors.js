@@ -3,7 +3,8 @@ import React, { Fragment } from "react";
 import Text from "../stylecomponents/Text";
 // import Media from "../maincomponents/Media";
 // import Fade from "react-reveal/Fade";
-import { ContentShow, GradientTheme } from "../ComponentHelpers";
+import { ContentShow } from "../ContentHelpers";
+import { GradientTheme } from "../ComponentHelpers";
 
 const header = "App Colors";
 

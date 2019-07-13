@@ -2,7 +2,7 @@
 import React, { Fragment } from "react";
 // import Media from "../maincomponents/Media";
 // import Fade from "react-reveal/Fade";
-import { ContentShow, ComingSoon } from "../ComponentHelpers";
+import { ContentShow, ComingSoon } from "../ContentHelpers";
 
 const header = "Theme";
 

@@ -12,7 +12,7 @@ import {
 	Figcaption,
 	Gif
 } from "../ContentHelpers";
-import { ContentShow } from "../ComponentHelpers";
+import { ContentShow } from "../ContentHelpers";
 // import Modal from "../maincomponents/Modal";
 import testVideo from "../media/videos/JeremyScottDesktop_9.mp4";
 import testPic from "../media/images/photography-herbieFood-2222.jpg";

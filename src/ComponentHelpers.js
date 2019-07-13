@@ -28,6 +28,8 @@ import { Tab, TabList, TabPanel } from "react-tabs";
 import { ReactTabs } from "./stylecomponents/Base";
 import SubMenu from "./maincomponents/SubMenu";
 import { trackWindowScroll } from "react-lazy-load-image-component";
+import TransitionGroup from "react-transition-group/TransitionGroup";
+import Zoom from "react-reveal/Zoom";
 
 // export const DragInstructions = props => {
 // 	const {
@@ -62,13 +64,14 @@ export const NavBar = () => {
 		fullScreen,
 		setModalVisible,
 		modalVisible,
-		setModalContent
+		setModalContent,
+		navBarRight
 	} = useContext(globalState);
 	const { height: wh, width: ww } = useWindowResize();
 	const values = { ww, wh, cw, ch };
 	const isShowingMore = revealValues(values).isShowingMore;
 	const showLess = fullScreen ? false : !isShowingMore;
-
+	const isContentPortrait = isPortrait(ww, wh);
 	const setMenuModalContent = () => {
 		setModalContent("menu");
 		modalVisible ? setModalVisible(false) : setModalVisible(true);
@@ -81,21 +84,23 @@ export const NavBar = () => {
 			className='navbar'
 			fullScreen={fullScreen}
 			hideMaximize={showLess}
-			appHeight={wh}>
+			appHeight={wh}
+			navBarRight={navBarRight}
+			isPortrait={isContentPortrait}>
 			<div className='navbar__logo-menu'>
-				{fullScreen ? (
-					<Fragment>
-						<Fade bottom duration={revealSecs}>
+				<TransitionGroup>
+					{fullScreen ? (
+						<Zoom duration={revealSecs}>
 							<Text
 								button
-								m
+								s
 								className='navbar__menu-text'
 								onClick={setMenuModalContent}>
 								{modalVisible ? `Back` : `Menu`}
 							</Text>
-						</Fade>
-					</Fragment>
-				) : null}
+						</Zoom>
+					) : null}
+				</TransitionGroup>
 				<NavLink to='/'>
 					<Media
 						type='icon'
@@ -104,20 +109,22 @@ export const NavBar = () => {
 					/>
 				</NavLink>
 			</div>
-			{!showLess ? (
-				<Fade bottom duration={revealSecs}>
-					<Text
-						m
-						button
-						className='navbar__maximize'
-						onClick={setMaximizeAndMinimize}
-						aria-hidden={showLess ? `true` : `false`}>
-						M{fullScreen ? `in` : `ax`}imize
-					</Text>
-				</Fade>
-			) : null}
+			<TransitionGroup>
+				{!showLess ? (
+					<Zoom duration={revealSecs}>
+						<Text
+							s
+							button
+							className='navbar__maximize'
+							onClick={setMaximizeAndMinimize}
+							aria-hidden={showLess ? `true` : `false`}>
+							M{fullScreen ? `in` : `ax`}imize
+						</Text>
+					</Zoom>
+				) : null}
+			</TransitionGroup>
 
-			<Text m button>
+			<Text s button>
 				Contact
 			</Text>
 			{/*
@@ -174,7 +181,7 @@ export const ThisValueEqualsState = props => {
 
 export const SubMenuWrapper = props => {
 	return (
-		<Fade cascade up duration={revealSecs}>
+		<Fade cascade duration={revealSecs}>
 			<ul className='subMenu'>{props.children}</ul>
 		</Fade>
 	);
@@ -302,81 +309,6 @@ const ContentWrapperContainer = props => {
 };
 
 export const ContentWrapper = trackWindowScroll(ContentWrapperContainer);
-
-export const ContentShow = props => {
-	const {
-		contentWidth: cw,
-		contentHeight: ch,
-		fullScreen,
-		setFullScreening,
-		setFullscreen
-	} = useContext(globalState);
-	const { width: ww, height: wh } = useWindowResize();
-	const values = { ww, wh, cw, ch };
-	const isShowingMore = revealValues(values).isShowingMore;
-	// const isContentPortrait = isPortrait(ww, wh);
-	const showMore = fullScreen ? true : isShowingMore;
-	const showLess = fullScreen ? false : !isShowingMore;
-	// const values = { ww, wh, cw, ch };
-	// const isShowingMore = revealValues(values).isShowingMore;
-	const onFullScreening = () => {
-		setFullScreening(true);
-		console.log("Holding!!!");
-	};
-	const onFullScreenTimeOutEnded = () => {
-		setFullScreening(false);
-		fullScreen ? setFullscreen(false) : setFullscreen(true);
-		console.log("Hold timeout ended!");
-	};
-	const onFullScreenEnded = () => {
-		setFullScreening(false);
-		console.log("Hold ended!");
-	};
-
-	if (props.less) {
-		return (
-			<Fragment>
-				<aside className='content__less'>{props.children}</aside>
-			</Fragment>
-		);
-	}
-	if (props.more) {
-		return (
-			<Fragment>
-				{showMore ? <Fragment>{props.children}</Fragment> : null}
-			</Fragment>
-		);
-	}
-	if (props.header) {
-		return (
-			<Fade duration={revealSecs}>
-				<ClickNHold
-					time={2} // Time to keep pressing. Default is 2
-					isPortrait={isPortrait(ww, wh)}
-					fullScreen={fullScreen}
-					onStart={onFullScreening}
-					onClickNHold={onFullScreenTimeOutEnded} //Timeout callback
-					onEnd={onFullScreenEnded}>
-					<header className='content__header container'>
-						<Text h1 xl={showMore} s={showLess} extrabold>
-							{props.header}
-						</Text>
-					</header>
-				</ClickNHold>
-			</Fade>
-		);
-	}
-};
-
-export const ComingSoon = props => {
-	return (
-		<Fade up duration={revealSecs}>
-			<div className='container'>
-				<Text m>Working on the content for {props.header}.</Text>
-			</div>
-		</Fade>
-	);
-};
 
 export const HeaderFullScreen = props => {
 	const { fullScreen, setFullScreening, setFullscreen } = useContext(

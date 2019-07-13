@@ -23,10 +23,15 @@ import {
 	Ugg,
 	UXvsHX
 } from "../Pages";
-import { NavBar } from "../ComponentHelpers";
 import { revealSecs } from "../helpers";
+import "animate.css";
 // import { AnimatedSwitch } from "react-router-transition";
-
+const transitionClasses = {
+	enter: "animated",
+	enterActive: "fadeInDown",
+	exit: "animated",
+	exitActive: "fadeOutDown"
+};
 export const Content = ({ location }) => {
 	const {
 		onContentResizeWidth,
@@ -54,12 +59,14 @@ export const Content = ({ location }) => {
 				atLeave={{ opacity: 0 }}
 				atActive={{ opacity: 1 }}
 				className='switch-wrapper'> */}
-			<NavBar />
+
 			<TransitionGroup>
 				<CSSTransition
 					key={location.key}
-					timeout={{ enter: revealSecs, exit: revealSecs }}
-					classNames={"fade"}>
+					// timeout={{ enter: revealSecs, exit: revealSecs }}
+					timeout={revealSecs}
+					// classNames={"fade"}
+					classNames={transitionClasses}>
 					{/* <div className='route-section'> */}
 					<Switch location={location}>
 						<Route path='/AboutMe' component={AboutMe} />

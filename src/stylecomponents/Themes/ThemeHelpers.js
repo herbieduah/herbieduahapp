@@ -32,7 +32,7 @@ export const themeMaker = (theme = defaultBaseValues) => {
 		)})`,
 		logoBgColor: `${rgba(fontColor, 0.65)}`,
 		logoBgHoverColor: `${fontColor}`,
-		logoBorderRadius: `4px`,
+		logoBorderRadius: `0`,
 		logoInnerFillColor: `${bgColor}`,
 		logoInnerFillColorHoverFocus: `${bgColor}`,
 		logoOuterFillColor: `${fontColor}`,

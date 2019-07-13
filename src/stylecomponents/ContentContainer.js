@@ -4,12 +4,13 @@ import {
 	hideScrollbar,
 	mainTransition,
 	mobileSliderOnTop,
-	contentMenuPadding
+	contentMenuPadding,
+	tablet
 } from "./StyleHelpers";
 
 export const ContentContainer = styled.article`
 	width: 100%;
-	height: 100%;
+	height: 100vh;
 	${props => (props.isPortrait ? mobileSliderOnTop : ``)};
 	${hideScrollbar};
 	overflow: auto;
@@ -47,16 +48,18 @@ export const ContentContainer = styled.article`
 		}
 		&__less {
 			width:  100%;
-			max-width:  ${props => (props.showLess ? `500px` : `740px`)};
+			max-width:  ${props => (props.showLess ? `500px` : `100%`)};
 			${props => (props.fullScreen ? `margin 0 auto` : ``)};
 			/* margin: 0 auto; */
-			p {
+			/* p {
 				${mainTransition}
 				font-size: ${props => (props.showLess ? `1.5em` : `.9em`)};
 				margin: 0 auto;
+			} */
+			${tablet} {
+				max-width:  ${props => (props.showLess ? `340px` : `100%`)};
 			}
 			${mobile} {
-				font-size: ${props => (props.showLess ? `1em` : `.85em`)};
 				width: 100%;
 			}
 		}

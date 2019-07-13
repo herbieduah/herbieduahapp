@@ -4,6 +4,9 @@ import Text from "../stylecomponents/Text";
 // import Fade from "react-reveal/Fade";
 // import { CSSTransition } from "react-transition-group";
 import { SubMenuWrapper } from "../ComponentHelpers";
+import Fade from "react-reveal/Fade";
+import TransitionGroup from "react-transition-group/TransitionGroup";
+import { revealSecs } from "../helpers";
 export const SubMenu = props => {
 	let category = props.category;
 	const showCategory = props.showCategory;
@@ -16,11 +19,15 @@ export const SubMenu = props => {
 		case "work":
 			return (
 				<div>
-					{showCategory ? (
-						<Text format m className='subMenu__text'>
-							Work
-						</Text>
-					) : null}
+					<TransitionGroup>
+						{showCategory ? (
+							<Fade duration={revealSecs}>
+								<Text format m className='subMenu__text'>
+									Work
+								</Text>
+							</Fade>
+						) : null}
+					</TransitionGroup>
 					<SubMenuWrapper showCategory={showCategory}>
 						<li onClick={hideModal} className='subMenu__item'>
 							<Text menuLink to='/'>
@@ -59,11 +66,15 @@ export const SubMenu = props => {
 		case "about":
 			return (
 				<div>
-					{showCategory ? (
-						<Text format m className='subMenu__text'>
-							About
-						</Text>
-					) : null}
+					<TransitionGroup>
+						{showCategory ? (
+							<Fade duration={revealSecs}>
+								<Text format m className='subMenu__text'>
+									About
+								</Text>
+							</Fade>
+						) : null}
+					</TransitionGroup>
 					<SubMenuWrapper showCategory={showCategory}>
 						<li onClick={hideModal} className='subMenu__item'>
 							<Text menuLink to='/AboutMe'>
@@ -101,11 +112,15 @@ export const SubMenu = props => {
 		case "customize":
 			return (
 				<div>
-					{showCategory ? (
-						<Text format m className='subMenu__text'>
-							Customize
-						</Text>
-					) : null}
+					<TransitionGroup>
+						{showCategory ? (
+							<Fade duration={revealSecs}>
+								<Text format m className='subMenu__text'>
+									Customize
+								</Text>
+							</Fade>
+						) : null}
+					</TransitionGroup>
 					<SubMenuWrapper showCategory={showCategory}>
 						<li onClick={hideModal} className='subMenu__item'>
 							<Text menuLink to='/colors'>
@@ -128,11 +143,15 @@ export const SubMenu = props => {
 		case "photography":
 			return (
 				<div>
-					{showCategory ? (
-						<Text format m className='subMenu__text'>
-							Photography
-						</Text>
-					) : null}
+					<TransitionGroup>
+						{showCategory ? (
+							<Fade duration={revealSecs}>
+								<Text format m className='subMenu__text'>
+									Photography
+								</Text>
+							</Fade>
+						) : null}
+					</TransitionGroup>
 					<SubMenuWrapper showCategory={showCategory}>
 						<li onClick={hideModal} className='subMenu__item'>
 							<Text menuLink to='/naturephotography'>

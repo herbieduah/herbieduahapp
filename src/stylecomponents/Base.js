@@ -51,11 +51,30 @@ export const GlobalStyle = createGlobalStyle`
   
 `;
 
+// display: flex;
+//     overflow: hidden;
+//     margin-top: auto;
+//     margin-right: 20px;
+//     margin-left: auto;
+//     -webkit-box-orient: horizontal;
+//     -webkit-box-direction: normal;
+//     -webkit-flex-direction: row;
+//     -ms-flex-direction: row;
+//     flex-direction: row;
+//     -webkit-transform: rotate(-90deg);
+//     -ms-transform: rotate(-90deg);
+//     transform: rotate(-90deg);
+//     -webkit-transform-origin: 100% 100%;
+//     -ms-transform-origin: 100% 100%;
+//     transform-origin: 100% 100%;
+//     font-family: Radnika, sans-serif;
+//     font-size: 12px
 export const NavBarContainer = styled.div`
 	position: fixed;
-    top: 0px;
-    left: 0px;
-    z-index: 10000;
+    top: ${props => (props.navBarRight ? `-${navBarSize}` : `0`)};
+	${props => (props.navBarRight ? `right: 0` : `left: 0`)};
+    z-index: 1000;
+	transform-origin: ${props => (props.navBarRight ? `right bottom` : `left top`)};
     display: flex;
 	overflow-x: auto;
 	${hideScrollbar}
@@ -63,16 +82,19 @@ export const NavBarContainer = styled.div`
     /* margin-top: auto;
     margin-left: auto; */
     flex-direction: row-reverse;
-	transform-origin: left top;
-	align-items:center;
-	transform: rotate(-90deg) translateX(-100%);  
+	/* flex-direction: row-reverse; */
+	/* transform-origin: left top; */
+	align-items: center;
+	transform: rotate(-90deg) ${props =>
+		props.navBarRight ? `` : `translateX(-100%)`};  
+	/* transform: rotate(-90deg) translateX(-100%);   */
  	width: ${props => props.appHeight}px;
 	height: ${navBarSize};
 	justify-content: space-between;
 	user-select: none;
 	button {
 		border-bottom: 0;
-		margin: 0 ${navBarSize};
+		padding: 0 ${navBarSize};
 		height: 100%;
 		${mainTransition}
 		color: ${navBarButtonColor};
@@ -90,11 +112,12 @@ export const NavBarContainer = styled.div`
 
 		&__logo-menu{
 			display: flex;
+			align-items: center;
 		}
 		
 		&__logo {
 			transform: rotate(90deg);
-			margin-right: 2.5rem;
+			/* margin-right: 2.5rem; */
 			/* margin: 0 ${navBarSize}; */
 			.inner-rect, .half-circle {
 				${mainTransition}
