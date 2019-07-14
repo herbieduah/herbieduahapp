@@ -7,7 +7,9 @@ import {
 	mobileSliderOnBottom,
 	slightBoxShadowAbove,
 	contentMenuPadding,
-	stupidNegativeMargin
+	stupidNegativeMargin,
+	contentMenuPaddingRight,
+	tablet
 } from "./StyleHelpers";
 
 // ${props =>
@@ -18,12 +20,13 @@ const MenuContainer = styled.aside`
 	/* max-width: 500px; */
 	height: auto;
 	overflow: auto;
-	margin-left: auto;
+	${props => (props.switchSides ? `margin-left: auto` : `margin-right: auto`)};
+	
 	padding: 4rem 2rem;
 	display: flex;
 	width: 100%;
 	z-index: 10;
-	${contentMenuPadding}
+	${props => (props.navBarRight ? contentMenuPaddingRight : contentMenuPadding)};
 	${mainTransition}
 	${props => (props.isPortrait ? mobileSliderOnBottom : ``)};
 	${props =>
@@ -35,7 +38,7 @@ const MenuContainer = styled.aside`
 		padding: 1rem 0;
 		
 		&__tab-list {
-			${props => (props.isPortrait ? `margin-right: auto;` : `margin-left: auto`)};
+			${props => (props.isPortrait ? `margin-right: auto` : `margin-left: auto`)};
 			max-width: 500px;
 			${props => (props.isPortrait ? `padding-right: 1rem;` : ``)};
 			${props => (props.isPortrait ? `margin-top: 4rem;` : ``)};
@@ -76,6 +79,7 @@ const MenuContainer = styled.aside`
 			display: flex;
 			margin: 0;
 			${props => (props.isPortrait ? `margin-left: auto;` : `margin-right: auto;`)};
+			
 
 		&__text {
 			${mainTransition}

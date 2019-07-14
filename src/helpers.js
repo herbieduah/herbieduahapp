@@ -7,6 +7,7 @@ import {
 } from "react";
 import { themes } from "./stylecomponents/Theme";
 import { globalState } from "./State";
+import { appTransitions } from "./stylecomponents/Transitions";
 export function useWindowResize() {
 	const [width, setWidth] = useState(window.innerWidth);
 	const [height, setHeight] = useState(window.innerHeight);
@@ -171,6 +172,22 @@ export function getCurrentTheme(theDefaultTheme, theTheme) {
 	);
 	return currentThemeObject;
 }
+
+export function getCurrentTransition(theTransition) {
+	const found = appTransitions.find(function(element) {
+		return element.name === theTransition;
+	});
+	return found.properties;
+}
+
+export function themeMapText() {
+	themes.map(function(element) {
+		if (element.type !== "poop") {
+			console.log(element.name);
+		}
+	});
+}
+themeMapText();
 
 export function getTheGradient(theTheme = "default") {
 	const found = themes.find(function(element) {

@@ -19,6 +19,7 @@ export const StateProvider = ({ children }) => {
 	const [contentWidth, onContentResizeWidth] = useState(defaultContentWidth);
 	const [contentHeight, onContentResizeHeight] = useState(defaultContentHeight);
 	const [currentTheme, setTheme] = useState("default");
+	const [currentTransition, setCurrentTransition] = useState("default");
 	const [currentContent, setCurrentContent] = useState("home");
 	const [overlay, setOverlay] = useState(false);
 	const [currentOverlay, setCurrentOverlay] = useState("");
@@ -68,7 +69,9 @@ export const StateProvider = ({ children }) => {
 		whom,
 		setWhom,
 		navBarRight,
-		setNavBarRight
+		setNavBarRight,
+		currentTransition,
+		setCurrentTransition
 	};
 
 	// and we pass it down. Done!

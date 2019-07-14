@@ -4,16 +4,19 @@ import {
 	revealSecs,
 	useWindowResize,
 	revealValues,
-	isPortrait
+	isPortrait,
+	getCurrentTransition
 } from "./helpers";
 import ClickNHold from "react-click-n-hold";
 import Fade from "react-reveal/Fade";
 import Text from "./stylecomponents/Text";
 import Media from "./maincomponents/Media";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 export const defaultAlt = "I will be adding an alt tag to this image soon";
 export const defaultDesc = "This is a video, I will be describing it soon";
 const spacingBottom = "c-margin-bottom";
 const spacingTopBottom = "c-margin-top c-margin-bottom";
+const noSpacingTopBottom = "c-margin-0";
 
 export const ContentShow = props => {
 	const {
@@ -21,7 +24,8 @@ export const ContentShow = props => {
 		contentHeight: ch,
 		fullScreen,
 		setFullScreening,
-		setFullscreen
+		setFullscreen,
+		currentTransition
 	} = useContext(globalState);
 	const { width: ww, height: wh } = useWindowResize();
 	const values = { ww, wh, cw, ch };
@@ -29,6 +33,8 @@ export const ContentShow = props => {
 	// const isContentPortrait = isPortrait(ww, wh);
 	const showMore = fullScreen ? true : isShowingMore;
 	const showLess = fullScreen ? false : !isShowingMore;
+	const headerClass = showLess ? noSpacingTopBottom : spacingTopBottom;
+	const transitionClasses = getCurrentTransition(currentTransition);
 	// const values = { ww, wh, cw, ch };
 	// const isShowingMore = revealValues(values).isShowingMore;
 	const onFullScreening = () => {
@@ -47,16 +53,24 @@ export const ContentShow = props => {
 
 	if (props.less) {
 		return (
-			<Fragment>
-				<aside className='content__less'>{props.children}</aside>
-			</Fragment>
+			<TransitionGroup className='animatecss-container'>
+				{showLess ? (
+					<CSSTransition timeout={revealSecs} classNames={transitionClasses}>
+						<aside className='content__less'>{props.children}</aside>
+					</CSSTransition>
+				) : null}
+			</TransitionGroup>
 		);
 	}
 	if (props.more) {
 		return (
-			<Fragment>
-				{showMore ? <Fragment>{props.children}</Fragment> : null}
-			</Fragment>
+			<TransitionGroup className='animatecss-container'>
+				{showMore ? (
+					<CSSTransition timeout={revealSecs} classNames={transitionClasses}>
+						<Fragment>{props.children}</Fragment>
+					</CSSTransition>
+				) : null}
+			</TransitionGroup>
 		);
 	}
 	if (props.header) {
@@ -70,14 +84,46 @@ export const ContentShow = props => {
 					onClickNHold={onFullScreenTimeOutEnded} //Timeout callback
 					onEnd={onFullScreenEnded}>
 					<header className='content__header container'>
-						<Text h1 xl={showMore} s={showLess} extrabold>
-							{props.header}
-						</Text>
+						<Text s>{props.header}</Text>
 					</header>
 				</ClickNHold>
 			</Fade>
 		);
 	}
+};
+
+export const Header = props => {
+	const { fullScreen, setFullScreening, setFullscreen } = useContext(
+		globalState
+	);
+	const onFullScreening = () => {
+		setFullScreening(true);
+		console.log("Holding!!!");
+	};
+	const onFullScreenTimeOutEnded = () => {
+		setFullScreening(false);
+		fullScreen ? setFullscreen(false) : setFullscreen(true);
+		console.log("Hold timeout ended!");
+	};
+	const onFullScreenEnded = () => {
+		setFullScreening(false);
+		console.log("Hold ended!");
+	};
+
+	return (
+		<Reveal>
+			<ClickNHold
+				time={2} // Time to keep pressing. Default is 2
+				fullScreen={fullScreen}
+				onStart={onFullScreening}
+				onClickNHold={onFullScreenTimeOutEnded} //Timeout callback
+				onEnd={onFullScreenEnded}>
+				<header className='content__header container'>
+					<HeadingOne>{props.children}</HeadingOne>
+				</header>
+			</ClickNHold>
+		</Reveal>
+	);
 };
 
 export const ComingSoon = props => {
@@ -121,7 +167,7 @@ export const Small = props => {
 export const HeadingOne = props => {
 	return (
 		<Reveal>
-			<Text h1 xxl bold className={`${spacingTopBottom} ${props.className}`}>
+			<Text h1 xxl bold className={`${spacingBottom} ${props.className}`}>
 				{props.children}
 			</Text>
 		</Reveal>

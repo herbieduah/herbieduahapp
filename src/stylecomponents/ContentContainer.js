@@ -5,7 +5,8 @@ import {
 	mainTransition,
 	mobileSliderOnTop,
 	contentMenuPadding,
-	tablet
+	tablet,
+	contentMenuPaddingRight
 } from "./StyleHelpers";
 
 export const ContentContainer = styled.article`
@@ -14,7 +15,7 @@ export const ContentContainer = styled.article`
 	${props => (props.isPortrait ? mobileSliderOnTop : ``)};
 	${hideScrollbar};
 	overflow: auto;
-	${contentMenuPadding}
+	${props => (props.navBarRight ? contentMenuPaddingRight : contentMenuPadding)};
 	.LazyLoad {
 		width: 100%;
 	}
@@ -57,7 +58,8 @@ export const ContentContainer = styled.article`
 				margin: 0 auto;
 			} */
 			${tablet} {
-				max-width:  ${props => (props.showLess ? `340px` : `100%`)};
+				max-width:  ${props =>
+					props.showLess && !props.isPortrait ? `340px` : `100%`};
 			}
 			${mobile} {
 				width: 100%;
@@ -81,6 +83,10 @@ export const ContentContainer = styled.article`
 		${mobile} {
 			margin-top: 30px;
 		}
+	}
+
+	.c-margin-0 {
+		margin: 0;
 	}
 `;
 

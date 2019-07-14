@@ -10,7 +10,8 @@ import {
 	Small,
 	Figure,
 	Figcaption,
-	Gif
+	Gif,
+	Header
 } from "../ContentHelpers";
 import { ContentShow } from "../ContentHelpers";
 // import Modal from "../maincomponents/Modal";
@@ -34,7 +35,6 @@ const HomePage = ({ contentProps }) => {
 
 	return (
 		<Fragment>
-			<ContentShow header={header} />
 			<ContentShow less>
 				<Paragraph>
 					Nullam id dolor id nibh ultricies vehicula ut id elit. Curabitur
@@ -44,6 +44,7 @@ const HomePage = ({ contentProps }) => {
 			</ContentShow>
 			<ContentShow more>
 				<div className='container'>
+					<Header>{header}</Header>
 					<Paragraph>
 						Nullam id dolor id nibh ultricies vehicula ut id elit. Curabitur
 						blandit tempus porttitor. Morbi leo risus, porta ac consectetur ac,

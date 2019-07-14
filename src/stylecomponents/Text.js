@@ -3,7 +3,6 @@ import styled, { css } from "styled-components";
 import { NavLink } from "react-router-dom";
 import {
 	mobile,
-	fontColor,
 	buttonColorActive,
 	buttonColor,
 	linkColorActive,
@@ -17,13 +16,21 @@ import {
 	navColorActive
 } from "./StyleHelpers";
 
+import { CTAColor, fontColor } from "./Themes/ThemeVariables";
+
 const baseStyle = css`
 	font-family: "commuters-sans", -apple-system, BlinkMacSystemFont, Oxygen,
 		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
 	font-weight: 400;
 	margin: 0;
-	line-height: 1.5;
-	color: ${fontColor};
+	line-height: ${props => {
+		if (props.nolineheight) return "1";
+		return "1.5";
+	}};
+	color: ${props => {
+		if (props.ctacolor) return CTAColor;
+		return fontColor;
+	}};
 	text-align: ${props => {
 		if (props.center) return "center";
 		if (props.right) return "right";
@@ -32,7 +39,7 @@ const baseStyle = css`
 
 	font-size: ${props => {
 		if (props.xs) return "0.8em";
-		if (props.s) return "1em";
+		if (props.s) return "1.05em";
 		if (props.m) return "1.2em";
 		if (props.l) return "1.5em";
 		if (props.xl) return "2em";
@@ -43,7 +50,7 @@ const baseStyle = css`
 		font-size: ${props => {
 			if (props.xs) return "0.8em";
 			if (props.s) return "0.85em";
-			if (props.m) return "1em";
+			if (props.m) return "1.05em";
 			if (props.l) return "1.3em";
 			if (props.xl) return "1.6em";
 			if (props.xxl) return "1.9em";

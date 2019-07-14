@@ -5,7 +5,8 @@ import {
 	useWindowResize,
 	isPortrait,
 	revealSecs,
-	getTheGradient
+	getTheGradient,
+	getCurrentTransition
 } from "./helpers";
 import Fade from "react-reveal/Fade";
 import Text from "./stylecomponents/Text";
@@ -14,7 +15,8 @@ import { browserName, mobileModel } from "react-device-detect";
 import {
 	NavBarContainer,
 	// DragInstructionsContainer,
-	GradientCircle
+	GradientCircle,
+	FullScreenOverlayContainer
 	// ParallaxContainer
 	// FullScreeningBGContainer
 } from "./stylecomponents/Base";
@@ -28,7 +30,7 @@ import { Tab, TabList, TabPanel } from "react-tabs";
 import { ReactTabs } from "./stylecomponents/Base";
 import SubMenu from "./maincomponents/SubMenu";
 import { trackWindowScroll } from "react-lazy-load-image-component";
-import TransitionGroup from "react-transition-group/TransitionGroup";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 import Zoom from "react-reveal/Zoom";
 
 // export const DragInstructions = props => {
@@ -65,7 +67,8 @@ export const NavBar = () => {
 		setModalVisible,
 		modalVisible,
 		setModalContent,
-		navBarRight
+		navBarRight,
+		currentTransition
 	} = useContext(globalState);
 	const { height: wh, width: ww } = useWindowResize();
 	const values = { ww, wh, cw, ch };
@@ -79,6 +82,7 @@ export const NavBar = () => {
 	const setMaximizeAndMinimize = () => {
 		fullScreen ? setFullscreen(false) : setFullscreen(true);
 	};
+	const transitionClasses = getCurrentTransition(currentTransition);
 	return (
 		<NavBarContainer
 			className='navbar'
@@ -90,7 +94,8 @@ export const NavBar = () => {
 			<div className='navbar__logo-menu'>
 				<TransitionGroup>
 					{fullScreen ? (
-						<Zoom duration={revealSecs}>
+						<CSSTransition timeout={revealSecs} classNames={transitionClasses}>
+							{/* <div className='animatecss-container'> */}
 							<Text
 								button
 								s
@@ -98,7 +103,8 @@ export const NavBar = () => {
 								onClick={setMenuModalContent}>
 								{modalVisible ? `Back` : `Menu`}
 							</Text>
-						</Zoom>
+							{/* </div> */}
+						</CSSTransition>
 					) : null}
 				</TransitionGroup>
 				<NavLink to='/'>
@@ -111,7 +117,8 @@ export const NavBar = () => {
 			</div>
 			<TransitionGroup>
 				{!showLess ? (
-					<Zoom duration={revealSecs}>
+					<CSSTransition timeout={revealSecs} classNames={transitionClasses}>
+						{/* <div className='animatecss-container'> */}
 						<Text
 							s
 							button
@@ -120,7 +127,8 @@ export const NavBar = () => {
 							aria-hidden={showLess ? `true` : `false`}>
 							M{fullScreen ? `in` : `ax`}imize
 						</Text>
-					</Zoom>
+						{/* </div> */}
+					</CSSTransition>
 				) : null}
 			</TransitionGroup>
 
@@ -168,6 +176,31 @@ export const FullScreenModal = () => {
 	);
 };
 
+export const FullScreenOverlay = () => {
+	const {
+		modalVisible,
+		modalContent,
+		currentTransition,
+		navBarRight
+	} = useContext(globalState);
+	const transitionClasses = getCurrentTransition(currentTransition);
+	return (
+		<TransitionGroup>
+			{modalVisible ? (
+				<CSSTransition timeout={revealSecs} classNames={transitionClasses}>
+					<FullScreenOverlayContainer navBarRight={navBarRight}>
+						<ShowIf thisValue='menu' thatValue={modalContent}>
+							<section className='modal__container'>
+								<MenuTabs showCategory={false} />
+							</section>
+						</ShowIf>
+					</FullScreenOverlayContainer>
+				</CSSTransition>
+			) : null}
+		</TransitionGroup>
+	);
+};
+
 export const ThisValueEqualsState = props => {
 	const thisValue = props.thisValue;
 	const stateValue = props.stateValue;
@@ -176,6 +209,23 @@ export const ThisValueEqualsState = props => {
 		<Fragment>
 			{renderMe ? <Fragment>{props.children}</Fragment> : null}
 		</Fragment>
+	);
+};
+
+export const ShowIf = props => {
+	const { currentTransition } = useContext(globalState);
+	const transitionClasses = getCurrentTransition(currentTransition);
+	const thisValue = props.thisValue;
+	const thatValue = props.thatValue;
+	const renderMe = thisValue === thatValue ? true : false;
+	return (
+		<TransitionGroup className='animatecss-tamer'>
+			{renderMe ? (
+				<CSSTransition timeout={revealSecs} classNames={transitionClasses}>
+					<div className='animatecss-container'>{props.children}</div>
+				</CSSTransition>
+			) : null}
+		</TransitionGroup>
 	);
 };
 
@@ -263,7 +313,8 @@ const ContentWrapperContainer = props => {
 		contentHeight: ch,
 		dragging,
 		fullScreen,
-		whom
+		whom,
+		navBarRight
 	} = useContext(globalState);
 	const { width: ww, height: wh } = useWindowResize();
 	const values = { ww, wh, cw, ch };
@@ -299,8 +350,9 @@ const ContentWrapperContainer = props => {
 			dragging={dragging}
 			fullScreen={fullScreen}
 			showLess={showLess}
-			showMore={showMore}>
-			{children}
+			showMore={showMore}
+			navBarRight={navBarRight}>
+			<div className='animatecss-tamer'>{children}</div>
 			{/* {showMore && isContentPortrait ? (
 				<div className='content__slider-bg' />
 			) : null} */}

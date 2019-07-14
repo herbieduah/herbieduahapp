@@ -75,6 +75,17 @@ export const contentMenuPadding = `padding: ${navBarSize};
 ${mobile} {
 	padding: ${navBarSize} 0 ${navBarSize}   ${navBarSize};
 }`;
+export const contentMenuPaddingRight = `padding: ${navBarSize};
+${mobile} {
+	padding: ${navBarSize} ${navBarSize}  ${navBarSize}   0;
+}`;
+
+export const container = `
+max-width: 740px;
+			width: 100%;
+			margin: 0 auto;
+`;
+
 export const showMore = props => props.appValues.isShowingMore;
 export const appGradient = props => rgba(props.theme.bgColor, 0.0);
 export const appColor = props => props.theme.bgColor;

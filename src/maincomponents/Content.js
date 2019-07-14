@@ -23,25 +23,20 @@ import {
 	Ugg,
 	UXvsHX
 } from "../Pages";
-import { revealSecs } from "../helpers";
+import { revealSecs, getCurrentTransition } from "../helpers";
 import "animate.css";
-// import { AnimatedSwitch } from "react-router-transition";
-const transitionClasses = {
-	enter: "animated",
-	enterActive: "fadeInDown",
-	exit: "animated",
-	exitActive: "fadeOutDown"
-};
 export const Content = ({ location }) => {
 	const {
 		onContentResizeWidth,
 		onContentResizeHeight,
-		fullScreen
+		fullScreen,
+		currentTransition
 	} = useContext(globalState);
 	const onResize = (width, height) => {
 		onContentResizeWidth(width);
 		onContentResizeHeight(height);
 	};
+	const transitionClasses = getCurrentTransition(currentTransition);
 	return (
 		<Fragment>
 			{!fullScreen ? (
@@ -51,47 +46,39 @@ export const Content = ({ location }) => {
 					refreshMode={"debounce"}
 					refreshRate={100}
 					onResize={onResize}
-					// refreshOptions={{ leading: false, trailing: true }}
 				/>
 			) : null}
-			{/* <AnimatedSwitch
-				atEnter={{ opacity: 0 }}
-				atLeave={{ opacity: 0 }}
-				atActive={{ opacity: 1 }}
-				className='switch-wrapper'> */}
 
-			<TransitionGroup>
+			<TransitionGroup className='animatecss-tamer'>
 				<CSSTransition
 					key={location.key}
-					// timeout={{ enter: revealSecs, exit: revealSecs }}
 					timeout={revealSecs}
-					// classNames={"fade"}
 					classNames={transitionClasses}>
-					{/* <div className='route-section'> */}
-					<Switch location={location}>
-						<Route path='/AboutMe' component={AboutMe} />
-						<Route path='/BedzinExhibit' component={BedzinExhibit} />
-						<Route path='/Colors' component={Colors} />
-						<Route path='/DiscountTire' component={DiscountTire} />
-						<Route path='/CulturalSuicide' component={CulturalSuicide} />
-						<Route exact path='/' component={Home} />
-						<Route path='/Inspiration' component={Inspiration} />
-						<Route path='/Portrait' component={Portrait} />
-						<Route path='/iPhone' component={IPhone} />
-						<Route
-							path='/NorthernArizonaUniversity'
-							component={NorthernArizonaUniversity}
-						/>
-						<Route path='/Photography' component={Photography} />
-						<Route path='/Resume' component={Resume} />
-						<Route path='/SpecialThanks' component={SpecialThanks} />
-						<Route path='/Theme' component={Theme} />
-						<Route path='/Tone' component={Tone} />
-						<Route path='/Nature' component={Nature} />
-						<Route path='/Ugg' component={Ugg} />
-						<Route path='/UXvsHX' component={UXvsHX} />
-					</Switch>
-					{/* </div> */}
+					<div className='animatecss-container'>
+						<Switch location={location}>
+							<Route path='/AboutMe' component={AboutMe} />
+							<Route path='/BedzinExhibit' component={BedzinExhibit} />
+							<Route path='/Colors' component={Colors} />
+							<Route path='/DiscountTire' component={DiscountTire} />
+							<Route path='/CulturalSuicide' component={CulturalSuicide} />
+							<Route exact path='/' component={Home} />
+							<Route path='/Inspiration' component={Inspiration} />
+							<Route path='/Portrait' component={Portrait} />
+							<Route path='/iPhone' component={IPhone} />
+							<Route
+								path='/NorthernArizonaUniversity'
+								component={NorthernArizonaUniversity}
+							/>
+							<Route path='/Photography' component={Photography} />
+							<Route path='/Resume' component={Resume} />
+							<Route path='/SpecialThanks' component={SpecialThanks} />
+							<Route path='/Theme' component={Theme} />
+							<Route path='/Tone' component={Tone} />
+							<Route path='/Nature' component={Nature} />
+							<Route path='/Ugg' component={Ugg} />
+							<Route path='/UXvsHX' component={UXvsHX} />
+						</Switch>
+					</div>
 				</CSSTransition>
 			</TransitionGroup>
 		</Fragment>

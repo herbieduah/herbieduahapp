@@ -19,15 +19,13 @@ export const SubMenu = props => {
 		case "work":
 			return (
 				<div>
-					<TransitionGroup>
-						{showCategory ? (
-							<Fade duration={revealSecs}>
-								<Text format m className='subMenu__text'>
-									Work
-								</Text>
-							</Fade>
-						) : null}
-					</TransitionGroup>
+					{showCategory ? (
+						<Fade duration={revealSecs}>
+							<Text format m className='subMenu__text'>
+								Work
+							</Text>
+						</Fade>
+					) : null}
 					<SubMenuWrapper showCategory={showCategory}>
 						<li onClick={hideModal} className='subMenu__item'>
 							<Text menuLink to='/'>
@@ -66,15 +64,13 @@ export const SubMenu = props => {
 		case "about":
 			return (
 				<div>
-					<TransitionGroup>
-						{showCategory ? (
-							<Fade duration={revealSecs}>
-								<Text format m className='subMenu__text'>
-									About
-								</Text>
-							</Fade>
-						) : null}
-					</TransitionGroup>
+					{showCategory ? (
+						<Fade duration={revealSecs}>
+							<Text format m className='subMenu__text'>
+								About
+							</Text>
+						</Fade>
+					) : null}
 					<SubMenuWrapper showCategory={showCategory}>
 						<li onClick={hideModal} className='subMenu__item'>
 							<Text menuLink to='/AboutMe'>
@@ -112,15 +108,13 @@ export const SubMenu = props => {
 		case "customize":
 			return (
 				<div>
-					<TransitionGroup>
-						{showCategory ? (
-							<Fade duration={revealSecs}>
-								<Text format m className='subMenu__text'>
-									Customize
-								</Text>
-							</Fade>
-						) : null}
-					</TransitionGroup>
+					{showCategory ? (
+						<Fade duration={revealSecs}>
+							<Text format m className='subMenu__text'>
+								Customize
+							</Text>
+						</Fade>
+					) : null}
 					<SubMenuWrapper showCategory={showCategory}>
 						<li onClick={hideModal} className='subMenu__item'>
 							<Text menuLink to='/colors'>
@@ -143,15 +137,13 @@ export const SubMenu = props => {
 		case "photography":
 			return (
 				<div>
-					<TransitionGroup>
-						{showCategory ? (
-							<Fade duration={revealSecs}>
-								<Text format m className='subMenu__text'>
-									Photography
-								</Text>
-							</Fade>
-						) : null}
-					</TransitionGroup>
+					{showCategory ? (
+						<Fade duration={revealSecs}>
+							<Text format m className='subMenu__text'>
+								Photography
+							</Text>
+						</Fade>
+					) : null}
 					<SubMenuWrapper showCategory={showCategory}>
 						<li onClick={hideModal} className='subMenu__item'>
 							<Text menuLink to='/naturephotography'>

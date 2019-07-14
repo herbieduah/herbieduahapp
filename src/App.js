@@ -10,7 +10,7 @@ import Content from "./maincomponents/Content";
 // import { DragInstructions } from "./Actions";
 import { defaultAppTheme } from "./stylecomponents/Theme";
 import SliderLine from "./maincomponents/Revealer/SliderLine";
-import { FullScreenModal, NavBar } from "./ComponentHelpers";
+import { FullScreenOverlay, NavBar } from "./ComponentHelpers";
 import queryString from "query-string";
 import { isMobileOnly } from "react-device-detect";
 import {
@@ -68,7 +68,7 @@ export const App = () => {
 				<GlobalStyle />
 				<NavBar />
 				{/* <ParallaxTest /> */}
-				<FullScreenModal />
+				<FullScreenOverlay />
 				{/* <SliderLine /> */}
 				{/* {dragging ? <DragInstructions /> : null} */}
 

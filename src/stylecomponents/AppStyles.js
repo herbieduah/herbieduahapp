@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Gradients } from "./Animations";
-import { fluidTypeInfo } from "./StyleHelpers";
+import { fluidTypeInfo, absoluteOverlay } from "./StyleHelpers";
 import {
 	appBg,
 	appBgMobile,
@@ -32,5 +32,16 @@ export const HerbieDuahApp = styled.div`
 				height: ${props => props.splitSize}px;
 			}
 		}
+
+		
 	}
+	.animatecss-tamer {
+		position:relative;
+		width: 100%;
+		height: 100%;
+	}
+	.animatecss-container {
+		${absoluteOverlay};
+	}
+
 `;

@@ -20,7 +20,10 @@ import {
 	tabHeadingsBorderBottomActive,
 	tabHeadingsBorderActive,
 	fullScreenHoldBg,
-	logoBorderRadius
+	logoBorderRadius,
+	modalFullScreenBg,
+	modalFullScreenBgColor,
+	modalFullScreenBgMobile
 } from "./Themes/ThemeVariables";
 import {
 	mobile,
@@ -30,7 +33,10 @@ import {
 	bgColor,
 	hideScrollbar,
 	navBarSize,
-	fluidTypeInfo
+	fluidTypeInfo,
+	container,
+	contentMenuPaddingRight,
+	contentMenuPadding
 } from "./StyleHelpers";
 
 export const GlobalStyle = createGlobalStyle`
@@ -235,7 +241,7 @@ export const FullScreeningBG = styled.div`
 
 export const DragInstructionsContainer = styled.div`
 	${absoluteOverlay}
-	height: ${navBarSize}
+	height: ${navBarSize};
 	display:flex;
 	align-items: center;
 	justify-content: center;
@@ -259,20 +265,44 @@ export const GradientCircle = styled.button`
 	border: 1 px solid ${props => props.themeValues.borderColor};
 `;
 
-export const ParallaxContainer = styled.div`
-	${absoluteOverlay};
+export const FullScreenOverlayContainer = styled.div`
+${container}
 	overflow: hidden;
-	z-index: 1000;
-	.parallax {
-		&__container {
-			width: 100%;
-			height: 100%;
-		}
-		&__bg {
-			width: 90%;
-			height: 90%;
-			background: url("https://fillmurray.com/400/800");
-			background-size: contain;
+	z-index: 100;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 50;
+	width: 100vw;
+	height: 100vh;
+	${props => (props.navBarRight ? contentMenuPaddingRight : contentMenuPadding)};
+
+	.react-tabs {
+		&__tab-list {
+			padding: 0;
 		}
 	}
+	.subMenu {
+		padding: 0;
+		&__item {
+			margin-bottom: 1.5rem;
+			list-style-type: none;
+		}
+	}
+		
+	&::before {
+		content:'';
+		/* filter: blur(5px); */
+		${absoluteOverlay}
+		background: ${modalFullScreenBg};
+		background-color: ${modalFullScreenBgColor};
+		${mobile} {
+			background: ${modalFullScreenBgMobile};	
+		}
+		opacity: .9;
+		z-index: -1;
+	}
+	
 `;
