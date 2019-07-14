@@ -75,7 +75,7 @@ const defaultBgImageValues = {
 
 export const themeBgMaker = (theme = defaultBgImageValues) => {
 	const { bgColor, bgImage } = theme;
-	const fontColor = readableColor(bgImageColor);
+	const fontColor = readableColor(bgColor);
 	return {
 		appBg: `url(${bgImage})`,
 		appBgAnimation: `${bgColor}`,

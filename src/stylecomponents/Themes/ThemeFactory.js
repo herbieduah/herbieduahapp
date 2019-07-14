@@ -83,7 +83,7 @@ export const viciousStanceTheme = themeMaker(viciousStance);
 // background-image: linear-gradient(-225deg, #3D4E81 0%, #5753C9 48%, #6E7FF3 100%);
 // Blue gradient
 const perfectBlue = {
-	bgColor: "#3D4E81 ",
+	bgColor: "#3D4E81",
 	gradientValues: "#3D4E81 0%, #5753C9 48%, #6E7FF3"
 };
 export const perfectBlueTheme = themeMaker(perfectBlue);
