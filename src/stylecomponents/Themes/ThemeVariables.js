@@ -54,3 +54,7 @@ export const tabHeadingsColorHoverFocus = props =>
 	props.theme.tabHeadingsColorHoverFocus;
 export const tabHeadingsJustifyContent = props =>
 	props.theme.tabHeadingsJustifyContent;
+
+export const appfontFamilyWide = props => props.theme.appfontFamilyWide;
+export const appfontFamilyExtraWide = props =>
+	props.theme.appfontFamilyExtraWide;

@@ -4,7 +4,7 @@ import Text from "../stylecomponents/Text";
 // import Media from "../maincomponents/Media";
 // import Fade from "react-reveal/Fade";
 import { ContentShow } from "../ContentHelpers";
-import { GradientTheme } from "../ComponentHelpers";
+import { ThemeCircles } from "../ComponentHelpers";
 import { themes } from "../stylecomponents/Theme";
 
 const header = "App Colors";
@@ -17,11 +17,15 @@ const ColorsPage = () => {
 				<Text>Here you can change colors and stuff</Text>
 			</ContentShow>
 			<ContentShow more>
-				{themes.map(function(element, uniqueKey) {
-					if (element.type !== "poop") {
-						return <GradientTheme themeValue={element.name} key={uniqueKey} />;
-					}
-				})}
+				<ul className='themeCircle'>
+					{themes.map(function(element, uniqueKey) {
+						if (element.type !== "poop") {
+							return <ThemeCircles themeValue={element.name} key={uniqueKey} />;
+						} else {
+							return null;
+						}
+					})}
+				</ul>
 				{/* <GradientTheme themeValue={"default"} />
 				<GradientTheme themeValue={"snowAgain"} />
 				<GradientTheme themeValue={"bigMango"} />

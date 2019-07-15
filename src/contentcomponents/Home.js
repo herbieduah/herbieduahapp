@@ -14,13 +14,14 @@ import {
 	Header
 } from "../ContentHelpers";
 import { ContentShow } from "../ContentHelpers";
+import Emoji from "a11y-react-emoji";
 // import Modal from "../maincomponents/Modal";
-import testVideo from "../media/videos/JeremyScottDesktop_9.mp4";
+import cornishPastyPic from "../media/images/picsOfMe/hd-herbieSmile-1974.jpg";
 import testPic from "../media/images/photography-herbieFood-2222.jpg";
 import testPic2 from "../media/images/photography-melPhoto-2221.jpg";
 // import ReactPlayer from "react-player";
 
-const header = "HerbieDuah.app";
+const header = "Hi, I'm Herbie";
 // There is an app for everything, in
 // 					the future, I believe there is going to be an app for everyone. I am
 // 					Herbie Duah, and this is my app.
@@ -37,15 +38,46 @@ const HomePage = ({ contentProps }) => {
 		<Fragment>
 			<ContentShow less>
 				<Paragraph>
-					Nullam id dolor id nibh ultricies vehicula ut id elit. Curabitur
-					blandit tempus porttitor. Morbi leo risus, porta ac consectetur ac,
-					vestibulum at eros.
+					Hello, I'm Herbie, a Photographer and Web Developer/Designer . I am
+					passionate about designing and engineering user experiences for you.
 				</Paragraph>
 			</ContentShow>
 			<ContentShow more>
 				<div className='container'>
 					<Header>{header}</Header>
+					<Image src={cornishPastyPic} />
+					<HeadingTwo>Designed and engineered for you</HeadingTwo>
 					<Paragraph>
+						I have a passion for developing and designing user experiences for
+						people like you. Even though this portfolio is about me, I want you,
+						the user, to choose how you experience it
+						<Emoji symbol='🙂' label='smile' />.
+					</Paragraph>
+					<HeadingTwo>Work and experience</HeadingTwo>
+
+					<Paragraph>
+						Graduated at Northern Arizona University with a degree in Computer
+						Science. Somewhere along the way, I fell in love design. I enjoy any
+						opportunity that allows me to use my coding AND design skills
+						<Emoji symbol='🤓' label='nerd' />.
+					</Paragraph>
+					<Paragraph>
+						I am a Web developer and Designer with five years of experience
+						currently working at Discount Tire as a Front End Developer I,
+						developing for and maintaining their intranet.
+					</Paragraph>
+					<Paragraph>
+						Previously at Decker Brands, working on the UGG team as a User
+						Interface Developer.
+					</Paragraph>
+					<HeadingTwo>Photography and modeling</HeadingTwo>
+					<Paragraph>
+						I'm also passionate very passionate about photography, and I enjoy
+						being behind the lens of a camera even though I often find myself in
+						front of one
+						<Emoji symbol='🤷🏿‍♂️' label='shrug' />.
+					</Paragraph>
+					{/* <Paragraph>
 						Nullam id dolor id nibh ultricies vehicula ut id elit. Curabitur
 						blandit tempus porttitor. Morbi leo risus, porta ac consectetur ac,
 						vestibulum at eros.
@@ -64,7 +96,7 @@ const HomePage = ({ contentProps }) => {
 					<Figure src={testPic2} height={2222}>
 						<Figcaption>Me fat ass getting food</Figcaption>
 					</Figure>
-					<Gif url={testVideo} />
+					<Gif url={testVideo} /> */}
 				</div>
 			</ContentShow>
 		</Fragment>

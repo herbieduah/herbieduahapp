@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle, FullScreeningBG } from "./stylecomponents/Base";
 import { globalState } from "./State";
@@ -11,7 +11,7 @@ import Content from "./maincomponents/Content";
 import { defaultAppTheme } from "./stylecomponents/Theme";
 import SliderLine from "./maincomponents/Revealer/SliderLine";
 import { FullScreenOverlay, NavBar } from "./ComponentHelpers";
-import queryString from "query-string";
+// import queryString from "query-string";
 import { isMobileOnly } from "react-device-detect";
 import {
 	getCurrentTheme,
@@ -29,8 +29,8 @@ export const App = () => {
 		setDragging,
 		fullScreen,
 		dragging,
-		fullScreening,
-		setWhom
+		fullScreening
+		// setWhom
 	} = useContext(globalState);
 	const currentThemeObject = getCurrentTheme(defaultAppTheme, currentTheme);
 	const { width: ww, height: wh } = useWindowResize();
@@ -44,14 +44,14 @@ export const App = () => {
 		setDragging(false);
 	};
 
-	const whoIsOnMyPage = who => {
-		setWhom(who);
-	};
+	// const whoIsOnMyPage = who => {
+	// 	setWhom(who);
+	// };
 
-	useEffect(() => {
-		const values = queryString.parse(window.location.search);
-		// values.whom ? whoIsOnMyPage(values.whom) : console.log("no one");
-	});
+	// useEffect(() => {
+	// const values = queryString.parse(window.location.search);
+	// values.whom ? whoIsOnMyPage(values.whom) : console.log("no one");
+	// });
 	// console.log(`Fullscreening: ${fullScreening}`);
 	// console.log(`Fullscreen: ${fullScreen}`);
 	const splitSize = parseInt(localStorage.getItem("splitPos"))

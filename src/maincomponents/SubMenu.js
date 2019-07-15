@@ -5,7 +5,7 @@ import Text from "../stylecomponents/Text";
 // import { CSSTransition } from "react-transition-group";
 import { SubMenuWrapper } from "../ComponentHelpers";
 import Fade from "react-reveal/Fade";
-import TransitionGroup from "react-transition-group/TransitionGroup";
+// import TransitionGroup from "react-transition-group/TransitionGroup";
 import { revealSecs } from "../helpers";
 export const SubMenu = props => {
 	let category = props.category;
@@ -111,7 +111,7 @@ export const SubMenu = props => {
 					{showCategory ? (
 						<Fade duration={revealSecs}>
 							<Text format m className='subMenu__text'>
-								Customize
+								For You
 							</Text>
 						</Fade>
 					) : null}

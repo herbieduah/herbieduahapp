@@ -16,11 +16,16 @@ import {
 	navColorActive
 } from "./StyleHelpers";
 
-import { CTAColor, fontColor } from "./Themes/ThemeVariables";
+import {
+	CTAColor,
+	fontColor,
+	appfontFamily,
+	appfontFamilyWide,
+	appfontFamilyExtraWide
+} from "./Themes/ThemeVariables";
 
 const baseStyle = css`
-	font-family: "commuters-sans", -apple-system, BlinkMacSystemFont, Oxygen,
-		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
+	font-family: ${appfontFamily};
 	font-weight: 400;
 	margin: 0;
 	line-height: ${props => {
@@ -79,8 +84,7 @@ baseStyle.defaultProps = {
 
 const HeadingOne = styled.h1`
 	${baseStyle};
-	font-family: "commuters-sans", -apple-system, BlinkMacSystemFont, Oxygen,
-		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
+	font-family: ${appfontFamilyExtraWide};
 
 	/* @media (max-width: 480px) {
     font-size: 40px;
@@ -91,10 +95,12 @@ const HeadingTwo = styled.h2`
 	line-height: 1;
 	line-height: 1.25;
 	${baseStyle};
+	font-family: ${appfontFamilyWide};
 `;
 
 const HeadingThree = styled.h3`
 	${baseStyle};
+	font-family: ${appfontFamilyWide};
 `;
 
 const HeadingFour = styled.h4`
@@ -123,6 +129,7 @@ const Button = styled.button`
 	border: 0;
 	padding: 0;
 	background: none;
+	font-family: ${appfontFamilyWide};
 	color: ${buttonColor};
 	cursor: pointer;
 	border-bottom: 1px solid ${buttonBorderColor};
@@ -162,6 +169,7 @@ const MenuLink = styled(NavLink)`
 	hyphens: manual;
 	background: none;
 	color: ${navColor};
+	font-family: ${appfontFamilyWide};
 	cursor: pointer;
 	font-size: 2em;
 	${mobile} {

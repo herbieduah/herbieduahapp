@@ -9,7 +9,6 @@ import {
 } from "../helpers";
 import SubMenu from "./SubMenu";
 import { globalState } from "../State";
-import Fade from "react-reveal/Fade";
 import { MenuTabs } from "../ComponentHelpers";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 export const ContentMenu = () => {
@@ -44,9 +43,9 @@ export const ContentMenu = () => {
 						<CSSTransition timeout={revealSecs} classNames={transitionClasses}>
 							<div className='animatecss-container'>
 								<nav className='menu__more'>
+									<SubMenu showCategory={isShowingMore} category='customize' />
 									<SubMenu showCategory={isShowingMore} category='work' />
 									<SubMenu showCategory={isShowingMore} category='about' />
-									<SubMenu showCategory={isShowingMore} category='customize' />
 									<SubMenu
 										showCategory={isShowingMore}
 										category='photography'
@@ -58,6 +57,7 @@ export const ContentMenu = () => {
 					) : null}
 				</TransitionGroup>
 			</div>
+			<div className='offset' />
 		</MenuContainer>
 	);
 };

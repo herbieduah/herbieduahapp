@@ -1591,6 +1591,10 @@
   version "4.2.2"
   resolved "https://registry.yarnpkg.com/@xtuc/long/-/long-4.2.2.tgz#d291c6a4e97989b5c61d9acf396ae4fe133a718d"
 
+a11y-react-emoji@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/a11y-react-emoji/-/a11y-react-emoji-1.0.2.tgz#d2b2e821e010398a5fbdb3391f4986407cbe0fab"
+
 abab@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/abab/-/abab-2.0.0.tgz#aba0ab4c5eee2d4c79d3487d85450fb2376ebb0f"
@@ -7607,6 +7611,10 @@ react-error-overlay@^5.1.6:
   version "5.1.6"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-5.1.6.tgz#0cd73407c5d141f9638ae1e0c63e7b2bf7e9929d"
 
+react-ga@^2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/react-ga/-/react-ga-2.6.0.tgz#c3fe830ead2ad25117e1d33280d9698de9b28496"
+
 react-is@^16.3.2, react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.4:
   version "16.8.6"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.6.tgz#5bbc1e2d29141c9fbdfed456343fe2bc430a6a16"
@@ -7644,6 +7652,13 @@ react-location@^2.0.0:
   resolved "https://registry.yarnpkg.com/react-location/-/react-location-2.0.0.tgz#8ca54544d254a154ec88141b2fb9978f9ad8a534"
   dependencies:
     qss "^2.0.1"
+
+react-matrix-effect@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/react-matrix-effect/-/react-matrix-effect-1.1.0.tgz#041424d36c58e89cc82add5d8ee9f38167544ac5"
+  dependencies:
+    prop-types "^15.6.2"
+    react "^16.7.0"
 
 react-motion@^0.5.0:
   version "0.5.2"
@@ -7848,7 +7863,7 @@ react@^0.14.7:
     envify "^3.0.0"
     fbjs "^0.6.1"
 
-react@^16.8.6:
+react@^16.7.0, react@^16.8.6:
   version "16.8.6"
   resolved "https://registry.yarnpkg.com/react/-/react-16.8.6.tgz#ad6c3a9614fd3a4e9ef51117f54d888da01f2bbe"
   dependencies:

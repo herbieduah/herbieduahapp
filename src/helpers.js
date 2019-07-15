@@ -180,26 +180,30 @@ export function getCurrentTransition(theTransition) {
 	return found.properties;
 }
 
-export function themeMapText() {
-	themes.map(function(element) {
-		if (element.type !== "poop") {
-			console.log(element.name);
-		}
-	});
-}
-themeMapText();
+// export function themeMapText() {
+// 	themes.map(function(element) {
+// 		if (element.type !== "poop") {
+// 			console.log(element.name);
+// 		}
+// 	});
+// }
+// themeMapText();
 
-export function getTheGradient(theTheme = "default") {
+export function getThemeInfo(theTheme = "default") {
 	const found = themes.find(function(element) {
 		return element.name === theTheme;
 	});
 	const gradient = found.properties.appBg;
 	const gradientPortrait = found.properties.appBgMobile;
 	const borderColor = found.properties.fontColor;
+	const text = found.text;
+	const name = found.name;
 	return {
 		gradient,
 		gradientPortrait,
-		borderColor
+		borderColor,
+		text,
+		name
 	};
 }
 

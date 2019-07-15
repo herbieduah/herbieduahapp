@@ -8,8 +8,7 @@ import {
 	slightBoxShadowAbove,
 	contentMenuPadding,
 	stupidNegativeMargin,
-	contentMenuPaddingRight,
-	tablet
+	contentMenuPaddingRight
 } from "./StyleHelpers";
 
 // ${props =>

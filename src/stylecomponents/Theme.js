@@ -11,7 +11,36 @@ import {
 	strongBlissTheme,
 	newYorkTheme,
 	temptingAzureTheme,
-	viciousStanceTheme
+	viciousStanceTheme,
+	paloAltoTheme,
+	nightSkyTheme,
+	wildAppleTheme,
+	zeusMiracleTheme,
+	grownEarlyTheme,
+	teenNotebookTheme,
+	premiumDarkTheme,
+	healthyWaterTheme,
+	amourAmourTheme,
+	hiddenJaguarTheme,
+	orangeJuiceTheme,
+	perfectBlueTheme,
+	cartographer,
+	xVTheme,
+	subtleGrungeTheme,
+	starDustTheme,
+	psNeutralTheme,
+	poolTableTheme,
+	pinkDustTheme,
+	oldMathematicsTheme,
+	marsPartyTheme,
+	smartIndigoTheme,
+	perfectWhiteTheme,
+	niceSnowTheme,
+	halftoneYellowTheme,
+	grungeWallTheme,
+	greyFloralTheme,
+	cardboardFlatTheme,
+	carbonFibreTheme
 } from "./Themes/ThemeFactory";
 export const themes = [
 	{
@@ -19,49 +48,324 @@ export const themes = [
 		properties: {
 			...defaultTheme
 		},
-		type: "gradient"
+		type: "gradient",
+		text: "Plum Bath",
+		desc: ""
 	},
 	{
 		name: "snowAgain",
 		properties: {
 			...snowAgainTheme
 		},
-		type: "gradient"
+		type: "gradient",
+		text: "Snow Again",
+		desc: ""
 	},
 	{
 		name: "bigMango",
 		properties: {
 			...bigMangoTheme
 		},
-		type: "gradient"
+		type: "gradient",
+		text: "Big Mangi",
+		desc: ""
 	},
 	{
 		name: "strongBliss",
 		properties: {
 			...strongBlissTheme
 		},
-		type: "gradient"
+		type: "gradient",
+		text: "Strong Bliss",
+		desc: ""
 	},
 	{
 		name: "newYork",
 		properties: {
 			...newYorkTheme
 		},
-		type: "gradient"
+		type: "gradient",
+		text: "New york",
+		desc: ""
 	},
 	{
 		name: "temptingAzure",
 		properties: {
 			...temptingAzureTheme
 		},
-		type: "poop"
+		type: "gradient",
+		text: "Tempting Azure",
+		desc: ""
 	},
 	{
 		name: "viciousStance",
 		properties: {
 			...viciousStanceTheme
 		},
-		type: "poop"
+		type: "gradient",
+		text: "Vicious Stance",
+		desc: ""
+	},
+	{
+		name: "paloAlto",
+		properties: {
+			...paloAltoTheme
+		},
+		type: "gradient",
+		text: "Palo Alto",
+		desc: ""
+	},
+	{
+		name: "nightSky",
+		properties: {
+			...nightSkyTheme
+		},
+		type: "gradient",
+		text: "Night Sky",
+		desc: ""
+	},
+	{
+		name: "wildApple",
+		properties: {
+			...wildAppleTheme
+		},
+		type: "gradient",
+		text: "Wild Apple",
+		desc: ""
+	},
+	{
+		name: "zeusMiracle",
+		properties: {
+			...zeusMiracleTheme
+		},
+		type: "gradient",
+		text: "Zeus Miracle",
+		desc: ""
+	},
+	{
+		name: "grownEarly",
+		properties: {
+			...grownEarlyTheme
+		},
+		type: "gradient",
+		text: "Grown Early",
+		desc: ""
+	},
+	{
+		name: "teenNotebook",
+		properties: {
+			...teenNotebookTheme
+		},
+		type: "gradient",
+		text: "Teen Notebook",
+		desc: ""
+	},
+	{
+		name: "premiumDark",
+		properties: {
+			...premiumDarkTheme
+		},
+		type: "gradient",
+		text: "Premium Dark",
+		desc: ""
+	},
+	{
+		name: "marsParty",
+		properties: {
+			...marsPartyTheme
+		},
+		type: "gradient",
+		text: "Mars Party",
+		desc: ""
+	},
+	{
+		name: "healthyWater",
+		properties: {
+			...healthyWaterTheme
+		},
+		type: "gradient",
+		text: "Healthy Water",
+		desc: ""
+	},
+	{
+		name: "amourAmour",
+		properties: {
+			...amourAmourTheme
+		},
+		type: "gradient",
+		text: "Amour Amour",
+		desc: ""
+	},
+	{
+		name: "hiddenJaguar",
+		properties: {
+			...hiddenJaguarTheme
+		},
+		type: "gradient",
+		text: "Hidden Jaguar",
+		desc: ""
+	},
+	{
+		name: "orangeJuice",
+		properties: {
+			...orangeJuiceTheme
+		},
+		type: "gradient",
+		text: "Orange Juice",
+		desc: ""
+	},
+	{
+		name: "smartIndigo",
+		properties: {
+			...smartIndigoTheme
+		},
+		type: "gradient",
+		text: "Smart Indigo",
+		desc: ""
+	},
+	{
+		name: "perfectWhite",
+		properties: {
+			...perfectWhiteTheme
+		},
+		type: "gradient",
+		text: "Perfect White",
+		desc: ""
+	},
+	{
+		name: "perfectBlueTheme",
+		properties: {
+			...perfectBlueTheme
+		},
+		type: "gradient",
+		text: "Perfect Blue",
+		desc: ""
+	},
+	{
+		name: "cartographer",
+		properties: {
+			...cartographer
+		},
+		type: "bg",
+		text: "Cartographer",
+		desc: ""
+	},
+	{
+		name: "xV",
+		properties: {
+			...xVTheme
+		},
+		type: "bg",
+		text: "XV",
+		desc: ""
+	},
+	{
+		name: "subtleGrunge",
+		properties: {
+			...subtleGrungeTheme
+		},
+		type: "bg",
+		text: "Subtle Grunge",
+		desc: ""
+	},
+	{
+		name: "starDust",
+		properties: {
+			...starDustTheme
+		},
+		type: "bg",
+		text: "Star Dust",
+		desc: ""
+	},
+	{
+		name: "psNeutral",
+		properties: {
+			...psNeutralTheme
+		},
+		type: "bg",
+		text: "Ps Neutral",
+		desc: ""
+	},
+	{
+		name: "poolTable",
+		properties: {
+			...poolTableTheme
+		},
+		type: "bg",
+		text: "Pool Table",
+		desc: ""
+	},
+	{
+		name: "pinkDust",
+		properties: {
+			...pinkDustTheme
+		},
+		type: "bg",
+		text: "Pink Dust",
+		desc: ""
+	},
+	{
+		name: "oldMathematics",
+		properties: {
+			...oldMathematicsTheme
+		},
+		type: "bg",
+		text: "Old Mathematics",
+		desc: ""
+	},
+	{
+		name: "niceSnow",
+		properties: {
+			...niceSnowTheme
+		},
+		type: "bg",
+		text: "Nice Snow",
+		desc: ""
+	},
+	{
+		name: "halftoneYellow",
+		properties: {
+			...halftoneYellowTheme
+		},
+		type: "bg",
+		text: "Halftone Yellow",
+		desc: ""
+	},
+	{
+		name: "grungeWall",
+		properties: {
+			...grungeWallTheme
+		},
+		type: "bg",
+		text: "Grunge Wall",
+		desc: ""
+	},
+	{
+		name: "greyFloral",
+		properties: {
+			...greyFloralTheme
+		},
+		type: "bg",
+		text: "Grey Floral",
+		desc: ""
+	},
+	{
+		name: "cardboardFlat",
+		properties: {
+			...cardboardFlatTheme
+		},
+		type: "bg",
+		text: "Cardboard Flat",
+		desc: ""
+	},
+	{
+		name: "carbonFibre",
+		properties: {
+			...carbonFibreTheme
+		},
+		type: "bg",
+		text: "Carbon Fibre",
+		desc: ""
 	}
 ];
 

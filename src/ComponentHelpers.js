@@ -5,7 +5,7 @@ import {
 	useWindowResize,
 	isPortrait,
 	revealSecs,
-	getTheGradient,
+	getThemeInfo,
 	getCurrentTransition
 } from "./helpers";
 import Fade from "react-reveal/Fade";
@@ -15,7 +15,7 @@ import { browserName, mobileModel } from "react-device-detect";
 import {
 	NavBarContainer,
 	// DragInstructionsContainer,
-	GradientCircle,
+	ThemeCircleContainer,
 	FullScreenOverlayContainer
 	// ParallaxContainer
 	// FullScreeningBGContainer
@@ -31,7 +31,7 @@ import { ReactTabs } from "./stylecomponents/Base";
 import SubMenu from "./maincomponents/SubMenu";
 import { trackWindowScroll } from "react-lazy-load-image-component";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import Zoom from "react-reveal/Zoom";
+// import Zoom from "react-reveal/Zoom";
 
 // export const DragInstructions = props => {
 // 	const {
@@ -237,18 +237,33 @@ export const SubMenuWrapper = props => {
 	);
 };
 
-export const GradientTheme = props => {
-	const { setTheme } = useContext(globalState);
+export const ThemeCircles = props => {
+	const { setTheme, currentTheme } = useContext(globalState);
 	const { width: ww, height: wh } = useWindowResize();
 	const isContentPortrait = isPortrait(ww, wh);
-	const themeValues = getTheGradient(props.themeValue);
+	const themeValues = getThemeInfo(props.themeValue);
 	const changeTheme = () => setTheme(props.themeValue);
+	const currentClass = currentTheme === themeValues.name ? "current" : "";
+	const current = currentTheme === themeValues.name ? true : false;
 	return (
-		<GradientCircle
+		<ThemeCircleContainer
 			onClick={changeTheme}
 			isPortrait={isContentPortrait}
 			themeValues={themeValues}
-		/>
+			className='themeCircle__item'>
+			<button className={`themeCircle__button ${currentClass}`}>
+				{current ? (
+					<div className='themeCircle__selected'>
+						<Text format m bold>
+							Current
+						</Text>
+					</div>
+				) : null}
+			</button>
+			<Text format xs className={`themeCircle__text ${currentClass}`} bold>
+				{themeValues.text}
+			</Text>
+		</ThemeCircleContainer>
 	);
 };
 
@@ -257,6 +272,11 @@ export const MenuTabs = props => {
 	return (
 		<ReactTabs defaultIndex={-1}>
 			<TabList>
+				<Tab>
+					<Text format bold m>
+						For You
+					</Text>
+				</Tab>
 				<Tab>
 					<Text format bold m>
 						Work
@@ -269,15 +289,15 @@ export const MenuTabs = props => {
 				</Tab>
 				<Tab>
 					<Text format bold m>
-						Customize
-					</Text>
-				</Tab>
-				<Tab>
-					<Text format bold m>
 						Photography
 					</Text>
 				</Tab>
 			</TabList>
+			<TabPanel>
+				<nav>
+					<SubMenu showCategory={showCategory} category='customize' />
+				</nav>
+			</TabPanel>
 			<TabPanel>
 				<nav>
 					<SubMenu showCategory={showCategory} category='work' />
@@ -286,11 +306,6 @@ export const MenuTabs = props => {
 			<TabPanel>
 				<nav>
 					<SubMenu showCategory={showCategory} category='about' />
-				</nav>
-			</TabPanel>
-			<TabPanel>
-				<nav>
-					<SubMenu showCategory={showCategory} category='customize' />
 				</nav>
 			</TabPanel>
 			<TabPanel>

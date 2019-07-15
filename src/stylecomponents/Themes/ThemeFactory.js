@@ -7,7 +7,7 @@ import psNeutralImage from "../bgImages/ps_neutral.png";
 import pinkDustImage from "../bgImages/pink_dust.png";
 import oldMathematicsImage from "../bgImages/old_mathematics.png";
 import niceSnowImage from "../bgImages/nice_snow.png";
-import halftoneImage from "../bgImages/halftone-yellow.png";
+import halftoneyellowImage from "../bgImages/halftone-yellow.png";
 import grungeWallImage from "../bgImages/grunge_wall.png";
 import greyFloralImage from "../bgImages/greyfloral.png";
 import cardboardFlatImage from "../bgImages/cardboard_flat.png";
@@ -19,10 +19,83 @@ export const defaultTheme = themeMaker();
 export const cartographer = themeBgMaker();
 
 const carbonFibre = {
-	bgColor: "#e6e9f0",
+	bgColor: "#282828",
 	bgImage: `${carbonFibreImage}`
 };
 export const carbonFibreTheme = themeBgMaker(carbonFibre);
+
+const cardboardFlat = {
+	bgColor: "#DEDEDE",
+	bgImage: `${cardboardFlatImage}`
+};
+export const cardboardFlatTheme = themeBgMaker(cardboardFlat);
+
+const greyFloral = {
+	bgColor: "#FFFFFF",
+	bgImage: `${greyFloralImage}`
+};
+export const greyFloralTheme = themeBgMaker(greyFloral);
+
+const grungeWall = {
+	bgColor: "#EBEBEB",
+	bgImage: `${grungeWallImage}`
+};
+export const grungeWallTheme = themeBgMaker(grungeWall);
+
+const halftoneYellow = {
+	bgColor: "#FFD867",
+	bgImage: `${halftoneyellowImage}`
+};
+export const halftoneYellowTheme = themeBgMaker(halftoneYellow);
+
+const niceSnow = {
+	bgColor: "#F9F9F9",
+	bgImage: `${niceSnowImage}`
+};
+export const niceSnowTheme = themeBgMaker(niceSnow);
+
+const oldMathematics = {
+	bgColor: "#f1f4f4",
+	bgImage: `${oldMathematicsImage}`
+};
+export const oldMathematicsTheme = themeBgMaker(oldMathematics);
+
+const pinkDust = {
+	bgColor: "#3E3C3D",
+	bgImage: `${pinkDustImage}`
+};
+export const pinkDustTheme = themeBgMaker(pinkDust);
+
+const poolTable = {
+	bgColor: "#215f3b",
+	bgImage: `${poolTableImage}`
+};
+export const poolTableTheme = themeBgMaker(poolTable);
+
+const psNeutral = {
+	bgColor: "#F8F8F8",
+	bgImage: `${psNeutralImage}`
+};
+export const psNeutralTheme = themeBgMaker(psNeutral);
+
+const starDust = {
+	bgColor: "#444349",
+	bgImage: `${stardustImage}`
+};
+export const starDustTheme = themeBgMaker(starDust);
+
+const subtleGrunge = {
+	bgColor: "#F6F6F6",
+	bgImage: `${subtleGrungeImage}`
+};
+export const subtleGrungeTheme = themeBgMaker(subtleGrunge);
+
+const xV = {
+	bgColor: "#EBEBEB",
+	bgImage: `${xvImage}`
+};
+export const xVTheme = themeBgMaker(xV);
+
 //snowAgain
 // background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
 const snowAgain = {

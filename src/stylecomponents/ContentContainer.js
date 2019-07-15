@@ -16,6 +16,7 @@ export const ContentContainer = styled.article`
 	${hideScrollbar};
 	overflow: auto;
 	${props => (props.navBarRight ? contentMenuPaddingRight : contentMenuPadding)};
+	padding-bottom: 40vh;
 	.LazyLoad {
 		width: 100%;
 	}
@@ -59,7 +60,7 @@ export const ContentContainer = styled.article`
 			} */
 			${tablet} {
 				max-width:  ${props =>
-					props.showLess && !props.isPortrait ? `340px` : `100%`};
+					props.showLess && !props.isPortrait ? `400px` : `100%`};
 			}
 			${mobile} {
 				width: 100%;
@@ -73,20 +74,33 @@ export const ContentContainer = styled.article`
 	}
 
 	.c-margin-bottom {
-		margin-bottom: 36px;
+		margin-bottom: 1.2rem;
 		${mobile} {
-			margin-bottom: 30px;
+			margin-bottom: 1rem;
 		}
 	}
 	.c-margin-top {
-		margin-top: 36px;
+		margin-top: 3rem;
 		${mobile} {
-			margin-top: 30px;
+			margin-top: 2.5rem;
 		}
 	}
 
 	.c-margin-0 {
 		margin: 0;
+	}
+	ul.themeCircle {
+		display: flex;
+		align-items: flex-start;
+		flex-wrap: wrap;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+	.offset {
+		width:100%;
+		height: 30vh;
+		display:block;
 	}
 `;
 

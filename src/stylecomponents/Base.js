@@ -23,7 +23,8 @@ import {
 	logoBorderRadius,
 	modalFullScreenBg,
 	modalFullScreenBgColor,
-	modalFullScreenBgMobile
+	modalFullScreenBgMobile,
+	CTAColor
 } from "./Themes/ThemeVariables";
 import {
 	mobile,
@@ -36,7 +37,8 @@ import {
 	fluidTypeInfo,
 	container,
 	contentMenuPaddingRight,
-	contentMenuPadding
+	contentMenuPadding,
+	tablet
 } from "./StyleHelpers";
 
 export const GlobalStyle = createGlobalStyle`
@@ -181,11 +183,15 @@ export const ReactTabs = styled(Tabs)`
 			margin: 0 1rem;
 			border: ${tabHeadingsBorder};
 			border-radius: ${tabHeadingsBorderRadius};
+			white-space: nowrap;
 			&:last-child {
 				margin-right: 0;
 			}
 			&:first-child {
 				margin-left: 0;
+			}
+			${tablet} {
+				margin: 0 0.6rem;
 			}
 			${mobile} {
 				margin: 0 0.5rem;
@@ -254,15 +260,56 @@ export const DragInstructionsContainer = styled.div`
 	}
 `;
 
-export const GradientCircle = styled.button`
-	width: 5rem;
-	height: 5rem;
-	border-radius: 50%;
-	background: ${props =>
-		props.isPortrait
-			? props.themeValues.gradientPortrait
-			: props.themeValues.gradient};
-	border: 1 px solid ${props => props.themeValues.borderColor};
+export const ThemeCircleContainer = styled.li`
+	display: flex;
+	list-style-type: none;
+	flex-direction: column;
+	padding: 0.5rem;
+	justify-content: center;
+	width: 7rem;
+	cursor: pointer;
+	.themeCircle {
+		&__button {
+			${mainTransition}
+			position: relative;
+			width: 6rem;
+			height: 6rem;
+			border-radius: 50%;
+			cursor: pointer;
+			background: ${props =>
+				props.isPortrait
+					? props.themeValues.gradientPortrait
+					: props.themeValues.gradient};
+			border: 3px solid ${CTAColor};
+			&.current {
+				border: 3px solid ${fontColor};
+				cursor: default;
+			}
+			&:hover,
+			&:focus {
+				transform: scale(1.05);
+			}
+		}
+		&__text {
+			color: ${CTAColor};
+			text-align: center;
+			cursor: pointer;
+			padding: 0.25rem;
+			&.current {
+				color: ${fontColor};
+				cursor: default;
+			}
+		}
+		&__selected {
+			${absoluteOverlay}
+			display:flex;
+			justify-content: center;
+			align-items: center;
+			span {
+				color: ${fontColor};
+			}
+		}
+	}
 `;
 
 export const FullScreenOverlayContainer = styled.div`
