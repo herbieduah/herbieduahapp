@@ -83,11 +83,6 @@ export const SubMenu = props => {
 							</Text>
 						</li>
 						<li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink to='/Photography'>
-								Photography
-							</Text>
-						</li>
-						<li onClick={hideModal} className='subMenu__item'>
 							<Text menuLink to='/Inspiration'>
 								Inspiration
 							</Text>
@@ -117,8 +112,18 @@ export const SubMenu = props => {
 					) : null}
 					<SubMenuWrapper showCategory={showCategory}>
 						<li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink to='/colors'>
-								Colors
+							<Text menuLink to='/gradients'>
+								Gradients
+							</Text>
+						</li>
+						<li onClick={hideModal} className='subMenu__item'>
+							<Text menuLink to='/backgrounds'>
+								Backgrounds
+							</Text>
+						</li>
+						<li onClick={hideModal} className='subMenu__item'>
+							<Text menuLink to='/transitions'>
+								Transitions
 							</Text>
 						</li>
 						<li onClick={hideModal} className='subMenu__item'>
@@ -127,8 +132,8 @@ export const SubMenu = props => {
 							</Text>
 						</li>
 						<li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink to='/tone'>
-								Tone
+							<Text menuLink to='/settings'>
+								Settings
 							</Text>
 						</li>
 					</SubMenuWrapper>
@@ -146,13 +151,13 @@ export const SubMenu = props => {
 					) : null}
 					<SubMenuWrapper showCategory={showCategory}>
 						<li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink to='/naturephotography'>
-								Nature
+							<Text menuLink to='/peoplephotography'>
+								People
 							</Text>
 						</li>
 						<li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink to='/portraitphotography'>
-								Portrait
+							<Text menuLink to='/placesphotography'>
+								Places
 							</Text>
 						</li>
 						<li onClick={hideModal} className='subMenu__item'>

@@ -38,8 +38,8 @@ const HomePage = ({ contentProps }) => {
 		<Fragment>
 			<ContentShow less>
 				<Paragraph>
-					Hello, I'm Herbie, a Photographer and Web Developer/Designer . I am
-					passionate about designing and engineering user experiences for you.
+					Hello, I'm Herbie, a Photographer and Front End Developer with a
+					passion for designing and engineering user experiences for you.
 				</Paragraph>
 			</ContentShow>
 			<ContentShow more>
@@ -72,9 +72,8 @@ const HomePage = ({ contentProps }) => {
 					</Paragraph>
 					<HeadingTwo>Photography and modeling</HeadingTwo>
 					<Paragraph>
-						I'm also passionate very passionate about photography, and I enjoy
-						being behind the lens of a camera even though I often find myself in
-						front of one
+						I'm also really into photography, and I enjoy being behind the lens
+						of a camera even though I often find myself in front of one
 						<Emoji symbol='🤷🏿‍♂️' label='shrug' />.
 					</Paragraph>
 					{/* <Paragraph>

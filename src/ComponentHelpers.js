@@ -98,7 +98,7 @@ export const NavBar = () => {
 							{/* <div className='animatecss-container'> */}
 							<Text
 								button
-								s
+								m
 								className='navbar__menu-text'
 								onClick={setMenuModalContent}>
 								{modalVisible ? `Back` : `Menu`}
@@ -120,7 +120,7 @@ export const NavBar = () => {
 					<CSSTransition timeout={revealSecs} classNames={transitionClasses}>
 						{/* <div className='animatecss-container'> */}
 						<Text
-							s
+							m
 							button
 							className='navbar__maximize'
 							onClick={setMaximizeAndMinimize}
@@ -132,28 +132,9 @@ export const NavBar = () => {
 				) : null}
 			</TransitionGroup>
 
-			<Text s button>
+			<Text m button>
 				Contact
 			</Text>
-			{/*
-			{fullScreen ? (
-				<Fragment>
-					<Fade up duration={revealSecs}>
-						<Text
-							button
-							m
-							className='navbar__menu-text'
-							onClick={visible ? hide : show}>
-							{visible ? `Back` : `Menu`}
-						</Text>
-					</Fade>
-					<Modal visible={visible} onClose={hide} animation={`fade`}>
-						<section className='navbar__fullScreen'>
-							<MenuTabs showCategory={false} />
-						</section>
-					</Modal>
-				</Fragment>
-			) : null} */}
 		</NavBarContainer>
 	);
 };

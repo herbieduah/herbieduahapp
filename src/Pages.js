@@ -1,22 +1,25 @@
 import React from "react";
 import AboutMePage from "./contentcomponents/AboutMe";
 import BedzinExhibitPage from "./contentcomponents/BedzinExhibit";
-import ColorsPage from "./contentcomponents/Colors";
+import GradientsPage from "./contentcomponents/Gradients";
 import DiscountTirePage from "./contentcomponents/DiscountTire";
 import CulturalSuicidePage from "./contentcomponents/CulturalSuicide";
 import HomePage from "./contentcomponents/Home";
 import InspirationPage from "./contentcomponents/Inspiration";
-import PortraitPage from "./contentcomponents/Portrait";
+import PeoplePage from "./contentcomponents/People";
 import IPhonePage from "./contentcomponents/IPhone";
 import NorthernArizonaUniversityPage from "./contentcomponents/NorthernArizonaUniversity";
 import PhotographyPage from "./contentcomponents/Photography";
 import ResumePage from "./contentcomponents/Resume";
 import SpecialThanksPage from "./contentcomponents/SpecialThanks";
 import ThemePage from "./contentcomponents/Theme";
-import TonePage from "./contentcomponents/Tone";
-import NaturePage from "./contentcomponents/Nature";
+import TonePage from "./contentcomponents/Settings";
+import PlacesPage from "./contentcomponents/Places";
 import UggPage from "./contentcomponents/Ugg";
 import UXvsHXPage from "./contentcomponents/UXvsHX";
+import TransitionsPage from "./contentcomponents/Transitions";
+import SettingsPage from "./contentcomponents/Settings";
+import BackgroundsPage from "./contentcomponents/Backgrounds";
 import ModelingPage from "./contentcomponents/Modeling";
 import { ContentWrapper } from "./ComponentHelpers";
 
@@ -26,14 +29,32 @@ export const AboutMe = () => (
 	</ContentWrapper>
 );
 
+export const Backgrounds = () => (
+	<ContentWrapper>
+		<BackgroundsPage />
+	</ContentWrapper>
+);
+
+export const Settings = () => (
+	<ContentWrapper>
+		<SettingsPage />
+	</ContentWrapper>
+);
+
+export const Transitions = () => (
+	<ContentWrapper>
+		<TransitionsPage />
+	</ContentWrapper>
+);
+
 export const BedzinExhibit = () => (
 	<ContentWrapper>
 		<BedzinExhibitPage />
 	</ContentWrapper>
 );
-export const Colors = () => (
+export const Gradients = () => (
 	<ContentWrapper>
-		<ColorsPage />
+		<GradientsPage />
 	</ContentWrapper>
 );
 export const DiscountTire = () => (
@@ -56,9 +77,9 @@ export const Home = () => (
 		<HomePage />
 	</ContentWrapper>
 );
-export const Portrait = () => (
+export const People = () => (
 	<ContentWrapper>
-		<PortraitPage />
+		<PeoplePage />
 	</ContentWrapper>
 );
 export const IPhone = () => (
@@ -101,9 +122,9 @@ export const Tone = () => (
 	</ContentWrapper>
 );
 
-export const Nature = () => (
+export const Places = () => (
 	<ContentWrapper>
-		<NaturePage />
+		<PlacesPage />
 	</ContentWrapper>
 );
 
