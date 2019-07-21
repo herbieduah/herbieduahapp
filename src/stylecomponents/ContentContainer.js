@@ -16,6 +16,9 @@ export const ContentContainer = styled.article`
 	${hideScrollbar};
 	overflow: auto;
 	${props => (props.navBarRight ? contentMenuPaddingRight : contentMenuPadding)};
+	${mobile} {
+		padding-top: 0;
+	}
 	padding-bottom: 40vh;
 	.LazyLoad {
 		width: 100%;
@@ -38,6 +41,15 @@ export const ContentContainer = styled.article`
 		width: 50%;
 		${mobile} {
 			width: 100%;
+		}
+	}
+	.flex-container {
+		display: flex;
+		.react-reveal {
+			img {
+				height: 23vh;
+				width: auto;
+			}
 		}
 	}
 	.content {
@@ -101,6 +113,9 @@ export const ContentContainer = styled.article`
 		width:100%;
 		height: 30vh;
 		display:block;
+	}
+	.less-image {
+		padding:0 20%;
 	}
 `;
 

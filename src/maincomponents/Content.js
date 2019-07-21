@@ -13,7 +13,7 @@ import {
 	Inspiration,
 	People,
 	IPhone,
-	NorthernArizonaUniversity,
+	StartNow,
 	Photography,
 	Resume,
 	SpecialThanks,
@@ -23,7 +23,9 @@ import {
 	UXvsHX,
 	Settings,
 	Backgrounds,
-	Transitions
+	Transitions,
+	Contacts,
+	HerbieDuahApp
 } from "../Pages";
 import { revealSecs, getCurrentTransition } from "../helpers";
 import "animate.css";
@@ -70,10 +72,7 @@ export const Content = ({ location }) => {
 							<Route path='/Inspiration' component={Inspiration} />
 							<Route path='/peoplephotography' component={People} />
 							<Route path='/iPhone' component={IPhone} />
-							<Route
-								path='/NorthernArizonaUniversity'
-								component={NorthernArizonaUniversity}
-							/>
+							<Route path='/StartNow' component={StartNow} />
 							<Route path='/Resume' component={Resume} />
 							<Route path='/SpecialThanks' component={SpecialThanks} />
 							<Route path='/Theme' component={Theme} />
@@ -81,6 +80,8 @@ export const Content = ({ location }) => {
 							<Route path='/placesphotography' component={Places} />
 							<Route path='/Ugg' component={Ugg} />
 							<Route path='/UXvsHX' component={UXvsHX} />
+							<Route path='/HerbieDuahApp' component={HerbieDuahApp} />
+							<Route path='/Contacts' component={Contacts} />
 						</Switch>
 					</div>
 				</CSSTransition>

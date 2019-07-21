@@ -5,13 +5,10 @@ import {
 	mobile,
 	buttonColorActive,
 	buttonColor,
-	linkColorActive,
 	linkColor,
 	mainTransition,
 	buttonBorderColorActive,
 	buttonBorderColor,
-	linkBorderColorActive,
-	linkBorderColor,
 	navColor,
 	navColorActive
 } from "./StyleHelpers";
@@ -144,19 +141,11 @@ const HyperLink = styled.a`
 	${baseStyle};
 	font-weight: 400;
 	${mainTransition}
-	line-height: 1;
-	border: 0;
-	padding: 0;
-	hyphens: auto;
-	background: none;
-	color: ${linkColor};
 	cursor: pointer;
-	border-bottom: 1px solid ${linkBorderColor};
 	white-space: nowrap;
 	&:hover,
 	&:focus {
-		color: ${linkColorActive};
-		border-bottom: 3px solid ${linkBorderColorActive};
+		text-decoration: underline;
 	}
 	text-decoration: none;
 `;

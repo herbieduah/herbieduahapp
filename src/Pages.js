@@ -8,7 +8,7 @@ import HomePage from "./contentcomponents/Home";
 import InspirationPage from "./contentcomponents/Inspiration";
 import PeoplePage from "./contentcomponents/People";
 import IPhonePage from "./contentcomponents/IPhone";
-import NorthernArizonaUniversityPage from "./contentcomponents/NorthernArizonaUniversity";
+import StartNowPage from "./contentcomponents/StartNow";
 import PhotographyPage from "./contentcomponents/Photography";
 import ResumePage from "./contentcomponents/Resume";
 import SpecialThanksPage from "./contentcomponents/SpecialThanks";
@@ -21,11 +21,25 @@ import TransitionsPage from "./contentcomponents/Transitions";
 import SettingsPage from "./contentcomponents/Settings";
 import BackgroundsPage from "./contentcomponents/Backgrounds";
 import ModelingPage from "./contentcomponents/Modeling";
+import ContactsPage from "./contentcomponents/Contacts";
+import HerbieDuahAppPage from "./contentcomponents/HerbieDuahApp";
 import { ContentWrapper } from "./ComponentHelpers";
 
 export const AboutMe = () => (
 	<ContentWrapper>
 		<AboutMePage />
+	</ContentWrapper>
+);
+
+export const HerbieDuahApp = () => (
+	<ContentWrapper>
+		<HerbieDuahAppPage />
+	</ContentWrapper>
+);
+
+export const Contacts = () => (
+	<ContentWrapper>
+		<ContactsPage />
 	</ContentWrapper>
 );
 
@@ -87,9 +101,9 @@ export const IPhone = () => (
 		<IPhonePage />
 	</ContentWrapper>
 );
-export const NorthernArizonaUniversity = () => (
+export const StartNow = () => (
 	<ContentWrapper>
-		<NorthernArizonaUniversityPage />
+		<StartNowPage />
 	</ContentWrapper>
 );
 export const Photography = () => (

@@ -28,7 +28,7 @@ export const SubMenu = props => {
 					) : null}
 					<SubMenuWrapper showCategory={showCategory}>
 						<li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink to='/'>
+							<Text menuLink to='/HerbieDuahApp'>
 								Herbie&shy;Duah.app
 							</Text>
 						</li>
@@ -44,18 +44,18 @@ export const SubMenu = props => {
 						</li>
 						<li onClick={hideModal} className='subMenu__item'>
 							<Text menuLink to='/BedzinExhibit'>
-								Bedzin Exhibit
+								Będzin Exhibit
 							</Text>
 						</li>
 						<li onClick={hideModal} className='subMenu__item'>
 							<Text menuLink to='/CulturalSuicide'>
-								Cultural Suicide
+								Cultural $uicide
 							</Text>
 						</li>
 
 						<li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink to='/NorthernArizonaUniversity'>
-								Northern Arizona University
+							<Text menuLink to='/StartNow'>
+								Start Now
 							</Text>
 						</li>
 					</SubMenuWrapper>

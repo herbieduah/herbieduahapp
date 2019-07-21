@@ -37,15 +37,20 @@ const HomePage = ({ contentProps }) => {
 	return (
 		<Fragment>
 			<ContentShow less>
-				<Paragraph>
+				{/* <Paragraph>
 					Hello, I'm Herbie, a Photographer and Front End Developer with a
 					passion for designing and engineering user experiences for you.
-				</Paragraph>
+				</Paragraph> */}
+				<div className='flex-container'>
+					<Paragraph className='col-50'>Hi, I'm Herbie</Paragraph>
+					<Image src={cornishPastyPic} className='col-50' />
+					<Image src={testPic2} className='col-50' />
+				</div>
 			</ContentShow>
 			<ContentShow more>
 				<div className='container'>
 					<Header>{header}</Header>
-					<Image src={cornishPastyPic} />
+					<Image src={cornishPastyPic} className='container' />
 					<HeadingTwo>Designed and engineered for you</HeadingTwo>
 					<Paragraph>
 						I have a passion for developing and designing user experiences for

@@ -153,7 +153,7 @@ export const Reveal = props => {
 export const Paragraph = props => {
 	return (
 		<Reveal>
-			<Text m className={`${spacingBottom} ${props.className}`}>
+			<Text m className={`${spacingBottom} ${props.className} container`}>
 				{props.children}
 			</Text>
 		</Reveal>
@@ -173,7 +173,11 @@ export const Small = props => {
 export const HeadingOne = props => {
 	return (
 		<Reveal>
-			<Text h1 xxl bold className={`${spacingBottom} ${props.className}`}>
+			<Text
+				h1
+				xxl
+				bold
+				className={`${spacingBottom} ${props.className} container`}>
 				{props.children}
 			</Text>
 		</Reveal>
@@ -183,7 +187,10 @@ export const HeadingOne = props => {
 export const HeadingTwo = props => {
 	return (
 		<Reveal>
-			<Text h2 xl className={`${spacingTopBottom} ${props.className}`}>
+			<Text
+				h2
+				xl
+				className={`${spacingTopBottom} ${props.className} container`}>
 				{props.children}
 			</Text>
 		</Reveal>
@@ -193,10 +200,19 @@ export const HeadingTwo = props => {
 export const HeadingThree = props => {
 	return (
 		<Reveal>
-			<Text h2 l className={`${spacingTopBottom} ${props.className}`}>
+			<Text h2 l className={`${spacingTopBottom} ${props.className}container`}>
 				{props.children}
 			</Text>
 		</Reveal>
+	);
+};
+
+export const Link = props => {
+	return (
+		<Text link href={props.href} target='_blank'>
+			{props.children}
+			<span>&#8599;</span>
+		</Text>
 	);
 };
 

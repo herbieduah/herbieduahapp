@@ -11,15 +11,11 @@ const SettingsPage = ({ contentProps }) => {
 		<Fragment>
 			<ContentShow less>
 				<Paragraph>
-					Hello, I'm Herbie, a Photographer and Front End Developer with a
-					passion for designing and engineering user experiences for you.
+					You change certain aspects of this site to your liking.
 				</Paragraph>
 			</ContentShow>
 			<ContentShow more>
-				<div className='container'>
-					<Header>{header}</Header>
-					<Paragraph>Coming soon</Paragraph>
-				</div>
+				<Header>{header}</Header>
 			</ContentShow>
 		</Fragment>
 	);
