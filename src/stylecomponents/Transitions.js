@@ -12,9 +12,18 @@ export const appTransitions = [
 		name: "test",
 		properties: {
 			enter: "animated",
-			enterActive: "bounceIn",
+			enterActive: "fadeIn",
 			exit: "animated",
-			exitActive: "bounceOut"
+			exitActive: "fadeOut"
+		}
+	},
+	{
+		name: "test",
+		properties: {
+			enter: "animated",
+			enterActive: "jello",
+			exit: "animated",
+			exitActive: "zoomOut"
 		}
 	}
 ];

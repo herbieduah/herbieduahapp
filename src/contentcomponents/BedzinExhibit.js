@@ -38,11 +38,11 @@ const BedzinExhibitPage = ({ contentProps }) => {
 			<ContentShow more>
 				<Header>{header}</Header>
 				<Paragraph>
-					For my senior capstone for Computer Science, my group was tasked with
-					revamping bedzinexhibit.org. The exhibit, Through the Eyes of Youth:
-					Life and Death in the Będzin Ghetto" tells the story of young people
-					in the Jewish ghetto of Będzin (Poland) before, during, and after the
-					Holocaust.
+					For my Computer Science capstone, my group was tasked with revamping
+					<Link href='http://bedzinexhibit.org/'>bedzinexhibit.org</Link>. The
+					exhibit, "Through the Eyes of Youth: Life and Death in the Będzin
+					Ghetto" tells the story of young people in the Jewish ghetto of Będzin
+					(Poland) before, during, and after the Holocaust.
 				</Paragraph>
 
 				<Paragraph>
@@ -57,7 +57,7 @@ const BedzinExhibitPage = ({ contentProps }) => {
 
 				<HeadingTwo>Modern Look and Feel</HeadingTwo>
 				<Paragraph>
-					The main goals of the project bringing a whole new look and feel to
+					The main goal of the project was to bring a whole new look and feel to
 					the design of the website.
 				</Paragraph>
 

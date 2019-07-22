@@ -14,7 +14,7 @@ import {
 	People,
 	IPhone,
 	StartNow,
-	Photography,
+	Modeling,
 	Resume,
 	SpecialThanks,
 	Theme,
@@ -71,7 +71,7 @@ export const Content = ({ location }) => {
 							<Route exact path='/' component={Home} />
 							<Route path='/Inspiration' component={Inspiration} />
 							<Route path='/peoplephotography' component={People} />
-							<Route path='/iPhone' component={IPhone} />
+							<Route path='/iphonephotography' component={IPhone} />
 							<Route path='/StartNow' component={StartNow} />
 							<Route path='/Resume' component={Resume} />
 							<Route path='/SpecialThanks' component={SpecialThanks} />
@@ -82,6 +82,7 @@ export const Content = ({ location }) => {
 							<Route path='/UXvsHX' component={UXvsHX} />
 							<Route path='/HerbieDuahApp' component={HerbieDuahApp} />
 							<Route path='/Contacts' component={Contacts} />
+							<Route path='/Modeling' component={Modeling} />
 						</Switch>
 					</div>
 				</CSSTransition>
