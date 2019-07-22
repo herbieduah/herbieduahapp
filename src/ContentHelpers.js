@@ -1,4 +1,4 @@
-import React, { Fragment, useContext } from "react";
+import React, { Fragment, useContext, useState } from "react";
 import { globalState } from "./State";
 import {
 	revealSecs,
@@ -6,15 +6,20 @@ import {
 	revealValues,
 	isPortrait,
 	getCurrentTransition,
-	getThemeInfo
+	getThemeInfo,
+	getTransitionInfo
 } from "./helpers";
 import ClickNHold from "react-click-n-hold";
 import Fade from "react-reveal/Fade";
 import Text from "./stylecomponents/Text";
 import Media from "./maincomponents/Media";
 import { themes } from "./stylecomponents/Theme";
-import { ThemeCircleContainer } from "./stylecomponents/Base";
+import {
+	ThemeCircleContainer,
+	TransitionTextContainer
+} from "./stylecomponents/Base";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
+import { appTransitions } from "./stylecomponents/Transitions";
 export const defaultAlt = "I will be adding an alt tag to this image soon";
 export const defaultDesc = "This is a video, I will be describing it soon";
 const spacingBottom = "c-margin-bottom";
@@ -310,6 +315,65 @@ export const GenerateTheme = props => {
 					} else {
 						return null;
 					}
+				})}
+			</ul>
+		</Reveal>
+	);
+};
+
+export const TransitionTexts = props => {
+	const { setCurrentTransition, currentTransition } = useContext(globalState);
+	const [enterTextTransition, setEnterTextTransition] = useState("");
+	const [exitTextTransition, setExitTextTransition] = useState("");
+	const transitionValues = getTransitionInfo(props.transitionValue);
+	// const toggleAnimatedClass = setTimeout(() => {
+	// 	animatedClass = "animated";
+	// }, revealSecs);
+	const changeTransition = () => {
+		setCurrentTransition(props.transitionValue);
+		setEnterTextTransition(`${transitionValues.enterTransition} animated`);
+		setExitTextTransition(`${transitionValues.exitTransition} animated`);
+		setTimeout(() => {
+			setEnterTextTransition("");
+			setExitTextTransition("");
+		}, revealSecs);
+	};
+	const currentClass =
+		currentTransition === transitionValues.name ? "current" : "";
+
+	// const current = currentTheme === transitionValues.name ? true : false;
+
+	// useEffect(() => {
+	// 	const timer = setTimeout(() => {
+	// 	  animated =''
+	// 	}, revealSecs);
+	// 	return () => clearTimeout(timer);
+	//   }, []);
+	return (
+		<TransitionTextContainer
+			onClick={changeTransition}
+			className='appTransition__item'>
+			<Text button l bold className={currentClass}>
+				<span className={enterTextTransition}>
+					{transitionValues.enterTransition}
+				</span>
+				, &nbsp;
+				<span className={exitTextTransition}>
+					{transitionValues.exitTransition}
+				</span>
+			</Text>
+		</TransitionTextContainer>
+	);
+};
+
+export const GenerateTransition = props => {
+	return (
+		<Reveal>
+			<ul className='appTransition'>
+				{appTransitions.map(function(element, uniqueKey) {
+					return (
+						<TransitionTexts transitionValue={element.name} key={uniqueKey} />
+					);
 				})}
 			</ul>
 		</Reveal>

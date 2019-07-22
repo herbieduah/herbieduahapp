@@ -6,7 +6,8 @@ import {
 	isPortrait,
 	revealSecs,
 	getThemeInfo,
-	getCurrentTransition
+	getCurrentTransition,
+	getTransitionInfo
 } from "./helpers";
 import Fade from "react-reveal/Fade";
 import Text from "./stylecomponents/Text";
@@ -16,7 +17,8 @@ import {
 	NavBarContainer,
 	// DragInstructionsContainer,
 	ThemeCircleContainer,
-	FullScreenOverlayContainer
+	FullScreenOverlayContainer,
+	TransitionTextContainer
 	// ParallaxContainer
 	// FullScreeningBGContainer
 } from "./stylecomponents/Base";
@@ -245,6 +247,23 @@ export const ThemeCircles = props => {
 				{themeValues.text}
 			</Text>
 		</ThemeCircleContainer>
+	);
+};
+
+export const TransitionTexts = props => {
+	const { setTransition, currentTransition } = useContext(globalState);
+	const transitionValues = getThemeInfo(props.transitionValue);
+	const changeTransition = () => setTransition(props.themeValue);
+	// const currentClass = currentTheme === transitionValues.name ? "current" : "";
+	// const current = currentTheme === transitionValues.name ? true : false;
+	return (
+		<TransitionTextContainer
+			onClick={changeTransition}
+			className='themeCircle__item'>
+			<Text button xs bold>
+			{transitionValues.enterTrasition},{transitionValues.exitTransition}
+			</Text>
+		</TransitionTextContainer>
 	);
 };
 

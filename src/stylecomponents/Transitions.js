@@ -9,7 +9,7 @@ export const appTransitions = [
 		}
 	},
 	{
-		name: "test",
+		name: "fadeInfadeOut",
 		properties: {
 			enter: "animated",
 			enterActive: "fadeIn",
@@ -18,12 +18,39 @@ export const appTransitions = [
 		}
 	},
 	{
-		name: "test",
+		name: "jelloZoomOut",
 		properties: {
 			enter: "animated",
 			enterActive: "jello",
 			exit: "animated",
 			exitActive: "zoomOut"
+		}
+	},
+	{
+		name: "fadeInRightFadeOutRight",
+		properties: {
+			enter: "animated",
+			enterActive: "fadeInRight",
+			exit: "animated",
+			exitActive: "fadeOutRight"
+		}
+	},
+	{
+		name: "rotateInRotateOut",
+		properties: {
+			enter: "animated",
+			enterActive: "rotateIn",
+			exit: "animated",
+			exitActive: "rotateOut"
+		}
+	},
+	{
+		name: "flipInXFlipOutY",
+		properties: {
+			enter: "animated",
+			enterActive: "flipInX",
+			exit: "animated",
+			exitActive: "flipOutY"
 		}
 	}
 ];

@@ -1,7 +1,14 @@
 /* eslint-disable no-unused-expressions */
 import React, { Fragment } from "react";
-import { Paragraph, HeadingTwo, Image, Header } from "../ContentHelpers";
+import {
+	Paragraph,
+	HeadingTwo,
+	Image,
+	Header,
+	GenerateTransition
+} from "../ContentHelpers";
 import { ContentShow } from "../ContentHelpers";
+import "animate.css";
 // import Emoji from "a11y-react-emoji";
 
 const header = "Transition";
@@ -17,7 +24,7 @@ const TransitionsPage = ({ contentProps }) => {
 			<ContentShow more>
 				<div className='container'>
 					<Header>{header}</Header>
-					<Paragraph>Coming soon</Paragraph>
+					<GenerateTransition />
 				</div>
 			</ContentShow>
 		</Fragment>

@@ -122,20 +122,21 @@ const Button = styled.button`
 	${baseStyle};
 	font-weight: 700;
 	${mainTransition}
-	line-height: 1;
+	line-height: 1.2;
 	border: 0;
-	padding: 0;
+	hyphens: manual;
 	background: none;
+	color: ${navColor};
 	font-family: ${appfontFamilyWide};
-	color: ${buttonColor};
 	cursor: pointer;
-	border-bottom: 1px solid ${buttonBorderColor};
-	white-space: nowrap;
 	&:hover,
 	&:focus {
-		color: ${buttonColorActive};
-		border-bottom: 3px solid ${buttonBorderColorActive};
+		color: ${navColorActive};
 	}
+	&.active {
+		color: ${navColorActive};
+	}
+	text-decoration: none;
 `;
 const HyperLink = styled.a`
 	${baseStyle};

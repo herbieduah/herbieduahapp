@@ -101,6 +101,7 @@ export const ContentContainer = styled.article`
 	.c-margin-0 {
 		margin: 0;
 	}
+
 	ul.themeCircle {
 		display: flex;
 		align-items: flex-start;
@@ -108,6 +109,10 @@ export const ContentContainer = styled.article`
 		width: 100%;
 		margin: 0;
 		padding: 0;
+	}
+	ul.appTransition {
+		margin: 0;
+		padding: 0;	
 	}
 	.offset {
 		width:100%;

@@ -41,6 +41,8 @@ import {
 	tablet
 } from "./StyleHelpers";
 
+import { revealSecs } from "../helpers";
+
 export const GlobalStyle = createGlobalStyle`
   html {
 	box-sizing: border-box;
@@ -309,6 +311,26 @@ export const ThemeCircleContainer = styled.li`
 				color: ${fontColor};
 			}
 		}
+	}
+`;
+
+export const TransitionTextContainer = styled.li`
+	position: relative;
+	list-style-type: none;
+	margin-bottom: 1.5rem;
+	display: flex;
+	width: 100%;
+	${mobile} {
+		margin-bottom: 1rem;
+	}
+	button.current {
+		color: ${fontColor};
+	}
+	span.animated {
+		animation-duration: ${revealSecs}ms;
+	}
+	span {
+		display: inline-block;
 	}
 `;
 

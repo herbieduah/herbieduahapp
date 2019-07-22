@@ -173,22 +173,6 @@ export function getCurrentTheme(theDefaultTheme, theTheme) {
 	return currentThemeObject;
 }
 
-export function getCurrentTransition(theTransition) {
-	const found = appTransitions.find(function(element) {
-		return element.name === theTransition;
-	});
-	return found.properties;
-}
-
-// export function themeMapText() {
-// 	themes.map(function(element) {
-// 		if (element.type !== "poop") {
-// 			console.log(element.name);
-// 		}
-// 	});
-// }
-// themeMapText();
-
 export function getThemeInfo(theTheme = "default") {
 	const found = themes.find(function(element) {
 		return element.name === theTheme;
@@ -206,6 +190,36 @@ export function getThemeInfo(theTheme = "default") {
 		name
 	};
 }
+
+export function getCurrentTransition(theTransition) {
+	const found = appTransitions.find(function(element) {
+		return element.name === theTransition;
+	});
+	return found.properties;
+}
+
+export function getTransitionInfo(theTransition = "default") {
+	const found = appTransitions.find(function(element) {
+		return element.name === theTransition;
+	});
+	const enterTransition = found.properties.enterActive;
+	const name = found.name;
+	const exitTransition = found.properties.exitActive;
+	return {
+		enterTransition,
+		exitTransition,
+		name
+	};
+}
+
+// export function themeMapText() {
+// 	themes.map(function(element) {
+// 		if (element.type !== "poop") {
+// 			console.log(element.name);
+// 		}
+// 	});
+// }
+// themeMapText();
 
 export function getDimensionObject(node) {
 	const rect = node.getBoundingClientRect();
