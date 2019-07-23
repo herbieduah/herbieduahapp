@@ -250,23 +250,6 @@ export const ThemeCircles = props => {
 	);
 };
 
-export const TransitionTexts = props => {
-	const { setTransition, currentTransition } = useContext(globalState);
-	const transitionValues = getThemeInfo(props.transitionValue);
-	const changeTransition = () => setTransition(props.themeValue);
-	// const currentClass = currentTheme === transitionValues.name ? "current" : "";
-	// const current = currentTheme === transitionValues.name ? true : false;
-	return (
-		<TransitionTextContainer
-			onClick={changeTransition}
-			className='themeCircle__item'>
-			<Text button xs bold>
-			{transitionValues.enterTrasition},{transitionValues.exitTransition}
-			</Text>
-		</TransitionTextContainer>
-	);
-};
-
 export const MenuTabs = props => {
 	const showCategory = props.showCategory;
 	return (

@@ -42,16 +42,18 @@ const StartNowPage = ({ contentProps }) => {
 				</Paragraph>
 			</ContentShow>
 			<ContentShow more>
-				<Header>{header}</Header>
-				<Image src={StandOutFromTheRest2000x3000} />
-				<Image src={NAUConstruction2000x1500} />
-				<Image src={KnowTheGame2000x1500} />
-				<Image src={herbieCareerWidePoster1480x1500} />
-				<Image src={ConstructAPlan13X19x1952x2874} />
-				<Image src={ConstructAPlan2000x1500} />
-				<Image src={CareerWidePosterPhotoshop1480x1973} />
-				<Image src={CareerPoster1480x950} />
-				<Image src={ACMClubPhoto2000x2667} />
+				<div className='container'>
+					<Header>{header}</Header>
+					<Image src={StandOutFromTheRest2000x3000} />
+					<Image src={NAUConstruction2000x1500} />
+					<Image src={KnowTheGame2000x1500} />
+					<Image src={herbieCareerWidePoster1480x1500} />
+					<Image src={ConstructAPlan13X19x1952x2874} />
+					<Image src={ConstructAPlan2000x1500} />
+					<Image src={CareerWidePosterPhotoshop1480x1973} />
+					<Image src={CareerPoster1480x950} />
+					<Image src={ACMClubPhoto2000x2667} />
+				</div>
 			</ContentShow>
 		</Fragment>
 	);
