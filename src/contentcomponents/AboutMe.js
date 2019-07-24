@@ -24,6 +24,25 @@ import {
 // import ghanaKid from "../media/images/picsOfMe/hd-ghanaKid-1480.jpg";
 import dherbstaAndDinchman from "../media/images/picsOfMe/hd-dherbstaAndDinchman.JPG";
 // import africanWhite from "../media/images/picsOfMe/hd-africanWhite-1973.jpg";
+// import four0hfour from "../media/videos/videosOfme/404.mp4";
+// import aptDancing_1 from "../media/videos/videosOfme/aptDancing_1.mp4";
+// import carribeanQueen from "../media/videos/videosOfme/carribeanQueen.mp4";
+// import dadDance_1 from "../media/videos/videosOfme/dadDance_1.mp4";
+// import good404Snow from "../media/videos/videosOfme/good404Snow.mp4";
+// import hammockChilling_1 from "../media/videos/videosOfme/hammockChilling_1.mp4";
+// import millyRockByPool_1 from "../media/videos/videosOfme/millyRockByPool_1.mp4";
+// import millyrockgrandcanyon from "../media/videos/videosOfme/millyrockgrandcanyon.mp4";
+// import offRoadingDriving_1 from "../media/videos/videosOfme/offRoadingDriving_1.mp4";
+// import OffRoadSplash from "../media/videos/videosOfme/OffRoadSplash.mp4";
+// import offRoadStuck from "../media/videos/videosOfme/offRoadStuck.mp4";
+// import photosSedona from "../media/videos/videosOfme/photosSedona.mp4";
+// import raveMillyRock_1 from "../media/videos/videosOfme/raveMillyRock_1.mp4";
+// import soreLoser_1 from "../media/videos/videosOfme/soreLoser_1.mp4";
+// import StandUp from "../media/videos/videosOfme/StandUp.mp4";
+// import toast_1 from "../media/videos/videosOfme/toast_1.mp4";
+// import toastSquad from "../media/videos/videosOfme/toastSquad.mp4";
+// import vNeckCrewNeck from "../media/videos/videosOfme/vNeckCrewNeck.mp4";
+// import wakanda_1 from "../media/videos/videosOfme/wakanda_1.mp4";
 
 const header = "About Me";
 

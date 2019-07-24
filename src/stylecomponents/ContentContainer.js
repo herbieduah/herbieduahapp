@@ -86,9 +86,9 @@ export const ContentContainer = styled.article`
 	}
 
 	.c-margin-bottom {
-		margin-bottom: 3rem;
+		margin-bottom: 2rem;
 		${mobile} {
-			margin-bottom: 2.5rem;
+			margin-bottom: 1.5rem;
 		}
 	}
 	.c-margin-top {

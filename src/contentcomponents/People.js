@@ -10,12 +10,19 @@ import connorGrad1480x2221 from "../media/images/people/photography-connorGrad-2
 import cristian1480x2220 from "../media/images/people/photography-cristian-2220.jpg";
 import david1480x2220 from "../media/images/people/photography-david-2220.jpg";
 import dyesaColors1480x2221 from "../media/images/people/photography-dyesaColors-2221.jpg";
-import emmaBW1480x2221 from "../media/images/people/photography-emmaBW-1850.jpg";
 import emmaModel1480x2221 from "../media/images/people/photography-emmaModel-2221.jpg";
 import fashionShow1480x2221 from "../media/images/people/photography-fashionShow-2221.jpg";
 import herbieNatasha1480x2221 from "../media/images/people/photography-herbieNatasha-2221.jpg";
 import jesseForte1480x2219 from "../media/images/people/photography-jesseForte-2219.jpg";
 import oforis1480x2221 from "../media/images/people/photography-oforis-2221.jpg";
+import nana1480x2220 from "../media/images/people/nana.jpg";
+import ceiphers1480x2220 from "../media/images/people/ceiphers.jpg";
+import grindingWie1480x2220 from "../media/images/people/grindingWie.jpg";
+import gweg1480x987 from "../media/images/people/gweg.jpg";
+import halle1480x2220 from "../media/images/people/halle.jpg";
+import johnnyGrad1480x2220 from "../media/images/people/johnnyGrad.jpg";
+import meliPoet1480x2220 from "../media/images/people/meliPoet.jpg";
+import melphotography1480x2220 from "../media/images/people/melphotography.jpg";
 const header = "People";
 
 const PeoplePage = ({ contentProps }) => {
@@ -27,14 +34,13 @@ const PeoplePage = ({ contentProps }) => {
 			<ContentShow more>
 				<div className='container'>
 					<Header>{header}</Header>
-
+					nana
 					<Image src={abenaNightTime1480x2221} />
 					<Image src={ashleyTaylor1480x2221} />
 					<Image src={connorGrad1480x2221} />
 					<Image src={cristian1480x2220} />
 					<Image src={david1480x2220} />
 					<Image src={dyesaColors1480x2221} />
-					<Image src={emmaBW1480x2221} />
 					<Image src={emmaModel1480x2221} />
 					<Image src={fashionShow1480x2221} />
 					<Image src={herbieNatasha1480x2221} />

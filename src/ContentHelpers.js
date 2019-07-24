@@ -274,6 +274,19 @@ export const Gif = props => {
 	);
 };
 
+export const FiGif = props => {
+	const url = props.url;
+	const desc = props.desc ? props.desc : defaultDesc;
+	return (
+		<Reveal>
+			<figure className={`${spacingBottom} ${props.className}`}>
+				<Media type='gif' url={url} desc={desc} />
+				{props.children}
+			</figure>
+		</Reveal>
+	);
+};
+
 export const ThemeCircles = props => {
 	const { setTheme, currentTheme } = useContext(globalState);
 	const { width: ww, height: wh } = useWindowResize();
