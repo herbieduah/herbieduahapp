@@ -101,7 +101,7 @@ const UggPage = ({ contentProps }) => {
 					<FiGif url={frikkinPhillipLim}>
 						<Figcaption>
 							Landing page for fashion designer Phillip Lim with elements fading
-							into view on scroll/
+							into view on scroll
 						</Figcaption>
 					</FiGif>
 					<FiGif url={Philip}>

@@ -54,8 +54,8 @@ export const App = () => {
 	// });
 	// console.log(`Fullscreening: ${fullScreening}`);
 	// console.log(`Fullscreen: ${fullScreen}`);
-	const splitSize = parseInt(localStorage.getItem("splitPos"))
-		? parseInt(localStorage.getItem("splitPos"))
+	const splitSize = parseInt(sessionStorage.getItem("splitPos"))
+		? parseInt(sessionStorage.getItem("splitPos"))
 		: defaultPaneSize(ww, wh);
 	// console.log(splitSize);
 	return (
@@ -89,10 +89,10 @@ export const App = () => {
 						onDragStarted={onDragging}
 						onDragFinished={onDraggingEnded}
 						defaultSize={parseInt(
-							localStorage.getItem("splitPos"),
+							sessionStorage.getItem("splitPos"),
 							defaultPaneSize(ww, wh)
 						)}
-						onChange={size => localStorage.setItem("splitPos", size)}>
+						onChange={size => sessionStorage.setItem("splitPos", size)}>
 						<ContentMenu switchSides={switchSides} />
 						<ContentMenu switchSides={!switchSides} />
 					</SplitPane>

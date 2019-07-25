@@ -113,6 +113,15 @@ export const NavBarContainer = styled.div`
 			transform: ${navBarHoverFocusAction};
 			color: ${navBarHoverFocus};
 		}
+		a {
+			text-decoration: none;
+			color: ${navBarButtonColor};
+				&:hover,&:focus {
+				border-bottom: 0;
+				transform: ${navBarHoverFocusAction};
+				color: ${navBarHoverFocus};
+				}
+		}
 	}
 	.navbar {
 		&__menu-text, &__logo {

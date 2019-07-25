@@ -135,7 +135,7 @@ export const NavBar = () => {
 			</TransitionGroup>
 
 			<Text m button>
-				Contact
+				<NavLink to='/contacts'>Contact</NavLink>
 			</Text>
 		</NavBarContainer>
 	);

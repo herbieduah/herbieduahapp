@@ -16,12 +16,7 @@ import {
 	// Header
 } from "../ContentHelpers";
 import { ContentShow } from "../ContentHelpers";
-import Emoji from "a11y-react-emoji";
-// import Modal from "../maincomponents/Modal";
-import cornishPastyPic from "../media/images/picsOfMe/hd-herbieSmile-1974.jpg";
-import testPic from "../media/images/photography-herbieFood-2222.jpg";
-import testPic2 from "../media/images/photography-melPhoto-2221.jpg";
-// import ReactPlayer from "react-player";
+// import Emoji from "a11y-react-emoji";
 
 const header = "Będzin Exhibit";
 
@@ -70,7 +65,7 @@ const BedzinExhibitPage = ({ contentProps }) => {
 
 				<Paragraph>
 					Throughout the project, I was enlightened by the story about the
-					Będzin Ghetto. If you'd like to learn more about it, you can visit{" "}
+					Będzin Ghetto. If you'd like to learn more about it, you can visit
 					<Link href='http://bedzinexhibit.org/'>bedzinexhibit.org</Link>
 				</Paragraph>
 			</ContentShow>
