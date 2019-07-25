@@ -5,9 +5,7 @@ import {
 	useWindowResize,
 	isPortrait,
 	revealSecs,
-	getThemeInfo,
-	getCurrentTransition,
-	getTransitionInfo
+	getCurrentTransition
 } from "./helpers";
 import Fade from "react-reveal/Fade";
 import Text from "./stylecomponents/Text";
@@ -16,9 +14,7 @@ import { browserName, mobileModel } from "react-device-detect";
 import {
 	NavBarContainer,
 	// DragInstructionsContainer,
-	ThemeCircleContainer,
-	FullScreenOverlayContainer,
-	TransitionTextContainer
+	FullScreenOverlayContainer
 	// ParallaxContainer
 	// FullScreeningBGContainer
 } from "./stylecomponents/Base";
@@ -70,7 +66,8 @@ export const NavBar = () => {
 		modalVisible,
 		setModalContent,
 		navBarRight,
-		currentTransition
+		currentTransition,
+		navBarComplement
 	} = useContext(globalState);
 	const { height: wh, width: ww } = useWindowResize();
 	const values = { ww, wh, cw, ch };
@@ -92,7 +89,8 @@ export const NavBar = () => {
 			hideMaximize={showLess}
 			appHeight={wh}
 			navBarRight={navBarRight}
-			isPortrait={isContentPortrait}>
+			isPortrait={isContentPortrait}
+			navBarComplement={navBarComplement}>
 			<div className='navbar__logo-menu'>
 				<TransitionGroup>
 					{fullScreen ? (
@@ -220,36 +218,6 @@ export const SubMenuWrapper = props => {
 	);
 };
 
-export const ThemeCircles = props => {
-	const { setTheme, currentTheme } = useContext(globalState);
-	const { width: ww, height: wh } = useWindowResize();
-	const isContentPortrait = isPortrait(ww, wh);
-	const themeValues = getThemeInfo(props.themeValue);
-	const changeTheme = () => setTheme(props.themeValue);
-	const currentClass = currentTheme === themeValues.name ? "current" : "";
-	const current = currentTheme === themeValues.name ? true : false;
-	return (
-		<ThemeCircleContainer
-			onClick={changeTheme}
-			isPortrait={isContentPortrait}
-			themeValues={themeValues}
-			className='themeCircle__item'>
-			<button className={`themeCircle__button ${currentClass}`}>
-				{current ? (
-					<div className='themeCircle__selected'>
-						<Text format m bold>
-							Current
-						</Text>
-					</div>
-				) : null}
-			</button>
-			<Text format xs className={`themeCircle__text ${currentClass}`} bold>
-				{themeValues.text}
-			</Text>
-		</ThemeCircleContainer>
-	);
-};
-
 export const MenuTabs = props => {
 	const showCategory = props.showCategory;
 	return (
@@ -312,7 +280,9 @@ const ContentWrapperContainer = props => {
 		dragging,
 		fullScreen,
 		whom,
-		navBarRight
+		navBarRight,
+		navBarComplement,
+		minimalMode
 	} = useContext(globalState);
 	const { width: ww, height: wh } = useWindowResize();
 	const values = { ww, wh, cw, ch };
@@ -333,7 +303,9 @@ const ContentWrapperContainer = props => {
 		mobileModel,
 		isContentPortrait,
 		fullScreen,
-		whom
+		whom,
+		navBarRight,
+		navBarComplement
 	};
 	const children = React.Children.map(props.children, (child, index) => {
 		return React.cloneElement(child, {
@@ -349,7 +321,8 @@ const ContentWrapperContainer = props => {
 			fullScreen={fullScreen}
 			showLess={showLess}
 			showMore={showMore}
-			navBarRight={navBarRight}>
+			navBarRight={navBarRight}
+			minimalMode={minimalMode}>
 			<div className='animatecss-tamer'>{children}</div>
 			{/* {showMore && isContentPortrait ? (
 				<div className='content__slider-bg' />

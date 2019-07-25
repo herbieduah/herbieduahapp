@@ -186,8 +186,7 @@ export const SliderLineContainer = styled.div`
 	${props =>
 		props.isPortrait
 			? `
-		padding: ${props.linePaddingMobile}px 0 ${props.linePaddingMobile -
-					parseInt(sliderMobileWidth)}px;
+		padding: ${props.linePaddingMobile}px 0 ${props.linePaddingMobile}px;
 		justify-content: center;
 		align-items: unset;
 		height: 100%;`

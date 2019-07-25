@@ -31,43 +31,47 @@ const BedzinExhibitPage = ({ contentProps }) => {
 				</Paragraph>
 			</ContentShow>
 			<ContentShow more>
-				<Header>{header}</Header>
-				<Paragraph>
-					For my Computer Science capstone, my group was tasked with revamping
-					<Link href='http://bedzinexhibit.org/'>bedzinexhibit.org</Link>. The
-					exhibit, "Through the Eyes of Youth: Life and Death in the Będzin
-					Ghetto" tells the story of young people in the Jewish ghetto of Będzin
-					(Poland) before, during, and after the Holocaust.
-				</Paragraph>
+				<div className='container'>
+					<Header>{header}</Header>
 
-				<Paragraph>
-					While other capstone projects were more towards engineering, ours had
-					a UX design aspect to it, so I volunteered to be the designer.
-				</Paragraph>
+					<Paragraph>
+						For my Computer Science capstone, my group was tasked with revamping
+						<Link href='http://bedzinexhibit.org/'>bedzinexhibit.org</Link>. The
+						exhibit, "Through the Eyes of Youth: Life and Death in the Będzin
+						Ghetto" tells the story of young people in the Jewish ghetto of
+						Będzin (Poland) before, during, and after the Holocaust.
+					</Paragraph>
 
-				<Paragraph>
-					It's worth mentioning this was my very first website UX design. Back
-					then, I didn't even have the web development skills to code my design.
-				</Paragraph>
+					<Paragraph>
+						While other capstone projects were more towards engineering, ours
+						had a UX design aspect to it, so I volunteered to be the designer.
+					</Paragraph>
 
-				<HeadingTwo>Modern Look and Feel</HeadingTwo>
-				<Paragraph>
-					The main goal of the project was to bring a whole new look and feel to
-					the design of the website.
-				</Paragraph>
+					<Paragraph>
+						It's worth mentioning this was my very first website UX design. Back
+						then, I didn't even have the web development skills to code my
+						design.
+					</Paragraph>
 
-				<HeadingTwo>In Conclusion</HeadingTwo>
-				<Paragraph>
-					The experience taught me a lot about prototyping, setting up
-					requirements, communicating with stakeholders, and working with a
-					small team for an extended period to deliver a project.
-				</Paragraph>
+					<HeadingTwo>Modern Look and Feel</HeadingTwo>
+					<Paragraph>
+						The main goal of the project was to bring a whole new look and feel
+						to the design of the website.
+					</Paragraph>
 
-				<Paragraph>
-					Throughout the project, I was enlightened by the story about the
-					Będzin Ghetto. If you'd like to learn more about it, you can visit
-					<Link href='http://bedzinexhibit.org/'>bedzinexhibit.org</Link>
-				</Paragraph>
+					<HeadingTwo>In Conclusion</HeadingTwo>
+					<Paragraph>
+						The experience taught me a lot about prototyping, setting up
+						requirements, communicating with stakeholders, and working with a
+						small team for an extended period to deliver a project.
+					</Paragraph>
+
+					<Paragraph>
+						Throughout the project, I was enlightened by the story about the
+						Będzin Ghetto. If you'd like to learn more about it, you can visit
+						<Link href='http://bedzinexhibit.org/'>bedzinexhibit.org</Link>
+					</Paragraph>
+				</div>
 			</ContentShow>
 		</Fragment>
 	);

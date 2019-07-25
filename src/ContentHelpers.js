@@ -16,13 +16,15 @@ import Media from "./maincomponents/Media";
 import { themes } from "./stylecomponents/Theme";
 import {
 	ThemeCircleContainer,
-	TransitionTextContainer
+	TransitionTextContainer,
+	FlexContainer
 } from "./stylecomponents/Base";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { appTransitions } from "./stylecomponents/Transitions";
 export const defaultAlt = "I will be adding an alt tag to this image soon";
 export const defaultDesc = "This is a video, I will be describing it soon";
 const spacingBottom = "c-margin-bottom";
+const spacingBottomMed = "c-margin-bottom-med";
 const spacingTopBottom = "c-margin-top c-margin-bottom";
 // const noSpacingTopBottom = "c-margin-0";
 
@@ -158,7 +160,9 @@ export const Reveal = props => {
 export const Paragraph = props => {
 	return (
 		<Reveal>
-			<Text m className={`${spacingBottom} ${props.className} container`}>
+			<Text
+				m
+				className={`c-margin-bottom-med ${props.className} padding-left-right`}>
 				{props.children}
 			</Text>
 		</Reveal>
@@ -168,7 +172,9 @@ export const Paragraph = props => {
 export const Small = props => {
 	return (
 		<Reveal>
-			<Text s className={`${spacingBottom} ${props.className}`}>
+			<Text
+				s
+				className={`c-margin-bottom-med padding-left-right ${props.className}`}>
 				{props.children}
 			</Text>
 		</Reveal>
@@ -182,7 +188,9 @@ export const HeadingOne = props => {
 				h1
 				xxl
 				bold
-				className={`${spacingBottom} ${props.className} container`}>
+				className={`c-margin-bottom-med  ${
+					props.className
+				} c-margin-bottom-med  padding-left-right `}>
 				{props.children}
 			</Text>
 		</Reveal>
@@ -195,7 +203,9 @@ export const HeadingTwo = props => {
 			<Text
 				h2
 				xl
-				className={`${spacingTopBottom} ${props.className} container`}>
+				className={` ${
+					props.className
+				} container c-margin-top  c-margin-bottom-med padding-left-right container`}>
 				{props.children}
 			</Text>
 		</Reveal>
@@ -205,7 +215,12 @@ export const HeadingTwo = props => {
 export const HeadingThree = props => {
 	return (
 		<Reveal>
-			<Text h2 l className={`${spacingTopBottom} ${props.className}container`}>
+			<Text
+				h2
+				l
+				className={`c-margin-top  c-margin-bottom-med padding-left-right ${
+					props.className
+				}container`}>
 				{props.children}
 			</Text>
 		</Reveal>
@@ -219,6 +234,13 @@ export const Link = props => {
 			<span>&#8599;</span>
 		</Text>
 	);
+};
+
+export const Flex = props => {
+	// const height = props.height;
+	const src = props.src;
+	const alt = props.alt ? props.alt : defaultAlt;
+	return <FlexContainer>{props.children}</FlexContainer>;
 };
 
 export const Image = props => {

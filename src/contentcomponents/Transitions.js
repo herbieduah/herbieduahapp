@@ -11,7 +11,7 @@ import { ContentShow } from "../ContentHelpers";
 import "animate.css";
 // import Emoji from "a11y-react-emoji";
 
-const header = "Transition";
+const header = "Transitions";
 
 const TransitionsPage = ({ contentProps }) => {
 	return (

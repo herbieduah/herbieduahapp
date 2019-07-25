@@ -29,6 +29,8 @@ export const StateProvider = ({ children }) => {
 	const [fullScreen, setFullscreen] = useState(false);
 	const [navBarRight, setNavBarRight] = useState(false);
 	const [modalVisible, setModalVisible] = useState(false);
+	const [navBarComplement, setBavBarComplement] = useState(false);
+	const [minimalMode, setMinimalMode] = useState(false);
 	const [modalContent, setModalContent] = useState("");
 	const [whom, setWhom] = useState("");
 	// currentLeftTop: "LandscapePhotography",
@@ -71,7 +73,11 @@ export const StateProvider = ({ children }) => {
 		navBarRight,
 		setNavBarRight,
 		currentTransition,
-		setCurrentTransition
+		setCurrentTransition,
+		navBarComplement,
+		setBavBarComplement,
+		minimalMode,
+		setMinimalMode
 	};
 
 	// and we pass it down. Done!

@@ -271,6 +271,33 @@ export const DragInstructionsContainer = styled.div`
 	}
 `;
 
+export const FlexContainer = styled.div`
+	display: flex;
+	${hideScrollbar};
+	${props =>
+		props.isPortrait
+			? ``
+			: `
+			flex-direction: column;
+			`};
+
+	.react-reveal {
+		img,
+		video {
+			${props =>
+				props.isPortrait
+					? `
+			height: 23vh !important;
+			width: auto !important;
+			margin: 0 0.5rem !important;`
+					: `
+			height: auto !important;
+			width: 100% !important;
+			`};
+		}
+	}
+`;
+
 export const ThemeCircleContainer = styled.li`
 	display: flex;
 	list-style-type: none;

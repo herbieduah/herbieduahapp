@@ -33,9 +33,9 @@ const ContactsPage = ({ contentProps }) => {
 					passion for designing and engineering user experiences for you.
 				</Paragraph> */}
 				<div className='flex-container'>
-					<Paragraph className='col-50'>Hi, I'm Herbie</Paragraph>
-					<Image src={cornishPastyPic} className='col-50' />
-					<Image src={testPic2} className='col-50' />
+					<Paragraph>
+						<Link href='mailto:herbduah@gmail.com'>herbduah@gmail.com</Link>
+					</Paragraph>
 				</div>
 			</ContentShow>
 			<ContentShow more>

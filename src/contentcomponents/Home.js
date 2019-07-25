@@ -11,14 +11,17 @@ import {
 	Figure,
 	Figcaption,
 	Gif,
-	Header
+	Header,
+	Flex
 } from "../ContentHelpers";
 import { ContentShow } from "../ContentHelpers";
 import Emoji from "a11y-react-emoji";
 // import Modal from "../maincomponents/Modal";
 import cornishPastyPic from "../media/images/picsOfMe/hd-herbieSmile-1974.jpg";
-import testPic from "../media/images/photography-herbieFood-2222.jpg";
-import testPic2 from "../media/images/photography-melPhoto-2221.jpg";
+import testVideoVertical from "../media/videos/videosOfme/aptDancing_1.mp4";
+import testPicHorizontal from "../media/images/startNow/CareerWidePosterPhotoshop-208.jpg";
+import testVideoHorizontal from "../media/videos/thisApp/herbieduahcom.mp4";
+
 // import ReactPlayer from "react-player";
 
 const header = "Hi, I'm Herbie";
@@ -41,11 +44,13 @@ const HomePage = ({ contentProps }) => {
 					Hello, I'm Herbie, a Photographer and Front End Developer with a
 					passion for designing and engineering user experiences for you.
 				</Paragraph> */}
-				<div className='flex-container'>
-					<Paragraph className='col-50'>Hi, I'm Herbie</Paragraph>
-					<Image src={cornishPastyPic} className='col-50' />
-					<Image src={testPic2} className='col-50' />
-				</div>
+				<Flex>
+					{/* <Paragraph className='col-50'>Hi, I'm Herbie</Paragraph> */}
+					<Image src={cornishPastyPic} />
+					<Image src={testPicHorizontal} />
+					<Gif url={testVideoHorizontal} />
+					<Gif url={testVideoVertical} />
+				</Flex>
 			</ContentShow>
 			<ContentShow more>
 				<div className='container'>

@@ -45,10 +45,13 @@ export const ContentContainer = styled.article`
 	}
 	.flex-container {
 		display: flex;
+		flex-direction: row;
+		${hideScrollbar};
 		.react-reveal {
-			img {
-				height: 23vh;
-				width: auto;
+			img,video {
+				height: 23vh!important;
+				width: auto !important;
+				margin: 0 .5rem !important; 
 			}
 		}
 	}
@@ -86,9 +89,21 @@ export const ContentContainer = styled.article`
 	}
 
 	.c-margin-bottom {
-		margin-bottom: 2rem;
+		margin-bottom: 3rem;
 		${mobile} {
-			margin-bottom: 1.5rem;
+			margin-bottom: 2.5rem;
+		}
+	}
+	.c-margin-bottom-med {
+		margin-bottom: 1.5rem;
+		${mobile} {
+			margin-bottom: 1rem;
+		}
+	}
+	.padding-left-right {
+		padding: 0 20px ;
+		${mobile} {
+			padding: 0 1rem ;
 		}
 	}
 	.c-margin-top {
