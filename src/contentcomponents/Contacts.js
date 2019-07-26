@@ -39,26 +39,24 @@ const ContactsPage = ({ contentProps }) => {
 				</div>
 			</ContentShow>
 			<ContentShow more>
-				<div className='container'>
-					<Header>{header}</Header>
-					<HeadingTwo>Email</HeadingTwo>
-					<Paragraph>
-						You can email at{" "}
-						<Link href='mailto:herbduah@gmail.com'>herbduah@gmail.com</Link>
-					</Paragraph>
-					<HeadingTwo>Social</HeadingTwo>
-					<Paragraph>
-						You can message me or keep up on this project on any of these
-						platforms as well.{" "}
-					</Paragraph>
-					<Paragraph>
-						<Link href='https://instagram.com/herbieduah'>Instagram</Link>&nbsp;
-						<Link href='https://twitter.com/herbieduah'>Twitter</Link>&nbsp;
-						<Link href='https://www.linkedin.com/in/herbieduah/'>
-							LinkedIn
-						</Link>{" "}
-					</Paragraph>
-				</div>
+				<Header>{header}</Header>
+				<HeadingTwo>Email</HeadingTwo>
+				<Paragraph>
+					You can email at{" "}
+					<Link href='mailto:herbduah@gmail.com'>herbduah@gmail.com</Link>
+				</Paragraph>
+				<HeadingTwo>Social</HeadingTwo>
+				<Paragraph>
+					You can message me or keep up on this project on any of these
+					platforms as well.{" "}
+				</Paragraph>
+				<Paragraph>
+					<Link href='https://instagram.com/herbieduah'>Instagram</Link>&nbsp;
+					<Link href='https://twitter.com/herbieduah'>Twitter</Link>&nbsp;
+					<Link href='https://www.linkedin.com/in/herbieduah/'>
+						LinkedIn
+					</Link>{" "}
+				</Paragraph>
 			</ContentShow>
 		</Fragment>
 	);

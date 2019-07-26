@@ -26,25 +26,21 @@ const PeoplePage = ({ contentProps }) => {
 				<Paragraph>I take pictures of places?</Paragraph>
 			</ContentShow>
 			<ContentShow more>
-				<div className='container'>
-					<Header>{header}</Header>
-					<Paragraph>
-						Basically any pictures that do not evolve people
-					</Paragraph>
-					<Image src={treesInAutumn2000x3004} />
-					<Image src={snowMountainLake1480x985} />
-					<Image src={snowyRoad2000x2999} />
-					<Image src={greenGrass1480x2220} />
-					<Image src={bwMountain1480x832} />
-					<Image src={marshallLake1480x987} />
-					<Image src={flagstaffRoad1480x986} />
-					<Image src={mysteriousDoor2000x2999} />
-					<Image src={flagstaffStreetOnAutumn2000x3000} />
-					<Image src={icyAlley2000x3001} />
-					<Image src={evansTundra2000x3331} />
-					<Image src={chocolatefalls2000x1333} />
-					<Image src={beauifulsunset2000x1333} />
-				</div>
+				<Header>{header}</Header>
+				<Paragraph>Basically any pictures that do not evolve people</Paragraph>
+				<Image src={treesInAutumn2000x3004} />
+				<Image src={snowMountainLake1480x985} />
+				<Image src={snowyRoad2000x2999} />
+				<Image src={greenGrass1480x2220} />
+				<Image src={bwMountain1480x832} />
+				<Image src={marshallLake1480x987} />
+				<Image src={flagstaffRoad1480x986} />
+				<Image src={mysteriousDoor2000x2999} />
+				<Image src={flagstaffStreetOnAutumn2000x3000} />
+				<Image src={icyAlley2000x3001} />
+				<Image src={evansTundra2000x3331} />
+				<Image src={chocolatefalls2000x1333} />
+				<Image src={beauifulsunset2000x1333} />
 			</ContentShow>
 		</Fragment>
 	);

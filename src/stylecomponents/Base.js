@@ -276,7 +276,9 @@ export const FlexContainer = styled.div`
 	${hideScrollbar};
 	${props =>
 		props.isPortrait
-			? ``
+			? `
+			flex-direction: row;
+			`
 			: `
 			flex-direction: column;
 			`};

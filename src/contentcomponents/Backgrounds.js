@@ -15,10 +15,8 @@ const BackgroundsPage = ({ contentProps }) => {
 				</Paragraph>
 			</ContentShow>
 			<ContentShow more>
-				<div className='container'>
-					<Header>{header}</Header>
-					<GenerateTheme type='bg' />
-				</div>
+				<Header>{header}</Header>
+				<GenerateTheme type='bg' />
 			</ContentShow>
 		</Fragment>
 	);

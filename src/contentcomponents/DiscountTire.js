@@ -36,24 +36,21 @@ const DiscountTirePage = ({ contentProps }) => {
 				</Paragraph>
 			</ContentShow>
 			<ContentShow more>
-				<div className='container'>
-					<Header>{header}</Header>
-					<Paragraph>
-						I am currently working at Discount Tire as a Front End Developer I.
-						My job duties consist of developing for and updating content for a
-						legacy Intranet System so unfortunately, I don't have any work to
-						show.
-					</Paragraph>
-					<HeadingTwo>Modeling</HeadingTwo>
-					<Paragraph>
-						I volunteered to be a model for one of their shoots.
-					</Paragraph>
-					<Image src={tireCheckMatt1480x987} />
-					<Image src={showroomCheckMatt1480x987} />
-					<Image src={standupTireCheck1480x987} />
-					<Image src={dtbrochure1480x1973} />
-					<Image src={dtASU1480x2693} />
-				</div>
+				<Header>{header}</Header>
+				<Paragraph>
+					I am currently working at Discount Tire as a Front End Developer I. My
+					job duties consist of developing for and updating content for a legacy
+					Intranet System so unfortunately, I don't have any work to show.
+				</Paragraph>
+				<HeadingTwo>Modeling</HeadingTwo>
+				<Paragraph>
+					I volunteered to be a model for one of their shoots.
+				</Paragraph>
+				<Image src={tireCheckMatt1480x987} />
+				<Image src={showroomCheckMatt1480x987} />
+				<Image src={standupTireCheck1480x987} />
+				<Image src={dtbrochure1480x1973} />
+				<Image src={dtASU1480x2693} />
 			</ContentShow>
 		</Fragment>
 	);

@@ -20,10 +20,8 @@ const GradientsPage = ({ contentProps }) => {
 				</Paragraph>
 			</ContentShow>
 			<ContentShow more>
-				<div className='container'>
-					<Header>{header}</Header>
-					<GenerateTheme type='gradient' />
-				</div>
+				<Header>{header}</Header>
+				<GenerateTheme type='gradient' />
 			</ContentShow>
 		</Fragment>
 	);

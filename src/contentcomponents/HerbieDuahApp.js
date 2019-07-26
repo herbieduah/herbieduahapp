@@ -44,11 +44,9 @@ const HerbieDuahAppPage = ({ contentProps }) => {
 				<div className='flex-container' />
 			</ContentShow>
 			<ContentShow more>
-				<div className='container'>
-					<Header>{header}</Header>
+				<Header>{header}</Header>
 
-					<Gif url={herbieduahComiPad} />
-				</div>
+				<Gif url={herbieduahComiPad} />
 			</ContentShow>
 		</Fragment>
 	);

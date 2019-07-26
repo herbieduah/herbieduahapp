@@ -42,51 +42,49 @@ const StartNowPage = ({ contentProps }) => {
 				</Paragraph>
 			</ContentShow>
 			<ContentShow more>
-				<div className='container'>
-					<Header>{header}</Header>
-					<Figure src={StandOutFromTheRest2000x3000}>
-						<Figcaption>Something</Figcaption>
-					</Figure>
-					<Figure src={NAUConstruction2000x1500}>
-						<Figcaption>Something</Figcaption>
-					</Figure>
-					<Figure src={KnowTheGame2000x1500}>
-						<Figcaption>Something</Figcaption>
-					</Figure>
-					<Figure src={herbieCareerWidePoster1480x1500}>
-						<Figcaption>Something</Figcaption>
-					</Figure>
-					<Figure src={ConstructAPlan13X19x1952x2874}>
-						<Figcaption>Something</Figcaption>
-					</Figure>
-					<Figure src={ConstructAPlan2000x1500}>
-						<Figcaption>Something</Figcaption>
-					</Figure>
-					<Figure src={CareerWidePosterPhotoshop1480x1973}>
-						<Figcaption>Something</Figcaption>
-					</Figure>
-					<Figure src={CareerPoster1480x950}>
-						<Figcaption>Something</Figcaption>
-					</Figure>
-					<Figure src={ACMClubPhoto2000x2667}>
-						<Figcaption>Something</Figcaption>
-					</Figure>
-					<Figure src={Yes1480x2220}>
-						<Figcaption>Something</Figcaption>
-					</Figure>
-					<Figure src={FullPage1480x1824}>
-						<Figcaption>Something</Figcaption>
-					</Figure>
-					<Figure src={FullSizeStudents1480x1774}>
-						<Figcaption>Something</Figcaption>
-					</Figure>
-					<Figure src={idkwhatIamDoing1480x2220}>
-						<Figcaption>Something</Figcaption>
-					</Figure>
-					<Figure src={smileStock1480x2220}>
-						<Figcaption>Something</Figcaption>
-					</Figure>
-				</div>
+				<Header>{header}</Header>
+				<Figure src={StandOutFromTheRest2000x3000}>
+					<Figcaption>Something</Figcaption>
+				</Figure>
+				<Figure src={NAUConstruction2000x1500}>
+					<Figcaption>Something</Figcaption>
+				</Figure>
+				<Figure src={KnowTheGame2000x1500}>
+					<Figcaption>Something</Figcaption>
+				</Figure>
+				<Figure src={herbieCareerWidePoster1480x1500}>
+					<Figcaption>Something</Figcaption>
+				</Figure>
+				<Figure src={ConstructAPlan13X19x1952x2874}>
+					<Figcaption>Something</Figcaption>
+				</Figure>
+				<Figure src={ConstructAPlan2000x1500}>
+					<Figcaption>Something</Figcaption>
+				</Figure>
+				<Figure src={CareerWidePosterPhotoshop1480x1973}>
+					<Figcaption>Something</Figcaption>
+				</Figure>
+				<Figure src={CareerPoster1480x950}>
+					<Figcaption>Something</Figcaption>
+				</Figure>
+				<Figure src={ACMClubPhoto2000x2667}>
+					<Figcaption>Something</Figcaption>
+				</Figure>
+				<Figure src={Yes1480x2220}>
+					<Figcaption>Something</Figcaption>
+				</Figure>
+				<Figure src={FullPage1480x1824}>
+					<Figcaption>Something</Figcaption>
+				</Figure>
+				<Figure src={FullSizeStudents1480x1774}>
+					<Figcaption>Something</Figcaption>
+				</Figure>
+				<Figure src={idkwhatIamDoing1480x2220}>
+					<Figcaption>Something</Figcaption>
+				</Figure>
+				<Figure src={smileStock1480x2220}>
+					<Figcaption>Something</Figcaption>
+				</Figure>
 			</ContentShow>
 		</Fragment>
 	);

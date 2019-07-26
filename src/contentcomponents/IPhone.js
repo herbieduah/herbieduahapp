@@ -30,25 +30,23 @@ const iPhonePage = () => {
 				<Paragraph>I enjoy taking pics on my iPhone</Paragraph>
 			</ContentShow>
 			<ContentShow more>
-				<div className='container'>
-					<Header>{header}</Header>
-					<Image src={sunsetPoint1480x1110} />
-					<Image src={santaMonicaBeach1480x1973} />
-					<Image src={sunsetsnowlift1480x1973} />
-					<Image src={BWGrandCanyon1480x1110} />
-					<Image src={sunsetMexico1480x1110} />
-					<Image src={Naebabe1480x1973} />
-					<Image src={NAUDome2000x1505} />
-					<Image src={lockettJeepLife1480x1110} />
-					<Image src={melDaddy1480x1973} />
-					<Image src={gradAunty1480x1110} />
-					<Image src={georgeInTown1480x1110} />
-					<Image src={gloomy1480x1110} />
-					<Image src={flagstaffRailroad1480x1110} />
-					<Image src={flagstaffPrettyColors1480x1110} />
-					<Image src={flagstaffColorfulHouses1480x1110} />
-					<Image src={afterDCTrip1480x1973} />
-				</div>
+				<Header>{header}</Header>
+				<Image src={sunsetPoint1480x1110} />
+				<Image src={santaMonicaBeach1480x1973} />
+				<Image src={sunsetsnowlift1480x1973} />
+				<Image src={BWGrandCanyon1480x1110} />
+				<Image src={sunsetMexico1480x1110} />
+				<Image src={Naebabe1480x1973} />
+				<Image src={NAUDome2000x1505} />
+				<Image src={lockettJeepLife1480x1110} />
+				<Image src={melDaddy1480x1973} />
+				<Image src={gradAunty1480x1110} />
+				<Image src={georgeInTown1480x1110} />
+				<Image src={gloomy1480x1110} />
+				<Image src={flagstaffRailroad1480x1110} />
+				<Image src={flagstaffPrettyColors1480x1110} />
+				<Image src={flagstaffColorfulHouses1480x1110} />
+				<Image src={afterDCTrip1480x1973} />
 			</ContentShow>
 		</Fragment>
 	);

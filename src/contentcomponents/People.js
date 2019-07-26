@@ -32,29 +32,27 @@ const PeoplePage = ({ contentProps }) => {
 				<Paragraph>I take pictures of people</Paragraph>
 			</ContentShow>
 			<ContentShow more>
-				<div className='container'>
-					<Header>{header}</Header>
-					<Image src={ceiphers1480x2220} />
-					<Image src={nana1480x2220} />
-					<Image src={grindingWie1480x2220} />
-					<Image src={gweg1480x987} />
-					<Image src={halle1480x2220} />
-					<Image src={johnnyGrad1480x2220} />
-					<Image src={meliPoet1480x2220} />
-					<Image src={melphotography1480x2220} />>
-					<Image src={abenaNightTime1480x2221} />
-					<Image src={ashleyTaylor1480x2221} />
-					<Image src={connorGrad1480x2221} />
-					<Image src={cristian1480x2220} />
-					<Image src={david1480x2220} />
-					<Image src={dyesaColors1480x2221} />
-					<Image src={emmaModel1480x2221} />
-					<Image src={fashionShow1480x2221} />
-					<Image src={herbieNatasha1480x2221} />
-					<Image src={jesseForte1480x2219} />
-					<Image src={photographyTesfayFamilyKiss1480x2220} />
-					<Image src={oforis1480x2221} />
-				</div>
+				<Header>{header}</Header>
+				<Image src={ceiphers1480x2220} />
+				<Image src={nana1480x2220} />
+				<Image src={grindingWie1480x2220} />
+				<Image src={gweg1480x987} />
+				<Image src={halle1480x2220} />
+				<Image src={johnnyGrad1480x2220} />
+				<Image src={meliPoet1480x2220} />
+				<Image src={melphotography1480x2220} />>
+				<Image src={abenaNightTime1480x2221} />
+				<Image src={ashleyTaylor1480x2221} />
+				<Image src={connorGrad1480x2221} />
+				<Image src={cristian1480x2220} />
+				<Image src={david1480x2220} />
+				<Image src={dyesaColors1480x2221} />
+				<Image src={emmaModel1480x2221} />
+				<Image src={fashionShow1480x2221} />
+				<Image src={herbieNatasha1480x2221} />
+				<Image src={jesseForte1480x2219} />
+				<Image src={photographyTesfayFamilyKiss1480x2220} />
+				<Image src={oforis1480x2221} />
 			</ContentShow>
 		</Fragment>
 	);

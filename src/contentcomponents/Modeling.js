@@ -34,24 +34,22 @@ const Modeling = () => {
 				<Paragraph>Infront of the Camera</Paragraph>
 			</ContentShow>
 			<ContentShow more>
-				<div className='container'>
-					<Header>{header}</Header>
-					<Image src={herbieVictoriaNaboursScratch1480x2639} />
-					<Image src={herbieVictoriaNaboursJacket1480x2219} />
-					<Image src={herbieVictoriaNabours1480x2219} />
-					<Image src={herbieUmberto1480x2220} />
-					<Image src={herbieUmbertoTwo1480x2220} />
-					<Image src={herbieJacketNabours1480x2219} />
-					<Image src={herbieConner1480x1851} />
-					<Image src={herbieCalixRob1480x1973} />
-					<Image src={herbieByNae1480x1973} />
-					<Image src={herbieByDyesa1480x2220} />
-					<Image src={herbieByConner1480x1980} />
-					<Image src={herbiebyAndy1480x971} />
-					<Image src={brianaPhoto1480x2221} />
-					<Image src={bethanyBaldwin2000x1333} />
-					<Image src={bethanyBaldwin2000x3096} />
-				</div>
+				<Header>{header}</Header>
+				<Image src={herbieVictoriaNaboursScratch1480x2639} />
+				<Image src={herbieVictoriaNaboursJacket1480x2219} />
+				<Image src={herbieVictoriaNabours1480x2219} />
+				<Image src={herbieUmberto1480x2220} />
+				<Image src={herbieUmbertoTwo1480x2220} />
+				<Image src={herbieJacketNabours1480x2219} />
+				<Image src={herbieConner1480x1851} />
+				<Image src={herbieCalixRob1480x1973} />
+				<Image src={herbieByNae1480x1973} />
+				<Image src={herbieByDyesa1480x2220} />
+				<Image src={herbieByConner1480x1980} />
+				<Image src={herbiebyAndy1480x971} />
+				<Image src={brianaPhoto1480x2221} />
+				<Image src={bethanyBaldwin2000x1333} />
+				<Image src={bethanyBaldwin2000x3096} />
 			</ContentShow>
 		</Fragment>
 	);

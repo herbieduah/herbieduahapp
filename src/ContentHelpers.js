@@ -77,10 +77,10 @@ export const ContentShow = props => {
 			<TransitionGroup className='animatecss-container'>
 				{showMore ? (
 					<CSSTransition timeout={revealSecs} classNames={transitionClasses}>
-						<Fragment>
+						<div className='container'>
 							{props.children}
 							<div className='offset' />
-						</Fragment>
+						</div>
 					</CSSTransition>
 				) : null}
 			</TransitionGroup>
@@ -237,10 +237,12 @@ export const Link = props => {
 };
 
 export const Flex = props => {
-	// const height = props.height;
-	const src = props.src;
-	const alt = props.alt ? props.alt : defaultAlt;
-	return <FlexContainer>{props.children}</FlexContainer>;
+	// const height = props.height
+	return (
+		<FlexContainer isPortrait={props.isPortrait}>
+			{props.children}
+		</FlexContainer>
+	);
 };
 
 export const Image = props => {
