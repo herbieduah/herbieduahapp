@@ -20,6 +20,7 @@ import {
 	FlexContainer,
 	MarqueeWrapper
 } from "./stylecomponents/Base";
+import { ShowIf } from "./ComponentHelpers";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { appTransitions } from "./stylecomponents/Transitions";
 export const defaultAlt = "I will be adding an alt tag to this image soon";
@@ -191,7 +192,7 @@ export const HeadingOne = props => {
 				bold
 				className={`c-margin-bottom-med  ${
 					props.className
-				} c-margin-bottom-med  padding-left-right `}>
+				}  padding-left-right `}>
 				{props.children}
 			</Text>
 		</Reveal>
@@ -206,7 +207,7 @@ export const HeadingTwo = props => {
 				xl
 				className={` ${
 					props.className
-				} container c-margin-top  c-margin-bottom-med padding-left-right container`}>
+				} container c-margin-top  padding-left-right`}>
 				{props.children}
 			</Text>
 		</Reveal>
@@ -421,12 +422,13 @@ export const GenerateTransition = props => {
 export const Marquee = props => {
 	return (
 		<Reveal>
-			<MarqueeWrapper
-				playing={props.playing}
-				left={props.left}
-				className='padding-left-right'>
-				{props.children}
-			</MarqueeWrapper>
+			{props.playing ? (
+				<MarqueeWrapper left={props.left} className='padding-left-right'>
+					{props.children}
+				</MarqueeWrapper>
+			) : (
+				<div className='padding-left-right'>{props.children}</div>
+			)}
 		</Reveal>
 	);
 };

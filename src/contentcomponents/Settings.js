@@ -1,23 +1,21 @@
 /* eslint-disable no-unused-expressions */
 import React, { Fragment } from "react";
-import {
-	Paragraph,
-	HeadingTwo,
-	Image,
-	Header,
-	Gif,
-	HeadingThree
-} from "../ContentHelpers";
-import { ContentShow } from "../ContentHelpers";
+import { Paragraph, HeadingTwo, Header, ContentShow } from "../ContentHelpers";
+import { ShowIf } from "../ComponentHelpers";
+import Text from "../stylecomponents/Text";
 // import Emoji from "a11y-react-emoji";
 const header = "Settings";
 
 const SettingsPage = ({ contentProps }) => {
+	const { navBarRight, setNavBarRight } = contentProps;
+	const moveNavBar = () => {
+		navBarRight ? setNavBarRight(false) : setNavBarRight(true);
+	};
 	return (
 		<Fragment>
 			<ContentShow less>
 				<Paragraph>
-					You change certain aspects of this site to your liking.
+					You can change certain aspects of this site to your liking.
 				</Paragraph>
 			</ContentShow>
 			<ContentShow more>
@@ -26,6 +24,19 @@ const SettingsPage = ({ contentProps }) => {
 				<Paragraph>
 					This setting moves navigations bar to the right or left.
 				</Paragraph>
+				<div className='pos-rel c-margin-bottom'>
+					<ShowIf thisValue={navBarRight} thatValue={true}>
+						<Text button onClick={moveNavBar} className='padding-left-right'>
+							Move Navigation bar to the left to the left, everything you need
+							to navigate this site to the left
+						</Text>
+					</ShowIf>
+					<ShowIf thisValue={navBarRight} thatValue={false}>
+						<Text button onClick={moveNavBar} className='padding-left-right'>
+							Move Navigation Bar to the right
+						</Text>
+					</ShowIf>
+				</div>
 				<HeadingTwo>Complimentary Navigation Bar</HeadingTwo>
 				<Paragraph>
 					{" "}

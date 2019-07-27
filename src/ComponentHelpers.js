@@ -282,7 +282,8 @@ const ContentWrapperContainer = props => {
 		whom,
 		navBarRight,
 		navBarComplement,
-		minimalMode
+		minimalMode,
+		setNavBarRight
 	} = useContext(globalState);
 	const { width: ww, height: wh } = useWindowResize();
 	const values = { ww, wh, cw, ch };
@@ -305,7 +306,8 @@ const ContentWrapperContainer = props => {
 		fullScreen,
 		whom,
 		navBarRight,
-		navBarComplement
+		navBarComplement,
+		setNavBarRight
 	};
 	const children = React.Children.map(props.children, (child, index) => {
 		return React.cloneElement(child, {

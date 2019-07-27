@@ -416,11 +416,13 @@ ${container}
 
 export const MarqueeWrapper = styled.div`
 	/* transform: translateX(100%); */
+	width: 100%;
+	overflow: hidden;
 	p,
 	span {
 		/* transform: translateX(100%); */
-		animation: ${props => (props.left ? marqueeLeft : marqueeRight)}
-			${props => (props.playing ? `10s` : `0s`)} linear infinite;
+		animation: ${props => (props.left ? marqueeLeft : marqueeRight)} 10s linear
+			infinite;
 		width: 100%;
 		&:focus,
 		&:focus {

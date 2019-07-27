@@ -95,9 +95,9 @@ export const ContentContainer = styled.article`
 		}
 	}
 	.c-margin-bottom-med {
-		margin-bottom: 1.5rem;
+		margin-bottom: .5rem;
 		${mobile} {
-			margin-bottom: 1rem;
+			margin-bottom: .5rem;
 		}
 	}
 	.padding-left-right {
@@ -107,10 +107,14 @@ export const ContentContainer = styled.article`
 		}
 	}
 	.c-margin-top {
-		margin-top: 3rem;
+		margin-top: 3.5rem;
 		${mobile} {
-			margin-top: 2.5rem;
+			margin-top: 3rem;
 		}
+	}
+	.pos-rel {
+		position:relative;
+		height: 100%;
 	}
 
 	.c-margin-0 {

@@ -29,9 +29,9 @@ const MenuContainer = styled.aside`
 	${mainTransition}
 	${props => (props.isPortrait ? mobileSliderOnBottom : ``)};
 	${props =>
-		props.isShowingMore && props.isPortrait ? slightBoxShadowAbove : ``};
-	/* ${props =>
-		props.isPortrait ? `margin-top: ${stupidNegativeMargin}` : ``} */
+		props.isShowingMore && props.isPortrait
+			? slightBoxShadowAbove
+			: `box-shadow: none`};
 	
 	.react-tabs {
 		padding: 1rem 0;

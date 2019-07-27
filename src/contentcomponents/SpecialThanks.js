@@ -63,7 +63,7 @@ const SpecialThanksPage = () => {
 				</ShowIf>
 				<ShowIf thisValue={marqueePlay} thatValue={false}>
 					<Text button l onClick={marqueePlaying} className='c-margin-top'>
-						Okay I wanna see the people you appreciate over and over again
+						I wanna see the people you appreciate over and over again
 					</Text>
 				</ShowIf>
 			</ContentShow>
