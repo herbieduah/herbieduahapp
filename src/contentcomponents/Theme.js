@@ -2,19 +2,36 @@
 import React, { Fragment } from "react";
 // import Media from "../maincomponents/Media";
 // import Fade from "react-reveal/Fade";
-import { ContentShow, ComingSoon } from "../ContentHelpers";
+import {
+	ContentShow,
+	ComingSoon,
+	Paragraph,
+	Header,
+	HeadingTwo
+} from "../ContentHelpers";
 
 const header = "Theme";
 
 const ThemePage = () => {
 	return (
 		<Fragment>
-			<ContentShow header={header} />
 			<ContentShow less>
-				<ComingSoon header={header} />
+				<Paragraph>You can change the theme of the whole site.</Paragraph>
 			</ContentShow>
 			<ContentShow more>
-				<ComingSoon header={header} />
+				<Header>{header}</Header>
+				<Paragraph>
+					Themes changes certain areas of the site to match one of themes below
+				</Paragraph>
+				<HeadingTwo>Matrix</HeadingTwo>
+				<Paragraph>
+					This Matrix theme is based on the Matrix Trilogy starring Keanu
+					Reeves.
+				</Paragraph>
+				<HeadingTwo>Snapchat</HeadingTwo>
+				<Paragraph>
+					The Snapchat theme borrows some of the looks and colors from Snapchat.
+				</Paragraph>
 			</ContentShow>
 		</Fragment>
 	);

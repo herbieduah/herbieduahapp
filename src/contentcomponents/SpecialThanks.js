@@ -1,21 +1,71 @@
 /* eslint-disable no-unused-expressions */
-import React, { Fragment } from "react";
-// import Text from "../stylecomponents/Text";
+import React, { Fragment, useState } from "react";
+import Text from "../stylecomponents/Text";
 // import Media from "../maincomponents/Media";
 // import Fade from "react-reveal/Fade";
-import { ContentShow, ComingSoon } from "../ContentHelpers";
+import {
+	ContentShow,
+	ComingSoon,
+	Header,
+	Paragraph,
+	Marquee
+} from "../ContentHelpers";
+import { ShowIf } from "../ComponentHelpers";
 
 const header = "Special Thanks";
 
 const SpecialThanksPage = () => {
+	const [marqueePlay, setmarqueePlay] = useState(true);
+	const marqueePlaying = () => {
+		marqueePlay ? setmarqueePlay(false) : setmarqueePlay(true);
+	};
 	return (
 		<Fragment>
-			<ContentShow header={header} />
 			<ContentShow less>
-				<ComingSoon header={header} />
+				<Paragraph>
+					I want to give a special shout out to everyone that helped me with is
+					project.
+				</Paragraph>
 			</ContentShow>
 			<ContentShow more>
-				<ComingSoon header={header} />
+				<Header>{header}</Header>
+				<Marquee playing={marqueePlay}>
+					<Text format xl extrawide>
+						Daliza Jeffrey
+					</Text>
+				</Marquee>
+				<Marquee playing={marqueePlay} left>
+					<Text format xl extrawide>
+						Henry Duah
+					</Text>
+				</Marquee>
+				<Marquee playing={marqueePlay}>
+					<Text format xl extrawide>
+						Kyle Mooney
+					</Text>
+				</Marquee>
+
+				<Marquee playing={marqueePlay} left>
+					<Text format xl extrawide>
+						Nuvi Njinimbam
+					</Text>
+				</Marquee>
+				<Marquee playing={marqueePlay}>
+					<Text format xl extrawide>
+						Wieland Mego
+					</Text>
+				</Marquee>
+
+				<ShowIf thisValue={marqueePlay} thatValue={true}>
+					<Text button l onClick={marqueePlaying} className='c-margin-top'>
+						Okay I get it these people are awesome please make it stop
+					</Text>
+				</ShowIf>
+				<ShowIf thisValue={marqueePlay} thatValue={false}>
+					<Text button l onClick={marqueePlaying} className='c-margin-top'>
+						Okay I wanna see the people you appreciate over and over again
+					</Text>
+				</ShowIf>
 			</ContentShow>
 		</Fragment>
 	);

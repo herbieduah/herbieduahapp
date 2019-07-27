@@ -1,5 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components";
-import { fullScreenFill } from "./Animations";
+import { fullScreenFill, marqueeLeft, marqueeRight } from "./Animations";
 import { Tabs } from "react-tabs";
 import {
 	navBarBg,
@@ -412,4 +412,19 @@ ${container}
 		z-index: -1;
 	}
 	
+`;
+
+export const MarqueeWrapper = styled.div`
+	/* transform: translateX(100%); */
+	p,
+	span {
+		/* transform: translateX(100%); */
+		animation: ${props => (props.left ? marqueeLeft : marqueeRight)}
+			${props => (props.playing ? `10s` : `0s`)} linear infinite;
+		width: 100%;
+		&:focus,
+		&:focus {
+			animation-play-state: paused;
+		}
+	}
 `;

@@ -12,12 +12,21 @@ export const Gradients = keyframes`
 `;
 
 // animation: marquee 10s linear infinite;
-export const marquee = keyframes`
+export const marqueeLeft = keyframes`
 0% {
   transform: translateX(100%)
 	}
 	100% {
 	transform: translateX(-100%);
+	}
+`;
+
+export const marqueeRight = keyframes`
+0% {
+  transform: translateX(-100%)
+	}
+	100% {
+	transform: translateX(100%);
 	}
 `;
 

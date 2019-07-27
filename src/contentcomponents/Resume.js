@@ -3,19 +3,19 @@ import React, { Fragment } from "react";
 // import Text from "../stylecomponents/Text";
 // import Media from "../maincomponents/Media";
 // import Fade from "react-reveal/Fade";
-import { ContentShow, ComingSoon } from "../ContentHelpers";
+import { ContentShow, ComingSoon, Paragraph, Header } from "../ContentHelpers";
 
-const header = "Resume";
+const header = "Experience";
 
 const Resume = () => {
 	return (
 		<Fragment>
-			<ContentShow header={header} />
 			<ContentShow less>
-				<ComingSoon header={header} />
+				<Paragraph>My past experience</Paragraph>
 			</ContentShow>
 			<ContentShow more>
-				<ComingSoon header={header} />
+				<Header>{header}</Header>
+				<Paragraph>Copied and pasted from LinkedIn</Paragraph>
 			</ContentShow>
 		</Fragment>
 	);

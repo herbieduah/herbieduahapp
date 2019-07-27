@@ -17,7 +17,8 @@ import { themes } from "./stylecomponents/Theme";
 import {
 	ThemeCircleContainer,
 	TransitionTextContainer,
-	FlexContainer
+	FlexContainer,
+	MarqueeWrapper
 } from "./stylecomponents/Base";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { appTransitions } from "./stylecomponents/Transitions";
@@ -390,7 +391,7 @@ export const TransitionTexts = props => {
 		<TransitionTextContainer
 			onClick={changeTransition}
 			className='appTransition__item'>
-			<Text button l bold className={currentClass}>
+			<Text button m bold className={currentClass}>
 				<span className={enterTextTransition}>
 					{transitionValues.enterTransition}
 				</span>
@@ -413,6 +414,19 @@ export const GenerateTransition = props => {
 					);
 				})}
 			</ul>
+		</Reveal>
+	);
+};
+
+export const Marquee = props => {
+	return (
+		<Reveal>
+			<MarqueeWrapper
+				playing={props.playing}
+				left={props.left}
+				className='padding-left-right'>
+				{props.children}
+			</MarqueeWrapper>
 		</Reveal>
 	);
 };

@@ -25,7 +25,8 @@ import {
 	Backgrounds,
 	Transitions,
 	Contacts,
-	HerbieDuahApp
+	HerbieDuahApp,
+	FourOhFour
 } from "../Pages";
 import { revealSecs, getCurrentTransition } from "../helpers";
 import "animate.css";
@@ -74,8 +75,8 @@ export const Content = ({ location }) => {
 							<Route path='/iphonephotography' component={IPhone} />
 							<Route path='/StartNow' component={StartNow} />
 							<Route path='/Resume' component={Resume} />
+							<Route path='/theme' component={Theme} />
 							<Route path='/SpecialThanks' component={SpecialThanks} />
-							<Route path='/Theme' component={Theme} />
 							<Route path='/settings' component={Settings} />
 							<Route path='/placesphotography' component={Places} />
 							<Route path='/Ugg' component={Ugg} />
@@ -83,6 +84,7 @@ export const Content = ({ location }) => {
 							<Route path='/HerbieDuahApp' component={HerbieDuahApp} />
 							<Route path='/Contacts' component={Contacts} />
 							<Route path='/Modeling' component={Modeling} />
+							<Route component={FourOhFour} />
 						</Switch>
 					</div>
 				</CSSTransition>

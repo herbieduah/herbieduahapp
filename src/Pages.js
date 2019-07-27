@@ -22,12 +22,19 @@ import SettingsPage from "./contentcomponents/Settings";
 import BackgroundsPage from "./contentcomponents/Backgrounds";
 import ModelingPage from "./contentcomponents/Modeling";
 import ContactsPage from "./contentcomponents/Contacts";
+import FourOhFourPage from "./contentcomponents/FourOhFour";
 import HerbieDuahAppPage from "./contentcomponents/HerbieDuahApp";
 import { ContentWrapper } from "./ComponentHelpers";
 
 export const AboutMe = () => (
 	<ContentWrapper>
 		<AboutMePage />
+	</ContentWrapper>
+);
+
+export const FourOhFour = () => (
+	<ContentWrapper>
+		<FourOhFourPage />
 	</ContentWrapper>
 );
 

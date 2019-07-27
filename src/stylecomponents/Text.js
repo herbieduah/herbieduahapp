@@ -23,6 +23,11 @@ import {
 
 const baseStyle = css`
 	font-family: ${appfontFamily};
+	font-family: ${props => {
+		if (props.wide) return appfontFamilyWide;
+		if (props.extrawide) return appfontFamilyExtraWide;
+		return appfontFamily;
+	}};
 	font-weight: 400;
 	margin: 0;
 	line-height: ${props => {
@@ -117,6 +122,7 @@ const Figcaption = styled.figcaption`
 `;
 const TextFormatter = styled.span`
 	${baseStyle};
+	display: flex;
 `;
 const Button = styled.button`
 	${baseStyle};

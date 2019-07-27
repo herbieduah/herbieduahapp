@@ -22,8 +22,8 @@ const TransitionsPage = ({ contentProps }) => {
 				</Paragraph>
 			</ContentShow>
 			<ContentShow more>
-				<div className='container'>
-					<Header>{header}</Header>
+				<Header>{header}</Header>
+				<div className='padding-left-right'>
 					<GenerateTransition />
 				</div>
 			</ContentShow>
