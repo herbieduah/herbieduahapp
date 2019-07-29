@@ -21,7 +21,7 @@ const ThemePage = () => {
 			<ContentShow more>
 				<Header>{header}</Header>
 				<Paragraph>
-					Themes changes certain areas of the site to match one of themes below
+					Themes change certain areas of the site to match one of themes below
 				</Paragraph>
 				<HeadingTwo>Matrix</HeadingTwo>
 				<Paragraph>

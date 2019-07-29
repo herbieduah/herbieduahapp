@@ -95,7 +95,7 @@ export const ContentContainer = styled.article`
 		}
 	}
 	.c-margin-bottom-med {
-		margin-bottom: .5rem;
+		margin-bottom: .75rem;
 		${mobile} {
 			margin-bottom: .5rem;
 		}
@@ -112,9 +112,16 @@ export const ContentContainer = styled.article`
 			margin-top: 3rem;
 		}
 	}
-	.pos-rel {
+	.stupidButtonHeight {
 		position:relative;
-		height: 100%;
+		/* height: 3rem; */
+			/* ${mobile} {
+				height: 2rem;
+			} */
+		margin-bottom: 4rem;
+		${mobile} {
+			margin-bottom: 5rem;
+		}
 	}
 
 	.c-margin-0 {
@@ -132,6 +139,9 @@ export const ContentContainer = styled.article`
 	ul.appTransition {
 		margin: 0;
 		padding: 0;	
+		button {
+			padding:0;
+		}
 	}
 	.offset {
 		width:100%;

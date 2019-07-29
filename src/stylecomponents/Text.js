@@ -130,6 +130,7 @@ const Button = styled.button`
 	${mainTransition}
 	line-height: 1.2;
 	border: 0;
+	text-transform: uppercase;
 	hyphens: manual;
 	background: none;
 	color: ${navColor};

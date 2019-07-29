@@ -1,5 +1,6 @@
 import React, { createContext, useState, useContext } from "react";
 import { defaultContentWidth, defaultContentHeight } from "./helpers.js";
+import track, { useTracking } from "react-tracking";
 
 // Will hold global state
 export const globalState = createContext();
@@ -18,7 +19,7 @@ export const StateProvider = ({ children }) => {
 	const [switchSides, setSides] = useState(true);
 	const [contentWidth, onContentResizeWidth] = useState(defaultContentWidth);
 	const [contentHeight, onContentResizeHeight] = useState(defaultContentHeight);
-	const [currentTheme, setTheme] = useState("default");
+	const [currentTheme, setTheme] = useState("cartographer");
 	const [currentTransition, setCurrentTransition] = useState("default");
 	const [currentContent, setCurrentContent] = useState("home");
 	const [overlay, setOverlay] = useState(false);
@@ -29,8 +30,11 @@ export const StateProvider = ({ children }) => {
 	const [fullScreen, setFullscreen] = useState(false);
 	const [navBarRight, setNavBarRight] = useState(false);
 	const [modalVisible, setModalVisible] = useState(false);
-	const [navBarComplement, setBavBarComplement] = useState(false);
+	const [navBarComplement, setNavBarComplement] = useState(false);
 	const [minimalMode, setMinimalMode] = useState(false);
+	const [lazyLoading, setLazyLoading] = useState(true);
+	const [techy, setTechy] = useState(false);
+	const [knowYou, setKnowYou] = useState(false);
 	const [modalContent, setModalContent] = useState("");
 	const [whom, setWhom] = useState("");
 	// currentLeftTop: "LandscapePhotography",
@@ -75,9 +79,15 @@ export const StateProvider = ({ children }) => {
 		currentTransition,
 		setCurrentTransition,
 		navBarComplement,
-		setBavBarComplement,
+		setNavBarComplement,
 		minimalMode,
-		setMinimalMode
+		setMinimalMode,
+		lazyLoading,
+		setLazyLoading,
+		knowYou,
+		setKnowYou,
+		techy,
+		setTechy
 	};
 
 	// and we pass it down. Done!

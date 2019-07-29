@@ -174,12 +174,31 @@ export const Paragraph = props => {
 export const Small = props => {
 	return (
 		<Reveal>
-			<Text
-				s
-				className={`c-margin-bottom-med padding-left-right ${props.className}`}>
-				{props.children}
-			</Text>
+			<small>
+				<Text
+					s
+					format
+					className={`c-margin-bottom-med padding-left-right ${
+						props.className
+					}`}>
+					{props.children}
+				</Text>
+			</small>
 		</Reveal>
+	);
+};
+
+export const SettingButton = props => {
+	return (
+		<ShowIf
+			thisValue={props.var}
+			thatValue={props.bool}
+			className='stupidButtonHeight'>
+			<Text button onClick={props.func} className='padding-left-right'>
+				{props.cta}
+			</Text>
+			<Small>{props.children}</Small>
+		</ShowIf>
 	);
 };
 

@@ -283,7 +283,15 @@ const ContentWrapperContainer = props => {
 		navBarRight,
 		navBarComplement,
 		minimalMode,
-		setNavBarRight
+		setNavBarRight,
+		setNavBarComplement,
+		setMinimalMode,
+		lazyLoading,
+		setLazyLoading,
+		techy,
+		setTechy,
+		setSides,
+		switchSides
 	} = useContext(globalState);
 	const { width: ww, height: wh } = useWindowResize();
 	const values = { ww, wh, cw, ch };
@@ -307,7 +315,16 @@ const ContentWrapperContainer = props => {
 		whom,
 		navBarRight,
 		navBarComplement,
-		setNavBarRight
+		setNavBarRight,
+		minimalMode,
+		setNavBarComplement,
+		setMinimalMode,
+		lazyLoading,
+		setLazyLoading,
+		techy,
+		setTechy,
+		setSides,
+		switchSides
 	};
 	const children = React.Children.map(props.children, (child, index) => {
 		return React.cloneElement(child, {
