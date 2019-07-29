@@ -1,4 +1,4 @@
-import { rgba, invert, readableColor } from "polished";
+import { rgba, invert, readableColor, complement } from "polished";
 import cartographer from "../bgImages/cartographer.png";
 // ** bgColor is first color;
 // ** fontColorSecondary;
@@ -15,6 +15,8 @@ const defaultBaseValues = {
 export const themeMaker = (theme = defaultBaseValues) => {
 	const { bgColor, gradientValues } = theme;
 	const fontColor = readableColor(bgColor);
+	const complementBg = complement(bgColor);
+	const fontColorComplement = readableColor(complementBg);
 	return {
 		appBg: `linear-gradient(to right, ${gradientValues})`,
 		appBgAnimation: `linear-gradient(-45deg, ${gradientValues})`,
@@ -24,10 +26,19 @@ export const themeMaker = (theme = defaultBaseValues) => {
 		appfontFamilyWide: `"roc-grotesk-wide", -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif`,
 		appfontFamilyExtraWide: `"roc-grotesk-extrawide", -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif`,
 		bgColor: `${bgColor}`,
+		buttonFontWeight: `700`,
+		buttonLineHeight: ` 1.2`,
+		buttonBorder: `0`,
+		buttonBackground: `none`,
+		buttonColor: `${rgba(fontColor, 0.65)}`,
+		buttonTextTransform: `uppercase`,
+		buttonSpanDisplay: `block`,
 		bgColorSecondary: `${bgColor}`,
 		CTAColor: `${rgba(fontColor, 0.65)}`,
 		CTAColorSecondary: `${rgba(fontColor, 0.65)}`,
 		fontColor: `${fontColor}`,
+		fontColorComplement: `${fontColorComplement}`,
+		complementBg: `${complementBg}`,
 		fontColorSecondary: `${fontColor}`,
 		fontSelection: `${invert(fontColor)}`,
 		fullScreenHoldBg: ` linear-gradient( ${invert(bgColor)}, ${invert(
@@ -43,9 +54,11 @@ export const themeMaker = (theme = defaultBaseValues) => {
 		modalFullScreenBgColor: `transparent`,
 		modalFullScreenBgMobile: `linear-gradient(to bottom, ${gradientValues})`,
 		navBarBg: "transparent",
+		navBarBgComplement: `${complementBg}`,
 		navBarButtonColor: `${rgba(fontColor, 0.65)}`,
 		navBarHoverFocus: `${fontColor}`,
 		navBarHoverFocusAction: "scale(1.1)",
+		navBarButtonComplementaryText: `${fontColorComplement}`,
 		sliderArrow: `${bgColor}`,
 		sliderArrowActive: `${fontColor}`,
 		sliderArrowOpacity: "1",
@@ -78,6 +91,8 @@ const defaultBgImageValues = {
 export const themeBgMaker = (theme = defaultBgImageValues) => {
 	const { bgColor, bgImage } = theme;
 	const fontColor = readableColor(bgColor);
+	const complementBg = complement(bgColor);
+	const fontColorComplement = readableColor(complementBg);
 	return {
 		appBg: `url(${bgImage})`,
 		appBgAnimation: `${bgColor}`,
@@ -87,11 +102,22 @@ export const themeBgMaker = (theme = defaultBgImageValues) => {
 		appfontFamilyWide: `"roc-grotesk-wide", -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif`,
 		appfontFamilyExtraWide: `"roc-grotesk-extrawide", -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif`,
 		bgColor: `${bgColor}`,
+		buttonFontWeight: `700`,
+		buttonLineHeight: ` 1.2`,
+		navBarButtonComplementaryText: `${fontColorComplement}`,
+		buttonBorder: `0`,
+		fontColorComplement: `${fontColorComplement}`,
+		complementBg: `${complementBg}`,
+		fontColorSecondary: `${fontColor}`,
+		buttonBackground: `none`,
+		buttonColor: `${rgba(fontColor, 0.65)}`,
+		buttonTextTransform: `uppercase`,
+		buttonSpanDisplay: `block`,
 		bgColorSecondary: `${bgColor}`,
 		CTAColor: `${rgba(fontColor, 0.65)}`,
 		CTAColorSecondary: `${rgba(fontColor, 0.65)}`,
 		fontColor: `${fontColor}`,
-		fontColorSecondary: `${fontColor}`,
+		navBarBgComplement: `${complementBg}`,
 		fontSelection: `${invert(fontColor)}`,
 		fullScreenHoldBg: ` linear-gradient( ${invert(bgColor)}, ${invert(
 			bgColor

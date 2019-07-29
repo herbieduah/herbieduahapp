@@ -3,11 +3,23 @@ export const appBgAnimation = props => props.theme.appBgAnimation;
 export const appBgColor = props => props.theme.appBgColor;
 export const appBgMobile = props => props.theme.appBgMobile;
 export const appfontFamily = props => props.theme.appfontFamily;
+export const appfontFamilyWide = props => props.theme.appfontFamilyWide;
+export const appfontFamilyExtraWide = props =>
+	props.theme.appfontFamilyExtraWide;
 export const bgColor = props => props.theme.bgColor;
+export const buttonFontWeight = props => props.theme.buttonFontWeight;
+export const buttonLineHeight = props => props.theme.buttonLineHeight;
+export const buttonBorder = props => props.theme.buttonBorder;
+export const buttonBackground = props => props.theme.buttonBackground;
+export const buttonColor = props => props.theme.buttonColor;
+export const buttonTextTransform = props => props.theme.buttonTextTransform;
+export const buttonSpanDisplay = props => props.theme.buttonSpanDisplay;
 export const bgColorSecondary = props => props.theme.bgColorSecondary;
 export const CTAColor = props => props.theme.CTAColor;
 export const CTAColorSecondary = props => props.theme.CTAColorSecondary;
 export const fontColor = props => props.theme.fontColor;
+export const fontColorComplement = props => props.theme.fontColorComplement;
+export const complementBg = props => props.theme.complementBg;
 export const fontColorSecondary = props => props.theme.fontColorSecondary;
 export const fontSelection = props => props.theme.fontSelection;
 export const fullScreenHoldBg = props => props.theme.fullScreenHoldBg;
@@ -24,10 +36,13 @@ export const modalFullScreenBgColor = props =>
 export const modalFullScreenBgMobile = props =>
 	props.theme.modalFullScreenBgMobile;
 export const navBarBg = props => props.theme.navBarBg;
+export const navBarBgComplement = props => props.theme.navBarBgComplement;
 export const navBarButtonColor = props => props.theme.navBarButtonColor;
 export const navBarHoverFocus = props => props.theme.navBarHoverFocus;
 export const navBarHoverFocusAction = props =>
 	props.theme.navBarHoverFocusAction;
+export const navBarButtonComplementaryText = props =>
+	props.theme.navBarButtonComplementaryText;
 export const sliderArrow = props => props.theme.sliderArrow;
 export const sliderArrowActive = props => props.theme.sliderArrowActive;
 export const sliderArrowOpacity = props => props.theme.sliderArrowOpacity;
@@ -54,7 +69,3 @@ export const tabHeadingsColorHoverFocus = props =>
 	props.theme.tabHeadingsColorHoverFocus;
 export const tabHeadingsJustifyContent = props =>
 	props.theme.tabHeadingsJustifyContent;
-
-export const appfontFamilyWide = props => props.theme.appfontFamilyWide;
-export const appfontFamilyExtraWide = props =>
-	props.theme.appfontFamilyExtraWide;

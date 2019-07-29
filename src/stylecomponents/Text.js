@@ -169,6 +169,7 @@ const MenuLink = styled(NavLink)`
 	font-family: ${appfontFamilyWide};
 	cursor: pointer;
 	font-size: 2em;
+	text-transform: uppercase;
 	${mobile} {
 		font-size: 1.7em;
 	}
