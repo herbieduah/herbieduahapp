@@ -24,7 +24,9 @@ import {
 	modalFullScreenBg,
 	modalFullScreenBgColor,
 	modalFullScreenBgMobile,
-	CTAColor
+	CTAColor,
+	navBarBorder,
+	logoBorderBottom
 } from "./Themes/ThemeVariables";
 import {
 	mobile,
@@ -89,6 +91,8 @@ export const NavBarContainer = styled.div`
 	overflow-x: auto;
 	${hideScrollbar}
 	background: ${navBarBg};
+	border:  ${navBarBorder};
+	
     /* margin-top: auto;
     margin-left: auto; */
     flex-direction: row-reverse;
@@ -140,7 +144,7 @@ export const NavBarContainer = styled.div`
 			/* margin: 0 ${navBarSize}; */
 			.inner-rect, .half-circle {
 				${mainTransition}
-				fill: ${logoInnerFillColor};	
+				fill: ${fontColor};	
 			}
 			.outer-rect {
 				${mainTransition}
@@ -153,13 +157,16 @@ export const NavBarContainer = styled.div`
 				border: none;
 				width: ${navBarSize};
 				height: ${navBarSize};
-				background: ${logoBgColor};
+				background: transparent;
+				border-bottom: ${logoBorderBottom};
 				border-radius: ${logoBorderRadius};
 				${mainTransition}
 				&:hover,&:focus {
 					background: ${logoBgHoverColor};
+					border-bottom: none;
 					.inner-rect, .half-circle {
 						fill: ${logoInnerFillColorHoverFocus};
+						
 					}
 				}
 		}

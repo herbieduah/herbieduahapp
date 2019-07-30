@@ -6,7 +6,8 @@ import {
 	mobileSliderOnTop,
 	contentMenuPadding,
 	tablet,
-	contentMenuPaddingRight
+	contentMenuPaddingRight,
+	paddingLR
 } from "./StyleHelpers";
 
 export const ContentContainer = styled.article`
@@ -101,10 +102,7 @@ export const ContentContainer = styled.article`
 		}
 	}
 	.padding-left-right {
-		padding: 0 20px ;
-		${mobile} {
-			padding: 0 1rem ;
-		}
+		${paddingLR}
 	}
 	.c-margin-top {
 		margin-top: 3.5rem;

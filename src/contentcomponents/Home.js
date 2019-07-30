@@ -46,7 +46,7 @@ const HomePage = ({ contentProps }) => {
 				</Paragraph> */}
 				<Flex isPortrait={isContentPortrait}>
 					{/* <Paragraph className='col-50'>Hi, I'm Herbie</Paragraph> */}
-					<Gif url={cornishPastyPic} />
+					<Gif url={`https://vimeo.com/350760370`} />
 					<Gif url={testPicHorizontal} />
 					<Gif url={testVideoHorizontal} />
 					<Gif url={testVideoVertical} />
@@ -55,6 +55,7 @@ const HomePage = ({ contentProps }) => {
 			<ContentShow more>
 				<div className='container'>
 					<Header>{header}</Header>
+					<Gif url={`https://vimeo.com/350760370`} />
 					<Image src={cornishPastyPic} className='container' />
 					<HeadingTwo>Designed and engineered for you</HeadingTwo>
 					<Paragraph>

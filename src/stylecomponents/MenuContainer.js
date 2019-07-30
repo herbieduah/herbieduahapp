@@ -7,9 +7,13 @@ import {
 	mobileSliderOnBottom,
 	slightBoxShadowAbove,
 	contentMenuPadding,
-	stupidNegativeMargin,
-	contentMenuPaddingRight
+	// contentMenuMargin,
+	contentMenuMarginRight,
+	// stupidNegativeMargin,
+	contentMenuPaddingRight,
+	paddingLR
 } from "./StyleHelpers";
+import { CTAColor } from "./Themes/ThemeVariables";
 
 // ${props =>
 // 	props.isShowingMore ? `border-top: 1px solid rgba(255,255,255,.5)` : ``};
@@ -20,27 +24,26 @@ const MenuContainer = styled.aside`
 	height: auto;
 	overflow: auto;
 	${props => (props.switchSides ? `margin-left: auto` : `margin-right: auto`)};
-	
+	/* border-top: 1px solid ${CTAColor}; */
 	padding: 4rem 2rem;
 	display: flex;
 	width: 100%;
 	z-index: 10;
 	${props => (props.navBarRight ? contentMenuPaddingRight : contentMenuPadding)};
 	${mainTransition}
-	${props => (props.isPortrait ? mobileSliderOnBottom : ``)};
 	${props =>
 		props.isShowingMore && props.isPortrait
 			? slightBoxShadowAbove
 			: `box-shadow: none`};
 	
 	.react-tabs {
-		padding: 1rem 0;
-		
+		/* padding: 1rem 0; */
+		${paddingLR}
 		&__tab-list {
 			${props => (props.isPortrait ? `margin-right: auto` : `margin-left: auto`)};
 			max-width: 500px;
-			${props => (props.isPortrait ? `padding-right: 1rem;` : ``)};
 			${props => (props.isPortrait ? `margin-top: 4rem;` : ``)};
+			${paddingLR}
 		}
 	}
 	
@@ -67,6 +70,7 @@ const MenuContainer = styled.aside`
 	
 	.subMenu {
 			width: 100%;
+			${paddingLR}
 			flex-direction: column;
 			${props => (props.isPortrait ? `text-align: left;` : `text-align: right;`)};
 			${mobile} {
@@ -84,6 +88,7 @@ const MenuContainer = styled.aside`
 			${mainTransition}
 			text-align: ${props => (props.isPortrait ? `left;` : `right;`)};
 			margin-bottom: 0;
+			${paddingLR}
 			margin-top: 2rem;
 			width: 100%;
 			opacity: 0.7;

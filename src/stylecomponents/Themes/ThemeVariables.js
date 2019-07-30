@@ -69,3 +69,6 @@ export const tabHeadingsColorHoverFocus = props =>
 	props.theme.tabHeadingsColorHoverFocus;
 export const tabHeadingsJustifyContent = props =>
 	props.theme.tabHeadingsJustifyContent;
+
+export const navBarBorder = props => props.theme.navBarBorder;
+export const logoBorderBottom = props => props.theme.logoBorderBottom;

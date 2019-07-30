@@ -68,7 +68,10 @@ position: absolute;
 `;
 
 export const stupidNegativeMargin = `-${sliderMobileWidth / 2}px`;
-
+export const paddingLR = `padding: 0 20px ;
+${mobile} {
+	padding: 0 1rem ;
+}`;
 export const fiftyPixels = "3.47vw";
 export const navBarSize = "2.5rem";
 export const contentMenuPadding = `padding: ${navBarSize};
@@ -78,6 +81,15 @@ ${mobile} {
 export const contentMenuPaddingRight = `padding: ${navBarSize};
 ${mobile} {
 	padding: ${navBarSize} ${navBarSize}  ${navBarSize}   0;
+}`;
+
+export const contentMenuMargin = `margin: ${navBarSize};
+${mobile} {
+	margin: ${navBarSize} 0 ${navBarSize}   ${navBarSize};
+}`;
+export const contentMenuMarginRight = `margin: ${navBarSize};
+${mobile} {
+	margin: ${navBarSize} ${navBarSize}  ${navBarSize}   0;
 }`;
 
 export const container = `
