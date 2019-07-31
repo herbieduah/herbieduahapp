@@ -15,7 +15,11 @@ const Resume = () => {
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>
-				<Paragraph>Copied and pasted from LinkedIn</Paragraph>
+				<Paragraph>
+					<span className='alpha'>
+						I am experienced in building incomplete websites
+					</span>
+				</Paragraph>
 			</ContentShow>
 		</Fragment>
 	);

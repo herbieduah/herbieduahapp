@@ -25,7 +25,9 @@ const SettingsPage = ({ contentProps }) => {
 		techy,
 		setTechy,
 		setSides,
-		switchSides
+		switchSides,
+		fullScreen,
+		setFullscreen
 	} = contentProps;
 	const moveNavBar = () => {
 		navBarRight ? setNavBarRight(false) : setNavBarRight(true);
@@ -36,6 +38,7 @@ const SettingsPage = ({ contentProps }) => {
 
 	const basicMode = () => {
 		minimalMode ? setMinimalMode(false) : setMinimalMode(true);
+		fullScreen ? setFullscreen(false) : setFullscreen(true);
 	};
 
 	const downloadEverything = () => {
@@ -102,7 +105,10 @@ const SettingsPage = ({ contentProps }) => {
 						</Text>
 					</ShowIf>
 				</div>
-				<HeadingTwo>Technical vs Non-Technical</HeadingTwo>
+				<HeadingTwo>
+					Technical vs Non-Technical
+					<span className='alpha'>Not functional</span>
+				</HeadingTwo>
 				<Paragraph>
 					My main audience are people that do not know much about coding so I
 					didn't want to add a lot of technical jargon, but if you are
@@ -121,7 +127,9 @@ const SettingsPage = ({ contentProps }) => {
 						</Text>
 					</ShowIf>
 				</div>
-				<HeadingTwo>Lazy loading</HeadingTwo>
+				<HeadingTwo>
+					Lazy loading <span className='alpha'>Not functional</span>
+				</HeadingTwo>
 				<Paragraph>Stop lazyloading</Paragraph>
 				<div className='stupidButtonHeight'>
 					<ShowIf thisValue={lazyLoading} thatValue={true}>
@@ -139,7 +147,9 @@ const SettingsPage = ({ contentProps }) => {
 						</Text>
 					</ShowIf>
 				</div>
-				<HeadingTwo>Minimal</HeadingTwo>
+				<HeadingTwo>
+					Minimal <span className='alpha'>Kinda working</span>
+				</HeadingTwo>
 				<Paragraph>
 					This setting gets rids of the slider AND the navigation bar and adds a
 					tiny "hamburger" menu in place, just like every other site.

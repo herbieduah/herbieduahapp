@@ -32,7 +32,9 @@ const BedzinExhibitPage = ({ contentProps }) => {
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>
-
+				<Paragraph>
+					<span className='alpha'>Saving out the pics</span>
+				</Paragraph>
 				<Paragraph>
 					For my Computer Science capstone, my group was tasked with revamping
 					<Link href='http://bedzinexhibit.org/'>bedzinexhibit.org</Link>. The

@@ -32,7 +32,7 @@ export const HerbieDuahApp = styled.div`
 				height: ${props => props.splitSize}px;
 			}
 		}
-
+		
 		
 	}
 	.animatecss-tamer {
@@ -43,5 +43,23 @@ export const HerbieDuahApp = styled.div`
 	.animatecss-container {
 		${absoluteOverlay};
 	}
+
+	p.alpha-text {
+			background-color: red;
+			color: white;	
+			font-weight: bold;
+			width:100%;
+			text-align:center;
+			pointer-events: none;
+		}
+		.in-dev {
+			${absoluteOverlay}
+			left: 0;
+			right: 0;
+			z-index: 2000;
+			display:flex;
+			align-items: flex-end;
+			pointer-events: none;
+		}
 
 `;

@@ -23,12 +23,16 @@ const ThemePage = () => {
 				<Paragraph>
 					Themes change certain areas of the site to match one of themes below
 				</Paragraph>
-				<HeadingTwo>Matrix</HeadingTwo>
+				<HeadingTwo>
+					Matrix <span className='alpha'>Coming soon</span>
+				</HeadingTwo>
 				<Paragraph>
 					This Matrix theme is based on the Matrix Trilogy starring Keanu
 					Reeves.
 				</Paragraph>
-				<HeadingTwo>Snapchat</HeadingTwo>
+				<HeadingTwo>
+					Snapchat <span className='alpha'>ComingSoon</span>
+				</HeadingTwo>
 				<Paragraph>
 					The Snapchat theme borrows some of the looks and colors from Snapchat.
 				</Paragraph>

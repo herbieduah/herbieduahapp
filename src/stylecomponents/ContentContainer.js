@@ -30,6 +30,11 @@ export const ContentContainer = styled.article`
 	figure {
 		margin: 0;
 	}
+	span.alpha {
+		background:red;
+		color: white;
+		font-weight:bold;
+	}
 	.container {
 			max-width: 740px;
 			width: 100%;

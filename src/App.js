@@ -12,6 +12,7 @@ import { defaultAppTheme } from "./stylecomponents/Theme";
 import SliderLine from "./maincomponents/Revealer/SliderLine";
 import { FullScreenOverlay, NavBar } from "./ComponentHelpers";
 // import queryString from "query-string";
+import Text from "./stylecomponents/Text";
 import { isMobileOnly } from "react-device-detect";
 import {
 	getCurrentTheme,
@@ -65,6 +66,11 @@ export const App = () => {
 				isPortrait={isPortrait(ww, wh)}
 				splitSize={splitSize}
 				dragging={dragging}>
+				<div className='in-dev'>
+					<Text s className='alpha-text'>
+						This project is still in development
+					</Text>
+				</div>
 				<GlobalStyle />
 				<NavBar />
 				{/* <ParallaxTest /> */}

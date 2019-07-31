@@ -43,6 +43,9 @@ const StartNowPage = ({ contentProps }) => {
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>
+				<Paragraph>
+					<span className='alpha'>Writing out the content</span>
+				</Paragraph>
 				<Figure src={StandOutFromTheRest2000x3000}>
 					<Figcaption>Something</Figcaption>
 				</Figure>

@@ -47,6 +47,9 @@ const HerbieDuahAppPage = ({ contentProps }) => {
 				<Header>{header}</Header>
 
 				<Gif url={herbieduahComiPad} />
+				<Paragraph>
+					<span className='alpha'>Coming soon</span>
+				</Paragraph>
 			</ContentShow>
 		</Fragment>
 	);

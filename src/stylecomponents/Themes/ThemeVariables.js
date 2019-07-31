@@ -43,6 +43,8 @@ export const navBarHoverFocusAction = props =>
 	props.theme.navBarHoverFocusAction;
 export const navBarButtonComplementaryText = props =>
 	props.theme.navBarButtonComplementaryText;
+export const navBarButtonComplementaryHoverText = props =>
+	props.theme.navBarButtonComplementaryHoverText;
 export const sliderArrow = props => props.theme.sliderArrow;
 export const sliderArrowActive = props => props.theme.sliderArrowActive;
 export const sliderArrowOpacity = props => props.theme.sliderArrowOpacity;

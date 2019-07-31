@@ -17,7 +17,7 @@ import {
 import { ContentShow } from "../ContentHelpers";
 import Emoji from "a11y-react-emoji";
 // import Modal from "../maincomponents/Modal";
-import cornishPastyPic from "../media/videos/videosOfme/millyRockByPool_1.mp4";
+import cornishPastyPic from "../media/images/picsOfMe/hd-herbieSmile-1974.jpg";
 import testVideoVertical from "../media/videos/videosOfme/millyrockgrandcanyon.mp4";
 import testPicHorizontal from "../media/videos/videosOfme/raveMillyRock_1.mp4";
 import testVideoHorizontal from "../media/videos/videosOfme/dadDance_1.mp4";
@@ -40,22 +40,15 @@ const HomePage = ({ contentProps }) => {
 	return (
 		<Fragment>
 			<ContentShow less>
-				{/* <Paragraph>
+				<Paragraph>
 					Hello, I'm Herbie, a Photographer and Front End Developer with a
 					passion for designing and engineering user experiences for you.
-				</Paragraph> */}
-				<Flex isPortrait={isContentPortrait}>
-					{/* <Paragraph className='col-50'>Hi, I'm Herbie</Paragraph> */}
-					<Gif url={`https://vimeo.com/350760370`} />
-					<Gif url={testPicHorizontal} />
-					<Gif url={testVideoHorizontal} />
-					<Gif url={testVideoVertical} />
-				</Flex>
+					<span className='alpha'>This site is currently in alpha</span>
+				</Paragraph>
 			</ContentShow>
 			<ContentShow more>
 				<div className='container'>
 					<Header>{header}</Header>
-					<Gif url={`https://vimeo.com/350760370`} />
 					<Image src={cornishPastyPic} className='container' />
 					<HeadingTwo>Designed and engineered for you</HeadingTwo>
 					<Paragraph>
@@ -76,16 +69,6 @@ const HomePage = ({ contentProps }) => {
 						I am a Web developer and Designer with five years of experience
 						currently working at Discount Tire as a Front End Developer I,
 						developing for and maintaining their intranet.
-					</Paragraph>
-					<Paragraph>
-						Previously at Decker Brands, working on the UGG team as a User
-						Interface Developer.
-					</Paragraph>
-					<HeadingTwo>Photography and modeling</HeadingTwo>
-					<Paragraph>
-						I'm also really into photography, and I enjoy being behind the lens
-						of a camera even though I often find myself in front of one
-						<Emoji symbol='🤷🏿‍♂️' label='shrug' />.
 					</Paragraph>
 					{/* <Paragraph>
 						Nullam id dolor id nibh ultricies vehicula ut id elit. Curabitur

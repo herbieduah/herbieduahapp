@@ -13,6 +13,7 @@ import Text from "./stylecomponents/Text";
 import { browserName, mobileModel } from "react-device-detect";
 import {
 	NavBarContainer,
+	NavBarMiniContainer,
 	// DragInstructionsContainer,
 	FullScreenOverlayContainer
 	// ParallaxContainer
@@ -67,7 +68,8 @@ export const NavBar = () => {
 		setModalContent,
 		navBarRight,
 		currentTransition,
-		navBarComplement
+		navBarComplement,
+		minimalMode
 	} = useContext(globalState);
 	const { height: wh, width: ww } = useWindowResize();
 	const values = { ww, wh, cw, ch };
@@ -83,59 +85,77 @@ export const NavBar = () => {
 	};
 	const transitionClasses = getCurrentTransition(currentTransition);
 	return (
-		<NavBarContainer
-			className='navbar'
-			fullScreen={fullScreen}
-			hideMaximize={showLess}
-			appHeight={wh}
-			navBarRight={navBarRight}
-			isPortrait={isContentPortrait}
-			navBarComplement={navBarComplement}>
-			<div className='navbar__logo-menu'>
-				<TransitionGroup>
-					{fullScreen ? (
-						<CSSTransition timeout={revealSecs} classNames={transitionClasses}>
-							{/* <div className='animatecss-container'> */}
-							<Text
-								button
-								m
-								className='navbar__menu-text'
-								onClick={setMenuModalContent}>
-								{modalVisible ? `Back` : `Menu`}
-							</Text>
-							{/* </div> */}
-						</CSSTransition>
-					) : null}
-				</TransitionGroup>
-				<NavLink to='/'>
-					<Media
-						type='icon'
-						className='navbar__logo svg'
-						src={HerbieDuahLogo}
-					/>
-				</NavLink>
-			</div>
-			<TransitionGroup>
-				{!showLess ? (
-					<CSSTransition timeout={revealSecs} classNames={transitionClasses}>
-						{/* <div className='animatecss-container'> */}
+		<Fragment>
+			<ShowIf noAnimation thisValue={minimalMode} thatValue={true}>
+				<NavBarMiniContainer
+					className='navbar'
+					isPortrait={isContentPortrait}
+					navBarComplement={navBarComplement}>
+					<NavLink to='/'>
+						<Media
+							type='icon'
+							className='navbar__logo svg'
+							src={HerbieDuahLogo}
+						/>
+					</NavLink>
+					<div className='navbar__logo-menu'>
 						<Text
-							m
 							button
-							className='navbar__maximize'
-							onClick={setMaximizeAndMinimize}
-							aria-hidden={showLess ? `true` : `false`}>
-							M{fullScreen ? `in` : `ax`}imize
+							m
+							className='navbar__menu-text'
+							onClick={setMenuModalContent}>
+							{modalVisible ? `Back` : `Menu`}
 						</Text>
-						{/* </div> */}
-					</CSSTransition>
-				) : null}
-			</TransitionGroup>
+					</div>
 
-			<Text m button>
+					{/* <Text m button>
 				<NavLink to='/contacts'>Contact</NavLink>
-			</Text>
-		</NavBarContainer>
+			</Text> */}
+				</NavBarMiniContainer>
+			</ShowIf>
+			<ShowIf noAnimation thisValue={minimalMode} thatValue={false}>
+				<NavBarContainer
+					className='navbar'
+					fullScreen={fullScreen}
+					hideMaximize={showLess}
+					appHeight={wh}
+					navBarRight={navBarRight}
+					isPortrait={isContentPortrait}
+					navBarComplement={navBarComplement}>
+					<div className='navbar__logo-menu'>
+						<NavLink to='/'>
+							<Media
+								type='icon'
+								className='navbar__logo svg'
+								src={HerbieDuahLogo}
+							/>
+						</NavLink>
+					</div>
+					<TransitionGroup>
+						{!showLess ? (
+							<CSSTransition
+								timeout={revealSecs}
+								classNames={transitionClasses}>
+								{/* <div className='animatecss-container'> */}
+								<Text
+									m
+									button
+									className='navbar__maximize'
+									onClick={setMaximizeAndMinimize}
+									aria-hidden={showLess ? `true` : `false`}>
+									M{fullScreen ? `in` : `ax`}imize
+								</Text>
+								{/* </div> */}
+							</CSSTransition>
+						) : null}
+					</TransitionGroup>
+
+					<Text m button>
+						<NavLink to='/contacts'>Contact</NavLink>
+					</Text>
+				</NavBarContainer>
+			</ShowIf>
+		</Fragment>
 	);
 };
 export const FullScreenModal = () => {
@@ -199,14 +219,23 @@ export const ShowIf = props => {
 	const thisValue = props.thisValue;
 	const thatValue = props.thatValue;
 	const renderMe = thisValue === thatValue ? true : false;
+
 	return (
-		<TransitionGroup className='animatecss-tamer'>
-			{renderMe ? (
-				<CSSTransition timeout={revealSecs} classNames={transitionClasses}>
-					<div className='animatecss-container'>{props.children}</div>
-				</CSSTransition>
-			) : null}
-		</TransitionGroup>
+		<Fragment>
+			{props.noAnimation ? (
+				<Fragment>
+					{renderMe ? <Fragment>{props.children}</Fragment> : null}
+				</Fragment>
+			) : (
+				<TransitionGroup className='animatecss-tamer'>
+					{renderMe ? (
+						<CSSTransition timeout={revealSecs} classNames={transitionClasses}>
+							<div className='animatecss-container'>{props.children}</div>
+						</CSSTransition>
+					) : null}
+				</TransitionGroup>
+			)}
+		</Fragment>
 	);
 };
 
@@ -290,6 +319,7 @@ const ContentWrapperContainer = props => {
 		setLazyLoading,
 		techy,
 		setTechy,
+		setFullscreen,
 		setSides,
 		switchSides
 	} = useContext(globalState);
@@ -313,6 +343,7 @@ const ContentWrapperContainer = props => {
 		isContentPortrait,
 		fullScreen,
 		whom,
+		setFullscreen,
 		navBarRight,
 		navBarComplement,
 		setNavBarRight,

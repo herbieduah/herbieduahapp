@@ -11,7 +11,11 @@ const InspirationPage = () => {
 	return (
 		<Fragment>
 			<ContentShow less>
-				<Paragraph>I drew a lot of inspirations from many places</Paragraph>
+				<Paragraph>
+					<span className='alpha'>
+						Writing out the content and grabbing some screenshots
+					</span>
+				</Paragraph>
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>
