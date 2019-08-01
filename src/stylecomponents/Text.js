@@ -10,7 +10,8 @@ import {
 	buttonBorderColorActive,
 	buttonBorderColor,
 	navColor,
-	navColorActive
+	navColorActive,
+	tablet
 } from "./StyleHelpers";
 
 import {
@@ -172,6 +173,11 @@ const MenuLink = styled(NavLink)`
 	text-transform: uppercase;
 	${mobile} {
 		font-size: 1.7em;
+	}
+	${tablet} {
+		font-size: 1.3em;
+		margin-bottom: 0.5rem;
+		hyphens: none;
 	}
 	&:hover,
 	&:focus {

@@ -6,14 +6,17 @@ import {
 	hideScrollbar,
 	mobileSliderOnBottom,
 	slightBoxShadowAbove,
-	contentMenuPadding,
+	contentMenuMargin,
 	// contentMenuMargin,
 	contentMenuMarginRight,
-	// stupidNegativeMargin,
-	contentMenuPaddingRight,
-	paddingLR
+	stupidNegativeMargin,
+	tablet,
+	// contentMenuMarginRight,
+	paddingLR,
+	navBarSize
 } from "./StyleHelpers";
-import { CTAColor } from "./Themes/ThemeVariables";
+import { CTAColor, navBarBorder } from "./Themes/ThemeVariables";
+import { sliderMobileWidth } from "../helpers";
 
 // ${props =>
 // 	props.isShowingMore ? `border-top: 1px solid rgba(255,255,255,.5)` : ``};
@@ -21,21 +24,30 @@ const MenuContainer = styled.aside`
 	${hideScrollbar};
 	width: 100%;
 	/* max-width: 500px; */
-	height: auto;
+	height: 100%;
+	padding-top: ${navBarSize};
+	${props =>
+		props.isShowingMore && props.isPortrait ? `position:absolute;` : ``};
 	overflow: auto;
+	top:-40px;
+	${tablet} {
+		top:0px;
+	}
 	${props => (props.switchSides ? `margin-left: auto` : `margin-right: auto`)};
 	/* border-top: 1px solid ${CTAColor}; */
-	padding: 4rem 2rem;
 	display: flex;
 	width: 100%;
 	z-index: 10;
-	${props => (props.navBarRight ? contentMenuPaddingRight : contentMenuPadding)};
+	${props => (props.navBarRight ? contentMenuMarginRight : contentMenuMargin)};
+	${props => (props.navBarRight ? `padding-right:${navBarSize}` : ``)};
 	${mainTransition}
+	margin-top: 0;
+	border-right :${props => (props.isPortrait ? `` : navBarBorder)};
+
 	${props =>
 		props.isShowingMore && props.isPortrait
 			? slightBoxShadowAbove
 			: `box-shadow: none`};
-	
 	.react-tabs {
 		/* padding: 1rem 0; */
 		${paddingLR}
@@ -44,6 +56,7 @@ const MenuContainer = styled.aside`
 			max-width: 500px;
 			${props => (props.isPortrait ? `margin-top: 4rem;` : ``)};
 			${paddingLR}
+			text-transform:uppercase;
 		}
 	}
 	
@@ -70,15 +83,20 @@ const MenuContainer = styled.aside`
 	
 	.subMenu {
 			width: 100%;
+			height:100%;
+			
 			${paddingLR}
 			flex-direction: column;
 			${props => (props.isPortrait ? `text-align: left;` : `text-align: right;`)};
-			${mobile} {
+			${props => (props.isPortrait ? `overflow-x: auto;` : ``)};
+			${props => (props.isPortrait ? `${hideScrollbar};` : ``)};
+			${props => (props.isPortrait ? `flex-direction: row;` : ``)};
+			/* ${mobile} {
 				overflow-x: auto;
 				${hideScrollbar};
 				flex-direction: row;
 			
-			}
+			} */
 			display: flex;
 			margin: 0;
 			${props => (props.isPortrait ? `margin-left: auto;` : `margin-right: auto;`)};
@@ -100,16 +118,28 @@ const MenuContainer = styled.aside`
 		
 		&__item {
 			margin: .4rem 0 1rem;
+			${tablet}{
+				margin-bottom: 0rem;
+			}	
 			${mobile} {
 				margin: .2rem 0 .5rem;
 				${props =>
 					props.isShowingMore ? `margin: 0 0 .5rem` : `margin: .2rem 0 .5rem`};
-				margin-right: 1.5rem
+				margin-right: 1.5rem;
 				a {
-					white-space: nowrap;
+					${tablet}{
+						${props => (props.isPortrait ? `font-size: 1.7em` : ``)};
+					}					
+					white-space: nowrap;		
 				}
 			}
+			${props => (props.isPortrait ? `white-space: nowrap;` : ``)};
 			${props => (props.isPortrait ? `margin-right: 1rem;` : `margin-left: 1rem;`)};
+		}
+		a {
+			${tablet}{
+				${props => (props.isPortrait ? `font-size: 1.7em` : ``)};
+			}		
 		}
 	}
 	

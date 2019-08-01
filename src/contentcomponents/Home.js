@@ -41,9 +41,10 @@ const HomePage = ({ contentProps }) => {
 		<Fragment>
 			<ContentShow less>
 				<Paragraph>
-					Hello, I'm Herbie, a Photographer and Front End Developer with a
-					passion for designing and engineering user experiences for you.
-					<span className='alpha'>This site is currently in alpha</span>
+					I set out to design and engineer a one of a kind portfolio where the
+					user gets to choose their experience but it has come too cumbersome so
+					I decided to push what I have so far. I am making updates almost
+					everyday.
 				</Paragraph>
 			</ContentShow>
 			<ContentShow more>
