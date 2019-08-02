@@ -39,11 +39,20 @@ const MenuContainer = styled.aside`
 	width: 100%;
 	z-index: 10;
 	${props => (props.navBarRight ? contentMenuMarginRight : contentMenuMargin)};
-	${props => (props.navBarRight ? `padding-right:${navBarSize}` : ``)};
+	${props =>
+		props.navBarRight && props.isPortrait ? `padding-right:${navBarSize}` : ``};
 	${mainTransition}
 	margin-top: 0;
-	border-right :${props => (props.isPortrait ? `` : navBarBorder)};
-
+	margin-left: 0;
+	${tablet} {
+		
+		${props => (props.navBarRight ? `margin-right: 0` : `margin-right: 0`)};
+		${props => (props.navBarRight ? `margin-left: 0` : ``)};
+		${props =>
+			props.isPortrait
+				? `margin-left: ${navBarSize}`
+				: `margin-right: ${navBarSize}`};
+	}
 	${props =>
 		props.isShowingMore && props.isPortrait
 			? slightBoxShadowAbove
@@ -56,7 +65,9 @@ const MenuContainer = styled.aside`
 			max-width: 500px;
 			${props => (props.isPortrait ? `margin-top: 4rem;` : ``)};
 			${paddingLR}
-			text-transform:uppercase;
+			${tablet} {
+			${props => (props.isPortrait ? `margin: 0 auto` : ``)};
+			}
 		}
 	}
 	
@@ -80,17 +91,20 @@ const MenuContainer = styled.aside`
 		color: ${fontColor};
 		cursor: pointer;
 	}
-	
+	.margin-top-0 {
+		margin-top: 0 !important;
+	}
 	.subMenu {
 			width: 100%;
 			height:100%;
-			
+
 			${paddingLR}
 			flex-direction: column;
 			${props => (props.isPortrait ? `text-align: left;` : `text-align: right;`)};
 			${props => (props.isPortrait ? `overflow-x: auto;` : ``)};
 			${props => (props.isPortrait ? `${hideScrollbar};` : ``)};
 			${props => (props.isPortrait ? `flex-direction: row;` : ``)};
+		
 			/* ${mobile} {
 				overflow-x: auto;
 				${hideScrollbar};
@@ -119,6 +133,9 @@ const MenuContainer = styled.aside`
 		&__item {
 			margin: .4rem 0 1rem;
 			${tablet}{
+				&:last-child {
+					${props => (props.isPortrait ? `padding-right:4rem` : ``)};
+				}
 				margin-bottom: 0rem;
 			}	
 			${mobile} {
@@ -127,10 +144,14 @@ const MenuContainer = styled.aside`
 					props.isShowingMore ? `margin: 0 0 .5rem` : `margin: .2rem 0 .5rem`};
 				margin-right: 1.5rem;
 				a {
+					
 					${tablet}{
 						${props => (props.isPortrait ? `font-size: 1.7em` : ``)};
 					}					
 					white-space: nowrap;		
+				}
+				&:last-child {
+					${props => (props.isPortrait ? `padding-right:4rem` : ``)};
 				}
 			}
 			${props => (props.isPortrait ? `white-space: nowrap;` : ``)};
@@ -163,7 +184,7 @@ const MenuContainer = styled.aside`
 
 	.offset {
 		width:100%;
-		margin-top: ${props => (props.isPortrait ? `20vh;` : `40vh;`)};
+		margin-top: ${props => (props.isPortrait ? `200px;` : `40vh;`)};
 	}
 
 `;

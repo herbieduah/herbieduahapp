@@ -90,14 +90,20 @@ export const NavBar = () => {
 				<NavBarMiniContainer
 					className='navbar'
 					isPortrait={isContentPortrait}
+					modalVisible={modalVisible}
 					navBarComplement={navBarComplement}>
-					<NavLink to='/'>
+					<NavLink to='/' onClick={setMenuModalContent}>
 						<Media
 							type='icon'
 							className='navbar__logo svg'
 							src={HerbieDuahLogo}
 						/>
 					</NavLink>
+					<ShowIf noAnimation thisValue={modalVisible} thatValue={true}>
+						<Text m button onClick={setMenuModalContent}>
+							<NavLink to='/contacts'>Contact</NavLink>
+						</Text>
+					</ShowIf>
 					<div className='navbar__logo-menu'>
 						<Text
 							button
@@ -117,7 +123,7 @@ export const NavBar = () => {
 				<NavBarContainer
 					className='navbar'
 					fullScreen={fullScreen}
-					hideMaximize={showLess}
+					// hideMaximize={showLess}
 					appHeight={wh}
 					navBarRight={navBarRight}
 					isPortrait={isContentPortrait}
@@ -167,12 +173,20 @@ export const FullScreenModal = () => {
 		setModalVisible(false);
 	};
 	return (
-		<Modal visible={modalVisible} animation={`fade`} onClose={hide}>
-			<ThisValueEqualsState thisValue='menu' stateValue={modalContent}>
-				<section className='modal__container'>
-					<MenuTabs showCategory={false} />
-				</section>
-			</ThisValueEqualsState>
+		<Modal
+			visible={modalVisible}
+			animation={`fade`}
+			onClose={hide}
+			className='modal'>
+			<div className='modal__container'>
+				<div className='modal__content'>
+					<ThisValueEqualsState thisValue='menu' stateValue={modalContent}>
+						<section>
+							<MenuTabs showCategory={false} />
+						</section>
+					</ThisValueEqualsState>
+				</div>
+			</div>
 		</Modal>
 	);
 };
@@ -190,11 +204,15 @@ export const FullScreenOverlay = () => {
 			{modalVisible ? (
 				<CSSTransition timeout={revealSecs} classNames={transitionClasses}>
 					<FullScreenOverlayContainer navBarRight={navBarRight}>
-						<ShowIf thisValue='menu' thatValue={modalContent}>
-							<section className='modal__container'>
-								<MenuTabs showCategory={false} />
-							</section>
-						</ShowIf>
+						<div className='modal__container'>
+							<div className='modal__content'>
+								<ShowIf noAnimation thisValue='menu' thatValue={modalContent}>
+									<section>
+										<MenuMini showCategory={true} />
+									</section>
+								</ShowIf>
+							</div>
+						</div>
 					</FullScreenOverlayContainer>
 				</CSSTransition>
 			) : null}
@@ -294,6 +312,20 @@ export const MenuTabs = props => {
 				</nav>
 			</TabPanel>
 		</ReactTabs>
+	);
+};
+
+export const MenuMini = props => {
+	const showCategory = props.showCategory;
+	return (
+		<nav>
+			<SubMenu showCategory={showCategory} category='customize' />
+			<SubMenu showCategory={showCategory} category='work' />
+
+			<SubMenu showCategory={showCategory} category='about' />
+
+			<SubMenu showCategory={showCategory} category='photography' />
+		</nav>
 	);
 };
 

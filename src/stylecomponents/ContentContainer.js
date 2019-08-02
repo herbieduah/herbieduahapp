@@ -21,6 +21,8 @@ export const ContentContainer = styled.article`
 		padding-top: 0;
 	}
 	padding-bottom: 40vh;
+	${props => (props.minimalMode ? `margin:0 !important` : ``)};
+	${props => (props.minimalMode ? `padding:2.5rem 0 !important` : ``)};
 	.LazyLoad {
 		width: 100%;
 	}
@@ -115,6 +117,12 @@ export const ContentContainer = styled.article`
 			margin-top: 3rem;
 		}
 	}
+	.c-margin-top-med {
+		margin-top: 2.5rem;
+		${mobile} {
+			margin-top: 2rem;
+		}
+	}
 	.stupidButtonHeight {
 		position:relative;
 		/* height: 3rem; */
@@ -136,7 +144,7 @@ export const ContentContainer = styled.article`
 		align-items: flex-start;
 		flex-wrap: wrap;
 		width: 100%;
-		margin: 0;
+		margin: 0 auto;
 		padding: 0;
 	}
 	ul.appTransition {

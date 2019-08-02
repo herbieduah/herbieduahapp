@@ -43,7 +43,9 @@ import {
 	container,
 	contentMenuPaddingRight,
 	contentMenuPadding,
-	tablet
+	tablet,
+	paddingLR,
+	slightBoxShadowBelow
 } from "./StyleHelpers";
 
 import { revealSecs } from "../helpers";
@@ -86,21 +88,30 @@ export const GlobalStyle = createGlobalStyle`
 //     font-size: 12px
 export const NavBarMiniContainer = styled.div`
 	position: fixed;
-  	padding: 1rem;
+  	padding: 1rem ${navBarSize};
+	${mobile} {
+		padding: .5rem 1rem;
+	}
+	${tablet} {
+		padding: .5rem 1rem;
+	}
     z-index: 1000;
     display: flex;
 	background: ${props =>
 		props.navBarComplement ? navBarBgComplement : navBarBg};
+	${props => (props.navBarComplement ? slightBoxShadowBelow : `box-shadow:none`)};
 	width: 100vw;
-	
+	background: ${props => (props.modalVisible ? modalFullScreenBg : ``)}!important;
+	${props => (props.modalVisible ? `box-shadow:none` : ``)};
+	border-bottom: ${props => (props.modalVisible ? navBarBorder : ``)};
 	align-items: center;
  	width: ${props => props.appHeight}px;
-	height: ${navBarSize};
 	justify-content: space-between;
 	user-select: none;
 	button {
 		border-bottom: 0;  
 		${mainTransition}
+		padding: 0;
 		color: ${props =>
 			props.navBarComplement
 				? navBarButtonComplementaryText
@@ -151,8 +162,8 @@ export const NavBarMiniContainer = styled.div`
 				${mainTransition}
 				transform: scale(.95);
 				border: 1px solid ${logoBgHoverColor};
-				width: ${navBarSize};
-				height: ${navBarSize};
+				width: 2rem;
+				height: 2rem;
 				background: transparent;
 				border-radius: ${logoBorderRadius};
 				${mainTransition}
@@ -177,8 +188,8 @@ export const NavBarContainer = styled.div`
 	${hideScrollbar}
 	background: ${props =>
 		props.navBarComplement ? navBarBgComplement : navBarBg};
-	border-bottom:  ${navBarBorder};
-	border-top:  ${navBarBorder};
+	border-bottom: ${props => (props.navBarComplement ? `none` : navBarBorder)}; 
+	border-top:  ${props => (props.navBarComplement ? `none` : navBarBorder)}; 
 	
     /* margin-top: auto;
     margin-left: auto; */
@@ -259,6 +270,9 @@ export const NavBarContainer = styled.div`
 				background: transparent;
 				border-bottom: ${logoBorderBottom};
 				border-radius: ${logoBorderRadius};
+				border-left:  ${props => (props.navBarComplement ? logoBorderBottom : `none`)}; 
+				border-right:  ${props =>
+					props.navBarComplement ? logoBorderBottom : `none`}; 
 				${mainTransition}
 				&:hover,&:focus {
 					background: ${logoBgHoverColor};
@@ -410,16 +424,21 @@ export const ThemeCircleContainer = styled.li`
 	display: flex;
 	list-style-type: none;
 	flex-direction: column;
-	padding: 0.5rem;
+	/* margin: 0.5rem; */
 	justify-content: center;
-	width: 7rem;
+	width: 33%;
 	cursor: pointer;
 	.themeCircle {
+		&__container {
+			width: 100%;
+		}
 		&__button {
 			${mainTransition}
 			position: relative;
-			width: 6rem;
-			height: 6rem;
+			width: 5rem;
+			height: 5rem;
+			margin: 0 auto;
+			display: block;
 			border-radius: 50%;
 			cursor: pointer;
 			background: ${props =>
@@ -439,8 +458,11 @@ export const ThemeCircleContainer = styled.li`
 		&__text {
 			color: ${CTAColor};
 			text-align: center;
+			width: 100%;
+			display: block;
 			cursor: pointer;
 			padding: 0.25rem;
+			margin-bottom: 1rem;
 			&.current {
 				color: ${fontColor};
 				cursor: default;
@@ -479,7 +501,6 @@ export const TransitionTextContainer = styled.li`
 `;
 
 export const FullScreenOverlayContainer = styled.div`
-${container}
 	overflow: hidden;
 	z-index: 100;
 	position: absolute;
@@ -490,8 +511,32 @@ ${container}
 	z-index: 50;
 	width: 100vw;
 	height: 100vh;
-	${props => (props.navBarRight ? contentMenuPaddingRight : contentMenuPadding)};
+	${hideScrollbar}
+	.modal {
+		&__container{
+			position:relative;
+			${mobile}{
+				margin-top: 2.5rem;	
+			}
+			margin-top: 5rem;
+			height:100%;
+			overflow: auto;
+			${hideScrollbar}
+		}
+		&__content {
+			${absoluteOverlay};
+			overflow: auto;
+			padding-bottom: 200px;
+			${hideScrollbar}
 
+		}
+	}
+	nav {
+		height: 100%;
+		display: block;
+		overflow: auto;
+		${paddingLR};
+	}
 	.react-tabs {
 		&__tab-list {
 			padding: 0;
@@ -499,9 +544,27 @@ ${container}
 	}
 	.subMenu {
 		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+		${mobile} {
+			display:block
+		}
 		&__item {
 			margin-bottom: 1.5rem;
 			list-style-type: none;
+			margin-right: ${navBarSize};
+			
+			white-space: nowrap;
+			${mobile} {
+				margin-right: 0;
+			}
+		}
+		&__text {
+			margin-top: 1rem;
+			${mobile} {
+				margin-top: 2.5rem;
+			}
 		}
 	}
 		
@@ -510,7 +573,7 @@ ${container}
 		/* filter: blur(5px); */
 		${absoluteOverlay}
 		background: ${modalFullScreenBg};
-		background-color: ${modalFullScreenBgColor};
+		/* background-color: ${modalFullScreenBgColor}; */
 		${mobile} {
 			background: ${modalFullScreenBgMobile};	
 		}

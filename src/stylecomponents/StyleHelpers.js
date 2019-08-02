@@ -67,7 +67,8 @@ z-index: 1;
 position: absolute;
 `;
 
-export const stupidNegativeMargin = `margin-top:${sliderMobileWidth}px!important`;
+export const stupidNegativeMargin = `margin-top:${sliderMobileWidth /
+	2}px!important`;
 export const paddingLR = `padding: 0 20px ;
 ${mobile} {
 	padding: 0 1rem ;

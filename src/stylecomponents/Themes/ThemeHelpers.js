@@ -54,7 +54,7 @@ export const themeMaker = (theme = defaultBaseValues) => {
 		modalFullScreenBgColor: `transparent`,
 		modalFullScreenBgMobile: `linear-gradient(to bottom, ${gradientValues})`,
 		navBarBg: "transparent",
-		navBarBgComplement: `${complementBg}`,
+		navBarBgComplement: `${rgba(complementBg, 0.65)}`,
 		navBarButtonColor: `${rgba(fontColor, 0.65)}`,
 		navBarHoverFocus: `${fontColor}`,
 		navBarHoverFocusAction: "scale(1.1)",
@@ -121,7 +121,7 @@ export const themeBgMaker = (theme = defaultBgImageValues) => {
 		CTAColor: `${rgba(fontColor, 0.65)}`,
 		CTAColorSecondary: `${rgba(fontColor, 0.65)}`,
 		fontColor: `${fontColor}`,
-		navBarBgComplement: `${complementBg}`,
+		navBarBgComplement: `${rgba(complementBg, 0.65)}`,
 		fontSelection: `${invert(fontColor)}`,
 		fullScreenHoldBg: ` linear-gradient( ${invert(bgColor)}, ${invert(
 			bgColor

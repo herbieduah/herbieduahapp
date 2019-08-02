@@ -21,7 +21,7 @@ export const SubMenu = props => {
 				<div>
 					{showCategory ? (
 						<Fade duration={revealSecs}>
-							<Text format m className='subMenu__text'>
+							<Text format m className='subMenu__text '>
 								Work
 							</Text>
 						</Fade>
@@ -105,7 +105,7 @@ export const SubMenu = props => {
 				<div>
 					{showCategory ? (
 						<Fade duration={revealSecs}>
-							<Text format m className='subMenu__text'>
+							<Text format m className='subMenu__text margin-top-0 '>
 								For You
 							</Text>
 						</Fade>

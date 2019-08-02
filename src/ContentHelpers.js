@@ -209,7 +209,7 @@ export const HeadingOne = props => {
 				h1
 				xxl
 				bold
-				className={`c-margin-bottom-med  ${
+				className={`c-margin-bottom c-margin-top-med  ${
 					props.className
 				}  padding-left-right `}>
 				{props.children}
@@ -346,18 +346,20 @@ export const ThemeCircles = props => {
 			isPortrait={isContentPortrait}
 			themeValues={themeValues}
 			className='themeCircle__item'>
-			<button className={`themeCircle__button ${currentClass}`}>
-				{current ? (
-					<div className='themeCircle__selected'>
-						<Text format m bold>
-							Current
-						</Text>
-					</div>
-				) : null}
-			</button>
-			<Text format xs className={`themeCircle__text ${currentClass}`} bold>
-				{themeValues.text}
-			</Text>
+			<div className='themeCircle__container'>
+				<button className={`themeCircle__button ${currentClass}`}>
+					{current ? (
+						<div className='themeCircle__selected'>
+							<Text format m bold>
+								Current
+							</Text>
+						</div>
+					) : null}
+				</button>
+				<Text format xs className={`themeCircle__text ${currentClass}`} bold>
+					{themeValues.text}
+				</Text>
+			</div>
 		</ThemeCircleContainer>
 	);
 };
