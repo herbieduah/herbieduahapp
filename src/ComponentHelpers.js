@@ -80,6 +80,9 @@ export const NavBar = () => {
 		setModalContent("menu");
 		modalVisible ? setModalVisible(false) : setModalVisible(true);
 	};
+	const setMenuModalClose = () => {
+		setModalVisible(false);
+	};
 	const setMaximizeAndMinimize = () => {
 		fullScreen ? setFullscreen(false) : setFullscreen(true);
 	};
@@ -92,7 +95,7 @@ export const NavBar = () => {
 					isPortrait={isContentPortrait}
 					modalVisible={modalVisible}
 					navBarComplement={navBarComplement}>
-					<NavLink to='/' onClick={setMenuModalContent}>
+					<NavLink to='/' onClick={setMenuModalClose}>
 						<Media
 							type='icon'
 							className='navbar__logo svg'
@@ -135,6 +138,22 @@ export const NavBar = () => {
 								className='navbar__logo svg'
 								src={HerbieDuahLogo}
 							/>
+							<TransitionGroup>
+								{!showLess ? (
+									<CSSTransition
+										timeout={revealSecs}
+										classNames={transitionClasses}>
+										{/* <div className='animatecss-container'> */}
+										<Text
+											m
+											button
+											className='hdapp-text'
+											aria-hidden={showLess ? `true` : `false`}>
+											Home
+										</Text>
+									</CSSTransition>
+								) : null}
+							</TransitionGroup>
 						</NavLink>
 					</div>
 					<TransitionGroup>

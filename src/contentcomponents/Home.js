@@ -40,12 +40,7 @@ const HomePage = ({ contentProps }) => {
 	return (
 		<Fragment>
 			<ContentShow less>
-				<Paragraph>
-					I set out to design and engineer a one of a kind portfolio where the
-					user gets to choose their experience but it has come too cumbersome so
-					I decided to push what I have so far. I am making updates almost
-					everyday.
-				</Paragraph>
+				<Paragraph>Sup, it's yo boy Herb.</Paragraph>
 			</ContentShow>
 			<ContentShow more>
 				<div className='container'>
@@ -56,7 +51,8 @@ const HomePage = ({ contentProps }) => {
 						I have a passion for developing and designing user experiences for
 						people like you. Even though this portfolio is about me, I want you,
 						the user, to choose how you experience it
-						<Emoji symbol='🙂' label='smile' />.
+						<Emoji symbol='🙂' label='smile' />
+						.o
 					</Paragraph>
 					<HeadingTwo>Work and experience</HeadingTwo>
 

@@ -3,7 +3,7 @@ import { mobile, mainTransition } from "./StyleHelpers";
 import { revealSecs } from "../helpers";
 export const ContentMenuContainer = styled.section`
 	${mainTransition}
-	opacity : ${props => (props.dragging ? ".4" : "1")};
+	
 	display: flex;
 	position: relative;
 	z-index: 2;

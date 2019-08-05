@@ -219,8 +219,8 @@ export const SliderLineContainer = styled.div`
 		display:flex;
 		align-items: center;
 		border-radius: 50%;
-		height: 50px;
-		width: 50px;
+		height: 60px;
+		width: 60px;
 		position:relative;
 		&:before {
 			content: '';

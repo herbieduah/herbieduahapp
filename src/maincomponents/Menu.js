@@ -30,13 +30,16 @@ export const ContentMenu = () => {
 			isShowingMore={isShowingMore}
 			navBarRight={navBarRight}
 			switchSides={switchSides}>
-			{/* 	 */}
 			<div className='animatecss-tamer'>
 				<TransitionGroup>
 					{!isShowingMore ? (
 						<CSSTransition timeout={revealSecs} classNames={transitionClasses}>
 							<div className='animatecss-container'>
-								<MenuTabs showCategory={isShowingMore} />
+								<div className='menu__less'>
+									<div className='menu__less-container'>
+										<MenuTabs showCategory={isShowingMore} />
+									</div>
+								</div>
 							</div>
 						</CSSTransition>
 					) : null}

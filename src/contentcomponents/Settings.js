@@ -70,12 +70,13 @@ const SettingsPage = ({ contentProps }) => {
 					This setting moves navigations bar to the right or left.
 				</Paragraph>
 				<div className='stupidButtonHeight'>
-					<ShowIf thisValue={navBarRight} thatValue={true}>
+					<ShowIf noAnimation thisValue={navBarRight} thatValue={true}>
 						<Text button onClick={moveNavBar} className='padding-left-right'>
-							Move Navigation bar to the left
+							Move Navigation bar to the left to the left, everything you need
+							to navigate the site to the left
 						</Text>
 					</ShowIf>
-					<ShowIf thisValue={navBarRight} thatValue={false}>
+					<ShowIf noAnimation thisValue={navBarRight} thatValue={false}>
 						<Text button onClick={moveNavBar} className='padding-left-right'>
 							Move Navigation Bar to the right
 						</Text>
@@ -85,26 +86,25 @@ const SettingsPage = ({ contentProps }) => {
 				<Paragraph>
 					{" "}
 					This setting adds a background complementary to the current background
-					to the navigation bar.
+					to the navigation bar. (FYI: White complements white and black
+					complements black)
 				</Paragraph>
-				<div className='stupidButtonHeight'>
-					<ShowIf thisValue={navBarComplement} thatValue={false}>
-						<Text
-							button
-							onClick={complementNavBar}
-							className='padding-left-right'>
-							Add complementary background
-						</Text>
-					</ShowIf>
-					<ShowIf thisValue={navBarComplement} thatValue={true}>
-						<Text
-							button
-							onClick={complementNavBar}
-							className='padding-left-right'>
-							Remove complementary background
-						</Text>
-					</ShowIf>
-				</div>
+				<ShowIf noAnimation thisValue={navBarComplement} thatValue={false}>
+					<Text
+						button
+						onClick={complementNavBar}
+						className='padding-left-right'>
+						Add complementary background
+					</Text>
+				</ShowIf>
+				<ShowIf noAnimation thisValue={navBarComplement} thatValue={true}>
+					<Text
+						button
+						onClick={complementNavBar}
+						className='padding-left-right'>
+						Remove complementary background
+					</Text>
+				</ShowIf>
 				<HeadingTwo>
 					Technical vs Non-Technical
 					<span className='alpha'>Not functional</span>
@@ -115,24 +115,21 @@ const SettingsPage = ({ contentProps }) => {
 					knowledgable about coding or want to learn then I recommend turning on
 					this settings.
 				</Paragraph>
-				<div className='stupidButtonHeight'>
-					<ShowIf thisValue={techy} thatValue={true}>
-						<Text button onClick={knowCode} className='padding-left-right'>
-							change tone to Technical
-						</Text>
-					</ShowIf>
-					<ShowIf thisValue={techy} thatValue={false}>
-						<Text button onClick={knowCode} className='padding-left-right'>
-							change tone to Non technical
-						</Text>
-					</ShowIf>
-				</div>
-				<HeadingTwo>
+				<ShowIf noAnimation thisValue={techy} thatValue={true}>
+					<Text button onClick={knowCode} className='padding-left-right'>
+						change tone to Technical
+					</Text>
+				</ShowIf>
+				<ShowIf noAnimation thisValue={techy} thatValue={false}>
+					<Text button onClick={knowCode} className='padding-left-right'>
+						change tone to Non technical
+					</Text>
+				</ShowIf>
+				{/* <HeadingTwo>
 					Lazy loading <span className='alpha'>Not functional</span>
 				</HeadingTwo>
 				<Paragraph>Stop lazyloading</Paragraph>
-				<div className='stupidButtonHeight'>
-					<ShowIf thisValue={lazyLoading} thatValue={true}>
+					<ShowIf noAnimation thisValue={lazyLoading} thatValue={true}>
 						<Text
 							button
 							onClick={downloadEverything}
@@ -140,34 +137,29 @@ const SettingsPage = ({ contentProps }) => {
 							Turn Off Lazy load
 						</Text>
 					</ShowIf>
-					<ShowIf thisValue={lazyLoading} thatValue={false}>
+					<ShowIf noAnimation thisValue={lazyLoading} thatValue={false}>
 						<Text className='padding-left-right'>
 							You can change this setting again if you refresh or come back to
 							the site again
 						</Text>
-					</ShowIf>
-				</div>
-				<HeadingTwo>
-					Minimal <span className='alpha'>Kinda working</span>
-				</HeadingTwo>
+					</ShowIf> */}
+				<HeadingTwo>Like every other site</HeadingTwo>
 				<Paragraph>
-					This setting gets rids of the slider AND the navigation bar and adds a
-					tiny "hamburger" menu in place, just like every other site.
+					This setting gets rids of the slider AND the vertical navigation bar
+					making it like every other website.
 				</Paragraph>
-				<div className='stupidButtonHeight'>
-					<ShowIf thisValue={minimalMode} thatValue={true}>
-						<Text button onClick={basicMode} className='padding-left-right'>
-							Activate Minimal Mode
-						</Text>
-					</ShowIf>
-					<ShowIf thisValue={minimalMode} thatValue={false}>
-						<Text button onClick={basicMode} className='padding-left-right'>
-							Disable Minimal Mode
-						</Text>
-					</ShowIf>
-				</div>
+				<ShowIf noAnimation thisValue={minimalMode} thatValue={true}>
+					<Text button onClick={basicMode} className='padding-left-right'>
+						go back to the sliders and vertical navigation bar
+					</Text>
+				</ShowIf>
+				<ShowIf noAnimation thisValue={minimalMode} thatValue={false}>
+					<Text button onClick={basicMode} className='padding-left-right'>
+						Make It look like every other site
+					</Text>
+				</ShowIf>
 
-				<HeadingTwo>Switch Sides (Failure)</HeadingTwo>
+				<HeadingTwo>Switch sides (Failure)</HeadingTwo>
 				<Paragraph>
 					This lets you switch the content and the menu. This was one of the
 					first settings I had when I started developing this app but I
@@ -181,18 +173,16 @@ const SettingsPage = ({ contentProps }) => {
 						Since this is a failed setting, it will revert back in 7 seconds
 					</strong>
 				</Paragraph>
-				<div className='stupidButtonHeight'>
-					<ShowIf thisValue={switchSides} thatValue={true}>
-						<Text button onClick={failure} className='padding-left-right'>
-							Switch Sides for 7 Seconds
-						</Text>
-					</ShowIf>
-					<ShowIf thisValue={switchSides} thatValue={false}>
-						<Text className='padding-left-right'>
-							Reverting back in 7 seconds
-						</Text>
-					</ShowIf>
-				</div>
+				<ShowIf noAnimation thisValue={switchSides} thatValue={true}>
+					<Text button onClick={failure} className='padding-left-right'>
+						Switch Sides for 7 Seconds
+					</Text>
+				</ShowIf>
+				<ShowIf noAnimation thisValue={switchSides} thatValue={false}>
+					<Text className='padding-left-right'>
+						Reverting back in 7 seconds
+					</Text>
+				</ShowIf>
 			</ContentShow>
 		</Fragment>
 	);

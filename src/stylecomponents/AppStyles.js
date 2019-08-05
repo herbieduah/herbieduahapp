@@ -1,28 +1,41 @@
 import styled from "styled-components";
 import { Gradients } from "./Animations";
-import { fluidTypeInfo, absoluteOverlay } from "./StyleHelpers";
+import { fluidTypeInfo, absoluteOverlay, mainTransition } from "./StyleHelpers";
 import {
 	appBg,
 	appBgMobile,
 	appBgColor,
 	appBgAnimation
 } from "./Themes/ThemeVariables";
-
+// animation: ${Gradients} 1.5s ease-in-out ${props =>
+// 	props.dragging ? "infinite" : ""};
+// 	background-size: ${props => (props.dragging ? `400% 400%` : "contain")};
 export const HerbieDuahApp = styled.div`
 	width: 100%;
 	overflow: hidden;
 	overscroll-behavior: none;
 	/* ${fluidTypeInfo} */
-	background: ${props =>
-		props.dragging ? appBgAnimation : props.isPortrait ? appBgMobile : appBg};
-	animation: ${Gradients} 1.5s ease-in-out ${props =>
-	props.dragging ? "infinite" : ""};
-	background-size: ${props => (props.dragging ? `400% 400%` : "contain")};
+	background: ${props => (props.isPortrait ? appBgMobile : appBg)};
+	
 	background-color: ${appBgColor};
 	position: relative;
 	margin: 0;
 	height: 100%;
+	
+	.navbar {
+			${mainTransition}
+			opacity : ${props => (props.dragging ? "0" : "1")};
+	}
 	.hdapp {
+		
+		.navbar {
+		${mainTransition}
+		opacity : ${props => (props.dragging ? "0" : "1")};
+		}
+		&__menu {
+				${mainTransition}
+				opacity : ${props => (props.dragging ? "0" : "1")};
+		}
 		&__pane {
 			overflow: ${props => (props.isPortrait ? `initial` : `hidden`)};
 			&.vertical {

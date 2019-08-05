@@ -3,6 +3,15 @@ export const appTransitions = [
 		name: "default",
 		properties: {
 			enter: "animated",
+			enterActive: "zoomIn",
+			exit: "animated",
+			exitActive: "zoomOut"
+		}
+	},
+	{
+		name: "bounceInbounceOut",
+		properties: {
+			enter: "animated",
 			enterActive: "bounceIn",
 			exit: "animated",
 			exitActive: "bounceOut"
@@ -51,6 +60,24 @@ export const appTransitions = [
 			enterActive: "flipInX",
 			exit: "animated",
 			exitActive: "flipOutY"
+		}
+	},
+	{
+		name: "slideInLeftslideOutLeft",
+		properties: {
+			enter: "animated",
+			enterActive: "slideInLeft",
+			exit: "animated",
+			exitActive: "slideOutLeft"
+		}
+	},
+	{
+		name: "rotateOutrotateIn",
+		properties: {
+			enter: "animated",
+			enterActive: "rotateIn",
+			exit: "animated",
+			exitActive: "rotateOut"
 		}
 	}
 ];

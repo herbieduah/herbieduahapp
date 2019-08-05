@@ -188,8 +188,15 @@ export const NavBarContainer = styled.div`
 	${hideScrollbar}
 	background: ${props =>
 		props.navBarComplement ? navBarBgComplement : navBarBg};
-	border-bottom: ${props => (props.navBarComplement ? `none` : navBarBorder)}; 
-	border-top:  ${props => (props.navBarComplement ? `none` : navBarBorder)}; 
+	border-bottom: ${props => (props.navBarRight ? `none` : navBarBorder)}; 
+	border-top:  ${props => (props.navBarRight ? navBarBorder : `none`)}; 
+	${props =>
+		props.navBarComplement
+			? `
+	border-bottom: none !important;
+	border-top: none !important;
+	`
+			: ``}; 
 	
     /* margin-top: auto;
     margin-left: auto; */
@@ -244,8 +251,16 @@ export const NavBarContainer = styled.div`
 		}
 
 		&__logo-menu{
-			display: flex;
-			align-items: center;
+			a {
+				display: flex;
+				align-items: center;
+				flex-direction: row-reverse;
+			}
+			button {
+				padding: 0;
+				padding-right: .5rem;
+				height: 2.5rem;
+			}
 		}
 		
 		&__logo {
@@ -270,7 +285,8 @@ export const NavBarContainer = styled.div`
 				background: transparent;
 				border-bottom: ${logoBorderBottom};
 				border-radius: ${logoBorderRadius};
-				border-left:  ${props => (props.navBarComplement ? logoBorderBottom : `none`)}; 
+				border:  ${props => (props.navBarComplement ? logoBorderBottom : `none`)}; 
+				margin-top: 2px;
 				border-right:  ${props =>
 					props.navBarComplement ? logoBorderBottom : `none`}; 
 				${mainTransition}
@@ -392,16 +408,40 @@ export const DragInstructionsContainer = styled.div`
 `;
 
 export const FlexContainer = styled.div`
-	display: flex;
-	${hideScrollbar};
+	display: block;
+	width: 100%;
+	ul {
+		margin: 0;
+		padding: 0;
+	}
+	li {
+		list-style-type: none;
+		margin: 0;
+	}
 	${props =>
 		props.isPortrait
 			? `
-			flex-direction: row;
+			overflow: hidden;
 			`
-			: `
+			: ``};
+	.less {
+		&__media-wrapper {
+			display: flex;
+			width: 100%;
+			${hideScrollbar};
+			height: 100%;
+
+			${props =>
+				props.isPortrait
+					? `
+			flex-direction: row;
+			overflow-x:auto;
+			`
+					: `
 			flex-direction: column;
 			`};
+		}
+	}
 
 	.react-reveal {
 		img,

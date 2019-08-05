@@ -56,13 +56,21 @@ const SpecialThanksPage = () => {
 					</Text>
 				</Marquee>
 
-				<ShowIf thisValue={marqueePlay} thatValue={true}>
-					<Text button l onClick={marqueePlaying} className='c-margin-top'>
+				<ShowIf noAnimation thisValue={marqueePlay} thatValue={true}>
+					<Text
+						button
+						m
+						onClick={marqueePlaying}
+						className='c-margin-top padding-left-right'>
 						Okay I get it these people are awesome please make it stop
 					</Text>
 				</ShowIf>
-				<ShowIf thisValue={marqueePlay} thatValue={false}>
-					<Text button l onClick={marqueePlaying} className='c-margin-top'>
+				<ShowIf noAnimation thisValue={marqueePlay} thatValue={false}>
+					<Text
+						button
+						m
+						onClick={marqueePlaying}
+						className='c-margin-top padding-left-right'>
 						I wanna see the people you appreciate over and over again
 					</Text>
 				</ShowIf>

@@ -106,7 +106,8 @@ export const ctaColor = props => props.theme.ctaColor;
 export const bgColor = props => props.theme.bgColor;
 export const bgColorGradient = props => props.theme.bgColorGradient;
 export const fontColor = props => props.theme.fontColor;
-export const mainTransition = `transition: all ${revealSecs} ease-in-out;`;
+export const mainTransition = `transition: all ${revealSecs /
+	2}ms ease-in-out;`;
 export const buttonColor = props => props.theme.fontColor;
 // lighten(0.17, props.theme.fontColor);
 export const buttonColorHover = props => props.theme.fontColor;

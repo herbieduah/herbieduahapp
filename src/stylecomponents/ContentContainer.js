@@ -6,6 +6,7 @@ import {
 	mobileSliderOnTop,
 	contentMenuPadding,
 	tablet,
+	navBarSize,
 	contentMenuPaddingRight,
 	paddingLR
 } from "./StyleHelpers";
@@ -17,12 +18,13 @@ export const ContentContainer = styled.article`
 	${hideScrollbar};
 	overflow: auto;
 	${props => (props.navBarRight ? contentMenuPaddingRight : contentMenuPadding)};
-	${mobile} {
-		padding-top: 0;
-	}
+
+	
 	padding-bottom: 40vh;
 	${props => (props.minimalMode ? `margin:0 !important` : ``)};
 	${props => (props.minimalMode ? `padding:2.5rem 0 !important` : ``)};
+	${props => (props.showMore ? `` : `padding-top: 0 !important;`)};
+	padding-top: 0 !important;
 	.LazyLoad {
 		width: 100%;
 	}
@@ -37,6 +39,7 @@ export const ContentContainer = styled.article`
 		color: white;
 		font-weight:bold;
 	}
+	margin-top: 0;
 	.container {
 			max-width: 740px;
 			width: 100%;
@@ -73,8 +76,10 @@ export const ContentContainer = styled.article`
 		}
 		&__less {
 			width:  100%;
+			height: ${props => (props.showLess && !props.isPortrait ? `100vh` : `100%`)};
+			
+			${props => (props.isPortrait ? `margin-top: ${navBarSize}` : ``)};
 			max-width:  ${props => (props.showLess ? `500px` : `100%`)};
-			${props => (props.fullScreen ? `margin 0 auto` : ``)};
 			/* margin: 0 auto; */
 			/* p {
 				${mainTransition}
@@ -84,10 +89,15 @@ export const ContentContainer = styled.article`
 			${tablet} {
 				max-width:  ${props =>
 					props.showLess && !props.isPortrait ? `400px` : `100%`};
+					height: 100%;
 			}
 			${mobile} {
 				width: 100%;
+				height: 100%;
 			}
+		}
+		&__less-container {
+			padding-top: ${props => (props.isPortrait ? `0` : `33vh`)};
 		}
 		&__more {
 			${mainTransition}

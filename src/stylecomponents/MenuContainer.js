@@ -25,7 +25,6 @@ const MenuContainer = styled.aside`
 	width: 100%;
 	/* max-width: 500px; */
 	height: 100%;
-	padding-top: ${navBarSize};
 	${props =>
 		props.isShowingMore && props.isPortrait ? `position:absolute;` : ``};
 	overflow: auto;
@@ -50,7 +49,8 @@ const MenuContainer = styled.aside`
 		${props => (props.navBarRight ? `margin-left: 0` : ``)};
 		${props =>
 			props.isPortrait
-				? `margin-left: ${navBarSize}`
+				? `margin-top: ${navBarSize};
+				margin-left: ${navBarSize} `
 				: `margin-right: ${navBarSize}`};
 	}
 	${props =>
@@ -79,6 +79,15 @@ const MenuContainer = styled.aside`
 	}
 	.menu__more {
 		padding: 1rem 0;
+		margin-top: 1.3rem;
+	}
+
+	.menu__less {
+		height: ${props => (props.isPortrait ? `auto` : `100vh`)};
+	}
+	
+	.menu__less-container {
+		padding-top: ${props => (props.isPortrait ? `0` : `33vh`)};
 	}
 	
 	justify-content: right;
