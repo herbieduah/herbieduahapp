@@ -53,9 +53,9 @@ const HomePage = ({ contentProps }) => {
 						the last few months designing and engineering this award-worthy
 						porfolio in hopes of landing a top UX Engineer position or any top
 						position that let's me utilize my design and coding skillz. Please
-						feel free to take a look around!(move the slider{" "}
-						<Emoji className='emoji' symbol='😉' label='wink' />)
-						<Emoji className='emoji' symbol='🙂' label='smile' />
+						feel free to take a look around.(move the slider{" "}
+						<Emoji className='emoji' symbol='😉' label='wink' />
+						).
 					</Paragraph>
 				</ShowIf>
 			</ContentShow>
@@ -72,13 +72,13 @@ const HomePage = ({ contentProps }) => {
 							give you a better understanding of my skills or what I want.
 						</Paragraph>
 						<Image src={yes} className='container' />
-						<Paragraph>
+						<Paragraph className=' '>
 							Granted, it is still under construction and I will be making
 							frequent updates. Hope you're having a great day who ever you are
-							and Good luck on the employee hunt!
+							and good luck on the employee hunt!
 						</Paragraph>
 					</ShowIf>
-					<Image src={cornishPastyPic} className='container' />
+					<Image src={cornishPastyPic} className='c-margin-bottom-top' />
 					<HeadingTwo>Designed and engineered for you</HeadingTwo>
 					<Paragraph>
 						I have a passion for developing and designing user experiences for
