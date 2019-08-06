@@ -51,9 +51,10 @@ const HomePage = ({ contentProps }) => {
 					<Paragraph>
 						Hi there! I appreciate the LinkedIn message, I really do! I've spent
 						the last few months designing and engineering this award-worthy
-						porfolio in hopes of landing a top UX Engineer position or any
+						porfolio in hopes of landing a top UX Engineer position or any top
 						position that let's me utilize my design and coding skillz. Please
-						feel free to take a look around!
+						feel free to take a look around!(move the slider{" "}
+						<Emoji className='emoji' symbol='😉' label='wink' />)
 						<Emoji className='emoji' symbol='🙂' label='smile' />
 					</Paragraph>
 				</ShowIf>
