@@ -36,7 +36,7 @@ export const StateProvider = ({ children }) => {
 	const [techy, setTechy] = useState(false);
 	const [knowYou, setKnowYou] = useState(false);
 	const [modalContent, setModalContent] = useState("");
-	const [whom, setWhom] = useState("");
+	const [whom, setWhom] = useState("everyone");
 	// currentLeftTop: "LandscapePhotography",
 	//   currentTheme: "default",
 	//   defaultAppTheme: defaultAppTheme,

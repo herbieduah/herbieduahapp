@@ -37,6 +37,7 @@ const BedzinExhibitPage = ({ contentProps }) => {
 				</Paragraph>
 				<Paragraph>
 					For my Computer Science capstone, my group was tasked with revamping
+					&nbsp;
 					<Link href='http://bedzinexhibit.org/'>bedzinexhibit.org</Link>. The
 					exhibit, "Through the Eyes of Youth: Life and Death in the Będzin
 					Ghetto" tells the story of young people in the Jewish ghetto of Będzin

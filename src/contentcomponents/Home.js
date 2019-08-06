@@ -12,13 +12,14 @@ import {
 	Figcaption,
 	Gif,
 	Header,
-	Flex
+	Flex,
+	ContentShow
 } from "../ContentHelpers";
-import { ContentShow } from "../ContentHelpers";
+import { ShowIf } from "../ComponentHelpers";
 import Emoji from "a11y-react-emoji";
 // import Modal from "../maincomponents/Modal";
 import cornishPastyPic from "../media/images/picsOfMe/hd-herbieSmile-1974.jpg";
-import testVideoVertical from "../media/videos/videosOfme/millyrockgrandcanyon.mp4";
+import yes from "../media/images/startNow/Yes.jpg";
 import testPicHorizontal from "../media/videos/videosOfme/raveMillyRock_1.mp4";
 import testVideoHorizontal from "../media/videos/videosOfme/dadDance_1.mp4";
 
@@ -35,32 +36,61 @@ const header = "Hi, I'm Herbie";
 
 // const HomePage = ({ contentProps }) => {
 const HomePage = ({ contentProps }) => {
-	const { isContentPortrait } = contentProps;
-
+	const { whom } = contentProps;
 	return (
 		<Fragment>
 			<ContentShow less>
-				<Paragraph>Sup, it's yo boy Herb.</Paragraph>
+				<ShowIf noAnimation thisValue={"everyone"} thatValue={whom}>
+					<Paragraph>
+						Still working on some stuff but feel free to look around. It's a
+						pretty cool portfolio site I have been working on for months
+						<Emoji className='emoji' symbol='🙂' label='smile' />
+					</Paragraph>
+				</ShowIf>
+				<ShowIf noAnimation thisValue={"recruiter"} thatValue={whom}>
+					<Paragraph>
+						Hi there! I appreciate the LinkedIn message, I really do! I've spent
+						the last few months designing and engineering this award-worthy
+						porfolio in hopes of landing a top UX Engineer position or any
+						position that let's me utilize my design and coding skillz. Please
+						feel free to take a look around!
+						<Emoji className='emoji' symbol='🙂' label='smile' />
+					</Paragraph>
+				</ShowIf>
 			</ContentShow>
 			<ContentShow more>
 				<div className='container'>
 					<Header>{header}</Header>
+
+					<ShowIf noAnimation thisValue={"recruiter"} thatValue={whom}>
+						<Paragraph>
+							On average, I receive about 5 LinkedIn InMessage messages a week.
+							I've usually being ignoring most of them but I recently heard
+							there is a cost to you guys for un-answered messages and I feel
+							terribly sorry about that. I customized part of my porfolio to
+							give you a better understanding of my skills or what I want.
+						</Paragraph>
+						<Image src={yes} className='container' />
+						<Paragraph>
+							Granted, it is still under construction and I will be making
+							frequent updates. Hope you're having a great day who ever you are
+							and Good luck on the employee hunt!
+						</Paragraph>
+					</ShowIf>
 					<Image src={cornishPastyPic} className='container' />
 					<HeadingTwo>Designed and engineered for you</HeadingTwo>
 					<Paragraph>
 						I have a passion for developing and designing user experiences for
 						people like you. Even though this portfolio is about me, I want you,
 						the user, to choose how you experience it
-						<Emoji symbol='🙂' label='smile' />
-						.o
+						<Emoji className='emoji' symbol='🙂' label='smile' />.
 					</Paragraph>
 					<HeadingTwo>Work and experience</HeadingTwo>
-
 					<Paragraph>
 						Graduated at Northern Arizona University with a degree in Computer
 						Science. Somewhere along the way, I fell in love design. I enjoy any
 						opportunity that allows me to use my coding AND design skills
-						<Emoji symbol='🤓' label='nerd' />.
+						<Emoji className='emoji' symbol='🤓' label='nerd' />.
 					</Paragraph>
 					<Paragraph>
 						I am a Web developer and Designer with five years of experience

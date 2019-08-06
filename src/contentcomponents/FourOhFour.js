@@ -10,7 +10,7 @@ const FourOhFourPage = ({ contentProps }) => {
 		<div className='container'>
 			<Header>{header}</Header>
 			<Paragraph>
-				Oh man <Emoji symbol='🙁' label='sad face' />
+				Oh man <Emoji className='emoji' symbol='🙁' label='sad face' />
 			</Paragraph>
 			<Gif url={testVideoHorizontal} />
 			<Paragraph>Looks like you stumbled on the wrong page</Paragraph>

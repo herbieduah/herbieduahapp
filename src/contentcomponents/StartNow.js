@@ -46,19 +46,23 @@ const StartNowPage = ({ contentProps }) => {
 				<Paragraph>
 					<span className='alpha'>Writing out the content</span>
 				</Paragraph>
-				<Figure src={StandOutFromTheRest2000x3000}>
+				<Figure
+					className='padding-left-right'
+					src={StandOutFromTheRest2000x3000}>
 					<Figcaption>Something</Figcaption>
 				</Figure>
 				<Figure src={NAUConstruction2000x1500}>
-					<Figcaption>Something</Figcaption>
+					<Figcaption className='padding-left-right'>Somethings</Figcaption>
 				</Figure>
-				<Figure src={KnowTheGame2000x1500}>
+				<Figure className='padding-left-right' src={KnowTheGame2000x1500}>
 					<Figcaption>Something</Figcaption>
 				</Figure>
 				<Figure src={herbieCareerWidePoster1480x1500}>
 					<Figcaption>Something</Figcaption>
 				</Figure>
-				<Figure src={ConstructAPlan13X19x1952x2874}>
+				<Figure
+					className='padding-left-right'
+					src={ConstructAPlan13X19x1952x2874}>
 					<Figcaption>Something</Figcaption>
 				</Figure>
 				<Figure src={ConstructAPlan2000x1500}>
@@ -70,22 +74,22 @@ const StartNowPage = ({ contentProps }) => {
 				<Figure src={CareerPoster1480x950}>
 					<Figcaption>Something</Figcaption>
 				</Figure>
-				<Figure src={ACMClubPhoto2000x2667}>
+				<Figure className='padding-left-right' src={ACMClubPhoto2000x2667}>
 					<Figcaption>Something</Figcaption>
 				</Figure>
-				<Figure src={Yes1480x2220}>
+				<Figure className='padding-left-right' src={Yes1480x2220}>
 					<Figcaption>Something</Figcaption>
 				</Figure>
-				<Figure src={FullPage1480x1824}>
+				<Figure className='padding-left-right' src={FullPage1480x1824}>
 					<Figcaption>Something</Figcaption>
 				</Figure>
-				<Figure src={FullSizeStudents1480x1774}>
+				<Figure className='padding-left-right' src={FullSizeStudents1480x1774}>
 					<Figcaption>Something</Figcaption>
 				</Figure>
-				<Figure src={idkwhatIamDoing1480x2220}>
+				<Figure className='padding-left-right' src={idkwhatIamDoing1480x2220}>
 					<Figcaption>Something</Figcaption>
 				</Figure>
-				<Figure src={smileStock1480x2220}>
+				<Figure className='padding-left-right' src={smileStock1480x2220}>
 					<Figcaption>Something</Figcaption>
 				</Figure>
 			</ContentShow>

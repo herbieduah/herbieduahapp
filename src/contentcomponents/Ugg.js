@@ -95,7 +95,7 @@ const UggPage = ({ contentProps }) => {
 					<FiGif url={giftguide}>
 						<Figcaption>
 							UGG Holiday Gift Guide page with sparkles{" "}
-							<Emoji symbol='✨' label='sparkles' />
+							<Emoji className='emoji' symbol='✨' label='sparkles' />
 						</Figcaption>
 					</FiGif>
 					<FiGif url={frikkinPhillipLim}>

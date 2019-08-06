@@ -300,7 +300,7 @@ export const Figure = props => {
 
 export const Figcaption = props => {
 	return (
-		<Text s figcaption>
+		<Text s className={props.className} figcaption>
 			{props.children}
 		</Text>
 	);

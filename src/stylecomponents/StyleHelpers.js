@@ -73,6 +73,26 @@ export const paddingLR = `padding: 0 20px ;
 ${mobile} {
 	padding: 0 1rem ;
 }`;
+
+export const paddingLRMed = `padding: 0 40px ;
+${mobile} {
+	padding: 0 2rem ;
+}`;
+
+export const paddingLRLarge = `padding: 0 60px ;
+${mobile} {
+	padding: 0 3rem ;
+}`;
+
+export const paddingTB = `padding: 20px 0px ;
+${mobile} {
+	padding: 1rem 0;
+}`;
+
+export const marginLR = `margin: 0 20px ;
+${mobile} {
+	margin: 0 1rem ;
+}`;
 export const fiftyPixels = "3.47vw";
 export const navBarSize = "2.5rem";
 export const contentMenuPadding = `padding: ${navBarSize};

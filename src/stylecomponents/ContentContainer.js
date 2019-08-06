@@ -8,8 +8,13 @@ import {
 	tablet,
 	navBarSize,
 	contentMenuPaddingRight,
-	paddingLR
+	paddingLR,
+	marginLR,
+	paddingTB,
+	paddingLRLarge,
+	paddingLRMed
 } from "./StyleHelpers";
+import { CTAColor } from "./Themes/ThemeVariables";
 
 export const ContentContainer = styled.article`
 	width: 100%;
@@ -66,6 +71,7 @@ export const ContentContainer = styled.article`
 			}
 		}
 	}
+
 	.content {
 		&__header {
 			h1 {
@@ -118,14 +124,32 @@ export const ContentContainer = styled.article`
 			margin-bottom: .5rem;
 		}
 	}
-	.padding-left-right {
+	.padding-left-right, .paddingLR {
 		${paddingLR}
+	}
+	.paddingLRMed {
+		${paddingLRMed}
+	}
+	.paddingLRLarge {
+		${paddingLRLarge}
+	}
+	.padding-top-bottom, .paddingTB {
+		${paddingTB}
+	}
+	.margin-left-right, .marginLR {
+		${marginLR}
 	}
 	.c-margin-top {
 		margin-top: 3.5rem;
 		${mobile} {
 			margin-top: 3rem;
 		}
+	}
+	.emoji {
+		vertical-align: baseline;
+	}
+	.c-border {
+		border: 1px solid ${CTAColor};
 	}
 	.c-margin-top-med {
 		margin-top: 2.5rem;

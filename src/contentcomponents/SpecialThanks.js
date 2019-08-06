@@ -29,33 +29,34 @@ const SpecialThanksPage = () => {
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>
-				<Marquee playing={marqueePlay}>
-					<Text format xl extrawide>
-						Daliza Jeffrey
-					</Text>
-				</Marquee>
-				<Marquee playing={marqueePlay} left>
-					<Text format xl extrawide>
-						Henry Duah
-					</Text>
-				</Marquee>
-				<Marquee playing={marqueePlay}>
-					<Text format xl extrawide>
-						Kyle Mooney
-					</Text>
-				</Marquee>
+				<div className='margin-left-right  padding-top-bottom c-border'>
+					<Marquee playing={marqueePlay}>
+						<Text format xl extrawide>
+							Daliza Jeffrey
+						</Text>
+					</Marquee>
+					<Marquee playing={marqueePlay} left>
+						<Text format xl extrawide>
+							Henry Duah
+						</Text>
+					</Marquee>
+					<Marquee playing={marqueePlay}>
+						<Text format xl extrawide>
+							Kyle Mooney
+						</Text>
+					</Marquee>
 
-				<Marquee playing={marqueePlay} left>
-					<Text format xl extrawide>
-						Nuvi Njinimbam
-					</Text>
-				</Marquee>
-				<Marquee playing={marqueePlay}>
-					<Text format xl extrawide>
-						Wieland Mego
-					</Text>
-				</Marquee>
-
+					<Marquee playing={marqueePlay} left>
+						<Text format xl extrawide>
+							Nuvi Njinimbam
+						</Text>
+					</Marquee>
+					<Marquee playing={marqueePlay}>
+						<Text format xl extrawide>
+							Wieland Mego
+						</Text>
+					</Marquee>
+				</div>
 				<ShowIf noAnimation thisValue={marqueePlay} thatValue={true}>
 					<Text
 						button
@@ -65,6 +66,7 @@ const SpecialThanksPage = () => {
 						Okay I get it these people are awesome please make it stop
 					</Text>
 				</ShowIf>
+
 				<ShowIf noAnimation thisValue={marqueePlay} thatValue={false}>
 					<Text
 						button
