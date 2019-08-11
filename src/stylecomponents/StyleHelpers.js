@@ -74,14 +74,14 @@ ${mobile} {
 	padding: 0 1rem ;
 }`;
 
-export const paddingLRMed = `padding: 0 40px ;
+export const paddingLRMed = `padding: 0 20%;
 ${mobile} {
-	padding: 0 2rem ;
+	padding: 0 15% ;
 }`;
 
-export const paddingLRLarge = `padding: 0 60px ;
+export const paddingLRLarge = `padding: 0 25% ;
 ${mobile} {
-	padding: 0 3rem ;
+	padding: 0 20% ;
 }`;
 
 export const paddingTB = `padding: 20px 0px ;

@@ -26,6 +26,7 @@ export const themeMaker = (theme = defaultBaseValues) => {
 		appfontFamilyWide: `"roc-grotesk-wide", -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif`,
 		appfontFamilyExtraWide: `"roc-grotesk-extrawide", -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif`,
 		bgColor: `${bgColor}`,
+		bgColorOverlay: `${rgba(readableColor(fontColor), 0.19)}`,
 		buttonFontWeight: `700`,
 		buttonLineHeight: ` 1.2`,
 		buttonBorder: `0`,
@@ -39,6 +40,7 @@ export const themeMaker = (theme = defaultBaseValues) => {
 		fontColor: `${fontColor}`,
 		fontColorComplement: `${fontColorComplement}`,
 		complementBg: `${complementBg}`,
+		fontColorOpposite: `${readableColor(fontColor)}`,
 		fontColorSecondary: `${fontColor}`,
 		fontSelection: `${invert(fontColor)}`,
 		fullScreenHoldBg: ` linear-gradient( ${invert(bgColor)}, ${invert(
@@ -54,7 +56,7 @@ export const themeMaker = (theme = defaultBaseValues) => {
 		modalFullScreenBgColor: `transparent`,
 		modalFullScreenBgMobile: `linear-gradient(to bottom, ${gradientValues})`,
 		navBarBg: "transparent",
-		navBarBgComplement: `${rgba(complementBg, 0.65)}`,
+		navBarBgComplement: `${complementBg}`,
 		navBarButtonColor: `${rgba(fontColor, 0.65)}`,
 		navBarHoverFocus: `${fontColor}`,
 		navBarHoverFocusAction: "none",
@@ -105,6 +107,7 @@ export const themeBgMaker = (theme = defaultBgImageValues) => {
 		appfontFamilyWide: `"roc-grotesk-wide", -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif`,
 		appfontFamilyExtraWide: `"roc-grotesk-extrawide", -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif`,
 		bgColor: `${bgColor}`,
+		bgColorOverlay: `${rgba(readableColor(fontColor), 0.19)}`,
 		buttonFontWeight: `700`,
 		buttonLineHeight: ` 1.2`,
 		navBarButtonComplementaryText: `${rgba(fontColorComplement, 0.65)}`,
@@ -121,7 +124,8 @@ export const themeBgMaker = (theme = defaultBgImageValues) => {
 		CTAColor: `${rgba(fontColor, 0.65)}`,
 		CTAColorSecondary: `${rgba(fontColor, 0.65)}`,
 		fontColor: `${fontColor}`,
-		navBarBgComplement: `${rgba(complementBg, 0.65)}`,
+		fontColorOpposite: `${readableColor(fontColor)}`,
+		navBarBgComplement: `${complementBg}`,
 		fontSelection: `${invert(fontColor)}`,
 		fullScreenHoldBg: ` linear-gradient( ${invert(bgColor)}, ${invert(
 			bgColor

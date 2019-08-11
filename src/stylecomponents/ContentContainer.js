@@ -196,6 +196,12 @@ export const ContentContainer = styled.article`
 	.less-image {
 		padding:0 20%;
 	}
+
+	.c-disable {
+		${mainTransition};
+		opacity: .4;
+		pointer-events: none;
+	}
 `;
 
 export default ContentContainer;

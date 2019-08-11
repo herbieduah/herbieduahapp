@@ -455,3 +455,26 @@ export const Marquee = props => {
 		</Reveal>
 	);
 };
+
+export const DisableSetting = props => {
+	const { currentTransition } = useContext(globalState);
+	const transitionClasses = getCurrentTransition(currentTransition);
+	const thisValue = props.thisValue;
+	const thatValue = props.thatValue;
+	const renderMe = thisValue === thatValue ? true : false;
+
+	return (
+		<Fragment>
+			{renderMe ? (
+				<Fragment>
+					<div className='c-disable'>{props.children}</div>
+					<Paragraph className='padding-left-right'>
+						<strong>{props.message}</strong>
+					</Paragraph>
+				</Fragment>
+			) : (
+				<Fragment>{props.children}</Fragment>
+			)}
+		</Fragment>
+	);
+};

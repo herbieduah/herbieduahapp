@@ -475,8 +475,16 @@ export const ThemeCircleContainer = styled.li`
 		&__button {
 			${mainTransition}
 			position: relative;
-			width: 5rem;
-			height: 5rem;
+			width: 9.5rem;
+			height: 9.5rem;
+			${mobile} {
+				width: 5rem;
+				height: 5rem;
+			}
+			${tablet} {
+				width: 7rem;
+				height: 7rem;
+			}
 			margin: 0 auto;
 			display: block;
 			border-radius: 50%;

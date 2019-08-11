@@ -21,6 +21,7 @@ import { sliderMobileWidth } from "../helpers";
 // ${props =>
 // 	props.isShowingMore ? `border-top: 1px solid rgba(255,255,255,.5)` : ``};
 const MenuContainer = styled.aside`
+	/* margin-top: 10px !important; */
 	${hideScrollbar};
 	width: 100%;
 	/* max-width: 500px; */

@@ -7,6 +7,7 @@ export const appfontFamilyWide = props => props.theme.appfontFamilyWide;
 export const appfontFamilyExtraWide = props =>
 	props.theme.appfontFamilyExtraWide;
 export const bgColor = props => props.theme.bgColor;
+export const bgColorOverlay = props => props.theme.bgColorOverlay;
 export const buttonFontWeight = props => props.theme.buttonFontWeight;
 export const buttonLineHeight = props => props.theme.buttonLineHeight;
 export const buttonBorder = props => props.theme.buttonBorder;
@@ -21,6 +22,7 @@ export const fontColor = props => props.theme.fontColor;
 export const fontColorComplement = props => props.theme.fontColorComplement;
 export const complementBg = props => props.theme.complementBg;
 export const fontColorSecondary = props => props.theme.fontColorSecondary;
+export const fontColorOpposite = props => props.theme.fontColorOpposite;
 export const fontSelection = props => props.theme.fontSelection;
 export const fullScreenHoldBg = props => props.theme.fullScreenHoldBg;
 export const logoBgColor = props => props.theme.logoBgColor;

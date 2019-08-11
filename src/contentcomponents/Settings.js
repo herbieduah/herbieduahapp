@@ -5,7 +5,8 @@ import {
 	HeadingTwo,
 	Header,
 	ContentShow,
-	SettingButton
+	SettingButton,
+	DisableSetting
 } from "../ContentHelpers";
 import { ShowIf } from "../ComponentHelpers";
 import Text from "../stylecomponents/Text";
@@ -65,11 +66,14 @@ const SettingsPage = ({ contentProps }) => {
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>
-				<HeadingTwo>Move Navigation Bar</HeadingTwo>
-				<Paragraph>
-					This setting moves navigations bar to the right or left.
-				</Paragraph>
-				<div className='stupidButtonHeight'>
+				<DisableSetting
+					thisValue={minimalMode}
+					thatValue={true}
+					message="You can't interact with this setting because you've made the app look like every other site">
+					<HeadingTwo>Move Navigation Bar</HeadingTwo>
+					<Paragraph>
+						This setting moves navigations bar to the right or left.
+					</Paragraph>
 					<ShowIf noAnimation thisValue={navBarRight} thatValue={true}>
 						<Text button onClick={moveNavBar} className='padding-left-right'>
 							Move Navigation bar to the left to the left, everything you need
@@ -81,7 +85,7 @@ const SettingsPage = ({ contentProps }) => {
 							Move Navigation Bar to the right
 						</Text>
 					</ShowIf>
-				</div>
+				</DisableSetting>
 				<HeadingTwo>Complementary Navigation Bar</HeadingTwo>
 				<Paragraph>
 					{" "}
@@ -158,31 +162,35 @@ const SettingsPage = ({ contentProps }) => {
 						Make It look like every other site
 					</Text>
 				</ShowIf>
-
-				<HeadingTwo>Switch sides (Failure)</HeadingTwo>
-				<Paragraph>
-					This lets you switch the content and the menu. This was one of the
-					first settings I had when I started developing this app but I
-					neglected it and failed to keep up with.
-				</Paragraph>
-				<Paragraph>
-					I mean it does what it's intended to do but it doesn't look good.
-				</Paragraph>
-				<Paragraph>
-					<strong>
-						Since this is a failed setting, it will revert back in 7 seconds
-					</strong>
-				</Paragraph>
-				<ShowIf noAnimation thisValue={switchSides} thatValue={true}>
-					<Text button onClick={failure} className='padding-left-right'>
-						Switch Sides for 7 Seconds
-					</Text>
-				</ShowIf>
-				<ShowIf noAnimation thisValue={switchSides} thatValue={false}>
-					<Text className='padding-left-right'>
-						Reverting back in 7 seconds
-					</Text>
-				</ShowIf>
+				<DisableSetting
+					thisValue={fullScreen}
+					thatValue={true}
+					message="You can't interact with this setting if the slider is not showing">
+					<HeadingTwo>Switch sides (Failure)</HeadingTwo>
+					<Paragraph>
+						This lets you switch the content and the menu. This was one of the
+						first settings I had when I started developing this app but I
+						neglected it and failed to keep up with.
+					</Paragraph>
+					<Paragraph>
+						I mean it does what it's intended to do but it doesn't look good.
+					</Paragraph>
+					<Paragraph>
+						<strong>
+							Since this is a failed setting, it will revert back in 7 seconds
+						</strong>
+					</Paragraph>
+					<ShowIf noAnimation thisValue={switchSides} thatValue={true}>
+						<Text button onClick={failure} className='padding-left-right'>
+							Switch Sides for 7 Seconds
+						</Text>
+					</ShowIf>
+					<ShowIf noAnimation thisValue={switchSides} thatValue={false}>
+						<Text className='padding-left-right'>
+							Reverting back in 7 seconds
+						</Text>
+					</ShowIf>
+				</DisableSetting>
 			</ContentShow>
 		</Fragment>
 	);

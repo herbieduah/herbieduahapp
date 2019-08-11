@@ -16,7 +16,9 @@ const BackgroundsPage = ({ contentProps }) => {
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>
-				<GenerateTheme type='bg' />
+				<div className='c-border marginLR paddingTB'>
+					<GenerateTheme type='bg' />
+				</div>
 			</ContentShow>
 		</Fragment>
 	);

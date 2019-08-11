@@ -48,18 +48,21 @@ const AboutMePage = () => {
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>
-				<Gif className='paddingLRMed' url={wakanda_1} />
+				<Gif className='paddingLRLarge' url={wakanda_1} />
 				<Image src={dherbstaAndDinchman} />
-				<Image className='paddingLRMed' src={herbieSelfieVisionary1480x1479} />
-				<Image className='paddingLRMed' src={herbiePancakes1480x1973} />
+				<Image
+					className='paddingLRLarge'
+					src={herbieSelfieVisionary1480x1479}
+				/>
+				<Image className='paddingLRLarge' src={herbiePancakes1480x1973} />
 				<Image src={herbieMeme1480x1480} />
-				<Image className='paddingLRMed' src={herbieBasketBall1480x1973} />
-				<Gif className='paddingLRMed' url={millyRockByPool_1} />
-				<Gif className='paddingLRMed' url={millyrockgrandcanyon} />
-				<Gif className='paddingLRMed' url={raveMillyRock_1} />
-				<Gif className='paddingLRMed' url={offRoadingDriving_1} />
+				<Image className='paddingLRLarge' src={herbieBasketBall1480x1973} />
+				<Gif className='paddingLRLarge' url={millyRockByPool_1} />
+				<Gif className='paddingLRLarge' url={millyrockgrandcanyon} />
+				<Gif className='paddingLRLarge' url={raveMillyRock_1} />
+				<Gif className='paddingLRLarge' url={offRoadingDriving_1} />
 				<Gif url={OffRoadSplash} />
-				<Gif className='paddingLRMed' url={photosSedona} />
+				<Gif className='paddingLRLarge' url={photosSedona} />
 			</ContentShow>
 		</Fragment>
 	);

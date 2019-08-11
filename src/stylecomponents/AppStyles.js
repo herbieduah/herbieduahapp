@@ -5,7 +5,8 @@ import {
 	appBg,
 	appBgMobile,
 	appBgColor,
-	appBgAnimation
+	bgColorOverlay
+	// appBgAnimation
 } from "./Themes/ThemeVariables";
 // animation: ${Gradients} 1.5s ease-in-out ${props =>
 // 	props.dragging ? "infinite" : ""};
@@ -21,6 +22,12 @@ export const HerbieDuahApp = styled.div`
 	position: relative;
 	margin: 0;
 	height: 100%;
+	&::after{
+		content:'';
+		${absoluteOverlay};
+		background-color: ${bgColorOverlay};
+
+	}
 	
 	.navbar {
 			${mainTransition}
@@ -32,10 +39,10 @@ export const HerbieDuahApp = styled.div`
 		${mainTransition}
 		opacity : ${props => (props.dragging ? "0" : "1")};
 		}
-		&__menu {
+		/* &__menu {
 				${mainTransition}
 				opacity : ${props => (props.dragging ? "0" : "1")};
-		}
+		} */
 		&__pane {
 			overflow: ${props => (props.isPortrait ? `initial` : `hidden`)};
 			&.vertical {

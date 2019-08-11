@@ -21,7 +21,9 @@ const GradientsPage = ({ contentProps }) => {
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>
-				<GenerateTheme type='gradient' />
+				<div className='c-border marginLR paddingTB'>
+					<GenerateTheme type='gradient' />
+				</div>
 			</ContentShow>
 		</Fragment>
 	);

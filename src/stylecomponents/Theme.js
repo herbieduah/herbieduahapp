@@ -67,7 +67,7 @@ export const themes = [
 			...bigMangoTheme
 		},
 		type: "gradient",
-		text: "Big Mangi",
+		text: "Big Mango",
 		desc: ""
 	},
 	{
