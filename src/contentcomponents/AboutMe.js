@@ -117,7 +117,7 @@ const AboutMePage = () => {
 						One of the four seperate occassions where I've done stand up comedy.
 					</Figcaption>
 				</FiGif>
-				<HeadingTwo>I love my field I am in</HeadingTwo>
+				<HeadingTwo>I love technology</HeadingTwo>
 				<Figure className='paddingLR' src={dherbstaAndDinchman}>
 					<Figcaption>
 						Me and my little bro next to my very first computer in Ghana. 2002?
