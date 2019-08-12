@@ -25,7 +25,7 @@ import testVideoHorizontal from "../media/videos/videosOfme/dadDance_1.mp4";
 
 // import ReactPlayer from "react-player";
 
-const header = "Hi, I'm Herbie";
+const header = "Hello";
 // There is an app for everything, in
 // 					the future, I believe there is going to be an app for everyone. I am
 // 					Herbie Duah, and this is my app.
@@ -66,8 +66,7 @@ const HomePage = ({ contentProps }) => {
 			</ContentShow>
 			<ContentShow more>
 				<div className='container'>
-					<Header>{header}</Header>
-
+					<Header>Hi I'm Herbie</Header>
 					<ShowIf noAnimation thisValue={"recruiter"} thatValue={whom}>
 						<Paragraph>
 							On average, I receive about 5 LinkedIn InMessage messages a week.
@@ -84,6 +83,14 @@ const HomePage = ({ contentProps }) => {
 						</Paragraph>
 					</ShowIf>
 					<Image src={cornishPastyPic} />
+					<Paragraph>
+						I am Phoenix based a Web developer/designer with five years of
+						experience. I graduated at Northern Arizona University with a degree
+						in Applied Computer Science. Somewhere along the way, I fell in love
+						with design. I enjoy any opportunity that allows me to use my coding
+						AND design skills
+						<Emoji className='emoji' symbol='🤓' label='nerd' />.
+					</Paragraph>
 					<HeadingTwo>An app for everyone</HeadingTwo>
 					<Paragraph>
 						In the future, I believe everyone is going to have their own app. I
@@ -100,18 +107,6 @@ const HomePage = ({ contentProps }) => {
 						people like you. Even though this portfolio is about me, I want you,
 						the user, to choose how you experience it
 						<Emoji className='emoji' symbol='🙂' label='smile' />.
-					</Paragraph>
-					<HeadingTwo>Work and experience</HeadingTwo>
-					<Paragraph>
-						I graduated at Northern Arizona University with a degree in Computer
-						Science. Somewhere along the way, I fell in love with design. I
-						enjoy any opportunity that allows me to use my coding AND design
-						skills
-						<Emoji className='emoji' symbol='🤓' label='nerd' />.
-					</Paragraph>
-					<Paragraph>
-						I am a Web developer and designer with five years of experience.
-						Currently based in Phoenix, Arizona.
 					</Paragraph>
 					{/* <Paragraph>
 						Nullam id dolor id nibh ultricies vehicula ut id elit. Curabitur

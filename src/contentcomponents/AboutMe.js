@@ -29,17 +29,17 @@ import graduation from "../media/images/picsOfMe/hd-graduation-2222.jpg";
 import dherbstaAndDinchman from "../media/images/picsOfMe/hd-dherbstaAndDinchman.JPG";
 //import africanWhite from "../media/images/picsOfMe/hd-africanWhite-1973.jpg";
 // import four0hfour from "../media/videos/videosOfme/404.mp4";
-import aptDancing_1 from "../media/videos/videosOfme/aptDancing_1.mp4";
+// import aptDancing_1 from "../media/videos/videosOfme/aptDancing_1.mp4";
 import carribeanQueen from "../media/videos/videosOfme/carribeanQueen.mp4";
-import dadDance_1 from "../media/videos/videosOfme/dadDance_1.mp4";
+// import dadDance_1 from "../media/videos/videosOfme/dadDance_1.mp4";
 // import good404Snow from "../media/videos/videosOfme/good404Snow.mp4";
 // import hammockChilling_1 from "../media/videos/videosOfme/hammockChilling_1.mp4";
 import millyRockByPool_1 from "../media/videos/videosOfme/millyRockByPool_1.mp4";
 import millyrockgrandcanyon from "../media/videos/videosOfme/millyrockgrandcanyon.mp4";
 import offRoadingDriving_1 from "../media/videos/videosOfme/offRoadingDriving_1.mp4";
 import OffRoadSplash from "../media/videos/videosOfme/OffRoadSplash.mp4";
-import offRoadStuck from "../media/videos/videosOfme/offRoadStuck.mp4";
-import photosSedona from "../media/videos/videosOfme/photosSedona.mp4";
+// import offRoadStuck from "../media/videos/videosOfme/offRoadStuck.mp4";
+// import photosSedona from "../media/videos/videosOfme/photosSedona.mp4";
 import raveMillyRock_1 from "../media/videos/videosOfme/raveMillyRock_1.mp4";
 import soreLoser_1 from "../media/videos/videosOfme/soreLoser_1.mp4";
 import StandUp from "../media/videos/videosOfme/StandUp.mp4";
@@ -71,7 +71,7 @@ const AboutMePage = () => {
 				<HeadingTwo>I love breakfast food</HeadingTwo>
 				<Image className='paddingLRLarge' src={herbiePancakes1480x1973} />
 				<HeadingTwo>I absolutely love puns.</HeadingTwo>
-				<Figure className='paddingLRLarge' src={herbieMeme1480x1480}>
+				<Figure src={herbieMeme1480x1480}>
 					<Figcaption>
 						Fun fact: This web app functions as Pun Generator when you flip your
 						phone to a landscape orientation.
@@ -121,7 +121,6 @@ const AboutMePage = () => {
 				<Figure className='paddingLR' src={dherbstaAndDinchman}>
 					<Figcaption>
 						Me and my little bro next to my very first computer in Ghana. 2002?
-						Maybe?
 					</Figcaption>
 				</Figure>
 			</ContentShow>
