@@ -121,10 +121,22 @@ export const ContentContainer = styled.article`
 			margin-bottom: 2.5rem;
 		}
 	}
-	.c-margin-bottom-med {
-		margin-bottom: .75rem;
+	.c-padding-bottom {
+		padding-bottom: 3rem !important;
 		${mobile} {
-			margin-bottom: .5rem;
+			padding-bottom: 2.5rem!important;
+		}
+	}
+	.c-padding-bottom-med {
+		padding-bottom: 2rem;
+		${mobile} {
+			padding-bottom: 1.5rem;
+		}
+	}
+	.c-margin-bottom-med {
+		margin-bottom: 1.5rem;
+		${mobile} {
+			margin-bottom: 1rem;
 		}
 	}
 	.padding-left-right, .paddingLR {
@@ -216,6 +228,15 @@ export const ContentContainer = styled.article`
 		margin-bottom: 7px;
 		${mobile} {
 			margin-bottom: 5px;
+		}
+	}
+	.c-interact {
+		margin-top: 2rem !important;
+			width: 100%;
+			/* ${props => (props.isPortrait ? `text-align: center` : ``)};
+		display: block; */
+		${mobile} {
+			margin-top: 1.5rem !important;
 		}
 	}
 `;

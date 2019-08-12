@@ -52,7 +52,7 @@ export const App = () => {
 
 	useEffect(() => {
 		const values = queryString.parse(window.location.search);
-		values.whom ? whoIsOnMyPage(values.whom) : console.log("no one");
+		values.whom ? whoIsOnMyPage(values.whom) : console.log("Hi");
 	});
 	// console.log(`Fullscreening: ${fullScreening}`);
 	// console.log(`Fullscreen: ${fullScreen}`);

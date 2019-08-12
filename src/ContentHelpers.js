@@ -163,6 +163,7 @@ export const Reveal = props => {
 
 export const Paragraph = props => {
 	const compClassName = props.className ? props.className : "";
+
 	return (
 		<Reveal>
 			<Text
@@ -182,7 +183,7 @@ export const Small = props => {
 				<Text
 					s
 					format
-					className={`c-margin-bottom-med padding-left-right ${compClassName}`}>
+					className={`c-margin-bottom-med  paddingLR ${compClassName}`}>
 					{props.children}
 				</Text>
 			</small>
@@ -276,7 +277,7 @@ export const Image = props => {
 				type='image'
 				src={src}
 				alt={alt}
-				className={`${spacingBottom} ${imageClass}`}
+				className={`${spacingBottomMed} ${imageClass}`}
 			/>
 		</Reveal>
 	);
