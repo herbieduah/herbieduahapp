@@ -18,6 +18,7 @@ import {
 	Resume,
 	SpecialThanks,
 	Theme,
+	Puns,
 	Places,
 	Ugg,
 	UXvsHX,
@@ -82,6 +83,7 @@ export const Content = ({ location }) => {
 							<Route path='/Ugg' component={Ugg} />
 							<Route path='/UXvsHX' component={UXvsHX} />
 							<Route path='/HerbieDuahApp' component={HerbieDuahApp} />
+							<Route path='/Puns' component={Puns} />
 							<Route path='/Contacts' component={Contacts} />
 							<Route path='/Modeling' component={Modeling} />
 							<Route component={FourOhFour} />

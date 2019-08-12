@@ -10,6 +10,7 @@ import PeoplePage from "./contentcomponents/People";
 import IPhonePage from "./contentcomponents/IPhone";
 import StartNowPage from "./contentcomponents/StartNow";
 import PhotographyPage from "./contentcomponents/Photography";
+import PunsPage from "./contentcomponents/Puns";
 import ResumePage from "./contentcomponents/Resume";
 import SpecialThanksPage from "./contentcomponents/SpecialThanks";
 import ThemePage from "./contentcomponents/Theme";
@@ -35,6 +36,12 @@ export const AboutMe = () => (
 export const FourOhFour = () => (
 	<ContentWrapper>
 		<FourOhFourPage />
+	</ContentWrapper>
+);
+
+export const Puns = () => (
+	<ContentWrapper>
+		<PunsPage />
 	</ContentWrapper>
 );
 

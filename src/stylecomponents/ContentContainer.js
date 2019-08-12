@@ -12,7 +12,10 @@ import {
 	marginLR,
 	paddingTB,
 	paddingLRLarge,
-	paddingLRMed
+	paddingLRMed,
+	marginLRLarge,
+	marginLRMed,
+	slightBoxShadowBelow
 } from "./StyleHelpers";
 import { CTAColor } from "./Themes/ThemeVariables";
 
@@ -133,6 +136,12 @@ export const ContentContainer = styled.article`
 	.paddingLRLarge {
 		${paddingLRLarge}
 	}
+	.marginLRMed {
+		${marginLRMed}
+	}
+	.marginLRLarge {
+		${marginLRLarge}
+	}
 	.padding-top-bottom, .paddingTB {
 		${paddingTB}
 	}
@@ -201,6 +210,13 @@ export const ContentContainer = styled.article`
 		${mainTransition};
 		opacity: .4;
 		pointer-events: none;
+	}
+	.c-mockup {
+		${slightBoxShadowBelow};
+		margin-bottom: 7px;
+		${mobile} {
+			margin-bottom: 5px;
+		}
 	}
 `;
 

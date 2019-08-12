@@ -162,11 +162,12 @@ export const Reveal = props => {
 };
 
 export const Paragraph = props => {
+	const compClassName = props.className ? props.className : "";
 	return (
 		<Reveal>
 			<Text
 				m
-				className={`c-margin-bottom-med ${props.className} padding-left-right`}>
+				className={`c-margin-bottom-med ${compClassName} padding-left-right`}>
 				{props.children}
 			</Text>
 		</Reveal>
@@ -174,15 +175,14 @@ export const Paragraph = props => {
 };
 
 export const Small = props => {
+	const compClassName = props.className ? props.className : "";
 	return (
 		<Reveal>
 			<small>
 				<Text
 					s
 					format
-					className={`c-margin-bottom-med padding-left-right ${
-						props.className
-					}`}>
+					className={`c-margin-bottom-med padding-left-right ${compClassName}`}>
 					{props.children}
 				</Text>
 			</small>
@@ -205,15 +205,14 @@ export const SettingButton = props => {
 };
 
 export const HeadingOne = props => {
+	const compClassName = props.className ? props.className : "";
 	return (
 		<Reveal>
 			<Text
 				h1
 				xxl
 				bold
-				className={`c-margin-bottom c-margin-top-med  ${
-					props.className
-				}  padding-left-right `}>
+				className={`c-margin-bottom c-margin-top-med  ${compClassName}  padding-left-right `}>
 				{props.children}
 			</Text>
 		</Reveal>
@@ -221,14 +220,13 @@ export const HeadingOne = props => {
 };
 
 export const HeadingTwo = props => {
+	const compClassName = props.className ? props.className : "";
 	return (
 		<Reveal>
 			<Text
 				h2
 				xl
-				className={` ${
-					props.className
-				} container c-margin-top  padding-left-right`}>
+				className={` ${compClassName} container c-margin-top  padding-left-right`}>
 				{props.children}
 			</Text>
 		</Reveal>
@@ -236,14 +234,13 @@ export const HeadingTwo = props => {
 };
 
 export const HeadingThree = props => {
+	const compClassName = props.className ? props.className : "";
 	return (
 		<Reveal>
 			<Text
 				h2
 				l
-				className={`c-margin-top  c-margin-bottom-med padding-left-right ${
-					props.className
-				}container`}>
+				className={`c-margin-top  c-margin-bottom-med padding-left-right ${compClassName}container`}>
 				{props.children}
 			</Text>
 		</Reveal>
@@ -272,13 +269,14 @@ export const Image = props => {
 	// const height = props.height;
 	const src = props.src;
 	const alt = props.alt ? props.alt : defaultAlt;
+	const imageClass = props.className ? props.className : "";
 	return (
 		<Reveal>
 			<Media
 				type='image'
 				src={src}
 				alt={alt}
-				className={`${spacingBottom} ${props.className}`}
+				className={`${spacingBottom} ${imageClass}`}
 			/>
 		</Reveal>
 	);
@@ -288,19 +286,31 @@ export const Figure = props => {
 	// const height = props.height;
 	const src = props.src;
 	const alt = props.alt ? props.alt : defaultAlt;
+	const figClass = props.className ? props.className : "";
+	const mockup = props.mockup ? true : false;
 	return (
 		<Reveal>
-			<figure className={`${spacingBottom} ${props.className}`}>
-				<Media type='image' src={src} alt={alt} />
-				{props.children}
+			<figure className={`c-margin-bottom`}>
+				{mockup ? (
+					<div className={figClass}>
+						<Media type='image' className='c-mockup' src={src} alt={alt} />
+						{props.children}
+					</div>
+				) : (
+					<Fragment>
+						<Media type='image' className={figClass} src={src} alt={alt} />
+						{props.children}
+					</Fragment>
+				)}
 			</figure>
 		</Reveal>
 	);
 };
 
 export const Figcaption = props => {
+	const figClass = props.className ? props.className : "";
 	return (
-		<Text s className={props.className} figcaption>
+		<Text s className={`${figClass} paddingLR`} center figcaption>
 			{props.children}
 		</Text>
 	);

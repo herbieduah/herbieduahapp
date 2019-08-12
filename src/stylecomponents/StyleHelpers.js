@@ -84,6 +84,16 @@ ${mobile} {
 	padding: 0 20% ;
 }`;
 
+export const marginLRMed = `margin: 0 20%;
+${mobile} {
+	margin: 0 15% ;
+}`;
+
+export const marginLRLarge = `margin: 0 25% ;
+${mobile} {
+	margin: 0 20% ;
+}`;
+
 export const paddingTB = `padding: 20px 0px ;
 ${mobile} {
 	padding: 1rem 0;

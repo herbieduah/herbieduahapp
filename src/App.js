@@ -13,6 +13,7 @@ import SliderLine from "./maincomponents/Revealer/SliderLine";
 import { FullScreenOverlay, NavBar } from "./ComponentHelpers";
 import queryString from "query-string";
 import Text from "./stylecomponents/Text";
+import { Puns } from "./Pages";
 import { isMobileOnly } from "react-device-detect";
 import {
 	getCurrentTheme,
@@ -65,6 +66,7 @@ export const App = () => {
 				className='hdapp'
 				isPortrait={isPortrait(ww, wh)}
 				splitSize={splitSize}
+				showFSMobileHorizontal={showFSMobileHorizontal}
 				dragging={dragging}>
 				<div className='in-dev'>
 					<Text s className='alpha-text'>
@@ -78,7 +80,7 @@ export const App = () => {
 				{/* <SliderLine /> */}
 				{/* {dragging ? <DragInstructions /> : null} */}
 
-				{fullScreen || showFSMobileHorizontal ? <Content /> : null}
+				{fullScreen || showFSMobileHorizontal ? <Puns /> : null}
 				{/* <Content /> */}
 				{/* {fullScreen ? <h1>Here I am</h1> : null} */}
 				{dragging ? <SliderLine /> : null}

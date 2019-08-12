@@ -26,18 +26,22 @@ export const HerbieDuahApp = styled.div`
 		content:'';
 		${absoluteOverlay};
 		background-color: ${bgColorOverlay};
+		pointer-events: none;
 
 	}
 	
 	.navbar {
 			${mainTransition}
 			opacity : ${props => (props.dragging ? "0" : "1")};
+			${props => (props.showFSMobileHorizontal ? "display:none;" : "")};
 	}
 	.hdapp {
 		
 		.navbar {
 		${mainTransition}
 		opacity : ${props => (props.dragging ? "0" : "1")};
+		
+
 		}
 		/* &__menu {
 				${mainTransition}
