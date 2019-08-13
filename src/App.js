@@ -6,7 +6,8 @@ import SplitPane from "./maincomponents/Revealer/SplitPane";
 // import SliderLine from "./maincomponents/Revealer/SliderLine";
 import { HerbieDuahApp } from "./stylecomponents/AppStyles";
 import ContentMenu from "./maincomponents/ContentMenu";
-import Content from "./maincomponents/Content";
+// import Content from "./maincomponents/Content";
+// import { UseTrackedProvider } from "./StateTracked";
 // import { DragInstructions } from "./Actions";
 import { defaultAppTheme } from "./stylecomponents/Theme";
 import SliderLine from "./maincomponents/Revealer/SliderLine";
@@ -62,6 +63,7 @@ export const App = () => {
 	// console.log(splitSize);
 	return (
 		<ThemeProvider theme={currentThemeObject}>
+			{/* <UseTrackedProvider> */}
 			<HerbieDuahApp
 				className='hdapp'
 				isPortrait={isPortrait(ww, wh)}
@@ -106,6 +108,7 @@ export const App = () => {
 					</SplitPane>
 				) : null}
 			</HerbieDuahApp>
+			{/* </UseTrackedProvider> */}
 		</ThemeProvider>
 	);
 };

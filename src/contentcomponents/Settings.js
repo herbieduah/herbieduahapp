@@ -10,6 +10,7 @@ import {
 } from "../ContentHelpers";
 import { ShowIf } from "../ComponentHelpers";
 import Text from "../stylecomponents/Text";
+import { useTracked } from "react-tracked";
 // import Emoji from "a11y-react-emoji";
 const header = "Settings";
 
@@ -30,9 +31,22 @@ const SettingsPage = ({ contentProps }) => {
 		fullScreen,
 		setFullscreen
 	} = contentProps;
+	// const [state, dispatch] = useTracked();
+	// console.log(state.boolbool);
+	// console.log(state.stringstring);
 	const moveNavBar = () => {
 		navBarRight ? setNavBarRight(false) : setNavBarRight(true);
 	};
+	// const setBoolBool = () => {
+	// 	state.boolbool
+	// 		? dispatch({ type: "setBoolBoolFalse" })
+	// 		: dispatch({ type: "setBoolBoolTrue" });
+	// 	// console.log("bool bool");
+	// 	console.log(state.boolbool);
+	// };
+	// const setStringString = () => {
+	// 	state.boolbool ? () => dispatch({ type: 'setBoolBool', boolbool: false }) :  () => dispatch({ type: 'setBoolBool', boolbool: true });
+	// };
 	const complementNavBar = () => {
 		navBarComplement ? setNavBarComplement(false) : setNavBarComplement(true);
 	};
@@ -66,6 +80,9 @@ const SettingsPage = ({ contentProps }) => {
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>
+				{/* <Text button onClick={setBoolBool} className='padding-left-right'>
+					set bool bool
+				</Text> */}
 				<DisableSetting
 					thisValue={minimalMode}
 					thatValue={true}
