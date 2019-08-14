@@ -80,7 +80,8 @@ export const App = () => {
 				{/* <SliderLine /> */}
 				{/* {dragging ? <DragInstructions /> : null} */}
 
-				{fullScreen || showFSMobileHorizontal ? <Puns /> : null}
+				{fullScreen && !showFSMobileHorizontal ? <Content /> : null}
+				{showFSMobileHorizontal ? <Puns /> : null}
 				{/* <Content /> */}
 				{/* {fullScreen ? <h1>Here I am</h1> : null} */}
 				{dragging ? <SliderLine /> : null}
