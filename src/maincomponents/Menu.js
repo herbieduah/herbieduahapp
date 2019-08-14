@@ -49,11 +49,12 @@ export const ContentMenu = () => {
 								<nav className='menu__more'>
 									<SubMenu showCategory={isShowingMore} category='customize' />
 									<SubMenu showCategory={isShowingMore} category='work' />
-									<SubMenu showCategory={isShowingMore} category='about' />
 									<SubMenu
 										showCategory={isShowingMore}
 										category='photography'
 									/>
+									<SubMenu showCategory={isShowingMore} category='about' />
+									
 									<div className='offset' />
 								</nav>
 							</div>

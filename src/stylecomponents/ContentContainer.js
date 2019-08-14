@@ -17,7 +17,7 @@ import {
 	marginLRMed,
 	slightBoxShadowBelow
 } from "./StyleHelpers";
-import { CTAColor } from "./Themes/ThemeVariables";
+import { CTAColor, navBarBorder } from "./Themes/ThemeVariables";
 
 export const ContentContainer = styled.article`
 	width: 100%;
@@ -170,7 +170,12 @@ export const ContentContainer = styled.article`
 		vertical-align: baseline;
 	}
 	.c-border {
-		border: 1px solid ${CTAColor};
+		border: 1px solid ${navBarBorder};
+		${paddingTB}
+		
+		 ${props => (props.isPortrait ? `` : `${paddingTB}`)};
+		 ${props => (props.isPortrait ? `` : `${marginLR}`)};
+
 	}
 	.c-margin-top-med {
 		margin-top: 2.5rem;
@@ -237,6 +242,35 @@ export const ContentContainer = styled.article`
 		display: block; */
 		${mobile} {
 			margin-top: 1.5rem !important;
+		}
+	}
+	.c-submenu {
+		margin-top: 3.5rem;
+		${mobile} {
+			margin-top: 3rem;
+		}
+		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+		${mobile} {
+			display:block
+		}
+		&__item {
+			margin-bottom: 1.5rem;
+			list-style-type: none;
+			margin-right: ${navBarSize};
+			
+			white-space: nowrap;
+			${mobile} {
+				margin-right: 0;
+			}
+		}
+		&__text {
+			margin-top: 1rem;
+			${mobile} {
+				margin-top: 2.5rem;
+			}
 		}
 	}
 `;

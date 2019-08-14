@@ -116,11 +116,11 @@ ${mobile} {
 
 export const contentMenuMargin = `margin: ${navBarSize};
 ${mobile} {
-	margin: ${navBarSize} 0 ${navBarSize}   ${navBarSize};
+	margin: 0;
 }`;
 export const contentMenuMarginRight = `margin: ${navBarSize};
 ${mobile} {
-	margin: ${navBarSize} ${navBarSize}  ${navBarSize}   0;
+	margin: 0;
 }`;
 
 export const container = `
