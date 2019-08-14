@@ -11,17 +11,13 @@ const UXvsHXPage = () => {
 	return (
 		<Fragment>
 			<ContentShow less>
-				<Paragraph>
-					{" "}
-					There is an app for everything, in the future, I believe there is
-					going to be an app for everyone. I am Herbie Duah, and this is my app.
-				</Paragraph>
+				<Paragraph> Every one is going to have their own app.</Paragraph>
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>
-				<Paragraph>
-					There is an app for everything, in the future, I believe there is
-					going to be an app for everyone. I am Herbie Duah, and this is my app.
+				<Paragraph classNAme='alpha'>
+					I am going to try and convince you why everyone is going to have their
+					own app
 				</Paragraph>
 			</ContentShow>
 		</Fragment>

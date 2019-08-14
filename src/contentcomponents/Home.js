@@ -44,8 +44,8 @@ const HomePage = ({ contentProps }) => {
 					<Paragraph>
 						Nowadays, there is an app for everything. In the future, I believe
 						there is going to be an app for everyone. This belief and my passion
-						for crafting user experiences inspired me to design and engineer
-						this web app.
+						for crafting user experiences inspired me to design and engineer my
+						own app.
 					</Paragraph>
 					<Small className='c-interact'>
 						Interact with the slider to reveal more.&nbsp;

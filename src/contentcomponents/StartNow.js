@@ -38,13 +38,55 @@ const StartNowPage = ({ contentProps }) => {
 		<Fragment>
 			<ContentShow less>
 				<Paragraph>
-					Revamped a traveling exhibit site for my senior capstone.
+					I worked directly with the Career Development Director to create a
+					series of posters, digital art, documents, videos, and other mediums
+					geared towards helping students start their career.
 				</Paragraph>
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>
 				<Paragraph>
-					<span className='alpha'>Writing out the content</span>
+					My first job was working directly with the Career Development Director
+					for the Northern Arizona University (deep breath) College of
+					Engineering and Natural Sciences (CEFNS).
+				</Paragraph>
+				<Paragraph>
+					Our main goal was to help CEFNS students start their career.
+				</Paragraph>
+				<HeadingTwo>Start Now Campaign</HeadingTwo>
+				<Paragraph>
+					The Start Now campaign was a series of posters, digital art,
+					documents, videos and other mediums geared toward that primary goal.
+				</Paragraph>
+				<Paragraph>
+					We chose to go with a 1920s Vintage Travel Posters for the art
+					direction because starting a career is like a journey.
+				</Paragraph>
+				<HeadingTwo>Web Design</HeadingTwo>
+				<Paragraph>
+					We wanted to drive everyone to our page on the Northern Arizona
+					University (NAU) website through our posters. The problem was at the
+					time, the Content Management System (CMS) was very archaic and
+					extremely limited in terms of customization. Most of our target
+					audience needed to be able to access the content on mobile, but the
+					CMS was not mobile-friend.
+				</Paragraph>
+				<Paragraph>We had to get creative.</Paragraph>
+				<HeadingTwo>
+					How To Write an Excellent Resume and Cover Letter.
+				</HeadingTwo>
+				<Paragraph>
+					I utilized a software called VideoScribe to create two very
+					informative videos on how to write a resume and cover letter.
+				</Paragraph>
+				<HeadingTwo>Modeling for Career development</HeadingTwo>
+				<Paragraph>
+					I volunteered to be in a photo shoot, and I pretty much became the
+					face of Career Development at NAU.
+				</Paragraph>
+				<HeadingTwo>In Conclusion</HeadingTwo>
+				<Paragraph>
+					Overall, I couldn't have asked for a better first job.
 				</Paragraph>
 				<Figure
 					className='padding-left-right'
