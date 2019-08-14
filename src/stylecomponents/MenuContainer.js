@@ -4,7 +4,7 @@ import {
 	fontColor,
 	mainTransition,
 	hideScrollbar,
-	mobileSliderOnBottom,
+	// mobileSliderOnBottom,
 	slightBoxShadowAbove,
 	contentMenuMargin,
 	// contentMenuMargin,
@@ -15,8 +15,8 @@ import {
 	paddingLR,
 	navBarSize
 } from "./StyleHelpers";
-import { CTAColor, navBarBorder } from "./Themes/ThemeVariables";
-import { sliderMobileWidth } from "../helpers";
+import { CTAColor } from "./Themes/ThemeVariables";
+// import { sliderMobileWidth } from "../helpers";
 
 // ${props =>
 // 	props.isShowingMore ? `border-top: 1px solid rgba(255,255,255,.5)` : ``};
@@ -29,7 +29,7 @@ const MenuContainer = styled.aside`
 	${props =>
 		props.isShowingMore && props.isPortrait ? `position:absolute;` : ``};
 	overflow: auto;
-	top:-40px;
+	top:0px;
 	${tablet} {
 		top:0px;
 	}
@@ -40,7 +40,9 @@ const MenuContainer = styled.aside`
 	z-index: 10;
 	${props => (props.navBarRight ? contentMenuMarginRight : contentMenuMargin)};
 	${props =>
-		props.navBarRight && props.isPortrait ? `padding-right:${navBarSize}` : ``};
+		props.navBarRight && props.isPortrait
+			? `padding-right:${navBarSize}`
+			: `padding-left:${navBarSize}`};
 	${mainTransition}
 	margin-top: 0;
 	margin-left: 0;

@@ -48,7 +48,9 @@ const HerbieDuahAppPage = ({ contentProps }) => {
 
 				<Gif url={herbieduahComiPad} />
 				<Paragraph>
-					<span className='alpha'>Coming soon</span>
+					<span className='alpha'>
+						This will probably the last page to be finished.
+					</span>
 				</Paragraph>
 			</ContentShow>
 		</Fragment>

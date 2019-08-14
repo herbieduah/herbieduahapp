@@ -28,8 +28,13 @@ export const SubMenu = props => {
 					) : null}
 					<SubMenuWrapper showCategory={showCategory}>
 						<li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink to='/HerbieDuahApp'>
-								Herbie&shy;Duah.app
+							<Text menuLink to='/StartNow'>
+								Start Now
+							</Text>
+						</li>
+						<li onClick={hideModal} className='subMenu__item'>
+							<Text menuLink to='/BedzinExhibit'>
+								Będzin Exhibit
 							</Text>
 						</li>
 						<li onClick={hideModal} className='subMenu__item'>
@@ -43,8 +48,8 @@ export const SubMenu = props => {
 							</Text>
 						</li>
 						<li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink to='/BedzinExhibit'>
-								Będzin Exhibit
+							<Text menuLink to='/HerbieDuahApp'>
+								Herbie&shy;Duah.app
 							</Text>
 						</li>
 						{/* <li onClick={hideModal} className='subMenu__item'>
@@ -52,12 +57,6 @@ export const SubMenu = props => {
 								Cultural $uicide
 							</Text>
 						</li> */}
-
-						<li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink to='/StartNow'>
-								Start Now
-							</Text>
-						</li>
 					</SubMenuWrapper>
 				</div>
 			);
@@ -78,8 +77,8 @@ export const SubMenu = props => {
 							</Text>
 						</li>
 						<li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink to='/AboutMe'>
-								About Me
+							<Text menuLink to='/Resume'>
+								Experience
 							</Text>
 						</li>
 						<li onClick={hideModal} className='subMenu__item'>
@@ -92,9 +91,10 @@ export const SubMenu = props => {
 								Inspiration
 							</Text>
 						</li> */}
+
 						<li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink to='/Resume'>
-								Experience
+							<Text menuLink to='/AboutMe'>
+								About Me
 							</Text>
 						</li>
 					</SubMenuWrapper>

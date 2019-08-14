@@ -1,6 +1,6 @@
 import React, { createContext, useState, useContext } from "react";
 import { defaultContentWidth, defaultContentHeight } from "./helpers.js";
-import track, { useTracking } from "react-tracking";
+// import track, { useTracking } from "react-tracking";
 
 // Will hold global state
 export const globalState = createContext();
@@ -28,7 +28,7 @@ export const StateProvider = ({ children }) => {
 	const [dragging, setDragging] = useState(false);
 	const [fullScreening, setFullScreening] = useState(false);
 	const [fullScreen, setFullscreen] = useState(false);
-	const [navBarRight, setNavBarRight] = useState(false);
+	const [navBarRight, setNavBarRight] = useState(true);
 	const [modalVisible, setModalVisible] = useState(false);
 	const [navBarComplement, setNavBarComplement] = useState(false);
 	const [minimalMode, setMinimalMode] = useState(false);

@@ -29,7 +29,7 @@ const SpecialThanksPage = () => {
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>
-				<div className='margin-left-right  padding-top-bottom c-border'>
+				<div className='c-border'>
 					<Marquee playing={marqueePlay}>
 						<Text format xl extrawide>
 							Daliza Jeffrey

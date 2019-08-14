@@ -11,6 +11,8 @@ import {
 } from "./helpers";
 import ClickNHold from "react-click-n-hold";
 import Fade from "react-reveal/Fade";
+import Zoom from "react-reveal/Zoom";
+import SubMenu from "./maincomponents/SubMenu";
 import Text from "./stylecomponents/Text";
 import Media from "./maincomponents/Media";
 import { themes } from "./stylecomponents/Theme";
@@ -158,6 +160,20 @@ export const Reveal = props => {
 		<Fade duration={revealSecs}>
 			<div>{props.children}</div>
 		</Fade>
+	);
+};
+
+export const ContentCategory = props => {
+	return (
+		<ShowIf noAnimation thisValue={props.fullScreen} thatValue={true}>
+		<Zoom duration={revealSecs}>
+			<div>
+			<nav className="c-submenu">
+				<SubMenu showCategory={true} category={props.category} />
+			</nav>
+			</div>	
+		</Zoom>
+		</ShowIf>
 	);
 };
 

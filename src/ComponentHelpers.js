@@ -301,14 +301,15 @@ export const MenuTabs = props => {
 				</Tab>
 				<Tab>
 					<Text format bold m>
-						About
+						Photography
 					</Text>
 				</Tab>
 				<Tab>
 					<Text format bold m>
-						Photography
+						About
 					</Text>
 				</Tab>
+				
 			</TabList>
 			<TabPanel>
 				<nav>
@@ -322,12 +323,12 @@ export const MenuTabs = props => {
 			</TabPanel>
 			<TabPanel>
 				<nav>
-					<SubMenu showCategory={showCategory} category='about' />
+				<SubMenu showCategory={showCategory} category='photography' />
 				</nav>
 			</TabPanel>
 			<TabPanel>
 				<nav>
-					<SubMenu showCategory={showCategory} category='photography' />
+					<SubMenu showCategory={showCategory} category='about' />
 				</nav>
 			</TabPanel>
 		</ReactTabs>
