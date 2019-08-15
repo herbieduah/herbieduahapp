@@ -15,9 +15,10 @@ import {
 	paddingLRMed,
 	marginLRLarge,
 	marginLRMed,
-	slightBoxShadowBelow
+	slightBoxShadowBelow,
+	userSelectNone
 } from "./StyleHelpers";
-import { CTAColor, navBarBorder } from "./Themes/ThemeVariables";
+import { navBarBorder, CTAColor } from "./Themes/ThemeVariables";
 
 export const ContentContainer = styled.article`
 	width: 100%;
@@ -79,8 +80,11 @@ export const ContentContainer = styled.article`
 		&__header {
 			h1 {
 				${mainTransition}
-				user-select: none;
+				${userSelectNone}
 				cursor: pointer;
+				&:hover {
+					color: ${CTAColor};
+				}
 			}
 		}
 		&__less {
@@ -166,13 +170,17 @@ export const ContentContainer = styled.article`
 			margin-top: 3rem;
 		}
 	}
+	.c-margin-top-large {
+		margin-top: 4.5rem;
+		${mobile} {
+			margin-top: 4rem;
+		}
+	}
 	.emoji {
 		vertical-align: baseline;
 	}
 	.c-border {
-		border: 1px solid ${navBarBorder};
-		${paddingTB}
-		
+		 border: ${navBarBorder};
 		 ${props => (props.isPortrait ? `` : `${paddingTB}`)};
 		 ${props => (props.isPortrait ? `` : `${marginLR}`)};
 

@@ -1,10 +1,13 @@
 
-<svg width="100%" height="100%" class="hdlogo" viewBox="0 0 1000 1000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <g id="logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <rect class="outer-rect" fill="#000000" x="0" y="0" width="1000" height="1000"></rect>
-        <rect class="inner-rect" stroke="#FFFFFF" fill="#FFFFFF" x="150.5" y="150.5" width="249" height="274"></rect>
-        <rect class="inner-rect" stroke="#FFFFFF" fill="#FFFFFF" x="150.5" y="575.5" width="249" height="274"></rect>
-        <path class="inner-rect" d="M350.250493,649.749983 C350.565371,484.294422 507.144836,350.249983 700.250017,350.249983 C893.355198,350.249983 1049.93466,484.294422 1050.24954,649.749983 L350.250459,649.749983 Z" id="Combined-Shape" stroke="#FFFFFF" fill="#FFFFFF" transform="translate(700.250000, 499.999983) rotate(-270.000000) translate(-700.250000, -499.999983) "></path>
+<svg width="100%" height="100%" viewBox="0 0 1000 1000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <title>Herbie Duah logo</title>
+    <desc>My personal logo.</desc>
+    <g id="HerbieDuahLogo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect class="outer-rect" fill="#FFFFFF" x="0" y="0" width="1000" height="1000"></rect>
+        <rect class="inner-rect"  fill="#212121" x="150" y="150" width="250" height="275"></rect>
+        <rect class="inner-rect"  fill="#212121" x="150" y="575" width="250" height="275"></rect>
+        <path class="inner-rect" d="M362.250423,661.749985 C362.542002,483.039585 519.130425,338.249985 712.250015,338.249985 C905.369604,338.249985 1061.95803,483.039585 1062.24961,661.749985 L362.250393,661.749985 Z" id="Combined-Shape" fill="#212121" transform="translate(712.250000, 499.999985) rotate(-270.000000) translate(-712.250000, -499.999985) "></path>
         <path d="" id="Path" stroke="#979797"></path>
     </g>
 </svg>

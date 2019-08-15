@@ -114,11 +114,11 @@ ${mobile} {
 	padding: ${navBarSize} ${navBarSize}  ${navBarSize}   0;
 }`;
 
-export const contentMenuMargin = `margin: ${navBarSize};
+export const contentMenuMargin = `margin: ${navBarSize} 0;
 ${mobile} {
 	margin: 0;
 }`;
-export const contentMenuMarginRight = `margin: ${navBarSize};
+export const contentMenuMarginRight = `margin: ${navBarSize} 0;
 ${mobile} {
 	margin: 0;
 }`;
@@ -128,6 +128,11 @@ max-width: 740px;
 			width: 100%;
 			margin: 0 auto;
 `;
+
+export const userSelectNone = `
+${mobile} {
+	user-select: none;
+}`;
 
 export const showMore = props => props.appValues.isShowingMore;
 export const appGradient = props => rgba(props.theme.bgColor, 0.0);

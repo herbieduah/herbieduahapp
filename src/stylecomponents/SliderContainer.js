@@ -3,7 +3,8 @@ import {
 	mobile,
 	absoluteOverlay,
 	mainTransition,
-	slightCircleBoxShadow
+	slightCircleBoxShadow,
+	userSelectNone
 } from "./StyleHelpers";
 import {
 	sliderArrow,
@@ -30,7 +31,7 @@ export const SliderContainer = styled.div`
 	position: absolute;
 	outline: none;
 	overflow: hidden;
-	user-select: none;
+	${userSelectNone}
 	${props =>
 		props.direction === "vertical"
 			? `flex-direction: row;
@@ -49,7 +50,7 @@ export const SliderContainer = styled.div`
 			z-index: 3;
 			display: flex;
 			align-items: center;
-			user-select: none;
+			${userSelectNone}
 			position: relative;
 		}
 		&__resizer.horizontal {
@@ -94,7 +95,7 @@ export const SliderContainer = styled.div`
 // *TODO sliderCircleOpacity: `0`,
 export const SliderController = styled.div`
 	.slider {
-		user-select: none;
+		${userSelectNone}
 		&__triangle {
 			${mainTransition}
 			width: 0;
@@ -182,7 +183,7 @@ export const SliderLineContainer = styled.div`
 	left: 0;
 	right: 0;
 	opacity: 1;
-	
+	${userSelectNone};
 	${props =>
 		props.isPortrait
 			? `
@@ -200,7 +201,7 @@ export const SliderLineContainer = styled.div`
 		z-index: 10;
 		opacity: 0.5;
 		height: ${props => (props.isPortrait ? `100%` : `2px`)};
-		user-select: none;
+		${userSelectNone}
 		background-image: ${props =>
 			props.isPortrait ? sliderLinePortrait : sliderLine};
 		background-size: ${props => (props.isPortrait ? `100% 25px;` : `25px 100%;`)};

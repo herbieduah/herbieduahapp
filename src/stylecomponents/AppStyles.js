@@ -1,6 +1,11 @@
 import styled from "styled-components";
 import { Gradients } from "./Animations";
-import { fluidTypeInfo, absoluteOverlay, mainTransition } from "./StyleHelpers";
+import {
+	fluidTypeInfo,
+	absoluteOverlay,
+	mainTransition,
+	userSelectNone
+} from "./StyleHelpers";
 import {
 	appBg,
 	appBgMobile,
@@ -75,6 +80,7 @@ export const HerbieDuahApp = styled.div`
 			width:100%;
 			text-align:center;
 			pointer-events: none;
+			${userSelectNone}
 		}
 		.in-dev {
 			${absoluteOverlay}
