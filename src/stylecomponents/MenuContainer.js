@@ -33,28 +33,35 @@ const MenuContainer = styled.aside`
 	${tablet} {
 		top:0px;
 	}
-	${props => (props.switchSides ? `margin-left: auto` : `margin-right: auto`)};
+	padding: 0 ${navBarSize};
 	/* border-top: 1px solid ${CTAColor}; */
 	display: flex;
 	width: 100%;
 	z-index: 10;
-	${props => (props.navBarRight ? contentMenuMarginRight : contentMenuMargin)};
+	/* ${props =>
+		props.navBarRight ? contentMenuMarginRight : contentMenuMargin}; */
 	${props =>
 		props.navBarRight && props.isPortrait
-			? `padding-right:${navBarSize}`
-			: `padding-left:${navBarSize}`};
+			? `padding-right:${navBarSize}; padding-left:0;`
+			: `padding-left:${navBarSize}; padding-right: 0;`}
+	
 	${mainTransition}
-	margin-top: 0;
-	margin-left: 0;
+	${props =>
+		props.isPortrait
+			? `margin: 0 0 0;`
+			: `margin: ${navBarSize} ${navBarSize} 0;`};
+
+	/* margin-top: 0;
+	margin-left: 0; */
 	${tablet} {
 		
-		${props => (props.navBarRight ? `margin-right: 0` : `margin-right: 0`)};
+		/* ${props => (props.navBarRight ? `margin-right: 0` : `margin-right: 0`)};
 		${props => (props.navBarRight ? `margin-left: 0` : ``)};
 		${props =>
 			props.isPortrait
 				? `margin-top: ${navBarSize};
 				margin-left: ${navBarSize} `
-				: `margin-right: ${navBarSize}`};
+				: `margin-right: ${navBarSize}`}; */
 	}
 	${props =>
 		props.isShowingMore && props.isPortrait
@@ -69,7 +76,10 @@ const MenuContainer = styled.aside`
 			${props => (props.isPortrait ? `margin-top: 4rem;` : ``)};
 			${paddingLR}
 			${tablet} {
-			${props => (props.isPortrait ? `margin: 0 auto` : ``)};
+			${props =>
+				props.isPortrait
+					? `margin: 0 auto; padding-top:4rem; padding-bottom:1.5rem;`
+					: ``};
 			}
 		}
 	}
@@ -148,7 +158,9 @@ const MenuContainer = styled.aside`
 				&:last-child {
 					${props => (props.isPortrait ? `padding-right:4rem` : ``)};
 				}
-				margin-bottom: 0rem;
+				margin: 0 1rem;
+				padding: 0;
+				
 			}	
 			${mobile} {
 				margin: .2rem 0 .5rem;

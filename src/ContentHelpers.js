@@ -132,7 +132,7 @@ export const Header = props => {
 	return (
 		<Reveal>
 			<ClickNHold
-				time={2} // Time to keep pressing. Default is 2
+				time={3} // Time to keep pressing. Default is 2
 				fullScreen={fullScreen}
 				onStart={onFullScreening}
 				onClickNHold={onFullScreenTimeOutEnded} //Timeout callback
@@ -166,13 +166,13 @@ export const Reveal = props => {
 export const ContentCategory = props => {
 	return (
 		<ShowIf noAnimation thisValue={props.fullScreen} thatValue={true}>
-		<Zoom duration={revealSecs}>
-			<div>
-			<nav className="c-submenu">
-				<SubMenu showCategory={true} category={props.category} />
-			</nav>
-			</div>	
-		</Zoom>
+			<Zoom duration={revealSecs}>
+				<div>
+					<nav className='c-submenu'>
+						<SubMenu showCategory={true} category={props.category} />
+					</nav>
+				</div>
+			</Zoom>
 		</ShowIf>
 	);
 };
@@ -229,7 +229,7 @@ export const HeadingOne = props => {
 				h1
 				xxl
 				bold
-				className={`c-margin-bottom c-margin-top-med  ${compClassName}  padding-left-right `}>
+				className={`c-margin-top-large ${compClassName}  padding-left-right `}>
 				{props.children}
 			</Text>
 		</Reveal>
@@ -293,7 +293,7 @@ export const Image = props => {
 				type='image'
 				src={src}
 				alt={alt}
-				className={`${spacingBottomMed} ${imageClass}`}
+				className={`${spacingBottom} ${imageClass}`}
 			/>
 		</Reveal>
 	);

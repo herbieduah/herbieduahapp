@@ -21,6 +21,7 @@ import {
 } from "./stylecomponents/Base";
 import ClickNHold from "react-click-n-hold";
 import HerbieDuahLogo from "./media/icons/HerbieDuahLogo.svg";
+import HerbieDuahLogoSubtract from "./media/icons/HerbieDuahLogoSubtract.svg";
 import Media from "./maincomponents/Media";
 import ContentContainer from "./stylecomponents/ContentContainer";
 import { NavLink } from "react-router-dom";
@@ -99,7 +100,7 @@ export const NavBar = () => {
 						<Media
 							type='icon'
 							className='navbar__logo svg'
-							src={HerbieDuahLogo}
+							src={HerbieDuahLogoSubtract}
 						/>
 					</NavLink>
 					<ShowIf noAnimation thisValue={modalVisible} thatValue={true}>
@@ -309,7 +310,6 @@ export const MenuTabs = props => {
 						About
 					</Text>
 				</Tab>
-				
 			</TabList>
 			<TabPanel>
 				<nav>
@@ -323,7 +323,7 @@ export const MenuTabs = props => {
 			</TabPanel>
 			<TabPanel>
 				<nav>
-				<SubMenu showCategory={showCategory} category='photography' />
+					<SubMenu showCategory={showCategory} category='photography' />
 				</nav>
 			</TabPanel>
 			<TabPanel>

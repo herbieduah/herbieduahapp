@@ -45,7 +45,8 @@ import {
 	contentMenuPadding,
 	tablet,
 	paddingLR,
-	slightBoxShadowBelow
+	slightBoxShadowBelow,
+	userSelectNone
 } from "./StyleHelpers";
 
 import { revealSecs } from "../helpers";
@@ -107,7 +108,7 @@ export const NavBarMiniContainer = styled.div`
 	align-items: center;
  	width: ${props => props.appHeight}px;
 	justify-content: space-between;
-	user-select: none;
+	${userSelectNone}
 	button {
 		border-bottom: 0;  
 		${mainTransition}
@@ -160,18 +161,19 @@ export const NavBarMiniContainer = styled.div`
 			}
 			svg {
 				${mainTransition}
-				transform: scale(.95);
-				border: 1px solid ${logoBgHoverColor};
-				width: 2rem;
-				height: 2rem;
-				background: transparent;
+				/* transform: scale(.09); */
+				width: 2.5rem;
+				height: 2.5rem;
+				path {
+					
+					fill: ${logoBgHoverColor};
+				}
+				background:transparent;
 				border-radius: ${logoBorderRadius};
 				${mainTransition}
 				&:hover,&:focus {
-					background: ${logoBgHoverColor};
-					border-bottom: none;
-					.inner-rect, .half-circle {
-						fill: ${logoInnerFillColorHoverFocus};		
+					path {
+						fill: ${CTAColor};
 					}
 				}
 		}
@@ -210,7 +212,7 @@ export const NavBarContainer = styled.div`
  	width: ${props => props.appHeight}px;
 	height: ${navBarSize};
 	justify-content: space-between;
-	user-select: none;
+	${userSelectNone}
 	button {
 		border-bottom: 0;
 		padding: 0 ${navBarSize};
@@ -387,7 +389,7 @@ export const FullScreeningBG = styled.div`
 	/* mix-blend-mode: multiply; */
 	opacity: 1;
 	background-size: 100% 0%;
-	animation: ${fullScreenFill} 2s forwards;
+	animation: ${fullScreenFill} 3s forwards;
 	pointer-events: none;
 	z-index: 30;
 `;
