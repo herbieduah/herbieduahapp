@@ -20,7 +20,7 @@ import {
 } from "./StyleHelpers";
 import { navBarBorder, CTAColor } from "./Themes/ThemeVariables";
 
-export const ContentContainer = styled.article`
+export const ContentContainer = styled.main`
 	width: 100%;
 	height: 100vh;
 	${props => (props.isPortrait ? mobileSliderOnTop : ``)};

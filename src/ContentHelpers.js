@@ -83,10 +83,10 @@ export const ContentShow = props => {
 			<TransitionGroup className='animatecss-container'>
 				{showMore ? (
 					<CSSTransition timeout={revealSecs} classNames={transitionClasses}>
-						<div className='container'>
+						<article className='container'>
 							{props.children}
 							<div className='offset' />
-						</div>
+						</article>
 					</CSSTransition>
 				) : null}
 			</TransitionGroup>
