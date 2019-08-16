@@ -48,10 +48,10 @@ export const HerbieDuahApp = styled.div`
 		
 
 		}
-		&__menu {
+		/* &__menu {
 				${mainTransition}
 				opacity : ${props => (props.dragging ? "0" : "1")};
-		}
+		} */
 		&__pane {
 			overflow: ${props => (props.isPortrait ? `initial` : `hidden`)};
 			&.vertical {

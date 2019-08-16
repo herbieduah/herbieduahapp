@@ -14,7 +14,7 @@ export const Slider = () => {
 			isPortrait={isAppMobile}
 			dragging={dragging}>
 			<div className='slider__circle-line'>
-				<button className='slider__circle'>
+				<button aria-label='reveal slider' className='slider__circle'>
 					{isAppMobile ? (
 						<Fragment>
 							<span className='slider__triangle mobile slider__triangle--top' />

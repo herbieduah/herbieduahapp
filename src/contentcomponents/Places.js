@@ -23,7 +23,7 @@ const PeoplePage = ({ contentProps }) => {
 	return (
 		<Fragment>
 			<ContentShow less>
-				<Paragraph>I take pictures of places?</Paragraph>
+				<Paragraph noReveal>I take pictures of places</Paragraph>
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>

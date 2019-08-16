@@ -181,13 +181,23 @@ export const Paragraph = props => {
 	const compClassName = props.className ? props.className : "";
 
 	return (
-		<Reveal>
-			<Text
-				m
-				className={`c-margin-bottom-med ${compClassName} padding-left-right`}>
-				{props.children}
-			</Text>
-		</Reveal>
+		<Fragment>
+			{props.noReveal ? (
+				<Text
+					m
+					className={`c-margin-bottom-med ${compClassName} padding-left-right`}>
+					{props.children}
+				</Text>
+			) : (
+				<Reveal>
+					<Text
+						m
+						className={`c-margin-bottom-med ${compClassName} padding-left-right`}>
+						{props.children}
+					</Text>
+				</Reveal>
+			)}
+		</Fragment>
 	);
 };
 
@@ -289,12 +299,26 @@ export const Image = props => {
 	const imageClass = props.className ? props.className : "";
 	return (
 		<Reveal>
-			<Media
-				type='image'
-				src={src}
-				alt={alt}
-				className={`${spacingBottom} ${imageClass}`}
-			/>
+			<Fragment>
+				{props.nolazyload ? (
+					<img
+						alt={alt}
+						width={props.width || "100%"}
+						height={props.height || "100%"}
+						src={props.src}
+						className={`${spacingBottom} ${imageClass}`}
+					/>
+				) : (
+					<Media
+						type='image'
+						src={src}
+						alt={alt}
+						width={props.width}
+						height={props.height}
+						className={`${spacingBottom} ${imageClass}`}
+					/>
+				)}
+			</Fragment>
 		</Reveal>
 	);
 };
@@ -310,12 +334,27 @@ export const Figure = props => {
 			<figure className={`c-margin-bottom`}>
 				{mockup ? (
 					<div className={figClass}>
-						<Media type='image' className='c-mockup' src={src} alt={alt} />
+						<Media
+							type='image'
+							width={props.width}
+							height={props.height}
+							className='c-mockup'
+							src={src}
+							alt={alt}
+						/>
 						{props.children}
 					</div>
 				) : (
 					<Fragment>
-						<Media type='image' className={figClass} src={src} alt={alt} />
+						<div className={figClass}>
+							<Media
+								type='image'
+								width={props.width}
+								height={props.height}
+								src={src}
+								alt={alt}
+							/>
+						</div>
 						{props.children}
 					</Fragment>
 				)}
@@ -341,6 +380,8 @@ export const Gif = props => {
 			<Media
 				type='gif'
 				url={url}
+				width={props.width}
+				height={props.height}
 				desc={desc}
 				className={`${spacingBottom} ${props.className}`}
 			/>
@@ -354,7 +395,13 @@ export const FiGif = props => {
 	return (
 		<Reveal>
 			<figure className={`${spacingBottom} ${props.className}`}>
-				<Media type='gif' url={url} desc={desc} />
+				<Media
+					type='gif'
+					width={props.width}
+					height={props.height}
+					url={url}
+					desc={desc}
+				/>
 				{props.children}
 			</figure>
 		</Reveal>

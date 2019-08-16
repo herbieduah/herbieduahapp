@@ -33,7 +33,11 @@ const MenuContainer = styled.aside`
 	${tablet} {
 		top:0px;
 	}
-	padding: 0 ${navBarSize};
+	${props =>
+		props.isPortrait
+			? `padding: 0 ${navBarSize};`
+			: `padding: 0 ${navBarSize} 0 0;`};
+	
 	/* border-top: 1px solid ${CTAColor}; */
 	display: flex;
 	width: 100%;
@@ -43,13 +47,11 @@ const MenuContainer = styled.aside`
 	${props =>
 		props.navBarRight && props.isPortrait
 			? `padding-right:${navBarSize}; padding-left:0;`
-			: `padding-left:${navBarSize}; padding-right: 0;`}
+			: `padding-right: 0;`}
 	
 	${mainTransition}
 	${props =>
-		props.isPortrait
-			? `margin: 0 0 0;`
-			: `margin: ${navBarSize} ${navBarSize} 0;`};
+		props.isPortrait ? `margin: 0 0 0;` : `margin: 0 ${navBarSize} 0 0 ;`};
 
 	/* margin-top: 0;
 	margin-left: 0; */
@@ -76,6 +78,7 @@ const MenuContainer = styled.aside`
 			${props => (props.isPortrait ? `margin-top: 4rem;` : ``)};
 			${paddingLR}
 			${tablet} {
+				max-width: 600px;
 			${props =>
 				props.isPortrait
 					? `margin: 0 auto; padding-top:4rem; padding-bottom:1.5rem;`
@@ -85,7 +88,7 @@ const MenuContainer = styled.aside`
 	}
 	
 	${mobile} {
-		
+		max-width: 100%;
 		width: 100%;
 		${props => (props.isShowingMore ? `display: block;` : `display: flex;`)};
 		
@@ -158,7 +161,7 @@ const MenuContainer = styled.aside`
 				&:last-child {
 					${props => (props.isPortrait ? `padding-right:4rem` : ``)};
 				}
-				margin: 0 1rem;
+				margin: .3rem 1rem;
 				padding: 0;
 				
 			}	

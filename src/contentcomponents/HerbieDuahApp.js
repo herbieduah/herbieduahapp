@@ -10,6 +10,7 @@ import {
 	Small,
 	Figure,
 	Figcaption,
+	ContentCategory,
 	Gif,
 	Header
 } from "../ContentHelpers";
@@ -35,7 +36,7 @@ const header = "Hi, I'm Herbie";
 
 // const HomePage = ({ contentProps }) => {
 const HerbieDuahAppPage = ({ contentProps }) => {
-	// const { whom } = contentProps;
+	const { fullScreen } = contentProps;
 
 	return (
 		<Fragment>
@@ -52,6 +53,7 @@ const HerbieDuahAppPage = ({ contentProps }) => {
 						This will probably the last page to be finished.
 					</span>
 				</Paragraph>
+				<ContentCategory fullScreen={fullScreen} category='work' />
 			</ContentShow>
 		</Fragment>
 	);

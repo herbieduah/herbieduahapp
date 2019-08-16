@@ -36,7 +36,8 @@ const header = "Hello";
 
 // const HomePage = ({ contentProps }) => {
 const HomePage = ({ contentProps }) => {
-	const { whom } = contentProps;
+	const { whom, isContentPortrait } = contentProps;
+	const whereToDrag = isContentPortrait ? `down` : `right`;
 	return (
 		<Fragment>
 			<ContentShow less>
@@ -48,7 +49,7 @@ const HomePage = ({ contentProps }) => {
 						own app.
 					</Paragraph>
 					<Small className='c-interact'>
-						Interact with the slider to reveal more.&nbsp;
+						Drag the slider {whereToDrag} to reveal more.&nbsp;
 						<Emoji className='emoji' symbol='🙂' label='smile' />
 					</Small>
 				</ShowIf>
@@ -82,7 +83,13 @@ const HomePage = ({ contentProps }) => {
 							and good luck on the employee hunt!
 						</Paragraph>
 					</ShowIf>
-					<Image src={cornishPastyPic} />
+					<Image
+						src={cornishPastyPic}
+						nolazyload
+						width='1480'
+						height='1974'
+						alt='a picture of me'
+					/>
 					<Paragraph>
 						I am Phoenix based a Web developer/designer with five years of
 						experience. I graduated at Northern Arizona University with a degree

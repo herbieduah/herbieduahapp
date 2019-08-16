@@ -22,8 +22,8 @@ const Media = props => {
 				<LazyLoadComponent>
 					<ReactPlayer
 						url={props.url}
-						width='100%'
-						height='100%'
+						width={props.width || "100%"}
+						height={props.height || "100%"}
 						controls={false}
 						playing
 						loop
@@ -38,7 +38,12 @@ const Media = props => {
 			return (
 				<LazyLoadComponent>
 					<div aria-describedby={props.desc}>
-						<ReactPlayer url={props.url} className={props.className} />
+						<ReactPlayer
+							url={props.url}
+							className={props.className}
+							width={props.width || "100%"}
+							height={props.height || "100%"}
+						/>
 					</div>
 				</LazyLoadComponent>
 			);
@@ -47,6 +52,8 @@ const Media = props => {
 				<LazyLoadImage
 					alt={props.alt}
 					effect='blur'
+					width={props.width || "100%"}
+					height={props.height || "100%"}
 					src={props.src}
 					className={props.className}
 					threshold={250}

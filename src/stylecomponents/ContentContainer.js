@@ -38,7 +38,8 @@ export const ContentContainer = styled.main`
 		width: 100%;
 	}
 	img {
-		width: 100%;
+		max-width: 100%;
+  		height: auto;
 	}
 	figure {
 		margin: 0;
@@ -90,9 +91,11 @@ export const ContentContainer = styled.main`
 		&__less {
 			width:  100%;
 			height: ${props => (props.showLess && !props.isPortrait ? `100vh` : `100%`)};
-			
-			${props => (props.isPortrait ? `margin-top: ${navBarSize}` : ``)};
-			max-width:  ${props => (props.showLess ? `500px` : `100%`)};
+			p {
+				font-size: 1.6em;
+			}
+			${props => (props.isPortrait ? `margin-top: .5rem` : ``)};
+			/* max-width:  ${props => (props.showLess ? `500px` : `100%`)}; */
 			/* margin: 0 auto; */
 			/* p {
 				${mainTransition}
@@ -100,13 +103,22 @@ export const ContentContainer = styled.main`
 				margin: 0 auto;
 			} */
 			${tablet} {
-				max-width:  ${props =>
-					props.showLess && !props.isPortrait ? `400px` : `100%`};
-					height: 100%;
+				/* max-width:  ${props =>
+					props.showLess && !props.isPortrait ? `100%` : `100%`}; */
+				width: 100%;
+				height: 100%;
+				p {
+						font-size: 1.4em;
+					}
+					
+				${props => (props.isPortrait ? `padding-top: 3.5rem;` : ``)};
 			}
 			${mobile} {
 				width: 100%;
 				height: 100%;
+				p {
+					font-size: 1.1em;
+				}
 			}
 		}
 		&__less-container {
@@ -253,25 +265,31 @@ export const ContentContainer = styled.main`
 		}
 	}
 	.c-submenu {
+		${paddingLR};
+		ul {
+			list-style-type:none;
+		}
+		
 		margin-top: 3.5rem;
 		${mobile} {
 			margin-top: 3rem;
 		}
+		.subMenu {
 		padding: 0;
 		display: flex;
 		flex-wrap: wrap;
 		width: 100%;
 		${mobile} {
-			display:block
+			display:block;
 		}
 		&__item {
-			margin-bottom: 1.5rem;
+			margin-bottom: 1rem;
 			list-style-type: none;
-			margin-right: ${navBarSize};
+			margin-right: 1.5rem;
 			
 			white-space: nowrap;
 			${mobile} {
-				margin-right: 0;
+				margin-right: 1rem;
 			}
 		}
 		&__text {
@@ -280,6 +298,7 @@ export const ContentContainer = styled.main`
 				margin-top: 2.5rem;
 			}
 		}
+	}
 	}
 `;
 

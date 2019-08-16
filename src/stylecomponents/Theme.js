@@ -40,7 +40,18 @@ import {
 	grungeWallTheme,
 	greyFloralTheme,
 	cardboardFlatTheme,
-	carbonFibreTheme
+	carbonFibreTheme,
+	nightPartyTheme,
+	loveKissTheme,
+	passionateBedTheme,
+	partyBlissTheme,
+	leCocktailTheme,
+	fruitBlendTheme,
+	northMiracleTheme,
+	sugarLollipopTheme,
+	fabledSunsetTheme,
+	newRetrowaveTheme,
+	deepBlueTheme
 } from "./Themes/ThemeFactory";
 export const themes = [
 	{
@@ -365,6 +376,105 @@ export const themes = [
 		},
 		type: "bg",
 		text: "Carbon Fibre",
+		desc: ""
+	},
+	{
+		name: "nightParty",
+		properties: {
+			...nightPartyTheme
+		},
+		type: "gradient",
+		text: "Night Party",
+		desc: ""
+	},
+	{
+		name: "loveKiss",
+		properties: {
+			...loveKissTheme
+		},
+		type: "gradient",
+		text: "Love Kiss",
+		desc: ""
+	},
+	{
+		name: "passionateBed",
+		properties: {
+			...passionateBedTheme
+		},
+		type: "gradient",
+		text: "Passionate Bed",
+		desc: ""
+	},
+	{
+		name: "partyBliss",
+		properties: {
+			...partyBlissTheme
+		},
+		type: "gradient",
+		text: "Party Bliss",
+		desc: ""
+	},
+	{
+		name: "leCocktail",
+		properties: {
+			...leCocktailTheme
+		},
+		type: "gradient",
+		text: "Le Cocktail",
+		desc: ""
+	},
+	{
+		name: "fruitBlend",
+		properties: {
+			...fruitBlendTheme
+		},
+		type: "gradient",
+		text: "Fruit Blend",
+		desc: ""
+	},
+	{
+		name: "northMiracle",
+		properties: {
+			...northMiracleTheme
+		},
+		type: "gradient",
+		text: "North Miracle",
+		desc: ""
+	},
+	{
+		name: "sugarLollipop",
+		properties: {
+			...sugarLollipopTheme
+		},
+		type: "gradient",
+		text: "Sugar Lollipop",
+		desc: ""
+	},
+	{
+		name: "fabledSunset",
+		properties: {
+			...fabledSunsetTheme
+		},
+		type: "gradient",
+		text: "Fabled Sunset",
+		desc: ""
+	},
+	{
+		name: "newRetrowave",
+		properties: {
+			...newRetrowaveTheme
+		},
+		type: "gradient",
+		text: "New Retrowave",
+		desc: ""
+	},
+	{
+		name: "deepBlueTheme",
+		properties: {
+			...deepBlueTheme
+		},
+		type: "gradient",
+		text: "Deep Blue",
 		desc: ""
 	}
 ];

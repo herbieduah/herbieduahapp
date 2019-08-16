@@ -272,3 +272,91 @@ const paloAlto = {
 	gradientValues: "#16a085 0%, #f4d03f 100%"
 };
 export const paloAltoTheme = themeMaker(paloAlto);
+
+// nightparty
+// background-image: linear-gradient(to top, #0250c5 0%, #d43f8d 100%);
+const nightParty = {
+	bgColor: "#0250c5",
+	gradientValues: "#0250c5 0%, #d43f8d 100%"
+};
+export const nightPartyTheme = themeMaker(nightParty);
+
+//love kiss
+//background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+const loveKiss = {
+	bgColor: "#ff0844",
+	gradientValues: "#ff0844 0%, #ffb199 100%"
+};
+export const loveKissTheme = themeMaker(loveKiss);
+
+//passionate bed
+//background-image: linear-gradient(to right, #ff758c 0%, #ff7eb3 100%);
+const passionateBed = {
+	bgColor: "#ff758c",
+	gradientValues: "#ff758c 0%, #ff7eb3 100%"
+};
+export const passionateBedTheme = themeMaker(passionateBed);
+
+//party bliss
+//background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);
+const partyBliss = {
+	bgColor: "#4481eb",
+	gradientValues: "#4481eb 0%, #04befe 100%"
+};
+export const partyBlissTheme = themeMaker(partyBliss);
+
+//le cocktail
+//background-image: linear-gradient(45deg, #874da2 0%, #c43a30 100%);
+const leCocktail = {
+	bgColor: "#874da2",
+	gradientValues: "#874da2 0%, #c43a30 100%"
+};
+export const leCocktailTheme = themeMaker(leCocktail);
+
+// fruit Blend
+// background-image: linear-gradient(to right, #f9d423 0%, #ff4e50 100%);
+const fruitBlend = {
+	bgColor: "#f9d423",
+	gradientValues: "#f9d423 0%, #ff4e50 100%"
+};
+export const fruitBlendTheme = themeMaker(fruitBlend);
+
+//north miracle
+//background-image: linear-gradient(to right, #00dbde 0%, #fc00ff 100%);
+const northMiracle = {
+	bgColor: "#00dbde",
+	gradientValues: "#00dbde 0%, #fc00ff 100%"
+};
+export const northMiracleTheme = themeMaker(northMiracle);
+
+//sugar lollipop
+//background-image: linear-gradient(-225deg, #A445B2 0%, #D41872 52%, #FF0066 100%);
+const sugarLollipop = {
+	bgColor: "#A445B2",
+	gradientValues: "#A445B2 0%, #D41872 52%, #FF0066 100%"
+};
+export const sugarLollipopTheme = themeMaker(sugarLollipop);
+
+//fabled sunset
+// background-image: linear-gradient(-225deg, #231557 0%, #44107A 29%, #FF1361 67%, #FFF800 100%);
+const fabledSunset = {
+	bgColor: "#231557",
+	gradientValues: "#231557 0%, #44107A 29%, #FF1361 67%, #FFF800 100%"
+};
+export const fabledSunsetTheme = themeMaker(fabledSunset);
+
+//new retrowave
+//background-image: linear-gradient(to top, #3b41c5 0%, #a981bb 49%, #ffc8a9 100%);
+const newRetrowave = {
+	bgColor: "#3b41c5",
+	gradientValues: "#3b41c5 0%, #a981bb 49%, #ffc8a9 100%"
+};
+export const newRetrowaveTheme = themeMaker(newRetrowave);
+
+//Deep Blue
+// background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+const deepBlue = {
+	bgColor: "#6a11cb",
+	gradientValues: "#6a11cb 0%, #2575fc 100%"
+};
+export const deepBlueTheme = themeMaker(deepBlue);

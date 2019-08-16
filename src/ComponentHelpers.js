@@ -341,10 +341,8 @@ export const MenuMini = props => {
 		<nav>
 			<SubMenu showCategory={showCategory} category='customize' />
 			<SubMenu showCategory={showCategory} category='work' />
-
-			<SubMenu showCategory={showCategory} category='about' />
-
 			<SubMenu showCategory={showCategory} category='photography' />
+			<SubMenu showCategory={showCategory} category='about' />
 		</nav>
 	);
 };
