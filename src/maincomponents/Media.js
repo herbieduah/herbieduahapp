@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import ReactSVG from "react-svg";
 import ReactPlayer from "react-player";
 // import ImageLoader from "./ImageLoader";
@@ -49,15 +49,28 @@ const Media = props => {
 			);
 		case "image":
 			return (
-				<LazyLoadImage
-					alt={props.alt}
-					effect='blur'
-					width={props.width || "100%"}
-					height={props.height || "100%"}
-					src={props.src}
-					className={props.className}
-					threshold={250}
-				/>
+				<Fragment>
+					{props.nolazyload ? (
+						<img
+							alt={props.alt}
+							width={props.width || "100%"}
+							height={props.height || "100%"}
+							src={props.src}
+							className={props.className || ""}
+							threshold={250}
+						/>
+					) : (
+						<LazyLoadImage
+							alt={props.alt}
+							effect='blur'
+							width={props.width || "100%"}
+							height={props.height || "100%"}
+							src={props.src}
+							className={props.className}
+							threshold={250}
+						/>
+					)}
+				</Fragment>
 			);
 		default:
 			return null;

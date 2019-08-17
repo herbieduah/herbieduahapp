@@ -16,7 +16,7 @@ import {
 // animation: ${Gradients} 1.5s ease-in-out ${props =>
 // 	props.dragging ? "infinite" : ""};
 // 	background-size: ${props => (props.dragging ? `400% 400%` : "contain")};
-export const HerbieDuahApp = styled.div`
+export const HerbieDuahApp = styled.main`
 	width: 100%;
 	overflow: hidden;
 	overscroll-behavior: none;
@@ -32,7 +32,6 @@ export const HerbieDuahApp = styled.div`
 		${absoluteOverlay};
 		background-color: ${bgColorOverlay};
 		pointer-events: none;
-
 	}
 	
 	.navbar {

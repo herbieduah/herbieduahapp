@@ -157,7 +157,7 @@ export const SliderController = styled.div`
 			${slightCircleBoxShadow};
 			&:hover,
 			&:focus {
-				transform: scale(0.95);
+				transform: scale(0.9);
 				transform: ${props => (props.dragging ? "scale(0.6)" : "scale(.95)")};
 				background: ${sliderCircleHoverFocus};
 			}

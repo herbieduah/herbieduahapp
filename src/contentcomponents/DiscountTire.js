@@ -5,10 +5,12 @@ import {
 	Paragraph,
 	// HeadingOne,
 	HeadingTwo,
-	Link,
+	// Link,
 	Header,
 	// HeadingThree,
-	Image
+	Image,
+	ContentCategory,
+	WorkInfo
 	// Small,
 	// Figure,
 	// Figcaption,
@@ -24,10 +26,14 @@ import dtbrochure1480x1973 from "../media/images/discountTire/work-herbieDTRecei
 import dtASU1480x2693 from "../media/images/discountTire/work-herbieDTPoster-2693.jpg";
 
 const header = "Discount Tire";
+const workDuration = "March 2018 - Present";
+const workSkills = "UX Design, HTML5, CSS, Javascript, PHP, SQL, Prototyping";
+const workTools =
+	"Photoshop, Visual Studio Code, Adobe XD, Microsoft SQL Server";
 
 const DiscountTirePage = ({ contentProps }) => {
 	// const { whom } = contentProps;
-
+	const { fullScreen, techy } = contentProps;
 	return (
 		<Fragment>
 			<ContentShow less>
@@ -37,6 +43,7 @@ const DiscountTirePage = ({ contentProps }) => {
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>
+				<WorkInfo techy={techy} workinfo={workinfo} />
 				<Paragraph>
 					I am currently working at Discount Tire as a Front End Developer I. My
 					job duties consist of developing for and updating content for a legacy
@@ -46,14 +53,46 @@ const DiscountTirePage = ({ contentProps }) => {
 				<Paragraph>
 					I volunteered to be a model for one of their shoots.
 				</Paragraph>
-				<Image src={tireCheckMatt1480x987} />
-				<Image src={showroomCheckMatt1480x987} />
-				<Image src={standupTireCheck1480x987} />
-				<Image src={dtbrochure1480x1973} />
-				<Image src={dtASU1480x2693} />
+				<Image
+					alt='Photoshoot of me checking tires with another tire check'
+					width='1480'
+					height='987'
+					src={tireCheckMatt1480x987}
+				/>
+				<Image
+					alt='I am checking the some tools with another tire check in the showroom'
+					width='1480'
+					height='987'
+					src={showroomCheckMatt1480x987}
+				/>
+				<Image
+					alt='Standing up next to a mustang'
+					width='1480'
+					height='987'
+					src={standupTireCheck1480x987}
+				/>
+				<Image
+					alt='Standing next to ASU Brochure'
+					width='1480'
+					height='1973'
+					src={dtbrochure1480x1973}
+				/>
+				<Image
+					alt='ASU brochure with me on it'
+					width='1480'
+					height='2693'
+					src={dtASU1480x2693}
+				/>
+				<ContentCategory fullScreen={fullScreen} category='about' />
 			</ContentShow>
 		</Fragment>
 	);
 };
 
 export default DiscountTirePage;
+
+const workinfo = {
+	workDuration,
+	workSkills,
+	workTools
+};

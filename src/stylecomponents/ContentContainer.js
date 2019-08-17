@@ -20,7 +20,7 @@ import {
 } from "./StyleHelpers";
 import { navBarBorder, CTAColor } from "./Themes/ThemeVariables";
 
-export const ContentContainer = styled.main`
+export const ContentContainer = styled.section`
 	width: 100%;
 	height: 100vh;
 	${props => (props.isPortrait ? mobileSliderOnTop : ``)};
@@ -90,12 +90,10 @@ export const ContentContainer = styled.main`
 		}
 		&__less {
 			width:  100%;
-			height: ${props => (props.showLess && !props.isPortrait ? `100vh` : `100%`)};
-			p {
-				font-size: 1.6em;
-			}
+			height: ${props => (props.showLess && !props.isPortrait ? `100%` : `100%`)};
+			
 			${props => (props.isPortrait ? `margin-top: .5rem` : ``)};
-			/* max-width:  ${props => (props.showLess ? `500px` : `100%`)}; */
+			max-width:  ${props => (props.showLess ? `500px` : `100%`)};
 			/* margin: 0 auto; */
 			/* p {
 				${mainTransition}
@@ -103,13 +101,10 @@ export const ContentContainer = styled.main`
 				margin: 0 auto;
 			} */
 			${tablet} {
-				/* max-width:  ${props =>
-					props.showLess && !props.isPortrait ? `100%` : `100%`}; */
+				max-width:  ${props =>
+					props.showLess && !props.isPortrait ? `400px` : `100%`};
 				width: 100%;
 				height: 100%;
-				p {
-						font-size: 1.4em;
-					}
 					
 				${props => (props.isPortrait ? `padding-top: 3.5rem;` : ``)};
 			}
@@ -287,7 +282,7 @@ export const ContentContainer = styled.main`
 			list-style-type: none;
 			margin-right: 1.5rem;
 			
-			white-space: nowrap;
+			white-space: wrap;
 			${mobile} {
 				margin-right: 1rem;
 			}
@@ -299,6 +294,13 @@ export const ContentContainer = styled.main`
 			}
 		}
 	}
+	
+	}
+	.c-work-info{
+		.react-reveal,li span {
+			margin:0;
+			padding:0;
+		}
 	}
 `;
 

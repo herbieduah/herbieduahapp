@@ -394,12 +394,13 @@ export const FiGif = props => {
 	const desc = props.desc ? props.desc : defaultDesc;
 	return (
 		<Reveal>
-			<figure className={`${spacingBottom} ${props.className}`}>
+			<figure className={`${spacingBottom}`}>
 				<Media
 					type='gif'
 					width={props.width}
 					height={props.height}
 					url={url}
+					className={props.className || ""}
 					desc={desc}
 				/>
 				{props.children}
@@ -511,6 +512,36 @@ export const GenerateTransition = props => {
 						<TransitionTexts transitionValue={element.name} key={uniqueKey} />
 					);
 				})}
+			</ul>
+		</Reveal>
+	);
+};
+
+export const WorkInfo = props => {
+	const { workDuration, workSkills, workTools } = props.workinfo;
+	return (
+		<Reveal>
+			<ul className='c-work-info'>
+				<li>
+					<Text s format>
+						Duration:&nbsp;
+						{workDuration}
+					</Text>
+				</li>
+				<li>
+					<Text s format>
+						Skills:&nbsp;
+						{workSkills}
+					</Text>
+				</li>
+				<ShowIf noAnimation thisValue={props.techy} thatValue={true}>
+					<li>
+						<Text s format>
+							Tools:&nbsp;
+							{workTools}
+						</Text>
+					</li>
+				</ShowIf>
 			</ul>
 		</Reveal>
 	);
