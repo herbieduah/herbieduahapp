@@ -14,6 +14,7 @@ import { FullScreenOverlay, NavBar } from "./ComponentHelpers";
 import queryString from "query-string";
 import Text from "./stylecomponents/Text";
 import { Puns } from "./Pages";
+import Matrix from "./stylecomponents/Themes/Matrix";
 import { isMobileOnly } from "react-device-detect";
 import {
 	getCurrentTheme,
@@ -68,6 +69,7 @@ export const App = () => {
 				splitSize={splitSize}
 				showFSMobileHorizontal={showFSMobileHorizontal}
 				dragging={dragging}>
+				<Matrix fullscreen={true} isPortrait={isPortrait(ww, wh)} />
 				<div className='in-dev'>
 					<Text s className='alpha-text'>
 						This project is still in development
@@ -75,6 +77,7 @@ export const App = () => {
 				</div>
 				<GlobalStyle />
 				<NavBar />
+
 				{/* <ParallaxTest /> */}
 				<FullScreenOverlay />
 				{/* <SliderLine /> */}

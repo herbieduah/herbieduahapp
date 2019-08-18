@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Gradients } from "./Animations";
+// import { Gradients } from "./Animations";
 import {
 	fluidTypeInfo,
 	absoluteOverlay,
@@ -13,6 +13,7 @@ import {
 	bgColorOverlay
 	// appBgAnimation
 } from "./Themes/ThemeVariables";
+// import Matrix from "react-matrix-effect";
 // animation: ${Gradients} 1.5s ease-in-out ${props =>
 // 	props.dragging ? "infinite" : ""};
 // 	background-size: ${props => (props.dragging ? `400% 400%` : "contain")};
@@ -92,3 +93,7 @@ export const HerbieDuahApp = styled.main`
 		}
 
 `;
+
+// export const TheMatrix = styled(Matrix)`
+// 	${absoluteOverlay};
+// `;

@@ -649,3 +649,17 @@ export const MarqueeWrapper = styled.div`
 		}
 	}
 `;
+
+export const MatrixContainer = styled.div`
+	${absoluteOverlay}
+	canvas {
+	${tablet} {
+		width: 150vw !important;
+		height: 200vh !important;
+	}
+	${mobile} {
+		width: 150vw !important;
+		height: 200vh !important;
+	}
+	}
+`;

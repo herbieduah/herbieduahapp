@@ -6,7 +6,7 @@ import {
 	mobileSliderOnTop,
 	contentMenuPadding,
 	tablet,
-	navBarSize,
+	// navBarSize,
 	contentMenuPaddingRight,
 	paddingLR,
 	marginLR,
@@ -16,9 +16,14 @@ import {
 	marginLRLarge,
 	marginLRMed,
 	slightBoxShadowBelow,
-	userSelectNone
+	userSelectNone,
+	fontColor,
+	cMarginBottom,
+	cPaddingBottom,
+	cPaddingBottomMed,
+	cMarginBottomMed
 } from "./StyleHelpers";
-import { navBarBorder, CTAColor } from "./Themes/ThemeVariables";
+import { navBarBorder, CTAColor, borderThin } from "./Themes/ThemeVariables";
 
 export const ContentContainer = styled.section`
 	width: 100%;
@@ -64,6 +69,11 @@ export const ContentContainer = styled.section`
 			width: 100%;
 		}
 	}
+
+	li {
+		color: ${fontColor};
+	}
+
 	.flex-container {
 		display: flex;
 		flex-direction: row;
@@ -126,29 +136,22 @@ export const ContentContainer = styled.section`
 		}		
 	}
 
-	.c-margin-bottom {
-		margin-bottom: 3rem;
-		${mobile} {
-			margin-bottom: 2.5rem;
-		}
+	.c-margin-bottom,.cmb {
+
+		${cMarginBottom} 
 	}
-	.c-padding-bottom {
-		padding-bottom: 3rem !important;
-		${mobile} {
-			padding-bottom: 2.5rem!important;
-		}
+	.c-padding-bottom,.cpd {
+		${cPaddingBottom}
 	}
 	.c-padding-bottom-med {
-		padding-bottom: 2rem;
-		${mobile} {
-			padding-bottom: 1.5rem;
-		}
+		${cPaddingBottomMed}
 	}
 	.c-margin-bottom-med {
 		margin-bottom: 1.5rem;
 		${mobile} {
 			margin-bottom: 1rem;
 		}
+		${cMarginBottomMed}
 	}
 	.padding-left-right, .paddingLR {
 		${paddingLR}
@@ -209,7 +212,7 @@ export const ContentContainer = styled.section`
 			margin-bottom: 5rem;
 		}
 	}
-
+	
 	.c-margin-0 {
 		margin: 0;
 	}
@@ -297,10 +300,24 @@ export const ContentContainer = styled.section`
 	
 	}
 	.c-work-info{
+		${marginLR}
+		${cMarginBottomMed}
+		padding-top: .5rem;
+		padding: .5rem 0;
 		.react-reveal,li span {
 			margin:0;
 			padding:0;
 		}
+		li {
+			list-style-type: none;
+		}
+		ul {
+			margin: 0;
+			padding:0;
+		}
+		border-top: ${borderThin};
+		border-bottom: ${borderThin};
+
 	}
 `;
 

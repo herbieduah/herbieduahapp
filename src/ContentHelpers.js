@@ -524,20 +524,20 @@ export const WorkInfo = props => {
 			<ul className='c-work-info'>
 				<li>
 					<Text s format>
-						Duration:&nbsp;
+						<strong>Duration:</strong>&nbsp;
 						{workDuration}
 					</Text>
 				</li>
 				<li>
 					<Text s format>
-						Skills:&nbsp;
+						<strong>Skills:</strong>&nbsp;
 						{workSkills}
 					</Text>
 				</li>
 				<ShowIf noAnimation thisValue={props.techy} thatValue={true}>
 					<li>
 						<Text s format>
-							Tools:&nbsp;
+							<strong>Tools:</strong>&nbsp;
 							{workTools}
 						</Text>
 					</li>

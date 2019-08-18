@@ -8,7 +8,9 @@ import {
 	Link,
 	Header,
 	Figcaption,
-	Figure
+	Figure,
+	ContentCategory,
+	WorkInfo
 	// HeadingThree,
 	// Image,
 	// Small,
@@ -28,10 +30,12 @@ import beziniPhoneExhibit1480x6938 from "../media/images/bedzin/beziniPhoneExhib
 import GlossaryDesktop1480x2749 from "../media/images/bedzin/GlossaryDesktop.jpg";
 
 const header = "Będzin Exhibit";
+const workDuration = "January 2016 - May 2016";
+const workSkills = "Prototyping and UX Design";
+const workTools = "Sketch";
 
 const BedzinExhibitPage = ({ contentProps }) => {
-	// const { whom } = contentProps;
-
+	const { techy, fullScreen } = contentProps;
 	return (
 		<Fragment>
 			<ContentShow less>
@@ -41,6 +45,7 @@ const BedzinExhibitPage = ({ contentProps }) => {
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>
+				<WorkInfo techy={techy} workinfo={workinfo} />
 				<Paragraph>
 					For my Computer Science capstone, my group was tasked with revamping
 					&nbsp;
@@ -67,6 +72,9 @@ const BedzinExhibitPage = ({ contentProps }) => {
 				<Figure
 					mockup
 					className='paddingLR'
+					alt='a mock up of the creation of exhibit page for desktop'
+					width='1480'
+					height='2781'
 					src={BedzinCreationofExhibitDesktop1480x2781}>
 					<Figcaption className='c-margin-bottom'>
 						Creation of the Exhibit page for desktop
@@ -75,6 +83,9 @@ const BedzinExhibitPage = ({ contentProps }) => {
 				<Figure
 					mockup
 					className='paddingLRMed'
+					alt='a mock up of the creation of exhibit page for mobile'
+					width='1480'
+					height='9042'
 					src={BedziniPhoneCreationofExhibit1480x9042}>
 					<Figcaption className='c-margin-bottom'>
 						Creation of the Exhibit page for mobile
@@ -83,6 +94,9 @@ const BedzinExhibitPage = ({ contentProps }) => {
 				<Figure
 					mockup
 					className='paddingLR'
+					alt='a mock up of the desktop version of the homepage'
+					width='1480'
+					height='3193'
 					src={throughbedzinDesktop1480x3193}>
 					<Figcaption className='c-margin-bottom'>
 						Desktop version of the homepage
@@ -91,6 +105,9 @@ const BedzinExhibitPage = ({ contentProps }) => {
 				<Figure
 					mockup
 					className='paddingLRMed'
+					alt='a mock up of the mobile version of the homepage'
+					width='1480'
+					height='6938'
 					src={beziniPhoneExhibit1480x6938}>
 					<Figcaption className='c-margin-bottom'>
 						Mobile version of the homepage
@@ -99,11 +116,20 @@ const BedzinExhibitPage = ({ contentProps }) => {
 				<Figure
 					mockup
 					className='paddingLRMed'
+					alt='A mock up of the mobile menu'
+					width='1480'
+					height='2877'
 					src={bedziniPhoneNavNormal1480x2877}>
 					<Figcaption className='c-margin-bottom'>Mobile menu</Figcaption>
 				</Figure>
 
-				<Figure mockup className='paddingLR' src={GlossaryDesktop1480x2749}>
+				<Figure
+					mockup
+					className='paddingLR'
+					alt='a mock up for the glossary pafe'
+					width='1480'
+					height='2749'
+					src={GlossaryDesktop1480x2749}>
 					<Figcaption className='c-margin-bottom'>
 						Glossary page. Desktop version.
 					</Figcaption>
@@ -121,9 +147,16 @@ const BedzinExhibitPage = ({ contentProps }) => {
 					Będzin Ghetto. If you'd like to learn more about it, you can visit
 					&nbsp;<Link href='http://bedzinexhibit.org/'>bedzinexhibit.org</Link>
 				</Paragraph>
+				<ContentCategory fullScreen={fullScreen} category='work' />
 			</ContentShow>
 		</Fragment>
 	);
 };
 
 export default BedzinExhibitPage;
+
+const workinfo = {
+	workDuration,
+	workSkills,
+	workTools
+};

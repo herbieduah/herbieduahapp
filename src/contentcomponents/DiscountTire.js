@@ -28,8 +28,7 @@ import dtASU1480x2693 from "../media/images/discountTire/work-herbieDTPoster-269
 const header = "Discount Tire";
 const workDuration = "March 2018 - Present";
 const workSkills = "UX Design, HTML5, CSS, Javascript, PHP, SQL, Prototyping";
-const workTools =
-	"Photoshop, Visual Studio Code, Adobe XD, Microsoft SQL Server";
+const workTools = "CSS, HTML5, Javascript , PHP, Prototyping, SQL, UX Design ";
 
 const DiscountTirePage = ({ contentProps }) => {
 	// const { whom } = contentProps;
@@ -83,7 +82,7 @@ const DiscountTirePage = ({ contentProps }) => {
 					height='2693'
 					src={dtASU1480x2693}
 				/>
-				<ContentCategory fullScreen={fullScreen} category='about' />
+				<ContentCategory fullScreen={fullScreen} category='work' />
 			</ContentShow>
 		</Fragment>
 	);

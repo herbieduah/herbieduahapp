@@ -123,6 +123,27 @@ ${mobile} {
 	margin: 0;
 }`;
 
+export const cMarginBottom = `margin-bottom: 3rem;
+${mobile} {
+	margin-bottom: 2.5rem;
+}`;
+
+export const cPaddingBottom = `padding-bottom: 3rem !important;
+${mobile} {
+	padding-bottom: 2.5rem!important;
+}`;
+
+export const cPaddingBottomMed = `padding-bottom: 2rem;
+${mobile} {
+	padding-bottom: 1.5rem;
+}`;
+
+export const cMarginBottomMed = `margin-bottom: 1.5rem;
+${mobile} {
+	margin-bottom: 1rem;
+}
+`;
+
 export const container = `
 max-width: 740px;
 			width: 100%;

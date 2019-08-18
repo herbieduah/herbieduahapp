@@ -8,6 +8,7 @@ export const appfontFamilyExtraWide = props =>
 	props.theme.appfontFamilyExtraWide;
 export const bgColor = props => props.theme.bgColor;
 export const bgColorOverlay = props => props.theme.bgColorOverlay;
+export const borderThin = props => props.theme.borderThin;
 export const buttonFontWeight = props => props.theme.buttonFontWeight;
 export const buttonLineHeight = props => props.theme.buttonLineHeight;
 export const buttonBorder = props => props.theme.buttonBorder;
