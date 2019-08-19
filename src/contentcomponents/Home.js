@@ -58,7 +58,7 @@ const HomePage = ({ contentProps }) => {
 						You know what's crazy? I am still not tired of MegTheeStallion
 						twerking on the timeline.
 						<ShowIf noAnimation thisValue={isMobileOnly} thatValue={true}>
-							I know she is blessing your the lil {mobileModel} you holding
+							&nbsp; I know she is blessing the lil {mobileModel} you holding
 							right now.
 						</ShowIf>
 						Anyways, here is my web app, it ain't done yet tho.
