@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-expressions */
 import React, { Fragment } from "react";
-import { Paragraph, HeadingTwo, Image, Header } from "../ContentHelpers";
+import { Paragraph, Image, Header } from "../ContentHelpers";
 import { ContentShow } from "../ContentHelpers";
 // import Emoji from "a11y-react-emoji";
 import photographyTesfayFamilyKiss1480x2220 from "../media/images/people/photography-photographyTesfayFamilyKiss2-2220.jpg";

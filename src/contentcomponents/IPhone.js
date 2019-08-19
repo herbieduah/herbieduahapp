@@ -27,7 +27,7 @@ const iPhonePage = () => {
 	return (
 		<Fragment>
 			<ContentShow less>
-				<Paragraph>I enjoy taking pics on my iPhone</Paragraph>
+				<Paragraph noReveal>I enjoy taking pics on my iPhone</Paragraph>
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>

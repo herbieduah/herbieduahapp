@@ -10,7 +10,7 @@ import Content from "./maincomponents/Content";
 // import { DragInstructions } from "./Actions";
 import { defaultAppTheme } from "./stylecomponents/Theme";
 import SliderLine from "./maincomponents/Revealer/SliderLine";
-import { FullScreenOverlay, NavBar } from "./ComponentHelpers";
+import { FullScreenOverlay, NavBar, ShowIf } from "./ComponentHelpers";
 import queryString from "query-string";
 import Text from "./stylecomponents/Text";
 import { Puns } from "./Pages";
@@ -69,7 +69,9 @@ export const App = () => {
 				splitSize={splitSize}
 				showFSMobileHorizontal={showFSMobileHorizontal}
 				dragging={dragging}>
-				<Matrix fullscreen={true} isPortrait={isPortrait(ww, wh)} />
+				<ShowIf noAnimation thisValue={currentTheme} thatValue={"matrix"}>
+					<Matrix fullscreen={true} isPortrait={isPortrait(ww, wh)} />
+				</ShowIf>
 				<div className='in-dev'>
 					<Text s className='alpha-text'>
 						This project is still in development
@@ -84,6 +86,11 @@ export const App = () => {
 				{/* {dragging ? <DragInstructions /> : null} */}
 
 				{fullScreen && !showFSMobileHorizontal ? <Content /> : null}
+				{/* <ShowIf
+					thisValue={fullScreen && !showFSMobileHorizontal}
+					thatValue={true}>
+					<Content />
+				</ShowIf> */}
 				{showFSMobileHorizontal ? <Puns /> : null}
 				{/* <Content /> */}
 				{/* {fullScreen ? <h1>Here I am</h1> : null} */}
@@ -109,6 +116,25 @@ export const App = () => {
 						<ContentMenu switchSides={!switchSides} />
 					</SplitPane>
 				) : null}
+				{/* <ShowIf
+					thisValue={!fullScreen && !showFSMobileHorizontal}
+					thatValue={true}>
+					<SplitPane
+						split={splitDir(ww, wh)}
+						minSize={minSize}
+						maxSize={maxSize}
+						step={1}
+						onDragStarted={onDragging}
+						onDragFinished={onDraggingEnded}
+						defaultSize={parseInt(
+							sessionStorage.getItem("splitPos"),
+							defaultPaneSize(ww, wh)
+						)}
+						onChange={size => sessionStorage.setItem("splitPos", size)}>
+						<ContentMenu switchSides={switchSides} />
+						<ContentMenu switchSides={!switchSides} />
+					</SplitPane>
+				</ShowIf> */}
 			</HerbieDuahApp>
 		</ThemeProvider>
 	);

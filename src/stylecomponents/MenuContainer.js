@@ -103,7 +103,7 @@ const MenuContainer = styled.aside`
 	}
 	
 	.menu__less-container {
-		padding-top: ${props => (props.isPortrait ? `0` : `33vh`)};
+		padding-top: ${props => (props.isPortrait ? `0` : `${navBarSize}`)};
 	}
 	
 	justify-content: right;
@@ -161,7 +161,8 @@ const MenuContainer = styled.aside`
 				&:last-child {
 					${props => (props.isPortrait ? `padding-right:4rem` : ``)};
 				}
-				margin: .3rem 1rem;
+				${props => (props.isPortrait ? `margin: .3rem 1rem;` : ``)};
+				
 				padding: 0;
 				
 			}	

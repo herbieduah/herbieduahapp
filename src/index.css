@@ -10,6 +10,7 @@ body {
 	-webkit-overflow-scrolling: touch;
 	-webkit-font-smoothing: antialiased;
 	overscroll-behavior: none;
+	overscroll-behavior-y: contain;
 }
 
 code {

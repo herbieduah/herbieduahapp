@@ -80,8 +80,8 @@ export default Media;
 								playsinline
 							/> */
 
-{
-	/* <Fragment>
+// {
+/* <Fragment>
 {props.nolazyload ? (
 <img
 alt={props.alt}
@@ -103,4 +103,4 @@ threshold={250}
 />
 )}
 </Fragment> */
-}
+// }

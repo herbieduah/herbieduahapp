@@ -288,25 +288,25 @@ export const SubMenuWrapper = props => {
 export const MenuTabs = props => {
 	const showCategory = props.showCategory;
 	return (
-		<ReactTabs defaultIndex={-1}>
+		<ReactTabs defaultIndex={0}>
 			<TabList>
 				<Tab>
-					<Text format bold m>
+					<Text format m bold>
 						For You
 					</Text>
 				</Tab>
 				<Tab>
-					<Text format bold m>
+					<Text format m bold>
 						Work
 					</Text>
 				</Tab>
 				<Tab>
-					<Text format bold m>
+					<Text format m bold>
 						Photography
 					</Text>
 				</Tab>
 				<Tab>
-					<Text format bold m>
+					<Text format m bold>
 						About
 					</Text>
 				</Tab>

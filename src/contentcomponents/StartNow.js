@@ -10,10 +10,12 @@ import {
 	Header,
 	Image,
 	Figure,
-	Figcaption
+	Figcaption,
+	ContentCategory,
+	ContentShow,
+	WorkInfo
 } from "../ContentHelpers";
-import { ContentShow } from "../ContentHelpers";
-import Emoji from "a11y-react-emoji";
+// import Emoji from "a11y-react-emoji";
 // import Modal from "../maincomponents/Modal";
 import StandOutFromTheRest2000x3000 from "../media/images/startNow/StandOutFromTheRest.jpg";
 import NAUConstruction2000x1500 from "../media/images/startNow/NAUConstruction.jpg";
@@ -21,8 +23,8 @@ import KnowTheGame2000x1500 from "../media/images/startNow/KnowTheGame.jpg";
 import herbieCareerWidePoster1480x1500 from "../media/images/startNow/herbieCareerWidePoster-317.jpg";
 import ConstructAPlan13X19x1952x2874 from "../media/images/startNow/ConstructAPlan13X19.jpg";
 import ConstructAPlan2000x1500 from "../media/images/startNow/ConstructAPlan-Horizontal.jpg";
-import CareerWidePosterPhotoshop1480x1973 from "../media/images/startNow/CareerWidePosterPhotoshop-208.jpg";
-import CareerPoster1480x950 from "../media/images/startNow/CareerPoster-950.jpg";
+// import CareerWidePosterPhotoshop1480x1973 from "../media/images/startNow/CareerWidePosterPhotoshop-208.jpg";
+// import CareerPoster1480x950 from "../media/images/startNow/CareerPoster-950.jpg";
 import ACMClubPhoto2000x2667 from "../media/images/startNow/ACMClubPhoto.jpg";
 import Yes1480x2220 from "../media/images/startNow/Yes.jpg";
 import FullPage1480x1824 from "../media/images/startNow/FullPage.jpg";
@@ -33,9 +35,12 @@ import howtowritecoverletter_1 from "../media/videos/startnow/howtowritecoverlet
 import resumeemail from "../media/videos/startnow/resumeemail.mp4";
 
 const header = "Start Now";
+const workDuration = "May 2014 - August 2016";
+const workSkills = "Graphic Design, Print Design and Digital Art";
+const workTools = "Adobe Creative Suite and VideoScribe";
 
 const StartNowPage = ({ contentProps }) => {
-	// const { whom } = contentProps;
+	const { techy, fullScreen } = contentProps;
 
 	return (
 		<Fragment>
@@ -48,6 +53,7 @@ const StartNowPage = ({ contentProps }) => {
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>
+				<WorkInfo techy={techy} workinfo={workinfo} />
 				<Image
 					className='padding-left-right'
 					src={ConstructAPlan13X19x1952x2874}
@@ -166,17 +172,16 @@ const StartNowPage = ({ contentProps }) => {
 					</Figcaption>
 				</Figure>
 
-				
 				<Figure src={herbieCareerWidePoster1480x1500}>
 					<Figcaption>
-						On a Career and Premedical Professions Fair poster. 
+						On a Career and Premedical Professions Fair poster.
 					</Figcaption>
 				</Figure>
 
 				<Figure src={herbieCareerWidePoster1480x1500}>
 					<Figcaption>
-						I designed the huge banner to hold the posters and  the
-						poster on the left.
+						I designed the huge banner to hold the posters and the poster on the
+						left.
 					</Figcaption>
 				</Figure>
 
@@ -188,9 +193,16 @@ const StartNowPage = ({ contentProps }) => {
 				{/* <Figure src={CareerWidePosterPhotoshop1480x1973}>
 					<Figcaption>Something</Figcaption>
 				</Figure> */}
+				<ContentCategory fullScreen={fullScreen} category='customize' />
 			</ContentShow>
 		</Fragment>
 	);
 };
 
 export default StartNowPage;
+
+const workinfo = {
+	workDuration,
+	workSkills,
+	workTools
+};

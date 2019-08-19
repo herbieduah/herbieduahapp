@@ -69,39 +69,61 @@ position: absolute;
 
 export const stupidNegativeMargin = `margin-top:${sliderMobileWidth /
 	2}px!important`;
-export const paddingLR = `padding: 0 20px ;
+export const paddingLR = `
+padding-right: 20px;
+padding-left: 20px;
 ${mobile} {
-	padding: 0 1rem ;
+	padding-right: 1rem;
+padding-left: 1rem;
 }`;
 
-export const paddingLRMed = `padding: 0 20%;
+export const paddingLRMed = `
+padding-left: 20%;
+padding-right: 20%;
 ${mobile} {
-	padding: 0 15% ;
+	padding-left: 15%;
+padding-right: 15%;
 }`;
 
-export const paddingLRLarge = `padding: 0 25% ;
+export const paddingLRLarge = `
+padding-left: 25%;
+padding-right: 25%;
 ${mobile} {
-	padding: 0 20% ;
+	padding-left: 20%;
+padding-right: 20%;
 }`;
 
-export const marginLRMed = `margin: 0 20%;
+export const marginLRMed = `
+margin-left: 20%;
+margin-right: 20%; 
 ${mobile} {
-	margin: 0 15% ;
+	margin-left: 15%;
+margin-right: 15%; 
 }`;
 
-export const marginLRLarge = `margin: 0 25% ;
+export const marginLRLarge = `
+margin-left: 25%;
+margin-right: 25%;
 ${mobile} {
-	margin: 0 20% ;
+	margin-left: 20%;
+	margin-right: 20%;
 }`;
 
-export const paddingTB = `padding: 20px 0px ;
+export const paddingTB = `
+padding-top: 20px;
+padding-bottom: 20px;
 ${mobile} {
-	padding: 1rem 0;
+	padding-top: 1rem;
+padding-bottom: 1rem;
 }`;
 
-export const marginLR = `margin: 0 20px ;
+export const marginLR = `
+margin-left: 20px;
+margin-right: 20px;
+
 ${mobile} {
-	margin: 0 1rem ;
+	margin-left: 1rem;
+margin-right: 1rem;
 }`;
 export const fiftyPixels = "3.47vw";
 export const navBarSize = "2.5rem";
@@ -142,6 +164,31 @@ export const cMarginBottomMed = `margin-bottom: 1.5rem;
 ${mobile} {
 	margin-bottom: 1rem;
 }
+`;
+
+export const cMarginTopSm = `margin-top: 1.25rem;
+${mobile} {
+	margin-top: .75rem;
+}
+`;
+
+export const cMarginBottomSm = `margin-bottom: 1.25rem;
+${mobile} {
+	margin-bottom: .75rem;
+}
+`;
+
+export const cPaddingBottomSm = `padding-bottom: 1.25rem;
+${mobile} {
+	padding-bottom: .75rem;
+}
+`;
+
+export const cPaddingTopSm = `padding-top: 1.25rem;
+${mobile}{
+	padding-top: .75rem;
+}
+
 `;
 
 export const container = `

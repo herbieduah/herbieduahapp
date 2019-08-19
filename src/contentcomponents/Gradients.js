@@ -2,16 +2,19 @@
 import React, { Fragment } from "react";
 import {
 	Paragraph,
-	HeadingTwo,
+	// HeadingTwo,
 	Header,
+	Link,
+	ContentCategory,
+	ContentShow,
 	GenerateTheme
 } from "../ContentHelpers";
-import { ContentShow } from "../ContentHelpers";
 // import Emoji from "a11y-react-emoji";
 
 const header = "Gradients";
 
 const GradientsPage = ({ contentProps }) => {
+	const { fullScreen } = contentProps;
 	return (
 		<Fragment>
 			<ContentShow less>
@@ -23,6 +26,13 @@ const GradientsPage = ({ contentProps }) => {
 				<Header>{header}</Header>
 				{/* <div className='c-border marginLR paddingTB'> */}
 				<GenerateTheme type='gradient' />
+				<Paragraph className='c-margin-top-med'>
+					Big shout out to{" "}
+					<Link href='https://webgradients.com/'>webgradients.com</Link> for
+					their stellar choices of gradients and the names to with theme.
+				</Paragraph>
+
+				<ContentCategory fullScreen={fullScreen} category='customize' />
 				{/* </div> */}
 			</ContentShow>
 		</Fragment>

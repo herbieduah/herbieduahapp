@@ -9,7 +9,7 @@ import {
 import {
 	sliderArrow,
 	CTAColor,
-	bgColor,
+	fontColorComplement,
 	sliderArrowSecondary,
 	sliderArrowActive,
 	sliderArrowOpacity,
@@ -192,7 +192,7 @@ export const SliderLineContainer = styled.div`
 		align-items: unset;
 		height: 100%;`
 			: ``}
-	}}
+	}
 	
 	.slider__line {
 		width: ${props => (props.isPortrait ? `4px` : `100%`)};
@@ -212,7 +212,7 @@ export const SliderLineContainer = styled.div`
 			margin: 0;
 			padding: 0;
 			line-height: 1;
-			color: ${bgColor};
+			color: ${fontColorComplement};
 			text-align:center;
 			width:100%;
 		}
@@ -254,7 +254,7 @@ export const SliderLineContainer = styled.div`
 			}}
 	}	
 	
-}
+
 
 `;
 

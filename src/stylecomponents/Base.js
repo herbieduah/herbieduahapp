@@ -6,10 +6,10 @@ import {
 	navBarButtonColor,
 	navBarHoverFocus,
 	navBarHoverFocusAction,
-	logoInnerFillColor,
+	// logoInnerFillColor,
 	logoInnerFillColorHoverFocus,
 	logoOuterFillColor,
-	logoBgColor,
+	// logoBgColor,
 	logoBgHoverColor,
 	tabHeadingsJustifyContent,
 	tabHeadingsBorderRadius,
@@ -29,7 +29,9 @@ import {
 	logoBorderBottom,
 	navBarBgComplement,
 	navBarButtonComplementaryText,
-	navBarButtonComplementaryHoverText
+	navBarButtonComplementaryHoverText,
+	fontColorOpposite,
+	fontColorComplement
 } from "./Themes/ThemeVariables";
 import {
 	mobile,
@@ -40,9 +42,9 @@ import {
 	hideScrollbar,
 	navBarSize,
 	fluidTypeInfo,
-	container,
-	contentMenuPaddingRight,
-	contentMenuPadding,
+	// container,
+	// contentMenuPaddingRight,
+	// contentMenuPadding,
 	tablet,
 	paddingLR,
 	slightBoxShadowBelow,
@@ -174,6 +176,9 @@ export const NavBarMiniContainer = styled.div`
 				&:hover,&:focus {
 					path {
 						fill: ${CTAColor};
+					}
+					.inner-rect, .half-circle {
+						fill: ${fontColorComplement};	
 					}
 				}
 		}
@@ -343,7 +348,7 @@ export const ReactTabs = styled(Tabs)`
 				margin: 0 0.6rem;
 			}
 			${mobile} {
-				margin: 0 0.5rem;
+				margin: 0 0.65rem;
 			}
 			span {
 				color: ${tabHeadingsColor};
@@ -495,14 +500,14 @@ export const ThemeCircleContainer = styled.li`
 				props.isPortrait
 					? props.themeValues.gradientPortrait
 					: props.themeValues.gradient};
-			border: 3px solid ${CTAColor};
+			border: 3px solid ${fontColor};
 			&.current {
-				border: 3px solid ${fontColor};
+				border: 3px solid ${fontColorOpposite};
 				cursor: default;
 			}
 			&:hover,
 			&:focus {
-				transform: scale(1.05);
+				transform: scale(1.1);
 			}
 		}
 		&__text {
@@ -653,13 +658,13 @@ export const MarqueeWrapper = styled.div`
 export const MatrixContainer = styled.div`
 	${absoluteOverlay}
 	canvas {
-	${tablet} {
-		width: 150vw !important;
-		height: 200vh !important;
-	}
-	${mobile} {
-		width: 150vw !important;
-		height: 200vh !important;
-	}
+		${tablet} {
+			width: 150vw !important;
+			height: 200vh !important;
+		}
+		${mobile} {
+			width: 150vw !important;
+			height: 200vh !important;
+		}
 	}
 `;

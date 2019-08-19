@@ -5,16 +5,20 @@ import Text from "../stylecomponents/Text";
 // import Fade from "react-reveal/Fade";
 import {
 	ContentShow,
-	ComingSoon,
+	HeadingTwo,
+	ContentCategory,
 	Header,
 	Paragraph,
-	Marquee
+	Marquee,
+	Small
+	// HeadingThree
 } from "../ContentHelpers";
 import { ShowIf } from "../ComponentHelpers";
 
 const header = "Special Thanks";
 
-const SpecialThanksPage = () => {
+const SpecialThanksPage = ({ contentProps }) => {
+	const { fullScreen, techy } = contentProps;
 	const [marqueePlay, setmarqueePlay] = useState(true);
 	const marqueePlaying = () => {
 		marqueePlay ? setmarqueePlay(false) : setmarqueePlay(true);
@@ -29,13 +33,22 @@ const SpecialThanksPage = () => {
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>
+				<HeadingTwo>Shout out to these people</HeadingTwo>
+				<Paragraph>
+					The hardest thing about designing and developing for eight months is
+					to have the will develop and design for eight months. Whether it's
+					having weekly "grind nights" to work on things we got going on, words
+					of encouragement or texting to make sure I am alive, these people have
+					been there for me and I genuinely appreciate them.
+				</Paragraph>
 				<div className='c-border'>
-					<Marquee playing={marqueePlay}>
-						<Text format xl extrawide>
-							Daliza Jeffrey
+					<Marquee playing={marqueePlay} left>
+						<Text format l extrawide className='c-no-wrap'>
+							Daliza Jeffrey - Henry Duah - Kyle Mooney - Nuvi Njinimbam -
+							Wieland Mego
 						</Text>
 					</Marquee>
-					<Marquee playing={marqueePlay} left>
+					{/* <Marquee playing={marqueePlay} left>
 						<Text format xl extrawide>
 							Henry Duah
 						</Text>
@@ -55,27 +68,53 @@ const SpecialThanksPage = () => {
 						<Text format xl extrawide>
 							Wieland Mego
 						</Text>
-					</Marquee>
+					</Marquee> */}
 				</div>
-				<ShowIf noAnimation thisValue={marqueePlay} thatValue={true}>
+				{/* <ShowIf noAnimation thisValue={marqueePlay} thatValue={true}>
+					<Small>Okay I get it these people are awesome</Small>
 					<Text
 						button
 						m
 						onClick={marqueePlaying}
-						className='c-margin-top padding-left-right'>
-						Okay I get it these people are awesome please make it stop
+						className=' padding-left-right'>
+						make it stop
 					</Text>
 				</ShowIf>
 
 				<ShowIf noAnimation thisValue={marqueePlay} thatValue={false}>
+					<Small>
+						I wanna see the people you appreciate over and over again
+					</Small>
 					<Text
 						button
 						m
 						onClick={marqueePlaying}
-						className='c-margin-top padding-left-right'>
-						I wanna see the people you appreciate over and over again
+						className='padding-left-right'>
+						make it go again
 					</Text>
+				</ShowIf> */}
+				<ShowIf noAnimation thisValue={techy} thatValue={true}>
+					<HeadingTwo>The Dev Community</HeadingTwo>
+					<Paragraph>
+						Shout out the smart people that created these npm modules:
+					</Paragraph>
+					<div className='c-border'>
+						<Marquee playing={marqueePlay} left>
+							<Text format m extrawide className='c-no-wrap'>
+								react-dom - styled-components - react-split-pane - react-player
+								- react-lazyload - react-tabs - react-matrix-effect -
+								react-image - query-string
+							</Text>
+						</Marquee>
+						<Marquee playing={marqueePlay} left>
+							<Text format m extrawide>
+								react-sizeme - react-reveal - react-visibility-sensor -
+								react-device-detect - eact-transition-group - react-svg
+							</Text>
+						</Marquee>
+					</div>
 				</ShowIf>
+				<ContentCategory fullScreen={fullScreen} category='about' />
 			</ContentShow>
 		</Fragment>
 	);

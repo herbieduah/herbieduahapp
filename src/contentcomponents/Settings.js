@@ -5,7 +5,9 @@ import {
 	HeadingTwo,
 	Header,
 	ContentShow,
-	SettingButton,
+	ContentCategory,
+	Small,
+	// SettingButton,
 	DisableSetting
 } from "../ContentHelpers";
 import { ShowIf } from "../ComponentHelpers";
@@ -21,8 +23,8 @@ const SettingsPage = ({ contentProps }) => {
 		setNavBarComplement,
 		minimalMode,
 		setMinimalMode,
-		lazyLoading,
-		setLazyLoading,
+		// lazyLoading,
+		// setLazyLoading,
 		techy,
 		setTechy,
 		setSides,
@@ -42,9 +44,9 @@ const SettingsPage = ({ contentProps }) => {
 		fullScreen ? setFullscreen(false) : setFullscreen(true);
 	};
 
-	const downloadEverything = () => {
-		lazyLoading ? setLazyLoading(false) : setLazyLoading(true);
-	};
+	// const downloadEverything = () => {
+	// 	lazyLoading ? setLazyLoading(false) : setLazyLoading(true);
+	// };
 
 	const knowCode = () => {
 		techy ? setTechy(false) : setTechy(true);
@@ -54,7 +56,7 @@ const SettingsPage = ({ contentProps }) => {
 		setSides(false);
 		setTimeout(() => {
 			setSides(true);
-		}, 7000);
+		}, 10000);
 	};
 
 	return (
@@ -76,14 +78,21 @@ const SettingsPage = ({ contentProps }) => {
 					</Paragraph>
 					<ShowIf noAnimation thisValue={navBarRight} thatValue={true}>
 						<Text button onClick={moveNavBar} className='padding-left-right'>
-							Move Navigation bar to the left to the left, everything you need
-							to navigate the site to the left
+							Move Navigation Bar Left
 						</Text>
+						<Small>
+							Move Navigation bar to the left to the left, everything you need
+							to navigate the site to the left.
+						</Small>
 					</ShowIf>
 					<ShowIf noAnimation thisValue={navBarRight} thatValue={false}>
 						<Text button onClick={moveNavBar} className='padding-left-right'>
 							Move Navigation Bar to the right
 						</Text>
+						<Small>
+							Move Navigation bar back to right side, not the wrong side, the
+							right side, the side I chose first which is right.
+						</Small>
 					</ShowIf>
 				</DisableSetting>
 				<HeadingTwo>Complementary Navigation Bar</HeadingTwo>
@@ -100,6 +109,9 @@ const SettingsPage = ({ contentProps }) => {
 						className='padding-left-right'>
 						Add complementary background
 					</Text>
+					{/* <Small>
+							Complementary
+						</Small> */}
 				</ShowIf>
 				<ShowIf noAnimation thisValue={navBarComplement} thatValue={true}>
 					<Text
@@ -109,24 +121,30 @@ const SettingsPage = ({ contentProps }) => {
 						Remove complementary background
 					</Text>
 				</ShowIf>
-				<HeadingTwo>
-					Technical vs Non-Technical
-					<span className='alpha'>Not functional</span>
-				</HeadingTwo>
-				<Paragraph>
-					My main audience are people that do not know much about coding so I
-					didn't want to add a lot of technical jargon, but if you are
-					knowledgable about coding or want to learn then I recommend turning on
-					this settings.
-				</Paragraph>
+				<HeadingTwo>Technical vs Non-Technical</HeadingTwo>
+				<ShowIf noAnimation thisValue={techy} thatValue={true}>
+					<Paragraph>
+						My main audience are people that do not know much about coding so I
+						didn't want to add a lot of technical jargon, but if you are
+						knowledgable about coding or want to learn morethen I recommend
+						turning on this settings.
+					</Paragraph>
+				</ShowIf>
+				<ShowIf noAnimation thisValue={techy} thatValue={true}>
+					<Paragraph>
+						I sprinkled some technical knowledge around the side but I do not
+						indicate where exactly.
+					</Paragraph>
+				</ShowIf>
+
 				<ShowIf noAnimation thisValue={techy} thatValue={true}>
 					<Text button onClick={knowCode} className='padding-left-right'>
-						change tone to Technical
+						Change tone to Non technical
 					</Text>
 				</ShowIf>
 				<ShowIf noAnimation thisValue={techy} thatValue={false}>
 					<Text button onClick={knowCode} className='padding-left-right'>
-						change tone to Non technical
+						Change tone to Technical
 					</Text>
 				</ShowIf>
 				{/* <HeadingTwo>
@@ -149,8 +167,8 @@ const SettingsPage = ({ contentProps }) => {
 					</ShowIf> */}
 				<HeadingTwo>Like every other site</HeadingTwo>
 				<Paragraph>
-					This setting gets rids of the slider AND the vertical navigation bar
-					making it like every other website.
+					This setting gets rids of the slider and the vertical navigation bar
+					therefore making it like every other website.
 				</Paragraph>
 				<ShowIf noAnimation thisValue={minimalMode} thatValue={true}>
 					<Text button onClick={basicMode} className='padding-left-right'>
@@ -177,7 +195,7 @@ const SettingsPage = ({ contentProps }) => {
 					</Paragraph>
 					<Paragraph>
 						<strong>
-							Since this is a failed setting, it will revert back in 7 seconds
+							Since this is a failed setting, it will revert back in 10 seconds
 						</strong>
 					</Paragraph>
 					<ShowIf noAnimation thisValue={switchSides} thatValue={true}>
@@ -191,6 +209,7 @@ const SettingsPage = ({ contentProps }) => {
 						</Text>
 					</ShowIf>
 				</DisableSetting>
+				<ContentCategory fullScreen={fullScreen} category='customize' />
 			</ContentShow>
 		</Fragment>
 	);

@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-expressions */
 import React, { useState } from "react";
-import { Paragraph, Header, Gif, HeadingThree } from "../ContentHelpers";
+import { Paragraph } from "../ContentHelpers";
 import Text from "../stylecomponents/Text";
 // import Emoji from "a11y-react-emoji";
 // import testVideoHorizontal from "../media/videos/videosOfme/404.mp4";

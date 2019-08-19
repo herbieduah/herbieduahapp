@@ -6,7 +6,7 @@ import {
 	// HeadingOne,
 	HeadingTwo,
 	Link,
-	Image,
+	// Image,
 	// HeadingThree,
 	// Image,
 	// Small,
@@ -21,11 +21,11 @@ import {
 import { ContentShow } from "../ContentHelpers";
 import Emoji from "a11y-react-emoji";
 // import Modal from "../maincomponents/Modal";
-import trudywanted1480x3203 from "../media/images/ugg/work-trudywanted-3203.jpg";
-import trudyGillenwater1480x2618 from "../media/images/ugg/work-trudyGillenwater-2618.jpg";
-import trudyGoFundMe1480x3203 from "../media/images/ugg/work-trudyGoFundMe-3205.jpg";
-import trudyGoFundMeSadFace1480x3205 from "../media/images/ugg/work-trudyGoFundMeSadFace-3205.jpg";
-import trudy13203x1480x3203 from "../media/images/ugg/work-trudy13203.jpg";
+// import trudywanted1480x3203 from "../media/images/ugg/work-trudywanted-3203.jpg";
+// import trudyGillenwater1480x2618 from "../media/images/ugg/work-trudyGillenwater-2618.jpg";
+// import trudyGoFundMe1480x3203 from "../media/images/ugg/work-trudyGoFundMe-3205.jpg";
+// import trudyGoFundMeSadFace1480x3205 from "../media/images/ugg/work-trudyGoFundMeSadFace-3205.jpg";
+// import trudy13203x1480x3203 from "../media/images/ugg/work-trudy13203.jpg";
 import UnsolicitedUggDesktop2000x3203 from "../media/images/ugg/work-UnsolicitedUggDesktop.jpg";
 import frikkinPhillipLim from "../media/videos/ugg/frikkinPhillipLim.mp4";
 import JeremyScottDesktop_2 from "../media/videos/ugg/JeremyScottDesktop_2.mp4";

@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-expressions */
 import React, { Fragment } from "react";
-import { Paragraph, HeadingTwo, Image, Header } from "../ContentHelpers";
+import { Paragraph, Image, Header } from "../ContentHelpers";
 import { ContentShow } from "../ContentHelpers";
 // import Emoji from "a11y-react-emoji";
 import treesInAutumn2000x3004 from "../media/images/places/treesInAutumn.jpg";
@@ -23,11 +23,10 @@ const PeoplePage = ({ contentProps }) => {
 	return (
 		<Fragment>
 			<ContentShow less>
-				<Paragraph noReveal>I take pictures of places</Paragraph>
+				<Paragraph noReveal>I take pictures of different places.</Paragraph>
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>
-				<Paragraph>Basically any pictures that do not evolve people</Paragraph>
 				<Image src={treesInAutumn2000x3004} />
 				<Image src={snowMountainLake1480x985} />
 				<Image src={snowyRoad2000x2999} />

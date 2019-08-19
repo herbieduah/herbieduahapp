@@ -9,6 +9,7 @@ import {
 	// navBarSize,
 	contentMenuPaddingRight,
 	paddingLR,
+	cPaddingTopSm,
 	marginLR,
 	paddingTB,
 	paddingLRLarge,
@@ -21,7 +22,11 @@ import {
 	cMarginBottom,
 	cPaddingBottom,
 	cPaddingBottomMed,
-	cMarginBottomMed
+	cMarginBottomMed,
+	cMarginTopSm,
+	cMarginBottomSm,
+	cPaddingBottomSm,
+	navBarSize
 } from "./StyleHelpers";
 import { navBarBorder, CTAColor, borderThin } from "./Themes/ThemeVariables";
 
@@ -70,8 +75,27 @@ export const ContentContainer = styled.section`
 		}
 	}
 
+	.c-experience {
+		${marginLR};
+		${cPaddingTopSm};	
+		
+		border-bottom: ${borderThin};
+	}
+	.c-no-wrap {
+		white-space: nowrap;
+	}
+
+	.cPaddingBottomSm, .c-padding-bottom-small{
+		${cPaddingBottomSm}
+	}
+	.cMarginBottomSm, .c-margin-bottom-small{
+		${cMarginBottomSm}
+
+	}
+
 	li {
 		color: ${fontColor};
+		${cMarginTopSm};
 	}
 
 	.flex-container {
@@ -127,7 +151,7 @@ export const ContentContainer = styled.section`
 			}
 		}
 		&__less-container {
-			padding-top: ${props => (props.isPortrait ? `0` : `33vh`)};
+			padding-top: ${props => (props.isPortrait ? `0` : `${navBarSize}`)};
 		}
 		&__more {
 			${mainTransition}
@@ -139,11 +163,11 @@ export const ContentContainer = styled.section`
 	.c-margin-bottom,.cmb {
 
 		${cMarginBottom} 
-	}
-	.c-padding-bottom,.cpd {
+	} 
+	.c-padding-bottom,.cPaddingBottom {
 		${cPaddingBottom}
 	}
-	.c-padding-bottom-med {
+	.c-padding-bottom-med, .cPaddingBottomMed {
 		${cPaddingBottomMed}
 	}
 	.c-margin-bottom-med {
@@ -180,6 +204,9 @@ export const ContentContainer = styled.section`
 			margin-top: 3rem;
 		}
 	}
+	.c-margin-top-small{
+		${cMarginTopSm}
+	}
 	.c-margin-top-large {
 		margin-top: 4.5rem;
 		${mobile} {
@@ -190,9 +217,10 @@ export const ContentContainer = styled.section`
 		vertical-align: baseline;
 	}
 	.c-border {
-		 border: ${navBarBorder};
+		border: ${navBarBorder};
 		 ${props => (props.isPortrait ? `` : `${paddingTB}`)};
 		 ${props => (props.isPortrait ? `` : `${marginLR}`)};
+		 ${props => (props.isPortrait ? `border: none !important;` : ``)};
 
 	}
 	.c-margin-top-med {
@@ -277,17 +305,20 @@ export const ContentContainer = styled.section`
 		display: flex;
 		flex-wrap: wrap;
 		width: 100%;
+		margin: 0;
 		${mobile} {
 			display:block;
 		}
+		
 		&__item {
-			margin-bottom: 1rem;
+			
 			list-style-type: none;
 			margin-right: 1.5rem;
 			
 			white-space: wrap;
 			${mobile} {
 				margin-right: 1rem;
+				margin-bottom: .7rem;
 			}
 		}
 		&__text {
@@ -304,6 +335,9 @@ export const ContentContainer = styled.section`
 		${cMarginBottomMed}
 		padding-top: .5rem;
 		padding: .5rem 0;
+		strong {
+			display: contents;
+		}
 		.react-reveal,li span {
 			margin:0;
 			padding:0;

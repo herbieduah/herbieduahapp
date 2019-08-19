@@ -42,11 +42,10 @@ const HomePage = ({ contentProps }) => {
 		<Fragment>
 			<ContentShow less>
 				<ShowIf noAnimation thisValue={"everyone"} thatValue={whom}>
-					<Paragraph>
+					<Paragraph noReveal>
 						Nowadays, there is an app for everything. In the future, I believe
-						there is going to be an app for everyone. This belief and my passion
-						for crafting user experiences inspired me to design and engineer my
-						own app.
+						there is going to be an app for everyone. Hi I'm Herbie, and this is
+						my app.
 					</Paragraph>
 					<Small className='c-interact'>
 						Drag the slider {whereToDrag} to reveal more.&nbsp;
@@ -95,7 +94,7 @@ const HomePage = ({ contentProps }) => {
 						experience. I graduated at Northern Arizona University with a degree
 						in Applied Computer Science. Somewhere along the way, I fell in love
 						with design. I enjoy any opportunity that allows me to use my coding
-						AND design skills
+						and design skills
 						<Emoji className='emoji' symbol='🤓' label='nerd' />.
 					</Paragraph>
 					<HeadingTwo>An app for everyone</HeadingTwo>

@@ -28,8 +28,8 @@ import { appTransitions } from "./stylecomponents/Transitions";
 export const defaultAlt = "I will be adding an alt tag to this image soon";
 export const defaultDesc = "This is a video, I will be describing it soon";
 const spacingBottom = "c-margin-bottom";
-const spacingBottomMed = "c-margin-bottom-med";
-const spacingTopBottom = "c-margin-top c-margin-bottom";
+// const spacingBottomMed = "c-margin-bottom-med";
+// const spacingTopBottom = "c-margin-top c-margin-bottom";
 // const noSpacingTopBottom = "c-margin-0";
 
 export const ContentShow = props => {
@@ -137,7 +137,7 @@ export const Header = props => {
 				onStart={onFullScreening}
 				onClickNHold={onFullScreenTimeOutEnded} //Timeout callback
 				onEnd={onFullScreenEnded}>
-				<header className='content__header container'>
+				<header className='content__header container '>
 					<HeadingOne>{props.children}</HeadingOne>
 				</header>
 			</ClickNHold>
@@ -562,8 +562,8 @@ export const Marquee = props => {
 };
 
 export const DisableSetting = props => {
-	const { currentTransition } = useContext(globalState);
-	const transitionClasses = getCurrentTransition(currentTransition);
+	// const { currentTransition } = useContext(globalState);
+	// const transitionClasses = getCurrentTransition(currentTransition);
 	const thisValue = props.thisValue;
 	const thatValue = props.thatValue;
 	const renderMe = thisValue === thatValue ? true : false;

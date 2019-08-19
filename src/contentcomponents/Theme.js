@@ -4,15 +4,17 @@ import React, { Fragment } from "react";
 // import Fade from "react-reveal/Fade";
 import {
 	ContentShow,
-	ComingSoon,
+	// ComingSoon,
 	Paragraph,
+	ContentCategory,
 	Header,
 	HeadingTwo
 } from "../ContentHelpers";
 
 const header = "Theme";
 
-const ThemePage = () => {
+const ThemePage = ({ contentProps }) => {
+	const { fullScreen } = contentProps;
 	return (
 		<Fragment>
 			<ContentShow less>
@@ -36,6 +38,7 @@ const ThemePage = () => {
 				<Paragraph>
 					The Snapchat theme borrows some of the looks and colors from Snapchat.
 				</Paragraph>
+				<ContentCategory fullScreen={fullScreen} category='customize' />
 			</ContentShow>
 		</Fragment>
 	);
