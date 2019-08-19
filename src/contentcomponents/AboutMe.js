@@ -56,7 +56,9 @@ const AboutMePage = ({ contentProps }) => {
 	return (
 		<Fragment>
 			<ContentShow less>
-				<Paragraph>Hmm, how do I describe myself?</Paragraph>
+				<Paragraph noReveal>
+					I am going to try to describe myself with pictures and gifs
+				</Paragraph>
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>
@@ -66,7 +68,7 @@ const AboutMePage = ({ contentProps }) => {
 					desc='A picture of me doing that Wakanda salute in Black Panther'
 					width='720'
 					height='900'
-					url={`https://www.youtube.com/watch?v=_XE_mCjQIH4`}>
+					url={wakanda_1}>
 					<Figcaption>Not Wakanka.</Figcaption>
 				</FiGif>
 				<HeadingTwo>I graduated at Northern Arizona University</HeadingTwo>

@@ -2,19 +2,44 @@
 import React, { Fragment } from "react";
 // import Media from "../maincomponents/Media";
 // import Fade from "react-reveal/Fade";
+import Text from "../stylecomponents/Text";
 import {
 	ContentShow,
 	// ComingSoon,
 	Paragraph,
+	Small,
 	ContentCategory,
 	Header,
 	HeadingTwo
 } from "../ContentHelpers";
+import { ShowIf } from "../ComponentHelpers";
 
 const header = "Theme";
 
 const ThemePage = ({ contentProps }) => {
-	const { fullScreen } = contentProps;
+	const { fullScreen, currentTheme, setTheme } = contentProps;
+	const setMatrixTheme = () => {
+		setTheme("matrix");
+	};
+	const setSnapchatTheme = () => {
+		setTheme("snapchat");
+	};
+
+	const snapMessage = () => {
+		setTimeout(() => {
+			return `It's been 10 seconds, hope you are digging it`;
+		}, 10000);
+	};
+	const isMatrix = currentTheme === "matrix" ? true : false;
+	const isSnapchat = currentTheme === "snapchat" ? true : false;
+	// const setNigerianTheme = () => {
+	// 	currentTheme('nigerian');
+	// };
+
+	// const starWarsTheme = () => {
+	// 	currentTheme('starwars');
+	// };
+
 	return (
 		<Fragment>
 			<ContentShow less>
@@ -25,19 +50,39 @@ const ThemePage = ({ contentProps }) => {
 				<Paragraph>
 					Themes change certain areas of the site to match one of themes below
 				</Paragraph>
-				<HeadingTwo>
-					Matrix <span className='alpha'>Coming soon</span>
-				</HeadingTwo>
+				<HeadingTwo>Matrix</HeadingTwo>
 				<Paragraph>
 					This Matrix theme is based on the Matrix Trilogy starring Keanu
 					Reeves.
 				</Paragraph>
-				<HeadingTwo>
-					Snapchat <span className='alpha'>ComingSoon</span>
-				</HeadingTwo>
+				<ShowIf noAnimation thisValue={isMatrix} thatValue={false}>
+					<Text button onClick={setMatrixTheme} className='padding-left-right'>
+						Take the Red Pill
+					</Text>
+					<Small>
+						You stay in Wonderland, and I show you how deep the rabbit hole
+						goes...
+					</Small>
+				</ShowIf>
+				<ShowIf noAnimation thisValue={isMatrix} thatValue={true}>
+					<Small>You are currently in the Matrix.</Small>
+				</ShowIf>
+				<HeadingTwo>Snapchat</HeadingTwo>
 				<Paragraph>
 					The Snapchat theme borrows some of the looks and colors from Snapchat.
 				</Paragraph>
+				<ShowIf noAnimation thisValue={isSnapchat} thatValue={false}>
+					<Text
+						button
+						onClick={setSnapchatTheme}
+						className='padding-left-right'>
+						Add Filter
+					</Text>
+					<Small>This web app is totally catfish.</Small>
+				</ShowIf>
+				<ShowIf noAnimation thisValue={isSnapchat} thatValue={true}>
+					<Small>Hmm {snapMessage()}</Small>
+				</ShowIf>
 				<ContentCategory fullScreen={fullScreen} category='customize' />
 			</ContentShow>
 		</Fragment>

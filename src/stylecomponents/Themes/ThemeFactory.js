@@ -1,4 +1,9 @@
-import { themeMaker, themeBgMaker } from "./ThemeHelpers";
+import {
+	themeMaker,
+	themeBgMaker,
+	matrixTheme,
+	snapchatTheme
+} from "./ThemeHelpers";
 import xvImage from "../bgImages/xv.png";
 import subtleGrungeImage from "../bgImages/subtle_grunge.png";
 import stardustImage from "../bgImages/stardust.png";
@@ -17,6 +22,8 @@ import carbonFibreImage from "../bgImages/carbon_fibre.png";
 
 export const defaultTheme = themeMaker();
 export const cartographer = themeBgMaker();
+export const matrix = matrixTheme();
+export const snapchat = snapchatTheme();
 
 const carbonFibre = {
 	bgColor: "#282828",

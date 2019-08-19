@@ -116,7 +116,7 @@ export default class Matrix extends React.Component {
 			<MatrixContainer
 				style={{
 					...style,
-					background: "#000000",
+					background: "#252525",
 					width: this.props.fullscreen ? "100vw" : this.props.width + "px",
 					height: this.props.fullscreen ? "100vh" : this.props.height + "px",
 					overflow: "hidden",

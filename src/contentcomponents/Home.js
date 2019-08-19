@@ -3,25 +3,26 @@ import React, { Fragment } from "react";
 // import Text from "../stylecomponents/Text";
 import {
 	Paragraph,
-	HeadingOne,
+	// HeadingOne,
 	HeadingTwo,
-	HeadingThree,
+	// HeadingThree,
 	Image,
 	Small,
-	Figure,
-	Figcaption,
+	// Figure,
+	// Figcaption,
 	Gif,
 	Header,
-	Flex,
+	// Flex,
 	ContentShow
 } from "../ContentHelpers";
 import { ShowIf } from "../ComponentHelpers";
 import Emoji from "a11y-react-emoji";
+import { mobileModel, isMobileOnly } from "react-device-detect";
 // import Modal from "../maincomponents/Modal";
 import cornishPastyPic from "../media/images/picsOfMe/hd-herbieSmile-1974.jpg";
-import yes from "../media/images/startNow/Yes.jpg";
-import testPicHorizontal from "../media/videos/videosOfme/raveMillyRock_1.mp4";
-import testVideoHorizontal from "../media/videos/videosOfme/dadDance_1.mp4";
+// import yes from "../media/images/startNow/Yes.jpg";
+// import testPicHorizontal from "../media/videos/videosOfme/raveMillyRock_1.mp4";
+import vneckcrewneck from "../media/videos/videosOfme/vNeckCrewNeck.mp4";
 
 // import ReactPlayer from "react-player";
 
@@ -52,34 +53,29 @@ const HomePage = ({ contentProps }) => {
 						<Emoji className='emoji' symbol='🙂' label='smile' />
 					</Small>
 				</ShowIf>
-				<ShowIf noAnimation thisValue={"recruiter"} thatValue={whom}>
+				<ShowIf noAnimation thisValue={"dherbstatwitter"} thatValue={whom}>
 					<Paragraph>
-						Hi there! I appreciate the LinkedIn message, I really do! I've spent
-						the last few months designing and engineering this award-worthy
-						porfolio in hopes of landing a top UX Engineer position or any top
-						position that let's me utilize my design and coding skillz. Please
-						feel free to take a look around.&nbsp;
-						<Emoji className='emoji' symbol='😉' label='wink' />
-						).
+						You know what's crazy? I am still not tired of MegTheeStallion
+						twerking on the timeline.
+						<ShowIf noAnimation thisValue={isMobileOnly} thatValue={true}>
+							I know she is blessing your the lil {mobileModel} you holding
+							right now.
+						</ShowIf>
+						Anyways, here is my web app, it ain't done yet tho.
 					</Paragraph>
 				</ShowIf>
 			</ContentShow>
 			<ContentShow more>
 				<div className='container'>
-					<Header>Hi I'm Herbie</Header>
-					<ShowIf noAnimation thisValue={"recruiter"} thatValue={whom}>
-						<Paragraph>
-							On average, I receive about 5 LinkedIn InMessage messages a week.
-							I've usually being ignoring most of them but I recently heard
-							there is a cost to you guys for un-answered messages and I feel
-							terribly sorry about that. I customized part of my porfolio to
-							give you a better understanding of my skills or what I want.
-						</Paragraph>
-						<Image src={yes} className='container' />
+					<Header>{header}</Header>
+					<ShowIf noAnimation thisValue={"dherbstatwitter"} thatValue={whom}>
+						<Paragraph>Guess who built this joint.</Paragraph>
+						<Gif url={vneckcrewneck} />
 						<Paragraph className=' '>
-							Granted, it is still under construction and I will be making
-							frequent updates. Hope you're having a great day who ever you are
-							and good luck on the employee hunt!
+							That's right me. All me shout out to Drake. I appreciate you for
+							checking out the link. Have fun exploring you. Slide in my DMs if
+							you find anything strange{" "}
+							<Emoji className='emoji' symbol='😉' label='nerd' />
 						</Paragraph>
 					</ShowIf>
 					<Image

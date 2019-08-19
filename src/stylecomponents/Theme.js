@@ -51,7 +51,9 @@ import {
 	sugarLollipopTheme,
 	fabledSunsetTheme,
 	newRetrowaveTheme,
-	deepBlueTheme
+	deepBlueTheme,
+	snapchat,
+	matrix
 } from "./Themes/ThemeFactory";
 export const themes = [
 	{
@@ -61,6 +63,24 @@ export const themes = [
 		},
 		type: "gradient",
 		text: "Plum Bath",
+		desc: ""
+	},
+	{
+		name: "matrix",
+		properties: {
+			...matrix
+		},
+		type: "theme",
+		text: "Matrix",
+		desc: ""
+	},
+	{
+		name: "snapchat",
+		properties: {
+			...snapchat
+		},
+		type: "theme",
+		text: "Snapchat",
 		desc: ""
 	},
 	{

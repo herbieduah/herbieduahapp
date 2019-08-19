@@ -31,7 +31,8 @@ import {
 	navBarButtonComplementaryText,
 	navBarButtonComplementaryHoverText,
 	fontColorOpposite,
-	fontColorComplement
+	fontColorComplement,
+	logoInnerFillColor
 } from "./Themes/ThemeVariables";
 import {
 	mobile,
@@ -276,7 +277,7 @@ export const NavBarContainer = styled.div`
 			/* margin: 0 ${navBarSize}; */
 			.inner-rect, .half-circle {
 				${mainTransition}
-				fill: ${fontColor};	
+				fill: ${logoInnerFillColor};	
 			}
 			.outer-rect {
 				${mainTransition}
