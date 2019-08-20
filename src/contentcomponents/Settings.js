@@ -23,8 +23,8 @@ const SettingsPage = ({ contentProps }) => {
 		setNavBarComplement,
 		minimalMode,
 		setMinimalMode,
-		// lazyLoading,
-		// setLazyLoading,
+		lazyLoading,
+		setLazyLoading,
 		techy,
 		setTechy,
 		setSides,
@@ -44,9 +44,9 @@ const SettingsPage = ({ contentProps }) => {
 		fullScreen ? setFullscreen(false) : setFullscreen(true);
 	};
 
-	// const downloadEverything = () => {
-	// 	lazyLoading ? setLazyLoading(false) : setLazyLoading(true);
-	// };
+	const downloadEverything = () => {
+		lazyLoading ? setLazyLoading(false) : setLazyLoading(true);
+	};
 
 	const knowCode = () => {
 		techy ? setTechy(false) : setTechy(true);
@@ -147,24 +147,24 @@ const SettingsPage = ({ contentProps }) => {
 						Change tone to Technical
 					</Text>
 				</ShowIf>
-				{/* <HeadingTwo>
+				<HeadingTwo>
 					Lazy loading <span className='alpha'>Not functional</span>
 				</HeadingTwo>
 				<Paragraph>Stop lazyloading</Paragraph>
-					<ShowIf noAnimation thisValue={lazyLoading} thatValue={true}>
-						<Text
-							button
-							onClick={downloadEverything}
-							className='padding-left-right'>
-							Turn Off Lazy load
-						</Text>
-					</ShowIf>
-					<ShowIf noAnimation thisValue={lazyLoading} thatValue={false}>
-						<Text className='padding-left-right'>
-							You can change this setting again if you refresh or come back to
-							the site again
-						</Text>
-					</ShowIf> */}
+				<ShowIf noAnimation thisValue={lazyLoading} thatValue={true}>
+					<Text
+						button
+						onClick={downloadEverything}
+						className='padding-left-right'>
+						Turn Off Lazy load
+					</Text>
+				</ShowIf>
+				<ShowIf noAnimation thisValue={lazyLoading} thatValue={false}>
+					<Text className='padding-left-right'>
+						You can change this setting again if you refresh or come back to the
+						site again
+					</Text>
+				</ShowIf>
 				<HeadingTwo>Like every other site</HeadingTwo>
 				<Paragraph>
 					This setting gets rids of the slider and the vertical navigation bar
