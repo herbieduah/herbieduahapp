@@ -23,8 +23,8 @@ const SettingsPage = ({ contentProps }) => {
 		setNavBarComplement,
 		minimalMode,
 		setMinimalMode,
-		// lazyLoading,
-		// setLazyLoading,
+		lazyLoading,
+		setLazyLoading,
 		techy,
 		setTechy,
 		setSides,
@@ -44,9 +44,9 @@ const SettingsPage = ({ contentProps }) => {
 		fullScreen ? setFullscreen(false) : setFullscreen(true);
 	};
 
-	// const downloadEverything = () => {
-	// 	lazyLoading ? setLazyLoading(false) : setLazyLoading(true);
-	// };
+	const downloadEverything = () => {
+		lazyLoading ? setLazyLoading(false) : setLazyLoading(true);
+	};
 
 	const knowCode = () => {
 		techy ? setTechy(false) : setTechy(true);
@@ -122,11 +122,11 @@ const SettingsPage = ({ contentProps }) => {
 					</Text>
 				</ShowIf>
 				<HeadingTwo>Technical vs Non-Technical</HeadingTwo>
-				<ShowIf noAnimation thisValue={techy} thatValue={true}>
+				<ShowIf noAnimation thisValue={techy} thatValue={false}>
 					<Paragraph>
 						My main audience are people that do not know much about coding so I
 						didn't want to add a lot of technical jargon, but if you are
-						knowledgable about coding or want to learn morethen I recommend
+						knowledgable about coding or want to learn more then I recommend
 						turning on this settings.
 					</Paragraph>
 				</ShowIf>
@@ -147,24 +147,49 @@ const SettingsPage = ({ contentProps }) => {
 						Change tone to Technical
 					</Text>
 				</ShowIf>
-				{/* <HeadingTwo>
-					Lazy loading <span className='alpha'>Not functional</span>
-				</HeadingTwo>
-				<Paragraph>Stop lazyloading</Paragraph>
-					<ShowIf noAnimation thisValue={lazyLoading} thatValue={true}>
-						<Text
-							button
-							onClick={downloadEverything}
-							className='padding-left-right'>
+				<ShowIf noAnimation thisValue={techy} thatValue={true}>
+					<HeadingTwo>Lazy loading</HeadingTwo>
+				</ShowIf>
+				<ShowIf noAnimation thisValue={techy} thatValue={false}>
+					<HeadingTwo>Best Experience Mode</HeadingTwo>
+				</ShowIf>
+
+				<ShowIf noAnimation thisValue={techy} thatValue={false}>
+					<Paragraph>
+						Right now, all the images and gifs on the web app load as you
+						scroll. Activating this setting downloads every image and gif on the
+						site (No loading screens) therefore, giving you the best experience.
+					</Paragraph>
+				</ShowIf>
+				<ShowIf noAnimation thisValue={techy} thatValue={true}>
+					<Paragraph>
+						Stop lazy loading images and videos and download everything all at
+						once. Speaking of lazy... it was either spending 2 hours to do this
+						or 5-6 hours optimzing 100+ images and gifs for mobile and tablet or
+						moving this to Gatsby or something. (It's only ~ 30mb worth of
+						images and videos(gifs))
+					</Paragraph>
+				</ShowIf>
+
+				<ShowIf noAnimation thisValue={lazyLoading} thatValue={true}>
+					<Text
+						button
+						onClick={downloadEverything}
+						className='padding-left-right'>
+						<ShowIf noAnimation thisValue={techy} thatValue={false}>
+							Activate Best Experience Mode
+						</ShowIf>
+						<ShowIf noAnimation thisValue={techy} thatValue={true}>
 							Turn Off Lazy load
-						</Text>
-					</ShowIf>
-					<ShowIf noAnimation thisValue={lazyLoading} thatValue={false}>
-						<Text className='padding-left-right'>
-							You can change this setting again if you refresh or come back to
-							the site again
-						</Text>
-					</ShowIf> */}
+						</ShowIf>
+					</Text>
+				</ShowIf>
+				<ShowIf noAnimation thisValue={lazyLoading} thatValue={false}>
+					<Text className='padding-left-right'>
+						You can change this setting again if you refresh or come back to the
+						site again
+					</Text>
+				</ShowIf>
 				<HeadingTwo>Like every other site</HeadingTwo>
 				<Paragraph>
 					This setting gets rids of the slider and the vertical navigation bar
@@ -200,12 +225,12 @@ const SettingsPage = ({ contentProps }) => {
 					</Paragraph>
 					<ShowIf noAnimation thisValue={switchSides} thatValue={true}>
 						<Text button onClick={failure} className='padding-left-right'>
-							Switch Sides for 7 Seconds
+							Switch Sides for 10 Seconds
 						</Text>
 					</ShowIf>
 					<ShowIf noAnimation thisValue={switchSides} thatValue={false}>
 						<Text className='padding-left-right'>
-							Reverting back in 7 seconds
+							Reverting back in 10 seconds
 						</Text>
 					</ShowIf>
 				</DisableSetting>

@@ -40,7 +40,7 @@ const PeoplePage = ({ contentProps }) => {
 				<Image src={halle1480x2220} />
 				<Image src={johnnyGrad1480x2220} />
 				<Image src={meliPoet1480x2220} />
-				<Image src={melphotography1480x2220} />>
+				<Image src={melphotography1480x2220} />
 				<Image src={abenaNightTime1480x2221} />
 				<Image src={ashleyTaylor1480x2221} />
 				<Image src={connorGrad1480x2221} />

@@ -55,7 +55,7 @@ export const ContentContainer = styled.section`
 		margin: 0;
 	}
 	span.alpha {
-		background:red;
+		background:blue;
 		color: white;
 		font-weight:bold;
 	}
@@ -125,7 +125,8 @@ export const ContentContainer = styled.section`
 		&__less {
 			width:  100%;
 			height: ${props => (props.showLess && !props.isPortrait ? `100%` : `100%`)};
-			
+			position: relative;
+			z-index: 10;
 			${props => (props.isPortrait ? `margin-top: .5rem` : ``)};
 			max-width:  ${props => (props.showLess ? `500px` : `100%`)};
 			/* margin: 0 auto; */
@@ -189,6 +190,7 @@ export const ContentContainer = styled.section`
 	.marginLRMed {
 		${marginLRMed}
 	}
+	
 	.marginLRLarge {
 		${marginLRLarge}
 	}

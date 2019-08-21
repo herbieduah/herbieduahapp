@@ -29,10 +29,10 @@ const PunsPage = () => {
 export default PunsPage;
 
 const punArrayValues = [
-	`I got a new pair of gloves today,<br> but they're both 'lefts' which, on the one hand, is great, but on the other, it's just not right.`,
-	`The future, the present and the <br>past walked into a bar. Things got a little tense. `,
-	`What's the difference of deer nuts<br> and beer nuts? Beer nuts are a $1.75, but deer nut are under a buck.`,
-	`I'd tell you a chemistry joke but I <br>know I wouldn't get a reaction.`,
+	`I got a new pair of gloves today, but they're both 'lefts' which, on the one hand, is great, but on the other, it's just not right.`,
+	`The future, the present and the past walked into a bar. Things got a little tense. `,
+	`What's the difference of deer nuts and beer nuts? Beer nuts are a $1.75, but deer nut are under a buck.`,
+	`I'd tell you a chemistry joke but I know I wouldn't get a reaction.`,
 	`My boss is going to fire the employee with the worst posture. I have a hunch, it might be me.`,
 	`Don't spell part backwards. It's a trap.`,
 	`I'm reading a book about anti-gravity. It's impossible to put down.`,

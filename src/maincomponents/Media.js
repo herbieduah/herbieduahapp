@@ -1,6 +1,7 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useContext } from "react";
 import ReactSVG from "react-svg";
 import ReactPlayer from "react-player";
+import { globalState } from "../State";
 // import ImageLoader from "./ImageLoader";
 // import {
 // 	LazyLoadImage,
@@ -10,6 +11,20 @@ import Img from "react-image";
 import VisibilitySensor from "react-visibility-sensor";
 // import "react-lazy-load-image-component/src/effects/blur.css";
 
+const LazyLoadWrapper = props => {
+	const { lazyLoading } = useContext(globalState);
+	return (
+		<Fragment>
+			{lazyLoading ? (
+				<VisibilitySensor offset={{ top: 400 }}>
+					{props.children}
+				</VisibilitySensor>
+			) : (
+				<Fragment>{props.children}</Fragment>
+			)}
+		</Fragment>
+	);
+};
 const Media = props => {
 	const type = props.type;
 	switch (type) {
@@ -21,7 +36,7 @@ const Media = props => {
 			);
 		case "gif":
 			return (
-				<VisibilitySensor offset={{ top: 400 }}>
+				<LazyLoadWrapper>
 					<ReactPlayer
 						url={props.url}
 						width={props.width || "100%"}
@@ -34,11 +49,11 @@ const Media = props => {
 						aria-describedby={props.desc}
 						className={props.className}
 					/>
-				</VisibilitySensor>
+				</LazyLoadWrapper>
 			);
 		case "video":
 			return (
-				<VisibilitySensor offset={{ top: 400 }}>
+				<LazyLoadWrapper>
 					<div aria-describedby={props.desc}>
 						<ReactPlayer
 							url={props.url}
@@ -47,21 +62,19 @@ const Media = props => {
 							height={props.height || "100%"}
 						/>
 					</div>
-				</VisibilitySensor>
+				</LazyLoadWrapper>
 			);
 		case "image":
 			return (
-				<Fragment>
-					<VisibilitySensor offset={{ top: 300 }}>
-						<Img
-							alt={props.alt}
-							width={props.width || "100%"}
-							height={props.height || "100%"}
-							src={props.src}
-							className={props.className || ""}
-						/>
-					</VisibilitySensor>
-				</Fragment>
+				<LazyLoadWrapper>
+					<Img
+						alt={props.alt}
+						width={props.width || "100%"}
+						height={props.height || "100%"}
+						src={props.src}
+						className={props.className || ""}
+					/>
+				</LazyLoadWrapper>
 			);
 		default:
 			return null;

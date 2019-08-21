@@ -1,5 +1,6 @@
 import styled, { createGlobalStyle } from "styled-components";
 import { fullScreenFill, marqueeLeft, marqueeRight } from "./Animations";
+import { hideVisually } from "polished";
 import { Tabs } from "react-tabs";
 import {
 	navBarBg,
@@ -413,6 +414,12 @@ export const DragInstructionsContainer = styled.div`
 		text-align: center;
 		margin: 0  ${navBarSize};
 	}
+`;
+
+export const DownloadAll = styled.div`
+	${absoluteOverlay};
+	${hideVisually()};
+	pointer-events: none;
 `;
 
 export const FlexContainer = styled.div`

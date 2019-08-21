@@ -112,6 +112,11 @@ export const SubMenu = props => {
 					) : null}
 					<SubMenuWrapper showCategory={showCategory}>
 						<li onClick={hideModal} className='subMenu__item'>
+							<Text menuLink to='/settings'>
+								Settings
+							</Text>
+						</li>
+						<li onClick={hideModal} className='subMenu__item'>
 							<Text menuLink to='/gradients'>
 								Gradients
 							</Text>
@@ -129,11 +134,6 @@ export const SubMenu = props => {
 						<li onClick={hideModal} className='subMenu__item'>
 							<Text menuLink to='/theme'>
 								Theme
-							</Text>
-						</li>
-						<li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink to='/settings'>
-								Settings
 							</Text>
 						</li>
 					</SubMenuWrapper>

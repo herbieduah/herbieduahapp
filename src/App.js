@@ -14,6 +14,7 @@ import { FullScreenOverlay, NavBar, ShowIf } from "./ComponentHelpers";
 import queryString from "query-string";
 import Text from "./stylecomponents/Text";
 import { Puns } from "./Pages";
+import DownloadAllMedia from "./contentcomponents/DownloadAllMedia";
 import Matrix from "./stylecomponents/Themes/Matrix";
 import { isMobileOnly } from "react-device-detect";
 import {
@@ -69,12 +70,13 @@ export const App = () => {
 				splitSize={splitSize}
 				showFSMobileHorizontal={showFSMobileHorizontal}
 				dragging={dragging}>
+				<DownloadAllMedia />
 				<ShowIf noAnimation thisValue={currentTheme} thatValue={"matrix"}>
 					<Matrix fullscreen={true} isPortrait={isPortrait(ww, wh)} />
 				</ShowIf>
 				<div className='in-dev'>
 					<Text s className='alpha-text'>
-						This project is still in development
+						This project is still in Beta.
 					</Text>
 				</div>
 				<GlobalStyle />
