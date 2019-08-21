@@ -55,7 +55,7 @@ export const ContentContainer = styled.section`
 		margin: 0;
 	}
 	span.alpha {
-		background:red;
+		background:blue;
 		color: white;
 		font-weight:bold;
 	}
@@ -190,6 +190,7 @@ export const ContentContainer = styled.section`
 	.marginLRMed {
 		${marginLRMed}
 	}
+	
 	.marginLRLarge {
 		${marginLRLarge}
 	}

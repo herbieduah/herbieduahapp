@@ -76,7 +76,7 @@ export const App = () => {
 				</ShowIf>
 				<div className='in-dev'>
 					<Text s className='alpha-text'>
-						This project is still in development
+						This project is still in Beta.
 					</Text>
 				</div>
 				<GlobalStyle />

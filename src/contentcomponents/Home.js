@@ -51,10 +51,6 @@ const HomePage = ({ contentProps }) => {
 						so I made my own. I also enjoy designing and developing websites for
 						you.
 					</Paragraph>
-					<Small className='c-interact'>
-						Drag the slider {whereToDrag} to reveal more.&nbsp;
-						<Emoji className='emoji' symbol='🙂' label='smile' />
-					</Small>
 				</ShowIf>
 				<ShowIf noAnimation thisValue={"linkedin"} thatValue={whom}>
 					<Paragraph>
@@ -81,6 +77,10 @@ const HomePage = ({ contentProps }) => {
 						Anyways, here is my web app, it ain't done yet tho.
 					</Paragraph>
 				</ShowIf>
+				<Small className='c-interact'>
+					Drag the slider {whereToDrag} to reveal more.&nbsp;
+					<Emoji className='emoji' symbol='🙂' label='smile' />
+				</Small>
 			</ContentShow>
 			<ContentShow more>
 				<div className='container'>
@@ -147,6 +147,18 @@ const HomePage = ({ contentProps }) => {
 						people like you. Even though this portfolio is about me, I want you,
 						the user, to choose how you experience it
 						<Emoji className='emoji' symbol='🙂' label='smile' />.
+					</Paragraph>
+					<HeadingTwo>This project is in Beta</HeadingTwo>
+					<Paragraph>
+						Beta refers to the phase in software development between the alpha
+						phase and the release candidate phase. Beta software is generally
+						considered "complete" by the developer but still not ready for
+						general use due to a lack of testing "in the wild."
+					</Paragraph>
+					<Paragraph>
+						I googled "Beta software development" on Google and straight out
+						plagiarized because I have to shower and go to work soon. I really
+						wanted to share this web app this morning.
 					</Paragraph>
 					{/* <Paragraph>
 						Nullam id dolor id nibh ultricies vehicula ut id elit. Curabitur

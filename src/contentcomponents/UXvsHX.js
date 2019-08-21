@@ -17,7 +17,8 @@ const UXvsHXPage = () => {
 				<Header>{header}</Header>
 				<Paragraph className='alpha'>
 					I am going to try and convince you why everyone is going to have their
-					own app in the future. I am doing my research.
+					own app in the future. I 've been doing some research. I will make a
+					blog post and post it here when I am done.
 				</Paragraph>
 			</ContentShow>
 		</Fragment>

@@ -74,7 +74,7 @@ export const HerbieDuahApp = styled.main`
 	}
 
 	p.alpha-text {
-			background-color: red;
+			background-color: blue;
 			color: white;	
 			font-weight: bold;
 			width:100%;
