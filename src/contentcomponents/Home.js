@@ -158,7 +158,8 @@ const HomePage = ({ contentProps }) => {
 					<Paragraph>
 						I googled "Beta software development" on Google and straight out
 						plagiarized because I have to shower and go to work soon. I really
-						wanted to share this web app this morning.
+						wanted to share this web app this morning. It's Aug 21 at 6:53 AM
+						right now.
 					</Paragraph>
 					{/* <Paragraph>
 						Nullam id dolor id nibh ultricies vehicula ut id elit. Curabitur
