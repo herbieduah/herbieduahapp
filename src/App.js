@@ -14,7 +14,7 @@ import { FullScreenOverlay, NavBar, ShowIf } from "./ComponentHelpers";
 import queryString from "query-string";
 import Text from "./stylecomponents/Text";
 import { Puns } from "./Pages";
-import DownloadAllMedia from "./DownloadAllMedia";
+import DownloadAllMedia from "./contentcomponents/DownloadAllMedia";
 import Matrix from "./stylecomponents/Themes/Matrix";
 import { isMobileOnly } from "react-device-detect";
 import {

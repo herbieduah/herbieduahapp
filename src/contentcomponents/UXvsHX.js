@@ -15,9 +15,9 @@ const UXvsHXPage = () => {
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>
-				<Paragraph classNAme='alpha'>
+				<Paragraph className='alpha'>
 					I am going to try and convince you why everyone is going to have their
-					own app
+					own app in the future. I am doing my research.
 				</Paragraph>
 			</ContentShow>
 		</Fragment>

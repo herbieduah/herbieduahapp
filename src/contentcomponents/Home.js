@@ -26,7 +26,7 @@ import vneckcrewneck from "../media/videos/videosOfme/vNeckCrewNeck.mp4";
 
 // import ReactPlayer from "react-player";
 
-const header = "Hello";
+const header = "Hi I'm Herbie";
 // There is an app for everything, in
 // 					the future, I believe there is going to be an app for everyone. I am
 // 					Herbie Duah, and this is my app.
@@ -44,14 +44,31 @@ const HomePage = ({ contentProps }) => {
 			<ContentShow less>
 				<ShowIf noAnimation thisValue={"everyone"} thatValue={whom}>
 					<Paragraph noReveal>
-						Nowadays, there is an app for everything. In the future, I believe
+						{/* Nowadays, there is an app for everything. In the future, I believe
 						there is going to be an app for everyone. Hi I'm Herbie, and this is
-						my app.
+						my app. */}
+						In the future, I believe there is going to be an app for everyone,
+						so I made my own. I also enjoy designing and developing websites for
+						you.
 					</Paragraph>
 					<Small className='c-interact'>
 						Drag the slider {whereToDrag} to reveal more.&nbsp;
 						<Emoji className='emoji' symbol='🙂' label='smile' />
 					</Small>
+				</ShowIf>
+				<ShowIf noAnimation thisValue={"linkedin"} thatValue={whom}>
+					<Paragraph>
+						Yo what's up my LinkedIn connect, hope you're networking is good. In
+						the future, I believe there is going to be an app for everyone, so I
+						made my own. I also enjoy designing and developing websites for you.
+					</Paragraph>
+				</ShowIf>
+				<ShowIf noAnimation thisValue={"reddit"} thatValue={whom}>
+					<Paragraph>
+						Hi there fellow redditor, hope all is well. In the future, I believe
+						there is going to be an app for everyone, so I made my own. I also
+						enjoy designing and developing websites for you.
+					</Paragraph>
 				</ShowIf>
 				<ShowIf noAnimation thisValue={"dherbstatwitter"} thatValue={whom}>
 					<Paragraph>
@@ -78,6 +95,27 @@ const HomePage = ({ contentProps }) => {
 							<Emoji className='emoji' symbol='😉' label='nerd' />
 						</Paragraph>
 					</ShowIf>
+					<ShowIf noAnimation thisValue={"linkedin"} thatValue={whom}>
+						<HeadingTwo>First Off</HeadingTwo>
+						<Paragraph className=' '>
+							I'd like to say thanks. You could have been wishing your coworker
+							or some connection you don't really know a happy work anniversary
+							but instead you're here, checking out my web app. I really
+							appreciate you.
+						</Paragraph>
+					</ShowIf>
+					<ShowIf noAnimation thisValue={"reddit"} thatValue={whom}>
+						<HeadingTwo>First Off</HeadingTwo>
+						<Paragraph className=' '>
+							I'd like to say thanks. You could have been upvoting some reddit
+							post but instead you're here, checking out my web app. I really
+							appreciate you.
+						</Paragraph>
+						<Paragraph className=' '>
+							Shoutout to r/webdev, r/reactjs/ and r/web_design/. Y'all are
+							awesome!
+						</Paragraph>
+					</ShowIf>
 					<Image
 						src={cornishPastyPic}
 						nolazyload
@@ -86,7 +124,7 @@ const HomePage = ({ contentProps }) => {
 						alt='a picture of me'
 					/>
 					<Paragraph>
-						I am Phoenix based a Web developer/designer with five years of
+						I am a Phoenix based a Web developer/designer with five years of
 						experience. I graduated at Northern Arizona University with a degree
 						in Applied Computer Science. Somewhere along the way, I fell in love
 						with design. I enjoy any opportunity that allows me to use my coding
