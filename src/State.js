@@ -19,7 +19,7 @@ export const StateProvider = ({ children }) => {
 	const [switchSides, setSides] = useState(true);
 	const [contentWidth, onContentResizeWidth] = useState(defaultContentWidth);
 	const [contentHeight, onContentResizeHeight] = useState(defaultContentHeight);
-	const [currentTheme, setTheme] = useState("leCocktail");
+	const [currentTheme, setTheme] = useState("default");
 	const [currentTransition, setCurrentTransition] = useState("default");
 	const [currentContent, setCurrentContent] = useState("home");
 	const [overlay, setOverlay] = useState(false);

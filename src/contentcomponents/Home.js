@@ -54,7 +54,7 @@ const HomePage = ({ contentProps }) => {
 				</ShowIf>
 				<ShowIf noAnimation thisValue={"linkedin"} thatValue={whom}>
 					<Paragraph>
-						Yo what's up my LinkedIn connect, hope you're networking is good. In
+						Yo what's up my LinkedIn connect, I hope networking is going good for you.. In
 						the future, I believe there is going to be an app for everyone, so I
 						made my own. I also enjoy designing and developing websites for you.
 					</Paragraph>
@@ -158,8 +158,9 @@ const HomePage = ({ contentProps }) => {
 					<Paragraph>
 						I googled "Beta software development" on Google and straight out
 						plagiarized because I have to shower and go to work soon. I really
-						wanted to share this web app this morning. It's Aug 21 at 6:53 AM
-						right now.
+						wanted to share the Beta out this morning. It's Aug 21 at 6:53 AM
+						right now. Damn! I still have to steam my dress pants and dress shirt!
+						AhhHH!!
 					</Paragraph>
 					{/* <Paragraph>
 						Nullam id dolor id nibh ultricies vehicula ut id elit. Curabitur
