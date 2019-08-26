@@ -155,13 +155,13 @@ const HomePage = ({ contentProps }) => {
 						considered "complete" by the developer but still not ready for
 						general use due to a lack of testing "in the wild."
 					</Paragraph>
-					<Paragraph>
+					{/* <Paragraph>
 						I googled "Beta software development" on Google and straight out
 						plagiarized because I have to shower and go to work soon. I really
 						wanted to share the Beta out this morning. It's Aug 21 at 6:53 AM
 						right now. Damn! I still have to steam my dress pants and dress shirt!
 						AhhHH!!
-					</Paragraph>
+					</Paragraph> */}
 					{/* <Paragraph>
 						Nullam id dolor id nibh ultricies vehicula ut id elit. Curabitur
 						blandit tempus porttitor. Morbi leo risus, porta ac consectetur ac,
