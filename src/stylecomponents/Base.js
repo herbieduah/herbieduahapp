@@ -33,7 +33,8 @@ import {
 	navBarButtonComplementaryHoverText,
 	fontColorOpposite,
 	fontColorComplement,
-	logoInnerFillColor
+	logoInnerFillColor,
+	borderThin
 } from "./Themes/ThemeVariables";
 import {
 	mobile,
@@ -200,7 +201,7 @@ export const NavBarContainer = styled.div`
 	border-bottom: ${props => (props.navBarRight ? `none` : navBarBorder)}; 
 	border-top:  ${props => (props.navBarRight ? navBarBorder : `none`)}; 
 	${props =>
-		props.navBarComplement
+		props.navBarComplement || !props.isPortrait
 			? `
 	border-bottom: none !important;
 	border-top: none !important;
@@ -675,4 +676,14 @@ export const MatrixContainer = styled.div`
 			height: 200vh !important;
 		}
 	}
+`;
+
+export const BorderDesktop = styled.div`
+	${absoluteOverlay}
+	width: calc(100% - 5rem);
+	margin: 0 ${navBarSize};
+	border-left: ${borderThin};
+	border-right: ${borderThin};
+	z-index: 1000;
+	pointer-events: none;
 `;

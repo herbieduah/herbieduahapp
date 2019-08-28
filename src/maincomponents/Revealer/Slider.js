@@ -27,6 +27,13 @@ export const Slider = () => {
 						</Fragment>
 					)}
 				</button>
+				<Fragment>
+					{isAppMobile ? (
+						<div className='slider__line slider__line--is-portrait' />
+					) : (
+						<div className='slider__line slider__line--is-landscape' />
+					)}
+				</Fragment>
 			</div>
 		</SliderController>
 	);

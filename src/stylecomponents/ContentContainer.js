@@ -37,8 +37,6 @@ export const ContentContainer = styled.section`
 	${hideScrollbar};
 	overflow: auto;
 	${props => (props.navBarRight ? contentMenuPaddingRight : contentMenuPadding)};
-
-	
 	padding-bottom: 40vh;
 	${props => (props.minimalMode ? `margin:0 !important` : ``)};
 	${props => (props.minimalMode ? `padding:2.5rem 0 !important` : ``)};

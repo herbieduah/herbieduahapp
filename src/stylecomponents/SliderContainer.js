@@ -19,7 +19,8 @@ import {
 	sliderCircleActive,
 	sliderCircleOpacity,
 	sliderLine,
-	sliderLinePortrait
+	sliderLinePortrait,
+	borderThin
 } from "./Themes/ThemeVariables";
 import { pulseRing } from "./Animations";
 import { sliderDesktopWidth, sliderMobileWidth } from "../helpers";
@@ -132,6 +133,17 @@ export const SliderController = styled.div`
 						props.dragging ? sliderArrowActive : sliderArrowSecondary};
 			}
 		}
+		&__line {
+			&--is-landscape {
+				margin-left: ${sliderDesktopWidth / 2 - 1}px;
+				border-left: ${borderThin};
+			}
+			&--is-portrait {
+				margin-top: ${sliderMobileWidth / 2 - 1}px;
+				border-top: ${borderThin};
+			}
+			${absoluteOverlay}
+		}
 		&__circle {
 			height: ${props =>
 				props.isPortrait ? sliderMobileWidth : sliderDesktopWidth}px;
@@ -154,7 +166,7 @@ export const SliderController = styled.div`
 			background: ${props =>
 				props.dragging ? sliderCircleActive : sliderCircleBg};
 			position: relative;
-			${slightCircleBoxShadow};
+			/*  */
 			&:hover,
 			&:focus {
 				transform: scale(0.9);
