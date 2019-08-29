@@ -2,6 +2,7 @@ import React, { useContext, Fragment } from "react";
 import { SliderController } from "../../stylecomponents/SliderContainer";
 import { isPortrait, useWindowResize } from "../../helpers";
 import { globalState } from "../../State";
+import { isIOS } from "react-device-detect";
 // import Media from "../Media";
 
 export const Slider = () => {
@@ -27,13 +28,13 @@ export const Slider = () => {
 						</Fragment>
 					)}
 				</button>
-				<Fragment>
+				{/* <Fragment>
 					{isAppMobile ? (
 						<div className='slider__line slider__line--is-portrait' />
 					) : (
 						<div className='slider__line slider__line--is-landscape' />
 					)}
-				</Fragment>
+				</Fragment> */}
 			</div>
 		</SliderController>
 	);

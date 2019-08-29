@@ -16,20 +16,21 @@ import {
 	navBarSize
 } from "./StyleHelpers";
 import { CTAColor } from "./Themes/ThemeVariables";
+import { isIOS } from "react-device-detect";
 // import { sliderMobileWidth } from "../helpers";
 
 // ${props =>
 // 	props.isShowingMore ? `border-top: 1px solid rgba(255,255,255,.5)` : ``};
 const MenuContainer = styled.aside`
 	/* margin-top: 10px !important; */
-	${hideScrollbar};
+	${hideScrollbar}
 	width: 100%;
 	/* max-width: 500px; */
 	height: 100%;
-	${props =>
-		props.isShowingMore && props.isPortrait ? `position:absolute;` : ``};
+	/* ${props =>
+		props.isShowingMore && props.isPortrait ? `position:absolute;` : ``}; */
 	overflow: auto;
-	top:0px;
+	/* top:0px; */
 	${tablet} {
 		top:0px;
 	}
@@ -65,10 +66,8 @@ const MenuContainer = styled.aside`
 				margin-left: ${navBarSize} `
 				: `margin-right: ${navBarSize}`}; */
 	}
-	${props =>
-		props.isShowingMore && props.isPortrait
-			? slightBoxShadowAbove
-			: `box-shadow: none`};
+	/* ${props =>
+		isIOS && props.isPortrait ? slightBoxShadowAbove : `box-shadow: none`}; */
 	.react-tabs {
 		/* padding: 1rem 0; */
 		${paddingLR}

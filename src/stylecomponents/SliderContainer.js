@@ -3,8 +3,9 @@ import {
 	mobile,
 	absoluteOverlay,
 	mainTransition,
-	slightCircleBoxShadow,
-	userSelectNone
+	// slightCircleBoxShadow,
+	userSelectNone,
+	slightBoxShadowAbove
 } from "./StyleHelpers";
 import {
 	sliderArrow,
@@ -20,7 +21,8 @@ import {
 	sliderCircleOpacity,
 	sliderLine,
 	sliderLinePortrait,
-	borderThin
+	borderThin,
+	sliderBg
 } from "./Themes/ThemeVariables";
 import { pulseRing } from "./Animations";
 import { sliderDesktopWidth, sliderMobileWidth } from "../helpers";
@@ -58,10 +60,13 @@ export const SliderContainer = styled.div`
 			height: ${sliderDesktopWidth}px;
 			display: flex;
 			justify-content: center;
+			background: ${sliderBg};
+			/* background: blue; */
 			cursor: row-resize;
 			width: 100%;
 			${mobile} {
 				height: ${sliderMobileWidth}px;
+				background: ${sliderBg};
 			}
 		}
 
@@ -73,6 +78,7 @@ export const SliderContainer = styled.div`
 
 		&__resizer.vertical {
 			width: ${sliderDesktopWidth}px;
+			background: ${sliderBg};
 			cursor: col-resize;
 			/* background-color: red; */
 		}
@@ -120,8 +126,7 @@ export const SliderController = styled.div`
 			}
 			&--right {
 				border-left: 8px solid
-					${props =>
-						props.dragging ? sliderArrowActive : sliderArrowSecondary};
+					${props => (props.dragging ? sliderArrowActive : sliderArrowSecondary)};
 			}
 			&--top {
 				border-bottom: 8px solid
@@ -129,32 +134,46 @@ export const SliderController = styled.div`
 			}
 			&--bottom {
 				border-top: 8px solid
-					${props =>
-						props.dragging ? sliderArrowActive : sliderArrowSecondary};
+					${props => (props.dragging ? sliderArrowActive : sliderArrowSecondary)};
 			}
 		}
 		&__line {
+			z-index: 1;
 			&--is-landscape {
 				margin-left: ${sliderDesktopWidth / 2 - 1}px;
 				border-left: ${borderThin};
 			}
 			&--is-portrait {
-				margin-top: ${sliderMobileWidth / 2 - 1}px;
+				/* margin-top: ${sliderMobileWidth / 2 - 1}px;
 				border-top: ${borderThin};
+				${slightBoxShadowAbove}; */
+				${slightBoxShadowAbove}
+				overflow:hidden;
 			}
 			${absoluteOverlay}
 		}
 		&__circle {
-			height: ${props =>
-				props.isPortrait ? sliderMobileWidth : sliderDesktopWidth}px;
-			width: ${props =>
-				props.isPortrait ? sliderMobileWidth : sliderDesktopWidth}px;
+			&-line {
+				${props => (props.isPortrait ? `` : `right: 29px;`)};
+				${props => (props.isPortrait ? `` : `position: relative;`)};
+				border: 0;
+			}
+			/* ${absoluteOverlay}; */
+			/* ${absoluteOverlay} */
+			/* height: ${props => (props.isPortrait ? `60px` : sliderDesktopWidth)}px;
+			width: ${props => (props.isPortrait ? `60px` : sliderDesktopWidth)}px; */
+			height: 60px;
+			width: 60px;
 			opacity: ${sliderCircleOpacity};
 			${props => (props.isPortrait ? `flex-direction: column` : "")};
 			cursor: col-resize;
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			margin-left: auto;
+margin-right: auto;
+left: 0;
+right: 0;
 			margin: 0;
 			border-radius: 50%;
 			border: ${sliderCircleBorder};
@@ -163,8 +182,7 @@ export const SliderController = styled.div`
 			align-items: center;
 			${mainTransition}
 			z-index: 10;
-			background: ${props =>
-				props.dragging ? sliderCircleActive : sliderCircleBg};
+			background: ${props => (props.dragging ? sliderCircleActive : sliderCircleBg)};
 			position: relative;
 			/*  */
 			&:hover,
@@ -175,8 +193,8 @@ export const SliderController = styled.div`
 			}
 			transform: ${props => (props.dragging ? "scale(0.6)" : "scale(1)")};
 			${mobile} {
-				height: ${sliderMobileWidth}px;
-				width: ${sliderMobileWidth}px;
+				height: 60px;
+				width: 60px;
 			}
 		}
 	}

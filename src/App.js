@@ -80,7 +80,7 @@ export const App = () => {
 				</ShowIf>
 				<div className='in-dev'>
 					<Text s className='alpha-text'>
-						This project is still in Beta.
+						This project is in Beta.
 					</Text>
 				</div>
 				<GlobalStyle />

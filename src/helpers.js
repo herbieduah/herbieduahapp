@@ -34,8 +34,8 @@ export const mobileSize = 500;
 export const gutterSize = 30;
 export const sliderMinSize = 0.4;
 export const sliderMinSizeMobile = 0.35;
-export const sliderDesktopWidth = "60";
-export const sliderMobileWidth = "60";
+export const sliderDesktopWidth = "1";
+export const sliderMobileWidth = "1";
 export const revealSecs = 1500;
 
 let ww = window.innerWidth;

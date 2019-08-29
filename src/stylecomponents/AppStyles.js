@@ -53,7 +53,7 @@ export const HerbieDuahApp = styled.main`
 				opacity : ${props => (props.dragging ? "0" : "1")};
 		} */
 		&__pane {
-			overflow: ${props => (props.isPortrait ? `initial` : `hidden`)};
+			/* overflow: ${props => (props.isPortrait ? `initial` : `hidden`)}; */
 			&.vertical {
 				width: ${props => props.splitSize}px;
 			}

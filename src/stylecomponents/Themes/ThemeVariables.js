@@ -54,6 +54,7 @@ export const sliderArrowOpacity = props => props.theme.sliderArrowOpacity;
 export const sliderArrowSecondary = props => props.theme.sliderArrowSecondary;
 export const sliderCircleActive = props => props.theme.sliderCircleActive;
 export const sliderCircleBg = props => props.theme.sliderCircleBg;
+export const sliderBg = props => props.theme.sliderBg;
 export const sliderCircleBorder = props => props.theme.sliderCircleBorder;
 export const sliderCircleHoverFocus = props =>
 	props.theme.sliderCircleHoverFocus;

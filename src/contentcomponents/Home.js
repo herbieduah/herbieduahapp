@@ -48,15 +48,17 @@ const HomePage = ({ contentProps }) => {
 						there is going to be an app for everyone. Hi I'm Herbie, and this is
 						my app. */}
 						In the future, I believe there is going to be an app for everyone,
-						so I made my own. I also enjoy designing and developing websites for
-						you.
+						so I made my own.
+						{/* I also enjoy designing and developing websites for
+						you. */}
 					</Paragraph>
 				</ShowIf>
 				<ShowIf noAnimation thisValue={"linkedin"} thatValue={whom}>
 					<Paragraph>
-						Yo what's up my LinkedIn connect, I hope networking is going good for you.. In
-						the future, I believe there is going to be an app for everyone, so I
-						made my own. I also enjoy designing and developing websites for you.
+						Yo what's up my LinkedIn connect, I hope networking is going good
+						for you.. In the future, I believe there is going to be an app for
+						everyone, so I made my own. I also enjoy designing and developing
+						websites for you.
 					</Paragraph>
 				</ShowIf>
 				<ShowIf noAnimation thisValue={"reddit"} thatValue={whom}>
