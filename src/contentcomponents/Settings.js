@@ -68,6 +68,76 @@ const SettingsPage = ({ contentProps }) => {
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>
+				<HeadingTwo>Technical vs Non-Technical</HeadingTwo>
+				<ShowIf noAnimation thisValue={techy} thatValue={false}>
+					<Paragraph>
+						My main audience are people that do not know much about coding so I
+						didn't want to add a lot of technical jargon, but if you are
+						knowledgable about coding or want to learn more then I recommend
+						turning on this settings.
+					</Paragraph>
+				</ShowIf>
+				<ShowIf noAnimation thisValue={techy} thatValue={true}>
+					<Paragraph>
+						I sprinkled some technical knowledge around the side but I do not
+						indicate where exactly.
+					</Paragraph>
+				</ShowIf>
+
+				<ShowIf noAnimation thisValue={techy} thatValue={true}>
+					<Text button onClick={knowCode} className='padding-left-right'>
+						Change tone to Non technical
+					</Text>
+				</ShowIf>
+				<ShowIf noAnimation thisValue={techy} thatValue={false}>
+					<Text button onClick={knowCode} className='padding-left-right'>
+						Change tone to Technical
+					</Text>
+				</ShowIf>
+				<ShowIf noAnimation thisValue={techy} thatValue={true}>
+					<HeadingTwo>Lazy loading</HeadingTwo>
+				</ShowIf>
+				<ShowIf noAnimation thisValue={techy} thatValue={false}>
+					<HeadingTwo>Best Experience Mode</HeadingTwo>
+				</ShowIf>
+
+				<ShowIf noAnimation thisValue={techy} thatValue={false}>
+					<Paragraph>
+						Right now, all the images and gifs on the web app load as you
+						scroll. Activating this setting downloads every image and gif on the
+						site (No loading screens) therefore, giving you the best experience.
+					</Paragraph>
+				</ShowIf>
+				<ShowIf noAnimation thisValue={techy} thatValue={true}>
+					<Paragraph>
+						Stop lazy loading images and videos and download everything all at
+						once. Speaking of lazy... it was either spending 2 hours to do this
+						or 5-6 hours optimzing 100+ images and gifs for mobile and tablet or
+						moving this to Gatsby or something (I will optimize for mobile and
+						tablet when it is out of Beta). It's only ~ 30mb worth of images and
+						videos(gifs)
+					</Paragraph>
+				</ShowIf>
+
+				<ShowIf noAnimation thisValue={lazyLoading} thatValue={true}>
+					<Text
+						button
+						onClick={downloadEverything}
+						className='padding-left-right'>
+						<ShowIf noAnimation thisValue={techy} thatValue={false}>
+							Activate Best Experience Mode
+						</ShowIf>
+						<ShowIf noAnimation thisValue={techy} thatValue={true}>
+							Turn Off Lazy load
+						</ShowIf>
+					</Text>
+				</ShowIf>
+				<ShowIf noAnimation thisValue={lazyLoading} thatValue={false}>
+					<Text className='padding-left-right'>
+						You can change this setting again if you refresh or come back to the
+						site again
+					</Text>
+				</ShowIf>
 				<DisableSetting
 					thisValue={minimalMode}
 					thatValue={true}
@@ -121,75 +191,7 @@ const SettingsPage = ({ contentProps }) => {
 						Remove complementary background
 					</Text>
 				</ShowIf>
-				<HeadingTwo>Technical vs Non-Technical</HeadingTwo>
-				<ShowIf noAnimation thisValue={techy} thatValue={false}>
-					<Paragraph>
-						My main audience are people that do not know much about coding so I
-						didn't want to add a lot of technical jargon, but if you are
-						knowledgable about coding or want to learn more then I recommend
-						turning on this settings.
-					</Paragraph>
-				</ShowIf>
-				<ShowIf noAnimation thisValue={techy} thatValue={true}>
-					<Paragraph>
-						I sprinkled some technical knowledge around the side but I do not
-						indicate where exactly.
-					</Paragraph>
-				</ShowIf>
 
-				<ShowIf noAnimation thisValue={techy} thatValue={true}>
-					<Text button onClick={knowCode} className='padding-left-right'>
-						Change tone to Non technical
-					</Text>
-				</ShowIf>
-				<ShowIf noAnimation thisValue={techy} thatValue={false}>
-					<Text button onClick={knowCode} className='padding-left-right'>
-						Change tone to Technical
-					</Text>
-				</ShowIf>
-				<ShowIf noAnimation thisValue={techy} thatValue={true}>
-					<HeadingTwo>Lazy loading</HeadingTwo>
-				</ShowIf>
-				<ShowIf noAnimation thisValue={techy} thatValue={false}>
-					<HeadingTwo>Best Experience Mode</HeadingTwo>
-				</ShowIf>
-
-				<ShowIf noAnimation thisValue={techy} thatValue={false}>
-					<Paragraph>
-						Right now, all the images and gifs on the web app load as you
-						scroll. Activating this setting downloads every image and gif on the
-						site (No loading screens) therefore, giving you the best experience.
-					</Paragraph>
-				</ShowIf>
-				<ShowIf noAnimation thisValue={techy} thatValue={true}>
-					<Paragraph>
-						Stop lazy loading images and videos and download everything all at
-						once. Speaking of lazy... it was either spending 2 hours to do this
-						or 5-6 hours optimzing 100+ images and gifs for mobile and tablet or
-						moving this to Gatsby or something. (It's only ~ 30mb worth of
-						images and videos(gifs))
-					</Paragraph>
-				</ShowIf>
-
-				<ShowIf noAnimation thisValue={lazyLoading} thatValue={true}>
-					<Text
-						button
-						onClick={downloadEverything}
-						className='padding-left-right'>
-						<ShowIf noAnimation thisValue={techy} thatValue={false}>
-							Activate Best Experience Mode
-						</ShowIf>
-						<ShowIf noAnimation thisValue={techy} thatValue={true}>
-							Turn Off Lazy load
-						</ShowIf>
-					</Text>
-				</ShowIf>
-				<ShowIf noAnimation thisValue={lazyLoading} thatValue={false}>
-					<Text className='padding-left-right'>
-						You can change this setting again if you refresh or come back to the
-						site again
-					</Text>
-				</ShowIf>
 				<HeadingTwo>Like every other site</HeadingTwo>
 				<Paragraph>
 					This setting gets rids of the slider and the vertical navigation bar
