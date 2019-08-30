@@ -57,15 +57,13 @@ const HomePage = ({ contentProps }) => {
 					<Paragraph>
 						Yo what's up my LinkedIn connect, I hope networking is going good
 						for you.. In the future, I believe there is going to be an app for
-						everyone, so I made my own. I also enjoy designing and developing
-						websites for you.
+						everyone, so I made my own.
 					</Paragraph>
 				</ShowIf>
 				<ShowIf noAnimation thisValue={"reddit"} thatValue={whom}>
 					<Paragraph>
 						Hi there fellow redditor, hope all is well. In the future, I believe
-						there is going to be an app for everyone, so I made my own. I also
-						enjoy designing and developing websites for you.
+						there is going to be an app for everyone, so I made my own.
 					</Paragraph>
 				</ShowIf>
 				<ShowIf noAnimation thisValue={"dherbstatwitter"} thatValue={whom}>
