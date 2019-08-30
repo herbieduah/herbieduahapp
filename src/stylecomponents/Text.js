@@ -51,7 +51,7 @@ const baseStyle = css`
 		if (props.m) return "1.2em";
 		if (props.l) return "1.5em";
 		if (props.xl) return "2em";
-		if (props.xxl) return "2.5em";
+		if (props.xxl) return "2.4em";
 		return "1em";
 	}};
 	${mobile} {
@@ -60,8 +60,8 @@ const baseStyle = css`
 			if (props.s) return "1em";
 			if (props.m) return "1.07em";
 			if (props.l) return "1.3em";
-			if (props.xl) return "1.6em";
-			if (props.xxl) return "1.9em";
+			if (props.xl) return "1.5em";
+			if (props.xxl) return "1.7em";
 			return "1em";
 		}};
 	}
@@ -88,7 +88,7 @@ baseStyle.defaultProps = {
 const HeadingOne = styled.h1`
 	${baseStyle};
 	font-family: ${appfontFamilyExtraWide};
-
+	font-weight: 900;
 	/* @media (max-width: 480px) {
     font-size: 40px;
   } */
@@ -98,11 +98,13 @@ const HeadingTwo = styled.h2`
 	line-height: 1;
 	line-height: 1.25;
 	${baseStyle};
+	font-weight: 900;
 	font-family: ${appfontFamilyWide};
 `;
 
 const HeadingThree = styled.h3`
 	${baseStyle};
+	font-weight: 900;
 	font-family: ${appfontFamilyWide};
 `;
 
@@ -127,7 +129,7 @@ const TextFormatter = styled.span`
 `;
 const Button = styled.button`
 	${baseStyle};
-	font-weight: 700;
+	font-weight: 900;
 	${mainTransition}
 	line-height: 1.2;
 	border: 0;
@@ -160,7 +162,7 @@ const HyperLink = styled.a`
 `;
 const MenuLink = styled(NavLink)`
 	${baseStyle};
-	font-weight: 700;
+	font-weight: 900;
 	${mainTransition}
 	line-height: 1.2;
 	border: 0;
