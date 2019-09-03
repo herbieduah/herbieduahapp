@@ -117,3 +117,5 @@ threshold={250}
 )}
 </Fragment> */
 // }
+
+// https://github.com/tjallingt/react-youtube/issues/164

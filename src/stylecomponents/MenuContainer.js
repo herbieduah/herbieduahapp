@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import {
 	mobile,
-	fontColor,
 	mainTransition,
 	hideScrollbar,
 	// mobileSliderOnBottom,
@@ -15,7 +14,7 @@ import {
 	paddingLR,
 	navBarSize
 } from "./StyleHelpers";
-import { CTAColor } from "./Themes/ThemeVariables";
+import { fontColor, CTAColor } from "./Themes/ThemeVariables";
 import { isIOS } from "react-device-detect";
 // import { sliderMobileWidth } from "../helpers";
 
@@ -80,10 +79,18 @@ const MenuContainer = styled.aside`
 				max-width: 600px;
 			${props =>
 				props.isPortrait
-					? `margin: 0 auto; padding-top:4rem; padding-bottom:1.5rem;`
+					? `margin: 0 auto; padding-top:4rem; height: 6vh;
+			padding-bottom: 10vh; ;`
 					: ``};
 			}
+			height: 6vh;
+			margin-bottom: 10vh;
+			${mobile} {
+				height: 4vh;
+				margin-bottom: 4vh;
+			}
 		}
+		${hideScrollbar}
 	}
 	
 	${mobile} {
@@ -147,7 +154,6 @@ const MenuContainer = styled.aside`
 			${paddingLR}
 			margin-top: 2rem;
 			width: 100%;
-			opacity: 0.7;
 			display: block;
 			${mobile}{
 				margin-top: 0;
@@ -155,7 +161,7 @@ const MenuContainer = styled.aside`
 		}
 		
 		&__item {
-			margin: .4rem 0 1rem;
+			margin: .4rem 0 .5rem;
 			${tablet}{
 				&:last-child {
 					${props => (props.isPortrait ? `padding-right:4rem` : ``)};
@@ -172,9 +178,9 @@ const MenuContainer = styled.aside`
 				margin-right: 1.5rem;
 				a {
 					
-					${tablet}{
+					/* ${tablet}{
 						${props => (props.isPortrait ? `font-size: 1.7em` : ``)};
-					}					
+					}					 */
 					white-space: nowrap;		
 				}
 				&:last-child {

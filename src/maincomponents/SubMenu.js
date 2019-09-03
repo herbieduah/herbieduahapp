@@ -4,9 +4,10 @@ import Text from "../stylecomponents/Text";
 // import Fade from "react-reveal/Fade";
 // import { CSSTransition } from "react-transition-group";
 import { SubMenuWrapper } from "../ComponentHelpers";
-import Fade from "react-reveal/Fade";
+// import Fade from "react-reveal/Fade";
+import { ElementReveal } from "../ContentHelpers";
 // import TransitionGroup from "react-transition-group/TransitionGroup";
-import { revealSecs } from "../helpers";
+// import { revealSecs } from "../helpers";
 export const SubMenu = props => {
 	let category = props.category;
 	const showCategory = props.showCategory;
@@ -20,11 +21,11 @@ export const SubMenu = props => {
 			return (
 				<div>
 					{showCategory ? (
-						<Fade duration={revealSecs}>
+						<ElementReveal>
 							<Text format m className='subMenu__text '>
 								Work
 							</Text>
-						</Fade>
+						</ElementReveal>
 					) : null}
 					<SubMenuWrapper showCategory={showCategory}>
 						<li onClick={hideModal} className='subMenu__item'>
@@ -64,11 +65,11 @@ export const SubMenu = props => {
 			return (
 				<div>
 					{showCategory ? (
-						<Fade duration={revealSecs}>
+						<ElementReveal>
 							<Text format m className='subMenu__text'>
 								About
 							</Text>
-						</Fade>
+						</ElementReveal>
 					) : null}
 					<SubMenuWrapper showCategory={showCategory}>
 						<li onClick={hideModal} className='subMenu__item'>
@@ -104,11 +105,11 @@ export const SubMenu = props => {
 			return (
 				<div>
 					{showCategory ? (
-						<Fade duration={revealSecs}>
+						<ElementReveal>
 							<Text format m className='subMenu__text margin-top-0 '>
 								For You
 							</Text>
-						</Fade>
+						</ElementReveal>
 					) : null}
 					<SubMenuWrapper showCategory={showCategory}>
 						<li onClick={hideModal} className='subMenu__item'>
@@ -143,11 +144,11 @@ export const SubMenu = props => {
 			return (
 				<div>
 					{showCategory ? (
-						<Fade duration={revealSecs}>
+						<ElementReveal>
 							<Text format m className='subMenu__text'>
 								Photography
 							</Text>
-						</Fade>
+						</ElementReveal>
 					) : null}
 					<SubMenuWrapper showCategory={showCategory}>
 						<li onClick={hideModal} className='subMenu__item'>

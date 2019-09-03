@@ -22,7 +22,9 @@ import {
 	sliderLine,
 	sliderLinePortrait,
 	borderThin,
-	sliderBg
+	sliderBg,
+	fontColorOpposite,
+	buttonColorHoverFocus
 } from "./Themes/ThemeVariables";
 import { pulseRing } from "./Animations";
 import { sliderDesktopWidth, sliderMobileWidth } from "../helpers";
@@ -242,18 +244,18 @@ export const SliderLineContainer = styled.div`
 			margin: 0;
 			padding: 0;
 			line-height: 1;
-			color: ${fontColorComplement};
+			color: ${fontColorOpposite};
 			text-align:center;
 			width:100%;
 		}
-		background-color: ${CTAColor};
+		background-color: ${buttonColorHoverFocus};
 		display:flex;
 		align-items: center;
 		border-radius: 50%;
 		height: 60px;
 		width: 60px;
 		position:relative;
-		&:before {
+		/* &:before {
 			content: '';
 			${absoluteOverlay}
 			display: block;
@@ -266,7 +268,7 @@ export const SliderLineContainer = styled.div`
 			border-radius: 50%;
 			background-color: ${CTAColor};
 			animation: ${pulseRing} 3.25s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
-		}
+		} */
 	}
 	&__line-content {
 			width: 100%;

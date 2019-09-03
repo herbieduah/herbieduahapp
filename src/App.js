@@ -38,7 +38,8 @@ export const App = () => {
 		fullScreen,
 		dragging,
 		fullScreening,
-		setWhom
+		setWhom,
+		minimalMode
 	} = useContext(globalState);
 	const currentThemeObject = getCurrentTheme(defaultAppTheme, currentTheme);
 	const { width: ww, height: wh } = useWindowResize();
@@ -72,9 +73,9 @@ export const App = () => {
 				className='hdapp'
 				isPortrait={isPortrait(ww, wh)}
 				splitSize={splitSize}
+				minimalMode={minimalMode}
 				showFSMobileHorizontal={showFSMobileHorizontal}
 				dragging={dragging}>
-				<DownloadAllMedia />
 				<ShowIf noAnimation thisValue={currentTheme} thatValue={"matrix"}>
 					<Matrix fullscreen={true} isPortrait={isPortrait(ww, wh)} />
 				</ShowIf>
@@ -85,7 +86,9 @@ export const App = () => {
 				</div>
 				<GlobalStyle />
 				<NavBar />
-				{isPortrait(ww, wh) ? null : <BorderDesktop />}
+				{isPortrait(ww, wh) ? null : (
+					<BorderDesktop className='hdapp__border' />
+				)}
 
 				{/* <ParallaxTest /> */}
 				<FullScreenOverlay />
@@ -142,6 +145,7 @@ export const App = () => {
 						<ContentMenu switchSides={!switchSides} />
 					</SplitPane>
 				</ShowIf> */}
+				<DownloadAllMedia />
 			</HerbieDuahApp>
 		</ThemeProvider>
 	);

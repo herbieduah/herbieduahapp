@@ -4,7 +4,8 @@ import {
 	fluidTypeInfo,
 	absoluteOverlay,
 	mainTransition,
-	userSelectNone
+	userSelectNone,
+	mobile
 } from "./StyleHelpers";
 import {
 	appBg,
@@ -40,13 +41,27 @@ export const HerbieDuahApp = styled.main`
 			opacity : ${props => (props.dragging ? "0" : "1")};
 			${props => (props.showFSMobileHorizontal ? "display:none;" : "")};
 	}
+	section.hdapp__menu aside{
+		${mobile} {
+			padding-right: ${props => (props.dragging ? "0 !important;" : "")};
+			padding-left: ${props => (props.dragging ? "0 !important;" : "")};
+		}	
+	}
+	section.hdapp__content{
+	 .content {
+		/* transform: perspective(300px) rotateX(15deg); */
+		${mobile} {
+			padding-right: ${props => (props.dragging ? "0 !important;" : "")};
+			padding-left: ${props => (props.dragging ? "0 !important;" : "")};
+		}	
+	}
+	}
 	.hdapp {
+		
 		
 		.navbar {
 		${mainTransition}
 		opacity : ${props => (props.dragging ? "0" : "1")};
-		
-
 		}
 		/* &__menu {
 				${mainTransition}
@@ -60,6 +75,9 @@ export const HerbieDuahApp = styled.main`
 			&.horizontal {
 				height: ${props => props.splitSize}px;
 			}
+		}
+		&__border{
+			opacity : ${props => (props.minimalMode ? "0" : "1")};
 		}
 		
 		

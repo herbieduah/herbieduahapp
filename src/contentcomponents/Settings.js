@@ -85,12 +85,12 @@ const SettingsPage = ({ contentProps }) => {
 				</ShowIf>
 
 				<ShowIf noAnimation thisValue={techy} thatValue={true}>
-					<Text button onClick={knowCode} className='padding-left-right'>
+					<Text button s onClick={knowCode} className='padding-left-right'>
 						Change tone to Non technical
 					</Text>
 				</ShowIf>
 				<ShowIf noAnimation thisValue={techy} thatValue={false}>
-					<Text button onClick={knowCode} className='padding-left-right'>
+					<Text button s onClick={knowCode} className='padding-left-right'>
 						Change tone to Technical
 					</Text>
 				</ShowIf>
@@ -147,7 +147,7 @@ const SettingsPage = ({ contentProps }) => {
 						This setting moves navigations bar to the right or left.
 					</Paragraph>
 					<ShowIf noAnimation thisValue={navBarRight} thatValue={true}>
-						<Text button onClick={moveNavBar} className='padding-left-right'>
+						<Text button s onClick={moveNavBar} className='padding-left-right'>
 							Move Navigation Bar Left
 						</Text>
 						<Small>
@@ -156,7 +156,7 @@ const SettingsPage = ({ contentProps }) => {
 						</Small>
 					</ShowIf>
 					<ShowIf noAnimation thisValue={navBarRight} thatValue={false}>
-						<Text button onClick={moveNavBar} className='padding-left-right'>
+						<Text button s onClick={moveNavBar} className='padding-left-right'>
 							Move Navigation Bar to the right
 						</Text>
 						<Small>
@@ -198,12 +198,12 @@ const SettingsPage = ({ contentProps }) => {
 					therefore making it like every other website.
 				</Paragraph>
 				<ShowIf noAnimation thisValue={minimalMode} thatValue={true}>
-					<Text button onClick={basicMode} className='padding-left-right'>
+					<Text button s onClick={basicMode} className='padding-left-right'>
 						go back to the sliders and vertical navigation bar
 					</Text>
 				</ShowIf>
 				<ShowIf noAnimation thisValue={minimalMode} thatValue={false}>
-					<Text button onClick={basicMode} className='padding-left-right'>
+					<Text button s onClick={basicMode} className='padding-left-right'>
 						Make It look like every other site
 					</Text>
 				</ShowIf>
@@ -226,7 +226,7 @@ const SettingsPage = ({ contentProps }) => {
 						</strong>
 					</Paragraph>
 					<ShowIf noAnimation thisValue={switchSides} thatValue={true}>
-						<Text button onClick={failure} className='padding-left-right'>
+						<Text button s onClick={failure} className='padding-left-right'>
 							Switch Sides for 10 Seconds
 						</Text>
 					</ShowIf>

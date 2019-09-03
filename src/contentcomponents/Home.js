@@ -7,7 +7,7 @@ import {
 	HeadingTwo,
 	// HeadingThree,
 	Image,
-	Small,
+	Link,
 	// Figure,
 	// Figcaption,
 	Gif,
@@ -23,10 +23,11 @@ import cornishPastyPic from "../media/images/picsOfMe/hd-herbieSmile-1974.jpg";
 // import yes from "../media/images/startNow/Yes.jpg";
 // import testPicHorizontal from "../media/videos/videosOfme/raveMillyRock_1.mp4";
 import vneckcrewneck from "../media/videos/videosOfme/vNeckCrewNeck.mp4";
+// import YouTube from "react-youtube";
 
 // import ReactPlayer from "react-player";
 
-const header = "Hi I'm Herbie";
+const header = "HerbieDuah.app";
 // There is an app for everything, in
 // 					the future, I believe there is going to be an app for everyone. I am
 // 					Herbie Duah, and this is my app.
@@ -37,18 +38,38 @@ const header = "Hi I'm Herbie";
 
 // const HomePage = ({ contentProps }) => {
 const HomePage = ({ contentProps }) => {
-	const { whom, isContentPortrait } = contentProps;
-	const whereToDrag = isContentPortrait ? `down` : `right`;
+	const { whom } = contentProps;
+	// const opts = {
+	// 	height: "100%",
+	// 	width: "100%",
+	// 	playerVars: {
+	// 		autoplay: 1,
+	// 		controls: 0,
+	// 		cc_load_policy: 0,
+	// 		fs: 0,
+	// 		iv_load_policy: 3,
+	// 		modestbranding: 1,
+	// 		rel: 0,
+	// 		showinfo: 0
+	// 	}
+	// };
+
 	return (
 		<Fragment>
 			<ContentShow less>
+				<Header less>{header}</Header>
 				<ShowIf noAnimation thisValue={"everyone"} thatValue={whom}>
-					<Paragraph noReveal>
+					<Paragraph less>
 						{/* Nowadays, there is an app for everything. In the future, I believe
 						there is going to be an app for everyone. Hi I'm Herbie, and this is
 						my app. */}
 						In the future, I believe there is going to be an app for everyone,
 						so I made my own.
+						{/* <Gif
+							url={
+								"https://res.cloudinary.com/dwccyjn5e/video/upload/c_scale,w_200/v1567287430/giftguide_11_1_copy_guoyg8.mp4"
+							}
+						/> */}
 						{/* I also enjoy designing and developing websites for
 						you. */}
 					</Paragraph>
@@ -77,10 +98,30 @@ const HomePage = ({ contentProps }) => {
 						Anyways, here is my web app, it ain't done yet tho.
 					</Paragraph>
 				</ShowIf>
-				<Small className='c-interact'>
-					Drag the slider {whereToDrag} to reveal more.&nbsp;
-					<Emoji className='emoji' symbol='🙂' label='smile' />
-				</Small>
+				<div className='less__container'>
+					<Paragraph>
+						Hi, I am Herbie. I am a Phoenix based Web Designer/Developer with 5
+						years of experience. I have a passion for creating user experiences
+						and a love for photography. This belief of everyone having their own
+						app was the main inspiration for the look and feel of this web app.
+					</Paragraph>
+					<Paragraph>
+						You can follow me on&nbsp;
+						<Link href='https://instagram.com/herbieduah'>Instagram</Link>
+						,&nbsp;
+						<Link href='https://twitter.com/herbieduah'>Twitter</Link>or &nbsp;
+						<Link href='https://www.linkedin.com/in/herbieduah/'>LinkedIn</Link>
+						&nbsp; if you'd like to connect.
+					</Paragraph>
+					<Image
+						src={cornishPastyPic}
+						className='paddingLR'
+						nolazyload
+						width='1480'
+						height='1974'
+						alt='a picture of me'
+					/>
+				</div>
 			</ContentShow>
 			<ContentShow more>
 				<div className='container'>

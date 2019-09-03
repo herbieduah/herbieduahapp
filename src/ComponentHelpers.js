@@ -7,7 +7,7 @@ import {
 	revealSecs,
 	getCurrentTransition
 } from "./helpers";
-import Fade from "react-reveal/Fade";
+import { ElementReveal } from "./ContentHelpers";
 import Text from "./stylecomponents/Text";
 // import Parallax from "parallax-js";
 import { browserName, mobileModel } from "react-device-detect";
@@ -96,7 +96,11 @@ export const NavBar = () => {
 					isPortrait={isContentPortrait}
 					modalVisible={modalVisible}
 					navBarComplement={navBarComplement}>
-					<NavLink to='/' onClick={setMenuModalClose}>
+					<NavLink
+						exact
+						className='navbar__logo-link'
+						to='/'
+						onClick={setMenuModalClose}>
 						<Media
 							type='icon'
 							className='navbar__logo svg'
@@ -111,7 +115,7 @@ export const NavBar = () => {
 					<div className='navbar__logo-menu'>
 						<Text
 							button
-							m
+							s
 							className='navbar__menu-text'
 							onClick={setMenuModalContent}>
 							{modalVisible ? `Back` : `Menu`}
@@ -133,7 +137,7 @@ export const NavBar = () => {
 					isPortrait={isContentPortrait}
 					navBarComplement={navBarComplement}>
 					<div className='navbar__logo-menu'>
-						<NavLink to='/'>
+						<NavLink exact className='navbar__logo-link' to='/'>
 							<Media
 								type='icon'
 								className='navbar__logo svg'
@@ -146,9 +150,9 @@ export const NavBar = () => {
 										classNames={transitionClasses}>
 										{/* <div className='animatecss-container'> */}
 										<Text
-											m
+											s
 											button
-											className='hdapp-text'
+											className='navbar__home-text'
 											aria-hidden={showLess ? `true` : `false`}>
 											Home
 										</Text>
@@ -164,7 +168,7 @@ export const NavBar = () => {
 								classNames={transitionClasses}>
 								{/* <div className='animatecss-container'> */}
 								<Text
-									m
+									s
 									button
 									className='navbar__maximize'
 									onClick={setMaximizeAndMinimize}
@@ -176,7 +180,7 @@ export const NavBar = () => {
 						) : null}
 					</TransitionGroup>
 
-					<Text m button>
+					<Text s button>
 						<NavLink to='/contacts'>Contact</NavLink>
 					</Text>
 				</NavBarContainer>
@@ -279,9 +283,9 @@ export const ShowIf = props => {
 
 export const SubMenuWrapper = props => {
 	return (
-		<Fade cascade duration={revealSecs}>
+		<ElementReveal>
 			<ul className='subMenu'>{props.children}</ul>
-		</Fade>
+		</ElementReveal>
 	);
 };
 
@@ -289,28 +293,30 @@ export const MenuTabs = props => {
 	const showCategory = props.showCategory;
 	return (
 		<ReactTabs defaultIndex={0}>
-			<TabList>
-				<Tab>
-					<Text format m bold>
-						For You
-					</Text>
-				</Tab>
-				<Tab>
-					<Text format m bold>
-						Work
-					</Text>
-				</Tab>
-				<Tab>
-					<Text format m bold>
-						Photography
-					</Text>
-				</Tab>
-				<Tab>
-					<Text format m bold>
-						About
-					</Text>
-				</Tab>
-			</TabList>
+			<ElementReveal>
+				<TabList>
+					<Tab>
+						<Text format xs wide>
+							For You
+						</Text>
+					</Tab>
+					<Tab>
+						<Text format xs wide>
+							Work
+						</Text>
+					</Tab>
+					<Tab>
+						<Text format xs wide>
+							Photography
+						</Text>
+					</Tab>
+					<Tab>
+						<Text format xs wide>
+							About
+						</Text>
+					</Tab>
+				</TabList>
+			</ElementReveal>
 			<TabPanel>
 				<nav>
 					<SubMenu showCategory={showCategory} category='customize' />

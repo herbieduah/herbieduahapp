@@ -14,6 +14,7 @@ export const buttonLineHeight = props => props.theme.buttonLineHeight;
 export const buttonBorder = props => props.theme.buttonBorder;
 export const buttonBackground = props => props.theme.buttonBackground;
 export const buttonColor = props => props.theme.buttonColor;
+export const buttonColorHoverFocus = props => props.theme.buttonColorHoverFocus;
 export const buttonTextTransform = props => props.theme.buttonTextTransform;
 export const buttonSpanDisplay = props => props.theme.buttonSpanDisplay;
 export const bgColorSecondary = props => props.theme.bgColorSecondary;
@@ -41,6 +42,7 @@ export const modalFullScreenBgMobile = props =>
 export const navBarBg = props => props.theme.navBarBg;
 export const navBarBgComplement = props => props.theme.navBarBgComplement;
 export const navBarButtonColor = props => props.theme.navBarButtonColor;
+export const navBarButtonActive = props => props.theme.navBarButtonActive;
 export const navBarHoverFocus = props => props.theme.navBarHoverFocus;
 export const navBarHoverFocusAction = props =>
 	props.theme.navBarHoverFocusAction;

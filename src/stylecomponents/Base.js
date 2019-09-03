@@ -12,6 +12,7 @@ import {
 	logoOuterFillColor,
 	// logoBgColor,
 	logoBgHoverColor,
+	bgColor,
 	tabHeadingsJustifyContent,
 	tabHeadingsBorderRadius,
 	tabHeadingsBorder,
@@ -33,15 +34,15 @@ import {
 	navBarButtonComplementaryHoverText,
 	fontColorOpposite,
 	fontColorComplement,
+	navBarButtonActive,
 	logoInnerFillColor,
+	fontColor,
 	borderThin
 } from "./Themes/ThemeVariables";
 import {
 	mobile,
 	absoluteOverlay,
 	mainTransition,
-	fontColor,
-	bgColor,
 	hideScrollbar,
 	navBarSize,
 	fluidTypeInfo,
@@ -148,6 +149,14 @@ export const NavBarMiniContainer = styled.div`
 			position:relative;
 			z-index: 100;	
 		}
+		&__logo-link.active{
+			svg {
+				opacity: 1;
+			}
+			.navbar__home-text {
+				color: ${navBarButtonActive};
+			}
+		}
 
 		&__logo-menu{
 			display: flex;
@@ -155,6 +164,7 @@ export const NavBarMiniContainer = styled.div`
 		}
 		
 		&__logo {
+			
 			.inner-rect, .half-circle {
 				${mainTransition}
 				fill: ${fontColor};	
@@ -169,6 +179,7 @@ export const NavBarMiniContainer = styled.div`
 				/* transform: scale(.09); */
 				width: 2.5rem;
 				height: 2.5rem;
+				opacity: .6;
 				path {
 					
 					fill: ${logoBgHoverColor};
@@ -177,12 +188,13 @@ export const NavBarMiniContainer = styled.div`
 				border-radius: ${logoBorderRadius};
 				${mainTransition}
 				&:hover,&:focus {
-					path {
+					/* path {
 						fill: ${CTAColor};
 					}
 					.inner-rect, .half-circle {
 						fill: ${fontColorComplement};	
-					}
+					} */
+					opacity: 1;
 				}
 		}
 	}
@@ -259,6 +271,14 @@ export const NavBarContainer = styled.div`
 			position:relative;
 			z-index: 100;	
 		}
+		&__logo-link.active{
+			svg {
+				opacity: 1;
+			}
+			.navbar__home-text {
+				color: ${navBarButtonActive};
+			}
+		}
 
 		&__logo-menu{
 			a {
@@ -288,25 +308,26 @@ export const NavBarContainer = styled.div`
 			}
 			svg {
 				${mainTransition}
+				opacity: 0.6;
 				transform: scale(.95);
 				border: none;
 				width: ${navBarSize};
 				height: ${navBarSize};
 				background: transparent;
-				border-bottom: ${logoBorderBottom};
+				/* border-bottom: ${logoBorderBottom}; */
 				border-radius: ${logoBorderRadius};
-				border:  ${props => (props.navBarComplement ? logoBorderBottom : `none`)}; 
 				margin-top: 2px;
-				border-right:  ${props =>
-					props.navBarComplement ? logoBorderBottom : `none`}; 
+				/* border-right:  ${props =>
+					props.navBarComplement ? logoBorderBottom : `none`};  */
 				${mainTransition}
 				&:hover,&:focus {
-					background: ${logoBgHoverColor};
+					/* background: ${logoBgHoverColor};
 					border-bottom: none;
 					.inner-rect, .half-circle {
 						fill: ${logoInnerFillColorHoverFocus};
 						
-					}
+					} */
+					opacity: 1;
 				}
 		}
 	}
@@ -337,7 +358,7 @@ export const ReactTabs = styled(Tabs)`
 		&__tab {
 			${mainTransition}
 			cursor: pointer;
-			margin: 0 1rem;
+			margin: 0 0.7rem;
 			border: ${tabHeadingsBorder};
 			border-radius: ${tabHeadingsBorderRadius};
 			white-space: nowrap;
@@ -351,7 +372,7 @@ export const ReactTabs = styled(Tabs)`
 				margin: 0 0.6rem;
 			}
 			${mobile} {
-				margin: 0 0.65rem;
+				margin: 0 0.55rem;
 			}
 			span {
 				color: ${tabHeadingsColor};
@@ -362,10 +383,9 @@ export const ReactTabs = styled(Tabs)`
 			}
 
 			&--selected {
-				border: ${tabHeadingsBorderActive};
-				border-bottom: ${tabHeadingsBorderBottomActive};
 				span {
-					font-weight: bold;
+					border: ${tabHeadingsBorderActive};
+					border-bottom: ${tabHeadingsBorderBottomActive};
 					color: ${tabHeadingsColorActive};
 					&:hover {
 						color: ${tabHeadingsColorActive};
@@ -680,7 +700,7 @@ export const MatrixContainer = styled.div`
 
 export const BorderDesktop = styled.div`
 	${absoluteOverlay}
-	width: calc(100% - 5rem);
+	width: calc(100% - ( ${navBarSize} +  ${navBarSize}));
 	margin: 0 ${navBarSize};
 	border-left: ${borderThin};
 	border-right: ${borderThin};

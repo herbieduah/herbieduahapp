@@ -1,5 +1,7 @@
-import { rgba, stripUnit, lighten } from "polished";
+import { stripUnit } from "polished";
+import { bgColor } from "./Themes/ThemeVariables";
 import { sliderMobileWidth, revealSecs } from "../helpers";
+import { from } from "rxjs";
 export function fluidType(minVW, maxVW, minFontSize, maxFontSize) {
 	let u1 = stripUnit(minVW)[1];
 	let u2 = stripUnit(maxVW)[1];
@@ -126,7 +128,7 @@ ${mobile} {
 margin-right: 1rem;
 }`;
 export const fiftyPixels = "3.47vw";
-export const navBarSize = "2.5rem";
+export const navBarSize = "2rem";
 export const contentMenuPadding = `padding: ${navBarSize};
 ${mobile} {
 	padding: ${navBarSize} 0 ${navBarSize}   ${navBarSize};
@@ -191,6 +193,9 @@ ${mobile}{
 
 `;
 
+export const halyardDisplay = `
+font-weight: 200;`;
+
 export const container = `
 max-width: 740px;
 			width: 100%;
@@ -201,46 +206,47 @@ export const userSelectNone = `
 ${mobile} {
 	user-select: none;
 }`;
-
-export const showMore = props => props.appValues.isShowingMore;
-export const appGradient = props => rgba(props.theme.bgColor, 0.0);
-export const appColor = props => props.theme.bgColor;
-export const ctaColor = props => props.theme.ctaColor;
-export const bgColor = props => props.theme.bgColor;
-export const bgColorGradient = props => props.theme.bgColorGradient;
-export const fontColor = props => props.theme.fontColor;
 export const mainTransition = `transition: all ${revealSecs /
 	2}ms ease-in-out;`;
-export const buttonColor = props => props.theme.fontColor;
-// lighten(0.17, props.theme.fontColor);
-export const buttonColorHover = props => props.theme.fontColor;
-export const buttonColorActive = props => props.theme.fontColor;
-export const buttonBorderColor = props => rgba(props.theme.fontColor, 0.75);
-export const buttonBorderColorActive = props =>
-	lighten(0.15, props.theme.fontColor);
-export const linkColor = props => props.theme.fontColor;
-export const linkColorHover = props => props.theme.fontColor;
-export const linkColorActive = props => props.theme.fontColor;
-export const linkBorderColor = props => rgba(props.theme.fontColor, 0.3);
-export const linkBorderColorActive = props => props.theme.fontColor;
 
-export const navColor = props => rgba(props.theme.fontColor, 0.6);
-export const navColorHover = props => props.theme.fontColor;
-export const navColorActive = props => props.theme.fontColor;
-export const navBorderColor = props => rgba(props.theme.fontColor, 0.5);
-export const navBorderColorActive = props => props.theme.bgColor;
+// export const showMore = props => props.appValues.isShowingMore;
+// export const appGradient = props => rgba(props.theme.bgColor, 0.0);
+// export const appColor = props => props.theme.bgColor;
+// export const ctaColor = props => props.theme.ctaColor;
+// export const bgColor = props => props.theme.bgColor;
+// export const bgColorGradient = props => props.theme.bgColorGradient;
+// export const fontColor = props => props.theme.fontColor;
 
-//BlockStyle.js
-export const sliderCircleShadow = props => rgba(props.theme.bgColor, 0.5);
-export const blockBorderColorHover = props => rgba(props.theme.ctaColor, 0.9);
-export const blockBorderRadius = props => props.theme.blockBorderRadius;
-export const blockBackground = props => props.theme.blockBackgroundColor;
+// export const buttonColor = props => props.theme.fontColor;
+// // lighten(0.17, props.theme.fontColor);
+// export const buttonColorHover = props => props.theme.fontColor;
+// export const buttonColorActive = props => props.theme.fontColor;
+// export const buttonBorderColor = props => rgba(props.theme.fontColor, 0.75);
+// export const buttonBorderColorActive = props =>
+// 	lighten(0.15, props.theme.fontColor);
+// export const linkColor = props => props.theme.fontColor;
+// export const linkColorHover = props => props.theme.fontColor;
+// export const linkColorActive = props => props.theme.fontColor;
+// export const linkBorderColor = props => rgba(props.theme.fontColor, 0.3);
+// export const linkBorderColorActive = props => props.theme.fontColor;
 
-//SliderStyles
-export const sliderCircle = props => rgba(props.theme.ctaColor, 1);
+// export const navColor = props => rgba(props.theme.fontColor, 0.6);
+// export const navColorHover = props => props.theme.fontColor;
+// export const navColorActive = props => props.theme.fontColor;
+// export const navBorderColor = props => rgba(props.theme.fontColor, 0.5);
+// export const navBorderColorActive = props => props.theme.bgColor;
 
-//Overlay
-export const overlayBackground = props => rgba(props.theme.bgColor, 0.8);
+// //BlockStyle.js
+// export const sliderCircleShadow = props => rgba(props.theme.bgColor, 0.5);
+// export const blockBorderColorHover = props => rgba(props.theme.ctaColor, 0.9);
+// export const blockBorderRadius = props => props.theme.blockBorderRadius;
+// export const blockBackground = props => props.theme.blockBackgroundColor;
+
+// //SliderStyles
+// export const sliderCircle = props => rgba(props.theme.ctaColor, 1);
+
+// //Overlay
+// export const overlayBackground = props => rgba(props.theme.bgColor, 0.8);
 
 export const niceShadow = `
 &:before {

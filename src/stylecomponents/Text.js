@@ -3,14 +3,15 @@ import styled, { css } from "styled-components";
 import { NavLink } from "react-router-dom";
 import {
 	mobile,
-	buttonColorActive,
-	buttonColor,
-	linkColor,
+	// buttonColorActive,
+	// buttonColor,
+	// linkColor,
 	mainTransition,
-	buttonBorderColorActive,
-	buttonBorderColor,
-	navColor,
-	navColorActive,
+	halyardDisplay,
+	// buttonBorderColorActive,
+	// buttonBorderColor,
+	// navColor,
+	// navColorActive,
 	tablet
 } from "./StyleHelpers";
 
@@ -19,7 +20,12 @@ import {
 	fontColor,
 	appfontFamily,
 	appfontFamilyWide,
-	appfontFamilyExtraWide
+	appfontFamilyExtraWide,
+	navBarButtonColor,
+	buttonColor,
+	buttonColorHoverFocus,
+	navBarButtonActive,
+	navBarHoverFocus
 } from "./Themes/ThemeVariables";
 
 const baseStyle = css`
@@ -47,8 +53,9 @@ const baseStyle = css`
 
 	font-size: ${props => {
 		if (props.xs) return "0.8em";
-		if (props.s) return "1.05em";
-		if (props.m) return "1.2em";
+		if (props.s) return ".85em";
+		if (props.m) return "1em";
+		if (props.medium) return "1em";
 		if (props.l) return "1.5em";
 		if (props.xl) return "2em";
 		if (props.xxl) return "2.4em";
@@ -57,8 +64,9 @@ const baseStyle = css`
 	${mobile} {
 		font-size: ${props => {
 			if (props.xs) return "0.8em";
-			if (props.s) return "1em";
-			if (props.m) return "1.07em";
+			if (props.s) return "0.9em";
+			if (props.m) return "1em";
+			if (props.medium) return "1.07em";
 			if (props.l) return "1.3em";
 			if (props.xl) return "1.5em";
 			if (props.xxl) return "1.7em";
@@ -75,6 +83,7 @@ const baseStyle = css`
 		return "normal";
 	}};
 	max-width: 100%;
+	letter-spacing: 0.5px;
 `;
 
 baseStyle.defaultProps = {
@@ -87,24 +96,23 @@ baseStyle.defaultProps = {
 
 const HeadingOne = styled.h1`
 	${baseStyle};
+	font-weight: 600;
 	font-family: ${appfontFamilyExtraWide};
-	font-weight: 900;
 	/* @media (max-width: 480px) {
     font-size: 40px;
   } */
 `;
 
 const HeadingTwo = styled.h2`
+	${baseStyle};
 	line-height: 1;
 	line-height: 1.25;
-	${baseStyle};
-	font-weight: 900;
 	font-family: ${appfontFamilyWide};
+	font-weight: 500;
 `;
 
 const HeadingThree = styled.h3`
 	${baseStyle};
-	font-weight: 900;
 	font-family: ${appfontFamilyWide};
 `;
 
@@ -118,39 +126,43 @@ const HeadingFive = styled.h5`
 
 const Paragraph = styled.p`
 	${baseStyle};
+	font-weight: 300;
 `;
 
 const Figcaption = styled.figcaption`
 	${baseStyle};
+	font-weight: 300;
 `;
 const TextFormatter = styled.span`
 	${baseStyle};
 	display: flex;
+	font-weight: 300;
 `;
 const Button = styled.button`
 	${baseStyle};
-	font-weight: 900;
+	font-weight: 600;
 	${mainTransition}
 	line-height: 1.2;
+	font-family: ${appfontFamilyWide};
 	border: 0;
+
 	text-transform: uppercase;
 	hyphens: manual;
 	background: none;
-	color: ${navColor};
+	color: ${buttonColor};
 	font-family: ${appfontFamilyWide};
 	cursor: pointer;
 	&:hover,
 	&:focus {
-		color: ${navColorActive};
+		color: ${buttonColorHoverFocus};
 	}
 	&.active {
-		color: ${navColorActive};
+		color: ${buttonColorHoverFocus};
 	}
 	text-decoration: none;
 `;
 const HyperLink = styled.a`
 	${baseStyle};
-	font-weight: 400;
 	${mainTransition}
 	cursor: pointer;
 	white-space: nowrap;
@@ -160,33 +172,35 @@ const HyperLink = styled.a`
 	}
 	text-decoration: none;
 `;
+
 const MenuLink = styled(NavLink)`
 	${baseStyle};
-	font-weight: 900;
+	font-weight: 600;
 	${mainTransition}
 	line-height: 1.2;
+	letter-spacing: 1px;
 	border: 0;
 	hyphens: manual;
 	background: none;
-	color: ${navColor};
+	color: ${navBarButtonColor};
 	font-family: ${appfontFamilyWide};
 	cursor: pointer;
-	font-size: 2em;
+	/* font-size: 2em; */
 	text-transform: uppercase;
 	${mobile} {
-		font-size: 1.7em;
+		/* font-size: 1.7em; */
 	}
 	${tablet} {
-		font-size: 1.3em;
-		margin-bottom: 0.5rem;
+		/* font-size: 1.3em; */
+		/* margin-bottom: 0.5rem; */
 		hyphens: none;
 	}
 	&:hover,
 	&:focus {
-		color: ${navColorActive};
+		color: ${navBarHoverFocus};
 	}
 	&.active {
-		color: ${navColorActive};
+		color: ${navBarButtonActive};
 	}
 	text-decoration: none;
 `;

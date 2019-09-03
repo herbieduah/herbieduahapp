@@ -10,12 +10,14 @@ import {
 	getTransitionInfo
 } from "./helpers";
 import ClickNHold from "react-click-n-hold";
-import Fade from "react-reveal/Fade";
-import Zoom from "react-reveal/Zoom";
+import Reveal from "react-reveal/Reveal";
+// import Fade from "react-ElementReveal/Fade";
+// import Zoom from "react-ElementReveal/Zoom";
 import SubMenu from "./maincomponents/SubMenu";
 import Text from "./stylecomponents/Text";
 import Media from "./maincomponents/Media";
 import { themes } from "./stylecomponents/Theme";
+// import ScrollAnimation from "react-animate-on-scroll";
 import {
 	ThemeCircleContainer,
 	TransitionTextContainer,
@@ -44,13 +46,16 @@ export const ContentShow = props => {
 	const { width: ww, height: wh } = useWindowResize();
 	const values = { ww, wh, cw, ch };
 	const isShowingMore = revealValues(values).isShowingMore;
+	const isContentPortrait = isPortrait(ww, wh);
+
 	// const isContentPortrait = isPortrait(ww, wh);
 	const showMore = fullScreen ? true : isShowingMore;
 	const showLess = fullScreen ? false : !isShowingMore;
 	// const headerClass = showLess ? noSpacingTopBottom : spacingTopBottom;
 	const transitionClasses = getCurrentTransition(currentTransition);
 	// const values = { ww, wh, cw, ch };
-	// const isShowingMore = revealValues(values).isShowingMore;
+	// const isShowingMore = ElementRevealValues(values).isShowingMore;
+	const whereToDrag = isContentPortrait ? `down` : `right`;
 	const onFullScreening = () => {
 		setFullScreening(true);
 		console.log("Holding!!!");
@@ -70,8 +75,13 @@ export const ContentShow = props => {
 			<TransitionGroup className='animatecss-container'>
 				{showLess ? (
 					<CSSTransition timeout={revealSecs} classNames={transitionClasses}>
-						<aside className='content__less'>
-							<div className='content__less-container'>{props.children}</div>
+						<aside className='less'>
+							<div className='less__container'>
+								{props.children}
+								<Text m className='less__drag paddingLR'>
+									Drag the slider {whereToDrag} to reveal more.&nbsp;
+								</Text>
+							</div>
 						</aside>
 					</CSSTransition>
 				) : null}
@@ -94,7 +104,7 @@ export const ContentShow = props => {
 	}
 	if (props.header) {
 		return (
-			<Fade duration={revealSecs}>
+			<ElementReveal>
 				<ClickNHold
 					time={2} // Time to keep pressing. Default is 2
 					isPortrait={isPortrait(ww, wh)}
@@ -106,97 +116,113 @@ export const ContentShow = props => {
 						<Text s>{props.header}</Text>
 					</header>
 				</ClickNHold>
-			</Fade>
+			</ElementReveal>
 		);
 	}
 };
 
 export const Header = props => {
-	const { fullScreen, setFullScreening, setFullscreen } = useContext(
-		globalState
-	);
-	const onFullScreening = () => {
-		setFullScreening(true);
-		console.log("Holding!!!");
-	};
-	const onFullScreenTimeOutEnded = () => {
-		setFullScreening(false);
-		fullScreen ? setFullscreen(false) : setFullscreen(true);
-		console.log("Hold timeout ended!");
-	};
-	const onFullScreenEnded = () => {
-		setFullScreening(false);
-		console.log("Hold ended!");
-	};
+	// const { fullScreen, setFullScreening, setFullscreen } = useContext(
+	// 	globalState
+	// );
+	// const onFullScreening = () => {
+	// 	setFullScreening(true);
+	// 	console.log("Holding!!!");
+	// };
+	// const onFullScreenTimeOutEnded = () => {
+	// 	setFullScreening(false);
+	// 	fullScreen ? setFullscreen(false) : setFullscreen(true);
+	// 	console.log("Hold timeout ended!");
+	// };
+	// const onFullScreenEnded = () => {
+	// 	setFullScreening(false);
+	// 	console.log("Hold ended!");
+	// };
 
 	return (
-		<Reveal>
-			<ClickNHold
-				time={3} // Time to keep pressing. Default is 2
-				fullScreen={fullScreen}
-				onStart={onFullScreening}
-				onClickNHold={onFullScreenTimeOutEnded} //Timeout callback
-				onEnd={onFullScreenEnded}>
+		// <ElementReveal>
+		// 	<ClickNHold
+		// 		time={3} // Time to keep pressing. Default is 2
+		// 		fullScreen={fullScreen}
+		// 		onStart={onFullScreening}
+		// 		onClickNHold={onFullScreenTimeOutEnded} //Timeout callback
+		// 		onEnd={onFullScreenEnded}>
+
+		// 	</ClickNHold>
+		// </ElementReveal>
+		<Fragment>
+			{props.less ? (
+				<Text h1 xs className='paddingLR less__header'>
+					{props.children}
+				</Text>
+			) : (
 				<header className='content__header container '>
 					<HeadingOne>{props.children}</HeadingOne>
 				</header>
-			</ClickNHold>
-		</Reveal>
+			)}
+		</Fragment>
 	);
 };
 
-export const ComingSoon = props => {
-	return (
-		<Fade up duration={revealSecs}>
-			<div className='container'>
-				<Text m>Working on the content for {props.header}.</Text>
-			</div>
-		</Fade>
-	);
-};
+// export const ComingSoon = props => {
+// 	return (
+// 		<Fade up duration={revealSecs}>
+// 			<div className='container'>
+// 				<Text m>Working on the content for {props.header}.</Text>
+// 			</div>
+// 		</Fade>
+// 	);
+// };
 
-export const Reveal = props => {
+// export const ElementReveal = props => {
+// 	return (
+// 		<Fade duration={revealSecs}>
+// 			<div>{props.children}</div>
+// 		</Fade>
+// 	);
+// };
+
+export const ElementReveal = props => {
+	const { currentTransition } = useContext(globalState);
+	const transitionValues = getTransitionInfo(currentTransition);
 	return (
-		<Fade duration={revealSecs}>
+		<Reveal
+			effect={transitionValues.enterTransition}
+			effectOut={transitionValues.exitTransition}
+			duration={revealSecs}>
 			<div>{props.children}</div>
-		</Fade>
+		</Reveal>
 	);
 };
 
 export const ContentCategory = props => {
 	return (
 		<ShowIf noAnimation thisValue={props.fullScreen} thatValue={true}>
-			<Zoom duration={revealSecs}>
+			<ElementReveal duration={revealSecs}>
 				<div>
 					<nav className='c-submenu'>
 						<SubMenu showCategory={true} category={props.category} />
 					</nav>
 				</div>
-			</Zoom>
+			</ElementReveal>
 		</ShowIf>
 	);
 };
 
 export const Paragraph = props => {
 	const compClassName = props.className ? props.className : "";
+	const lessClass = props.less ? "less__main-text " : "c-margin-bottom-med ";
 
 	return (
 		<Fragment>
-			{props.noReveal ? (
+			<ElementReveal>
 				<Text
 					m
-					className={`c-margin-bottom-med ${compClassName} padding-left-right`}>
+					wide={props.less || props.wide}
+					className={`${compClassName} ${lessClass} padding-left-right`}>
 					{props.children}
 				</Text>
-			) : (
-				<Reveal>
-					<Text
-						m
-						className={`c-margin-bottom-med ${compClassName} padding-left-right`}>
-						{props.children}
-					</Text>
-				</Reveal>
-			)}
+			</ElementReveal>
 		</Fragment>
 	);
 };
@@ -204,7 +230,7 @@ export const Paragraph = props => {
 export const Small = props => {
 	const compClassName = props.className ? props.className : "";
 	return (
-		<Reveal>
+		<ElementReveal>
 			<small>
 				<Text
 					s
@@ -213,7 +239,7 @@ export const Small = props => {
 					{props.children}
 				</Text>
 			</small>
-		</Reveal>
+		</ElementReveal>
 	);
 };
 
@@ -234,43 +260,43 @@ export const SettingButton = props => {
 export const HeadingOne = props => {
 	const compClassName = props.className ? props.className : "";
 	return (
-		<Reveal>
+		<ElementReveal>
 			<Text
 				h1
-				xxl
+				xl
 				bold
 				className={`c-margin-top-large ${compClassName}  padding-left-right `}>
 				{props.children}
 			</Text>
-		</Reveal>
+		</ElementReveal>
 	);
 };
 
 export const HeadingTwo = props => {
 	const compClassName = props.className ? props.className : "";
 	return (
-		<Reveal>
+		<ElementReveal>
 			<Text
 				h2
-				xl
-				className={` ${compClassName} container c-margin-top  padding-left-right`}>
+				l
+				className={` ${compClassName} container c-margin-top c-margin-bottom-med  padding-left-right`}>
 				{props.children}
 			</Text>
-		</Reveal>
+		</ElementReveal>
 	);
 };
 
 export const HeadingThree = props => {
 	const compClassName = props.className ? props.className : "";
 	return (
-		<Reveal>
+		<ElementReveal>
 			<Text
 				h2
-				l
+				m
 				className={`c-margin-top  c-margin-bottom-med padding-left-right ${compClassName}container`}>
 				{props.children}
 			</Text>
-		</Reveal>
+		</ElementReveal>
 	);
 };
 
@@ -298,28 +324,16 @@ export const Image = props => {
 	const alt = props.alt ? props.alt : defaultAlt;
 	const imageClass = props.className ? props.className : "";
 	return (
-		<Reveal>
-			<Fragment>
-				{props.nolazyload ? (
-					<img
-						alt={alt}
-						width={props.width || "100%"}
-						height={props.height || "100%"}
-						src={props.src}
-						className={`${spacingBottom} ${imageClass}`}
-					/>
-				) : (
-					<Media
-						type='image'
-						src={src}
-						alt={alt}
-						width={props.width}
-						height={props.height}
-						className={`${spacingBottom} ${imageClass}`}
-					/>
-				)}
-			</Fragment>
-		</Reveal>
+		<ElementReveal>
+			<Media
+				type='image'
+				src={src}
+				alt={alt}
+				width={props.width}
+				height={props.height}
+				className={`${spacingBottom} ${imageClass}`}
+			/>
+		</ElementReveal>
 	);
 };
 
@@ -330,7 +344,7 @@ export const Figure = props => {
 	const figClass = props.className ? props.className : "";
 	const mockup = props.mockup ? true : false;
 	return (
-		<Reveal>
+		<ElementReveal>
 			<figure className={`c-margin-bottom`}>
 				{mockup ? (
 					<div className={figClass}>
@@ -359,7 +373,7 @@ export const Figure = props => {
 					</Fragment>
 				)}
 			</figure>
-		</Reveal>
+		</ElementReveal>
 	);
 };
 
@@ -376,7 +390,7 @@ export const Gif = props => {
 	const url = props.url;
 	const desc = props.desc ? props.desc : defaultDesc;
 	return (
-		<Reveal>
+		<ElementReveal>
 			<Media
 				type='gif'
 				url={url}
@@ -385,7 +399,7 @@ export const Gif = props => {
 				desc={desc}
 				className={`${spacingBottom} ${props.className}`}
 			/>
-		</Reveal>
+		</ElementReveal>
 	);
 };
 
@@ -393,7 +407,7 @@ export const FiGif = props => {
 	const url = props.url;
 	const desc = props.desc ? props.desc : defaultDesc;
 	return (
-		<Reveal>
+		<ElementReveal>
 			<figure className={`${spacingBottom}`}>
 				<Media
 					type='gif'
@@ -405,7 +419,7 @@ export const FiGif = props => {
 				/>
 				{props.children}
 			</figure>
-		</Reveal>
+		</ElementReveal>
 	);
 };
 
@@ -444,7 +458,7 @@ export const ThemeCircles = props => {
 export const GenerateTheme = props => {
 	const type = props.type;
 	return (
-		<Reveal>
+		<ElementReveal>
 			<ul className='themeCircle'>
 				{themes.map(function(element, uniqueKey) {
 					if (element.type === type) {
@@ -454,7 +468,7 @@ export const GenerateTheme = props => {
 					}
 				})}
 			</ul>
-		</Reveal>
+		</ElementReveal>
 	);
 };
 
@@ -505,7 +519,7 @@ export const TransitionTexts = props => {
 
 export const GenerateTransition = props => {
 	return (
-		<Reveal>
+		<ElementReveal>
 			<ul className='appTransition'>
 				{appTransitions.map(function(element, uniqueKey) {
 					return (
@@ -513,14 +527,14 @@ export const GenerateTransition = props => {
 					);
 				})}
 			</ul>
-		</Reveal>
+		</ElementReveal>
 	);
 };
 
 export const WorkInfo = props => {
 	const { workDuration, workSkills, workTools } = props.workinfo;
 	return (
-		<Reveal>
+		<ElementReveal>
 			<ul className='c-work-info'>
 				<li>
 					<Text s format>
@@ -543,13 +557,13 @@ export const WorkInfo = props => {
 					</li>
 				</ShowIf>
 			</ul>
-		</Reveal>
+		</ElementReveal>
 	);
 };
 
 export const Marquee = props => {
 	return (
-		<Reveal>
+		<ElementReveal>
 			{props.playing ? (
 				<MarqueeWrapper left={props.left} className='padding-left-right'>
 					{props.children}
@@ -557,7 +571,7 @@ export const Marquee = props => {
 			) : (
 				<div className='padding-left-right'>{props.children}</div>
 			)}
-		</Reveal>
+		</ElementReveal>
 	);
 };
 

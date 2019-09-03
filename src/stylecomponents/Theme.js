@@ -53,7 +53,8 @@ import {
 	newRetrowaveTheme,
 	deepBlueTheme,
 	snapchat,
-	matrix
+	matrix,
+	white
 } from "./Themes/ThemeFactory";
 export const themes = [
 	{
@@ -62,6 +63,15 @@ export const themes = [
 			...defaultTheme
 		},
 		type: "gradient",
+		text: "Plum Bath",
+		desc: ""
+	},
+	{
+		name: "white",
+		properties: {
+			...white
+		},
+		type: "color",
 		text: "Plum Bath",
 		desc: ""
 	},
