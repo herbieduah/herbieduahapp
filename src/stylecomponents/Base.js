@@ -1,5 +1,11 @@
 import styled, { createGlobalStyle } from "styled-components";
-import { fullScreenFill, marqueeLeft, marqueeRight } from "./Animations";
+import {
+	fullScreenFill,
+	marqueeLeft,
+	marqueeRight,
+	scrollDownTouch,
+	scrollDownMouse
+} from "./Animations";
 import { hideVisually } from "polished";
 import { Tabs } from "react-tabs";
 import {
@@ -529,9 +535,9 @@ export const ThemeCircleContainer = styled.li`
 				props.isPortrait
 					? props.themeValues.gradientPortrait
 					: props.themeValues.gradient};
-			border: 3px solid ${fontColor};
+			border: 3px solid ${props => props.themeValues.borderColor};
 			&.current {
-				border: 3px solid ${fontColorOpposite};
+				border: 3px solid ${props => props.themeValues.borderColor};
 				cursor: default;
 			}
 			&:hover,
@@ -706,4 +712,47 @@ export const BorderDesktop = styled.div`
 	border-right: ${borderThin};
 	z-index: 1000;
 	pointer-events: none;
+`;
+
+export const ScrollDownPortrait = styled.div`
+	width: 40px;
+	height: 40px;
+	position: fixed;
+	left: 50%;
+	top: 0;
+	transform: translate(-50%, 0);
+	z-index: 1000;
+	&::before {
+		display: block;
+		position: absolute;
+		left: 50%;
+		top: 0;
+		content: "";
+		border-radius: 50%;
+		width: 20px;
+		height: 20px;
+		transform: translate(-50%, 40px) scale(0.5, 0.5);
+		background: red;
+		animation: ${scrollDownTouch} 1.5s linear infinite;
+	}
+`;
+
+const scrollMouseSize = `25vmin`;
+export const ScrollDownLandscape = styled.div`
+	height: ${scrollMouseSize};
+	width: ${scrollMouseSize} * 0.6;
+	border-radius: ${scrollMouseSize};
+	border: ${scrollMouseSize} / 22 solid ${fontColor};
+	position: relative;
+	&:before {
+		content: "";
+		position: absolute;
+		left: calc(50% - #{${scrollMouseSize}} / 20);
+		top: ${scrollMouseSize} / 5;
+		height: ${scrollMouseSize} / 10;
+		width: ${scrollMouseSize} / 10;
+		background: ${fontColor};
+		border-radius: 50%;
+		animation: ${scrollDownMouse} 4s infinite;
+	}
 `;

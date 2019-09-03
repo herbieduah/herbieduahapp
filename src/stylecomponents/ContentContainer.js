@@ -25,7 +25,8 @@ import {
 	cMarginTopSm,
 	cMarginBottomSm,
 	cPaddingBottomSm,
-	navBarSize
+	navBarSize,
+	cMarginTop
 } from "./StyleHelpers";
 import {
 	navBarBorder,
@@ -200,7 +201,6 @@ export const ContentContainer = styled.section`
 		${cPaddingBottomMed}
 	}
 	.c-margin-bottom-med {
-		margin-bottom: 1.5rem;
 		${mobile} {
 			margin-bottom: 1rem;
 		}
@@ -229,10 +229,7 @@ export const ContentContainer = styled.section`
 		${marginLR}
 	}
 	.c-margin-top {
-		margin-top: 3.5rem;
-		${mobile} {
-			margin-top: 3rem;
-		}
+		${cMarginTop}
 	}
 	.c-margin-top-small{
 		${cMarginTopSm}

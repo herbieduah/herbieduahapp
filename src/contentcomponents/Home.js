@@ -23,6 +23,7 @@ import cornishPastyPic from "../media/images/picsOfMe/hd-herbieSmile-1974.jpg";
 // import yes from "../media/images/startNow/Yes.jpg";
 // import testPicHorizontal from "../media/videos/videosOfme/raveMillyRock_1.mp4";
 import vneckcrewneck from "../media/videos/videosOfme/vNeckCrewNeck.mp4";
+import { ScrollDownPortrait } from "../stylecomponents/Base";
 // import YouTube from "react-youtube";
 
 // import ReactPlayer from "react-player";
@@ -57,6 +58,7 @@ const HomePage = ({ contentProps }) => {
 	return (
 		<Fragment>
 			<ContentShow less>
+				{/* <ScrollDownPortrait /> */}
 				<Header less>{header}</Header>
 				<ShowIf noAnimation thisValue={"everyone"} thatValue={whom}>
 					<Paragraph less>

@@ -37,9 +37,19 @@ const DiscountTirePage = ({ contentProps }) => {
 	return (
 		<Fragment>
 			<ContentShow less>
-				<Paragraph>
-					Currently at Discount Tire as a Front End Developer and a model?
+				<Header less>{header}</Header>
+				<Paragraph less>
+					Currently working at Discount Tire as a Front End Developer and a
+					model?
 				</Paragraph>
+				<div className='less__container'>
+					<Paragraph>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis
+						risus eget urna mollis ornare vel eu leo. Donec id elit non mi porta
+						gravida at eget metus. Sed posuere consectetur est at lobortis.
+						Maecenas sed diam eget risus varius blandit sit amet non magna.
+					</Paragraph>
+				</div>
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>

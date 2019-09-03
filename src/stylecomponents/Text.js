@@ -7,7 +7,7 @@ import {
 	// buttonColor,
 	// linkColor,
 	mainTransition,
-	halyardDisplay,
+	// halyardDisplay,
 	// buttonBorderColorActive,
 	// buttonBorderColor,
 	// navColor,

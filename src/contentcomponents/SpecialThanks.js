@@ -26,10 +26,19 @@ const SpecialThanksPage = ({ contentProps }) => {
 	return (
 		<Fragment>
 			<ContentShow less>
-				<Paragraph>
+				<Header less>{header}</Header>
+				<Paragraph less>
 					I want to give a special shout out to everyone that helped me with is
 					project.
 				</Paragraph>
+				<div className='less__container'>
+					<Paragraph>
+						Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo
+						cursus magna, vel scelerisque nisl consectetur et. Integer posuere
+						erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo
+						quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+					</Paragraph>
+				</div>
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>

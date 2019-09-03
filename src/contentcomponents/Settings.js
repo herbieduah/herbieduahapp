@@ -62,9 +62,18 @@ const SettingsPage = ({ contentProps }) => {
 	return (
 		<Fragment>
 			<ContentShow less>
-				<Paragraph>
+				<Header less>{header}</Header>
+				<Paragraph less>
 					You can change certain aspects of this site to your liking.
 				</Paragraph>
+				<div className='less__container'>
+					<Paragraph>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis
+						risus eget urna mollis ornare vel eu leo. Donec id elit non mi porta
+						gravida at eget metus. Sed posuere consectetur est at lobortis.
+						Maecenas sed diam eget risus varius blandit sit amet non magna.
+					</Paragraph>
+				</div>
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>
@@ -122,6 +131,7 @@ const SettingsPage = ({ contentProps }) => {
 				<ShowIf noAnimation thisValue={lazyLoading} thatValue={true}>
 					<Text
 						button
+						s
 						onClick={downloadEverything}
 						className='padding-left-right'>
 						<ShowIf noAnimation thisValue={techy} thatValue={false}>
@@ -175,6 +185,7 @@ const SettingsPage = ({ contentProps }) => {
 				<ShowIf noAnimation thisValue={navBarComplement} thatValue={false}>
 					<Text
 						button
+						s
 						onClick={complementNavBar}
 						className='padding-left-right'>
 						Add complementary background
@@ -186,6 +197,7 @@ const SettingsPage = ({ contentProps }) => {
 				<ShowIf noAnimation thisValue={navBarComplement} thatValue={true}>
 					<Text
 						button
+						s
 						onClick={complementNavBar}
 						className='padding-left-right'>
 						Remove complementary background

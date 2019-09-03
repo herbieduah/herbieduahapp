@@ -167,6 +167,11 @@ ${mobile} {
 	margin-bottom: 1rem;
 }
 `;
+export const cMarginTopMed = `margin-top 1.5rem;
+${mobile} {
+	margin-top: 1rem;
+}
+`;
 
 export const cMarginTopSm = `margin-top: 1.25rem;
 ${mobile} {
@@ -189,8 +194,13 @@ ${mobile} {
 export const cPaddingTopSm = `padding-top: 1.25rem;
 ${mobile}{
 	padding-top: .75rem;
-}
+}`;
 
+export const cMarginTop = `
+margin-top: 3.5rem;
+		${mobile} {
+			margin-top: 3rem;
+		}
 `;
 
 export const halyardDisplay = `

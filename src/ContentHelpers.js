@@ -1,4 +1,5 @@
 import React, { Fragment, useContext, useState } from "react";
+import styled from "styled-components";
 import { globalState } from "./State";
 import {
 	revealSecs,
@@ -27,6 +28,12 @@ import {
 import { ShowIf } from "./ComponentHelpers";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { appTransitions } from "./stylecomponents/Transitions";
+import {
+	cMarginBottomMed,
+	cMarginTopMed,
+	cMarginBottom,
+	cMarginTop
+} from "./stylecomponents/StyleHelpers";
 export const defaultAlt = "I will be adding an alt tag to this image soon";
 export const defaultDesc = "This is a video, I will be describing it soon";
 const spacingBottom = "c-margin-bottom";
@@ -263,7 +270,7 @@ export const HeadingOne = props => {
 		<ElementReveal>
 			<Text
 				h1
-				xl
+				l
 				bold
 				className={`c-margin-top-large ${compClassName}  padding-left-right `}>
 				{props.children}
@@ -279,7 +286,7 @@ export const HeadingTwo = props => {
 			<Text
 				h2
 				l
-				className={` ${compClassName} container c-margin-top c-margin-bottom-med  padding-left-right`}>
+				className={` ${compClassName} container  c-margin-top padding-left-right`}>
 				{props.children}
 			</Text>
 		</ElementReveal>
@@ -597,3 +604,8 @@ export const DisableSetting = props => {
 		</Fragment>
 	);
 };
+
+export const Seperator = styled.div`
+	${cMarginBottom};
+	${cMarginTop};
+`;

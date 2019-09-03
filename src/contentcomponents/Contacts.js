@@ -22,7 +22,7 @@ import testPic from "../media/images/photography-herbieFood-2222.jpg";
 import testPic2 from "../media/images/photography-melPhoto-2221.jpg";
 // import ReactPlayer from "react-player";
 
-const header = "Contacts";
+const header = "Contact";
 
 const ContactsPage = ({ contentProps }) => {
 	return (
@@ -32,9 +32,17 @@ const ContactsPage = ({ contentProps }) => {
 					Hello, I'm Herbie, a Photographer and Front End Developer with a
 					passion for designing and engineering user experiences for you.
 				</Paragraph> */}
-				<div className='flex-container'>
+				<Header less>{header}</Header>
+				<Paragraph less>
+					<Link href='mailto:herbduah@gmail.com'>Email me</Link>
+				</Paragraph>
+				<div className='less__container'>
 					<Paragraph>
-						<Link href='mailto:herbduah@gmail.com'>herbduah@gmail.com</Link>
+						You can also message me on&nbsp;
+						<Link href='https://instagram.com/herbieduah'>Instagram</Link>
+						,&nbsp;
+						<Link href='https://twitter.com/herbieduah'>Twitter</Link>or &nbsp;
+						<Link href='https://www.linkedin.com/in/herbieduah/'>LinkedIn</Link>
 					</Paragraph>
 				</div>
 			</ContentShow>

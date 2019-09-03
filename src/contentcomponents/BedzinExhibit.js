@@ -29,7 +29,7 @@ import bedziniPhoneNavNormal1480x2877 from "../media/images/bedzin/bedziniPhoneN
 import beziniPhoneExhibit1480x6938 from "../media/images/bedzin/beziniPhoneExhibit.jpg";
 import GlossaryDesktop1480x2749 from "../media/images/bedzin/GlossaryDesktop.jpg";
 
-const header = "Będzin Exhibit";
+const header = "Bedzin Exhibit";
 const workDuration = "January 2016 - May 2016";
 const workSkills = "Prototyping and UX Design";
 const workTools = "Sketch";
@@ -39,9 +39,18 @@ const BedzinExhibitPage = ({ contentProps }) => {
 	return (
 		<Fragment>
 			<ContentShow less>
-				<Paragraph>
+				<Header less>{header}</Header>
+				<Paragraph less>
 					Revamped a traveling exhibit site for my senior capstone.
 				</Paragraph>
+				<div className='less__container'>
+					<Paragraph>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis
+						risus eget urna mollis ornare vel eu leo. Donec id elit non mi porta
+						gravida at eget metus. Sed posuere consectetur est at lobortis.
+						Maecenas sed diam eget risus varius blandit sit amet non magna.
+					</Paragraph>
+				</div>
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>

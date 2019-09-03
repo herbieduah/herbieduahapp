@@ -15,7 +15,7 @@ import {
 	ContentShow,
 	WorkInfo
 } from "../ContentHelpers";
-import {ShowIf} from "../ComponentHelpers";
+import { ShowIf } from "../ComponentHelpers";
 // import Emoji from "a11y-react-emoji";
 // import Modal from "../maincomponents/Modal";
 import StandOutFromTheRest2000x3000 from "../media/images/startNow/StandOutFromTheRest.jpg";
@@ -46,18 +46,27 @@ const StartNowPage = ({ contentProps }) => {
 	return (
 		<Fragment>
 			<ContentShow less>
-				<Paragraph>
-					I worked directly with the Career Development Director to create a
-					series of posters, digital art, documents, videos, and other mediums
-					geared towards helping students start their career.
+				<Header less>{header}</Header>
+				<Paragraph less>
+					I helped other students get jobs while I was in college.
 				</Paragraph>
+				<div className='less__container'>
+					<Paragraph>
+						I worked directly with the Career Development Director to create a
+						series of posters, digital art, documents, videos, and other mediums
+						geared towards helping students start their career.
+					</Paragraph>
+				</div>
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>
 				<WorkInfo techy={techy} workinfo={workinfo} />
 				<Image
 					className='padding-left-right'
-					alt='A poster with construct a plan' width='1952' height='2874' src={ConstructAPlan13X19x1952x2874}
+					alt='A poster with construct a plan'
+					width='1952'
+					height='2874'
+					src={ConstructAPlan13X19x1952x2874}
 				/>
 				<Paragraph>
 					My first job was working directly with the Career Development Director
@@ -77,31 +86,53 @@ const StartNowPage = ({ contentProps }) => {
 					direction because starting a career is like a journey.
 				</Paragraph>
 				<HeadingTwo>Start Now Posters</HeadingTwo>
-				<Figure className='paddingLRMed' alt=' A photo of the Construction of the Science and Health Building.' width='2000' height='1500' src={NAUConstruction2000x1500}>
+				<Figure
+					className='paddingLRMed'
+					alt=' A photo of the Construction of the Science and Health Building.'
+					width='2000'
+					height='1500'
+					src={NAUConstruction2000x1500}>
 					<Figcaption>
 						Construction of the Science and Health Building.
 					</Figcaption>
 				</Figure>
-				<Figure alt='Construct a plan poster' width='2000' height='1500' src={ConstructAPlan2000x1500}>
+				<Figure
+					alt='Construct a plan poster'
+					width='2000'
+					height='1500'
+					src={ConstructAPlan2000x1500}>
 					<Figcaption>
 						"Construct A Plan" poster with the picture of construction of the
 						Science and Health Building.
 					</Figcaption>
 				</Figure>
-				<Figure className='paddingLRMed' alt='Arcade machine' width='2000' height='2667' src={ACMClubPhoto2000x2667}>
+				<Figure
+					className='paddingLRMed'
+					alt='Arcade machine'
+					width='2000'
+					height='2667'
+					src={ACMClubPhoto2000x2667}>
 					<Figcaption>
 						An arcade machine created by Association for Computing Machinery
 						(ACM) club.
 					</Figcaption>
 				</Figure>
-				<Figure className='padding-left-right' alt='know the game poster' width='2000' height='1500' src={KnowTheGame2000x1500}>
+				<Figure
+					className='padding-left-right'
+					alt='know the game poster'
+					width='2000'
+					height='1500'
+					src={KnowTheGame2000x1500}>
 					<Figcaption>
 						"Know The Game" poster with the arcade machine.
 					</Figcaption>
 				</Figure>
 				<Figure
 					className='padding-left-right'
-					alt='poster with trees on it' width='2000' height='3000' src={StandOutFromTheRest2000x3000}>
+					alt='poster with trees on it'
+					width='2000'
+					height='3000'
+					src={StandOutFromTheRest2000x3000}>
 					<Figcaption>
 						NAU is filled with a lot of trees... you get the point.
 					</Figcaption>
@@ -117,18 +148,31 @@ const StartNowPage = ({ contentProps }) => {
 				</Paragraph>
 				<ShowIf noAnimation thisValue={techy} thatValue={true}>
 					<Paragraph>
-						The limitation of the CMS was quite impressive. I tried injecting javascript, throwing in the style tag and the wackiest code  into it and it wouldn't budge. I thought it could be manipulated since it was old but no.
+						The limitation of the CMS was quite impressive. I tried injecting
+						javascript, throwing in the style tag and the wackiest code into it
+						and it wouldn't budge. I thought it could be manipulated since it
+						was old but no.
 					</Paragraph>
 				</ShowIf>
 				<Paragraph>I had to get creative.</Paragraph>
-				<Figure className='paddingLR' alt='photo of the NAU Start Now site' width='1480' height='1824' src={FullPage1480x1824}>
+				<Figure
+					className='paddingLR'
+					alt='photo of the NAU Start Now site'
+					width='1480'
+					height='1824'
+					src={FullPage1480x1824}>
 					<Figcaption>
 						(Screenshot captured from{" "}
 						<Link href='www.web.archive.org/'>web.archive.org</Link>) I created
 						big "buttons" so users can easily navigate on mobile.{" "}
 					</Figcaption>
 				</Figure>
-				<Figure className='paddingLR' alt='photo of the NAU Start Now site start page' width='1480' height='1774' src={FullSizeStudents1480x1774}>
+				<Figure
+					className='paddingLR'
+					alt='photo of the NAU Start Now site start page'
+					width='1480'
+					height='1774'
+					src={FullSizeStudents1480x1774}>
 					<Figcaption>
 						(Screenshot captured from{" "}
 						<Link href='www.web.archive.org/'>web.archive.org</Link>) The CMS
@@ -162,29 +206,52 @@ const StartNowPage = ({ contentProps }) => {
 					I volunteered to be in a photo shoot, and I pretty much became the
 					face of Career Development at NAU for some time.
 				</Paragraph>
-				<Figure className='padding-left-right' alt='a picture of me with an outrageous smile' width='1480' height='2220' src={smileStock1480x2220}>
+				<Figure
+					className='padding-left-right'
+					alt='a picture of me with an outrageous smile'
+					width='1480'
+					height='2220'
+					src={smileStock1480x2220}>
 					<Figcaption>
 						When you laugh at the employers jokes because you want the job
 						really bad.
 					</Figcaption>
 				</Figure>
-				<Figure className='padding-left-right' alt='A picture of me witha tiger woods yes pose' width='1480' height='2220' src={Yes1480x2220}>
+				<Figure
+					className='padding-left-right'
+					alt='A picture of me witha tiger woods yes pose'
+					width='1480'
+					height='2220'
+					src={Yes1480x2220}>
 					<Figcaption>When you get the job.</Figcaption>
 				</Figure>
 
-				<Figure className='padding-left-right' alt='a picture of me being confused' width='1480' height='2220' src={idkwhatIamDoing1480x2220}>
+				<Figure
+					className='padding-left-right'
+					alt='a picture of me being confused'
+					width='1480'
+					height='2220'
+					src={idkwhatIamDoing1480x2220}>
 					<Figcaption>
 						When you don't know what you are doing at the job.
 					</Figcaption>
 				</Figure>
 
-				<Figure alt='a picture of me On a Career and Premedical Professions Fair poster.' width='1480' height='1500' src={herbieCareerWidePoster1480x1500}>
+				<Figure
+					alt='a picture of me On a Career and Premedical Professions Fair poster.'
+					width='1480'
+					height='1500'
+					src={herbieCareerWidePoster1480x1500}>
 					<Figcaption>
 						On a Career and Premedical Professions Fair poster.
 					</Figcaption>
 				</Figure>
 
-				<Figure alt='a picture of a wide panner' width='1480' height='1500' src={herbieCareerWidePoster1480x1500}>
+				<Figure
+					alt='a picture of a wide panner'
+					width='1480'
+					height='1500'
+					src={herbieCareerWidePoster1480x1500}>
 					<Figcaption>
 						I designed the huge banner to hold the posters and the poster on the
 						left.

@@ -56,9 +56,18 @@ const AboutMePage = ({ contentProps }) => {
 	return (
 		<Fragment>
 			<ContentShow less>
-				<Paragraph noReveal>
-					I am going to try to describe myself with pictures and gifs
+				<Header less>{header}</Header>
+				<Paragraph less>
+					I am going to try to describe myself with pictures and gifs.
 				</Paragraph>
+				<div className='less__container'>
+					<Paragraph>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis
+						risus eget urna mollis ornare vel eu leo. Donec id elit non mi porta
+						gravida at eget metus. Sed posuere consectetur est at lobortis.
+						Maecenas sed diam eget risus varius blandit sit amet non magna.
+					</Paragraph>
+				</div>
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>

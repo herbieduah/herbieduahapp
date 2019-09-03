@@ -27,7 +27,15 @@ const iPhonePage = () => {
 	return (
 		<Fragment>
 			<ContentShow less>
-				<Paragraph noReveal>I enjoy taking pics on my iPhone</Paragraph>
+				<Header less>{header}</Header>
+				<Paragraph less>I enjoy taking pics on my iPhone</Paragraph>
+				<div className='less__container'>
+					<Paragraph>
+						I worked directly with the Career Development Director to create a
+						series of posters, digital art, documents, videos, and other mediums
+						geared towards helping students start their career.
+					</Paragraph>
+				</div>
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>

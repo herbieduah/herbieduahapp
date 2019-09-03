@@ -125,3 +125,63 @@ export const slideLeftLeave = keyframes`
 			transform: translate3d(-150px, 0, 0);
 		}
 `;
+
+export const scrollDownTouch = keyframes`
+  0% {
+    transform: translate(-50%,40px) scale(0.5,0.5);
+    opacity: 1;
+    animation-timing-function: ease-in;
+  }
+  10% {
+    transform: translate(-50%,20px) scale(0.4,0.65);
+    animation-timing-function: ease-out;
+  }
+  20% { 
+    transform: translate(-50%,0px) scale(0.6,0.4);
+    animation-timing-function: ease;
+  }
+  30% {
+    transform: translate(-50%,0px) scale(0.5,0.5);
+    animation-timing-function: ease-in;
+    opacity: 1;
+    filter: blur(0px);
+  }
+  50% {
+    transform: translate(-50%,0px) scale(0.9,0.9);
+    opacity: .4;
+    filter: blur(.5px);
+  }
+  65% {
+    transform: translate(-50%,20px) scale(1,1.2);
+    filter: blur(1px);
+    opacity: .3;
+  }
+  80% {
+    transform: translate(-50%,40px) scale(1.05,0.95);
+    animation-timing-function: ease-out;
+    opacity: .4;
+    filter: blur(.5px);
+  }
+  100% {
+    transform: translate(-50%,40px) scale(0.5,0.5);
+    opacity: 1;
+    filter: blur(0px);
+  }
+`;
+
+export const scrollDownMouse = keyframes`
+0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(scrollMouseSize/4);
+  }
+`;
