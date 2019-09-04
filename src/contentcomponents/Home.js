@@ -16,6 +16,7 @@ import {
 	ContentShow
 } from "../ContentHelpers";
 import { ShowIf } from "../ComponentHelpers";
+import { Image as CloudImage, Video } from "cloudinary-react";
 import Emoji from "a11y-react-emoji";
 import { mobileModel, isMobileOnly } from "react-device-detect";
 // import Modal from "../maincomponents/Modal";
@@ -101,6 +102,23 @@ const HomePage = ({ contentProps }) => {
 					</Paragraph>
 				</ShowIf>
 				<div className='less__container'>
+					{/* <Video
+						cloudName='dwccyjn5e'
+						publicId='giftguide_11_1_copy_guoyg8'
+						controls={false}
+						width='740'
+						preload='auto'
+						autoPlay
+						muted
+						playsInline
+						loop></Video> */}
+					<CloudImage
+						cloudName='demo'
+						publicId='sample'
+						width='740'
+						crop='scale'>
+						{/* <Transformation dpr='auto' /> */}
+					</CloudImage>
 					<Paragraph>
 						Hi, I am Herbie. I am a Phoenix based Web Designer/Developer with 5
 						years of experience. I have a passion for creating user experiences

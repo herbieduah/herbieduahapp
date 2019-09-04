@@ -105,8 +105,6 @@ const HeadingOne = styled.h1`
 
 const HeadingTwo = styled.h2`
 	${baseStyle};
-	line-height: 1;
-	line-height: 1.25;
 	font-family: ${appfontFamilyWide};
 	font-weight: 500;
 `;
@@ -142,7 +140,6 @@ const Button = styled.button`
 	${baseStyle};
 	font-weight: 600;
 	${mainTransition}
-	line-height: 1.2;
 	font-family: ${appfontFamilyWide};
 	border: 0;
 
@@ -177,7 +174,7 @@ const MenuLink = styled(NavLink)`
 	${baseStyle};
 	font-weight: 600;
 	${mainTransition}
-	line-height: 1.2;
+	/* line-height: 1.2; */
 	letter-spacing: 1px;
 	border: 0;
 	hyphens: manual;

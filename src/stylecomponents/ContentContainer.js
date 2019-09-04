@@ -53,9 +53,13 @@ export const ContentContainer = styled.section`
 	.LazyLoad {
 		width: 100%;
 	}
-	img {
+
+	img,video {
 		max-width: 100%;
   		height: auto;
+	}
+	video {
+		pointer-events: none;
 	}
 	figure {
 		margin: 0;

@@ -6,6 +6,7 @@
     "a11y-react-emoji": "^1.0.2",
     "animate.css": "^3.7.2",
     "bootstrap": "^4.3.1",
+    "cloudinary-react": "^1.1.4",
     "history": "^4.9.0",
     "parallax-js": "^3.1.0",
     "polished": "^3.3.2",

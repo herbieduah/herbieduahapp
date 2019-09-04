@@ -9,6 +9,7 @@ import {
 	Paragraph,
 	Small,
 	ContentCategory,
+	Button,
 	Header,
 	HeadingTwo
 } from "../ContentHelpers";
@@ -65,9 +66,7 @@ const ThemePage = ({ contentProps }) => {
 					Reeves.
 				</Paragraph>
 				<ShowIf noAnimation thisValue={isMatrix} thatValue={false}>
-					<Text button onClick={setMatrixTheme} className='padding-left-right'>
-						Take the Red Pill
-					</Text>
+					<Button onClick={setMatrixTheme}>Take the Red Pill</Button>
 					<Small>
 						You stay in Wonderland, and I show you how deep the rabbit hole
 						goes...
@@ -81,12 +80,7 @@ const ThemePage = ({ contentProps }) => {
 					The Snapchat theme borrows some of the looks and colors from Snapchat.
 				</Paragraph>
 				<ShowIf noAnimation thisValue={isSnapchat} thatValue={false}>
-					<Text
-						button
-						onClick={setSnapchatTheme}
-						className='padding-left-right'>
-						Add Filter
-					</Text>
+					<Button onClick={setSnapchatTheme}>Add Filter</Button>
 					<Small>This web app is totally catfish.</Small>
 				</ShowIf>
 				<ShowIf noAnimation thisValue={isSnapchat} thatValue={true}>

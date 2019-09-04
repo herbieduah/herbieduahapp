@@ -2,6 +2,8 @@ import React, { Fragment, useContext } from "react";
 import ReactSVG from "react-svg";
 import ReactPlayer from "react-player";
 import { globalState } from "../State";
+import { Image as CloudImage, Video } from "cloudinary-react";
+import { isMobileOnly } from "react-device-detect";
 // import ImageLoader from "./ImageLoader";
 // import {
 // 	LazyLoadImage,
@@ -10,7 +12,7 @@ import { globalState } from "../State";
 import Img from "react-image";
 import VisibilitySensor from "react-visibility-sensor";
 // import "react-lazy-load-image-component/src/effects/blur.css";
-
+const mediaWidth = isMobileOnly ? "400" : "740";
 const LazyLoadWrapper = props => {
 	const { lazyLoading } = useContext(globalState);
 	return (
@@ -25,6 +27,7 @@ const LazyLoadWrapper = props => {
 		</Fragment>
 	);
 };
+
 const Media = props => {
 	const type = props.type;
 	switch (type) {
@@ -51,6 +54,24 @@ const Media = props => {
 					/>
 				</LazyLoadWrapper>
 			);
+		case "cloud-gif":
+			return (
+				<LazyLoadWrapper>
+					<Video
+						cloudName='dwccyjn5e'
+						publicId={props.url}
+						controls={false}
+						width='740'
+						preload='auto'
+						autoPlay
+						muted
+						playsInline
+						loop
+						aria-describedby={props.desc}
+						className={props.className || ""}
+						inline='true'></Video>
+				</LazyLoadWrapper>
+			);
 		case "video":
 			return (
 				<LazyLoadWrapper>
@@ -73,6 +94,20 @@ const Media = props => {
 						height={props.height || "100%"}
 						src={props.src}
 						className={props.className || ""}
+					/>
+				</LazyLoadWrapper>
+			);
+		case "cloud-image":
+			return (
+				<LazyLoadWrapper>
+					<CloudImage
+						cloudName='dwccyjn5e'
+						publicId={props.src}
+						width={mediaWidth}
+						crop='scale'
+						alt={props.alt}
+						className={props.className || ""}
+					/>
 					/>
 				</LazyLoadWrapper>
 			);

@@ -579,9 +579,16 @@ export const TransitionTextContainer = styled.li`
 	${mobile} {
 		margin-bottom: 1rem;
 	}
-	button.current {
-		color: ${fontColor};
+	button {
+		color: ${navBarButtonColor};
+		&.current {
+			color: ${navBarButtonActive};
+		}
+		&:hover {
+			color: ${navBarHoverFocus};
+		}
 	}
+
 	span.animated {
 		animation-duration: ${revealSecs}ms;
 	}

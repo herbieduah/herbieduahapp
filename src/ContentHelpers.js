@@ -332,14 +332,23 @@ export const Image = props => {
 	const imageClass = props.className ? props.className : "";
 	return (
 		<ElementReveal>
-			<Media
-				type='image'
-				src={src}
-				alt={alt}
-				width={props.width}
-				height={props.height}
-				className={`${spacingBottom} ${imageClass}`}
-			/>
+			{props.cloud ? (
+				<Media
+					type='cloud-image'
+					src={src}
+					alt={alt}
+					className={`${spacingBottom} ${imageClass}`}
+				/>
+			) : (
+				<Media
+					type='image'
+					src={src}
+					alt={alt}
+					width={props.width}
+					height={props.height}
+					className={`${spacingBottom} ${imageClass}`}
+				/>
+			)}
 		</ElementReveal>
 	);
 };
@@ -350,13 +359,14 @@ export const Figure = props => {
 	const alt = props.alt ? props.alt : defaultAlt;
 	const figClass = props.className ? props.className : "";
 	const mockup = props.mockup ? true : false;
+	const isCloud = props.cloud ? "cloud-" : "";
 	return (
 		<ElementReveal>
 			<figure className={`c-margin-bottom`}>
 				{mockup ? (
 					<div className={figClass}>
 						<Media
-							type='image'
+							type={`${isCloud}image`}
 							width={props.width}
 							height={props.height}
 							className='c-mockup'
@@ -369,7 +379,7 @@ export const Figure = props => {
 					<Fragment>
 						<div className={figClass}>
 							<Media
-								type='image'
+								type={`${isCloud}image`}
 								width={props.width}
 								height={props.height}
 								src={src}
@@ -396,10 +406,11 @@ export const Figcaption = props => {
 export const Gif = props => {
 	const url = props.url;
 	const desc = props.desc ? props.desc : defaultDesc;
+	const isCloud = props.cloud ? "cloud-" : "";
 	return (
 		<ElementReveal>
 			<Media
-				type='gif'
+				type={`${isCloud}gif`}
 				url={url}
 				width={props.width}
 				height={props.height}
@@ -413,11 +424,12 @@ export const Gif = props => {
 export const FiGif = props => {
 	const url = props.url;
 	const desc = props.desc ? props.desc : defaultDesc;
+	const isCloud = props.cloud ? "cloud-" : "";
 	return (
 		<ElementReveal>
 			<figure className={`${spacingBottom}`}>
 				<Media
-					type='gif'
+					type={`${isCloud}gif`}
 					width={props.width}
 					height={props.height}
 					url={url}
@@ -448,7 +460,7 @@ export const ThemeCircles = props => {
 				<button className={`themeCircle__button ${currentClass}`}>
 					{current ? (
 						<div className='themeCircle__selected'>
-							<Text format m bold>
+							<Text format l bold>
 								Current
 							</Text>
 						</div>
@@ -602,6 +614,16 @@ export const DisableSetting = props => {
 				<Fragment>{props.children}</Fragment>
 			)}
 		</Fragment>
+	);
+};
+
+export const Button = props => {
+	return (
+		<ElementReveal>
+			<Text button xs className='padding-left-right' {...props} >
+				{props.children}
+			</Text>
+		</ElementReveal>
 	);
 };
 

@@ -79,6 +79,33 @@ export const appTransitions = [
 			exit: "animated",
 			exitActive: "rotateOut"
 		}
+	},
+	{
+		name: "fadeInDownfadeOutDown",
+		properties: {
+			enter: "animated",
+			enterActive: "fadeInDown",
+			exit: "animated",
+			exitActive: "fadeOutDown"
+		}
+	},
+	{
+		name: "slideInDownslideOutDown",
+		properties: {
+			enter: "animated",
+			enterActive: "slideInDown",
+			exit: "animated",
+			exitActive: "slideOutDown"
+		}
+	},
+	{
+		name: "fadeInUpfadeOutUp",
+		properties: {
+			enter: "animated",
+			enterActive: "fadeInUp",
+			exit: "animated",
+			exitActive: "fadeOutUp"
+		}
 	}
 ];
 
