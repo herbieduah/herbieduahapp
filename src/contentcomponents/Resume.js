@@ -8,7 +8,9 @@ import {
 	ContentCategory,
 	Paragraph,
 	Header,
-	HeadingTwo
+	HeadingTwo,
+	Experience
+
 	// HeadingThree,
 	// HeadingOne,
 	// Small
@@ -35,7 +37,7 @@ const Resume = ({ contentProps }) => {
 			<ContentShow more>
 				<Header>{header}</Header>
 				<HeadingTwo>Education</HeadingTwo>
-				<div className='c-experience'>
+				<Experience>
 					<Text>
 						<strong>Bachelor of Science in Applied Computer Science</strong>
 					</Text>
@@ -43,9 +45,9 @@ const Resume = ({ contentProps }) => {
 					<Text className='cMarginBottomSm'>
 						<i>August 11 - May 2016</i>
 					</Text>
-				</div>
+				</Experience>
 				<HeadingTwo>Experience</HeadingTwo>
-				<div className='c-experience'>
+				<Experience>
 					<Text l>Front End Developer</Text>
 					<Text format>Discount Tire</Text>
 					<Text format>
@@ -67,9 +69,9 @@ const Resume = ({ contentProps }) => {
 							</Text>
 						</li>
 					</ul>
-				</div>
+				</Experience>
 
-				<div className='c-experience'>
+				<Experience>
 					<Text l>User Interface Developer</Text>
 					<Text format>Deckers Brands</Text>
 					<Text format>
@@ -91,9 +93,9 @@ const Resume = ({ contentProps }) => {
 							</Text>
 						</li>
 					</ul>
-				</div>
+				</Experience>
 
-				<div className='c-experience'>
+				<Experience>
 					<Text l>Graphic and Web Designer</Text>
 					<Text format>Flagstaff Chamber of Commerce</Text>
 					<Text format>
@@ -115,9 +117,9 @@ const Resume = ({ contentProps }) => {
 							</Text>
 						</li>
 					</ul>
-				</div>
+				</Experience>
 
-				<div className='c-experience'>
+				<Experience>
 					<Text l>Media Management Student Worker</Text>
 					<Text format>Northern Arizona University</Text>
 					<Text format>
@@ -139,9 +141,9 @@ const Resume = ({ contentProps }) => {
 							</Text>
 						</li>
 					</ul>
-				</div>
+				</Experience>
 
-				<div className='c-experience'>
+				<Experience>
 					<Text l>Digital Business Intern</Text>
 					<Text format>Deckers Brands</Text>
 					<Text format>
@@ -164,9 +166,9 @@ const Resume = ({ contentProps }) => {
 							</Text>
 						</li>
 					</ul>
-				</div>
+				</Experience>
 
-				<div className='c-experience'>
+				<Experience>
 					<Text l>Student Web Developer</Text>
 					<Text format>Northern Arizona University</Text>
 					<Text format>
@@ -188,7 +190,7 @@ const Resume = ({ contentProps }) => {
 							</Text>
 						</li>
 					</ul>
-				</div>
+				</Experience>
 
 				<ContentCategory fullScreen={fullScreen} category='about' />
 			</ContentShow>

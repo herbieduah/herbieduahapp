@@ -53,25 +53,88 @@ import {
 	newRetrowaveTheme,
 	deepBlueTheme,
 	snapchat,
-	matrix,
-	white
+	matrix
 } from "./Themes/ThemeFactory";
+import { themeColorMaker } from "./Themes/ThemeHelpers";
 export const themes = [
+	{
+		name: "white",
+		properties: {
+			...themeColorMaker()
+		},
+		type: "color",
+		text: "",
+		desc: ""
+	},
+	{
+		name: "Color-F7F7F8-000000",
+		properties: {
+			...themeColorMaker("Color-F7F7F8-000000")
+		},
+		type: "color",
+		text: "",
+		desc: ""
+	},
+	{
+		name: "Color-000000-F7F7F8",
+		properties: {
+			...themeColorMaker("Color-000000-F7F7F8")
+		},
+		type: "color",
+		text: "",
+		desc: ""
+	},
+	{
+		name: "Color-FFFC00-1D1F20",
+		properties: {
+			...themeColorMaker("Color-FFFC00-1D1F20")
+		},
+		type: "color",
+		text: "",
+		desc: ""
+	},
+	{
+		name: "Color-F8C296-341A04",
+		properties: {
+			...themeColorMaker("Color-F8C296-341A04")
+		},
+		type: "color",
+		text: "",
+		desc: ""
+	},
+	{
+		name: "Color-341A04-F8C296",
+		properties: {
+			...themeColorMaker("Color-341A04-F8C296")
+		},
+		type: "color",
+		text: "",
+		desc: ""
+	},
+	{
+		name: "Color-FDF1E7-4A00A0",
+		properties: {
+			...themeColorMaker("Color-FDF1E7-4A00A0")
+		},
+		type: "color",
+		text: "",
+		desc: ""
+	},
+	{
+		name: "Color-4A00A0-FDF1E7",
+		properties: {
+			...themeColorMaker("Color-4A00A0-FDF1E7")
+		},
+		type: "color",
+		text: "",
+		desc: ""
+	},
 	{
 		name: "default",
 		properties: {
 			...defaultTheme
 		},
 		type: "gradient",
-		text: "Plum Bath",
-		desc: ""
-	},
-	{
-		name: "white",
-		properties: {
-			...white
-		},
-		type: "color",
 		text: "Plum Bath",
 		desc: ""
 	},

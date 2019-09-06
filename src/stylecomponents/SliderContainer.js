@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { rgba } from "polished";
 import {
 	mobile,
 	absoluteOverlay,
@@ -10,7 +11,6 @@ import {
 import {
 	sliderArrow,
 	CTAColor,
-	fontColorComplement,
 	sliderArrowSecondary,
 	sliderArrowActive,
 	sliderArrowOpacity,

@@ -202,6 +202,18 @@ margin-top: 3.5rem;
 			margin-top: 3rem;
 		}
 `;
+export const breather = `
+margin-top: 4rem;
+		${mobile} {
+			margin-top: 3.5rem;
+		}
+`;
+export const breatherBottom = `
+margin-bottom: 4rem;
+		${mobile} {
+			margin-bottom: 3.5rem;
+		}
+`;
 
 export const halyardDisplay = `
 font-weight: 200;`;

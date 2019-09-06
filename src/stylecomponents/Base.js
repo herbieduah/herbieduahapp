@@ -43,7 +43,8 @@ import {
 	navBarButtonActive,
 	logoInnerFillColor,
 	fontColor,
-	borderThin
+	borderThin,
+	CTAUnderline
 } from "./Themes/ThemeVariables";
 import {
 	mobile,
@@ -105,9 +106,6 @@ export const NavBarMiniContainer = styled.div`
 	${mobile} {
 		padding: .5rem 1rem;
 	}
-	${tablet} {
-		padding: .5rem 1rem;
-	}
     z-index: 1000;
     display: flex;
 	background: ${props =>
@@ -137,7 +135,6 @@ export const NavBarMiniContainer = styled.div`
 					: navBarHoverFocus};
 		}
 		a {
-			text-decoration: none;
 			color: ${props =>
 				props.navBarComplement
 					? navBarButtonComplementaryText
@@ -148,6 +145,10 @@ export const NavBarMiniContainer = styled.div`
 						? navBarButtonComplementaryHoverText
 						: navBarHoverFocus};
 				}
+
+			&.active {
+				text-decoration: ${CTAUnderline};
+			}
 		}
 	}
 	.navbar {
@@ -359,6 +360,7 @@ export const ReactTabs = styled(Tabs)`
 			${hideScrollbar}
 			border:0;
 			border-radius: 0;
+			text-transform: uppercase;
 		}
 
 		&__tab {
@@ -573,19 +575,27 @@ export const ThemeCircleContainer = styled.li`
 export const TransitionTextContainer = styled.li`
 	position: relative;
 	list-style-type: none;
-	margin-bottom: 1.5rem;
+	margin-bottom: 1rem;
 	display: flex;
-	width: 100%;
+	.appTransition {
+		&__container {
+			display: inline-block;
+			&.current,
+			&:hover,
+			&:focus {
+				border-bottom: 2px solid ${fontColor};
+			}
+		}
+	}
+
 	${mobile} {
-		margin-bottom: 1rem;
+		margin-bottom: 0.5rem;
 	}
 	button {
 		color: ${navBarButtonColor};
-		&.current {
-			color: ${navBarButtonActive};
-		}
+		text-decoration: none;
 		&:hover {
-			color: ${navBarHoverFocus};
+			text-decoration: none;
 		}
 	}
 

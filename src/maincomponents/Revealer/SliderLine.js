@@ -38,7 +38,9 @@ export const SliderLine = () => {
 					{isShowingMore ? (
 						<div className='slider__instructions-container'>
 							<span className='slider__instructions'>
-								<Text s>Less</Text>
+								<Text bold s>
+									Less
+								</Text>
 							</span>
 						</div>
 					) : null}
@@ -46,7 +48,9 @@ export const SliderLine = () => {
 					{!isShowingMore ? (
 						<div className='slider__instructions-container'>
 							<span className='slider__instructions'>
-								<Text s>More</Text>
+								<Text bold s>
+									More
+								</Text>
 							</span>
 						</div>
 					) : null}

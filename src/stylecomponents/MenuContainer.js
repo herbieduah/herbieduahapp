@@ -56,14 +56,11 @@ const MenuContainer = styled.aside`
 	/* margin-top: 0;
 	margin-left: 0; */
 	${tablet} {
-		
-		/* ${props => (props.navBarRight ? `margin-right: 0` : `margin-right: 0`)};
-		${props => (props.navBarRight ? `margin-left: 0` : ``)};
 		${props =>
 			props.isPortrait
-				? `margin-top: ${navBarSize};
-				margin-left: ${navBarSize} `
-				: `margin-right: ${navBarSize}`}; */
+				? `max-width: 740px;
+		width: 100%; margin: 0 auto;`
+				: ``};
 	}
 	/* ${props =>
 		isIOS && props.isPortrait ? slightBoxShadowAbove : `box-shadow: none`}; */
@@ -79,15 +76,14 @@ const MenuContainer = styled.aside`
 				max-width: 600px;
 			${props =>
 				props.isPortrait
-					? `margin: 0 auto; padding-top:4rem; height: 6vh;
-			padding-bottom: 10vh; ;`
+					? `height: auto;margin-top: 6vh; margin-bottom:1rem;`
 					: ``};
 			}
 			height: 6vh;
 			margin-bottom: 10vh;
 			${mobile} {
 				height: 4vh;
-				margin-bottom: 4vh;
+				margin-bottom: 0rem;
 			}
 		}
 		${hideScrollbar}
@@ -99,19 +95,26 @@ const MenuContainer = styled.aside`
 		${props => (props.isShowingMore ? `display: block;` : `display: flex;`)};
 		
 	}
-	.menu__more {
-		padding: 1rem 0;
-		margin-top: 1.3rem;
+
+	.menu {
+		&__less {
+			
+			height: ${props => (props.isPortrait ? `auto` : `100vh`)};
+		}
+		&__less-container {
+			padding-top: ${props => (props.isPortrait ? `0` : `${navBarSize}`)};
+		}
+		&__more {
+			padding: 1rem 0;
+			margin-top: 1.3rem;
+			.subMenu {
+			${props => (props.isPortrait ? `overflow-x: auto;` : ``)};
+			${props => (props.isPortrait ? `flex-direction: row;` : ``)};
+			}
+		}
 	}
 
-	.menu__less {
-		height: ${props => (props.isPortrait ? `auto` : `100vh`)};
-	}
-	
-	.menu__less-container {
-		padding-top: ${props => (props.isPortrait ? `0` : `${navBarSize}`)};
-	}
-	
+
 	justify-content: right;
 	flex-direction: column;
 	ul {
@@ -128,13 +131,11 @@ const MenuContainer = styled.aside`
 	.subMenu {
 			width: 100%;
 			height:100%;
-
+			${hideScrollbar}
 			${paddingLR}
 			flex-direction: column;
 			${props => (props.isPortrait ? `text-align: left;` : `text-align: right;`)};
-			${props => (props.isPortrait ? `overflow-x: auto;` : ``)};
-			${props => (props.isPortrait ? `${hideScrollbar};` : ``)};
-			${props => (props.isPortrait ? `flex-direction: row;` : ``)};
+			
 		
 			/* ${mobile} {
 				overflow-x: auto;
@@ -153,6 +154,10 @@ const MenuContainer = styled.aside`
 			margin-bottom: 0;
 			${paddingLR}
 			margin-top: 2rem;
+			${tablet}{
+				
+				${props => (props.isPortrait ? `margin-top: .5rem;` : ``)};
+			}
 			width: 100%;
 			display: block;
 			${mobile}{
@@ -166,7 +171,7 @@ const MenuContainer = styled.aside`
 				&:last-child {
 					${props => (props.isPortrait ? `padding-right:4rem` : ``)};
 				}
-				${props => (props.isPortrait ? `margin: .3rem 1rem;` : ``)};
+				${props => (props.isPortrait ? `margin: 0 1.4rem .3rem 0;` : ``)};
 				
 				padding: 0;
 				
@@ -189,11 +194,6 @@ const MenuContainer = styled.aside`
 			}
 			${props => (props.isPortrait ? `white-space: nowrap;` : ``)};
 			${props => (props.isPortrait ? `margin-right: 1rem;` : `margin-left: 1rem;`)};
-		}
-		a {
-			${tablet}{
-				${props => (props.isPortrait ? `font-size: 1.7em` : ``)};
-			}		
 		}
 	}
 	

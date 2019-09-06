@@ -272,7 +272,7 @@ export const HeadingOne = props => {
 				h1
 				l
 				bold
-				className={`c-margin-top-large ${compClassName}  padding-left-right `}>
+				className={`c-margin-top-large ${compClassName} breather-bottom padding-left-right `}>
 				{props.children}
 			</Text>
 		</ElementReveal>
@@ -286,9 +286,17 @@ export const HeadingTwo = props => {
 			<Text
 				h2
 				l
-				className={` ${compClassName} container  c-margin-top padding-left-right`}>
+				className={` ${compClassName} container  breather c-margin-bottom-med  padding-left-right`}>
 				{props.children}
 			</Text>
+		</ElementReveal>
+	);
+};
+
+export const Experience = props => {
+	return (
+		<ElementReveal>
+			<div className='c-experience'>{props.children}</div>
 		</ElementReveal>
 	);
 };
@@ -522,16 +530,18 @@ export const TransitionTexts = props => {
 	return (
 		<TransitionTextContainer
 			onClick={changeTransition}
-			className='appTransition__item'>
-			<Text button m bold className={currentClass}>
-				<span className={enterTextTransition}>
-					{transitionValues.enterTransition}
-				</span>
-				, &nbsp;
-				<span className={exitTextTransition}>
-					{transitionValues.exitTransition}
-				</span>
-			</Text>
+			className={`appTransition__item`}>
+			<div className={`appTransition__container ${currentClass}`}>
+				<Text button xs>
+					<span className={enterTextTransition}>
+						{transitionValues.enterTransition}
+					</span>
+					, &nbsp;
+					<span className={exitTextTransition}>
+						{transitionValues.exitTransition}
+					</span>
+				</Text>
+			</div>
 		</TransitionTextContainer>
 	);
 };
@@ -620,7 +630,7 @@ export const DisableSetting = props => {
 export const Button = props => {
 	return (
 		<ElementReveal>
-			<Text button xs className='padding-left-right' {...props} >
+			<Text button xs className='padding-left-right' {...props}>
 				{props.children}
 			</Text>
 		</ElementReveal>

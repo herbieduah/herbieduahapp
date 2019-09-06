@@ -25,18 +25,17 @@ import {
 	buttonColor,
 	buttonColorHoverFocus,
 	navBarButtonActive,
-	navBarHoverFocus
+	navBarHoverFocus,
+	CTAUnderline
 } from "./Themes/ThemeVariables";
 
 const baseStyle = css`
-	font-family: ${appfontFamily};
 	font-family: ${props => {
 		if (props.wide) return appfontFamilyWide;
 		if (props.extrawide) return appfontFamilyExtraWide;
 		return appfontFamily;
 	}};
-	font-weight: 400;
-	margin: 0;
+
 	line-height: ${props => {
 		if (props.nolineheight) return "1";
 		return "1.5";
@@ -74,7 +73,7 @@ const baseStyle = css`
 		}};
 	}
 	font-weight: ${props => {
-		if (props.bold) return "700";
+		if (props.bold) return "600";
 		if (props.extrabold) return "900";
 		return "400";
 	}};
@@ -84,6 +83,7 @@ const baseStyle = css`
 	}};
 	max-width: 100%;
 	letter-spacing: 0.5px;
+	margin: 0;
 `;
 
 baseStyle.defaultProps = {
@@ -142,7 +142,6 @@ const Button = styled.button`
 	${mainTransition}
 	font-family: ${appfontFamilyWide};
 	border: 0;
-
 	text-transform: uppercase;
 	hyphens: manual;
 	background: none;
@@ -152,11 +151,12 @@ const Button = styled.button`
 	&:hover,
 	&:focus {
 		color: ${buttonColorHoverFocus};
+		text-decoration: ${CTAUnderline};
 	}
-	&.active {
+	&.active,&.current {
 		color: ${buttonColorHoverFocus};
+		text-decoration: ${CTAUnderline};
 	}
-	text-decoration: none;
 `;
 const HyperLink = styled.a`
 	${baseStyle};
@@ -184,6 +184,7 @@ const MenuLink = styled(NavLink)`
 	cursor: pointer;
 	/* font-size: 2em; */
 	text-transform: uppercase;
+	text-decoration: none;
 	${mobile} {
 		/* font-size: 1.7em; */
 	}
@@ -195,11 +196,13 @@ const MenuLink = styled(NavLink)`
 	&:hover,
 	&:focus {
 		color: ${navBarHoverFocus};
+		text-decoration: ${CTAUnderline};
 	}
-	&.active {
+	&.active,
+	&.current {
 		color: ${navBarButtonActive};
+		text-decoration: ${CTAUnderline};
 	}
-	text-decoration: none;
 `;
 
 const Text = ({

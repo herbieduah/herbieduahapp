@@ -26,13 +26,16 @@ import {
 	cMarginBottomSm,
 	cPaddingBottomSm,
 	navBarSize,
-	cMarginTop
+	cMarginTop,
+	breather,
+	breatherBottom
 } from "./StyleHelpers";
 import {
 	navBarBorder,
 	CTAColor,
 	borderThin,
-	fontColor
+	fontColor,
+	bgColorContent
 } from "./Themes/ThemeVariables";
 
 export const ContentContainer = styled.section`
@@ -201,6 +204,12 @@ export const ContentContainer = styled.section`
 	.c-padding-bottom,.cPaddingBottom {
 		${cPaddingBottom}
 	}
+	.breather {
+		${breather}
+	}
+	.breather-bottom {
+		${breatherBottom}
+	}
 	.c-padding-bottom-med, .cPaddingBottomMed {
 		${cPaddingBottomMed}
 	}
@@ -283,6 +292,7 @@ export const ContentContainer = styled.section`
 		width: 100%;
 		margin: 0 auto;
 		padding: 0;
+		background-color: ${bgColorContent};
 	}
 	ul.appTransition {
 		margin: 0;
@@ -383,7 +393,13 @@ export const ContentContainer = styled.section`
 		}
 		border-top: ${borderThin};
 		border-bottom: ${borderThin};
+	}
 
+	.react-tabs {
+		&__tab-list {
+			max-width: 500px;
+			${paddingLR}
+		}
 	}
 `;
 
