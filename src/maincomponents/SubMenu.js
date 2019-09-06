@@ -35,7 +35,7 @@ export const SubMenu = props => {
 						</li>
 						<li onClick={hideModal} className='subMenu__item'>
 							<Text menuLink to='/BedzinExhibit'>
-								Będzin Exhibit
+								Bedzin Exhibit
 							</Text>
 						</li>
 						<li onClick={hideModal} className='subMenu__item'>

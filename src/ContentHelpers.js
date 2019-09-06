@@ -25,7 +25,7 @@ import {
 	FlexContainer,
 	MarqueeWrapper
 } from "./stylecomponents/Base";
-import { ShowIf } from "./ComponentHelpers";
+import { ShowIf, MenuTabs } from "./ComponentHelpers";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { appTransitions } from "./stylecomponents/Transitions";
 import {
@@ -203,13 +203,13 @@ export const ElementReveal = props => {
 };
 
 export const ContentCategory = props => {
+	const categoryArr = ["customize", "work", "photography", "about"];
+	const tabIndex = categoryArr.indexOf(props.category);
 	return (
 		<ShowIf noAnimation thisValue={props.fullScreen} thatValue={true}>
 			<ElementReveal duration={revealSecs}>
-				<div>
-					<nav className='c-submenu'>
-						<SubMenu showCategory={true} category={props.category} />
-					</nav>
+				<div className='c-category'>
+					<MenuTabs showCategory={false} tabIndex={tabIndex} />
 				</div>
 			</ElementReveal>
 		</ShowIf>

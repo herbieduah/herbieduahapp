@@ -156,10 +156,19 @@ export const cPaddingBottom = `padding-bottom: 3rem !important;
 ${mobile} {
 	padding-bottom: 2.5rem!important;
 }`;
+export const cPaddingTop = `padding-top: 3rem !important;
+${mobile} {
+	padding-top: 2.5rem!important;
+}`;
 
 export const cPaddingBottomMed = `padding-bottom: 2rem;
 ${mobile} {
 	padding-bottom: 1.5rem;
+}`;
+
+export const cPaddingTopMed = `padding-top: 2rem;
+${mobile} {
+	padding-top: 1.5rem;
 }`;
 
 export const cMarginBottomMed = `margin-bottom: 1.5rem;

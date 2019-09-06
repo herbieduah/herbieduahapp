@@ -110,11 +110,11 @@ export const NavBarMiniContainer = styled.div`
     display: flex;
 	background: ${props =>
 		props.navBarComplement ? navBarBgComplement : navBarBg};
-	${props => (props.navBarComplement ? slightBoxShadowBelow : `box-shadow:none`)};
 	width: 100vw;
 	background: ${props => (props.modalVisible ? modalFullScreenBg : ``)}!important;
 	${props => (props.modalVisible ? `box-shadow:none` : ``)};
-	border-bottom: ${props => (props.modalVisible ? navBarBorder : ``)};
+	border-bottom: ${props =>
+		props.modalVisible || props.navBarComplement ? navBarBorder : ``};
 	align-items: center;
  	width: ${props => props.appHeight}px;
 	justify-content: space-between;
@@ -184,8 +184,8 @@ export const NavBarMiniContainer = styled.div`
 			svg {
 				${mainTransition}
 				/* transform: scale(.09); */
-				width: 2.5rem;
-				height: 2.5rem;
+				width: ${navBarSize};
+				height: ${navBarSize};
 				opacity: .6;
 				path {
 					
@@ -529,7 +529,7 @@ export const ThemeCircleContainer = styled.li`
 				width: 7rem;
 				height: 7rem;
 			}
-			margin: 0 auto;
+			/* margin: 0 auto; */
 			display: block;
 			border-radius: 50%;
 			cursor: pointer;
@@ -549,8 +549,14 @@ export const ThemeCircleContainer = styled.li`
 		}
 		&__text {
 			color: ${CTAColor};
+			width: 9.5rem;
+			${mobile} {
+				width: 5rem;
+			}
+			${tablet} {
+				width: 7rem;
+			}
 			text-align: center;
-			width: 100%;
 			display: block;
 			cursor: pointer;
 			padding: 0.25rem;

@@ -28,7 +28,9 @@ import {
 	navBarSize,
 	cMarginTop,
 	breather,
-	breatherBottom
+	breatherBottom,
+	cPaddingTop,
+	cPaddingTopMed
 } from "./StyleHelpers";
 import {
 	navBarBorder,
@@ -291,7 +293,9 @@ export const ContentContainer = styled.section`
 		flex-wrap: wrap;
 		width: 100%;
 		margin: 0 auto;
-		padding: 0;
+		${cPaddingBottomMed}
+		${cPaddingTopMed}
+		${paddingLR}
 		background-color: ${bgColorContent};
 	}
 	ul.appTransition {
@@ -299,6 +303,16 @@ export const ContentContainer = styled.section`
 		padding: 0;	
 		button {
 			padding:0;
+		}
+	}
+
+	.c-category {
+		${breather};
+		${paddingLR}
+		ul {
+			list-style-type: none;
+			margin:0;
+			padding: 0;
 		}
 	}
 	.offset {

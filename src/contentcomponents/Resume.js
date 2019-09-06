@@ -191,7 +191,6 @@ const Resume = ({ contentProps }) => {
 						</li>
 					</ul>
 				</Experience>
-
 				<ContentCategory fullScreen={fullScreen} category='about' />
 			</ContentShow>
 		</Fragment>

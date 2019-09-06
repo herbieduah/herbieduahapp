@@ -291,8 +291,9 @@ export const SubMenuWrapper = props => {
 
 export const MenuTabs = props => {
 	const showCategory = props.showCategory;
+	const tabIndex = props.tabIndex || 0;
 	return (
-		<ReactTabs defaultIndex={0}>
+		<ReactTabs defaultIndex={tabIndex}>
 			<ElementReveal>
 				<TabList>
 					<Tab>
