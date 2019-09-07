@@ -7864,6 +7864,12 @@ react-svg@^10.0.4:
     "@tanem/svg-injector" "^8.0.6"
     prop-types "^15.7.2"
 
+react-switch@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/react-switch/-/react-switch-5.0.1.tgz#449277f4c3aed5286fffd0f50d5cbc2a23330406"
+  dependencies:
+    prop-types "^15.6.2"
+
 react-tabs@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/react-tabs/-/react-tabs-3.0.0.tgz#60311a17c755eb6aa9b3310123e67db421605127"
