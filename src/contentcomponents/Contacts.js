@@ -3,10 +3,10 @@ import React, { Fragment } from "react";
 // import Text from "../stylecomponents/Text";
 import {
 	Paragraph,
-	HeadingOne,
+	// HeadingOne,
 	HeadingTwo,
-	HeadingThree,
-	Image,
+	// HeadingThree,
+	// Image,
 	Link,
 	// Small,
 	// Figure,
@@ -15,11 +15,11 @@ import {
 	Header
 } from "../ContentHelpers";
 import { ContentShow } from "../ContentHelpers";
-import Emoji from "a11y-react-emoji";
+// import Emoji from "a11y-react-emoji";
 // import Modal from "../maincomponents/Modal";
-import cornishPastyPic from "../media/images/picsOfMe/hd-herbieSmile-1974.jpg";
-import testPic from "../media/images/photography-herbieFood-2222.jpg";
-import testPic2 from "../media/images/photography-melPhoto-2221.jpg";
+// import cornishPastyPic from "../media/images/picsOfMe/hd-herbieSmile-1974.jpg";
+// import testPic from "../media/images/photography-herbieFood-2222.jpg";
+// import testPic2 from "../media/images/photography-melPhoto-2221.jpg";
 // import ReactPlayer from "react-player";
 
 const header = "Contact";

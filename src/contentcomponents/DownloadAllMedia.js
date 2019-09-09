@@ -145,33 +145,35 @@ import wakanda_12 from "../media/videos/videosOfme/wakanda_1.mp4";
 // import toast_1 from "../media/videos/videosOfme/toast_1.mp4";
 // import toastSquad from "../media/videos/videosOfme/toastSquad.mp4";
 // import vNeckCrewNeck from "../media/videos/videosOfme/vNeckCrewNeck.mp4";
-{/* <ReactPlayer
+// {
+/* <ReactPlayer
 							url={props.url}
 							className={props.className}
 							width={props.width || "100%"}
 							height={props.height || "100%"}
-						/> */}
+						/> */
+// }
 export const AllMedia = () => {
 	return (
 		<DownloadAll aria-hidden='true'>
 			<ReactPlayer url={howtowritecoverletter_1} />
-<ReactPlayer url={resumeemail} />
-<ReactPlayer url={raveMillyRock_1} />
-<ReactPlayer url={soreLoser_1} />
-<ReactPlayer url={StandUp} />
-<ReactPlayer url={frikkinPhillipLim} />
-<ReactPlayer url={JeremyScottDesktop_2} />
-<ReactPlayer url={JeremyScottMobile} />
-<ReactPlayer url={Philip} />
-<ReactPlayer url={shoeuggemail} />
-<ReactPlayer url={slidesemail} />
-<ReactPlayer url={giftguide} />
-<ReactPlayer url={carribeanQueen} />
-<ReactPlayer url={millyRockByPool_1} />
-<ReactPlayer url={millyrockgrandcanyon} />
-<ReactPlayer url={offRoadingDriving_1} />
-<ReactPlayer url={OffRoadSplash} />
-<ReactPlayer url={wakanda_12} />
+			<ReactPlayer url={resumeemail} />
+			<ReactPlayer url={raveMillyRock_1} />
+			<ReactPlayer url={soreLoser_1} />
+			<ReactPlayer url={StandUp} />
+			<ReactPlayer url={frikkinPhillipLim} />
+			<ReactPlayer url={JeremyScottDesktop_2} />
+			<ReactPlayer url={JeremyScottMobile} />
+			<ReactPlayer url={Philip} />
+			<ReactPlayer url={shoeuggemail} />
+			<ReactPlayer url={slidesemail} />
+			<ReactPlayer url={giftguide} />
+			<ReactPlayer url={carribeanQueen} />
+			<ReactPlayer url={millyRockByPool_1} />
+			<ReactPlayer url={millyrockgrandcanyon} />
+			<ReactPlayer url={offRoadingDriving_1} />
+			<ReactPlayer url={OffRoadSplash} />
+			<ReactPlayer url={wakanda_12} />
 			<img alt='downloaded' src={robcaliwide} />
 			<img alt='downloaded' src={herbieUmberto} />
 			<img alt='downloaded' src={herbieUmberto2} />
@@ -190,100 +192,99 @@ export const AllMedia = () => {
 			<img alt='downloaded' src={brianaPhoto} />
 			<img alt='downloaded' src={ByBethanyBaldwin2} />
 			<img alt='downloaded' src={ByBethanyBaldwin} />
-
-<img alt='downloaded' src={xv}/>>
-<img alt='downloaded' src={subtle_grunge}/>
-<img alt='downloaded' src={old_mathematics}/>
-<img alt='downloaded' src={pink_dust}/>
-<img alt='downloaded' src={pool_table}/>
-<img alt='downloaded' src={ps_neutral}/>
-<img alt='downloaded' src={stardust}/>
-<img alt='downloaded' src={grunge_wall}/>
-<img alt='downloaded' src={halftone}/>
-<img alt='downloaded' src={nice_snow}/>
-<img alt='downloaded' src={greyfloral}/>
-<img alt='downloaded' src={cartographer}/>
-<img alt='downloaded' src={cardboard_flat}/>
-<img alt='downloaded' src={carbon_fibre}/>
-<img alt='downloaded' src={tireCheckMatt1480x987}/>
-<img alt='downloaded' src={showroomCheckMatt1480x987}/>
-<img alt='downloaded' src={standupTireCheck1480x987}/>
-<img alt='downloaded' src={dtbrochure1480x1973}/>
-<img alt='downloaded' src={dtASU1480x2693}/>
-<img alt='downloaded' src={throughbedzinDesktop1480x3193}/>
-<img alt='downloaded' src={BedzinCreationofExhibitDesktop1480x2781}/>
-<img alt='downloaded' src={BedziniPhoneCreationofExhibit1480x9042}/>
-<img alt='downloaded' src={bedziniPhoneNavNormal1480x2877}/>
-<img alt='downloaded' src={beziniPhoneExhibit1480x6938}/>
-<img alt='downloaded' src={GlossaryDesktop1480x2749}/>
-<img alt='downloaded' src={herbieduahcomMobile1480x2632}/>
-<img alt='downloaded' src={appOld1480x2923}/>
-<img alt='downloaded' src={HDRHome1480x1052}/>
-<img alt='downloaded' src={HDRHomeCopy4x1480x1052}/>
-<img alt='downloaded' src={HDRHomeCopy6x1480x1052}/>
-<img alt='downloaded' src={sunsetPoint1480x1110}/>
-<img alt='downloaded' src={santaMonicaBeach1480x1973}/>
-<img alt='downloaded' src={sunsetsnowlift1480x1973}/>
-<img alt='downloaded' src={BWGrandCanyon1480x1110}/>
-<img alt='downloaded' src={sunsetMexico1480x1110}/>
-<img alt='downloaded' src={Naebabe1480x1973}/>
-<img alt='downloaded' src={NAUDome2000x1505}/>
-<img alt='downloaded' src={lockettJeepLife1480x1110}/>
-<img alt='downloaded' src={melDaddy1480x1973}/>
-<img alt='downloaded' src={gradAunty1480x1110}/>
-<img alt='downloaded' src={georgeInTown1480x1110}/>
-<img alt='downloaded' src={gloomy1480x1110}/>
-<img alt='downloaded' src={flagstaffRailroad1480x1110}/>
-<img alt='downloaded' src={flagstaffPrettyColors1480x1110}/>
-<img alt='downloaded' src={flagstaffColorfulHouses1480x1110}/>
-<img alt='downloaded' src={afterDCTrip1480x1973}/>
-<img alt='downloaded' src={photographyTesfayFamilyKiss1480x2220}/>
-<img alt='downloaded' src={abenaNightTime1480x2221}/>
-<img alt='downloaded' src={ashleyTaylor1480x2221}/>
-<img alt='downloaded' src={connorGrad1480x2221}/>
-<img alt='downloaded' src={cristian1480x2220}/>
-<img alt='downloaded' src={david1480x2220}/>
-<img alt='downloaded' src={dyesaColors1480x2221}/>
-<img alt='downloaded' src={emmaModel1480x2221}/>
-<img alt='downloaded' src={fashionShow1480x2221}/>
-<img alt='downloaded' src={herbieNatasha1480x2221}/>
-<img alt='downloaded' src={jesseForte1480x2219}/>
-<img alt='downloaded' src={oforis1480x2221}/>
-<img alt='downloaded' src={nana1480x2220}/>
-<img alt='downloaded' src={ceiphers1480x2220}/>
-<img alt='downloaded' src={grindingWie1480x2220}/>
-<img alt='downloaded' src={gweg1480x987}/>
-<img alt='downloaded' src={halle1480x2220}/>
-<img alt='downloaded' src={johnnyGrad1480x2220}/>
-<img alt='downloaded' src={meliPoet1480x2220}/>
-<img alt='downloaded' src={melphotography1480x2220}/>
-<img alt='downloaded' src={treesInAutumn2000x3004}/>
-<img alt='downloaded' src={snowMountainLake1480x985}/>
-<img alt='downloaded' src={snowyRoad2000x2999}/>
-<img alt='downloaded' src={greenGrass1480x2220}/>
-<img alt='downloaded' src={bwMountain1480x832}/>
-<img alt='downloaded' src={marshallLake1480x987}/>
-<img alt='downloaded' src={flagstaffRoad1480x986}/>
-<img alt='downloaded' src={mysteriousDoor2000x2999}/>
-<img alt='downloaded' src={flagstaffStreetOnAutumn2000x3000}/>
-<img alt='downloaded' src={icyAlley2000x3001}/>
-<img alt='downloaded' src={evansTundra2000x3331}/>
-<img alt='downloaded' src={chocolatefalls2000x1333}/>
-<img alt='downloaded' src={beauifulsunset2000x1333}/>
-<img alt='downloaded' src={ACMClubPhoto2000x2667}/>
-<img alt='downloaded' src={Yes1480x2220}/>
-<img alt='downloaded' src={FullPage1480x1824}/>
-<img alt='downloaded' src={FullSizeStudents1480x1774}/>
-<img alt='downloaded' src={idkwhatIamDoing1480x2220}/>
-<img alt='downloaded' src={smileStock1480x2220}/>
-<img alt='downloaded' src={UnsolicitedUggDesktop2000x3203}/>
-<img alt='downloaded' src={fourohfour}/>
-<img alt='downloaded' src={herbieSelfieVisionary1480x1479}/>
-<img alt='downloaded' src={dherbstaAndDinchman}/>
-<img alt='downloaded' src={herbiePancakes1480x1973}/>
-<img alt='downloaded' src={herbieMeme1480x1480}/>
-<img alt='downloaded' src={herbieBasketBall1480x1973}/>
-<img alt='downloaded' src={graduation}/>
+			<img alt='downloaded' src={xv} />>
+			<img alt='downloaded' src={subtle_grunge} />
+			<img alt='downloaded' src={old_mathematics} />
+			<img alt='downloaded' src={pink_dust} />
+			<img alt='downloaded' src={pool_table} />
+			<img alt='downloaded' src={ps_neutral} />
+			<img alt='downloaded' src={stardust} />
+			<img alt='downloaded' src={grunge_wall} />
+			<img alt='downloaded' src={halftone} />
+			<img alt='downloaded' src={nice_snow} />
+			<img alt='downloaded' src={greyfloral} />
+			<img alt='downloaded' src={cartographer} />
+			<img alt='downloaded' src={cardboard_flat} />
+			<img alt='downloaded' src={carbon_fibre} />
+			<img alt='downloaded' src={tireCheckMatt1480x987} />
+			<img alt='downloaded' src={showroomCheckMatt1480x987} />
+			<img alt='downloaded' src={standupTireCheck1480x987} />
+			<img alt='downloaded' src={dtbrochure1480x1973} />
+			<img alt='downloaded' src={dtASU1480x2693} />
+			<img alt='downloaded' src={throughbedzinDesktop1480x3193} />
+			<img alt='downloaded' src={BedzinCreationofExhibitDesktop1480x2781} />
+			<img alt='downloaded' src={BedziniPhoneCreationofExhibit1480x9042} />
+			<img alt='downloaded' src={bedziniPhoneNavNormal1480x2877} />
+			<img alt='downloaded' src={beziniPhoneExhibit1480x6938} />
+			<img alt='downloaded' src={GlossaryDesktop1480x2749} />
+			<img alt='downloaded' src={herbieduahcomMobile1480x2632} />
+			<img alt='downloaded' src={appOld1480x2923} />
+			<img alt='downloaded' src={HDRHome1480x1052} />
+			<img alt='downloaded' src={HDRHomeCopy4x1480x1052} />
+			<img alt='downloaded' src={HDRHomeCopy6x1480x1052} />
+			<img alt='downloaded' src={sunsetPoint1480x1110} />
+			<img alt='downloaded' src={santaMonicaBeach1480x1973} />
+			<img alt='downloaded' src={sunsetsnowlift1480x1973} />
+			<img alt='downloaded' src={BWGrandCanyon1480x1110} />
+			<img alt='downloaded' src={sunsetMexico1480x1110} />
+			<img alt='downloaded' src={Naebabe1480x1973} />
+			<img alt='downloaded' src={NAUDome2000x1505} />
+			<img alt='downloaded' src={lockettJeepLife1480x1110} />
+			<img alt='downloaded' src={melDaddy1480x1973} />
+			<img alt='downloaded' src={gradAunty1480x1110} />
+			<img alt='downloaded' src={georgeInTown1480x1110} />
+			<img alt='downloaded' src={gloomy1480x1110} />
+			<img alt='downloaded' src={flagstaffRailroad1480x1110} />
+			<img alt='downloaded' src={flagstaffPrettyColors1480x1110} />
+			<img alt='downloaded' src={flagstaffColorfulHouses1480x1110} />
+			<img alt='downloaded' src={afterDCTrip1480x1973} />
+			<img alt='downloaded' src={photographyTesfayFamilyKiss1480x2220} />
+			<img alt='downloaded' src={abenaNightTime1480x2221} />
+			<img alt='downloaded' src={ashleyTaylor1480x2221} />
+			<img alt='downloaded' src={connorGrad1480x2221} />
+			<img alt='downloaded' src={cristian1480x2220} />
+			<img alt='downloaded' src={david1480x2220} />
+			<img alt='downloaded' src={dyesaColors1480x2221} />
+			<img alt='downloaded' src={emmaModel1480x2221} />
+			<img alt='downloaded' src={fashionShow1480x2221} />
+			<img alt='downloaded' src={herbieNatasha1480x2221} />
+			<img alt='downloaded' src={jesseForte1480x2219} />
+			<img alt='downloaded' src={oforis1480x2221} />
+			<img alt='downloaded' src={nana1480x2220} />
+			<img alt='downloaded' src={ceiphers1480x2220} />
+			<img alt='downloaded' src={grindingWie1480x2220} />
+			<img alt='downloaded' src={gweg1480x987} />
+			<img alt='downloaded' src={halle1480x2220} />
+			<img alt='downloaded' src={johnnyGrad1480x2220} />
+			<img alt='downloaded' src={meliPoet1480x2220} />
+			<img alt='downloaded' src={melphotography1480x2220} />
+			<img alt='downloaded' src={treesInAutumn2000x3004} />
+			<img alt='downloaded' src={snowMountainLake1480x985} />
+			<img alt='downloaded' src={snowyRoad2000x2999} />
+			<img alt='downloaded' src={greenGrass1480x2220} />
+			<img alt='downloaded' src={bwMountain1480x832} />
+			<img alt='downloaded' src={marshallLake1480x987} />
+			<img alt='downloaded' src={flagstaffRoad1480x986} />
+			<img alt='downloaded' src={mysteriousDoor2000x2999} />
+			<img alt='downloaded' src={flagstaffStreetOnAutumn2000x3000} />
+			<img alt='downloaded' src={icyAlley2000x3001} />
+			<img alt='downloaded' src={evansTundra2000x3331} />
+			<img alt='downloaded' src={chocolatefalls2000x1333} />
+			<img alt='downloaded' src={beauifulsunset2000x1333} />
+			<img alt='downloaded' src={ACMClubPhoto2000x2667} />
+			<img alt='downloaded' src={Yes1480x2220} />
+			<img alt='downloaded' src={FullPage1480x1824} />
+			<img alt='downloaded' src={FullSizeStudents1480x1774} />
+			<img alt='downloaded' src={idkwhatIamDoing1480x2220} />
+			<img alt='downloaded' src={smileStock1480x2220} />
+			<img alt='downloaded' src={UnsolicitedUggDesktop2000x3203} />
+			<img alt='downloaded' src={fourohfour} />
+			<img alt='downloaded' src={herbieSelfieVisionary1480x1479} />
+			<img alt='downloaded' src={dherbstaAndDinchman} />
+			<img alt='downloaded' src={herbiePancakes1480x1973} />
+			<img alt='downloaded' src={herbieMeme1480x1480} />
+			<img alt='downloaded' src={herbieBasketBall1480x1973} />
+			<img alt='downloaded' src={graduation} />
 		</DownloadAll>
 	);
 };

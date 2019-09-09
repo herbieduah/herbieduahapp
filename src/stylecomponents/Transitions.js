@@ -3,6 +3,15 @@ export const appTransitions = [
 		name: "default",
 		properties: {
 			enter: "animated",
+			enterActive: "fadeInLeft",
+			exit: "animated",
+			exitActive: "fadeOutRight"
+		}
+	},
+	{
+		name: "zoomInzoomOut",
+		properties: {
+			enter: "animated",
 			enterActive: "zoomIn",
 			exit: "animated",
 			exitActive: "zoomOut"
@@ -54,10 +63,10 @@ export const appTransitions = [
 		}
 	},
 	{
-		name: "flipInXFlipOutY",
+		name: "flipInYFlipOutY",
 		properties: {
 			enter: "animated",
-			enterActive: "flipInX",
+			enterActive: "flipInY",
 			exit: "animated",
 			exitActive: "flipOutY"
 		}
@@ -105,6 +114,42 @@ export const appTransitions = [
 			enterActive: "fadeInUp",
 			exit: "animated",
 			exitActive: "fadeOutUp"
+		}
+	},
+	{
+		name: "bounceInDownbounceOutDown",
+		properties: {
+			enter: "animated",
+			enterActive: "bounceInDown",
+			exit: "animated",
+			exitActive: "bounceOutDown"
+		}
+	},
+	{
+		name: "lightSpeedInlightSpeedOut",
+		properties: {
+			enter: "animated",
+			enterActive: "lightSpeedIn",
+			exit: "animated",
+			exitActive: "lightSpeedOut"
+		}
+	},
+	{
+		name: "flipInXFlipOutX",
+		properties: {
+			enter: "animated",
+			enterActive: "flipInX",
+			exit: "animated",
+			exitActive: "flipOutX"
+		}
+	},
+	{
+		name: "slideInLeftslideOutRight",
+		properties: {
+			enter: "animated",
+			enterActive: "slideInLeft",
+			exit: "animated",
+			exitActive: "slideOutRight"
 		}
 	}
 ];

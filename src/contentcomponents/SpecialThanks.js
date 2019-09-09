@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-expressions */
-import React, { Fragment, useState } from "react";
+import React, { Fragment } from "react";
 import Text from "../stylecomponents/Text";
 // import Media from "../maincomponents/Media";
 // import Fade from "react-reveal/Fade";
@@ -9,8 +9,8 @@ import {
 	ContentCategory,
 	Header,
 	Paragraph,
-	Marquee,
-	Small
+	Marquee
+	// Small
 	// HeadingThree
 } from "../ContentHelpers";
 import { ShowIf } from "../ComponentHelpers";
@@ -19,10 +19,11 @@ const header = "Special Thanks";
 
 const SpecialThanksPage = ({ contentProps }) => {
 	const { fullScreen, techy } = contentProps;
-	const [marqueePlay, setmarqueePlay] = useState(true);
-	const marqueePlaying = () => {
-		marqueePlay ? setmarqueePlay(false) : setmarqueePlay(true);
-	};
+	// const [marqueePlay, setmarqueePlay] = useState(true);
+	const marqueePlay = true;
+	// const marqueePlaying = () => {
+	// 	marqueePlay ? setmarqueePlay(false) : setmarqueePlay(true);
+	// };
 	return (
 		<Fragment>
 			<ContentShow less>

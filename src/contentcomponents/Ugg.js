@@ -35,6 +35,7 @@ import Philip from "../media/videos/ugg/Philip-Lim-Mobile.mp4";
 import shoeuggemail from "../media/videos/ugg/shoeuggemail.mp4";
 import slidesemail from "../media/videos/ugg/slidesemail.mp4";
 import giftguide from "../media/videos/ugg/giftguide_11_1.mp4";
+import test from "../media/videos/output2.mp4";
 // import ReactPlayer from "react-player";
 
 const header = "Ugg";
@@ -54,7 +55,7 @@ const UggPage = ({ contentProps }) => {
 					I worked on the Ugg brand team during my time at Deckers Brands.
 				</Paragraph>
 				<div className='less__container'>
-					<Gif cloud url={"giftguide_11_1_copy_guoyg8"} />
+					<Gif url={test} />
 					<Paragraph></Paragraph>
 				</div>
 			</ContentShow>

@@ -1,0 +1,8 @@
+ffmpeg -i thisAppGatsby.mp4 -vcodec h264 -acodec aac -strict -2 output.mp4
+ffmpeg -i thisAppGatsby.mp4 -vcodec libvpx-vp9 -b:v 1M -acodec libvorbis test.webm
+
+mkdir mp4
+for f in *.mp4;do ffmpeg -i "$f" -vcodec  libx264 -pix_fmt yuv420p -profile:v baseline -level 3 "mp4/${f%mkv}";done
+
+mkdir webm
+for f in *.mp4;do ffmpeg -i "$f" -vcodec libvpx-vp9 -b:v 1M -acodec libvorbis "webm/${f%WebM}";done

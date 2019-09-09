@@ -16,15 +16,16 @@ import {
 	ContentShow
 } from "../ContentHelpers";
 import { ShowIf } from "../ComponentHelpers";
-import { Image as CloudImage, Video } from "cloudinary-react";
+// import { Image as CloudImage, Video } from "cloudinary-react";
 import Emoji from "a11y-react-emoji";
 import { mobileModel, isMobileOnly } from "react-device-detect";
 // import Modal from "../maincomponents/Modal";
-import cornishPastyPic from "../media/images/picsOfMe/hd-herbieSmile-1974.jpg";
+import cornishPastyPic from "../media/images/picsOfMe/test.jpg";
 // import yes from "../media/images/startNow/Yes.jpg";
 // import testPicHorizontal from "../media/videos/videosOfme/raveMillyRock_1.mp4";
 import vneckcrewneck from "../media/videos/videosOfme/vNeckCrewNeck.mp4";
-import { ScrollDownPortrait } from "../stylecomponents/Base";
+// import { ScrollDownPortrait } from "../stylecomponents/Base";
+// import { thisAppGatsbySmiling, placesicyAlley } from "../MediaVariables";
 // import YouTube from "react-youtube";
 
 // import ReactPlayer from "react-player";
@@ -112,13 +113,17 @@ const HomePage = ({ contentProps }) => {
 						muted
 						playsInline
 						loop></Video> */}
-					<CloudImage
+					<Image
+						src={cornishPastyPic}
+						className='paddingLR'
+						alt='a picture of me'
+					/>
+					{/* <CloudImage
 						cloudName='demo'
 						publicId='sample'
 						width='740'
 						crop='scale'>
-						{/* <Transformation dpr='auto' /> */}
-					</CloudImage>
+					</CloudImage> */}
 					<Paragraph>
 						Hi, I am Herbie. I am a Phoenix based Web Designer/Developer with 5
 						years of experience. I have a passion for creating user experiences

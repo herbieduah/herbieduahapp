@@ -181,6 +181,7 @@ const MenuLink = styled(NavLink)`
 	background: none;
 	color: ${navBarButtonColor};
 	font-family: ${appfontFamilyWide};
+	border-bottom: 0;
 	cursor: pointer;
 	/* font-size: 2em; */
 	text-transform: uppercase;
@@ -196,12 +197,14 @@ const MenuLink = styled(NavLink)`
 	&:hover,
 	&:focus {
 		color: ${navBarHoverFocus};
-		text-decoration: ${CTAUnderline};
+		/* text-decoration: ${CTAUnderline}; */
+		border-bottom: 2px solid ${fontColor};
 	}
 	&.active,
 	&.current {
 		color: ${navBarButtonActive};
-		text-decoration: ${CTAUnderline};
+		/* text-decoration: ${CTAUnderline}; */
+		border-bottom: 2px solid ${fontColor};
 	}
 `;
 

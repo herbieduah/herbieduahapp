@@ -2,7 +2,7 @@ import React, { useContext, Fragment } from "react";
 import { SliderController } from "../../stylecomponents/SliderContainer";
 import { isPortrait, useWindowResize } from "../../helpers";
 import { globalState } from "../../State";
-import { isIOS } from "react-device-detect";
+// import { isIOS } from "react-device-detect";
 // import Media from "../Media";
 
 export const Slider = () => {

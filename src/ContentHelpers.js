@@ -14,7 +14,7 @@ import ClickNHold from "react-click-n-hold";
 import Reveal from "react-reveal/Reveal";
 // import Fade from "react-ElementReveal/Fade";
 // import Zoom from "react-ElementReveal/Zoom";
-import SubMenu from "./maincomponents/SubMenu";
+// import SubMenu from "./maincomponents/SubMenu";
 import Text from "./stylecomponents/Text";
 import Media from "./maincomponents/Media";
 import { themes } from "./stylecomponents/Theme";
@@ -29,8 +29,8 @@ import { ShowIf, MenuTabs } from "./ComponentHelpers";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { appTransitions } from "./stylecomponents/Transitions";
 import {
-	cMarginBottomMed,
-	cMarginTopMed,
+	// cMarginBottomMed,
+	// cMarginTopMed,
 	cMarginBottom,
 	cMarginTop
 } from "./stylecomponents/StyleHelpers";

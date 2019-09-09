@@ -1,7 +1,6 @@
 import { stripUnit } from "polished";
 import { bgColor } from "./Themes/ThemeVariables";
 import { sliderMobileWidth, revealSecs } from "../helpers";
-import { from } from "rxjs";
 export function fluidType(minVW, maxVW, minFontSize, maxFontSize) {
 	let u1 = stripUnit(minVW)[1];
 	let u2 = stripUnit(maxVW)[1];

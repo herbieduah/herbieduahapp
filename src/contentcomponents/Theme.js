@@ -2,7 +2,7 @@
 import React, { Fragment } from "react";
 // import Media from "../maincomponents/Media";
 // import Fade from "react-reveal/Fade";
-import Text from "../stylecomponents/Text";
+// import Text from "../stylecomponents/Text";
 import {
 	ContentShow,
 	// ComingSoon,

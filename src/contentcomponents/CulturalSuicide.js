@@ -3,8 +3,8 @@ import React, { Fragment } from "react";
 import {
 	Paragraph,
 	// HeadingOne,
-	HeadingTwo,
-	Link,
+	// HeadingTwo,
+	// Link,
 	Header
 	// HeadingThree,
 	// Image,
@@ -15,7 +15,7 @@ import {
 	// Header
 } from "../ContentHelpers";
 import { ContentShow } from "../ContentHelpers";
-import Emoji from "a11y-react-emoji";
+// import Emoji from "a11y-react-emoji";
 // import Modal from "../maincomponents/Modal";
 // import ReactPlayer from "react-player";
 

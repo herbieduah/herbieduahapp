@@ -2,8 +2,8 @@
 import React, { Fragment } from "react";
 import {
 	Paragraph,
-	HeadingTwo,
-	Image,
+	// HeadingTwo,
+	// Image,
 	Header,
 	ContentShow,
 	ContentCategory,

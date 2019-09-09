@@ -38,7 +38,7 @@ import {
 	navBarBgComplement,
 	navBarButtonComplementaryText,
 	navBarButtonComplementaryHoverText,
-	fontColorOpposite,
+	// fontColorOpposite,
 	fontColorComplement,
 	navBarButtonActive,
 	logoInnerFillColor,
@@ -58,7 +58,7 @@ import {
 	// contentMenuPadding,
 	tablet,
 	paddingLR,
-	slightBoxShadowBelow,
+	// slightBoxShadowBelow,
 	userSelectNone
 } from "./StyleHelpers";
 
