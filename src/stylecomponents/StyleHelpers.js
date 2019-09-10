@@ -86,6 +86,14 @@ ${mobile} {
 padding-right: 15%;
 }`;
 
+export const paddingLRSm = `
+padding-left: 10%;
+padding-right: 10%;
+${mobile} {
+	padding-left: 5%;
+padding-right: 5%;
+}`;
+
 export const paddingLRLarge = `
 padding-left: 25%;
 padding-right: 25%;

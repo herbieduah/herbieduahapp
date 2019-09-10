@@ -30,7 +30,8 @@ import {
 	breather,
 	breatherBottom,
 	// cPaddingTop,
-	cPaddingTopMed
+	cPaddingTopMed,
+	paddingLRSm
 } from "./StyleHelpers";
 import {
 	navBarBorder,
@@ -226,6 +227,9 @@ export const ContentContainer = styled.section`
 	}
 	.paddingLRMed {
 		${paddingLRMed}
+	}
+	.paddingLRSm {
+		${paddingLRSm}
 	}
 	.paddingLRLarge {
 		${paddingLRLarge}

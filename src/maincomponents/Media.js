@@ -13,6 +13,7 @@ import Img from "react-image";
 import VisibilitySensor from "react-visibility-sensor";
 // import "react-lazy-load-image-component/src/effects/blur.css";
 const mediaWidth = isMobileOnly ? "400" : "740";
+const mediaSize = isMobileOnly ? 1 : 0;
 const LazyLoadWrapper = props => {
 	const { lazyLoading } = useContext(globalState);
 	return (
@@ -92,7 +93,7 @@ const Media = props => {
 						alt={props.alt}
 						width={props.width || "100%"}
 						height={props.height || "100%"}
-						src={props.src}
+						src={props.src[mediaSize]}
 						className={props.className || ""}
 					/>
 				</LazyLoadWrapper>

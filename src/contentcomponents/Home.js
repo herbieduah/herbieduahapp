@@ -27,7 +27,11 @@ import vneckcrewneck from "../media/videos/videosOfme/vNeckCrewNeck.mp4";
 // import { ScrollDownPortrait } from "../stylecomponents/Base";
 // import { thisAppGatsbySmiling, placesicyAlley } from "../MediaVariables";
 // import YouTube from "react-youtube";
-
+import {
+	picsOfMeHeroImageTwo,
+	picsOfMeHero,
+	picsOfMeSelfieOlympics
+} from "../MediaVariables";
 // import ReactPlayer from "react-player";
 
 const header = "HerbieDuah.app";
@@ -103,27 +107,11 @@ const HomePage = ({ contentProps }) => {
 					</Paragraph>
 				</ShowIf>
 				<div className='less__container'>
-					{/* <Video
-						cloudName='dwccyjn5e'
-						publicId='giftguide_11_1_copy_guoyg8'
-						controls={false}
-						width='740'
-						preload='auto'
-						autoPlay
-						muted
-						playsInline
-						loop></Video> */}
 					<Image
-						src={cornishPastyPic}
+						src={picsOfMeHeroImageTwo}
 						className='paddingLR'
 						alt='a picture of me'
 					/>
-					{/* <CloudImage
-						cloudName='demo'
-						publicId='sample'
-						width='740'
-						crop='scale'>
-					</CloudImage> */}
 					<Paragraph>
 						Hi, I am Herbie. I am a Phoenix based Web Designer/Developer with 5
 						years of experience. I have a passion for creating user experiences
@@ -134,18 +122,11 @@ const HomePage = ({ contentProps }) => {
 						You can follow me on&nbsp;
 						<Link href='https://instagram.com/herbieduah'>Instagram</Link>
 						,&nbsp;
-						<Link href='https://twitter.com/herbieduah'>Twitter</Link>or &nbsp;
+						<Link href='https://twitter.com/herbieduah'>Twitter</Link>&nbsp;or
+						&nbsp;
 						<Link href='https://www.linkedin.com/in/herbieduah/'>LinkedIn</Link>
 						&nbsp; if you'd like to connect.
 					</Paragraph>
-					<Image
-						src={cornishPastyPic}
-						className='paddingLR'
-						nolazyload
-						width='1480'
-						height='1974'
-						alt='a picture of me'
-					/>
 				</div>
 			</ContentShow>
 			<ContentShow more>
@@ -182,13 +163,7 @@ const HomePage = ({ contentProps }) => {
 							awesome!
 						</Paragraph>
 					</ShowIf>
-					<Image
-						src={cornishPastyPic}
-						nolazyload
-						width='1480'
-						height='1974'
-						alt='a picture of me'
-					/>
+					<Image src={picsOfMeHero} alt='a picture of me smiling' />
 					<Paragraph>
 						I am a Phoenix based a Web developer/designer with five years of
 						experience. I graduated at Northern Arizona University with a degree
@@ -208,6 +183,7 @@ const HomePage = ({ contentProps }) => {
 						of this web app.
 					</Paragraph>
 					<HeadingTwo>Designed and engineered for you</HeadingTwo>
+					<Image src={picsOfMeSelfieOlympics} alt='a picture of me smiling' />
 					<Paragraph>
 						I have a passion for developing and designing user experiences for
 						people like you. Even though this portfolio is about me, I want you,
