@@ -37,6 +37,7 @@ import {
 export const defaultAlt = "I will be adding an alt tag to this image soon";
 export const defaultDesc = "This is a video, I will be describing it soon";
 const spacingBottom = "c-margin-bottom";
+const videoLocation = "gif";
 // const spacingBottomMed = "c-margin-bottom-med";
 // const spacingTopBottom = "c-margin-top c-margin-bottom";
 // const noSpacingTopBottom = "c-margin-0";
@@ -418,7 +419,7 @@ export const Gif = props => {
 	return (
 		<ElementReveal>
 			<Media
-				type={`${isCloud}gif`}
+				type={videoLocation}
 				url={url}
 				width={props.width}
 				height={props.height}
@@ -437,7 +438,7 @@ export const FiGif = props => {
 		<ElementReveal>
 			<figure className={`${spacingBottom}`}>
 				<Media
-					type={`${isCloud}gif`}
+					type={videoLocation}
 					width={props.width}
 					height={props.height}
 					url={url}

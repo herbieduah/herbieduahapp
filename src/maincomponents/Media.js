@@ -42,7 +42,7 @@ const Media = props => {
 			return (
 				<LazyLoadWrapper>
 					<ReactPlayer
-						url={props.url}
+						url={props.url[1]}
 						width={props.width || "100%"}
 						height={props.height || "100%"}
 						controls={false}

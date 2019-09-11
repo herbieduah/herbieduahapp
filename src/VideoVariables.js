@@ -1,5 +1,5 @@
 import videosofmeaptDancingLocal from "./media/appVideos/videosofmeaptDancing.mp4";
-import startNowHerbieDuahComLocal from "./media/appVideos/startNowHerbieDuahCom.mp4";
+import videosOfMeHerbieDuahCom from "./media/appVideos/videosOfMeHerbieDuahCom.mp4";
 import startNowresumeEmailLocal from "./media/appVideos/startNowresumeEmail.mp4";
 import ugggiftguideLocal from "./media/appVideos/ugggiftguide.mp4";
 import uggPhillipLimLocal from "./media/appVideos/uggPhillipLim.mp4";
@@ -10,6 +10,7 @@ import thisAppGatsbyLocal from "./media/appVideos/thisAppGatsby.mp4";
 import thisAppherokuappdesktopLocal from "./media/appVideos/thisAppherokuappdesktop.mp4";
 import uggJeremyScottDesktopLocal from "./media/appVideos/uggJeremyScottDesktop.mp4";
 import uggslidesemailLocal from "./media/appVideos/uggslidesemail.mp4";
+import uggshoeuggemailLocal from "./media/appVideos/uggshoeuggemail.mp4";
 import videosofme404Local from "./media/appVideos/videosofme404.mp4";
 import videosofmedadDanceLocal from "./media/appVideos/videosofmedadDance.mp4";
 import videosofmegood404SnowLocal from "./media/appVideos/videosofmegood404Snow.mp4";
@@ -115,12 +116,13 @@ export const videosofmeaptDancing = [
 	"videosofmeaptDancing_bkn88u",
 	videosofmeaptDancingLocal
 ];
-export const startNowHerbieDuahCom = [
+export const videosOfMeHerbieDuahComl = [
 	"startNowHerbieDuahCom_rryanb",
-	startNowHerbieDuahComLocal
+	videosOfMeHerbieDuahCom
 ];
 export const startNowresumeEmail = [
 	"startNowresumeEmail_czqk7z",
 	startNowresumeEmailLocal
 ];
+export const uggshoeuggemail = ["uggshoeuggemail_ptamto", uggshoeuggemailLocal];
 export const ugggiftguide = ["ugggiftguide_nbixlt", ugggiftguideLocal];

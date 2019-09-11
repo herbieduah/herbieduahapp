@@ -158,7 +158,7 @@ export const NavBarMiniContainer = styled.div`
 		}
 		&__logo-link.active{
 			svg {
-				opacity: 1;
+				opacity: .55;
 			}
 			.navbar__home-text {
 				color: ${navBarButtonActive};
@@ -186,7 +186,7 @@ export const NavBarMiniContainer = styled.div`
 				/* transform: scale(.09); */
 				width: ${navBarSize};
 				height: ${navBarSize};
-				opacity: .6;
+				opacity: 1;
 				path {
 					
 					fill: ${logoBgHoverColor};
@@ -280,19 +280,16 @@ export const NavBarContainer = styled.div`
 		}
 		&__logo-link.active{
 			svg {
-				opacity: 1;
+				opacity: .55;
 			}
-			.navbar__home-text {
-				color: ${navBarButtonActive};
-			}
+			
 		}
 
 		&__logo-menu{
-			a {
 				display: flex;
 				align-items: center;
 				flex-direction: row-reverse;
-			}
+			
 			button {
 				padding: 0;
 				padding-right: .5rem;
@@ -315,7 +312,7 @@ export const NavBarContainer = styled.div`
 			}
 			svg {
 				${mainTransition}
-				opacity: 0.6;
+				opacity: 1;
 				transform: scale(.95);
 				border: none;
 				width: ${navBarSize};
@@ -360,7 +357,7 @@ export const ReactTabs = styled(Tabs)`
 			${hideScrollbar}
 			border:0;
 			border-radius: 0;
-			text-transform: uppercase;
+			text-transform: capitalize;
 		}
 
 		&__tab {
@@ -581,7 +578,7 @@ export const ThemeCircleContainer = styled.li`
 export const TransitionTextContainer = styled.li`
 	position: relative;
 	list-style-type: none;
-	margin-bottom: 1rem;
+	margin-bottom: 1.3rem;
 	display: flex;
 	.appTransition {
 		&__container {
@@ -595,7 +592,7 @@ export const TransitionTextContainer = styled.li`
 	}
 
 	${mobile} {
-		margin-bottom: 0.5rem;
+		margin-bottom: 0.7rem;
 	}
 	button {
 		color: ${navBarButtonColor};

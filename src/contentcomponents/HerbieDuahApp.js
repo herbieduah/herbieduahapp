@@ -7,23 +7,25 @@ import {
 	// HeadingTwo,
 	// HeadingThree,
 	// Image,
-	// Small,
-	// Figure,
-	// Figcaption,
+	FiGif,
+	Figcaption,
+	Figure,
 	ContentCategory,
-	Gif,
+	// Gif,
 	Header
 } from "../ContentHelpers";
 import { ContentShow } from "../ContentHelpers";
-// import Emoji from "a11y-react-emoji";
-// import Modal from "../maincomponents/Modal";
-// import herbieduahcomMobile1480x2632 from "../media/images/thisApp/herbieduahcomMobile.jpg";
-// import appOld1480x2923 from "../media/images/thisApp/appOld.jpg";
-// import HDRHome1480x1052 from "../media/images/thisApp/HDRHome.jpg";
-// import HDRHomeCopy4x1480x1052 from "../media/images/thisApp/HDRHomeCopy4.jpg";
-// import HDRHomeCopy6x1480x1052 from "../media/images/thisApp/HDRHomeCopy6.jpg";
-import herbieduahComiPad from "../media/videos/thisApp/herbieduahcom.mp4";
-// import ReactPlayer from "react-player";
+import Emoji from "a11y-react-emoji";
+
+import {
+	thisAppHDRHomeTop,
+	thisAppHerbieDuahMobile,
+	thisAppHerbieDuahComeUX,
+	thisAppHDRHomeUX,
+	thisAppGatsbySmiling,
+	thisAppappOld
+} from "../MediaVariables";
+import { thisAppherokuappdesktop, thisAppGatsby } from "../VideoVariables";
 
 const header = "Hi, I'm Herbie";
 // There is an app for everything, in
@@ -44,23 +46,56 @@ const HerbieDuahAppPage = ({ contentProps }) => {
 				<Header less>{header}</Header>
 				<Paragraph less>Why I made this portolio</Paragraph>
 				<div className='less__container'>
-					<Paragraph>
-						Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo
-						cursus magna, vel scelerisque nisl consectetur et. Integer posuere
-						erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo
-						quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-					</Paragraph>
+					<Figure src={thisAppHDRHomeTop}>
+						<Figcaption>
+							HerbieDuah.app Desktop website screenshot March 2019 (Development)
+						</Figcaption>
+					</Figure>
 				</div>
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>
-
-				<Gif url={herbieduahComiPad} />
-				<Paragraph>
-					<span className='alpha'>
-						This will probably the last page to be finished.
-					</span>
-				</Paragraph>
+				<Figure src={thisAppHerbieDuahComeUX}>
+					<Figcaption>
+						HerbieDuah.com coming design UX Design Summer 2018{" "}
+						<Emoji className='emoji' symbol='😂' label='laugh' />. What an
+						amateur.
+					</Figcaption>
+				</Figure>
+				<Figure src={thisAppHDRHomeUX}>
+					<Figcaption>HerbieDuah.app UX Design February 2019</Figcaption>
+				</Figure>
+				<Figure src={thisAppHerbieDuahMobile} className='paddingLRMed'>
+					<Figcaption>
+						HerbieDuah.app Desktop website screenshot March 2019 (Development)
+					</Figcaption>
+				</Figure>
+				<FiGif
+					width='720'
+					height='900'
+					className='paddingLRSm'
+					url={thisAppherokuappdesktop}>
+					<Figcaption>
+						HerbieDuah.app Desktop website screen recording April 2019
+						(Development)
+					</Figcaption>
+				</FiGif>
+				<Figure src={thisAppappOld} className='paddingLRMed'>
+					<Figcaption>
+						HerbieDuah.app Mobile website screenshot April 2019 (Development)
+					</Figcaption>
+				</Figure>
+				<FiGif className='paddingLRSm' url={thisAppGatsby}>
+					<Figcaption>
+						HerbieDuah.app Mobile website screen recording June 2019
+						(Development)
+					</Figcaption>
+				</FiGif>
+				<Figure src={thisAppGatsbySmiling} className='paddingLRMed'>
+					<Figcaption>
+						HerbieDuah.app Mobile website screenshot June 2019 (Development)
+					</Figcaption>
+				</Figure>
 				<ContentCategory fullScreen={fullScreen} category='work' />
 			</ContentShow>
 		</Fragment>

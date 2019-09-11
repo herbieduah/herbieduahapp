@@ -286,6 +286,18 @@ export const ContentContainer = styled.section`
 			margin-bottom: 5rem;
 		}
 	}
+	s {
+		position:relative;
+		text-decoration: none;
+		&::before{
+			content: '';
+			border-bottom: 3px solid ${fontColor};
+			width: 100%;
+			position: absolute;
+			right: 0;
+			top: 50%;
+		}
+	}
 	
 	.c-margin-0 {
 		margin: 0;
@@ -298,9 +310,8 @@ export const ContentContainer = styled.section`
 		width: 100%;
 		margin: 0 auto;
 		${cPaddingBottomMed}
-		${cPaddingTopMed}
 		${paddingLR}
-		background-color: ${bgColorContent};
+		/* background-color: ${bgColorContent}; */
 	}
 	ul.appTransition {
 		margin: 0;

@@ -198,13 +198,13 @@ const MenuLink = styled(NavLink)`
 	&:focus {
 		color: ${navBarHoverFocus};
 		/* text-decoration: ${CTAUnderline}; */
-		border-bottom: 2px solid ${fontColor};
+		/* border-bottom: 2px solid ${fontColor}; */
 	}
 	&.active,
 	&.current {
 		color: ${navBarButtonActive};
 		/* text-decoration: ${CTAUnderline}; */
-		border-bottom: 2px solid ${fontColor};
+		/* border-bottom: 2px solid ${fontColor}; */
 	}
 `;
 

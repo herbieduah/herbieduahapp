@@ -23,15 +23,10 @@ const BackgroundsPage = ({ contentProps }) => {
 			<ContentShow less>
 				<Header less>{header}</Header>
 				<Paragraph less>
-					I chose a splendid selection of subtle backgrounds for your choosing.
+					I chose a splendid selection of backgrounds for your choosing.
 				</Paragraph>
 				<div className='less__container'>
-					<Paragraph>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis
-						risus eget urna mollis ornare vel eu leo. Donec id elit non mi porta
-						gravida at eget metus. Sed posuere consectetur est at lobortis.
-						Maecenas sed diam eget risus varius blandit sit amet non magna.
-					</Paragraph>
+					<GenerateTheme type='color' />
 				</div>
 			</ContentShow>
 			<ContentShow more>
@@ -62,8 +57,10 @@ const BackgroundsPage = ({ contentProps }) => {
 						<GenerateTheme type='color' />
 						<Paragraph className='c-margin-top-med'>
 							Big shout out to{" "}
-							<Link href='https://webgradients.com/'>webgradients.com</Link> for
-							their stellar choices of gradients and the names to with theme.
+							<Link href='https://cloudflare.design/color/'>
+								cloudflare.design/color
+							</Link>{" "}
+							for accessible color combination tool.
 						</Paragraph>
 					</TabPanel>
 					<TabPanel>

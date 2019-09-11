@@ -143,23 +143,24 @@ export const NavBar = () => {
 								className='navbar__logo svg'
 								src={HerbieDuahLogo}
 							/>
-							<TransitionGroup>
-								{!showLess ? (
-									<CSSTransition
-										timeout={revealSecs}
-										classNames={transitionClasses}>
-										{/* <div className='animatecss-container'> */}
-										<Text
-											s
-											button
-											className='navbar__home-text'
-											aria-hidden={showLess ? `true` : `false`}>
-											Home
-										</Text>
-									</CSSTransition>
-								) : null}
-							</TransitionGroup>
 						</NavLink>
+						<TransitionGroup>
+							{!showLess ? (
+								<CSSTransition
+									timeout={revealSecs}
+									classNames={transitionClasses}>
+									{/* <div className='animatecss-container'> */}
+									<Text
+										menuLink
+										exact
+										to='/'
+										className='navbar__home-text'
+										aria-hidden={showLess ? `true` : `false`}>
+										Home
+									</Text>
+								</CSSTransition>
+							) : null}
+						</TransitionGroup>
 					</div>
 					<TransitionGroup>
 						{!showLess ? (
@@ -181,7 +182,9 @@ export const NavBar = () => {
 					</TransitionGroup>
 
 					<Text s button>
-						<NavLink to='/contacts'>Contact</NavLink>
+						<Text menuLink to='/contacts'>
+							Contact
+						</Text>
 					</Text>
 				</NavBarContainer>
 			</ShowIf>

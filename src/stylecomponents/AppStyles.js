@@ -11,7 +11,9 @@ import {
 	appBg,
 	appBgMobile,
 	appBgColor,
-	bgColorOverlay
+	bgColorOverlay,
+	fontColorOpposite,
+	fontColor
 	// appBgAnimation
 } from "./Themes/ThemeVariables";
 // import Matrix from "react-matrix-effect";
@@ -19,12 +21,14 @@ import {
 // 	props.dragging ? "infinite" : ""};
 // 	background-size: ${props => (props.dragging ? `400% 400%` : "contain")};
 export const HerbieDuahApp = styled.main`
+	img,video {
+		${props => (props.fullscreen ? "" : "pointer-events: none;")};
+	}
 	width: 100%;
 	overflow: hidden;
 	overscroll-behavior: none;
 	/* ${fluidTypeInfo} */
 	background: ${props => (props.isPortrait ? appBgMobile : appBg)};
-	
 	background-color: ${appBgColor};
 	position: relative;
 	margin: 0;
@@ -92,9 +96,9 @@ export const HerbieDuahApp = styled.main`
 	}
 
 	p.alpha-text {
-			background-color: blue;
+			background-color:${fontColor};
 			color: white;	
-			font-weight: bold;
+			font-weight: ${fontColorOpposite};
 			width:100%;
 			text-align:center;
 			pointer-events: none;

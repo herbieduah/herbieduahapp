@@ -3,9 +3,9 @@ export const appTransitions = [
 		name: "default",
 		properties: {
 			enter: "animated",
-			enterActive: "fadeInLeft",
+			enterActive: "fadeInUp",
 			exit: "animated",
-			exitActive: "fadeOutRight"
+			exitActive: "fadeOutUp"
 		}
 	},
 	{
@@ -72,6 +72,15 @@ export const appTransitions = [
 		}
 	},
 	{
+		name: "fadeInLeftfadeOutRight",
+		properties: {
+			enter: "animated",
+			enterActive: "fadeInLeft",
+			exit: "animated",
+			exitActive: "fadeOutRight"
+		}
+	},
+	{
 		name: "slideInLeftslideOutLeft",
 		properties: {
 			enter: "animated",
@@ -107,15 +116,7 @@ export const appTransitions = [
 			exitActive: "slideOutDown"
 		}
 	},
-	{
-		name: "fadeInUpfadeOutUp",
-		properties: {
-			enter: "animated",
-			enterActive: "fadeInUp",
-			exit: "animated",
-			exitActive: "fadeOutUp"
-		}
-	},
+
 	{
 		name: "bounceInDownbounceOutDown",
 		properties: {

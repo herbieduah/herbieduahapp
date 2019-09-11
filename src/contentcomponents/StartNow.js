@@ -18,22 +18,28 @@ import {
 import { ShowIf } from "../ComponentHelpers";
 // import Emoji from "a11y-react-emoji";
 // import Modal from "../maincomponents/Modal";
-import StandOutFromTheRest2000x3000 from "../media/images/startNow/StandOutFromTheRest.jpg";
-import NAUConstruction2000x1500 from "../media/images/startNow/NAUConstruction.jpg";
-import KnowTheGame2000x1500 from "../media/images/startNow/KnowTheGame.jpg";
-import herbieCareerWidePoster1480x1500 from "../media/images/startNow/herbieCareerWidePoster-317.jpg";
-import ConstructAPlan13X19x1952x2874 from "../media/images/startNow/ConstructAPlan13X19.jpg";
-import ConstructAPlan2000x1500 from "../media/images/startNow/ConstructAPlan-Horizontal.jpg";
-// import CareerWidePosterPhotoshop1480x1973 from "../media/images/startNow/CareerWidePosterPhotoshop-208.jpg";
-// import CareerPoster1480x950 from "../media/images/startNow/CareerPoster-950.jpg";
-import ACMClubPhoto2000x2667 from "../media/images/startNow/ACMClubPhoto.jpg";
-import Yes1480x2220 from "../media/images/startNow/Yes.jpg";
-import FullPage1480x1824 from "../media/images/startNow/FullPage.jpg";
-import FullSizeStudents1480x1774 from "../media/images/startNow/FullSizeStudents.jpg";
-import idkwhatIamDoing1480x2220 from "../media/images/startNow/idkwhatIamDoing.jpg";
-import smileStock1480x2220 from "../media/images/startNow/smileStock.jpg";
-import howtowritecoverletter_1 from "../media/videos/startnow/howtowritecoverletter_1.mp4";
-import resumeemail from "../media/videos/startnow/resumeemail.mp4";
+import {
+	startNowNAUConstruction,
+	startNowACMClubPhoto,
+	startNowCareerPoster,
+	startNowYes,
+	startNowsmileStock,
+	startNowStandOutFromTheRest,
+	startNowFullPage,
+	startNowFullSizeStudents,
+	startNowherbieCareerWidePoster,
+	startNowidkwhatIamDoing,
+	startNowKnowTheGame,
+	startNowConstructAPlan,
+	startNowConstructAPlanHorizontal,
+	// startNowCareerWidePosterPhotoshop,
+	startNowCareerImageWithPeople,
+	startNowCareerResourseGuide
+} from "../MediaVariables";
+
+// import howtowritecoverletter_1 from "../media/videos/startnow/howtowritecoverletter_1.mp4";
+// import resumeemail from "../media/videos/startnow/resumeemail.mp4";
+import { startNowcoverLetterGif, startNowresumeEmail } from "../VideoVariables";
 
 const header = "Start Now";
 const workDuration = "May 2014 - August 2016";
@@ -50,12 +56,8 @@ const StartNowPage = ({ contentProps }) => {
 				<Paragraph less>
 					I helped other students get jobs while I was in college.
 				</Paragraph>
-				<div className='less__container'>
-					<Paragraph>
-						I worked directly with the Career Development Director to create a
-						series of posters, digital art, documents, videos, and other mediums
-						geared towards helping students start their career.
-					</Paragraph>
+				<div className='less__container paddingLR'>
+					<Image src={startNowCareerImageWithPeople} />
 				</div>
 			</ContentShow>
 			<ContentShow more>
@@ -66,7 +68,7 @@ const StartNowPage = ({ contentProps }) => {
 					alt='A poster with construct a plan'
 					width='1952'
 					height='2874'
-					src={ConstructAPlan13X19x1952x2874}
+					src={startNowConstructAPlan}
 				/>
 				<Paragraph>
 					My first job was working directly with the Career Development Director
@@ -76,42 +78,12 @@ const StartNowPage = ({ contentProps }) => {
 				<Paragraph>
 					Our main goal was to help CEFNS students start their career.
 				</Paragraph>
-				<HeadingTwo>Start Now Campaign</HeadingTwo>
-				<Paragraph>
-					The Start Now campaign was a series of posters, digital art,
-					documents, videos and other mediums geared toward that primary goal.
-				</Paragraph>
-				<Paragraph>
-					We chose to go with a 1920s Vintage Travel Posters for the art
-					direction because starting a career is like a journey.
-				</Paragraph>
-				<HeadingTwo>Start Now Posters</HeadingTwo>
-				<Figure
-					className='paddingLRMed'
-					alt=' A photo of the Construction of the Science and Health Building.'
-					width='2000'
-					height='1500'
-					src={NAUConstruction2000x1500}>
-					<Figcaption>
-						Construction of the Science and Health Building.
-					</Figcaption>
-				</Figure>
-				<Figure
-					alt='Construct a plan poster'
-					width='2000'
-					height='1500'
-					src={ConstructAPlan2000x1500}>
-					<Figcaption>
-						"Construct A Plan" poster with the picture of construction of the
-						Science and Health Building.
-					</Figcaption>
-				</Figure>
 				<Figure
 					className='paddingLRMed'
 					alt='Arcade machine'
 					width='2000'
 					height='2667'
-					src={ACMClubPhoto2000x2667}>
+					src={startNowACMClubPhoto}>
 					<Figcaption>
 						An arcade machine created by Association for Computing Machinery
 						(ACM) club.
@@ -122,17 +94,47 @@ const StartNowPage = ({ contentProps }) => {
 					alt='know the game poster'
 					width='2000'
 					height='1500'
-					src={KnowTheGame2000x1500}>
+					src={startNowKnowTheGame}>
 					<Figcaption>
 						"Know The Game" poster with the arcade machine.
 					</Figcaption>
 				</Figure>
+				<HeadingTwo>Start Now Campaign</HeadingTwo>
+				<Paragraph>
+					The Start Now campaign was a series of posters, digital art,
+					documents, videos and other mediums geared toward that primary goal.
+				</Paragraph>
+				<Paragraph>
+					We chose to go with a 1920s Vintage Travel Posters for the art
+					direction because starting a career is like a journey.
+				</Paragraph>
+				<Figure
+					className='paddingLRMed'
+					alt=' A photo of the Construction of the Science and Health Building.'
+					width='2000'
+					height='1500'
+					src={startNowNAUConstruction}>
+					<Figcaption>
+						Construction of the Science and Health Building.
+					</Figcaption>
+				</Figure>
+				<Figure
+					alt='Construct a plan poster'
+					width='2000'
+					height='1500'
+					src={startNowConstructAPlanHorizontal}>
+					<Figcaption>
+						"Construct A Plan" poster with the picture of construction of the
+						Science and Health Building.
+					</Figcaption>
+				</Figure>
+
 				<Figure
 					className='padding-left-right'
 					alt='poster with trees on it'
 					width='2000'
 					height='3000'
-					src={StandOutFromTheRest2000x3000}>
+					src={startNowStandOutFromTheRest}>
 					<Figcaption>
 						NAU is filled with a lot of trees... you get the point.
 					</Figcaption>
@@ -160,7 +162,7 @@ const StartNowPage = ({ contentProps }) => {
 					alt='photo of the NAU Start Now site'
 					width='1480'
 					height='1824'
-					src={FullPage1480x1824}>
+					src={startNowFullPage}>
 					<Figcaption>
 						(Screenshot captured from{" "}
 						<Link href='www.web.archive.org/'>web.archive.org</Link>) I created
@@ -172,7 +174,7 @@ const StartNowPage = ({ contentProps }) => {
 					alt='photo of the NAU Start Now site start page'
 					width='1480'
 					height='1774'
-					src={FullSizeStudents1480x1774}>
+					src={startNowFullSizeStudents}>
 					<Figcaption>
 						(Screenshot captured from{" "}
 						<Link href='www.web.archive.org/'>web.archive.org</Link>) The CMS
@@ -187,14 +189,14 @@ const StartNowPage = ({ contentProps }) => {
 					I utilized a software called VideoScribe to create two very
 					informative videos on how to write a resume and cover letter.
 				</Paragraph>
-				<FiGif url={resumeemail}>
+				<FiGif url={startNowresumeEmail}>
 					<Figcaption>
 						<Link href='https://www.youtube.com/watch?v=z8i6kHg0YoY'>
 							How to Write an Excellent Resume
 						</Link>{" "}
 					</Figcaption>
 				</FiGif>
-				<FiGif url={howtowritecoverletter_1}>
+				<FiGif url={startNowcoverLetterGif}>
 					<Figcaption>
 						<Link href='https://www.youtube.com/watch?v=I3WQa1AN_V0'>
 							How to Write an Excellent Cover Letter
@@ -211,7 +213,7 @@ const StartNowPage = ({ contentProps }) => {
 					alt='a picture of me with an outrageous smile'
 					width='1480'
 					height='2220'
-					src={smileStock1480x2220}>
+					src={startNowsmileStock}>
 					<Figcaption>
 						When you laugh at the employers jokes because you want the job
 						really bad.
@@ -222,7 +224,7 @@ const StartNowPage = ({ contentProps }) => {
 					alt='A picture of me witha tiger woods yes pose'
 					width='1480'
 					height='2220'
-					src={Yes1480x2220}>
+					src={startNowYes}>
 					<Figcaption>When you get the job.</Figcaption>
 				</Figure>
 
@@ -231,7 +233,7 @@ const StartNowPage = ({ contentProps }) => {
 					alt='a picture of me being confused'
 					width='1480'
 					height='2220'
-					src={idkwhatIamDoing1480x2220}>
+					src={startNowidkwhatIamDoing}>
 					<Figcaption>
 						When you don't know what you are doing at the job.
 					</Figcaption>
@@ -241,7 +243,7 @@ const StartNowPage = ({ contentProps }) => {
 					alt='a picture of me On a Career and Premedical Professions Fair poster.'
 					width='1480'
 					height='1500'
-					src={herbieCareerWidePoster1480x1500}>
+					src={startNowCareerPoster}>
 					<Figcaption>
 						On a Career and Premedical Professions Fair poster.
 					</Figcaption>
@@ -251,11 +253,18 @@ const StartNowPage = ({ contentProps }) => {
 					alt='a picture of a wide panner'
 					width='1480'
 					height='1500'
-					src={herbieCareerWidePoster1480x1500}>
+					src={startNowherbieCareerWidePoster}>
 					<Figcaption>
 						I designed the huge banner to hold the posters and the poster on the
 						left.
 					</Figcaption>
+				</Figure>
+				<Figure
+					alt='me on the cover of a career resource guide'
+					width='1480'
+					height='1500'
+					src={startNowCareerResourseGuide}>
+					<Figcaption>I was on the cover of a Career Resource Guide</Figcaption>
 				</Figure>
 
 				<HeadingTwo>In Conclusion</HeadingTwo>

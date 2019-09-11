@@ -56,15 +56,8 @@ const DiscountTirePage = ({ contentProps }) => {
 					Currently working at Discount Tire as a Front End Developer and a
 					model?
 				</Paragraph>
-				<div className='less__container'>
-					<Figure
-						className='paddingLR'
-						alt='a mock up of the creation of exhibit page for desktop'
-						src={dtCreepySmile}>
-						<Figcaption className='c-margin-bottom'>
-							Creation of the Exhibit page for desktop
-						</Figcaption>
-					</Figure>
+				<div className='less__container paddingLR'>
+					<Image className='paddingLR' src={dtCreepySmile} />
 				</div>
 			</ContentShow>
 			<ContentShow more>
@@ -136,31 +129,6 @@ const DiscountTirePage = ({ contentProps }) => {
 						am currently on every receipt holder and that's no joke
 					</Figcaption>
 				</Figure>
-
-				{/* <Image
-					alt='I am checking the some tools with another tire check in the showroom'
-					width='1480'
-					height='987'
-					src={showroomCheckMatt1480x987}
-				/>
-				<Image
-					alt='Standing up next to a mustang'
-					width='1480'
-					height='987'
-					src={standupTireCheck1480x987}
-				/>
-				<Image
-					alt='Standing next to ASU Brochure'
-					width='1480'
-					height='1973'
-					src={dtbrochure1480x1973}
-				/>
-				<Image
-					alt='ASU brochure with me on it'
-					width='1480'
-					height='2693'
-					src={dtASU1480x2693}
-				/> */}
 				<ContentCategory fullScreen={fullScreen} category='work' />
 			</ContentShow>
 		</Fragment>

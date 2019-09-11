@@ -24,10 +24,10 @@ const SettingsPage = ({ contentProps }) => {
 		setNavBarComplement,
 		minimalMode,
 		setMinimalMode,
-		lazyLoading,
-		setLazyLoading,
+		// lazyLoading,
+		// setLazyLoading,
 		techy,
-		setTechy,
+		// setTechy,
 		setSides,
 		switchSides,
 		fullScreen,
@@ -45,13 +45,13 @@ const SettingsPage = ({ contentProps }) => {
 		fullScreen ? setFullscreen(false) : setFullscreen(true);
 	};
 
-	const downloadEverything = () => {
-		lazyLoading ? setLazyLoading(false) : setLazyLoading(true);
-	};
+	// const downloadEverything = () => {
+	// 	lazyLoading ? setLazyLoading(false) : setLazyLoading(true);
+	// };
 
-	const knowCode = () => {
-		techy ? setTechy(false) : setTechy(true);
-	};
+	// const knowCode = () => {
+	// 	techy ? setTechy(false) : setTechy(true);
+	// };
 
 	const failure = () => {
 		setSides(false);
@@ -68,12 +68,12 @@ const SettingsPage = ({ contentProps }) => {
 					You can change certain aspects of this site to your liking.
 				</Paragraph>
 				<div className='less__container'>
-					<Paragraph>
+					{/* <Paragraph>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis
 						risus eget urna mollis ornare vel eu leo. Donec id elit non mi porta
 						gravida at eget metus. Sed posuere consectetur est at lobortis.
 						Maecenas sed diam eget risus varius blandit sit amet non magna.
-					</Paragraph>
+					</Paragraph> */}
 				</div>
 			</ContentShow>
 			<ContentShow more>
@@ -87,7 +87,7 @@ const SettingsPage = ({ contentProps }) => {
 						turning on this settings.
 					</Paragraph>
 				</ShowIf>
-				<ShowIf noAnimation thisValue={techy} thatValue={true}>
+				{/* <ShowIf noAnimation thisValue={techy} thatValue={true}>
 					<Paragraph>
 						I sprinkled some technical knowledge around the side but I do not
 						indicate where exactly.
@@ -140,7 +140,7 @@ const SettingsPage = ({ contentProps }) => {
 						You can change this setting again if you refresh or come back to the
 						site again
 					</Paragraph>
-				</ShowIf>
+				</ShowIf> */}
 				<DisableSetting
 					thisValue={minimalMode}
 					thatValue={true}

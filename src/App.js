@@ -74,6 +74,7 @@ export const App = () => {
 				isPortrait={isPortrait(ww, wh)}
 				splitSize={splitSize}
 				minimalMode={minimalMode}
+				fullScreen={fullScreen}
 				showFSMobileHorizontal={showFSMobileHorizontal}
 				dragging={dragging}>
 				<ShowIf noAnimation thisValue={currentTheme} thatValue={"matrix"}>

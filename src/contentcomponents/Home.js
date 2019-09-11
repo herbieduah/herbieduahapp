@@ -20,7 +20,7 @@ import { ShowIf } from "../ComponentHelpers";
 import Emoji from "a11y-react-emoji";
 import { mobileModel, isMobileOnly } from "react-device-detect";
 // import Modal from "../maincomponents/Modal";
-import cornishPastyPic from "../media/images/picsOfMe/test.jpg";
+// import cornishPastyPic from "../media/images/picsOfMe/test.jpg";
 // import yes from "../media/images/startNow/Yes.jpg";
 // import testPicHorizontal from "../media/videos/videosOfme/raveMillyRock_1.mp4";
 import vneckcrewneck from "../media/videos/videosOfme/vNeckCrewNeck.mp4";
@@ -71,8 +71,7 @@ const HomePage = ({ contentProps }) => {
 						{/* Nowadays, there is an app for everything. In the future, I believe
 						there is going to be an app for everyone. Hi I'm Herbie, and this is
 						my app. */}
-						In the future, I believe there is going to be an app for everyone,
-						so I made my own.
+						Hi, I'm Herbie Duah and this is personal <s>website</s> web app.
 						{/* <Gif
 							url={
 								"https://res.cloudinary.com/dwccyjn5e/video/upload/c_scale,w_200/v1567287430/giftguide_11_1_copy_guoyg8.mp4"
@@ -84,9 +83,9 @@ const HomePage = ({ contentProps }) => {
 				</ShowIf>
 				<ShowIf noAnimation thisValue={"linkedin"} thatValue={whom}>
 					<Paragraph>
-						Yo what's up my LinkedIn connect, I hope networking is going good
-						for you.. In the future, I believe there is going to be an app for
-						everyone, so I made my own.
+						Hi LinkedIn connect, I hope networking is going good for you.. In
+						the future, I believe there is going to be an app for everyone, so I
+						made my own.
 					</Paragraph>
 				</ShowIf>
 				<ShowIf noAnimation thisValue={"reddit"} thatValue={whom}>
@@ -113,10 +112,9 @@ const HomePage = ({ contentProps }) => {
 						alt='a picture of me'
 					/>
 					<Paragraph>
-						Hi, I am Herbie. I am a Phoenix based Web Designer/Developer with 5
-						years of experience. I have a passion for creating user experiences
-						and a love for photography. This belief of everyone having their own
-						app was the main inspiration for the look and feel of this web app.
+						I've been designing and developing webite for over five years, I
+						have a passion for creating user experiences and a love for
+						photography.
 					</Paragraph>
 					<Paragraph>
 						You can follow me on&nbsp;
@@ -172,7 +170,7 @@ const HomePage = ({ contentProps }) => {
 						and design skills
 						<Emoji className='emoji' symbol='🤓' label='nerd' />.
 					</Paragraph>
-					<HeadingTwo>An app for everyone</HeadingTwo>
+					{/* <HeadingTwo>An app for everyone</HeadingTwo>
 					<Paragraph>
 						In the future, I believe everyone is going to have their own app. I
 						imagine it will be a mixture between the data and features from all
@@ -181,7 +179,7 @@ const HomePage = ({ contentProps }) => {
 						your app, just like they do in real life. The idea of everyone
 						having their own app was the main inspiration for the look and feel
 						of this web app.
-					</Paragraph>
+					</Paragraph> */}
 					<HeadingTwo>Designed and engineered for you</HeadingTwo>
 					<Image src={picsOfMeSelfieOlympics} alt='a picture of me smiling' />
 					<Paragraph>
@@ -192,10 +190,7 @@ const HomePage = ({ contentProps }) => {
 					</Paragraph>
 					<HeadingTwo>This project is in Beta</HeadingTwo>
 					<Paragraph>
-						Beta refers to the phase in software development between the alpha
-						phase and the release candidate phase. Beta software is generally
-						considered "complete" by the developer but still not ready for
-						general use due to a lack of testing "in the wild."
+						I am not quite finished yet but it is almost done.
 					</Paragraph>
 					{/* <Paragraph>
 						I googled "Beta software development" on Google and straight out

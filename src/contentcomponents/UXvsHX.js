@@ -12,23 +12,25 @@ const UXvsHXPage = () => {
 		<Fragment>
 			<ContentShow less>
 				<Header less>{header}</Header>
-				<Paragraph less>Every one is going to have their own app.</Paragraph>
+				<Paragraph less>
+					There is an app for everything, in the future, I believe there is
+					going to be an app for everyone.
+				</Paragraph>
 				<div className='less__container'>
 					<Paragraph>
-						Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo
-						cursus magna, vel scelerisque nisl consectetur et. Integer posuere
-						erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo
-						quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+						In the future, I believe everyone is going to have their own app. I
+						imagine it will be a mixture between the data and features from all
+						your social media apps all merged in an app with the help of Machine
+						Learning. I envision every user having a different experience with
+						your app, just like they do in real life. The idea of everyone
+						having their own app was the main inspiration for the look and feel
+						of this web app.
 					</Paragraph>
 				</div>
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>
-				<Paragraph className='alpha'>
-					I am going to try and convince you why everyone is going to have their
-					own app in the future. I 've been doing some research. I will make a
-					blog post and post it here when I am done.
-				</Paragraph>
+				<Paragraph>Coming soon.</Paragraph>
 			</ContentShow>
 		</Fragment>
 	);

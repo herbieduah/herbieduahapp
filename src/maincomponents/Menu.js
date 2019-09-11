@@ -37,7 +37,7 @@ export const ContentMenu = () => {
 							<div className='animatecss-container'>
 								<div className='menu__less'>
 									<div className='menu__less-container'>
-										<MenuTabs showCategory={isShowingMore} />
+										<MenuTabs showCategory={isShowingMore} tabIndex={-1} />
 									</div>
 								</div>
 							</div>
@@ -54,7 +54,7 @@ export const ContentMenu = () => {
 										category='photography'
 									/>
 									<SubMenu showCategory={isShowingMore} category='about' />
-									
+
 									<div className='offset' />
 								</nav>
 							</div>

@@ -117,11 +117,11 @@ export const SubMenu = props => {
 								Settings
 							</Text>
 						</li>
-						<li onClick={hideModal} className='subMenu__item'>
+						{/* <li onClick={hideModal} className='subMenu__item'>
 							<Text menuLink to='/gradients'>
 								Gradients
 							</Text>
-						</li>
+						</li> */}
 						<li onClick={hideModal} className='subMenu__item'>
 							<Text menuLink to='/backgrounds'>
 								Backgrounds
