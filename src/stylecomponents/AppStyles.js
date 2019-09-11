@@ -98,7 +98,7 @@ export const HerbieDuahApp = styled.main`
 	p.alpha-text {
 			background-color:${fontColor};
 			color: white;	
-			font-weight: ${fontColorOpposite};
+			color: ${fontColorOpposite};
 			width:100%;
 			text-align:center;
 			pointer-events: none;
