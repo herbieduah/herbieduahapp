@@ -81,31 +81,33 @@ const HomePage = ({ contentProps }) => {
 						you. */}
 					</Paragraph>
 				</ShowIf>
-				<ShowIf noAnimation thisValue={"linkedin"} thatValue={whom}>
-					<Paragraph>
-						Hi LinkedIn connect, I hope networking is going good for you.. In
-						the future, I believe there is going to be an app for everyone, so I
-						made my own.
-					</Paragraph>
-				</ShowIf>
-				<ShowIf noAnimation thisValue={"reddit"} thatValue={whom}>
-					<Paragraph>
-						Hi there fellow redditor, hope all is well. In the future, I believe
-						there is going to be an app for everyone, so I made my own.
-					</Paragraph>
-				</ShowIf>
-				<ShowIf noAnimation thisValue={"dherbstatwitter"} thatValue={whom}>
-					<Paragraph>
-						You know what's crazy? I am still not tired of MegTheeStallion
-						twerking on the timeline.
-						<ShowIf noAnimation thisValue={isMobileOnly} thatValue={true}>
-							&nbsp; I know she is blessing the lil {mobileModel} you holding
-							right now.
-						</ShowIf>
-						Anyways, here is my web app, it ain't done yet tho.
-					</Paragraph>
-				</ShowIf>
+
 				<div className='less__container'>
+					<ShowIf noAnimation thisValue={"linkedin"} thatValue={whom}>
+						<Paragraph>
+							Hi LinkedIn connect, I hope networking is going good for you.. In
+							the future, I believe there is going to be an app for everyone, so
+							I made my own.
+						</Paragraph>
+					</ShowIf>
+					<ShowIf noAnimation thisValue={"reddit"} thatValue={whom}>
+						<Paragraph>
+							Hi there fellow redditor, hope all is well. In the future, I
+							believe there is going to be an app for everyone, so I made my
+							own.
+						</Paragraph>
+					</ShowIf>
+					<ShowIf noAnimation thisValue={"dherbstatwitter"} thatValue={whom}>
+						<Paragraph>
+							You know what's crazy? I am still not tired of MegTheeStallion
+							twerking on the timeline.
+							<ShowIf noAnimation thisValue={isMobileOnly} thatValue={true}>
+								&nbsp; I know she is blessing the lil {mobileModel} you holding
+								right now.
+							</ShowIf>
+							Anyways, here is my web app, it ain't done yet tho.
+						</Paragraph>
+					</ShowIf>
 					<Image
 						src={picsOfMeHeroImageTwo}
 						className='paddingLR'
