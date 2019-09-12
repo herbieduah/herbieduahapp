@@ -415,7 +415,7 @@ export const Figcaption = props => {
 export const Gif = props => {
 	const url = props.url;
 	const desc = props.desc ? props.desc : defaultDesc;
-	const isCloud = props.cloud ? "cloud-" : "";
+	// const isCloud = props.cloud ? "cloud-" : "";
 	return (
 		<ElementReveal>
 			<Media
@@ -433,7 +433,7 @@ export const Gif = props => {
 export const FiGif = props => {
 	const url = props.url;
 	const desc = props.desc ? props.desc : defaultDesc;
-	const isCloud = props.cloud ? "cloud-" : "";
+	// const isCloud = props.cloud ? "cloud-" : "";
 	return (
 		<ElementReveal>
 			<figure className={`${spacingBottom}`}>
@@ -533,7 +533,7 @@ export const TransitionTexts = props => {
 			onClick={changeTransition}
 			className={`appTransition__item`}>
 			<div className={`appTransition__container ${currentClass}`}>
-				<Text button xs>
+				<Text format role='button' m>
 					<span className={enterTextTransition}>
 						{transitionValues.enterTransition}
 					</span>
@@ -631,7 +631,7 @@ export const DisableSetting = props => {
 export const Button = props => {
 	return (
 		<ElementReveal>
-			<Text button xs className='padding-left-right' {...props}>
+			<Text button s className='marginLR cMarginBottomSm' {...props}>
 				{props.children}
 			</Text>
 		</ElementReveal>

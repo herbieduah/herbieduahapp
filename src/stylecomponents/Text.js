@@ -26,7 +26,11 @@ import {
 	buttonColorHoverFocus,
 	navBarButtonActive,
 	navBarHoverFocus,
-	CTAUnderline
+	CTAUnderline,
+	colorSlightOpacity,
+	buttonBorder,
+	buttonBackground,
+	buttonBackgroundHoverFocus
 } from "./Themes/ThemeVariables";
 
 const baseStyle = css`
@@ -54,7 +58,7 @@ const baseStyle = css`
 		if (props.xs) return "0.8em";
 		if (props.s) return ".85em";
 		if (props.m) return "1em";
-		if (props.medium) return "1em";
+		if (props.medium) return ".9em";
 		if (props.l) return "1.5em";
 		if (props.xl) return "2em";
 		if (props.xxl) return "2.4em";
@@ -73,7 +77,7 @@ const baseStyle = css`
 		}};
 	}
 	font-weight: ${props => {
-		if (props.bold) return "600";
+		if (props.bold) return "700";
 		if (props.extrabold) return "900";
 		return "400";
 	}};
@@ -96,7 +100,7 @@ baseStyle.defaultProps = {
 
 const HeadingOne = styled.h1`
 	${baseStyle};
-	font-weight: 600;
+	font-weight: 800;
 	font-family: ${appfontFamilyExtraWide};
 	/* @media (max-width: 480px) {
     font-size: 40px;
@@ -112,6 +116,7 @@ const HeadingTwo = styled.h2`
 const HeadingThree = styled.h3`
 	${baseStyle};
 	font-family: ${appfontFamilyWide};
+	font-weight: 400;
 `;
 
 const HeadingFour = styled.h4`
@@ -134,24 +139,22 @@ const Figcaption = styled.figcaption`
 const TextFormatter = styled.span`
 	${baseStyle};
 	display: flex;
-	font-weight: 300;
 `;
 const Button = styled.button`
 	${baseStyle};
-	font-weight: 600;
 	${mainTransition}
-	font-family: ${appfontFamilyWide};
-	border: 0;
-	text-transform: uppercase;
+	border: ${buttonBorder};
 	hyphens: manual;
-	background: none;
+	background: ${buttonBackground};
 	color: ${buttonColor};
-	font-family: ${appfontFamilyWide};
+	padding: 0.75rem 1.2rem;
+	
 	cursor: pointer;
 	&:hover,
 	&:focus {
 		color: ${buttonColorHoverFocus};
 		text-decoration: ${CTAUnderline};
+		background: ${buttonBackgroundHoverFocus};
 	}
 	&.active,&.current {
 		color: ${buttonColorHoverFocus};
@@ -167,25 +170,36 @@ const HyperLink = styled.a`
 	&:focus {
 		text-decoration: underline;
 	}
-	text-decoration: none;
+	text-decoration: underline;
 `;
 
 const MenuLink = styled(NavLink)`
 	${baseStyle};
-	font-weight: 600;
+	font-weight: 700;
 	${mainTransition}
+	position:relative;
 	/* line-height: 1.2; */
-	letter-spacing: 1px;
+	/* letter-spacing: 1px; */
 	border: 0;
 	hyphens: manual;
 	background: none;
 	color: ${navBarButtonColor};
 	font-family: ${appfontFamilyWide};
 	border-bottom: 0;
+	
 	cursor: pointer;
 	/* font-size: 2em; */
-	text-transform: uppercase;
+	text-transform: capitalize;
 	text-decoration: none;
+	&::before{
+		content: '';
+		${mainTransition}
+		border-bottom: 2px solid rgba(0,0,0,0);
+		width: 100%;
+		position: absolute;
+		right: 0;
+		top: 50%;
+	}
 	${mobile} {
 		/* font-size: 1.7em; */
 	}
@@ -197,12 +211,20 @@ const MenuLink = styled(NavLink)`
 	&:hover,
 	&:focus {
 		color: ${navBarHoverFocus};
+		&::before{
+		content: '';
+			border-bottom: 2px solid ${colorSlightOpacity};
+		}
 		/* text-decoration: ${CTAUnderline}; */
 		/* border-bottom: 2px solid ${fontColor}; */
 	}
 	&.active,
 	&.current {
 		color: ${navBarButtonActive};
+		&::before {
+		content: '';
+			border-bottom: 2px solid ${fontColor};
+		}
 		/* text-decoration: ${CTAUnderline}; */
 		/* border-bottom: 2px solid ${fontColor}; */
 	}

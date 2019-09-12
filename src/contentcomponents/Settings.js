@@ -27,7 +27,7 @@ const SettingsPage = ({ contentProps }) => {
 		// lazyLoading,
 		// setLazyLoading,
 		techy,
-		// setTechy,
+		setTechy,
 		setSides,
 		switchSides,
 		fullScreen,
@@ -49,9 +49,9 @@ const SettingsPage = ({ contentProps }) => {
 	// 	lazyLoading ? setLazyLoading(false) : setLazyLoading(true);
 	// };
 
-	// const knowCode = () => {
-	// 	techy ? setTechy(false) : setTechy(true);
-	// };
+	const knowCode = () => {
+		techy ? setTechy(false) : setTechy(true);
+	};
 
 	const failure = () => {
 		setSides(false);
@@ -87,12 +87,12 @@ const SettingsPage = ({ contentProps }) => {
 						turning on this settings.
 					</Paragraph>
 				</ShowIf>
-				{/* <ShowIf noAnimation thisValue={techy} thatValue={true}>
+				{/* {/* <ShowIf noAnimation thisValue={techy} thatValue={true}>
 					<Paragraph>
 						I sprinkled some technical knowledge around the side but I do not
 						indicate where exactly.
 					</Paragraph>
-				</ShowIf>
+				</ShowIf> */}
 
 				<ShowIf noAnimation thisValue={techy} thatValue={true}>
 					<Button onClick={knowCode}>Change tone to Non technical</Button>
@@ -103,7 +103,7 @@ const SettingsPage = ({ contentProps }) => {
 				<ShowIf noAnimation thisValue={techy} thatValue={true}>
 					<HeadingTwo>Lazy loading</HeadingTwo>
 				</ShowIf>
-				<ShowIf noAnimation thisValue={techy} thatValue={false}>
+				{/* <ShowIf noAnimation thisValue={techy} thatValue={false}>
 					<HeadingTwo>Best Experience Mode</HeadingTwo>
 				</ShowIf>
 
@@ -140,7 +140,7 @@ const SettingsPage = ({ contentProps }) => {
 						You can change this setting again if you refresh or come back to the
 						site again
 					</Paragraph>
-				</ShowIf> */}
+				</ShowIf>  */}
 				<DisableSetting
 					thisValue={minimalMode}
 					thatValue={true}
@@ -151,19 +151,19 @@ const SettingsPage = ({ contentProps }) => {
 					</Paragraph>
 					<ShowIf noAnimation thisValue={navBarRight} thatValue={true}>
 						<Button onClick={moveNavBar}>Move Navigation Bar Left</Button>
-						<Small>
+						{/* <Small>
 							Move Navigation bar to the left to the left, everything you need
 							to navigate the site to the left.
-						</Small>
+						</Small> */}
 					</ShowIf>
 					<ShowIf noAnimation thisValue={navBarRight} thatValue={false}>
 						<Button onClick={moveNavBar}>
 							Move Navigation Bar to the right
 						</Button>
-						<Small>
+						{/* <Small>
 							Move Navigation bar back to right side, not the wrong side, the
 							right side, the side I chose first which is right.
-						</Small>
+						</Small> */}
 					</ShowIf>
 				</DisableSetting>
 				<HeadingTwo>Complementary Navigation Bar</HeadingTwo>
@@ -174,7 +174,7 @@ const SettingsPage = ({ contentProps }) => {
 					complements black)
 				</Paragraph>
 				<ShowIf noAnimation thisValue={navBarComplement} thatValue={false}>
-					<Button onClick={complementNavBar} className='padding-left-right'>
+					<Button onClick={complementNavBar}>
 						Add complementary background
 					</Button>
 					{/* <Small>
@@ -182,7 +182,7 @@ const SettingsPage = ({ contentProps }) => {
 						</Small> */}
 				</ShowIf>
 				<ShowIf noAnimation thisValue={navBarComplement} thatValue={true}>
-					<Button onClick={complementNavBar} className='padding-left-right'>
+					<Button onClick={complementNavBar}>
 						Remove complementary background
 					</Button>
 				</ShowIf>

@@ -44,7 +44,8 @@ import {
 	logoInnerFillColor,
 	fontColor,
 	borderThin,
-	CTAUnderline
+	CTAUnderline,
+	colorSlightOpacity
 } from "./Themes/ThemeVariables";
 import {
 	mobile,
@@ -152,6 +153,7 @@ export const NavBarMiniContainer = styled.div`
 		}
 	}
 	.navbar {
+		
 		&__menu-text, &__logo {
 			position:relative;
 			z-index: 100;	
@@ -274,6 +276,21 @@ export const NavBarContainer = styled.div`
 		}
 	}
 	.navbar {
+		&__contact {
+		/* ${props =>
+			props.navBarRight ? `padding-right: 0!important` : navBarBorder}; 	 */
+			margin-left: ${navBarSize};
+		}
+		&__maximize {
+			padding: 0 !important;
+			display: flex;
+			.animatecss-container{
+				display: flex;
+    			align-items: center;
+				left: -${navBarSize} !important;
+				text-transform: uppercase;
+			}
+		}
 		&__menu-text, &__logo {
 			position:relative;
 			z-index: 100;	
@@ -381,9 +398,12 @@ export const ReactTabs = styled(Tabs)`
 			}
 			span {
 				color: ${tabHeadingsColor};
+				${mainTransition}
+				border-bottom: 2px solid rgba(0,0,0,0);
 				&:focus,
 				&:hover {
 					color: ${tabHeadingsColorHoverFocus};
+					border-bottom: 2px solid ${colorSlightOpacity};
 				}
 			}
 
@@ -394,6 +414,7 @@ export const ReactTabs = styled(Tabs)`
 					color: ${tabHeadingsColorActive};
 					&:hover {
 						color: ${tabHeadingsColorActive};
+						border-bottom: ${tabHeadingsBorderBottomActive};
 					}
 				}
 			}
