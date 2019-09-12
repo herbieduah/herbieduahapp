@@ -71,7 +71,7 @@ const HomePage = ({ contentProps }) => {
 						{/* Nowadays, there is an app for everything. In the future, I believe
 						there is going to be an app for everyone. Hi I'm Herbie, and this is
 						my app. */}
-						Hi, I'm Herbie Duah and this is personal <s>website</s> web app.
+						Hi, I'm Herbie Duah and this is my personal <s>website</s> web app.
 						{/* <Gif
 							url={
 								"https://res.cloudinary.com/dwccyjn5e/video/upload/c_scale,w_200/v1567287430/giftguide_11_1_copy_guoyg8.mp4"

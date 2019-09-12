@@ -162,29 +162,25 @@ export const NavBar = () => {
 							) : null}
 						</TransitionGroup>
 					</div>
-					<TransitionGroup>
-						{!showLess ? (
-							<CSSTransition
-								timeout={revealSecs}
-								classNames={transitionClasses}>
-								{/* <div className='animatecss-container'> */}
-								<Text
-									s
-									button
-									className='navbar__maximize'
-									onClick={setMaximizeAndMinimize}
-									aria-hidden={showLess ? `true` : `false`}>
-									M{fullScreen ? `in` : `ax`}imize
-								</Text>
-								{/* </div> */}
-							</CSSTransition>
-						) : null}
-					</TransitionGroup>
+					<Text
+						m
+						format
+						role='button'
+						aria-pressed={fullScreen ? `true` : `false`}
+						className='navbar__maximize'
+						bold
+						onClick={setMaximizeAndMinimize}
+						aria-hidden={showLess ? `true` : `false`}>
+						<ShowIf thisValue={fullScreen && !showLess} thatValue={true}>
+							Minimize
+						</ShowIf>
+						<ShowIf thisValue={!fullScreen && !showLess} thatValue={true}>
+							Maximize
+						</ShowIf>
+					</Text>
 
-					<Text s button>
-						<Text menuLink to='/contacts'>
-							Contact
-						</Text>
+					<Text className='navbar__contact' menuLink to='/contacts'>
+						Contact
 					</Text>
 				</NavBarContainer>
 			</ShowIf>
@@ -272,10 +268,14 @@ export const ShowIf = props => {
 					{renderMe ? <Fragment>{props.children}</Fragment> : null}
 				</Fragment>
 			) : (
-				<TransitionGroup className='animatecss-tamer'>
+				<TransitionGroup
+					className={`${props.noAbsolute ? "" : "animatecss-tamer"}`}>
 					{renderMe ? (
 						<CSSTransition timeout={revealSecs} classNames={transitionClasses}>
-							<div className='animatecss-container'>{props.children}</div>
+							<div
+								className={`${props.noAbsolute ? "" : "animatecss-container"}`}>
+								{props.children}
+							</div>
 						</CSSTransition>
 					) : null}
 				</TransitionGroup>
@@ -300,22 +300,22 @@ export const MenuTabs = props => {
 			<ElementReveal>
 				<TabList>
 					<Tab>
-						<Text format xs wide>
-							For You
+						<Text format s wide>
+							Customize
 						</Text>
 					</Tab>
 					<Tab>
-						<Text format xs wide>
+						<Text format s wide>
 							Work
 						</Text>
 					</Tab>
 					<Tab>
-						<Text format xs wide>
+						<Text format s wide>
 							Photography
 						</Text>
 					</Tab>
 					<Tab>
-						<Text format xs wide>
+						<Text format s wide>
 							About
 						</Text>
 					</Tab>

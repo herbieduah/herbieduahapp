@@ -57,9 +57,9 @@ const ThemePage = ({ contentProps }) => {
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>
-				<Paragraph>
-					Themes change certain areas of the site to match one of themes below
-				</Paragraph>
+				{/* <Paragraph>
+					Thichange certain areas of the site
+				</Paragraph> */}
 				<HeadingTwo>Matrix</HeadingTwo>
 				<Paragraph>
 					This Matrix theme is based on the Matrix Trilogy starring Keanu
@@ -75,7 +75,7 @@ const ThemePage = ({ contentProps }) => {
 				<ShowIf noAnimation thisValue={isMatrix} thatValue={true}>
 					<Small>You are currently in the Matrix.</Small>
 				</ShowIf>
-				<HeadingTwo>Snapchat</HeadingTwo>
+				{/* <HeadingTwo>Snapchat</HeadingTwo>
 				<Paragraph>
 					The Snapchat theme borrows some of the looks and colors from Snapchat.
 				</Paragraph>
@@ -85,7 +85,7 @@ const ThemePage = ({ contentProps }) => {
 				</ShowIf>
 				<ShowIf noAnimation thisValue={isSnapchat} thatValue={true}>
 					<Small>Hmm {snapMessage()}</Small>
-				</ShowIf>
+				</ShowIf> */}
 				<ContentCategory fullScreen={fullScreen} category='customize' />
 			</ContentShow>
 		</Fragment>

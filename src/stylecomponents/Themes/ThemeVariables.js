@@ -12,6 +12,8 @@ export const bgColorOverlay = props => props.theme.bgColorOverlay;
 export const bgColorSecondary = props => props.theme.bgColorSecondary;
 export const borderThin = props => props.theme.borderThin;
 export const buttonBackground = props => props.theme.buttonBackground;
+export const buttonBackgroundHoverFocus = props =>
+	props.theme.buttonBackgroundHoverFocus;
 export const buttonBorder = props => props.theme.buttonBorder;
 export const buttonColor = props => props.theme.buttonColor;
 export const buttonColorHoverFocus = props => props.theme.buttonColorHoverFocus;
@@ -20,6 +22,7 @@ export const buttonLineHeight = props => props.theme.buttonLineHeight;
 export const buttonSpanDisplay = props => props.theme.buttonSpanDisplay;
 export const buttonTextTransform = props => props.theme.buttonTextTransform;
 export const complementBg = props => props.theme.complementBg;
+export const colorSlightOpacity = props => props.theme.colorSlightOpacity;
 export const CTAColor = props => props.theme.CTAColor;
 export const CTAColorSecondary = props => props.theme.CTAColorSecondary;
 export const CTAUnderline = props => props.theme.CTAUnderline;
