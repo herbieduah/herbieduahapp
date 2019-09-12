@@ -114,8 +114,7 @@ const HomePage = ({ contentProps }) => {
 						alt='a picture of me'
 					/>
 					<Paragraph>
-						I've been designing and developing webite for over five years, I
-						have a passion for creating user experiences and a love for
+						I have a passion for creating user experiences and a love for
 						photography.
 					</Paragraph>
 					<Paragraph>

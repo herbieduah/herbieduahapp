@@ -24,7 +24,8 @@ import {
 	borderThin,
 	sliderBg,
 	fontColorOpposite,
-	buttonColorHoverFocus
+	buttonColorHoverFocus,
+	fontColor
 } from "./Themes/ThemeVariables";
 import { pulseRing } from "./Animations";
 import { sliderDesktopWidth, sliderMobileWidth } from "../helpers";
@@ -248,7 +249,7 @@ export const SliderLineContainer = styled.div`
 			text-align:center;
 			width:100%;
 		}
-		background-color: ${buttonColorHoverFocus};
+		background-color: ${fontColor};
 		display:flex;
 		align-items: center;
 		border-radius: 50%;

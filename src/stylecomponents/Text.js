@@ -79,7 +79,7 @@ const baseStyle = css`
 	font-weight: ${props => {
 		if (props.bold) return "700";
 		if (props.extrabold) return "900";
-		return "400";
+		return "300";
 	}};
 	font-style: ${props => {
 		if (props.italic) return "italic";
@@ -129,7 +129,6 @@ const HeadingFive = styled.h5`
 
 const Paragraph = styled.p`
 	${baseStyle};
-	font-weight: 300;
 `;
 
 const Figcaption = styled.figcaption`
