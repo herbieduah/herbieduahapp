@@ -8,7 +8,7 @@ import {
 	revealValues
 } from "../../helpers";
 import { globalState } from "../../State";
-
+import { ShowIf } from "../../ComponentHelpers";
 export const SliderLine = () => {
 	const { width: ww, height: wh } = useWindowResize();
 	const { minSize: sliderMinSize } = minSliderSize(ww, wh);
@@ -35,7 +35,7 @@ export const SliderLine = () => {
 				linePadding={linePadding}
 				linePaddingMobile={linePaddingMobile}>
 				<div className='slider__line-content'>
-					{isShowingMore ? (
+					<ShowIf thisValue={isShowingMore} noAbsolute thatValue={true}>
 						<div className='slider__instructions-container'>
 							<span className='slider__instructions'>
 								<Text bold s>
@@ -43,9 +43,18 @@ export const SliderLine = () => {
 								</Text>
 							</span>
 						</div>
-					) : null}
+					</ShowIf>
+					{/* {isShowingMore ? (
+						<div className='slider__instructions-container'>
+							<span className='slider__instructions'>
+								<Text bold s>
+									Less
+								</Text>
+							</span>
+						</div>
+					) : null} */}
 					<span className='slider__line' />
-					{!isShowingMore ? (
+					<ShowIf noAbsolute thisValue={isShowingMore} thatValue={false}>
 						<div className='slider__instructions-container'>
 							<span className='slider__instructions'>
 								<Text bold s>
@@ -53,7 +62,16 @@ export const SliderLine = () => {
 								</Text>
 							</span>
 						</div>
-					) : null}
+					</ShowIf>
+					{/* {!isShowingMore ? (
+						<div className='slider__instructions-container'>
+							<span className='slider__instructions'>
+								<Text bold s>
+									More
+								</Text>
+							</span>
+						</div>
+					) : null} */}
 				</div>
 				{/* {dragging ? (
 					<div className='slider__gradient'>

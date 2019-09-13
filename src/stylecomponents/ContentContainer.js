@@ -63,7 +63,8 @@ export const ContentContainer = styled.section`
 		height: ${props => (props.showLess && !props.isPortrait ? `100%` : `100%`)};
 		position: fixed;
 		z-index: 10;
-		${props => (props.isPortrait ? `margin-top: .5rem` : ``)};
+		${props =>
+			props.isPortrait ? `margin-top: .5rem` : `margin-top: ${navBarSize}`};
 		max-width: 500px;
 		/* max-width:  ${props => (props.showLess ? `500px` : `100%`)}; */
 		/* margin: 0 auto; */

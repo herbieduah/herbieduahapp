@@ -114,8 +114,9 @@ export const NavBar = () => {
 					</ShowIf>
 					<div className='navbar__logo-menu'>
 						<Text
-							button
-							s
+							format
+							role='button'
+							m
 							className='navbar__menu-text'
 							onClick={setMenuModalContent}>
 							{modalVisible ? `Back` : `Menu`}

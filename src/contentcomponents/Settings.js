@@ -87,22 +87,22 @@ const SettingsPage = ({ contentProps }) => {
 						turning on this settings.
 					</Paragraph>
 				</ShowIf>
-				{/* {/* <ShowIf noAnimation thisValue={techy} thatValue={true}>
+				<ShowIf noAnimation thisValue={techy} thatValue={true}>
 					<Paragraph>
 						I sprinkled some technical knowledge around the side but I do not
 						indicate where exactly.
 					</Paragraph>
-				</ShowIf> */}
+				</ShowIf>
 
 				<ShowIf noAnimation thisValue={techy} thatValue={true}>
-					<Button onClick={knowCode}>Change tone to Non technical</Button>
+					<Button onClick={knowCode}>Change tone to non-technical</Button>
 				</ShowIf>
 				<ShowIf noAnimation thisValue={techy} thatValue={false}>
-					<Button onClick={knowCode}>Change tone to Technical</Button>
+					<Button onClick={knowCode}>Change tone to technical</Button>
 				</ShowIf>
-				<ShowIf noAnimation thisValue={techy} thatValue={true}>
+				{/* <ShowIf noAnimation thisValue={techy} thatValue={true}>
 					<HeadingTwo>Lazy loading</HeadingTwo>
-				</ShowIf>
+				</ShowIf> */}
 				{/* <ShowIf noAnimation thisValue={techy} thatValue={false}>
 					<HeadingTwo>Best Experience Mode</HeadingTwo>
 				</ShowIf>
@@ -145,7 +145,7 @@ const SettingsPage = ({ contentProps }) => {
 					thisValue={minimalMode}
 					thatValue={true}
 					message="You can't interact with this setting because you've made the app look like every other site">
-					<HeadingTwo>Move Navigation Bar</HeadingTwo>
+					<HeadingTwo>Move navigation bar</HeadingTwo>
 					<Paragraph>
 						This setting moves navigations bar to the right or left.
 					</Paragraph>
@@ -212,16 +212,16 @@ const SettingsPage = ({ contentProps }) => {
 						first settings I had when I started developing this app but I
 						neglected it and failed to keep up with.
 					</Paragraph>
-					<Paragraph>
+					{/* <Paragraph>
 						I mean it does what it's intended to do but it doesn't look good.
-					</Paragraph>
+					</Paragraph> */}
 					<Paragraph>
 						<strong>
 							Since this is a failed setting, it will revert back in 10 seconds
 						</strong>
 					</Paragraph>
 					<ShowIf noAnimation thisValue={switchSides} thatValue={true}>
-						<Button onClick={failure}>Switch Sides for 10 Seconds</Button>
+						<Button onClick={failure}>Switch sides for 10 Seconds</Button>
 					</ShowIf>
 					<ShowIf noAnimation thisValue={switchSides} thatValue={false}>
 						<Paragraph>Reverting back in 10 seconds</Paragraph>
