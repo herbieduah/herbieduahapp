@@ -80,13 +80,13 @@ export const ContentShow = props => {
 
 	if (props.less) {
 		return (
-			<TransitionGroup className='animatecss-container'>
+			<TransitionGroup>
 				{showLess ? (
 					<CSSTransition timeout={revealSecs} classNames={transitionClasses}>
 						<aside className='less'>
-							<div className='less__container'>
+							<div className='less__wrapper'>
 								{props.children}
-								<Text m className='less__drag paddingLR'>
+								<Text xs className='less__drag paddingLR'>
 									Drag the slider {whereToDrag} to reveal more.&nbsp;
 								</Text>
 							</div>
@@ -98,10 +98,10 @@ export const ContentShow = props => {
 	}
 	if (props.more) {
 		return (
-			<TransitionGroup className='animatecss-container'>
+			<TransitionGroup>
 				{showMore ? (
 					<CSSTransition timeout={revealSecs} classNames={transitionClasses}>
-						<article className='container'>
+						<article className='container more'>
 							{props.children}
 							<div className='offset' />
 						</article>

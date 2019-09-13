@@ -31,7 +31,8 @@ import {
 	breatherBottom,
 	// cPaddingTop,
 	cPaddingTopMed,
-	paddingLRSm
+	paddingLRSm,
+	absoluteOverlay
 } from "./StyleHelpers";
 import {
 	navBarBorder,
@@ -44,6 +45,7 @@ import {
 export const ContentContainer = styled.section`
 	width: 100%;
 	height: 100vh;
+	/* position: relative !important; */
 	${mainTransition}
 	${props => (props.isPortrait ? mobileSliderOnTop : ``)};
 	${hideScrollbar};
@@ -55,7 +57,65 @@ export const ContentContainer = styled.section`
 	${props => (props.showMore ? `` : `padding-top: 0 !important;`)};
 	padding-top: 0 !important;
 	/* transform: perspective(300px) rotateX(15deg);  */
-
+	.less {
+		${mainTransition}
+		width:  100%;
+		height: ${props => (props.showLess && !props.isPortrait ? `100%` : `100%`)};
+		position: fixed;
+		z-index: 10;
+		${props => (props.isPortrait ? `margin-top: .5rem` : ``)};
+		max-width: 500px;
+		/* max-width:  ${props => (props.showLess ? `500px` : `100%`)}; */
+		/* margin: 0 auto; */
+		/* p {
+			${mainTransition}
+			font-size: ${props => (props.showLess ? `1.5em` : `.9em`)};
+			margin: 0 auto;
+		} */
+		${tablet} {
+			/* max-width:  ${props =>
+				props.showLess && !props.isPortrait ? `400px` : `100%`}; */
+			width: 100%;
+			height: 100%;
+			/* ${props => (props.isPortrait ? `padding-top: 3.5rem;` : ``)}; */
+		}
+		${mobile} {
+			width: 100%;
+			height: 100%;
+		}
+		
+		&__container {
+			padding-top: ${props => (props.isPortrait ? `0` : `${navBarSize}`)};
+			display: none;
+		}
+		&__header {
+			height: 6vh;
+			margin-bottom: 10vh;
+			${mobile} {
+				height: 4vh;
+				margin-bottom: 4vh;
+			}
+		}
+		&__main-text {
+			height: 20vh;
+			max-width: 550px;
+			display: block;
+			${props => (props.isPortrait ? `${cMarginBottomMed}` : `margin-bottom: 35vh`)};
+		}
+		&__drag {
+			text-transform: uppercase;
+			
+			display:block;
+			padding-bottom:${props => (props.isPortrait ? `38vh;` : `91vh;`)};
+			${mobile}{
+				font-size: 14px;
+			}
+		}
+		${props => (props.minimalMode ? `margin:0 !important` : ``)};
+	${props => (props.minimalMode ? `padding:2.5rem 0 !important` : ``)};
+	${props => (props.showMore ? `` : `padding-top: 0 !important;`)};
+	}
+			
 	.LazyLoad {
 		width: 100%;
 	}
@@ -70,6 +130,12 @@ export const ContentContainer = styled.section`
 	figure {
 		margin: 0;
 	}
+	/* .less-more {
+		position:absolute;
+	} */
+	/* .less,.more {
+		${absoluteOverlay};
+	} */
 	span.alpha {
 		background:blue;
 		color: white;
@@ -144,60 +210,7 @@ export const ContentContainer = styled.section`
 			margin-bottom: ${props => (props.isPortrait ? `70vh` : `0`)};
 		}
 	}
-	.less {
-		${mainTransition}
-		width:  100%;
-		height: ${props => (props.showLess && !props.isPortrait ? `100%` : `100%`)};
-		position: relative;
-		z-index: 10;
-		${props => (props.isPortrait ? `margin-top: .5rem` : ``)};
-		max-width: 740px;
-		/* max-width:  ${props => (props.showLess ? `500px` : `100%`)}; */
-		/* margin: 0 auto; */
-		/* p {
-			${mainTransition}
-			font-size: ${props => (props.showLess ? `1.5em` : `.9em`)};
-			margin: 0 auto;
-		} */
-		${tablet} {
-			/* max-width:  ${props =>
-				props.showLess && !props.isPortrait ? `400px` : `100%`}; */
-			width: 100%;
-			height: 100%;
-			/* ${props => (props.isPortrait ? `padding-top: 3.5rem;` : ``)}; */
-		}
-		${mobile} {
-			width: 100%;
-			height: 100%;
-		}
 		
-		&__container {
-			padding-top: ${props => (props.isPortrait ? `0` : `${navBarSize}`)};
-		}
-		&__header {
-			height: 6vh;
-			margin-bottom: 10vh;
-			${mobile} {
-				height: 4vh;
-				margin-bottom: 4vh;
-			}
-		}
-		&__main-text {
-			height: 20vh;
-			max-width: 550px;
-			display: block;
-			${props => (props.isPortrait ? `${cMarginBottomMed}` : `margin-bottom: 35vh`)};
-		}
-		&__drag {
-			text-transform: uppercase;
-			
-			display:block;
-			padding-bottom:${props => (props.isPortrait ? `38vh;` : `91vh;`)};
-			${mobile}{
-				font-size: 14px;
-			}
-		}
-				
 	}
 
 	.c-margin-bottom,.cmb {

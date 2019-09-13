@@ -21,8 +21,10 @@ import {
 // 	props.dragging ? "infinite" : ""};
 // 	background-size: ${props => (props.dragging ? `400% 400%` : "contain")};
 export const HerbieDuahApp = styled.main`
+	${mobile}{
 	img,video {
 		${props => (props.fullscreen ? "" : "pointer-events: none;")};
+	}
 	}
 	width: 100%;
 	overflow: hidden;

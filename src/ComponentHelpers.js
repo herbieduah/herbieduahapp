@@ -437,10 +437,7 @@ const ContentWrapperContainer = props => {
 			showMore={showMore}
 			navBarRight={navBarRight}
 			minimalMode={minimalMode}>
-			<div className='animatecss-tamer'>{children}</div>
-			{/* {showMore && isContentPortrait ? (
-				<div className='content__slider-bg' />
-			) : null} */}
+			{children}
 		</ContentContainer>
 	);
 };
