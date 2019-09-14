@@ -375,6 +375,9 @@ export const ReactTabs = styled(Tabs)`
 			border:0;
 			border-radius: 0;
 			text-transform: capitalize;
+			${mobile} {
+				margin-bottom: 0.4rem;
+			}
 		}
 
 		&__tab {

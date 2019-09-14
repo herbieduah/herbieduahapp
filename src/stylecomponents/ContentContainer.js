@@ -32,7 +32,8 @@ import {
 	// cPaddingTop,
 	cPaddingTopMed,
 	paddingLRSm,
-	absoluteOverlay
+	absoluteOverlay,
+	crossOut
 } from "./StyleHelpers";
 import {
 	navBarBorder,
@@ -66,6 +67,8 @@ export const ContentContainer = styled.section`
 		${props =>
 			props.isPortrait ? `margin-top: .5rem` : `margin-top: ${navBarSize}`};
 		max-width: 500px;
+		/* ${props =>
+			props.navBarRight ? contentMenuPaddingRight : contentMenuPadding}; */
 		/* max-width:  ${props => (props.showLess ? `500px` : `100%`)}; */
 		/* margin: 0 auto; */
 		/* p {
@@ -78,11 +81,19 @@ export const ContentContainer = styled.section`
 				props.showLess && !props.isPortrait ? `400px` : `100%`}; */
 			width: 100%;
 			height: 100%;
-			/* ${props => (props.isPortrait ? `padding-top: 3.5rem;` : ``)}; */
+			${props => (props.isPortrait ? `padding-left: 0; padding:right: 0` : ``)};
+			.paddingLR,.padding-left-right {
+				${props => (props.isPortrait ? `padding-left: 0; padding:right: 0` : ``)};
+			}
 		}
 		${mobile} {
 			width: 100%;
 			height: 100%;
+			padding:0;
+			/* ${props =>
+				props.navBarRight
+					? `padding-right: ${navBarSize}`
+					: `padding-left: ${navBarSize}`}; */
 		}
 		
 		&__container {
@@ -96,25 +107,36 @@ export const ContentContainer = styled.section`
 				height: 4vh;
 				margin-bottom: 4vh;
 			}
+			${tablet} {
+				${props => (props.isPortrait ? `margin-bottom:4vh;` : ``)};		
+			}
 		}
 		&__main-text {
 			height: 20vh;
-			max-width: 550px;
+			max-width: 500px;
 			display: block;
-			${props => (props.isPortrait ? `${cMarginBottomMed}` : `margin-bottom: 35vh`)};
+			${tablet} {
+				${props => (props.isPortrait ? `height: 15vh` : `max-width:350px;`)};
+					
+			}
+			${props => (props.isPortrait ? `${cMarginBottomMed}` : `margin-bottom: 9.5vh`)};
 		}
 		&__drag {
 			text-transform: uppercase;
-			
+			${props =>
+				props.isPortrait
+					? ``
+					: `
+			position: fixed;
+			width: 100%;
+			height: 100vh;
+			displax: flex;
+			align-items: center;
+			pointer-events: none;
+			`};
 			display:block;
-			padding-bottom:${props => (props.isPortrait ? `38vh;` : `91vh;`)};
-			${mobile}{
-				font-size: 14px;
-			}
 		}
-		${props => (props.minimalMode ? `margin:0 !important` : ``)};
-	${props => (props.minimalMode ? `padding:2.5rem 0 !important` : ``)};
-	${props => (props.showMore ? `` : `padding-top: 0 !important;`)};
+		
 	}
 			
 	.LazyLoad {
@@ -305,11 +327,8 @@ export const ContentContainer = styled.section`
 		text-decoration: none;
 		&::before{
 			content: '';
-			border-bottom: 3px solid ${fontColor};
-			width: 100%;
-			position: absolute;
-			right: 0;
-			top: 50%;
+			border-bottom: 2px solid ${fontColor};
+			${crossOut};
 		}
 	}
 	

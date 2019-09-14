@@ -24,6 +24,12 @@ export function fluidType(minVW, maxVW, minFontSize, maxFontSize) {
 	}
 	return finalFontSize;
 }
+export const crossOut = `
+width: 100%;
+position: absolute;
+right: 0;
+top: 47%;
+`;
 const minVW = `320px`;
 const maxVW = `1200px`;
 const minFontSize = `16px`;

@@ -14,14 +14,13 @@ const PunsPage = () => {
 	return (
 		<div className='container'>
 			{/* <Header>{header}</Header> */}
+			<Paragraph>{puns}</Paragraph>
 			<Text
 				button
 				onClick={generatePun}
 				className='padding-left-right c-margin-bottom c-margin-top'>
 				Generate Pun
 			</Text>
-
-			<Paragraph>{puns}</Paragraph>
 		</div>
 	);
 };

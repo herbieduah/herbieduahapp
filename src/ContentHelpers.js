@@ -198,7 +198,7 @@ export const ElementReveal = props => {
 			effect={transitionValues.enterTransition}
 			effectOut={transitionValues.exitTransition}
 			duration={revealSecs}>
-			<div>{props.children}</div>
+			<div {...props}>{props.children}</div>
 		</Reveal>
 	);
 };
@@ -465,20 +465,20 @@ export const ThemeCircles = props => {
 			isPortrait={isContentPortrait}
 			themeValues={themeValues}
 			className='themeCircle__item'>
-			<div className='themeCircle__container'>
+			<ElementReveal className='themeCircle__container'>
 				<button className={`themeCircle__button ${currentClass}`}>
 					{current ? (
 						<div className='themeCircle__selected'>
-							<Text format l bold>
+							<Text format m bold>
 								Current
 							</Text>
 						</div>
 					) : null}
 				</button>
-				<Text format xs className={`themeCircle__text ${currentClass}`} bold>
+				<Text format s className={`themeCircle__text ${currentClass}`}>
 					{themeValues.text}
 				</Text>
-			</div>
+			</ElementReveal>
 		</ThemeCircleContainer>
 	);
 };

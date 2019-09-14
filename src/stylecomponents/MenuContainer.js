@@ -83,7 +83,7 @@ const MenuContainer = styled.aside`
 			margin-bottom: 10vh;
 			${mobile} {
 				height: 4vh;
-				margin-bottom: 0rem;
+				margin-bottom: .4rem;
 			}
 		}
 		${hideScrollbar}

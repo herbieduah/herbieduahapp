@@ -37,7 +37,7 @@ export const ContentMenu = () => {
 							<div className='animatecss-container'>
 								<div className='menu__less'>
 									<div className='menu__less-container'>
-										<MenuTabs showCategory={isShowingMore} tabIndex={1} />
+										<MenuTabs showCategory={isShowingMore} tabIndex={-1} />
 									</div>
 								</div>
 							</div>
@@ -47,7 +47,16 @@ export const ContentMenu = () => {
 						<CSSTransition timeout={revealSecs} classNames={transitionClasses}>
 							<div className='animatecss-container'>
 								<nav className='menu__more'>
-									<SubMenu showCategory={isShowingMore} category='customize' />
+									<TransitionGroup>
+										<CSSTransition
+											timeout={revealSecs}
+											classNames={transitionClasses}>
+											<SubMenu
+												showCategory={isShowingMore}
+												category='customize'
+											/>
+										</CSSTransition>
+									</TransitionGroup>
 									<SubMenu showCategory={isShowingMore} category='work' />
 									<SubMenu
 										showCategory={isShowingMore}

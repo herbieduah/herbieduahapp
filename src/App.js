@@ -29,6 +29,7 @@ import {
 	defaultPaneSize,
 	isPortrait
 } from "./helpers";
+import { ElementReveal } from "./ContentHelpers";
 
 export const App = () => {
 	const {
@@ -110,6 +111,7 @@ export const App = () => {
 				{fullScreening ? <FullScreeningBG /> : null}
 
 				{/* <FullScreeningBG /> */}
+
 				{!fullScreen && !showFSMobileHorizontal ? (
 					<SplitPane
 						split={splitDir(ww, wh)}
@@ -127,6 +129,7 @@ export const App = () => {
 						<ContentMenu switchSides={!switchSides} />
 					</SplitPane>
 				) : null}
+
 				{/* <ShowIf
 					thisValue={!fullScreen && !showFSMobileHorizontal}
 					thatValue={true}>

@@ -26,6 +26,7 @@ export const HerbieDuahApp = styled.main`
 		${props => (props.fullscreen ? "" : "pointer-events: none;")};
 	}
 	}
+	
 	width: 100%;
 	overflow: hidden;
 	overscroll-behavior: none;

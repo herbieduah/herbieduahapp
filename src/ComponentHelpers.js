@@ -108,19 +108,45 @@ export const NavBar = () => {
 						/>
 					</NavLink>
 					<ShowIf noAnimation thisValue={modalVisible} thatValue={true}>
-						<Text m button onClick={setMenuModalContent}>
-							<NavLink to='/contacts'>Contact</NavLink>
+						<Text
+							className='navbar__contact'
+							onClick={setMenuModalContent}
+							menuLink
+							to='/contacts'>
+							Contact
 						</Text>
 					</ShowIf>
 					<div className='navbar__logo-menu'>
-						<Text
-							format
-							role='button'
-							m
-							className='navbar__menu-text'
-							onClick={setMenuModalContent}>
-							{modalVisible ? `Back` : `Menu`}
-						</Text>
+						<ShowIf noAnimation thisValue={modalVisible} thatValue={true}>
+							<ElementReveal>
+								<Text
+									format
+									role='button'
+									m
+									bold
+									wide
+									aria-pressed='true'
+									className='navbar__menu-text'
+									onClick={setMenuModalContent}>
+									Back
+								</Text>
+							</ElementReveal>
+						</ShowIf>
+						<ShowIf noAnimation thisValue={modalVisible} thatValue={false}>
+							<ElementReveal>
+								<Text
+									format
+									role='button'
+									m
+									bold
+									wide
+									aria-pressed='false'
+									className='navbar__menu-text'
+									onClick={setMenuModalContent}>
+									Menu
+								</Text>
+							</ElementReveal>
+						</ShowIf>
 					</div>
 
 					{/* <Text m button>
@@ -169,7 +195,6 @@ export const NavBar = () => {
 						role='button'
 						aria-pressed={fullScreen ? `true` : `false`}
 						className='navbar__maximize'
-						bold
 						onClick={setMaximizeAndMinimize}
 						aria-hidden={showLess ? `true` : `false`}>
 						<ShowIf thisValue={fullScreen && !showLess} thatValue={true}>
@@ -301,22 +326,22 @@ export const MenuTabs = props => {
 			<ElementReveal>
 				<TabList>
 					<Tab>
-						<Text format s wide>
+						<Text format s>
 							Customize
 						</Text>
 					</Tab>
 					<Tab>
-						<Text format s wide>
+						<Text format s>
 							Work
 						</Text>
 					</Tab>
 					<Tab>
-						<Text format s wide>
+						<Text format s>
 							Photography
 						</Text>
 					</Tab>
 					<Tab>
-						<Text format s wide>
+						<Text format s>
 							About
 						</Text>
 					</Tab>

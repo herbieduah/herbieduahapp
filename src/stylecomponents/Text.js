@@ -12,7 +12,8 @@ import {
 	// buttonBorderColor,
 	// navColor,
 	// navColorActive,
-	tablet
+	tablet,
+	crossOut
 } from "./StyleHelpers";
 
 import {
@@ -174,7 +175,7 @@ const HyperLink = styled.a`
 
 const MenuLink = styled(NavLink)`
 	${baseStyle};
-	font-weight: 700;
+	font-weight: 500;
 	${mainTransition}
 	position:relative;
 	/* line-height: 1.2; */
@@ -183,21 +184,17 @@ const MenuLink = styled(NavLink)`
 	hyphens: manual;
 	background: none;
 	color: ${navBarButtonColor};
-	font-family: ${appfontFamilyWide};
+	font-family: ${appfontFamilyExtraWide};
 	border-bottom: 0;
-	
 	cursor: pointer;
 	/* font-size: 2em; */
-	text-transform: capitalize;
+	/* text-transform: capitalize; */
 	text-decoration: none;
 	&::before{
 		content: '';
-		${mainTransition}
 		border-bottom: 2px solid rgba(0,0,0,0);
-		width: 100%;
-		position: absolute;
-		right: 0;
-		top: 50%;
+		${mainTransition}
+		${crossOut};
 	}
 	${mobile} {
 		/* font-size: 1.7em; */
