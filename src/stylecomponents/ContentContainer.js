@@ -233,7 +233,7 @@ export const ContentContainer = styled.section`
 		&__more {
 			${mainTransition}
 			padding: 0 2rem;
-			margin-bottom: ${props => (props.isPortrait ? `70vh` : `0`)};
+			margin-bottom: ${props => (props.isPortrait ? `55vh` : `0`)};
 		}
 	}
 		

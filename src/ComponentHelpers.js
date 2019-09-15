@@ -100,12 +100,12 @@ export const NavBar = () => {
 						exact
 						className='navbar__logo-link'
 						to='/'
+						tabIndex='0'
 						onClick={setMenuModalClose}>
 						<Media
 							type='icon'
 							className='navbar__logo svg'
 							src={HerbieDuahLogoSubtract}
-							tabindex='0'
 						/>
 					</NavLink>
 					<ShowIf noAnimation thisValue={modalVisible} thatValue={true}>
@@ -129,7 +129,7 @@ export const NavBar = () => {
 									wide
 									aria-pressed='true'
 									className='navbar__menu-text'
-									tabindex='1'
+									tabIndex='1'
 									onClick={setMenuModalContent}>
 									Back
 								</Text>
@@ -337,22 +337,22 @@ export const MenuTabs = props => {
 			<ElementReveal>
 				<TabList>
 					<Tab>
-						<Text format s tabindex='2'>
+						<Text format s tabIndex='2'>
 							Customize
 						</Text>
 					</Tab>
 					<Tab>
-						<Text format s tabindex='3'>
+						<Text format s tabIndex='3'>
 							Work
 						</Text>
 					</Tab>
 					<Tab>
-						<Text format s tabindex='4'>
+						<Text format s tabIndex='4'>
 							Photography
 						</Text>
 					</Tab>
 					<Tab>
-						<Text format s tabindex='5'>
+						<Text format s tabIndex='5'>
 							About
 						</Text>
 					</Tab>
