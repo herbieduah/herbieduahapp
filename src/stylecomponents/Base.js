@@ -222,12 +222,11 @@ export const NavBarContainer = styled.div`
 	border-bottom: ${props => (props.navBarRight ? `none` : navBarBorder)}; 
 	border-top:  ${props => (props.navBarRight ? navBarBorder : `none`)}; 
 	${props =>
-		props.navBarComplement || !props.isPortrait
-			? `
-	border-bottom: none !important;
-	border-top: none !important;
-	`
-			: ``}; 
+		props.isPortrait
+			? `none`
+			: `border-bottom: none !important;
+	border-top: none !important;`}; 
+	
 	
     /* margin-top: auto;
     margin-left: auto; */
@@ -298,8 +297,14 @@ export const NavBarContainer = styled.div`
 		&__logo-link.active{
 			svg {
 				opacity: .55;
-			}
-			
+			}	
+		}
+		&__logo-link {
+			&:hover,&:focus {
+				svg {
+					opacity: 1;
+				}
+			}	
 		}
 
 		&__logo-menu{
@@ -375,9 +380,6 @@ export const ReactTabs = styled(Tabs)`
 			border:0;
 			border-radius: 0;
 			text-transform: capitalize;
-			${mobile} {
-				margin-bottom: 0.4rem;
-			}
 		}
 
 		&__tab {

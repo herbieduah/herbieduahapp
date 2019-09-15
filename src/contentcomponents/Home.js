@@ -75,7 +75,11 @@ const HomePage = ({ contentProps }) => {
 				<div className='container'>
 					<Header>{header}</Header>
 					<ForSomeone whom={whom} forYou={forYou} />
-					<Image src={picsOfMeHero} alt='a picture of me smiling' />
+					<Image
+						src={picsOfMeHero}
+						className='paddingLR'
+						alt='a picture of me smiling'
+					/>
 					<Paragraph>
 						I am a Phoenix based a Web developer/designer with five years of
 						experience. I graduated at Northern Arizona University with a degree

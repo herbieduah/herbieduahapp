@@ -42,6 +42,11 @@ export const HerbieDuahApp = styled.main`
 		background-color: ${bgColorOverlay};
 		pointer-events: none;
 	}
+	button,link,a,span {
+		&:focus{
+			outline: 0;
+		}
+	}
 	
 	.navbar {
 			${mainTransition}

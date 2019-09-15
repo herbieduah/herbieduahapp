@@ -168,12 +168,11 @@ export const NavBar = () => {
 					isPortrait={isContentPortrait}
 					navBarComplement={navBarComplement}>
 					<div className='navbar__logo-menu'>
-						<NavLink exact className='navbar__logo-link' to='/'>
+						<NavLink exact className='navbar__logo-link' tabIndex='0' to='/'>
 							<Media
 								type='icon'
 								className='navbar__logo svg'
 								src={HerbieDuahLogo}
-								tabindex='0'
 							/>
 						</NavLink>
 						<TransitionGroup>

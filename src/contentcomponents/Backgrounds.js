@@ -31,7 +31,15 @@ const BackgroundsPage = ({ contentProps }) => {
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>
-				{/* <div className='c-border marginLR paddingTB'> */}
+				<Paragraph>
+					I have chosen an extensive collection of colors, gradients, and
+					backgrounds you can select to change the look of this web app in hopes
+					that you will find one that you'd like.
+				</Paragraph>
+				<Paragraph>
+					The border around the circle is the font color, so if a circle doesn't
+					have a border, then font color is the current background.
+				</Paragraph>
 
 				<ReactTabs defaultIndex={0} className='c-margin-top-med'>
 					<ElementReveal>

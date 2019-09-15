@@ -65,7 +65,7 @@ const SettingsPage = ({ contentProps }) => {
 			<ContentShow less>
 				<Header less>{header}</Header>
 				<Paragraph less>
-					You can change certain aspects of this site to your liking.
+					You can change certain aspects of this web app to your liking.
 				</Paragraph>
 				<div className='less__container'>
 					{/* <Paragraph>
@@ -78,19 +78,27 @@ const SettingsPage = ({ contentProps }) => {
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>
-				<HeadingTwo>Technical vs Non-Technical</HeadingTwo>
+				<Paragraph>
+					I want to make sure you have the best experience using my web app, so
+					I created some settings that enable you to change certain aspects of
+					this web app.
+				</Paragraph>
+				<HeadingTwo>Technical and Non-Technical users</HeadingTwo>
 				<ShowIf noAnimation thisValue={techy} thatValue={false}>
 					<Paragraph>
-						My main audience are people that do not know much about coding so I
-						didn't want to add a lot of technical jargon, but if you are
-						knowledgable about coding or want to learn more then I recommend
-						turning on this settings.
+						I developed my web app for two types of people: people who know code
+						and people who do not. To give the best experience for both, I
+						decided to hide a lot of the technical jargon. If you're
+						knowledgable about coding or would like to learn more, then I
+						suggest turning on this setting.
 					</Paragraph>
 				</ShowIf>
 				<ShowIf noAnimation thisValue={techy} thatValue={true}>
 					<Paragraph>
-						I sprinkled some technical knowledge around the side but I do not
-						indicate where exactly.
+						I sprinkled some technical knowledge around the web app. I also only
+						show specific components like the Switch Sides setting for technical
+						users. I plan to work on doing a better job of indicating where I
+						hide and show the technical jargon.
 					</Paragraph>
 				</ShowIf>
 
@@ -99,6 +107,34 @@ const SettingsPage = ({ contentProps }) => {
 				</ShowIf>
 				<ShowIf noAnimation thisValue={techy} thatValue={false}>
 					<Button onClick={knowCode}>Change tone to technical</Button>
+				</ShowIf>
+				<ShowIf noAnimation thisValue={techy} thatValue={true}>
+					<DisableSetting
+						thisValue={fullScreen}
+						thatValue={true}
+						message="You can't interact with this setting if the slider is not showing">
+						<HeadingTwo>Switch sides (Failure)</HeadingTwo>
+						<Paragraph>
+							This lets you switch the content and the menu. This was one of the
+							first settings I had when I started developing this app but I
+							neglected it and failed to keep up with.
+						</Paragraph>
+						{/* <Paragraph>
+						I mean it does what it's intended to do but it doesn't look good.
+					</Paragraph> */}
+						<Paragraph>
+							<strong>
+								Since this is a failed setting, it will revert back in 10
+								seconds
+							</strong>
+						</Paragraph>
+						<ShowIf noAnimation thisValue={switchSides} thatValue={true}>
+							<Button onClick={failure}>Switch sides for 10 Seconds</Button>
+						</ShowIf>
+						<ShowIf noAnimation thisValue={switchSides} thatValue={false}>
+							<Paragraph>Reverting back in 10 seconds</Paragraph>
+						</ShowIf>
+					</DisableSetting>
 				</ShowIf>
 				{/* <ShowIf noAnimation thisValue={techy} thatValue={true}>
 					<HeadingTwo>Lazy loading</HeadingTwo>
@@ -170,8 +206,10 @@ const SettingsPage = ({ contentProps }) => {
 				<Paragraph>
 					{" "}
 					This setting adds a background complementary to the current background
-					to the navigation bar. (FYI: White complements white and black
-					complements black)
+					to the navigation bar.{" "}
+					<strong>
+						(FYI: White complements white and black complements black)
+					</strong>
 				</Paragraph>
 				<ShowIf noAnimation thisValue={navBarComplement} thatValue={false}>
 					<Button onClick={complementNavBar}>
@@ -200,31 +238,7 @@ const SettingsPage = ({ contentProps }) => {
 						Make it look like every other site
 					</Button>
 				</ShowIf>
-				<DisableSetting
-					thisValue={fullScreen}
-					thatValue={true}
-					message="You can't interact with this setting if the slider is not showing">
-					<HeadingTwo>Switch sides (Failure)</HeadingTwo>
-					<Paragraph>
-						This lets you switch the content and the menu. This was one of the
-						first settings I had when I started developing this app but I
-						neglected it and failed to keep up with.
-					</Paragraph>
-					{/* <Paragraph>
-						I mean it does what it's intended to do but it doesn't look good.
-					</Paragraph> */}
-					<Paragraph>
-						<strong>
-							Since this is a failed setting, it will revert back in 10 seconds
-						</strong>
-					</Paragraph>
-					<ShowIf noAnimation thisValue={switchSides} thatValue={true}>
-						<Button onClick={failure}>Switch sides for 10 Seconds</Button>
-					</ShowIf>
-					<ShowIf noAnimation thisValue={switchSides} thatValue={false}>
-						<Paragraph>Reverting back in 10 seconds</Paragraph>
-					</ShowIf>
-				</DisableSetting>
+
 				<ContentCategory fullScreen={fullScreen} category='customize' />
 			</ContentShow>
 		</Fragment>
