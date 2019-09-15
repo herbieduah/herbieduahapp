@@ -67,6 +67,9 @@ export const ContentContainer = styled.section`
 		${props =>
 			props.isPortrait ? `margin-top: .5rem` : `margin-top: ${navBarSize}`};
 		max-width: 500px;
+		${tablet} {
+			${props => (props.isPortrait ? `height: 15vh` : `max-width:350px;`)};		
+		}
 		/* ${props =>
 			props.navBarRight ? contentMenuPaddingRight : contentMenuPadding}; */
 		/* max-width:  ${props => (props.showLess ? `500px` : `100%`)}; */
@@ -115,10 +118,7 @@ export const ContentContainer = styled.section`
 			height: 20vh;
 			max-width: 500px;
 			display: block;
-			${tablet} {
-				${props => (props.isPortrait ? `height: 15vh` : `max-width:350px;`)};
-					
-			}
+			
 			${props => (props.isPortrait ? `${cMarginBottomMed}` : `margin-bottom: 9.5vh`)};
 		}
 		&__drag {
@@ -163,6 +163,9 @@ export const ContentContainer = styled.section`
 		background:blue;
 		color: white;
 		font-weight:bold;
+	}
+	.text-cap {
+		text-transform:capitalize;
 	}
 	margin-top: 0;
 	.container {

@@ -34,7 +34,7 @@ export const StateProvider = ({ children }) => {
 	const [minimalMode, setMinimalMode] = useState(false);
 	const [lazyLoading, setLazyLoading] = useState(true);
 	const [techy, setTechy] = useState(false);
-	const [knowYou, setKnowYou] = useState(false);
+	const [forYou, setForYou] = useState("");
 	const [modalContent, setModalContent] = useState("");
 	const [whom, setWhom] = useState("everyone");
 	// currentLeftTop: "LandscapePhotography",
@@ -84,8 +84,8 @@ export const StateProvider = ({ children }) => {
 		setMinimalMode,
 		lazyLoading,
 		setLazyLoading,
-		knowYou,
-		setKnowYou,
+		forYou,
+		setForYou,
 		techy,
 		setTechy
 	};

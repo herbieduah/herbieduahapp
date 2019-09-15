@@ -193,13 +193,11 @@ const SettingsPage = ({ contentProps }) => {
 					therefore making it like every other website.
 				</Paragraph>
 				<ShowIf noAnimation thisValue={minimalMode} thatValue={true}>
-					<Button onClick={basicMode}>
-						go back to the sliders and vertical navigation bar
-					</Button>
+					<Button onClick={basicMode}>Go back to the slider</Button>
 				</ShowIf>
 				<ShowIf noAnimation thisValue={minimalMode} thatValue={false}>
 					<Button onClick={basicMode}>
-						Make It look like every other site
+						Make it look like every other site
 					</Button>
 				</ShowIf>
 				<DisableSetting

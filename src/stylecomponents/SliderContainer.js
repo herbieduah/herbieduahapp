@@ -241,6 +241,7 @@ export const SliderLineContainer = styled.div`
 	}
 	.slider {
 		&__instructions {
+		${mainTransition}
 		p {
 			margin: 0;
 			padding: 0;
@@ -272,6 +273,7 @@ export const SliderLineContainer = styled.div`
 		} */
 	}
 	&__line-content {
+			${mainTransition}
 			width: 100%;
 			height: 100%;
 			display: flex;

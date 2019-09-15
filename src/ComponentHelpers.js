@@ -105,6 +105,7 @@ export const NavBar = () => {
 							type='icon'
 							className='navbar__logo svg'
 							src={HerbieDuahLogoSubtract}
+							tabindex='0'
 						/>
 					</NavLink>
 					<ShowIf noAnimation thisValue={modalVisible} thatValue={true}>
@@ -112,6 +113,7 @@ export const NavBar = () => {
 							className='navbar__contact'
 							onClick={setMenuModalContent}
 							menuLink
+							tabIndex='-1'
 							to='/contacts'>
 							Contact
 						</Text>
@@ -127,6 +129,7 @@ export const NavBar = () => {
 									wide
 									aria-pressed='true'
 									className='navbar__menu-text'
+									tabindex='1'
 									onClick={setMenuModalContent}>
 									Back
 								</Text>
@@ -142,6 +145,7 @@ export const NavBar = () => {
 									wide
 									aria-pressed='false'
 									className='navbar__menu-text'
+									tabindex='1'
 									onClick={setMenuModalContent}>
 									Menu
 								</Text>
@@ -169,6 +173,7 @@ export const NavBar = () => {
 								type='icon'
 								className='navbar__logo svg'
 								src={HerbieDuahLogo}
+								tabindex='0'
 							/>
 						</NavLink>
 						<TransitionGroup>
@@ -181,6 +186,7 @@ export const NavBar = () => {
 										menuLink
 										exact
 										to='/'
+										tabIndex='-1'
 										className='navbar__home-text'
 										aria-hidden={showLess ? `true` : `false`}>
 										Home
@@ -196,6 +202,7 @@ export const NavBar = () => {
 						aria-pressed={fullScreen ? `true` : `false`}
 						className='navbar__maximize'
 						onClick={setMaximizeAndMinimize}
+						tabindex='1'
 						aria-hidden={showLess ? `true` : `false`}>
 						<ShowIf thisValue={fullScreen && !showLess} thatValue={true}>
 							Minimize
@@ -205,7 +212,11 @@ export const NavBar = () => {
 						</ShowIf>
 					</Text>
 
-					<Text className='navbar__contact' menuLink to='/contacts'>
+					<Text
+						className='navbar__contact'
+						menuLink
+						to='/contacts'
+						tabIndex='0'>
 						Contact
 					</Text>
 				</NavBarContainer>
@@ -322,26 +333,26 @@ export const MenuTabs = props => {
 	const showCategory = props.showCategory;
 	const tabIndex = props.tabIndex || 0;
 	return (
-		<ReactTabs defaultIndex={tabIndex}>
+		<ReactTabs defaultIndex={tabIndex} defaultFocus={true}>
 			<ElementReveal>
 				<TabList>
 					<Tab>
-						<Text format s>
+						<Text format s tabindex='2'>
 							Customize
 						</Text>
 					</Tab>
 					<Tab>
-						<Text format s>
+						<Text format s tabindex='3'>
 							Work
 						</Text>
 					</Tab>
 					<Tab>
-						<Text format s>
+						<Text format s tabindex='4'>
 							Photography
 						</Text>
 					</Tab>
 					<Tab>
-						<Text format s>
+						<Text format s tabindex='5'>
 							About
 						</Text>
 					</Tab>
@@ -409,6 +420,7 @@ const ContentWrapperContainer = props => {
 		setTechy,
 		setFullscreen,
 		setSides,
+		forYou,
 		switchSides
 	} = useContext(globalState);
 	const { width: ww, height: wh } = useWindowResize();
@@ -445,7 +457,8 @@ const ContentWrapperContainer = props => {
 		techy,
 		setTechy,
 		setSides,
-		switchSides
+		switchSides,
+		forYou
 	};
 	const children = React.Children.map(props.children, (child, index) => {
 		return React.cloneElement(child, {

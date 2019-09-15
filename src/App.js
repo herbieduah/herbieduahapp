@@ -40,6 +40,7 @@ export const App = () => {
 		dragging,
 		fullScreening,
 		setWhom,
+		setForYou,
 		minimalMode
 	} = useContext(globalState);
 	const currentThemeObject = getCurrentTheme(defaultAppTheme, currentTheme);
@@ -57,10 +58,19 @@ export const App = () => {
 	const whoIsOnMyPage = who => {
 		setWhom(who);
 	};
+	const whoIsThisFor = forWho => {
+		setForYou(forWho);
+	};
 
 	useEffect(() => {
 		const values = queryString.parse(window.location.search);
-		values.whom ? whoIsOnMyPage(values.whom) : console.log("Hi");
+		if (values.whom) {
+			whoIsOnMyPage(values.whom);
+		}
+		if (values.for) {
+			whoIsThisFor(values.for.toLowerCase());
+		}
+		// values.whom ?  : console.log("Hi");
 	});
 	// console.log(`Fullscreening: ${fullScreening}`);
 	// console.log(`Fullscreen: ${fullScreen}`);

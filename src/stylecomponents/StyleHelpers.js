@@ -40,7 +40,7 @@ export const fluidTypeInfo = fluidType(minVW, maxVW, minFontSize, maxFontSize);
 
 export const mobile = "@media only screen and (max-width: 500px)";
 export const tablet =
-	"@media screen and (max-width: 1024px) and (min-width: 768px)";
+	"@media screen and (max-width: 1200px) and (min-width: 768px)";
 export const mobileHorizontal = "@media only screen and (max-width: 1200px)";
 export const hideScrollbar = `-ms-overflow-style: none;  
 scrollbar-width: none;
