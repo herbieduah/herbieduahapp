@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useState } from "react";
+import React, { Fragment, useContext, useState, useEffect } from "react";
 import styled from "styled-components";
 import { globalState } from "./State";
 import {
@@ -12,7 +12,7 @@ import {
 } from "./helpers";
 import ClickNHold from "react-click-n-hold";
 import Reveal from "react-reveal/Reveal";
-// import Fade from "react-ElementReveal/Fade";
+import Fade from "react-reveal/Fade";
 // import Zoom from "react-ElementReveal/Zoom";
 // import SubMenu from "./maincomponents/SubMenu";
 import Text from "./stylecomponents/Text";
@@ -23,7 +23,8 @@ import {
 	ThemeCircleContainer,
 	TransitionTextContainer,
 	FlexContainer,
-	MarqueeWrapper
+	MarqueeWrapper,
+	StartUp
 } from "./stylecomponents/Base";
 import { ShowIf, MenuTabs } from "./ComponentHelpers";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
@@ -207,7 +208,10 @@ export const ContentCategory = props => {
 	const categoryArr = ["customize", "work", "photography", "about"];
 	const tabIndex = categoryArr.indexOf(props.category);
 	return (
-		<ShowIf noAnimation thisValue={props.fullScreen} thatValue={true}>
+		<ShowIf
+			noAnimation
+			thisValue={props.fullScreen && !props.minimalMode}
+			thatValue={true}>
 			<ElementReveal duration={revealSecs}>
 				<div className='c-category'>
 					<MenuTabs showCategory={false} tabIndex={tabIndex} />
@@ -287,10 +291,31 @@ export const HeadingTwo = props => {
 			<Text
 				h2
 				l
+				bold
 				className={` ${compClassName} container  breather c-margin-bottom-med  padding-left-right`}>
 				{props.children}
 			</Text>
 		</ElementReveal>
+	);
+};
+
+export const UL = props => {
+	return (
+		<ElementReveal>
+			<ul className='paddingLR' {...props}>
+				{props.children}
+			</ul>
+		</ElementReveal>
+	);
+};
+
+export const LI = props => {
+	return (
+		<li className='marginLR'>
+			<Text format m {...props}>
+				{props.children}
+			</Text>
+		</li>
 	);
 };
 
@@ -307,9 +332,9 @@ export const HeadingThree = props => {
 	return (
 		<ElementReveal>
 			<Text
-				h2
-				m
-				className={`c-margin-top  c-margin-bottom-med padding-left-right ${compClassName}container`}>
+				h3
+				l
+				className={`c-margin-top-med  c-margin-bottom-med paddingLR ${compClassName} `}>
 				{props.children}
 			</Text>
 		</ElementReveal>
@@ -642,3 +667,49 @@ export const Seperator = styled.div`
 	${cMarginBottom};
 	${cMarginTop};
 `;
+
+export const AppStartUp = () => {
+	const [showApp, setShowApp] = useState(true);
+	const startUpTransitions = {
+		// enter: "animated",
+		// 	enterActive: "bounceIn",
+		exit: "animated",
+		exitActive: "fadeOut"
+	};
+	const showTheApp = () => {
+		setTimeout(() => {
+			setShowApp(false);
+		}, 7500);
+	};
+
+	useEffect(() => {
+		showTheApp();
+	});
+	return (
+		<TransitionGroup>
+			{showApp ? (
+				<CSSTransition timeout={4000} classNames={startUpTransitions}>
+					<StartUp>
+						<div>
+							<Fade duration={1000}>
+								<Text l wide className='startUp__nowadays'>
+									Nowadays, there is an app for everything. <br />
+								</Text>
+							</Fade>
+							<Fade delay={3000} duration={1500}>
+								<Text l wide className='startUp__future'>
+									In the future, there is going to be an app for everyone.
+								</Text>
+							</Fade>
+							<Fade delay={5000} duration={1500}>
+								<Text l wide className='startUp__my-own'>
+									So I made my own.
+								</Text>
+							</Fade>
+						</div>
+					</StartUp>
+				</CSSTransition>
+			) : null}
+		</TransitionGroup>
+	);
+};

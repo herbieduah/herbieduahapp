@@ -72,11 +72,11 @@ export const SubMenu = props => {
 						</ElementReveal>
 					) : null}
 					<SubMenuWrapper showCategory={showCategory}>
-						<li onClick={hideModal} className='subMenu__item'>
+						{/* <li onClick={hideModal} className='subMenu__item'>
 							<Text menuLink to='/UXvsHX'>
 								An App For Everyone
 							</Text>
-						</li>
+						</li> */}
 						<li onClick={hideModal} className='subMenu__item'>
 							<Text menuLink to='/Resume'>
 								Experience

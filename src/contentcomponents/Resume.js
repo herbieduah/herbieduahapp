@@ -19,7 +19,7 @@ import {
 const header = "Experience";
 
 const Resume = ({ contentProps }) => {
-	const { fullScreen } = contentProps;
+	const { fullScreen , minimalMode } = contentProps;
 	return (
 		<Fragment>
 			<ContentShow less>
@@ -191,7 +191,7 @@ const Resume = ({ contentProps }) => {
 						</li>
 					</ul>
 				</Experience>
-				<ContentCategory fullScreen={fullScreen} category='about' />
+				<ContentCategory fullScreen={fullScreen} minimalMode={minimalMode} category='about' />
 			</ContentShow>
 		</Fragment>
 	);

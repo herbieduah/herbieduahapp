@@ -19,8 +19,6 @@ const defaultBaseValues = {
 export const themeMaker = (theme = defaultBaseValues) => {
 	const { bgColor, gradientValues } = theme;
 	const fontColor = readableColor(bgColor);
-	const complementBg = complement(bgColor);
-	const fontColorComplement = readableColor(complementBg);
 	return {
 		appBg: `linear-gradient(to right, ${gradientValues})`,
 		appBgAnimation: `linear-gradient(-45deg, ${gradientValues})`,
@@ -43,13 +41,11 @@ export const themeMaker = (theme = defaultBaseValues) => {
 		buttonLineHeight: ` 1.2`,
 		buttonSpanDisplay: `block`,
 		buttonTextTransform: `uppercase`,
-		complementBg: `${complementBg}`,
 		colorSlightOpacity: `${rgba(fontColor, 0.56)}`,
 		CTAColor: `${rgba(fontColor, 1)}`,
 		CTAColorSecondary: `${rgba(fontColor, 1)}`,
 		CTAUnderline: `none`,
 		fontColor: `${fontColor}`,
-		fontColorComplement: `${fontColorComplement}`,
 		fontColorOpposite: `${readableColor(fontColor)}`,
 		fontColorSecondary: `${fontColor}`,
 		fontSelection: `${invert(fontColor)}`,
@@ -59,18 +55,18 @@ export const themeMaker = (theme = defaultBaseValues) => {
 		logoBorderBottom: `1px solid ${rgba(fontColor, 1)}`,
 		logoBorderRadius: `0`,
 		logoInnerFillColor: `${fontColor}`,
-		logoInnerFillColorHoverFocus: `${fontColorComplement}`,
+		logoInnerFillColorHoverFocus: `${fontColor}`,
 		logoOuterFillColor: `${fontColor}`,
 		modalFullScreenBg: `linear-gradient(to right, ${gradientValues})`,
 		modalFullScreenBgColor: `transparent`,
 		modalFullScreenBgMobile: `linear-gradient(to bottom, ${gradientValues})`,
 		navBarBg: "transparent",
-		navBarBgComplement: `${complementBg}`,
+		navBarBgComplement: `${bgColor}`,
 		navBarBorder: `1px solid ${rgba(fontColor, 0.2)}`,
 		navBarButtonColor: `${fontColor}`,
 		navBarButtonActive: `${rgba(fontColor, 1)}`,
-		navBarButtonComplementaryHoverText: `${rgba(fontColorComplement, 0.6)}`,
-		navBarButtonComplementaryText: `${rgba(fontColorComplement, 1)}`,
+		navBarButtonComplementaryHoverText: `${rgba(fontColor, 0.6)}`,
+		navBarButtonComplementaryText: `${rgba(fontColor, 1)}`,
 		navBarHoverFocus: `${rgba(fontColor, 1)}`,
 		navBarHoverFocusAction: "none",
 		sliderArrow: `${fontColor}`,
@@ -106,8 +102,6 @@ const defaultBgImageValues = {
 export const themeBgMaker = (theme = defaultBgImageValues) => {
 	const { bgColor, bgImage } = theme;
 	const fontColor = readableColor(bgColor);
-	const complementBg = complement(bgColor);
-	const fontColorComplement = readableColor(complementBg);
 	return {
 		appBg: `url(${bgImage})`,
 		appBgAnimation: `${bgColor}`,
@@ -130,13 +124,11 @@ export const themeBgMaker = (theme = defaultBgImageValues) => {
 		buttonLineHeight: ` 1.2`,
 		buttonSpanDisplay: `block`,
 		buttonTextTransform: `uppercase`,
-		complementBg: `${complementBg}`,
 		colorSlightOpacity: `${rgba(fontColor, 0.56)}`,
 		CTAColor: `${rgba(fontColor, 1)}`,
 		CTAColorSecondary: `${rgba(fontColor, 1)}`,
 		CTAUnderline: `none`,
 		fontColor: `${fontColor}`,
-		fontColorComplement: `${fontColorComplement}`,
 		fontColorOpposite: `${readableColor(fontColor)}`,
 		fontColorSecondary: `${fontColor}`,
 		fontSelection: `${invert(fontColor)}`,
@@ -148,18 +140,18 @@ export const themeBgMaker = (theme = defaultBgImageValues) => {
 		logoBorderBottom: `1px solid ${rgba(fontColor, 1)}`,
 		logoBorderRadius: `0`,
 		logoInnerFillColor: `${fontColor}`,
-		logoInnerFillColorHoverFocus: `${fontColorComplement}`,
+		logoInnerFillColorHoverFocus: `${fontColor}`,
 		logoOuterFillColor: `${fontColor}`,
 		modalFullScreenBg: `${bgColor}`,
 		modalFullScreenBgColor: `transparent`,
 		modalFullScreenBgMobile: `${bgColor}`,
 		navBarBg: "transparent",
-		navBarBgComplement: `${complementBg}`,
+		navBarBgComplement: `${bgColor}`,
 		navBarBorder: `1px solid ${rgba(fontColor, 0.2)}`,
 		navBarButtonColor: `${fontColor}`,
 		navBarButtonActive: `${rgba(fontColor, 1)}`,
-		navBarButtonComplementaryHoverText: `${rgba(fontColorComplement, 0.6)}`,
-		navBarButtonComplementaryText: `${rgba(fontColorComplement, 1)}`,
+		navBarButtonComplementaryHoverText: `${rgba(fontColor, 0.6)}`,
+		navBarButtonComplementaryText: `${rgba(fontColor, 1)}`,
 		navBarHoverFocus: `${rgba(fontColor, 1)}`,
 		navBarHoverFocusAction: "none",
 		sliderArrow: `${fontColor}`,
@@ -189,8 +181,6 @@ export const themeColorMaker = (theme = "Color-ffffff-000000") => {
 	const values = theme.split("-");
 	const bgColor = `#${values[1]}`;
 	const fontColor = `#${values[2]}`;
-	const complementBg = complement(bgColor);
-	const fontColorComplement = readableColor(complementBg);
 	return {
 		appBg: `${bgColor}`,
 		appBgAnimation: `${bgColor}`,
@@ -213,13 +203,11 @@ export const themeColorMaker = (theme = "Color-ffffff-000000") => {
 		buttonLineHeight: ` 1.2`,
 		buttonSpanDisplay: `block`,
 		buttonTextTransform: `uppercase`,
-		complementBg: `${complementBg}`,
 		colorSlightOpacity: `${rgba(fontColor, 0.56)}`,
 		CTAColor: `${rgba(fontColor, 1)}`,
 		CTAColorSecondary: `${rgba(fontColor, 1)}`,
 		CTAUnderline: `none`,
 		fontColor: `${fontColor}`,
-		fontColorComplement: `${fontColorComplement}`,
 		fontColorOpposite: `${readableColor(fontColor)}`,
 		fontColorSecondary: `${fontColor}`,
 		fontSelection: `${invert(fontColor)}`,
@@ -231,18 +219,18 @@ export const themeColorMaker = (theme = "Color-ffffff-000000") => {
 		logoBorderBottom: `1px solid ${rgba(fontColor, 1)}`,
 		logoBorderRadius: `0`,
 		logoInnerFillColor: `${fontColor}`,
-		logoInnerFillColorHoverFocus: `${fontColorComplement}`,
+		logoInnerFillColorHoverFocus: `${fontColor}`,
 		logoOuterFillColor: `${fontColor}`,
 		modalFullScreenBg: `${bgColor}`,
 		modalFullScreenBgColor: `transparent`,
 		modalFullScreenBgMobile: `${bgColor}`,
 		navBarBg: "transparent",
-		navBarBgComplement: `${complementBg}`,
+		navBarBgComplement: `${bgColor}`,
 		navBarBorder: `1px solid ${rgba(fontColor, 0.2)}`,
 		navBarButtonColor: `${fontColor}`,
 		navBarButtonActive: `${rgba(fontColor, 1)}`,
-		navBarButtonComplementaryHoverText: `${rgba(fontColorComplement, 0.6)}`,
-		navBarButtonComplementaryText: `${rgba(fontColorComplement, 1)}`,
+		navBarButtonComplementaryHoverText: `${rgba(fontColor, 0.6)}`,
+		navBarButtonComplementaryText: `${rgba(fontColor, 1)}`,
 		navBarHoverFocus: `${rgba(fontColor, 1)}`,
 		navBarHoverFocusAction: "none",
 		sliderArrow: `${fontColor}`,
@@ -271,8 +259,6 @@ export const themeColorMaker = (theme = "Color-ffffff-000000") => {
 export const matrixTheme = () => {
 	const bgColor = "#252525";
 	const fontColor = "#ffffff";
-	const complementBg = complement(bgColor);
-	const fontColorComplement = readableColor(complementBg);
 	return {
 		appBg: `none`,
 		appBgAnimation: `${bgColor}`,
@@ -296,12 +282,10 @@ export const matrixTheme = () => {
 		buttonSpanDisplay: `block`,
 		buttonTextTransform: `uppercase`,
 		colorSlightOpacity: `${rgba(fontColor, 0.56)}`,
-		complementBg: `${complementBg}`,
 		CTAColor: `${rgba(fontColor, 1)}`,
 		CTAColorSecondary: `${rgba(fontColor, 1)}`,
 		CTAUnderline: `none`,
 		fontColor: `${fontColor}`,
-		fontColorComplement: `${fontColorComplement}`,
 		fontColorOpposite: `${readableColor(fontColor)}`,
 		fontColorSecondary: `${fontColor}`,
 		fontSelection: `${invert(fontColor)}`,
@@ -310,8 +294,8 @@ export const matrixTheme = () => {
 		logoBgHoverColor: `${fontColor}`,
 		logoBorderBottom: `1px solid ${rgba(fontColor, 1)}`,
 		logoBorderRadius: `0`,
-		logoInnerFillColor: `${fontColorComplement}`,
-		logoInnerFillColorHoverFocus: `${fontColorComplement}`,
+		logoInnerFillColor: `${fontColor}`,
+		logoInnerFillColorHoverFocus: `${fontColor}`,
 		logoOuterFillColor: `${fontColor}`,
 		modalFullScreenBg: `${bgColor}`,
 		modalFullScreenBgColor: `transparent`,
@@ -321,8 +305,8 @@ export const matrixTheme = () => {
 		navBarBorder: `1px solid ${rgba(fontColor, 0.2)}`,
 		navBarButtonColor: `${fontColor}`,
 		navBarButtonActive: `${rgba(fontColor, 1)}`,
-		navBarButtonComplementaryHoverText: `${rgba(fontColorComplement, 0.6)}`,
-		navBarButtonComplementaryText: `${rgba(fontColorComplement, 1)}`,
+		navBarButtonComplementaryHoverText: `${rgba(fontColor, 0.6)}`,
+		navBarButtonComplementaryText: `${rgba(fontColor, 1)}`,
 		navBarHoverFocus: `${rgba(fontColor, 1)}`,
 		navBarHoverFocusAction: "none",
 		sliderArrow: `${fontColor}`,
@@ -351,8 +335,6 @@ export const matrixTheme = () => {
 export const snapchatTheme = () => {
 	const bgColor = "#3CB2E2";
 	const fontColor = "#FFFFFF";
-	const complementBg = complement(bgColor);
-	const fontColorComplement = readableColor(complementBg);
 	return {
 		appBg: `none`,
 		appBgAnimation: `${bgColor}`,
@@ -375,13 +357,11 @@ export const snapchatTheme = () => {
 		buttonLineHeight: ` 1.2`,
 		buttonSpanDisplay: `block`,
 		buttonTextTransform: `uppercase`,
-		complementBg: `${complementBg}`,
 		colorSlightOpacity: `${rgba(fontColor, 0.56)}`,
 		CTAColor: `${rgba(fontColor, 1)}`,
 		CTAColorSecondary: `${rgba(fontColor, 1)}`,
 		CTAUnderline: `none`,
 		fontColor: `${fontColor}`,
-		fontColorComplement: `${fontColorComplement}`,
 		fontColorOpposite: `${readableColor(fontColor)}`,
 		fontColorSecondary: `${fontColor}`,
 		fontSelection: `${invert(fontColor)}`,
@@ -401,8 +381,8 @@ export const snapchatTheme = () => {
 		navBarBorder: `1px solid ${rgba(fontColor, 0.2)}`,
 		navBarButtonColor: `${fontColor}`,
 		navBarButtonActive: `${rgba(fontColor, 1)}`,
-		navBarButtonComplementaryHoverText: `${rgba(fontColorComplement, 0.6)}`,
-		navBarButtonComplementaryText: `${rgba(fontColorComplement, 1)}`,
+		navBarButtonComplementaryHoverText: `${rgba(fontColor, 0.6)}`,
+		navBarButtonComplementaryText: `${rgba(fontColor, 1)}`,
 		navBarHoverFocus: `${rgba(fontColor, 1)}`,
 		navBarHoverFocusAction: "none",
 		sliderArrow: `${fontColor}`,

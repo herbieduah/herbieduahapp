@@ -17,7 +17,7 @@ import Text from "../stylecomponents/Text";
 const header = "Backgrounds";
 
 const BackgroundsPage = ({ contentProps }) => {
-	const { fullScreen } = contentProps;
+	const { fullScreen , minimalMode } = contentProps;
 	return (
 		<Fragment>
 			<ContentShow less>
@@ -91,7 +91,7 @@ const BackgroundsPage = ({ contentProps }) => {
 					</TabPanel>
 				</ReactTabs>
 
-				<ContentCategory fullScreen={fullScreen} category='customize' />
+				<ContentCategory fullScreen={fullScreen} minimalMode={minimalMode} category='customize' />
 			</ContentShow>
 		</Fragment>
 	);

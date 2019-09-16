@@ -29,7 +29,7 @@ import {
 	defaultPaneSize,
 	isPortrait
 } from "./helpers";
-import { ElementReveal } from "./ContentHelpers";
+import { ElementReveal, AppStartUp } from "./ContentHelpers";
 
 export const App = () => {
 	const {
@@ -88,6 +88,7 @@ export const App = () => {
 				fullScreen={fullScreen}
 				showFSMobileHorizontal={showFSMobileHorizontal}
 				dragging={dragging}>
+				<AppStartUp />
 				<ShowIf noAnimation thisValue={currentTheme} thatValue={"matrix"}>
 					<Matrix fullscreen={true} isPortrait={isPortrait(ww, wh)} />
 				</ShowIf>

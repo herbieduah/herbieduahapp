@@ -39,7 +39,6 @@ import {
 	navBarButtonComplementaryText,
 	navBarButtonComplementaryHoverText,
 	// fontColorOpposite,
-	fontColorComplement,
 	navBarButtonActive,
 	logoInnerFillColor,
 	fontColor,
@@ -186,8 +185,8 @@ export const NavBarMiniContainer = styled.div`
 			svg {
 				${mainTransition}
 				/* transform: scale(.09); */
-				width: ${navBarSize};
-				height: ${navBarSize};
+				width: 1.5rem;
+				height: 1.5rem;
 				opacity: 1;
 				path {
 					
@@ -197,12 +196,6 @@ export const NavBarMiniContainer = styled.div`
 				border-radius: ${logoBorderRadius};
 				${mainTransition}
 				&:hover,&:focus {
-					/* path {
-						fill: ${CTAColor};
-					}
-					.inner-rect, .half-circle {
-						fill: ${fontColorComplement};	
-					} */
 					opacity: 1;
 				}
 		}
@@ -801,4 +794,32 @@ export const ScrollDownLandscape = styled.div`
 		border-radius: 50%;
 		animation: ${scrollDownMouse} 4s infinite;
 	}
+`;
+
+export const StartUp = styled.div`
+	${absoluteOverlay};
+	background-color: ${bgColor};
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 5000;
+	padding: 5%;
+
+	flex-direction: column;
+	.react-reveal {
+		width: 100%;
+	}
+	p {
+		margin-bottom: 5vh;
+		width: 100%;
+		text-align: left;
+		max-width: 500px;
+		display: flex;
+	}
+	/* .startup{
+	&__text {
+
+	}
+
+} */
 `;

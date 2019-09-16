@@ -46,8 +46,8 @@ const workTools =
 	"Adobe Creative Cloud, Microsoft SQL Server, Photoshop , Visual Studio Code";
 
 const DiscountTirePage = ({ contentProps }) => {
-	// const { whom } = contentProps;
-	const { fullScreen, techy } = contentProps;
+	// const { whom , minimalMode } = contentProps;
+	const { fullScreen, techy , minimalMode } = contentProps;
 	return (
 		<Fragment>
 			<ContentShow less>
@@ -129,7 +129,7 @@ const DiscountTirePage = ({ contentProps }) => {
 						am currently on every receipt holder and that's no joke
 					</Figcaption>
 				</Figure>
-				<ContentCategory fullScreen={fullScreen} category='work' />
+				<ContentCategory fullScreen={fullScreen} minimalMode={minimalMode} category='work' />
 			</ContentShow>
 		</Fragment>
 	);

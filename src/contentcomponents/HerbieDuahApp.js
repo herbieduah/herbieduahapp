@@ -27,7 +27,7 @@ import {
 } from "../MediaVariables";
 import { thisAppherokuappdesktop, thisAppGatsby } from "../VideoVariables";
 
-const header = "Hi, I'm Herbie";
+const header = "HerbieDuah.app (This web app)";
 // There is an app for everything, in
 // 					the future, I believe there is going to be an app for everyone. I am
 // 					Herbie Duah, and this is my app.
@@ -38,7 +38,7 @@ const header = "Hi, I'm Herbie";
 
 // const HomePage = ({ contentProps }) => {
 const HerbieDuahAppPage = ({ contentProps }) => {
-	const { fullScreen } = contentProps;
+	const { fullScreen , minimalMode } = contentProps;
 
 	return (
 		<Fragment>
@@ -55,6 +55,10 @@ const HerbieDuahAppPage = ({ contentProps }) => {
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>
+				<Paragraph>
+					I don't even know where to begin describing this web app so for now I
+					thought I'll post some pictures and videos.
+				</Paragraph>
 				<Figure src={thisAppHerbieDuahComeUX}>
 					<Figcaption>
 						HerbieDuah.com coming design UX Design Summer 2018{" "}
@@ -96,7 +100,7 @@ const HerbieDuahAppPage = ({ contentProps }) => {
 						HerbieDuah.app Mobile website screenshot June 2019 (Development)
 					</Figcaption>
 				</Figure>
-				<ContentCategory fullScreen={fullScreen} category='work' />
+				<ContentCategory fullScreen={fullScreen} minimalMode={minimalMode} category='work' />
 			</ContentShow>
 		</Fragment>
 	);

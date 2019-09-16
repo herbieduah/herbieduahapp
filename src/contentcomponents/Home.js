@@ -5,9 +5,12 @@ import {
 	Paragraph,
 	// HeadingOne,
 	HeadingTwo,
-	// HeadingThree,
+	HeadingThree,
 	Image,
-	Link,
+	UL,
+	LI,
+	// Link,
+	ContentCategory,
 	// Figure,
 	// Figcaption,
 	Gif,
@@ -45,7 +48,7 @@ const header = "HerbieDuah.app";
 
 // const HomePage = ({ contentProps }) => {
 const HomePage = ({ contentProps }) => {
-	const { whom, forYou } = contentProps;
+	const { whom, forYou, fullScreen, minimalMode } = contentProps;
 	// const opts = {
 	// 	height: "100%",
 	// 	width: "100%",
@@ -80,14 +83,31 @@ const HomePage = ({ contentProps }) => {
 						className='paddingLR'
 						alt='a picture of me smiling'
 					/>
+
+					<HeadingTwo>A little bit about me and this web app</HeadingTwo>
+					<HeadingThree>Three facts about me</HeadingThree>
+					<UL>
+						<LI>
+							I always try to solve problems with a creative and original
+							approach.
+						</LI>
+						<LI>
+							I passionate when it comes to designing and developing User
+							Interfaces with excellent User Experience.
+						</LI>
+						<LI>
+							I had not developed my portfolio website since my Web Development
+							class five years ago.
+						</LI>
+					</UL>
+					<HeadingThree>The problem I was trying to solve</HeadingThree>
 					<Paragraph>
-						I am a Phoenix based a Web developer/designer with five years of
-						experience. I graduated at Northern Arizona University with a degree
-						in Applied Computer Science. Somewhere along the way, I fell in love
-						with design. I enjoy any opportunity that allows me to use my coding
-						and design skills
-						<Emoji className='emoji' symbol='🤓' label='nerd' />.
+						How do I utilize my five years of web development experience to
+						design and develop the most creative and original User Interface
+						with excellent User Experience?
 					</Paragraph>
+					<HeadingThree>The solution</HeadingThree>
+					<Paragraph>This portfolio.</Paragraph>
 					{/* <HeadingTwo>An app for everyone</HeadingTwo>
 					<Paragraph>
 						In the future, I believe everyone is going to have their own app. I
@@ -137,6 +157,11 @@ const HomePage = ({ contentProps }) => {
 						<Figcaption>Me fat ass getting food</Figcaption>
 					</Figure>
 					<Gif url={testVideo} /> */}
+					<ContentCategory
+						fullScreen={fullScreen}
+						minimalMode={minimalMode}
+						category='customize'
+					/>
 				</div>
 			</ContentShow>
 		</Fragment>

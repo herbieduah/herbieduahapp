@@ -47,7 +47,7 @@ const workSkills = "Prototyping and UX Design";
 const workTools = "Sketch";
 
 const BedzinExhibitPage = ({ contentProps }) => {
-	const { techy, fullScreen } = contentProps;
+	const { techy, fullScreen , minimalMode } = contentProps;
 	return (
 		<Fragment>
 			<ContentShow less>
@@ -172,7 +172,7 @@ const BedzinExhibitPage = ({ contentProps }) => {
 					Będzin Ghetto. If you'd like to learn more about it, you can visit
 					&nbsp;<Link href='http://bedzinexhibit.org/'>bedzinexhibit.org</Link>
 				</Paragraph>
-				<ContentCategory fullScreen={fullScreen} category='work' />
+				<ContentCategory fullScreen={fullScreen} minimalMode={minimalMode} category='work' />
 			</ContentShow>
 		</Fragment>
 	);

@@ -37,7 +37,7 @@ const workTools =
 	"Atom, Adobe Creative Suite, BitBucket, Photoshop , Visual Studio Code";
 
 const UggPage = ({ contentProps }) => {
-	const { techy, fullScreen } = contentProps;
+	const { techy, fullScreen , minimalMode } = contentProps;
 
 	return (
 		<Fragment>
@@ -169,7 +169,7 @@ const UggPage = ({ contentProps }) => {
 					This Trudy prank which was orchestrated by multiple people brought joy
 					into our lives for months and will always be remembered.
 				</Paragraph> */}
-				<ContentCategory fullScreen={fullScreen} category='work' />
+				<ContentCategory fullScreen={fullScreen} minimalMode={minimalMode} category='work' />
 			</ContentShow>
 		</Fragment>
 	);

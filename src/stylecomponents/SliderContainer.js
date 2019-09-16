@@ -174,9 +174,9 @@ export const SliderController = styled.div`
 			align-items: center;
 			justify-content: center;
 			margin-left: auto;
-margin-right: auto;
-left: 0;
-right: 0;
+			margin-right: auto;
+			left: 0;
+			right: 0;
 			margin: 0;
 			border-radius: 50%;
 			border: ${sliderCircleBorder};

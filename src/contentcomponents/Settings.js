@@ -180,7 +180,7 @@ const SettingsPage = ({ contentProps }) => {
 				<DisableSetting
 					thisValue={minimalMode}
 					thatValue={true}
-					message="You can't interact with this setting because you've made the app look like every other site">
+					message="You can't interact with this setting because you've made the web app look like every other website.">
 					<HeadingTwo>Move navigation bar</HeadingTwo>
 					<Paragraph>
 						This setting moves navigations bar to the right or left.
@@ -202,28 +202,6 @@ const SettingsPage = ({ contentProps }) => {
 						</Small> */}
 					</ShowIf>
 				</DisableSetting>
-				<HeadingTwo>Complementary Navigation Bar</HeadingTwo>
-				<Paragraph>
-					{" "}
-					This setting adds a background complementary to the current background
-					to the navigation bar.{" "}
-					<strong>
-						(FYI: White complements white and black complements black)
-					</strong>
-				</Paragraph>
-				<ShowIf noAnimation thisValue={navBarComplement} thatValue={false}>
-					<Button onClick={complementNavBar}>
-						Add complementary background
-					</Button>
-					{/* <Small>
-							Complementary
-						</Small> */}
-				</ShowIf>
-				<ShowIf noAnimation thisValue={navBarComplement} thatValue={true}>
-					<Button onClick={complementNavBar}>
-						Remove complementary background
-					</Button>
-				</ShowIf>
 
 				<HeadingTwo>Like every other site</HeadingTwo>
 				<Paragraph>
@@ -238,8 +216,32 @@ const SettingsPage = ({ contentProps }) => {
 						Make it look like every other site
 					</Button>
 				</ShowIf>
+				<DisableSetting
+					thisValue={minimalMode}
+					thatValue={false}
+					message='This setting is only useful when the web app looks like every other website.'>
+					<HeadingTwo>Background Navigation Bar</HeadingTwo>
+					<Paragraph>
+						{" "}
+						This setting adds a background color to the navigation bar.(Only
+						useful for mobile and tablet devices)
+					</Paragraph>
+					<ShowIf noAnimation thisValue={navBarComplement} thatValue={false}>
+						<Button onClick={complementNavBar}>Add background color</Button>
+						{/* <Small>
+							Complementary
+						</Small> */}
+					</ShowIf>
+					<ShowIf noAnimation thisValue={navBarComplement} thatValue={true}>
+						<Button onClick={complementNavBar}>Remove background color</Button>
+					</ShowIf>
+				</DisableSetting>
 
-				<ContentCategory fullScreen={fullScreen} category='customize' />
+				<ContentCategory
+					fullScreen={fullScreen}
+					minimalMode={minimalMode}
+					category='customize'
+				/>
 			</ContentShow>
 		</Fragment>
 	);

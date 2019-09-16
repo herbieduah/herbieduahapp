@@ -101,6 +101,7 @@ export const NavBar = () => {
 						className='navbar__logo-link'
 						to='/'
 						tabIndex='0'
+						aria-label="Logo"
 						onClick={setMenuModalClose}>
 						<Media
 							type='icon'
@@ -168,7 +169,7 @@ export const NavBar = () => {
 					isPortrait={isContentPortrait}
 					navBarComplement={navBarComplement}>
 					<div className='navbar__logo-menu'>
-						<NavLink exact className='navbar__logo-link' tabIndex='0' to='/'>
+						<NavLink exact className='navbar__logo-link' tabIndex='0' aria-label="Logo" to='/'>
 							<Media
 								type='icon'
 								className='navbar__logo svg'

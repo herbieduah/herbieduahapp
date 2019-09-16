@@ -78,6 +78,7 @@ const baseStyle = css`
 		}};
 	}
 	font-weight: ${props => {
+		if (props.semibold) return "500";
 		if (props.bold) return "700";
 		if (props.extrabold) return "900";
 		return "300";

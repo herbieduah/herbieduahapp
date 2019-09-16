@@ -47,7 +47,7 @@ const workSkills = "Graphic Design, Print Design and Digital Art";
 const workTools = "Adobe Creative Suite and VideoScribe";
 
 const StartNowPage = ({ contentProps }) => {
-	const { techy, fullScreen } = contentProps;
+	const { techy, fullScreen , minimalMode } = contentProps;
 
 	return (
 		<Fragment>
@@ -275,7 +275,7 @@ const StartNowPage = ({ contentProps }) => {
 				{/* <Figure alt='' width='' height='' src={CareerWidePosterPhotoshop1480x1973}>
 					<Figcaption>Something</Figcaption>
 				</Figure> */}
-				<ContentCategory fullScreen={fullScreen} category='customize' />
+				<ContentCategory fullScreen={fullScreen} minimalMode={minimalMode} category='work' />
 			</ContentShow>
 		</Fragment>
 	);

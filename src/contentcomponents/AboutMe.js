@@ -31,7 +31,7 @@ import {
 const header = "About Me";
 
 const AboutMePage = ({ contentProps }) => {
-	const { fullScreen } = contentProps;
+	const { fullScreen , minimalMode } = contentProps;
 	return (
 		<Fragment>
 			<ContentShow less>
@@ -187,7 +187,7 @@ const AboutMePage = ({ contentProps }) => {
 						Me and my little bro next to my very first computer in Ghana. 2002?
 					</Figcaption>
 				</Figure>
-				<ContentCategory fullScreen={fullScreen} category='about' />
+				<ContentCategory fullScreen={fullScreen} minimalMode={minimalMode} category='about' />
 			</ContentShow>
 		</Fragment>
 	);

@@ -14,7 +14,7 @@ import {
 const header = "Gradients";
 
 const GradientsPage = ({ contentProps }) => {
-	const { fullScreen } = contentProps;
+	const { fullScreen , minimalMode } = contentProps;
 	return (
 		<Fragment>
 			<ContentShow less>
@@ -32,7 +32,7 @@ const GradientsPage = ({ contentProps }) => {
 					their stellar choices of gradients and the names to with theme.
 				</Paragraph>
 
-				<ContentCategory fullScreen={fullScreen} category='customize' />
+				<ContentCategory fullScreen={fullScreen} minimalMode={minimalMode} category='customize' />
 				{/* </div> */}
 			</ContentShow>
 		</Fragment>

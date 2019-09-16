@@ -37,6 +37,7 @@ export const StateProvider = ({ children }) => {
 	const [forYou, setForYou] = useState("");
 	const [modalContent, setModalContent] = useState("");
 	const [whom, setWhom] = useState("everyone");
+	const [controls, setControls] = useState(false);
 	// currentLeftTop: "LandscapePhotography",
 	//   currentTheme: "default",
 	//   defaultAppTheme: defaultAppTheme,
@@ -87,7 +88,9 @@ export const StateProvider = ({ children }) => {
 		forYou,
 		setForYou,
 		techy,
-		setTechy
+		setTechy,
+		controls,
+		setControls
 	};
 
 	// and we pass it down. Done!

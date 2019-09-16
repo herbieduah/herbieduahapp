@@ -18,7 +18,7 @@ import { ShowIf } from "../ComponentHelpers";
 const header = "Special Thanks";
 
 const SpecialThanksPage = ({ contentProps }) => {
-	const { fullScreen, techy } = contentProps;
+	const { fullScreen, techy , minimalMode } = contentProps;
 	// const [marqueePlay, setmarqueePlay] = useState(true);
 	const marqueePlay = true;
 	// const marqueePlaying = () => {
@@ -124,7 +124,7 @@ const SpecialThanksPage = ({ contentProps }) => {
 						</Marquee>
 					</div>
 				</ShowIf>
-				<ContentCategory fullScreen={fullScreen} category='about' />
+				<ContentCategory fullScreen={fullScreen} minimalMode={minimalMode} category='about' />
 			</ContentShow>
 		</Fragment>
 	);

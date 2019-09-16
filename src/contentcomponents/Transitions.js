@@ -14,16 +14,16 @@ import { ShowIf } from "../ComponentHelpers";
 import "animate.css";
 // import Emoji from "a11y-react-emoji";
 
-const header = "Transitions";
+const header = "Transitions (Beta)";
 
 const TransitionsPage = ({ contentProps }) => {
-	const { fullScreen, techy } = contentProps;
+	const { fullScreen, techy , minimalMode } = contentProps;
 	return (
 		<Fragment>
 			<ContentShow less>
 				<Header less>{header}</Header>
 				<Paragraph less>
-					Just like Microsoft Powerpoint, I got some transitions.
+					You can choose how you bring the elements on this web app to life.
 				</Paragraph>
 				<div className='less__container'>
 					{/* <Paragraph>
@@ -36,10 +36,17 @@ const TransitionsPage = ({ contentProps }) => {
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>
+				<Paragraph>
+					Transitions bring the elements of this web app to life. I selected an
+					extensive collection of random transitions from{" "}
+					<Link href='https://daneden.me/'>Daniel Edens'</Link> amazing{" "}
+					<Link href='https://daneden.github.io/animate.css/'>Animate.css</Link>{" "}
+					for you to choose how you bring this web app to life.
+				</Paragraph>
 				<div className='padding-left-right'>
 					<GenerateTransition />
 				</div>
-				<ShowIf noAnimation thisValue={techy} thatValue={true}>
+				{/* <ShowIf noAnimation thisValue={techy} thatValue={true}>
 					<Paragraph className='c-margin-top-med'>
 						Big shout out to{" "}
 						<Link href='https://daneden.me/'>Daniel Edens'</Link> amazing{" "}
@@ -48,8 +55,8 @@ const TransitionsPage = ({ contentProps }) => {
 						</Link>{" "}
 						library
 					</Paragraph>
-					<ContentCategory fullScreen={fullScreen} category='customize' />
-				</ShowIf>
+					<ContentCategory fullScreen={fullScreen} minimalMode={minimalMode} category='customize' />
+				</ShowIf> */}
 			</ContentShow>
 		</Fragment>
 	);

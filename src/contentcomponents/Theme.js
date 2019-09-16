@@ -18,21 +18,21 @@ import { ShowIf } from "../ComponentHelpers";
 const header = "Theme";
 
 const ThemePage = ({ contentProps }) => {
-	const { fullScreen, currentTheme, setTheme } = contentProps;
+	const { fullScreen, currentTheme, setTheme , minimalMode } = contentProps;
 	const setMatrixTheme = () => {
 		setTheme("matrix");
 	};
-	const setSnapchatTheme = () => {
-		setTheme("snapchat");
-	};
+	// const setSnapchatTheme = () => {
+	// 	setTheme("snapchat");
+	// };
 
-	const snapMessage = () => {
-		setTimeout(() => {
-			return `It's been 10 seconds, hope you are digging it`;
-		}, 10000);
-	};
+	// const snapMessage = () => {
+	// 	setTimeout(() => {
+	// 		return `It's been 10 seconds, hope you are digging it`;
+	// 	}, 10000);
+	// };
 	const isMatrix = currentTheme === "matrix" ? true : false;
-	const isSnapchat = currentTheme === "snapchat" ? true : false;
+	// const isSnapchat = currentTheme === "snapchat" ? true : false;
 	// const setNigerianTheme = () => {
 	// 	currentTheme('nigerian');
 	// };
@@ -57,9 +57,9 @@ const ThemePage = ({ contentProps }) => {
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>
-				{/* <Paragraph>
-					Thichange certain areas of the site
-				</Paragraph> */}
+				<Paragraph>
+					I will be adding more Themes once this web app is out of Beta.
+				</Paragraph>
 				<HeadingTwo>Matrix</HeadingTwo>
 				<Paragraph>
 					This Matrix theme is based on the Matrix Trilogy starring Keanu
@@ -86,7 +86,7 @@ const ThemePage = ({ contentProps }) => {
 				<ShowIf noAnimation thisValue={isSnapchat} thatValue={true}>
 					<Small>Hmm {snapMessage()}</Small>
 				</ShowIf> */}
-				<ContentCategory fullScreen={fullScreen} category='customize' />
+				<ContentCategory fullScreen={fullScreen} minimalMode={minimalMode} category='customize' />
 			</ContentShow>
 		</Fragment>
 	);

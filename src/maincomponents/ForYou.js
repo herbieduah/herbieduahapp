@@ -52,20 +52,32 @@ export const ForSomeone = props => {
 					Speaking of which, are y'all hiring?!?!
 				</Paragraph>
 			</ShowIf>
+			<ShowIf noAnimation thisValue={"visaux"} thatValue={forYou}>
+				<HeadingTwo>First Off</HeadingTwo>
+				<Paragraph className=' '>
+					Me and my girl, Daliza are big fans of Indeed man. That joint is dope.
+				</Paragraph>
+				<HeadingTwo>First Off</HeadingTwo>
+				<Paragraph className=' '>
+					Speaking of which, are y'all hiring?!?!
+				</Paragraph>
+			</ShowIf>
 		</Fragment>
 	);
 };
 
 export const forYouHelper = forSomebody => {
+	let person = forSomebody === "" ? "" : ` ${forSomebody}`;
 	switch (forSomebody) {
 		case "indeed":
-			return " Indeed Employer";
-		//   break;
+			person = " Indeed Employer";
+			return person;
+			break;
 		// case 'Mangoes':
 		// case 'Papayas':
 		//   console.log('Mangoes and papayas are $2.79 a pound.');
 		//   break;
 		default:
-			return ` ${forSomebody}`;
+			return person;
 	}
 };
