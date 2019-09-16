@@ -96,7 +96,7 @@ const HomePage = ({ contentProps }) => {
 							Interfaces with excellent User Experience.
 						</LI>
 						<LI>
-							I had not developed my portfolio website since my Web Development
+							I had not developed a portfolio website since my Web Development
 							class five years ago.
 						</LI>
 					</UL>

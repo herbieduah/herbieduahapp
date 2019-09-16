@@ -17,7 +17,7 @@ import Text from "../stylecomponents/Text";
 const header = "Backgrounds";
 
 const BackgroundsPage = ({ contentProps }) => {
-	const { fullScreen , minimalMode } = contentProps;
+	const { fullScreen, minimalMode } = contentProps;
 	return (
 		<Fragment>
 			<ContentShow less>
@@ -36,10 +36,10 @@ const BackgroundsPage = ({ contentProps }) => {
 					backgrounds you can select to change the look of this web app in hopes
 					that you will find one that you'd like.
 				</Paragraph>
-				<Paragraph>
+				{/* <Paragraph>
 					The border around the circle is the font color, so if a circle doesn't
 					have a border, then font color is the current background.
-				</Paragraph>
+				</Paragraph> */}
 
 				<ReactTabs defaultIndex={0} className='c-margin-top-med'>
 					<ElementReveal>
@@ -91,7 +91,11 @@ const BackgroundsPage = ({ contentProps }) => {
 					</TabPanel>
 				</ReactTabs>
 
-				<ContentCategory fullScreen={fullScreen} minimalMode={minimalMode} category='customize' />
+				<ContentCategory
+					fullScreen={fullScreen}
+					minimalMode={minimalMode}
+					category='customize'
+				/>
 			</ContentShow>
 		</Fragment>
 	);
