@@ -679,7 +679,7 @@ export const AppStartUp = () => {
 	const showTheApp = () => {
 		setTimeout(() => {
 			setShowApp(false);
-		}, 7500);
+		}, 5000);
 	};
 
 	useEffect(() => {
@@ -691,17 +691,17 @@ export const AppStartUp = () => {
 				<CSSTransition timeout={4000} classNames={startUpTransitions}>
 					<StartUp>
 						<div>
-							<Fade duration={1000}>
+							{/* <Fade duration={1000}>
 								<Text l wide className='startUp__nowadays'>
 									Nowadays, there is an app for everything. <br />
 								</Text>
-							</Fade>
-							<Fade delay={3000} duration={1500}>
+							</Fade> */}
+							<Fade duration={1500}>
 								<Text l wide className='startUp__future'>
 									In the future, there is going to be an app for everyone.
 								</Text>
 							</Fade>
-							<Fade delay={5000} duration={1500}>
+							<Fade delay={3000} duration={1500}>
 								<Text l wide className='startUp__my-own'>
 									So I made my own.
 								</Text>

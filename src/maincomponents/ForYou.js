@@ -43,25 +43,30 @@ export const ForSomeone = props => {
 				</Paragraph>
 			</ShowIf>
 
-			<ShowIf noAnimation thisValue={"indeed"} thatValue={forYou}>
-				<HeadingTwo>First Off</HeadingTwo>
-				<Paragraph className=' '>
-					Me and my girl, Daliza are big fans of Indeed man. That joint is dope.
-				</Paragraph>
-				<Paragraph className=' '>
-					Speaking of which, are y'all hiring?!?!
-				</Paragraph>
-			</ShowIf>
-			<ShowIf noAnimation thisValue={"visaux"} thatValue={forYou}>
-				<HeadingTwo>First Off</HeadingTwo>
-				<Paragraph className=' '>
-					Me and my girl, Daliza are big fans of Indeed man. That joint is dope.
-				</Paragraph>
-				<HeadingTwo>First Off</HeadingTwo>
-				<Paragraph className=' '>
-					Speaking of which, are y'all hiring?!?!
-				</Paragraph>
-			</ShowIf>
+			{/* https://www.linkedin.com/jobs/view/1460515336/ */}
+			{/* Visa */}
+			{/* https://www.herbieduah.app/?=CyberSource */}
+			<JobApplication
+				jobID='cybersource'
+				job='Sr. UX Design Engineer'
+				city='Austin'
+				topping="contribute to CyberSource's growth as a global leader in e-Commerce Payment"
+				forYou={forYou}
+			/>
+			<JobApplication
+				jobID='cloudflare'
+				job='Front End Engineer'
+				city='Austin'
+				topping="contribute to Cloudflare's goal to help build a better Internet."
+				forYou={forYou}
+			/>
+			<JobApplication
+				jobID='indeed'
+				job='UX Developer'
+				city='Austin'
+				topping="contribute to Indeed's mission to help people get jobs."
+				forYou={forYou}
+			/>
 			<ShowIf noAnimation thisValue={""} thatValue={forYou}>
 				<Paragraph>
 					I am a Phoenix based a Web developer/designer with five years of
@@ -76,11 +81,45 @@ export const ForSomeone = props => {
 	);
 };
 
+export const JobApplication = props => {
+	const job = props.job;
+	const city = props.city;
+	const topping = props.topping ? ` and ${props.topping}` : "";
+	const jobID = props.jobID;
+	const forYou = props.forYou;
+	return (
+		<Fragment>
+			<ShowIf noAnimation thisValue={jobID} thatValue={forYou}>
+				<HeadingTwo>{job} position</HeadingTwo>
+				<Paragraph>
+					I appreciate you taking the time to check out my application and
+					portfolio. Hope all is well at the {city} location.
+				</Paragraph>
+				<Paragraph>
+					I believe I have the skills to fill the role for your {job}
+					{topping}. I designed and engineered this portfolio with a role like
+					this in mind.
+				</Paragraph>
+				<Paragraph>
+					If I am not a good fit the role, please let me know why so I can learn
+					to improve my skills. I hope you have a pleasant experience on my web
+					app (I'm open to feedback on it too!).
+				</Paragraph>
+			</ShowIf>
+		</Fragment>
+	);
+};
 export const forYouHelper = forSomebody => {
 	let person = forSomebody === "" ? "" : ` ${forSomebody}`;
 	switch (forSomebody) {
 		case "indeed":
-			person = " Indeed Employer";
+			person = " Indeed Employer/Employee";
+			return person;
+		case "cybersource":
+			person = " CyberSource Employer/Employee";
+			return person;
+		case "cloudflare":
+			person = " Cloudflare Employer/Employee";
 			return person;
 		// case 'Mangoes':
 		// case 'Papayas':
