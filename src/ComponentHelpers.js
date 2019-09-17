@@ -5,7 +5,7 @@ import {
 	useWindowResize,
 	isPortrait,
 	revealSecs,
-	getCurrentTransition
+	getCurrentTransition,
 } from "./helpers";
 import { ElementReveal } from "./ContentHelpers";
 import Text from "./stylecomponents/Text";

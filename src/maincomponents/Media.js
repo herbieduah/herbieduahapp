@@ -62,7 +62,7 @@ const Media = props => {
 				<LazyLoadWrapper>
 					<Video
 						cloudName='dwccyjn5e'
-						publicId={props.url}
+						publicId={`herbieduahapp/${props.url[0]}`}
 						controls={controls}
 						width='740'
 						preload='auto'
@@ -101,17 +101,16 @@ const Media = props => {
 			);
 		case "cloud-image":
 			return (
-				<LazyLoadWrapper>
-					<CloudImage
-						cloudName='dwccyjn5e'
-						publicId={props.src}
-						width={mediaWidth}
-						crop='scale'
-						alt={props.alt}
-						className={props.className || ""}
-					/>
-					/>
-				</LazyLoadWrapper>
+				// <LazyLoadWrapper>
+				<CloudImage
+					cloudName='dwccyjn5e'
+					publicId={`images/${props.src[2]}`}
+					width={mediaWidth}
+					crop='scale'
+					alt={props.alt}
+					className={props.className || ""}
+				/>
+				// </LazyLoadWrapper>
 			);
 		default:
 			return null;

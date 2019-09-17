@@ -38,7 +38,7 @@ import {
 export const defaultAlt = "I will be adding an alt tag to this image soon";
 export const defaultDesc = "This is a video, I will be describing it soon";
 const spacingBottom = "c-margin-bottom";
-const videoLocation = "gif";
+const videoLocation = "cloud-gif";
 // const spacingBottomMed = "c-margin-bottom-med";
 // const spacingTopBottom = "c-margin-top c-margin-bottom";
 // const noSpacingTopBottom = "c-margin-0";
@@ -87,9 +87,11 @@ export const ContentShow = props => {
 						<aside className='less'>
 							<div className='less__wrapper'>
 								{props.children}
+								<ElementReveal>
 								<Text xs className='less__drag paddingLR'>
 									Drag the slider {whereToDrag} to reveal more.&nbsp;
 								</Text>
+								</ElementReveal>
 							</div>
 						</aside>
 					</CSSTransition>

@@ -80,6 +80,7 @@ const HomePage = ({ contentProps }) => {
 					<Header>{header}</Header>
 					<ForSomeone whom={whom} forYou={forYou} />
 					<Image
+						cloud
 						src={picsOfMeHero}
 						className='paddingLR'
 						alt='a picture of me smiling'

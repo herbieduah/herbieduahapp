@@ -37,7 +37,7 @@ export const StateProvider = ({ children }) => {
 	const [forYou, setForYou] = useState("");
 	const [modalContent, setModalContent] = useState("");
 	const [whom, setWhom] = useState("everyone");
-	const [controls, setControls] = useState(true);
+	const [controls, setControls] = useState(false);
 	// currentLeftTop: "LandscapePhotography",
 	//   currentTheme: "default",
 	//   defaultAppTheme: defaultAppTheme,
