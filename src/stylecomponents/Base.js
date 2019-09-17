@@ -276,6 +276,7 @@ export const NavBarContainer = styled.div`
 		&__maximize {
 			padding: 0 !important;
 			display: flex;
+			cursor: pointer;
 			.animatecss-container{
 				display: flex;
     			align-items: center;
@@ -601,7 +602,10 @@ export const TransitionTextContainer = styled.li`
 	display: flex;
 	.appTransition {
 		&__container {
+			${mainTransition}
 			display: inline-block;
+			border-bottom: 2px solid rgba(0, 0, 0, 0);
+			cursor: pointer;
 			&.current,
 			&:hover,
 			&:focus {

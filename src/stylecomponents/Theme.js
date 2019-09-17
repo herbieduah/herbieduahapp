@@ -66,15 +66,15 @@ export const themes = [
 		text: "",
 		desc: ""
 	},
-	{
-		name: "Color-F7F7F8-000000",
-		properties: {
-			...themeColorMaker("Color-F7F7F8-000000")
-		},
-		type: "color",
-		text: "",
-		desc: ""
-	},
+	// {
+	// 	name: "Color-F7F7F8-000000",
+	// 	properties: {
+	// 		...themeColorMaker("Color-F7F7F8-000000")
+	// 	},
+	// 	type: "color",
+	// 	text: "",
+	// 	desc: ""
+	// },
 	{
 		name: "Color-000000-F7F7F8",
 		properties: {
@@ -88,6 +88,15 @@ export const themes = [
 		name: "Color-FFFC00-1D1F20",
 		properties: {
 			...themeColorMaker("Color-FFFC00-1D1F20")
+		},
+		type: "color",
+		text: "",
+		desc: ""
+	},
+	{
+		name: "Color-1D1F20-FFFC00",
+		properties: {
+			...themeColorMaker("Color-1D1F20-FFFC00")
 		},
 		type: "color",
 		text: "",
@@ -124,6 +133,42 @@ export const themes = [
 		name: "Color-4A00A0-FDF1E7",
 		properties: {
 			...themeColorMaker("Color-4A00A0-FDF1E7")
+		},
+		type: "color",
+		text: "",
+		desc: ""
+	},
+	{
+		name: "Color-EFF8F3-1C422B",
+		properties: {
+			...themeColorMaker("Color-EFF8F3-1C422B")
+		},
+		type: "color",
+		text: "",
+		desc: ""
+	},
+	{
+		name: "Color-1C422B-EFF8F3",
+		properties: {
+			...themeColorMaker("Color-1C422B-EFF8F3")
+		},
+		type: "color",
+		text: "",
+		desc: ""
+	},
+	{
+		name: "Color-F7F7F8-711423",
+		properties: {
+			...themeColorMaker("Color-F7F7F8-711423")
+		},
+		type: "color",
+		text: "",
+		desc: ""
+	},
+	{
+		name: "Color-711423-F7F7F8",
+		properties: {
+			...themeColorMaker("Color-711423-F7F7F8")
 		},
 		type: "color",
 		text: "",

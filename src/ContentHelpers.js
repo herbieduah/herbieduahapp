@@ -8,7 +8,7 @@ import {
 	isPortrait,
 	getCurrentTransition,
 	getThemeInfo,
-	getTransitionInfo
+	getTransitionInfo,camelCaseHelper
 } from "./helpers";
 import ClickNHold from "react-click-n-hold";
 import Reveal from "react-reveal/Reveal";
@@ -229,7 +229,8 @@ export const Paragraph = props => {
 		<Fragment>
 			<ElementReveal>
 				<Text
-					m
+					m={!props.less}
+					l={props.less}
 					wide={props.less || props.wide}
 					className={`${compClassName} ${lessClass} padding-left-right`}>
 					{props.children}
@@ -276,8 +277,8 @@ export const HeadingOne = props => {
 			<Text
 				h1
 				l
-				bold
-				className={`c-margin-top-large ${compClassName} breather-bottom padding-left-right `}>
+				semibold
+				className={`c-margin-top-large ${compClassName} c-margin-bottom-med padding-left-right `}>
 				{props.children}
 			</Text>
 		</ElementReveal>
@@ -301,20 +302,21 @@ export const HeadingTwo = props => {
 
 export const UL = props => {
 	return (
-		<ElementReveal>
 			<ul className='paddingLR' {...props}>
 				{props.children}
 			</ul>
-		</ElementReveal>
+		
 	);
 };
 
 export const LI = props => {
 	return (
 		<li className='marginLR'>
+		<ElementReveal>
 			<Text format m {...props}>
 				{props.children}
 			</Text>
+			</ElementReveal>
 		</li>
 	);
 };
@@ -322,7 +324,7 @@ export const LI = props => {
 export const Experience = props => {
 	return (
 		<ElementReveal>
-			<div className='c-experience'>{props.children}</div>
+			<div className='c-experience '>{props.children}</div>
 		</ElementReveal>
 	);
 };
@@ -560,11 +562,11 @@ export const TransitionTexts = props => {
 			<div className={`appTransition__container ${currentClass}`}>
 				<Text format role='button' m>
 					<span className={enterTextTransition}>
-						{transitionValues.enterTransition}
+						{camelCaseHelper(transitionValues.enterTransition)}
 					</span>
-					, &nbsp;
+					&nbsp;and&nbsp;
 					<span className={exitTextTransition}>
-						{transitionValues.exitTransition}
+						{camelCaseHelper(transitionValues.exitTransition)}
 					</span>
 				</Text>
 			</div>
@@ -590,7 +592,7 @@ export const WorkInfo = props => {
 	const { workDuration, workSkills, workTools } = props.workinfo;
 	return (
 		<ElementReveal>
-			<ul className='c-work-info'>
+			<ul className='c-work-info breather-bottom'>
 				<li>
 					<Text s format>
 						<strong>Duration:</strong>&nbsp;

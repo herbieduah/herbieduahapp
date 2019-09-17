@@ -59,6 +59,7 @@ export const ContentContainer = styled.section`
 	padding-top: 0 !important;
 	/* transform: perspective(300px) rotateX(15deg);  */
 	.less {
+		
 		${mainTransition}
 		width:  100%;
 		height: ${props => (props.showLess && !props.isPortrait ? `100%` : `100%`)};
@@ -118,7 +119,6 @@ export const ContentContainer = styled.section`
 			height: 20vh;
 			max-width: 500px;
 			display: block;
-			
 			${props => (props.isPortrait ? `${cMarginBottomMed}` : `margin-bottom: 9.5vh`)};
 		}
 		&__drag {
@@ -136,7 +136,13 @@ export const ContentContainer = styled.section`
 			`};
 			display:block;
 		}
-		
+		${props => (props.navBarRight ? contentMenuPaddingRight : contentMenuPadding)};
+		padding-top: 0;
+		padding-bottom: 0;
+		${mobile}{
+			padding-top: 0;
+			padding-bottom: 0;	
+		}
 	}
 			
 	.LazyLoad {

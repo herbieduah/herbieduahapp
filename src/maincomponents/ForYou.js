@@ -69,11 +69,9 @@ export const ForSomeone = props => {
 			/>
 			<ShowIf noAnimation thisValue={""} thatValue={forYou}>
 				<Paragraph>
-					I am a Phoenix based a Web developer/designer with five years of
-					experience. I graduated at Northern Arizona University with a degree
-					in Applied Computer Science. Somewhere along the way, I fell in love
-					with design. I enjoy any opportunity that allows me to use my coding
-					and design skills
+					I am a Phoenix based Web developer/designer with five years of
+					experience. I enjoy any opportunity that allows me to use my coding
+					and design skills in an original and creative way
 					<Emoji className='emoji' symbol='🤓' label='nerd' />.
 				</Paragraph>
 			</ShowIf>
@@ -129,3 +127,9 @@ export const forYouHelper = forSomebody => {
 			return person;
 	}
 };
+
+// I am a Phoenix based a Web developer/designer with five years of
+// 					experience. I graduated at Northern Arizona University with a degree
+// 					in Applied Computer Science. Somewhere along the way, I fell in love
+// 					with design. I enjoy any opportunity that allows me to use my coding
+// 					and design skills in an original and creative way.

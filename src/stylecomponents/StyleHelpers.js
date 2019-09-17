@@ -195,7 +195,7 @@ ${mobile} {
 }
 `;
 
-export const cMarginTopSm = `margin-top: 1.25rem;
+export const cMarginTopSm = `margin-top: 1rem;
 ${mobile} {
 	margin-top: .75rem;
 }

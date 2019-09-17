@@ -4,17 +4,22 @@ import React, { Fragment } from "react";
 import {
 	Paragraph,
 	// HeadingOne,
-	// HeadingTwo,
+	HeadingTwo,
 	// HeadingThree,
 	// Image,
+	Link,
+	UL,
+	LI,
 	FiGif,
 	Figcaption,
 	Figure,
+	WorkInfo,
 	ContentCategory,
+	ContentShow,
 	// Gif,
 	Header
 } from "../ContentHelpers";
-import { ContentShow } from "../ContentHelpers";
+import { ShowIf } from "../ComponentHelpers";
 import Emoji from "a11y-react-emoji";
 
 import {
@@ -27,7 +32,10 @@ import {
 } from "../MediaVariables";
 import { thisAppherokuappdesktop, thisAppGatsby } from "../VideoVariables";
 
-const header = "HerbieDuah.app (This web app)";
+const header = "HerbieDuah.app";
+const workDuration = "January 2019 - Present";
+const workSkills = "HTML5, CSS, Javascript, Prototyping, UX Design";
+const workTools = "Adobe Creative Suite, Github, Sketch, Visual Studio Code";
 // There is an app for everything, in
 // 					the future, I believe there is going to be an app for everyone. I am
 // 					Herbie Duah, and this is my app.
@@ -38,7 +46,7 @@ const header = "HerbieDuah.app (This web app)";
 
 // const HomePage = ({ contentProps }) => {
 const HerbieDuahAppPage = ({ contentProps }) => {
-	const { fullScreen , minimalMode } = contentProps;
+	const { fullScreen, minimalMode, techy } = contentProps;
 
 	return (
 		<Fragment>
@@ -55,9 +63,15 @@ const HerbieDuahAppPage = ({ contentProps }) => {
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>
+				<WorkInfo techy={techy} workinfo={workinfo} />
 				<Paragraph>
-					I don't even know where to begin describing this web app so for now I
-					thought I'll post some pictures and videos.
+					<Emoji className='emoji' symbol='🚧' label='contruction' />
+					Coming Soon{" "}
+					<Emoji className='emoji' symbol='🚧' label='contruction' />
+				</Paragraph>
+				<Paragraph>
+					While I figure out how to structure this section, here are some
+					pictures and videos.
 				</Paragraph>
 				<Figure src={thisAppHerbieDuahComeUX}>
 					<Figcaption>
@@ -100,10 +114,59 @@ const HerbieDuahAppPage = ({ contentProps }) => {
 						HerbieDuah.app Mobile website screenshot June 2019 (Development)
 					</Figcaption>
 				</Figure>
-				<ContentCategory fullScreen={fullScreen} minimalMode={minimalMode} category='work' />
+				<ShowIf noAnimation thisValue={techy} thatValue={true}>
+					<HeadingTwo>For My Technical Peeps</HeadingTwo>
+					<Paragraph>
+						I looked at many cool sites for inspiration and one thing I wished
+						they had was Behind The Scenes/Fun Facts section about their site.
+					</Paragraph>
+					<UL>
+						<LI>
+							I didn't intend for this to be an app. I wanted to make a website
+							that was customizable but during the development I realized it was
+							very "app-like". The idea of creating my own app later on inspired
+							me.
+						</LI>
+						<LI>
+							This is built on create-react-app (no ejection). All client no
+							server baby!
+						</LI>
+						<LI>I use Styled Components heavily for my themes</LI>
+						<LI>
+							I host my videos myself but I have a copy on&nbsp;
+							<Link href='https://cloudinary.com'>Cloudinary</Link>
+							&nbsp;
+						</LI>
+						<LI>
+							I used asked for feedback on r/webdev r/userexperience subreddit
+						</LI>
+						<LI>
+							I host on
+							<Link href='https://app.netlify.com/'>Netlify</Link>&nbsp;
+						</LI>
+						<LI>
+							I kept the content at a max-width of 740px so I wouldn't have to
+							resize a lot of images.
+						</LI>
+						<LI>
+							I am aware my site is not accessible and I am working on it.
+						</LI>
+					</UL>
+				</ShowIf>
+				<ContentCategory
+					fullScreen={fullScreen}
+					minimalMode={minimalMode}
+					category='work'
+				/>
 			</ContentShow>
 		</Fragment>
 	);
+};
+
+const workinfo = {
+	workDuration,
+	workSkills,
+	workTools
 };
 
 export default HerbieDuahAppPage;

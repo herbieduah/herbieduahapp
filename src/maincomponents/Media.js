@@ -9,28 +9,30 @@ import { isMobileOnly } from "react-device-detect";
 // 	LazyLoadImage,
 // 	LazyLoadComponent
 // } from "react-lazy-load-image-component";
-import Img from "react-image";
+// import Img from "react-image";
 import VisibilitySensor from "react-visibility-sensor";
 // import "react-lazy-load-image-component/src/effects/blur.css";
 const mediaWidth = isMobileOnly ? "400" : "740";
-const mediaSize = isMobileOnly ? 1 : 0;
+// const mediaSize = isMobileOnly ? 1 : 0;
 const LazyLoadWrapper = props => {
-	const { lazyLoading } = useContext(globalState);
+	// const { lazyLoading } = useContext(globalState);
 	return (
-		<Fragment>
-			{lazyLoading ? (
-				<VisibilitySensor offset={{ top: 400 }}>
-					{props.children}
-				</VisibilitySensor>
-			) : (
-				<Fragment>{props.children}</Fragment>
-			)}
-		</Fragment>
+		// <Fragment>
+		// 	{lazyLoading ? (
+		// 		<VisibilitySensor offset={{ top: 400 }}>
+		// 			{props.children}
+		// 		</VisibilitySensor>
+		// 	) : (
+		// 		<Fragment>{props.children}</Fragment>
+		// 	)}
+		// </Fragment>
+		<VisibilitySensor offset={{ top: 400 }}>{props.children}</VisibilitySensor>
 	);
 };
 
 const Media = props => {
 	const type = props.type;
+	const { controls } = useContext(globalState);
 	switch (type) {
 		case "icon":
 			return (
@@ -45,7 +47,7 @@ const Media = props => {
 						url={props.url[1]}
 						width={props.width || "100%"}
 						height={props.height || "100%"}
-						controls={false}
+						controls={controls}
 						playing
 						loop
 						muted
@@ -61,7 +63,7 @@ const Media = props => {
 					<Video
 						cloudName='dwccyjn5e'
 						publicId={props.url}
-						controls={false}
+						controls={controls}
 						width='740'
 						preload='auto'
 						autoPlay
@@ -89,11 +91,10 @@ const Media = props => {
 		case "image":
 			return (
 				<LazyLoadWrapper>
-					<Img
+					<img
 						alt={props.alt}
-						width={props.width || "100%"}
-						height={props.height || "100%"}
-						src={props.src[mediaSize]}
+						src={props.src[1]}
+						srcSet={`${props.src[0]} 750w`}
 						className={props.className || ""}
 					/>
 				</LazyLoadWrapper>

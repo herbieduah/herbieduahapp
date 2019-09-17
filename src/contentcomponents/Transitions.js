@@ -17,7 +17,7 @@ import "animate.css";
 const header = "Transitions (Beta)";
 
 const TransitionsPage = ({ contentProps }) => {
-	const { fullScreen, techy , minimalMode } = contentProps;
+	const { fullScreen, techy, minimalMode } = contentProps;
 	return (
 		<Fragment>
 			<ContentShow less>
@@ -37,26 +37,26 @@ const TransitionsPage = ({ contentProps }) => {
 			<ContentShow more>
 				<Header>{header}</Header>
 				<Paragraph>
-					Transitions bring the elements of this web app to life. I selected an
-					extensive collection of random transitions from{" "}
-					<Link href='https://daneden.me/'>Daniel Edens'</Link> amazing{" "}
-					<Link href='https://daneden.github.io/animate.css/'>Animate.css</Link>{" "}
-					for you to choose how you bring this web app to life.
+					Transitions bring the elements of this web app to life. I added an
+					extensive collection of random transitions for you to choose how you
+					bring this web app to life.
 				</Paragraph>
 				<div className='padding-left-right'>
 					<GenerateTransition />
 				</div>
-				{/* <ShowIf noAnimation thisValue={techy} thatValue={true}>
-					<Paragraph className='c-margin-top-med'>
-						Big shout out to{" "}
-						<Link href='https://daneden.me/'>Daniel Edens'</Link> amazing{" "}
-						<Link href='https://daneden.github.io/animate.css/'>
-							Animate.css
-						</Link>{" "}
-						library
-					</Paragraph>
-					<ContentCategory fullScreen={fullScreen} minimalMode={minimalMode} category='customize' />
-				</ShowIf> */}
+				{/* <ShowIf noAnimation thisValue={techy} thatValue={true}> */}
+				<Paragraph className='c-margin-top-med'>
+					Shout out to <Link href='https://daneden.me/'>Daniel Edens'</Link>{" "}
+					amazing{" "}
+					<Link href='https://daneden.github.io/animate.css/'>Animate.css</Link>{" "}
+					library.
+				</Paragraph>
+				<ContentCategory
+					fullScreen={fullScreen}
+					minimalMode={minimalMode}
+					category='customize'
+				/>
+				{/* </ShowIf> */}
 			</ContentShow>
 		</Fragment>
 	);

@@ -24,27 +24,33 @@ import { isMobileOnly } from "react-device-detect";
 import {
 	getCurrentTheme,
 	splitDir,
+	revealValues,
 	useWindowResize,
 	minSliderSize,
 	defaultPaneSize,
 	isPortrait
 } from "./helpers";
-import { ElementReveal, AppStartUp } from "./ContentHelpers";
+import { AppStartUp } from "./ContentHelpers";
 
 export const App = () => {
 	const {
 		switchSides,
+		contentWidth: cw,
+		contentHeight: ch,
 		currentTheme,
 		setDragging,
 		fullScreen,
 		dragging,
-		fullScreening,
+		setLazyLoading,
+		// fullScreening,
 		setWhom,
 		setForYou,
 		minimalMode
 	} = useContext(globalState);
 	const currentThemeObject = getCurrentTheme(defaultAppTheme, currentTheme);
 	const { width: ww, height: wh } = useWindowResize();
+	const values = { ww, wh, cw, ch };
+	const isShowingMore = revealValues(values).isShowingMore;
 	const { minSize, maxSize } = minSliderSize(ww, wh);
 	const mobileOveriPhone5Horizontal = ww > 453;
 	const showFSMobileHorizontal = mobileOveriPhone5Horizontal && isMobileOnly;
@@ -62,6 +68,12 @@ export const App = () => {
 		setForYou(forWho);
 	};
 
+	const downloadAllTheThings = () => {
+		if (isShowingMore) {
+			setLazyLoading(false);
+		}
+	};
+
 	useEffect(() => {
 		const values = queryString.parse(window.location.search);
 		if (values.whom) {
@@ -70,6 +82,7 @@ export const App = () => {
 		if (values.for) {
 			whoIsThisFor(values.for.toLowerCase());
 		}
+		downloadAllTheThings();
 		// values.whom ?  : console.log("Hi");
 	});
 	// console.log(`Fullscreening: ${fullScreening}`);
@@ -88,7 +101,7 @@ export const App = () => {
 				fullScreen={fullScreen}
 				showFSMobileHorizontal={showFSMobileHorizontal}
 				dragging={dragging}>
-				<AppStartUp />
+				{/* <AppStartUp /> */}
 				<ShowIf noAnimation thisValue={currentTheme} thatValue={"matrix"}>
 					<Matrix fullscreen={true} isPortrait={isPortrait(ww, wh)} />
 				</ShowIf>
@@ -104,7 +117,7 @@ export const App = () => {
 				)}
 
 				{/* <ParallaxTest /> */}
-				<FullScreenOverlay />
+				{/* <FullScreenOverlay /> */}
 				{/* <SliderLine /> */}
 				{/* {dragging ? <DragInstructions /> : null} */}
 
@@ -119,7 +132,7 @@ export const App = () => {
 				{/* {fullScreen ? <h1>Here I am</h1> : null} */}
 				{dragging ? <SliderLine /> : null}
 
-				{fullScreening ? <FullScreeningBG /> : null}
+				{/* {fullScreening ? <FullScreeningBG /> : null} */}
 
 				{/* <FullScreeningBG /> */}
 

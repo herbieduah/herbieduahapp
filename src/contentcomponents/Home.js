@@ -71,7 +71,8 @@ const HomePage = ({ contentProps }) => {
 				<Header less>{header}</Header>
 				<Paragraph less>
 					Hi<span className='text-cap'>{forYouHelper(forYou)}</span>, I'm Herbie
-					Duah and this is my personal web app.
+					and I love to design and develop for people like you
+					<Emoji className='emoji' symbol='😃' label='smiling face' />.
 				</Paragraph>
 			</ContentShow>
 			<ContentShow more>
@@ -83,8 +84,23 @@ const HomePage = ({ contentProps }) => {
 						className='paddingLR'
 						alt='a picture of me smiling'
 					/>
+					<Paragraph>
+						Nowadays, there is an app for everything. In the future, I believe
+						there is going to be an app for everyone.
+					</Paragraph>
 
-					<HeadingTwo>A little bit about me and this web app</HeadingTwo>
+					<Paragraph>
+						I imagine it will be a mixture between the data and features from
+						all your social media apps all merged in an app with the help of
+						Machine Learning. I envision every user having a different
+						experience with your app, just like they do in real life.{" "}
+					</Paragraph>
+					<Paragraph>
+						This belief and my passion for crafting user experiences inspired me
+						to design and engineer my portfolio into a web app.
+					</Paragraph>
+
+					{/* <HeadingTwo>A little bit about me and this web app</HeadingTwo>
 					<HeadingThree>Three facts about me</HeadingThree>
 					<UL>
 						<LI>
@@ -107,7 +123,7 @@ const HomePage = ({ contentProps }) => {
 						with excellent User Experience?
 					</Paragraph>
 					<HeadingThree>The solution</HeadingThree>
-					<Paragraph>This portfolio.</Paragraph>
+					<Paragraph>This portfolio.</Paragraph> */}
 					{/* <HeadingTwo>An app for everyone</HeadingTwo>
 					<Paragraph>
 						In the future, I believe everyone is going to have their own app. I

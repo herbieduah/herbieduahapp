@@ -217,7 +217,7 @@ const MenuContainer = styled.aside`
 
 	.offset {
 		width:100%;
-		margin-top: ${props => (props.isPortrait ? `200px;` : `40vh;`)};
+		margin-top: ${props => (props.isPortrait ? `80px;` : `20vh;`)};
 	}
 
 `;

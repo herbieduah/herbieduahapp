@@ -33,11 +33,10 @@ import {
 const header = "Ugg";
 const workDuration = "August 2016 - March 2018";
 const workSkills = "HTML5, CSS, Javascript, Prototyping, UX Design";
-const workTools =
-	"Atom, Adobe Creative Suite, BitBucket, Photoshop , Visual Studio Code";
+const workTools = "Atom, Adobe Creative Suite, BitBucket, Visual Studio Code";
 
 const UggPage = ({ contentProps }) => {
-	const { techy, fullScreen , minimalMode } = contentProps;
+	const { techy, fullScreen, minimalMode } = contentProps;
 
 	return (
 		<Fragment>
@@ -169,7 +168,11 @@ const UggPage = ({ contentProps }) => {
 					This Trudy prank which was orchestrated by multiple people brought joy
 					into our lives for months and will always be remembered.
 				</Paragraph> */}
-				<ContentCategory fullScreen={fullScreen} minimalMode={minimalMode} category='work' />
+				<ContentCategory
+					fullScreen={fullScreen}
+					minimalMode={minimalMode}
+					category='work'
+				/>
 			</ContentShow>
 		</Fragment>
 	);
