@@ -1,5 +1,6 @@
 import React, { createContext, useState, useContext } from "react";
 import { defaultContentWidth, defaultContentHeight } from "./helpers.js";
+import useLocalStorage from "react-use-localstorage";
 // import track, { useTracking } from "react-tracking";
 
 // Will hold global state
@@ -19,7 +20,8 @@ export const StateProvider = ({ children }) => {
 	const [switchSides, setSides] = useState(true);
 	const [contentWidth, onContentResizeWidth] = useState(defaultContentWidth);
 	const [contentHeight, onContentResizeHeight] = useState(defaultContentHeight);
-	const [currentTheme, setTheme] = useState("white");
+	// const [currentTheme, setTheme] = useState("white");
+	const [currentTheme, setTheme] = useLocalStorage("theme", "white");
 	const [currentTransition, setCurrentTransition] = useState("default");
 	const [currentContent, setCurrentContent] = useState("home");
 	const [overlay, setOverlay] = useState(false);

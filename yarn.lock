@@ -7906,6 +7906,10 @@ react-transition-group@^4.1.0:
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
 
+react-use-localstorage@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/react-use-localstorage/-/react-use-localstorage-3.2.1.tgz#adbc34e4b90e64a00646c23c5415a2e7abe05ad9"
+
 react-visibility-sensor@^5.1.1:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/react-visibility-sensor/-/react-visibility-sensor-5.1.1.tgz#5238380960d3a0b2be0b7faddff38541e337f5a9"

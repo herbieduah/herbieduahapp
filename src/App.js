@@ -117,7 +117,7 @@ export const App = () => {
 				)}
 
 				{/* <ParallaxTest /> */}
-				{/* <FullScreenOverlay /> */}
+				<FullScreenOverlay />
 				{/* <SliderLine /> */}
 				{/* {dragging ? <DragInstructions /> : null} */}
 
