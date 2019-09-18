@@ -5,7 +5,7 @@ import {
 	Paragraph,
 	// HeadingOne,
 	HeadingTwo,
-	HeadingThree,
+	// HeadingThree,
 	Image,
 	UL,
 	LI,
@@ -85,6 +85,7 @@ const HomePage = ({ contentProps }) => {
 						className='paddingLR'
 						alt='a picture of me smiling'
 					/>
+					<HeadingTwo>An App For Everyone</HeadingTwo>
 					<Paragraph>
 						Nowadays, there is an app for everything. In the future, I believe
 						there is going to be an app for everyone.
@@ -98,7 +99,7 @@ const HomePage = ({ contentProps }) => {
 					</Paragraph>
 					<Paragraph>
 						This belief and my passion for crafting user experiences inspired me
-						to design and engineer my portfolio into a web app.
+						to design and engineer my portfolio as a web app.
 					</Paragraph>
 
 					{/* <HeadingTwo>A little bit about me and this web app</HeadingTwo>

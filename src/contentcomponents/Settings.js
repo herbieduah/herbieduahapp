@@ -80,8 +80,7 @@ const SettingsPage = ({ contentProps }) => {
 				<Header>{header}</Header>
 				<Paragraph>
 					I want to make sure you have the best experience using my web app, so
-					I created some settings that enable you to change certain aspects of
-					this web app.
+					I created some settings that enable you to change certain aspects it.
 				</Paragraph>
 				<HeadingTwo>Technical and Non-Technical users</HeadingTwo>
 				<ShowIf noAnimation thisValue={techy} thatValue={false}>

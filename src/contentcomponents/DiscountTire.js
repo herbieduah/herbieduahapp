@@ -47,7 +47,7 @@ const workTools =
 
 const DiscountTirePage = ({ contentProps }) => {
 	// const { whom , minimalMode } = contentProps;
-	const { fullScreen, techy , minimalMode } = contentProps;
+	const { fullScreen, techy, minimalMode } = contentProps;
 	return (
 		<Fragment>
 			<ContentShow less>
@@ -110,7 +110,7 @@ const DiscountTirePage = ({ contentProps }) => {
 					src={dtTeamworkTools}>
 					<Figcaption className='c-margin-bottom'>
 						Surely people would consider putting pedals on wheelchairs so that
-						they’re arms don’t get tired.
+						their arms don’t get tired.
 					</Figcaption>
 				</Figure>
 				<Figure
@@ -129,7 +129,11 @@ const DiscountTirePage = ({ contentProps }) => {
 						am currently on every receipt holder and that's no joke
 					</Figcaption>
 				</Figure>
-				<ContentCategory fullScreen={fullScreen} minimalMode={minimalMode} category='work' />
+				<ContentCategory
+					fullScreen={fullScreen}
+					minimalMode={minimalMode}
+					category='work'
+				/>
 			</ContentShow>
 		</Fragment>
 	);
