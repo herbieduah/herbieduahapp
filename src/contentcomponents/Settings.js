@@ -82,7 +82,7 @@ const SettingsPage = ({ contentProps }) => {
 					I want to make sure you have the best experience using my web app, so
 					I created some settings that enable you to change certain aspects it.
 				</Paragraph>
-				<HeadingTwo>Technical and Non-Technical users</HeadingTwo>
+				<HeadingTwo>Developer Mode</HeadingTwo>
 				<ShowIf noAnimation thisValue={techy} thatValue={false}>
 					<Paragraph>
 						I developed my web app for two types of people: people who know code
@@ -96,16 +96,16 @@ const SettingsPage = ({ contentProps }) => {
 					<Paragraph>
 						I sprinkled some technical knowledge around the web app. I also only
 						show specific components like the Switch Sides setting for technical
-						users. I plan to work on doing a better job of indicating where I
-						hide and show the technical jargon.
+						users. (I wanted to turn on the Matrix theme when "Activate
+						Developer mode" was clicked but that would have been too cliché.)
 					</Paragraph>
 				</ShowIf>
 
 				<ShowIf noAnimation thisValue={techy} thatValue={true}>
-					<Button onClick={knowCode}>Change tone to non-technical</Button>
+					<Button onClick={knowCode}>De-Activate developer mode</Button>
 				</ShowIf>
 				<ShowIf noAnimation thisValue={techy} thatValue={false}>
-					<Button onClick={knowCode}>Change tone to technical</Button>
+					<Button onClick={knowCode}>Activate developer mode</Button>
 				</ShowIf>
 				<ShowIf noAnimation thisValue={techy} thatValue={true}>
 					<DisableSetting
@@ -182,7 +182,8 @@ const SettingsPage = ({ contentProps }) => {
 					message="You can't interact with this setting because you've made the web app look like every other website.">
 					<HeadingTwo>Move navigation bar</HeadingTwo>
 					<Paragraph>
-						This setting moves navigations bar to the right or left.
+						This setting moves navigations bar to the right or left. (It's
+						useful on mobile if you're left handed.)
 					</Paragraph>
 					<ShowIf noAnimation thisValue={navBarRight} thatValue={true}>
 						<Button onClick={moveNavBar}>Move Navigation Bar Left</Button>
@@ -218,7 +219,7 @@ const SettingsPage = ({ contentProps }) => {
 				<DisableSetting
 					thisValue={minimalMode}
 					thatValue={false}
-					message='This setting is only useful when the web app looks like every other website.'>
+					message='This setting is only works when the web app looks like every other website.'>
 					<HeadingTwo>Background Navigation Bar</HeadingTwo>
 					<Paragraph>
 						{" "}
