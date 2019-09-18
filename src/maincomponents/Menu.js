@@ -7,6 +7,7 @@ import {
 	revealSecs,
 	getCurrentTransition
 } from "../helpers";
+import Text from "../stylecomponents/Text";
 import SubMenu from "./SubMenu";
 import { globalState } from "../State";
 import { MenuTabs } from "../ComponentHelpers";
@@ -39,6 +40,9 @@ export const ContentMenu = () => {
 									<div className='menu__less-container'>
 										<MenuTabs showCategory={isShowingMore} tabIndex={-1} />
 									</div>
+								</div>
+								<div className='accessibility'>
+									<Text button>poop</Text>
 								</div>
 							</div>
 						</CSSTransition>

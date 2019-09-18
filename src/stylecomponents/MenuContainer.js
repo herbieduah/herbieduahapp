@@ -174,7 +174,6 @@ const MenuContainer = styled.aside`
 				${props => (props.isPortrait ? `margin: 0 1.4rem .3rem 0;` : ``)};
 				
 				padding: 0;
-				
 			}	
 			${mobile} {
 				margin: .2rem 0 .5rem;
@@ -194,6 +193,16 @@ const MenuContainer = styled.aside`
 			}
 			${props => (props.isPortrait ? `white-space: nowrap;` : ``)};
 			${props => (props.isPortrait ? `margin-right: 1rem;` : `margin-left: 1rem;`)};
+		}
+	}
+	.accessibility {
+		position:absolute;
+		bottom: 0;
+		width: 100%;
+		display:flex;
+		justify-content: right;
+    	button {
+			margin-left: auto;
 		}
 	}
 	
