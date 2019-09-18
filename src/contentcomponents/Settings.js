@@ -6,7 +6,7 @@ import {
 	Header,
 	ContentShow,
 	ContentCategory,
-	Small,
+	// Small,
 	Button,
 	// SettingButton,
 	DisableSetting
@@ -31,8 +31,19 @@ const SettingsPage = ({ contentProps }) => {
 		setSides,
 		switchSides,
 		fullScreen,
-		setFullscreen
+		setFullscreen,
+		setAccessible,
+		accessible,
+		controls,
+		setControls
 	} = contentProps;
+
+	const accessibleMode = () => {
+		accessible ? setAccessible(false) : setAccessible(true);
+	};
+	const controlMode = () => {
+		controls ? setControls(true) : setControls(false);
+	};
 	const moveNavBar = () => {
 		navBarRight ? setNavBarRight(false) : setNavBarRight(true);
 	};

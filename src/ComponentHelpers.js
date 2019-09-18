@@ -264,9 +264,11 @@ export const AccessibilityMode = () => {
 	};
 	return (
 		<AccessibilityContainer>
-			<Text buttontext onClick={activateAccessibilityMode}>
-				Accessibility Mode
-			</Text>
+			<ElementReveal>
+				<Text buttontext onClick={activateAccessibilityMode}>
+					Accessibility Mode
+				</Text>
+			</ElementReveal>
 		</AccessibilityContainer>
 	);
 };
@@ -441,7 +443,11 @@ const ContentWrapperContainer = props => {
 		setFullscreen,
 		setSides,
 		forYou,
-		switchSides
+		switchSides,
+		setAccessible,
+		accessible,
+		controls,
+		setControls
 	} = useContext(globalState);
 	const { width: ww, height: wh } = useWindowResize();
 	const values = { ww, wh, cw, ch };
@@ -478,7 +484,11 @@ const ContentWrapperContainer = props => {
 		setTechy,
 		setSides,
 		switchSides,
-		forYou
+		forYou,
+		setAccessible,
+		accessible,
+		controls,
+		setControls
 	};
 	const children = React.Children.map(props.children, (child, index) => {
 		return React.cloneElement(child, {

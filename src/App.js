@@ -45,7 +45,12 @@ export const App = () => {
 		// fullScreening,
 		setWhom,
 		setForYou,
-		minimalMode
+		minimalMode,
+		setNavBarComplement,
+		accessible,
+		setFullscreen,
+		setMinimalMode,
+		setControls
 	} = useContext(globalState);
 	const currentThemeObject = getCurrentTheme(defaultAppTheme, currentTheme);
 	const { width: ww, height: wh } = useWindowResize();
@@ -67,6 +72,18 @@ export const App = () => {
 	const whoIsThisFor = forWho => {
 		setForYou(forWho);
 	};
+	const turnOffAccessibilitySettings = () => {
+		setMinimalMode(false);
+		setFullscreen(false);
+		setControls(false);
+		setNavBarComplement(false);
+	};
+	const turnOnAccessibilitySettings = () => {
+		setMinimalMode(true);
+		setFullscreen(true);
+		setControls(true);
+		setNavBarComplement(true);
+	};
 
 	const downloadAllTheThings = () => {
 		if (isShowingMore) {
@@ -83,6 +100,7 @@ export const App = () => {
 			whoIsThisFor(values.for.toLowerCase());
 		}
 		downloadAllTheThings();
+		accessible ? turnOnAccessibilitySettings() : turnOffAccessibilitySettings();
 		// values.whom ?  : console.log("Hi");
 	});
 	// console.log(`Fullscreening: ${fullScreening}`);
