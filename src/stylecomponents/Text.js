@@ -162,6 +162,26 @@ const Button = styled.button`
 		text-decoration: ${CTAUnderline};
 	}
 `;
+const ButtonText = styled.button`
+	${baseStyle};
+	${mainTransition}
+	color: ${fontColor};
+	text-transform: uppercase;
+	cursor: pointer;
+	background: transparent;
+	border: 0;
+	padding: 0;
+	border-bottom: 2px solid rgba(0, 0, 0, 0);
+	&:focus,
+	&:hover {
+		border-bottom: 2px solid ${colorSlightOpacity};
+	}
+	&.active,
+	&.current {
+		color: ${fontColor};
+		border-bottom: 2px solid ${fontColor};
+	}
+`;
 const HyperLink = styled.a`
 	${baseStyle};
 	${mainTransition}
@@ -236,6 +256,7 @@ const Text = ({
 	paragraph,
 	nomargin,
 	button,
+	buttontext,
 	right,
 	center,
 	link,
@@ -292,6 +313,15 @@ const Text = ({
 	if (button)
 		return (
 			<Button nomargin={nomargin} right={right} center={center} {...props} />
+		);
+	if (buttontext)
+		return (
+			<ButtonText
+				nomargin={nomargin}
+				right={right}
+				center={center}
+				{...props}
+			/>
 		);
 	if (link)
 		return (

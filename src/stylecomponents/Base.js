@@ -59,7 +59,8 @@ import {
 	tablet,
 	paddingLR,
 	// slightBoxShadowBelow,
-	userSelectNone
+	userSelectNone,
+	marginLR
 } from "./StyleHelpers";
 
 import { revealSecs } from "../helpers";
@@ -826,4 +827,17 @@ export const StartUp = styled.div`
 	}
 
 } */
+`;
+
+export const AccessibilityContainer = styled.div`
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	display: flex;
+	flex-flow: row-reverse;
+	justify-content: right;
+	button {
+		margin-left: auto;
+		${marginLR};
+	}
 `;

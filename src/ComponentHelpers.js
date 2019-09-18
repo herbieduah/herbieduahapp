@@ -5,7 +5,7 @@ import {
 	useWindowResize,
 	isPortrait,
 	revealSecs,
-	getCurrentTransition,
+	getCurrentTransition
 } from "./helpers";
 import { ElementReveal } from "./ContentHelpers";
 import Text from "./stylecomponents/Text";
@@ -27,7 +27,7 @@ import ContentContainer from "./stylecomponents/ContentContainer";
 import { NavLink } from "react-router-dom";
 import Modal from "./maincomponents/Modal";
 import { Tab, TabList, TabPanel } from "react-tabs";
-import { ReactTabs } from "./stylecomponents/Base";
+import { ReactTabs, AccessibilityContainer } from "./stylecomponents/Base";
 import SubMenu from "./maincomponents/SubMenu";
 import { trackWindowScroll } from "react-lazy-load-image-component";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
@@ -101,7 +101,7 @@ export const NavBar = () => {
 						className='navbar__logo-link'
 						to='/'
 						tabIndex='0'
-						aria-label="Logo"
+						aria-label='Logo'
 						onClick={setMenuModalClose}>
 						<Media
 							type='icon'
@@ -169,7 +169,12 @@ export const NavBar = () => {
 					isPortrait={isContentPortrait}
 					navBarComplement={navBarComplement}>
 					<div className='navbar__logo-menu'>
-						<NavLink exact className='navbar__logo-link' tabIndex='0' aria-label="Logo" to='/'>
+						<NavLink
+							exact
+							className='navbar__logo-link'
+							tabIndex='0'
+							aria-label='Logo'
+							to='/'>
 							<Media
 								type='icon'
 								className='navbar__logo svg'
@@ -248,6 +253,21 @@ export const FullScreenModal = () => {
 				</div>
 			</div>
 		</Modal>
+	);
+};
+
+export const AccessibilityMode = () => {
+	const { setAccessible } = useContext(globalState);
+
+	const activateAccessibilityMode = () => {
+		setAccessible(true);
+	};
+	return (
+		<AccessibilityContainer>
+			<Text buttontext onClick={activateAccessibilityMode}>
+				Accessibility Mode
+			</Text>
+		</AccessibilityContainer>
 	);
 };
 

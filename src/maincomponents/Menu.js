@@ -10,7 +10,7 @@ import {
 import Text from "../stylecomponents/Text";
 import SubMenu from "./SubMenu";
 import { globalState } from "../State";
-import { MenuTabs } from "../ComponentHelpers";
+import { MenuTabs, AccessibilityMode } from "../ComponentHelpers";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 export const ContentMenu = () => {
 	const {
@@ -41,9 +41,7 @@ export const ContentMenu = () => {
 										<MenuTabs showCategory={isShowingMore} tabIndex={-1} />
 									</div>
 								</div>
-								<div className='accessibility'>
-									<Text button>poop</Text>
-								</div>
+								<AccessibilityMode />
 							</div>
 						</CSSTransition>
 					) : null}
