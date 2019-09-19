@@ -153,11 +153,11 @@ export const ContentContainer = styled.section`
 		max-width: 100%;
   		height: auto;
 	}
-	video {
-		pointer-events: none;
-	}
 	figure {
 		margin: 0;
+	}
+	.all-caps {
+		text-transform: uppercase;
 	}
 	/* .less-more {
 		position:absolute;
@@ -469,6 +469,7 @@ export const ContentContainer = styled.section`
 	.react-tabs {
 		&__tab-list {
 			max-width: 500px;
+			text-transform: uppercase;
 			${paddingLR}
 		}
 	}

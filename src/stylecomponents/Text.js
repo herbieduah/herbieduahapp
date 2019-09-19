@@ -13,7 +13,8 @@ import {
 	// navColor,
 	// navColorActive,
 	tablet,
-	crossOut
+	crossOut,
+	stripButtonStyle
 } from "./StyleHelpers";
 
 import {
@@ -143,6 +144,7 @@ const TextFormatter = styled.span`
 `;
 const Button = styled.button`
 	${baseStyle};
+	${stripButtonStyle}
 	${mainTransition}
 	border: ${buttonBorder};
 	hyphens: manual;
@@ -164,6 +166,7 @@ const Button = styled.button`
 `;
 const ButtonText = styled.button`
 	${baseStyle};
+	${stripButtonStyle}
 	${mainTransition}
 	color: ${fontColor};
 	text-transform: uppercase;

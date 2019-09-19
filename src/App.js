@@ -46,11 +46,7 @@ export const App = () => {
 		setWhom,
 		setForYou,
 		minimalMode,
-		setNavBarComplement,
-		accessible,
-		setFullscreen,
-		setMinimalMode,
-		setControls
+		accessible
 	} = useContext(globalState);
 	const currentThemeObject = getCurrentTheme(defaultAppTheme, currentTheme);
 	const { width: ww, height: wh } = useWindowResize();
@@ -72,18 +68,6 @@ export const App = () => {
 	const whoIsThisFor = forWho => {
 		setForYou(forWho);
 	};
-	const turnOffAccessibilitySettings = () => {
-		setMinimalMode(false);
-		setFullscreen(false);
-		setControls(false);
-		setNavBarComplement(false);
-	};
-	const turnOnAccessibilitySettings = () => {
-		setMinimalMode(true);
-		setFullscreen(true);
-		setControls(true);
-		setNavBarComplement(true);
-	};
 
 	const downloadAllTheThings = () => {
 		if (isShowingMore) {
@@ -100,7 +84,7 @@ export const App = () => {
 			whoIsThisFor(values.for.toLowerCase());
 		}
 		downloadAllTheThings();
-		accessible ? turnOnAccessibilitySettings() : turnOffAccessibilitySettings();
+
 		// values.whom ?  : console.log("Hi");
 	});
 	// console.log(`Fullscreening: ${fullScreening}`);
@@ -118,14 +102,15 @@ export const App = () => {
 				minimalMode={minimalMode}
 				fullScreen={fullScreen}
 				showFSMobileHorizontal={showFSMobileHorizontal}
+				accessible={accessible}
 				dragging={dragging}>
 				{/* <AppStartUp /> */}
 				<ShowIf noAnimation thisValue={currentTheme} thatValue={"matrix"}>
 					<Matrix fullscreen={true} isPortrait={isPortrait(ww, wh)} />
 				</ShowIf>
-				<div className='in-dev'>
-					<Text s className='alpha-text'>
-						This project is in Beta.
+				<div aria-hidden='true' className='in-dev'>
+					<Text xs className='alpha-text'>
+						Beta
 					</Text>
 				</div>
 				<GlobalStyle />

@@ -32,7 +32,7 @@ const LazyLoadWrapper = props => {
 
 const Media = props => {
 	const type = props.type;
-	const { controls } = useContext(globalState);
+	const { videoControls } = useContext(globalState);
 	switch (type) {
 		case "icon":
 			return (
@@ -47,7 +47,7 @@ const Media = props => {
 						url={props.url[1]}
 						width={props.width || "100%"}
 						height={props.height || "100%"}
-						controls={controls}
+						controls={videoControls}
 						playing
 						loop
 						muted
@@ -63,7 +63,7 @@ const Media = props => {
 					<Video
 						cloudName='dwccyjn5e'
 						publicId={`herbieduahapp/${props.url[0]}`}
-						controls={controls}
+						controls={videoControls}
 						width='740'
 						preload='auto'
 						autoPlay

@@ -39,7 +39,7 @@ export const StateProvider = ({ children }) => {
 	const [forYou, setForYou] = useState("");
 	const [modalContent, setModalContent] = useState("");
 	const [whom, setWhom] = useState("everyone");
-	const [controls, setControls] = useState(false);
+	const [videoControls, setVideoControls] = useState(false);
 	const [accessible, setAccessible] = useState(false);
 
 	// currentLeftTop: "LandscapePhotography",
@@ -93,8 +93,8 @@ export const StateProvider = ({ children }) => {
 		setForYou,
 		techy,
 		setTechy,
-		controls,
-		setControls,
+		videoControls,
+		setVideoControls,
 		accessible,
 		setAccessible
 	};

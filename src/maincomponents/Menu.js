@@ -73,7 +73,7 @@ export const ContentMenu = () => {
 					) : null}
 				</TransitionGroup>
 			</div>
-			<div className='offset' />
+			{/* <div className='offset' /> */}
 		</MenuContainer>
 	);
 };

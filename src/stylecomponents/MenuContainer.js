@@ -70,7 +70,7 @@ const MenuContainer = styled.aside`
 		&__tab-list {
 			${props => (props.isPortrait ? `margin-right: auto` : `margin-left: auto`)};
 			max-width: 500px;
-			${props => (props.isPortrait ? `margin-top: 4rem;` : ``)};
+			${props => (props.isPortrait ? `margin-top: 40px;` : ``)};
 			${paddingLR}
 			${tablet} {
 				max-width: 600px;
