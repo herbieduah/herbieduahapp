@@ -7,6 +7,7 @@ import {
 	ContentCategory,
 	ContentShow,
 	Link,
+	Instructions,
 	ElementReveal
 } from "../ContentHelpers";
 import { ReactTabs } from "../stylecomponents/Base";
@@ -33,9 +34,10 @@ const BackgroundsPage = ({ contentProps }) => {
 				<Header>{header}</Header>
 				<Paragraph>
 					I have chosen an extensive collection of colors, gradients, and
-					backgrounds you can select to change the look of this web app in hopes
+					patterns you can select to change the look of this web app in hopes
 					that you will find one that you'd like.
 				</Paragraph>
+				<Instructions>Select circle to change background.</Instructions>
 				{/* <Paragraph>
 					The border around the circle is the font color, so if a circle doesn't
 					have a border, then font color is the current background.
@@ -56,7 +58,7 @@ const BackgroundsPage = ({ contentProps }) => {
 							</Tab>
 							<Tab>
 								<Text format xs wide>
-									Textures/Patterns
+									Patterns
 								</Text>
 							</Tab>
 						</TabList>

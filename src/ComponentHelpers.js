@@ -5,7 +5,7 @@ import {
 	useWindowResize,
 	isPortrait,
 	revealSecs,
-	getCurrentTransition,
+	getCurrentTransition
 } from "./helpers";
 import { ElementReveal } from "./ContentHelpers";
 import Text from "./stylecomponents/Text";
@@ -27,7 +27,7 @@ import ContentContainer from "./stylecomponents/ContentContainer";
 import { NavLink } from "react-router-dom";
 import Modal from "./maincomponents/Modal";
 import { Tab, TabList, TabPanel } from "react-tabs";
-import { ReactTabs } from "./stylecomponents/Base";
+import { ReactTabs, AccessibilityContainer } from "./stylecomponents/Base";
 import SubMenu from "./maincomponents/SubMenu";
 import { trackWindowScroll } from "react-lazy-load-image-component";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
@@ -101,7 +101,7 @@ export const NavBar = () => {
 						className='navbar__logo-link'
 						to='/'
 						tabIndex='0'
-						aria-label="Logo"
+						aria-label='Logo'
 						onClick={setMenuModalClose}>
 						<Media
 							type='icon'
@@ -114,7 +114,7 @@ export const NavBar = () => {
 							className='navbar__contact'
 							onClick={setMenuModalContent}
 							menuLink
-							tabIndex='-1'
+							tabIndex='0'
 							to='/contacts'>
 							Contact
 						</Text>
@@ -123,14 +123,10 @@ export const NavBar = () => {
 						<ShowIf noAnimation thisValue={modalVisible} thatValue={true}>
 							<ElementReveal>
 								<Text
-									format
-									role='button'
+									buttontext
 									m
-									bold
 									wide
-									aria-pressed='true'
 									className='navbar__menu-text'
-									tabIndex='1'
 									onClick={setMenuModalContent}>
 									Back
 								</Text>
@@ -139,14 +135,10 @@ export const NavBar = () => {
 						<ShowIf noAnimation thisValue={modalVisible} thatValue={false}>
 							<ElementReveal>
 								<Text
-									format
-									role='button'
+									buttontext
 									m
-									bold
 									wide
-									aria-pressed='false'
 									className='navbar__menu-text'
-									tabindex='1'
 									onClick={setMenuModalContent}>
 									Menu
 								</Text>
@@ -169,7 +161,12 @@ export const NavBar = () => {
 					isPortrait={isContentPortrait}
 					navBarComplement={navBarComplement}>
 					<div className='navbar__logo-menu'>
-						<NavLink exact className='navbar__logo-link' tabIndex='0' aria-label="Logo" to='/'>
+						<NavLink
+							exact
+							className='navbar__logo-link'
+							tabIndex='0'
+							aria-label='Logo'
+							to='/'>
 							<Media
 								type='icon'
 								className='navbar__logo svg'
@@ -186,7 +183,7 @@ export const NavBar = () => {
 										menuLink
 										exact
 										to='/'
-										tabIndex='-1'
+										tabIndex='0'
 										className='navbar__home-text'
 										aria-hidden={showLess ? `true` : `false`}>
 										Home
@@ -197,12 +194,11 @@ export const NavBar = () => {
 					</div>
 					<Text
 						m
-						format
 						role='button'
 						aria-pressed={fullScreen ? `true` : `false`}
 						className='navbar__maximize'
 						onClick={setMaximizeAndMinimize}
-						tabindex='1'
+						tabindex='0'
 						aria-hidden={showLess ? `true` : `false`}>
 						<ShowIf thisValue={fullScreen && !showLess} thatValue={true}>
 							Minimize
@@ -251,6 +247,35 @@ export const FullScreenModal = () => {
 	);
 };
 
+export const AccessibilityMode = () => {
+	const {
+		setAccessible,
+		setMinimalMode,
+		setFullscreen,
+		setVideoControls,
+		setNavBarComplement,
+		accessible
+	} = useContext(globalState);
+
+	const activateAccessibilityMode = () => {
+		accessible ? setMinimalMode(false) : setMinimalMode(true);
+		accessible ? setFullscreen(false) : setFullscreen(true);
+		accessible ? setVideoControls(false) : setVideoControls(true);
+		accessible ? setNavBarComplement(false) : setNavBarComplement(true);
+		accessible ? setAccessible(false) : setAccessible(true);
+	};
+
+	return (
+		<AccessibilityContainer>
+			<ElementReveal>
+				<Text buttontext s onClick={activateAccessibilityMode}>
+					Accessibility Mode
+				</Text>
+			</ElementReveal>
+		</AccessibilityContainer>
+	);
+};
+
 export const FullScreenOverlay = () => {
 	const {
 		modalVisible,
@@ -267,7 +292,7 @@ export const FullScreenOverlay = () => {
 						<div className='modal__container'>
 							<div className='modal__content'>
 								<ShowIf noAnimation thisValue='menu' thatValue={modalContent}>
-									<section>
+									<section className='menu'>
 										<MenuMini showCategory={true} />
 									</section>
 								</ShowIf>
@@ -337,22 +362,22 @@ export const MenuTabs = props => {
 			<ElementReveal>
 				<TabList>
 					<Tab>
-						<Text format s tabIndex='2'>
+						<Text format xs tabIndex='-1'>
 							Customize
 						</Text>
 					</Tab>
 					<Tab>
-						<Text format s tabIndex='3'>
+						<Text format xs tabIndex='-1'>
 							Work
 						</Text>
 					</Tab>
 					<Tab>
-						<Text format s tabIndex='4'>
+						<Text format xs tabIndex='-1'>
 							Photography
 						</Text>
 					</Tab>
 					<Tab>
-						<Text format s tabIndex='5'>
+						<Text format xs tabIndex='-1'>
 							About
 						</Text>
 					</Tab>
@@ -383,15 +408,8 @@ export const MenuTabs = props => {
 };
 
 export const MenuMini = props => {
-	const showCategory = props.showCategory;
-	return (
-		<nav>
-			<SubMenu showCategory={showCategory} category='customize' />
-			<SubMenu showCategory={showCategory} category='work' />
-			<SubMenu showCategory={showCategory} category='photography' />
-			<SubMenu showCategory={showCategory} category='about' />
-		</nav>
-	);
+	// const showCategory = props.showCategory;
+	return <MenuTabs />;
 };
 
 export const Log = props => {
@@ -421,7 +439,11 @@ const ContentWrapperContainer = props => {
 		setFullscreen,
 		setSides,
 		forYou,
-		switchSides
+		switchSides,
+		setAccessible,
+		accessible,
+		videoControls,
+		setVideoControls
 	} = useContext(globalState);
 	const { width: ww, height: wh } = useWindowResize();
 	const values = { ww, wh, cw, ch };
@@ -458,7 +480,11 @@ const ContentWrapperContainer = props => {
 		setTechy,
 		setSides,
 		switchSides,
-		forYou
+		forYou,
+		setAccessible,
+		accessible,
+		videoControls,
+		setVideoControls
 	};
 	const children = React.Children.map(props.children, (child, index) => {
 		return React.cloneElement(child, {

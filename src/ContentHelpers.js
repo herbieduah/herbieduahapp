@@ -8,7 +8,8 @@ import {
 	isPortrait,
 	getCurrentTransition,
 	getThemeInfo,
-	getTransitionInfo,camelCaseHelper
+	getTransitionInfo,
+	camelCaseHelper
 } from "./helpers";
 import ClickNHold from "react-click-n-hold";
 import Reveal from "react-reveal/Reveal";
@@ -87,11 +88,9 @@ export const ContentShow = props => {
 						<aside className='less'>
 							<div className='less__wrapper'>
 								{props.children}
-								<ElementReveal>
-								<Text xs className='less__drag paddingLR'>
+								<Instructions className='less__drag'>
 									Drag the slider {whereToDrag} to reveal more.&nbsp;
-								</Text>
-								</ElementReveal>
+								</Instructions>
 							</div>
 						</aside>
 					</CSSTransition>
@@ -206,6 +205,19 @@ export const ElementReveal = props => {
 	);
 };
 
+export const Instructions = props => {
+	return (
+		<ElementReveal>
+			<Text
+				xs
+				className={`paddingLR instructions all-caps c-margin-bottom-med ${props.className ||
+					""}`}>
+				{props.children}
+			</Text>
+		</ElementReveal>
+	);
+};
+
 export const ContentCategory = props => {
 	const categoryArr = ["customize", "work", "photography", "about"];
 	const tabIndex = categoryArr.indexOf(props.category);
@@ -304,20 +316,19 @@ export const HeadingTwo = props => {
 
 export const UL = props => {
 	return (
-			<ul className='paddingLR' {...props}>
-				{props.children}
-			</ul>
-		
+		<ul className='paddingLR' {...props}>
+			{props.children}
+		</ul>
 	);
 };
 
 export const LI = props => {
 	return (
 		<li className='marginLR'>
-		<ElementReveal>
-			<Text format m {...props}>
-				{props.children}
-			</Text>
+			<ElementReveal>
+				<Text format m {...props}>
+					{props.children}
+				</Text>
 			</ElementReveal>
 		</li>
 	);
@@ -561,8 +572,11 @@ export const TransitionTexts = props => {
 		<TransitionTextContainer
 			onClick={changeTransition}
 			className={`appTransition__item`}>
-			<div className={`appTransition__container ${currentClass}`}>
-				<Text format role='button' m>
+			<div className={`appTransition__container`}>
+				<Text
+					buttontext
+					className={`appTransition__container ${currentClass}`}
+					m>
 					<span className={enterTextTransition}>
 						{camelCaseHelper(transitionValues.enterTransition)}
 					</span>

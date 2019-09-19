@@ -5,7 +5,9 @@ import {
 	absoluteOverlay,
 	mainTransition,
 	userSelectNone,
-	mobile
+	mobile,
+	paddingLR,
+	navBarSize
 } from "./StyleHelpers";
 import {
 	appBg,
@@ -13,7 +15,8 @@ import {
 	appBgColor,
 	bgColorOverlay,
 	fontColorOpposite,
-	fontColor
+	fontColor,
+	colorSlightOpacity
 	// appBgAnimation
 } from "./Themes/ThemeVariables";
 // import Matrix from "react-matrix-effect";
@@ -23,7 +26,8 @@ import {
 export const HerbieDuahApp = styled.main`
 	${mobile}{
 	img,video {
-		${props => (props.fullscreen ? "" : "pointer-events: none;")};
+		${props =>
+			props.fullscreen || props.accessible ? "" : "pointer-events: none;"};
 	}
 	}
 	
@@ -44,7 +48,7 @@ export const HerbieDuahApp = styled.main`
 	}
 	button,link,a,span {
 		&:focus{
-			outline: 0;
+			outline: 0 !important;
 		}
 	}
 	
@@ -104,12 +108,12 @@ export const HerbieDuahApp = styled.main`
 	}
 
 	p.alpha-text {
-			background-color:${fontColor};
-			color: white;	
-			color: ${fontColorOpposite};
+			color: ${colorSlightOpacity};
 			width:100%;
-			text-align:center;
+			${paddingLR};
+			text-align:left;
 			pointer-events: none;
+			padding-bottom: 2px;
 			${userSelectNone}
 		}
 		.in-dev {
@@ -120,6 +124,7 @@ export const HerbieDuahApp = styled.main`
 			display:flex;
 			align-items: flex-end;
 			pointer-events: none;
+			padding: ${props => (props.isPortrait ? "0" : `0 ${navBarSize} ${navBarSize}`)};
 		}
 
 `;

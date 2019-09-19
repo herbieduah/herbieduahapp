@@ -7,9 +7,10 @@ import {
 	revealSecs,
 	getCurrentTransition
 } from "../helpers";
+import Text from "../stylecomponents/Text";
 import SubMenu from "./SubMenu";
 import { globalState } from "../State";
-import { MenuTabs } from "../ComponentHelpers";
+import { MenuTabs, AccessibilityMode } from "../ComponentHelpers";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 export const ContentMenu = () => {
 	const {
@@ -40,6 +41,7 @@ export const ContentMenu = () => {
 										<MenuTabs showCategory={isShowingMore} tabIndex={-1} />
 									</div>
 								</div>
+								<AccessibilityMode />
 							</div>
 						</CSSTransition>
 					) : null}
@@ -71,7 +73,7 @@ export const ContentMenu = () => {
 					) : null}
 				</TransitionGroup>
 			</div>
-			<div className='offset' />
+			{/* <div className='offset' /> */}
 		</MenuContainer>
 	);
 };

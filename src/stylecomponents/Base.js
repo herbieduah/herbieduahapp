@@ -59,7 +59,8 @@ import {
 	tablet,
 	paddingLR,
 	// slightBoxShadowBelow,
-	userSelectNone
+	userSelectNone,
+	marginLR
 } from "./StyleHelpers";
 
 import { revealSecs } from "../helpers";
@@ -135,6 +136,7 @@ export const NavBarMiniContainer = styled.div`
 					: navBarHoverFocus};
 		}
 		a {
+			cursor: pointer;
 			color: ${props =>
 				props.navBarComplement
 					? navBarButtonComplementaryText
@@ -273,6 +275,12 @@ export const NavBarContainer = styled.div`
 			props.navBarRight ? `padding-right: 0!important` : navBarBorder}; 	 */
 			margin-left: ${navBarSize};
 		}
+		button {
+			border: none !important;
+			&:focus {
+				border: none !important;
+			}
+		}
 		&__maximize {
 			padding: 0 !important;
 			display: flex;
@@ -373,7 +381,7 @@ export const ReactTabs = styled(Tabs)`
 			${hideScrollbar}
 			border:0;
 			border-radius: 0;
-			text-transform: capitalize;
+			text-transform: uppercase;
 		}
 
 		&__tab {
@@ -606,11 +614,6 @@ export const TransitionTextContainer = styled.li`
 			display: inline-block;
 			border-bottom: 2px solid rgba(0, 0, 0, 0);
 			cursor: pointer;
-			&.current,
-			&:hover,
-			&:focus {
-				border-bottom: 2px solid ${fontColor};
-			}
 		}
 	}
 
@@ -661,46 +664,34 @@ export const FullScreenOverlayContainer = styled.div`
 			overflow: auto;
 			padding-bottom: 200px;
 			${hideScrollbar}
+			text-align: left;
+			
+			display: flex;
+			align-items: center;
+			justify-content: center;
 
 		}
 	}
-	nav {
-		height: 100%;
-		display: block;
-		overflow: auto;
-		${paddingLR};
-	}
-	.react-tabs {
-		&__tab-list {
+	.menu {
+		max-width: 600px;
+		ul {
+			list-style-type: none;
 			padding: 0;
 		}
 	}
+	
+	nav {
+		height: 35vh;
+	}
 	.subMenu {
-		padding: 0;
-		display: flex;
-		flex-wrap: wrap;
-		width: 100%;
-		${mobile} {
-			display:block
+		ul {
+			list-style-type: none;
 		}
 		&__item {
-			margin-bottom: 1.5rem;
-			list-style-type: none;
-			margin-right: ${navBarSize};
-			
-			white-space: nowrap;
-			${mobile} {
-				margin-right: 0;
-			}
-		}
-		&__text {
-			margin-top: 1rem;
-			${mobile} {
-				margin-top: 2.5rem;
-			}
+			margin-bottom: 1rem;
 		}
 	}
-		
+	
 	&::before {
 		content:'';
 		/* filter: blur(5px); */
@@ -826,4 +817,21 @@ export const StartUp = styled.div`
 	}
 
 } */
+`;
+
+export const AccessibilityContainer = styled.div`
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	display: flex;
+	flex-flow: row-reverse;
+	justify-content: right;
+	button {
+		margin-left: auto;
+		${marginLR};
+	}
+	margin-bottom: ${navBarSize};
+	${mobile} {
+		margin-bottom: 0;
+	}
 `;

@@ -8,9 +8,10 @@ import {
 	ContentShow,
 	ContentCategory,
 	GenerateTransition,
-	Link
+	Link,
+	Instructions
 } from "../ContentHelpers";
-import { ShowIf } from "../ComponentHelpers";
+// import { ShowIf } from "../ComponentHelpers";
 import "animate.css";
 // import Emoji from "a11y-react-emoji";
 
@@ -41,7 +42,8 @@ const TransitionsPage = ({ contentProps }) => {
 					extensive collection of random transitions for you to choose how you
 					bring this web app to life.
 				</Paragraph>
-				<div className='padding-left-right'>
+				<Instructions>Select Transitions Below.</Instructions>
+				<div className='padding-left-right breather'>
 					<GenerateTransition />
 				</div>
 				{/* <ShowIf noAnimation thisValue={techy} thatValue={true}> */}

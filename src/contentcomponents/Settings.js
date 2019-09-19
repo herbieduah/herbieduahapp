@@ -6,10 +6,14 @@ import {
 	Header,
 	ContentShow,
 	ContentCategory,
-	Small,
+	UL,
+	LI,
+	// Small,
 	Button,
 	// SettingButton,
-	DisableSetting
+	DisableSetting,
+	Link,
+	Instructions
 } from "../ContentHelpers";
 import { ShowIf } from "../ComponentHelpers";
 // import Text from "../stylecomponents/Text";
@@ -31,13 +35,43 @@ const SettingsPage = ({ contentProps }) => {
 		setSides,
 		switchSides,
 		fullScreen,
-		setFullscreen
+		setFullscreen,
+		setAccessible,
+		accessible,
+		videoControls,
+		setVideoControls
 	} = contentProps;
+
+	const controlVideoMode = () => {
+		videoControls ? setVideoControls(false) : setVideoControls(true);
+	};
 	const moveNavBar = () => {
 		navBarRight ? setNavBarRight(false) : setNavBarRight(true);
 	};
 	const complementNavBar = () => {
 		navBarComplement ? setNavBarComplement(false) : setNavBarComplement(true);
+	};
+	// const turnOnAccessibilitySettings = () => {
+	// 	setMinimalMode(true);
+	// 	setFullscreen(true);
+	// 	setVideoControls(true);
+	// 	setNavBarComplement(true);
+	// 	setAccessible(true);
+	// };
+	// const turnOffAccessibilitySettings = () => {
+	// 	setMinimalMode(false);
+	// 	setFullscreen(false);
+	// 	setVideoControls(false);
+	// 	setNavBarComplement(false);
+	// 	setAccessible(false);
+	// };
+
+	const activateAccessibilityMode = () => {
+		accessible ? setMinimalMode(false) : setMinimalMode(true);
+		accessible ? setFullscreen(false) : setFullscreen(true);
+		accessible ? setVideoControls(false) : setVideoControls(true);
+		accessible ? setNavBarComplement(false) : setNavBarComplement(true);
+		accessible ? setAccessible(false) : setAccessible(true);
 	};
 
 	const basicMode = () => {
@@ -107,11 +141,52 @@ const SettingsPage = ({ contentProps }) => {
 				<ShowIf noAnimation thisValue={techy} thatValue={false}>
 					<Button onClick={knowCode}>Activate developer mode</Button>
 				</ShowIf>
+
+				<HeadingTwo>Accessibility Mode</HeadingTwo>
+				<ShowIf noAnimation thisValue={accessible} thatValue={false}>
+					<Paragraph>Accessibility Mode changes these settings:</Paragraph>
+					<UL>
+						<LI>Adds Background color to Navigation Bar</LI>
+						<LI>Changes the web app to a Traditional look</LI>
+						<LI>Adds controls to video players</LI>
+					</UL>
+					<Instructions>
+						Find more details about these settings below.
+					</Instructions>
+				</ShowIf>
+				<ShowIf noAnimation thisValue={accessible} thatValue={true}>
+					<Paragraph>You've activated Accessibility Mode</Paragraph>
+					<Paragraph>
+						If you or someone you know are not able to navigate through my web
+						app, please send any suggestions you have to myemail to{" "}
+						<Link href='mailto:herbduah@gmail.com'>herbduah@gmail.com</Link>
+					</Paragraph>
+					<Paragraph>Accessibility Mode changes these settings:</Paragraph>
+					<UL>
+						<LI>Adds Background color to navigation bar</LI>
+						<LI>Changes the web app to a traditional mode</LI>
+						<LI>Adds controls to video players</LI>
+					</UL>
+					<Instructions>
+						Find more details about these settings below.
+					</Instructions>
+				</ShowIf>
+				<ShowIf noAnimation thisValue={accessible} thatValue={true}>
+					<Button onClick={activateAccessibilityMode}>
+						De-activate Accessibility Mode
+					</Button>
+				</ShowIf>
+				<ShowIf noAnimation thisValue={accessible} thatValue={false}>
+					<Button onClick={activateAccessibilityMode}>
+						Activate Accessibility Mode
+					</Button>
+				</ShowIf>
+
 				<ShowIf noAnimation thisValue={techy} thatValue={true}>
 					<DisableSetting
 						thisValue={fullScreen}
 						thatValue={true}
-						message="You can't interact with this setting if the slider is not showing">
+						message="You can't interact with this setting because the web app is not set to Traditional.">
 						<HeadingTwo>Switch sides (Failure)</HeadingTwo>
 						<Paragraph>
 							This lets you switch the content and the menu. This was one of the
@@ -179,23 +254,21 @@ const SettingsPage = ({ contentProps }) => {
 				<DisableSetting
 					thisValue={minimalMode}
 					thatValue={true}
-					message="You can't interact with this setting because you've made the web app look like every other website.">
+					message="You can't interact with this setting because the web app is set to Traditional.">
 					<HeadingTwo>Move navigation bar</HeadingTwo>
 					<Paragraph>
 						This setting moves navigations bar to the right or left. (It's
 						useful on mobile if you're left handed.)
 					</Paragraph>
 					<ShowIf noAnimation thisValue={navBarRight} thatValue={true}>
-						<Button onClick={moveNavBar}>Move Navigation Bar Left</Button>
+						<Button onClick={moveNavBar}>Move Navigation Bar left</Button>
 						{/* <Small>
 							Move Navigation bar to the left to the left, everything you need
 							to navigate the site to the left.
 						</Small> */}
 					</ShowIf>
 					<ShowIf noAnimation thisValue={navBarRight} thatValue={false}>
-						<Button onClick={moveNavBar}>
-							Move Navigation Bar to the right
-						</Button>
+						<Button onClick={moveNavBar}>Move Navigation Bar right</Button>
 						{/* <Small>
 							Move Navigation bar back to right side, not the wrong side, the
 							right side, the side I chose first which is right.
@@ -203,24 +276,37 @@ const SettingsPage = ({ contentProps }) => {
 					</ShowIf>
 				</DisableSetting>
 
-				<HeadingTwo>Like every other site</HeadingTwo>
+				<HeadingTwo>Traditional</HeadingTwo>
 				<Paragraph>
-					This setting gets rids of the slider and the vertical navigation bar
-					therefore making it like every other website.
+					This setting gets rids of the default slider and the vertical
+					navigation bar and replaces with a more traditional horizontal
+					navigation menu up top.
 				</Paragraph>
 				<ShowIf noAnimation thisValue={minimalMode} thatValue={true}>
-					<Button onClick={basicMode}>Go back to the slider</Button>
+					<Button onClick={basicMode}>Change to Default</Button>
 				</ShowIf>
 				<ShowIf noAnimation thisValue={minimalMode} thatValue={false}>
-					<Button onClick={basicMode}>
-						Make it look like every other site
-					</Button>
+					<Button onClick={basicMode}>Change to Traditional</Button>
 				</ShowIf>
+
+				<HeadingTwo>Add controls to videos</HeadingTwo>
+				<Paragraph>
+					By default, all the videos on this web app autoplay (they all have no
+					sound) and have no controls. This setting lets you add or remove
+					controls for the videos.
+				</Paragraph>
+				<ShowIf noAnimation thisValue={videoControls} thatValue={true}>
+					<Button onClick={controlVideoMode}>Remove controls</Button>
+				</ShowIf>
+				<ShowIf noAnimation thisValue={videoControls} thatValue={false}>
+					<Button onClick={controlVideoMode}>Add controls</Button>
+				</ShowIf>
+
 				<DisableSetting
 					thisValue={minimalMode}
 					thatValue={false}
-					message='This setting is only works when the web app looks like every other website.'>
-					<HeadingTwo>Background Navigation Bar</HeadingTwo>
+					message='This setting only works when the web app is set to Traditional.'>
+					<HeadingTwo>Navigation Bar background color</HeadingTwo>
 					<Paragraph>
 						{" "}
 						This setting adds a background color to the navigation bar.(Only

@@ -13,7 +13,8 @@ import {
 	// navColor,
 	// navColorActive,
 	tablet,
-	crossOut
+	crossOut,
+	stripButtonStyle
 } from "./StyleHelpers";
 
 import {
@@ -143,6 +144,7 @@ const TextFormatter = styled.span`
 `;
 const Button = styled.button`
 	${baseStyle};
+	${stripButtonStyle}
 	${mainTransition}
 	border: ${buttonBorder};
 	hyphens: manual;
@@ -160,6 +162,27 @@ const Button = styled.button`
 	&.active,&.current {
 		color: ${buttonColorHoverFocus};
 		text-decoration: ${CTAUnderline};
+	}
+`;
+const ButtonText = styled.button`
+	${baseStyle};
+	${stripButtonStyle}
+	${mainTransition}
+	color: ${fontColor};
+	text-transform: uppercase;
+	cursor: pointer;
+	background: transparent;
+	border: 0;
+	padding: 0;
+	border-bottom: 2px solid rgba(0, 0, 0, 0);
+	&:focus,
+	&:hover {
+		border-bottom: 2px solid ${colorSlightOpacity};
+	}
+	&.active,
+	&.current {
+		color: ${fontColor};
+		border-bottom: 2px solid ${fontColor};
 	}
 `;
 const HyperLink = styled.a`
@@ -236,6 +259,7 @@ const Text = ({
 	paragraph,
 	nomargin,
 	button,
+	buttontext,
 	right,
 	center,
 	link,
@@ -292,6 +316,15 @@ const Text = ({
 	if (button)
 		return (
 			<Button nomargin={nomargin} right={right} center={center} {...props} />
+		);
+	if (buttontext)
+		return (
+			<ButtonText
+				nomargin={nomargin}
+				right={right}
+				center={center}
+				{...props}
+			/>
 		);
 	if (link)
 		return (

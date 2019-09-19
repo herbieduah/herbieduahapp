@@ -201,6 +201,20 @@ ${mobile} {
 }
 `;
 
+export const stripButtonStyle = `
+button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+button:focus {
+    outline-offset: -4px;
+}
+
+button:active {
+    transform: scale(0.99);
+}`;
+
 export const cMarginBottomSm = `margin-bottom: 1.25rem;
 ${mobile} {
 	margin-bottom: .75rem;

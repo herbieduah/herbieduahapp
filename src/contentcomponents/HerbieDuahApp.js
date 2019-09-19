@@ -52,7 +52,7 @@ const HerbieDuahAppPage = ({ contentProps }) => {
 		<Fragment>
 			<ContentShow less>
 				<Header less>{header}</Header>
-				<Paragraph less>Why I made this portolio</Paragraph>
+				<Paragraph less>Why I made this portolio.</Paragraph>
 				<div className='less__container'>
 					<Figure src={thisAppHDRHomeTop}>
 						<Figcaption>
@@ -69,9 +69,47 @@ const HerbieDuahAppPage = ({ contentProps }) => {
 					Coming Soon{" "}
 					<Emoji className='emoji' symbol='🚧' label='contruction' />
 				</Paragraph>
+				<ShowIf noAnimation thisValue={techy} thatValue={true}>
+					<HeadingTwo>For My Devs</HeadingTwo>
+					<UL>
+						<LI>
+							I didn't intend for this to be an app. I wanted to make a website
+							that was customizable but during the development I realized it was
+							very "app-like". The idea of creating my own app later on inspired
+							me.
+						</LI>
+						<LI>
+							This is built on create-react-app (no ejection). All client no
+							server baby!
+						</LI>
+						<LI>I use Styled Components heavily for my themes</LI>
+						<LI>
+							I host my videos myself but I have a copy on&nbsp;
+							<Link href='https://cloudinary.com'>Cloudinary</Link>
+							&nbsp;
+						</LI>
+						<LI>
+							I used asked for feedback on r/webdev r/userexperience subreddit
+						</LI>
+						<LI>
+							I host on
+							<Link href='https://app.netlify.com/'>Netlify</Link>&nbsp;
+						</LI>
+						<LI>
+							I kept the content at a max-width of 740px so I wouldn't have to
+							resize a lot of images.
+						</LI>
+						<LI>
+							<s>
+								I am aware my site is not accessible and I am working on it.
+							</s>
+							I gotta add some alt tags.
+						</LI>
+					</UL>
+				</ShowIf>
 				<Paragraph>
-					While I figure out how to structure this section, here are some
-					pictures and videos.
+					While I figure out how to structure the rest of this page, here are
+					some pictures and videos.
 				</Paragraph>
 				<Figure src={thisAppHerbieDuahComeUX}>
 					<Figcaption>
@@ -114,45 +152,7 @@ const HerbieDuahAppPage = ({ contentProps }) => {
 						HerbieDuah.app Mobile website screenshot June 2019 (Development)
 					</Figcaption>
 				</Figure>
-				<ShowIf noAnimation thisValue={techy} thatValue={true}>
-					<HeadingTwo>For My Technical Peeps</HeadingTwo>
-					<Paragraph>
-						I looked at many cool sites for inspiration and one thing I wished
-						they had was Behind The Scenes/Fun Facts section about their site.
-					</Paragraph>
-					<UL>
-						<LI>
-							I didn't intend for this to be an app. I wanted to make a website
-							that was customizable but during the development I realized it was
-							very "app-like". The idea of creating my own app later on inspired
-							me.
-						</LI>
-						<LI>
-							This is built on create-react-app (no ejection). All client no
-							server baby!
-						</LI>
-						<LI>I use Styled Components heavily for my themes</LI>
-						<LI>
-							I host my videos myself but I have a copy on&nbsp;
-							<Link href='https://cloudinary.com'>Cloudinary</Link>
-							&nbsp;
-						</LI>
-						<LI>
-							I used asked for feedback on r/webdev r/userexperience subreddit
-						</LI>
-						<LI>
-							I host on
-							<Link href='https://app.netlify.com/'>Netlify</Link>&nbsp;
-						</LI>
-						<LI>
-							I kept the content at a max-width of 740px so I wouldn't have to
-							resize a lot of images.
-						</LI>
-						<LI>
-							I am aware my site is not accessible and I am working on it.
-						</LI>
-					</UL>
-				</ShowIf>
+
 				<ContentCategory
 					fullScreen={fullScreen}
 					minimalMode={minimalMode}
