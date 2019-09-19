@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { ThemeProvider } from "styled-components";
 import {
 	GlobalStyle,
-	FullScreeningBG,
+	// FullScreeningBG,
 	BorderDesktop
 } from "./stylecomponents/Base";
 import { globalState } from "./State";

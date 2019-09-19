@@ -246,7 +246,7 @@ export const Paragraph = props => {
 					m={!props.less}
 					l={props.less}
 					wide={props.less || props.wide}
-					className={`${compClassName} ${lessClass} padding-left-right`}>
+					className={`${compClassName} ${lessClass} paddingLR`}>
 					{props.children}
 				</Text>
 			</ElementReveal>

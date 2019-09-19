@@ -194,6 +194,7 @@ export const NavBar = () => {
 					</div>
 					<Text
 						m
+						format
 						role='button'
 						aria-pressed={fullScreen ? `true` : `false`}
 						className='navbar__maximize'

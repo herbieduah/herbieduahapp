@@ -2,8 +2,9 @@
 import React from "react";
 import { Paragraph, Header, Gif } from "../ContentHelpers";
 import Emoji from "a11y-react-emoji";
+import { videosofme404 } from "../VideoVariables";
 // import fourohfour from "../media/videos/videosOfme/404.mp4";
-import { videosofme404 } from "../media/appVideos/videosofme404.mp4";
+// import { videosofme404 } from "../media/appVideos/videosofme404.mp4";
 // import { from } from "rxjs";
 const header = "404";
 

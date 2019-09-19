@@ -7,8 +7,7 @@ import {
 	HeadingTwo,
 	// HeadingThree,
 	Image,
-	UL,
-	LI,
+
 	// Link,
 	ContentCategory,
 	// Figure,
@@ -85,7 +84,7 @@ const HomePage = ({ contentProps }) => {
 						className='paddingLR'
 						alt='a picture of me smiling'
 					/>
-					<HeadingTwo>An App For Everyone</HeadingTwo>
+					<HeadingTwo>An App for everyone</HeadingTwo>
 					<Paragraph>
 						Nowadays, there is an app for everything. In the future, I believe
 						there is going to be an app for everyone.

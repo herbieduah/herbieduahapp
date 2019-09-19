@@ -32,7 +32,7 @@ import {
 	// cPaddingTop,
 	// cPaddingTopMed,
 	paddingLRSm,
-	absoluteOverlay,
+	// absoluteOverlay,
 	crossOut
 } from "./StyleHelpers";
 import {
@@ -58,15 +58,16 @@ export const ContentContainer = styled.section`
 	padding-top: 0 !important;
 	/* transform: perspective(300px) rotateX(15deg);  */
 	.less {
+		position: fixed;
 		h1, p {
-			.paddingLR {
+			&.paddingLR,&.padding-left-right {
 				${props => (props.isPortrait ? `` : `padding-right: 0; padding-left: 0;`)};
 			}
 		}
 		${mainTransition}
 		width:  100%;
 		height: ${props => (props.showLess && !props.isPortrait ? `100%` : `100%`)};
-		position: fixed;
+		
 		z-index: 10;
 		${props =>
 			props.isPortrait ? `margin-top: .5rem` : `margin-top: ${navBarSize}`};
@@ -81,11 +82,6 @@ export const ContentContainer = styled.section`
 			.paddingLR,.padding-left-right {
 				${props => (props.isPortrait ? `padding-left: 0; padding:right: 0` : ``)};
 			}
-		}
-		${mobile} {
-			width: 100%;
-			height: 100%;
-			padding:0;
 		}
 		
 		&__container {
@@ -128,7 +124,13 @@ export const ContentContainer = styled.section`
 		padding-bottom: 0;
 		${mobile}{
 			padding-top: 0;
-			padding-bottom: 0;	
+			padding-bottom: 0;
+			${props =>
+				props.navBarRight
+					? `padding-left: 0; padding-right: ${navBarSize};`
+					: `padding-right: ${navBarSize}; padding-left: 0 `};
+			width: 100%;
+			height: 100%;	
 		}
 	}
 			

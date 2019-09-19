@@ -64,7 +64,7 @@ const DiscountTirePage = ({ contentProps }) => {
 				<Header>{header}</Header>
 				<WorkInfo techy={techy} workinfo={workinfo} />
 				<Paragraph>
-					I am currently working at Discount Tire as a Front End Developer I. My
+					I am currently working at Discount Tire as a Front End Developer. My
 					job duties consist of developing and designing webpages and updating
 					content for a legacy Intranet System so unfortunately, I can't show
 					any of my work.
