@@ -122,7 +122,6 @@ export const ContentContainer = styled.section`
 			${props => (props.isPortrait ? `${cMarginBottomMed}` : `margin-bottom: 9.5vh`)};
 		}
 		&__drag {
-			text-transform: uppercase;
 			${props =>
 				props.isPortrait
 					? ``
