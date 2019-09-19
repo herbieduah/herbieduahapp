@@ -18,7 +18,7 @@ import "animate.css";
 const header = "Transitions (Beta)";
 
 const TransitionsPage = ({ contentProps }) => {
-	const { fullScreen, techy, minimalMode } = contentProps;
+	const { fullScreen, minimalMode } = contentProps;
 	return (
 		<Fragment>
 			<ContentShow less>

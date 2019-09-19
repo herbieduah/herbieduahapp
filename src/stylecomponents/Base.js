@@ -57,7 +57,7 @@ import {
 	// contentMenuPaddingRight,
 	// contentMenuPadding,
 	tablet,
-	paddingLR,
+	// paddingLR,
 	// slightBoxShadowBelow,
 	userSelectNone,
 	marginLR
