@@ -89,7 +89,7 @@ export const ContentShow = props => {
 							<div className='less__wrapper'>
 								{props.children}
 								<Instructions className='less__drag'>
-									Drag the slider {whereToDrag} to reveal more.&nbsp;
+									Drag and release slider {whereToDrag} for more.&nbsp;
 								</Instructions>
 							</div>
 						</aside>
