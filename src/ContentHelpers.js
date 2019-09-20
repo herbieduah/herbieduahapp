@@ -695,9 +695,14 @@ export const AppStartUp = () => {
 		exitActive: "fadeOut"
 	};
 	const showTheApp = () => {
-		setTimeout(() => {
-			setShowApp(false);
-		}, 5000);
+		if (showApp) {
+			setTimeout(() => {
+				setShowApp(false);
+			}, 5000);
+		}
+	};
+	const skipIntro = () => {
+		setShowApp(false);
 	};
 
 	useEffect(() => {
@@ -714,7 +719,7 @@ export const AppStartUp = () => {
 									Nowadays, there is an app for everything. <br />
 								</Text>
 							</Fade> */}
-							<Fade duration={1500}>
+							<Fade duration={1000}>
 								<Text l wide className='startUp__future'>
 									In the future, there is going to be an app for everyone.
 								</Text>
@@ -723,6 +728,13 @@ export const AppStartUp = () => {
 								<Text l wide className='startUp__my-own'>
 									So I made my own.
 								</Text>
+							</Fade>
+							<Fade duration={500}>
+								<div className='startUp__skip'>
+									<Text m buttontext onClick={skipIntro}>
+										skip intro
+									</Text>
+								</div>
 							</Fade>
 						</div>
 					</StartUp>

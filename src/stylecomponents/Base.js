@@ -811,6 +811,17 @@ export const StartUp = styled.div`
 		max-width: 500px;
 		display: flex;
 	}
+	button {
+		margin: 0 auto;
+	}
+	.startUp__skip {
+		display: flex;
+		justify-content: right;
+		max-width: 500px;
+		width: 100%;
+		padding-top: 3rem;
+		text-align: right;
+	}
 	/* .startup{
 	&__text {
 
