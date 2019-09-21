@@ -14,8 +14,8 @@ import {
 	appBgMobile,
 	appBgColor,
 	bgColorOverlay,
-	fontColorOpposite,
-	fontColor,
+	// fontColorOpposite,
+	// fontColor,
 	colorSlightOpacity
 	// appBgAnimation
 } from "./Themes/ThemeVariables";
