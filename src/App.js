@@ -31,7 +31,7 @@ import {
 	isPortrait
 } from "./helpers";
 import { AppStartUp } from "./ContentHelpers";
-
+console.log(React.version);
 export const App = () => {
 	const {
 		switchSides,
@@ -176,7 +176,7 @@ export const App = () => {
 						<ContentMenu switchSides={!switchSides} />
 					</SplitPane>
 				</ShowIf> */}
-				<DownloadAllMedia />
+				{/* <DownloadAllMedia /> */}
 			</HerbieDuahApp>
 		</ThemeProvider>
 	);

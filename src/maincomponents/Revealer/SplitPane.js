@@ -6,7 +6,7 @@ import SliderContainer from "../../stylecomponents/SliderContainer";
 
 import Pane from "./Pane";
 import Resizer, { RESIZER_DEFAULT_CLASSNAME } from "./Resizer";
-import { ElementReveal } from "../../ContentHelpers";
+// import { ElementReveal } from "../../ContentHelpers";
 
 function unFocus(document, window) {
 	if (document.selection) {

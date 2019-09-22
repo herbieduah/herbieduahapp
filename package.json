@@ -40,7 +40,6 @@
 		"react-transition-group": "^4.1.0",
 		"react-use-localstorage": "^3.2.1",
 		"react-visibility-sensor": "^5.1.1",
-		"react-youtube": "^7.9.0",
 		"rodal": "^1.6.3",
 		"styled-components": "^4.2.0"
 	},
