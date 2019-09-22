@@ -271,436 +271,647 @@ import thisAppHerokuDesktopPicMobile from "./media/appImages/mobile/thisAppHerok
 
 export const bedzinCreationofExhibitDesktop = [
 	bedzinCreationofExhibitDesktopDesktop,
-	bedzinCreationofExhibitDesktopMobile
+	bedzinCreationofExhibitDesktopMobile,
+	"bedzinCreationofExhibitDesktop_mhnsgx"
 ];
 export const bedziniPhoneCreationofExhibit = [
 	bedziniPhoneCreationofExhibitDesktop,
-	bedziniPhoneCreationofExhibitMobile
+	bedziniPhoneCreationofExhibitMobile,
+	"bedziniPhoneCreationofExhibit_uqnypg"
 ];
 export const bedzinIPhoneExhibit = [
 	bedzinIPhoneExhibitDesktop,
-	bedzinIPhoneExhibitMobile
+	bedzinIPhoneExhibitMobile,
+	"bedzinIPhoneExhibit_pqlxfz"
 ];
 export const bedziniPhoneNavNormal = [
 	bedziniPhoneNavNormalDesktop,
-	bedziniPhoneNavNormalMobile
+	bedziniPhoneNavNormalMobile,
+	"bedziniPhoneNavNormal_hpkhe9"
 ];
 export const bedzinthroughbedzinDesktop = [
 	bedzinthroughbedzinDesktopDesktop,
-	bedzinthroughbedzinDesktopMobile
+	bedzinthroughbedzinDesktopMobile,
+	"bedzinthroughbedzinDesktop_xxibyn"
 ];
 export const dtCheckOutTheseTires = [
 	dtCheckOutTheseTiresDesktop,
-	dtCheckOutTheseTiresMobile
+	dtCheckOutTheseTiresMobile,
+	"dtCheckOutTheseTires_ffmaj6"
 ];
-export const dtCreepySmile = [dtCreepySmileDesktop, dtCreepySmileMobile];
-export const dtPostedUp = [dtPostedUpDesktop, dtPostedUpMobile];
-export const dtposter = [dtposterDesktop, dtposterMobile];
-export const dtReceipt = [dtReceiptDesktop, dtReceiptMobile];
-export const dtShootLaughing = [dtShootLaughingDesktop, dtShootLaughingMobile];
+export const dtCreepySmile = [
+	dtCreepySmileDesktop,
+	dtCreepySmileMobile,
+	"dtCreepySmile_omwej7"
+];
+export const dtPostedUp = [
+	dtPostedUpDesktop,
+	dtPostedUpMobile,
+	"dtPostedUp_lvfkq3"
+];
+export const dtposter = [dtposterDesktop, dtposterMobile, "dtposter_vssn16"];
+export const dtReceipt = [
+	dtReceiptDesktop,
+	dtReceiptMobile,
+	"dtReceipt_gq71lg"
+];
+export const dtShootLaughing = [
+	dtShootLaughingDesktop,
+	dtShootLaughingMobile,
+	"dtShootLaughing_aszgwi"
+];
 export const dtShootWithMustang = [
 	dtShootWithMustangDesktop,
-	dtShootWithMustangMobile
+	dtShootWithMustangMobile,
+	"dtShootWithMustang_hswo2l"
 ];
-export const dtTeamworkTools = [dtTeamworkToolsDesktop, dtTeamworkToolsMobile];
-export const glossaryDesktop = [glossaryDesktopDesktop, glossaryDesktopMobile];
+export const dtTeamworkTools = [
+	dtTeamworkToolsDesktop,
+	dtTeamworkToolsMobile,
+	"dtTeamworkTools_eykwwa"
+];
+export const glossaryDesktop = [
+	glossaryDesktopDesktop,
+	glossaryDesktopMobile,
+	"glossaryDesktop_jdmedi"
+];
 export const iphoneafterDCTrip = [
 	iphoneafterDCTripDesktop,
-	iphoneafterDCTripMobile
+	iphoneafterDCTripMobile,
+	"iphoneafterDCTrip_tvisip"
 ];
 export const iphoneDavidBestIphonePic = [
 	iphoneDavidBestIphonePicDesktop,
-	iphoneDavidBestIphonePicMobile
+	iphoneDavidBestIphonePicMobile,
+	"iphoneDavidBestIphonePic_uci5uf"
 ];
 export const iPhoneExhibitMobile = [
 	iPhoneExhibitMobileDesktop,
-	iPhoneExhibitMobileMobile
+	iPhoneExhibitMobileMobile,
+	"iPhoneExhibitMobile_y5v1ox"
 ];
 export const iphoneflagstaffColorfulHouses = [
 	iphoneflagstaffColorfulHousesDesktop,
-	iphoneflagstaffColorfulHousesMobile
+	iphoneflagstaffColorfulHousesMobile,
+	"iphoneflagstaffColorfulHouses_fvxah3"
 ];
-export const iphonegradAunty = [iphonegradAuntyDesktop, iphonegradAuntyMobile];
+export const iphonegradAunty = [
+	iphonegradAuntyDesktop,
+	iphonegradAuntyMobile,
+	"iphonegradAunty_ezndof"
+];
 export const iphonegrandcanyonBlackandWhite = [
 	iphonegrandcanyonBlackandWhiteDesktop,
-	iphonegrandcanyonBlackandWhiteMobile
+	iphonegrandcanyonBlackandWhiteMobile,
+	"iphonegrandcanyonBlackandWhite_rfs7kh"
 ];
 export const iphonehumphreysSkiSunset = [
 	iphonehumphreysSkiSunsetDesktop,
-	iphonehumphreysSkiSunsetMobile
+	iphonehumphreysSkiSunsetMobile,
+	"iphonehumphreysSkiSunset_akqatv"
 ];
-export const iphonejeepSnow = [iphonejeepSnowDesktop, iphonejeepSnowMobile];
+export const iphonejeepSnow = [
+	iphonejeepSnowDesktop,
+	iphonejeepSnowMobile,
+	"iphonejeepSnow_wsjwq1"
+];
 export const iphonelockettJeepLife = [
 	iphonelockettJeepLifeDesktop,
-	iphonelockettJeepLifeMobile
+	iphonelockettJeepLifeMobile,
+	"iphonelockettJeepLife_uggodh"
 ];
-export const iphonemelDaddy = [iphonemelDaddyDesktop, iphonemelDaddyMobile];
-export const iphonenaebabe = [iphonenaebabeDesktop, iphonenaebabeMobile];
-export const iphonenauDome = [iphonenauDomeDesktop, iphonenauDomeMobile];
+export const iphonemelDaddy = [
+	iphonemelDaddyDesktop,
+	iphonemelDaddyMobile,
+	"iphonemelDaddy_aazdcx"
+];
+export const iphonenaebabe = [
+	iphonenaebabeDesktop,
+	iphonenaebabeMobile,
+	"iphonenaebabe_zodqbz"
+];
+export const iphonenauDome = [
+	iphonenauDomeDesktop,
+	iphonenauDomeMobile,
+	"iphonenauDome_ydlsgh"
+];
 export const iphonesantaMonicaBeach = [
 	iphonesantaMonicaBeachDesktop,
-	iphonesantaMonicaBeachMobile
+	iphonesantaMonicaBeachMobile,
+	"iphonesantaMonicaBeach_pra89g"
 ];
 export const iphonesunsetPoint = [
 	iphonesunsetPointDesktop,
-	iphonesunsetPointMobile
+	iphonesunsetPointMobile,
+	"iphonesunsetPoint_ztkjdn"
 ];
 export const iphonetreesbyEdgeofTheWorld = [
 	iphonetreesbyEdgeofTheWorldDesktop,
-	iphonetreesbyEdgeofTheWorldMobile
+	iphonetreesbyEdgeofTheWorldMobile,
+	"iphonetreesbyEdgeofTheWorld_egm9cy"
 ];
 export const modelingBethanyBAldWinsStars = [
 	modelingBethanyBAldWinsStarsDesktop,
-	modelingBethanyBAldWinsStarsMobile
+	modelingBethanyBAldWinsStarsMobile,
+	"modelingBethanyBAldWinsStars_u6xbfc"
 ];
 export const modelingBrianaAfrican = [
 	modelingBrianaAfricanDesktop,
-	modelingBrianaAfricanMobile
+	modelingBrianaAfricanMobile,
+	"modelingBrianaAfrican_yhfgf2"
 ];
 export const modelingBWMembersONly = [
 	modelingBWMembersONlyDesktop,
-	modelingBWMembersONlyMobile
+	modelingBWMembersONlyMobile,
+	"modelingBWMembersONly_tbhd7g"
 ];
-export const modelingByNae = [modelingByNaeDesktop, modelingByNaeMobile];
+export const modelingByNae = [
+	modelingByNaeDesktop,
+	modelingByNaeMobile,
+	"modelingByNae_rlhpsa"
+];
 export const modelingDyesaDTPhoenix = [
 	modelingDyesaDTPhoenixDesktop,
-	modelingDyesaDTPhoenixMobile
+	modelingDyesaDTPhoenixMobile,
+	"modelingDyesaDTPhoenix_o8demg"
 ];
 export const modelingInCaliWithRob = [
 	modelingInCaliWithRobDesktop,
-	modelingInCaliWithRobMobile
+	modelingInCaliWithRobMobile,
+	"modelingInCaliWithRob_jehcgp"
 ];
 export const modelingJacketHoldNabours = [
 	modelingJacketHoldNaboursDesktop,
-	modelingJacketHoldNaboursMobile
+	modelingJacketHoldNaboursMobile,
+	"modelingJacketHoldNabours_zxhc2t"
 ];
 export const modelingJacketHoldNaboursDown = [
 	modelingJacketHoldNaboursDownDesktop,
-	modelingJacketHoldNaboursDownMobile
+	modelingJacketHoldNaboursDownMobile,
+	"modelingJacketHoldNaboursDown_wwwdwo"
 ];
 export const modelingNaboursFavorite = [
 	modelingNaboursFavoriteDesktop,
-	modelingNaboursFavoriteMobile
+	modelingNaboursFavoriteMobile,
+	"modelingNaboursFavorite_qxcuir"
 ];
 export const modelingSnowInFlagstaffConner = [
 	modelingSnowInFlagstaffConnerDesktop,
-	modelingSnowInFlagstaffConnerMobile
+	modelingSnowInFlagstaffConnerMobile,
+	"modelingSnowInFlagstaffConner_d6b9tk"
 ];
 export const modelingUmbertoScienceMuseum = [
 	modelingUmbertoScienceMuseumDesktop,
-	modelingUmbertoScienceMuseumMobile
+	modelingUmbertoScienceMuseumMobile,
+	"modelingUmbertoScienceMuseum_zd1tpn"
 ];
 export const modelingUmbertoScienceMuseumHandsFolded = [
 	modelingUmbertoScienceMuseumHandsFoldedDesktop,
-	modelingUmbertoScienceMuseumHandsFoldedMobile
+	modelingUmbertoScienceMuseumHandsFoldedMobile,
+	"modelingUmbertoScienceMuseumHandsFolded_zsnuiw"
 ];
 export const modelingUmbertoScienceMuseumIPhone = [
 	modelingUmbertoScienceMuseumIPhoneDesktop,
-	modelingUmbertoScienceMuseumIPhoneMobile
+	modelingUmbertoScienceMuseumIPhoneMobile,
+	"modelingUmbertoScienceMuseumIPhone_hjq6np"
 ];
 export const peopleAshleyTaylor = [
 	peopleAshleyTaylorDesktop,
-	peopleAshleyTaylorMobile
+	peopleAshleyTaylorMobile,
+	"peopleAshleyTaylor_pk1vxl"
 ];
-export const peopleCeiphers = [peopleCeiphersDesktop, peopleCeiphersMobile];
+export const peopleCeiphers = [
+	peopleCeiphersDesktop,
+	peopleCeiphersMobile,
+	"peopleCeiphers_tqtjep"
+];
 export const peopleconnorGrad = [
 	peopleconnorGradDesktop,
-	peopleconnorGradMobile
+	peopleconnorGradMobile,
+	"peopleconnorGrad_yltm1n"
 ];
-export const peopleCristian = [peopleCristianDesktop, peopleCristianMobile];
-export const peopleDavid = [peopleDavidDesktop, peopleDavidMobile];
-export const peopleDyesa = [peopleDyesaDesktop, peopleDyesaMobile];
-export const peopleEmma = [peopleEmmaDesktop, peopleEmmaMobile];
+export const peopleCristian = [
+	peopleCristianDesktop,
+	peopleCristianMobile,
+	"peopleCristian_uwxbab"
+];
+export const peopleDavid = [
+	peopleDavidDesktop,
+	peopleDavidMobile,
+	"peopleDavid_n5hari"
+];
+export const peopleDyesa = [
+	peopleDyesaDesktop,
+	peopleDyesaMobile,
+	"peopleDyesa_h433jz"
+];
+export const peopleEmma = [
+	peopleEmmaDesktop,
+	peopleEmmaMobile,
+	"peopleEmma_ev19eu"
+];
 export const peopleFashionShow = [
 	peopleFashionShowDesktop,
-	peopleFashionShowMobile
+	peopleFashionShowMobile,
+	"peopleFashionShow_yygyu4"
 ];
 export const peopleGoldenFace = [
 	peopleGoldenFaceDesktop,
-	peopleGoldenFaceMobile
+	peopleGoldenFaceMobile,
+	"peopleGoldenFace_xydvcu"
 ];
 export const peopleGrindingWie = [
 	peopleGrindingWieDesktop,
-	peopleGrindingWieMobile
+	peopleGrindingWieMobile,
+	"peopleGrindingWie_vf1f1r"
 ];
-export const peopleHalle = [peopleHalleDesktop, peopleHalleMobile];
+export const peopleHalle = [
+	peopleHalleDesktop,
+	peopleHalleMobile,
+	"peopleHalle_koiyjc"
+];
 export const peopleJesseForte = [
 	peopleJesseForteDesktop,
-	peopleJesseForteMobile
+	peopleJesseForteMobile,
+	"peopleJesseForte_pubxjd"
 ];
 export const peopleJohnnyGrad = [
 	peopleJohnnyGradDesktop,
-	peopleJohnnyGradMobile
+	peopleJohnnyGradMobile,
+	"peopleJohnnyGrad_cfomlq"
 ];
 export const peopleMeliPoet = [peopleMeliPoetDesktop, peopleMeliPoetMobile];
 export const peopleMelvin = [peopleMelvinDesktop, peopleMelvinMobile];
 export const peopleMelvinBenz = [
 	peopleMelvinBenzDesktop,
-	peopleMelvinBenzMobile
+	peopleMelvinBenzMobile,
+	"peopleMelvinBenz_s7dxsh"
 ];
 export const peopleNana = [peopleNanaDesktop, peopleNanaMobile];
 export const peopleTesfayFamily = [
 	peopleTesfayFamilyDesktop,
-	peopleTesfayFamilyMobile
+	peopleTesfayFamilyMobile,
+	"peopleTesfayFamily_obkndg"
 ];
-export const peopleTheGRand = [peopleTheGRandDesktop, peopleTheGRandMobile];
+export const peopleTheGRand = [
+	peopleTheGRandDesktop,
+	peopleTheGRandMobile,
+	"peopleTheGRand_ov3wue"
+];
 export const picsOfMeAfricanWhite = [
 	picsOfMeAfricanWhiteDesktop,
-	picsOfMeAfricanWhiteMobile
+	picsOfMeAfricanWhiteMobile,
+	"picsOfMeAfricanWhite_r3qrdq"
 ];
 export const picsOfMeGhanaNoSmiling = [
 	picsOfMeGhanaNoSmilingDesktop,
-	picsOfMeGhanaNoSmilingMobile
+	picsOfMeGhanaNoSmilingMobile,
+	"picsOfMeGhanaNoSmiling_skhy9k"
 ];
 export const picsOfMeGhanaSchool = [
 	picsOfMeGhanaSchoolDesktop,
-	picsOfMeGhanaSchoolMobile
+	picsOfMeGhanaSchoolMobile,
+	"picsOfMeGhanaSchool_qd0sx0"
 ];
 export const picsOfMeGraduation = [
 	picsOfMeGraduationDesktop,
-	picsOfMeGraduationMobile
+	picsOfMeGraduationMobile,
+	"picsOfMeGraduation_jul8sb"
 ];
 export const picsOfMeHerbieGhana = [
 	picsOfMeHerbieGhanaDesktop,
-	picsOfMeHerbieGhanaMobile
+	picsOfMeHerbieGhanaMobile,
+	"picsOfMeHerbieGhana-_wgx3ja"
 ];
 export const picsOfMeHero = [
 	picsOfMeHeroDesktop,
 	picsOfMeHeroMobile,
 	"picsOfMeHero_qj1trg"
 ];
-export const picsOfMeHero3 = [picsOfMeHero3Desktop, picsOfMeHero3Mobile];
+export const picsOfMeHero3 = [
+	picsOfMeHero3Desktop,
+	picsOfMeHero3Mobile,
+	"picsOfMeHero3_wglmpg"
+];
 export const picsOfMeHeroImageTwo = [
 	picsOfMeHeroImageTwoDesktop,
-	picsOfMeHeroImageTwoMobile
+	picsOfMeHeroImageTwoMobile,
+	"picsOfMeHeroImageTwo_o2jbdw"
 ];
 export const picsOfMeMeEating = [
 	picsOfMeMeEatingDesktop,
-	picsOfMeMeEatingMobile
+	picsOfMeMeEatingMobile,
+	"picsOfMeMeEating_oyhite"
 ];
-export const picsOfMeMeme = [picsOfMeMemeDesktop, picsOfMeMemeMobile];
+export const picsOfMeMeme = [
+	picsOfMeMemeDesktop,
+	picsOfMeMemeMobile,
+	"picsOfMeMeme_jfymhb"
+];
 export const picsOfMeNonSmileCornish = [
 	picsOfMeNonSmileCornishDesktop,
-	picsOfMeNonSmileCornishMobile
+	picsOfMeNonSmileCornishMobile,
+	"picsOfMeNonSmileCornish_pftxye"
 ];
 export const picsOfMeRedDeadHat = [
 	picsOfMeRedDeadHatDesktop,
-	picsOfMeRedDeadHatMobile
+	picsOfMeRedDeadHatMobile,
+	"picsOfMeRedDeadHat_blapzv"
 ];
 export const picsOfMeRickJamesBball = [
 	picsOfMeRickJamesBballDesktop,
-	picsOfMeRickJamesBballMobile
+	picsOfMeRickJamesBballMobile,
+	"picsOfMeRickJamesBball_s0lbho"
 ];
 export const picsOfMeRickJamesPancakes = [
 	picsOfMeRickJamesPancakesDesktop,
-	picsOfMeRickJamesPancakesMobile
+	picsOfMeRickJamesPancakesMobile,
+	"picsOfMeRickJamesPancakes_c6diea"
 ];
 export const picsOfMeSedonaCar = [
 	picsOfMeSedonaCarDesktop,
-	picsOfMeSedonaCarMobile
+	picsOfMeSedonaCarMobile,
+	"picsOfMeSedonaCar_zm5det"
 ];
 export const picsOfMeYayCareerPhotoShoot = [
 	picsOfMeYayCareerPhotoShootDesktop,
-	picsOfMeYayCareerPhotoShootMobile
+	picsOfMeYayCareerPhotoShootMobile,
+	"picsOfMeYayCareerPhotoShoot_olpkjn"
 ];
 export const placesbeauifulsunset = [
 	placesbeauifulsunsetDesktop,
-	placesbeauifulsunsetMobile
+	placesbeauifulsunsetMobile,
+	"placesbeauifulsunset_r8jffm"
 ];
 export const placesbeautifulmountains = [
 	placesbeautifulmountainsDesktop,
-	placesbeautifulmountainsMobile
+	placesbeautifulmountainsMobile,
+	"placesbeautifulmountains_lansvc"
 ];
 export const placeschocolatefalls = [
 	placeschocolatefallsDesktop,
-	placeschocolatefallsMobile
+	placeschocolatefallsMobile,
+	"placeschocolatefalls_fsvadk"
 ];
 export const placesevansTundra = [
 	placesevansTundraDesktop,
-	placesevansTundraMobile
+	placesevansTundraMobile,
+	"placesevansTundra_lbn9cm"
 ];
 export const placesfallFlagstaff = [
 	placesfallFlagstaffDesktop,
-	placesfallFlagstaffMobile
+	placesfallFlagstaffMobile,
+	"placesfallFlagstaff_u5jm1x"
 ];
 export const placesflagstaffStreetOnAutumn = [
 	placesflagstaffStreetOnAutumnDesktop,
-	placesflagstaffStreetOnAutumnMobile
+	placesflagstaffStreetOnAutumnMobile,
+	"placesflagstaffStreetOnAutumn_xwfvzd"
 ];
-export const placesicyAlley = [placesicyAlleyDesktop, placesicyAlleyMobile];
+export const placesicyAlley = [
+	placesicyAlleyDesktop,
+	placesicyAlleyMobile,
+	"placesicyAlley_sgmr6v"
+];
 export const placesmysteriousDoor = [
 	placesmysteriousDoorDesktop,
-	placesmysteriousDoorMobile
+	placesmysteriousDoorMobile,
+	"placesmysteriousDoor_qvczpj"
 ];
-export const placessnowyRoad = [placessnowyRoadDesktop, placessnowyRoadMobile];
+export const placessnowyRoad = [
+	placessnowyRoadDesktop,
+	placessnowyRoadMobile,
+	"placessnowyRoad_z1cfkc"
+];
 export const placestreesInAutumn = [
 	placestreesInAutumnDesktop,
-	placestreesInAutumnMobile
+	placestreesInAutumnMobile,
+	"placestreesInAutumn_sphgxw"
 ];
 export const placesWinterMountain = [
 	placesWinterMountainDesktop,
-	placesWinterMountainMobile
+	placesWinterMountainMobile,
+	"placesWinterMountain_aslmqo"
 ];
 export const startNowCareerImageWithPeople = [
 	startNowCareerImageWithPeopleDesktop,
-	startNowCareerImageWithPeopleMobile
+	startNowCareerImageWithPeopleMobile,
+	"startNowCareerImageWithPeople_hcfe6n"
 ];
 export const startNowCareerResourseGuide = [
 	startNowCareerResourseGuideDesktop,
-	startNowCareerResourseGuideMobile
+	startNowCareerResourseGuideMobile,
+	"startNowCareerResourseGuide_vfpsou"
 ];
 export const startNowCareerWidePosterPhotoshop = [
 	startNowCareerWidePosterPhotoshopDesktop,
-	startNowCareerWidePosterPhotoshopMobile
+	startNowCareerWidePosterPhotoshopMobile,
+	"startNowCareerWidePosterPhotoshop_b2yxkl"
 ];
 export const startNowConstructAPlan = [
 	startNowConstructAPlanDesktop,
-	startNowConstructAPlanMobile
+	startNowConstructAPlanMobile,
+	"startNowConstructAPlanHorizontal_miqd6b"
 ];
 export const startNowConstructAPlanHorizontal = [
 	startNowConstructAPlanHorizontalDesktop,
-	startNowConstructAPlanHorizontalMobile
+	startNowConstructAPlanHorizontalMobile,
+	"startNowConstructAPlanHorizontal_miqd6b"
 ];
 export const startNowFullPage = [
 	startNowFullPageDesktop,
-	startNowFullPageMobile
+	startNowFullPageMobile,
+	"startNowFullPage_sodffg"
 ];
 export const startNowFullSizeStudents = [
 	startNowFullSizeStudentsDesktop,
-	startNowFullSizeStudentsMobile
+	startNowFullSizeStudentsMobile,
+	"startNowFullSizeStudents_pm7kbu"
 ];
 export const startNowherbieCareerWidePoster = [
 	startNowherbieCareerWidePosterDesktop,
-	startNowherbieCareerWidePosterMobile
+	startNowherbieCareerWidePosterMobile,
+	"startNowherbieCareerWidePoster_zsrxwi"
 ];
 export const startNowidkwhatIamDoing = [
 	startNowidkwhatIamDoingDesktop,
-	startNowidkwhatIamDoingMobile
+	startNowidkwhatIamDoingMobile,
+	"startNowidkwhatIamDoing_ax66jb"
 ];
 export const startNowKnowTheGame = [
 	startNowKnowTheGameDesktop,
-	startNowKnowTheGameMobile
+	startNowKnowTheGameMobile,
+	"startNowKnowTheGame_cxsrry"
 ];
 export const startNowsmileStock = [
 	startNowsmileStockDesktop,
-	startNowsmileStockMobile
+	startNowsmileStockMobile,
+	"startNowsmileStock_cpio3i"
 ];
 export const startNowStandOutFromTheRest = [
 	startNowStandOutFromTheRestDesktop,
-	startNowStandOutFromTheRestMobile
+	startNowStandOutFromTheRestMobile,
+	"startNowStandOutFromTheRest_ef3wmd"
 ];
-export const startNowYes = [startNowYesDesktop, startNowYesMobile];
-export const thisAppappOld = [thisAppappOldDesktop, thisAppappOldMobile];
+export const startNowYes = [
+	startNowYesDesktop,
+	startNowYesMobile,
+	"startNowYes_sklebt"
+];
+export const thisAppappOld = [
+	thisAppappOldDesktop,
+	thisAppappOldMobile,
+	"thisAppappOld_bjmagb"
+];
 export const thisAppGatsbySmiling = [
 	thisAppGatsbySmilingDesktop,
-	thisAppGatsbySmilingMobile
+	thisAppGatsbySmilingMobile,
+	"thisAppGatsbySmiling_dxm1m4"
 ];
 export const uggUnsolicitedUggDesktop = [
 	uggUnsolicitedUggDesktopDesktop,
-	uggUnsolicitedUggDesktopMobile
+	uggUnsolicitedUggDesktopMobile,
+	"uggUnsolicitedUggDesktop_khisdu"
 ];
 export const bedzinExhibitOld = [
 	bedzinExhibitOldDesktop,
-	bedzinExhibitOldMobile
+	bedzinExhibitOldMobile,
+	"bedzinExhibitOld_ztscty"
 ];
 export const dtLookingDown = [dtLookingDownDesktop, dtLookingDownMobile];
 export const dtShootMentoringNearMustang = [
 	dtShootMentoringNearMustangDesktop,
-	dtShootMentoringNearMustangMobile
+	dtShootMentoringNearMustangMobile,
+	"dtShootMentoringNearMustang_vekpmo"
 ];
 export const iphoneflagstaffPrettyColors = [
 	iphoneflagstaffPrettyColorsDesktop,
-	iphoneflagstaffPrettyColorsMobile
+	iphoneflagstaffPrettyColorsMobile,
+	"iphoneflagstaffPrettyColors_s0cvwn"
 ];
 export const iphoneflagstaffRailroad = [
 	iphoneflagstaffRailroadDesktop,
-	iphoneflagstaffRailroadMobile
+	iphoneflagstaffRailroadMobile,
+	"iphoneflagstaffRailroad_wnrlcy"
 ];
-export const iphonegloomy = [iphonegloomyDesktop, iphonegloomyMobile];
+export const iphonegloomy = [
+	iphonegloomyDesktop,
+	iphonegloomyMobile,
+	"iphonegloomy_l5ymxx"
+];
 export const iphonemexicoSunset = [
 	iphonemexicoSunsetDesktop,
-	iphonemexicoSunsetMobile
+	iphonemexicoSunsetMobile,
+	"iphonemexicoSunset_csdc3j"
 ];
 export const modelingAndyDauterman = [
 	modelingAndyDautermanDesktop,
-	modelingAndyDautermanMobile
+	modelingAndyDautermanMobile,
+	"modelingAndyDauterman_lz5pcl"
 ];
 export const modelingBethanyBaldwinDTFlagstaff = [
 	modelingBethanyBaldwinDTFlagstaffDesktop,
-	modelingBethanyBaldwinDTFlagstaffMobile
+	modelingBethanyBaldwinDTFlagstaffMobile,
+	"modelingBethanyBaldwinDTFlagstaff_vomcdl"
 ];
 export const modelingceiphersClothing = [
 	modelingceiphersClothingDesktop,
-	modelingceiphersClothingMobile
+	modelingceiphersClothingMobile,
+	"modelingceiphersClothing_argviu"
 ];
 export const modelingConnerSnow = [
 	modelingConnerSnowDesktop,
-	modelingConnerSnowMobile
+	modelingConnerSnowMobile,
+	"modelingConnerSnow_ktzwxx"
 ];
 export const modelingRobCaliLandscape = [
 	modelingRobCaliLandscapeDesktop,
-	modelingRobCaliLandscapeMobile
+	modelingRobCaliLandscapeMobile,
+	"modelingRobCaliLandscape_ogtiwm"
 ];
 export const modelingSnowInFlagstaffConnerArmsFold = [
 	modelingSnowInFlagstaffConnerArmsFoldDesktop,
-	modelingSnowInFlagstaffConnerArmsFoldMobile
+	modelingSnowInFlagstaffConnerArmsFoldMobile,
+	"modelingSnowInFlagstaffConnerArmsFold_vtid1i"
 ];
-export const peopleAbena = [peopleAbenaDesktop, peopleAbenaMobile];
-export const peopleGweg = [peopleGwegDesktop, peopleGwegMobile];
+export const peopleAbena = [
+	peopleAbenaDesktop,
+	peopleAbenaMobile,
+	"peopleAbena_fmdy14"
+];
+export const peopleGweg = [
+	peopleGwegDesktop,
+	peopleGwegMobile,
+	"peopleGweg_ch0odx"
+];
 export const peopleMelphotography = [
 	peopleMelphotographyDesktop,
-	peopleMelphotographyMobile
+	peopleMelphotographyMobile,
+	"peopleMelphotography_ysfcxe"
 ];
 export const peopleNatasha = [peopleNatashaDesktop, peopleNatashaMobile];
 export const picsOfMeDherbstaAndDinchman = [
 	picsOfMeDherbstaAndDinchmanDesktop,
-	picsOfMeDherbstaAndDinchmanMobile
+	picsOfMeDherbstaAndDinchmanMobile,
+	"picsOfMeDherbstaAndDinchman_tuvngs"
 ];
 export const picsOfMeSelfieOlympics = [
 	picsOfMeSelfieOlympicsDesktop,
-	picsOfMeSelfieOlympicsMobile
+	picsOfMeSelfieOlympicsMobile,
+	"picsOfMeSelfieOlympics_uxml5o"
 ];
 export const placesflagstaffRoadd = [
 	placesflagstaffRoaddDesktop,
-	placesflagstaffRoaddMobile
+	placesflagstaffRoaddMobile,
+	"placesflagstaffRoadd_i1x82i"
 ];
 export const placesflagstaffWater = [
 	placesflagstaffWaterDesktop,
-	placesflagstaffWaterMobile
+	placesflagstaffWaterMobile,
+	"placesflagstaffWater_cqiff8"
 ];
 export const placesmountainsFlagstaff = [
 	placesmountainsFlagstaffDesktop,
-	placesmountainsFlagstaffMobile
+	placesmountainsFlagstaffMobile,
+	"placesmountainsFlagstaff_k9ruj9"
 ];
 export const startNowACMClubPhoto = [
 	startNowACMClubPhotoDesktop,
-	startNowACMClubPhotoMobile
+	startNowACMClubPhotoMobile,
+	"startNowACMClubPhoto_c4cjid"
 ];
 export const startNowCareerPoster = [
 	startNowCareerPosterDesktop,
-	startNowCareerPosterMobile
+	startNowCareerPosterMobile,
+	"startNowCareerPoster_cxkz7g"
 ];
 export const startNowNAUConstruction = [
 	startNowNAUConstructionDesktop,
-	startNowNAUConstructionMobile
+	startNowNAUConstructionMobile,
+	"startNowNAUConstruction_nhdxhl"
 ];
 export const thisAppHDRHomeTop = [
 	thisAppHDRHomeTopDesktop,
-	thisAppHDRHomeTopMobile
+	thisAppHDRHomeTopMobile,
+	"hisAppHDRHomeTop_zqlxpf"
 ];
 export const thisAppHDRHomeUX = [
 	thisAppHDRHomeUXDesktop,
-	thisAppHDRHomeUXMobile
+	thisAppHDRHomeUXMobile,
+	"thisAppHDRHomeUX_ddqyef"
 ];
 export const thisAppHerbieDuahComeUX = [
 	thisAppHerbieDuahComeUXDesktop,
-	thisAppHerbieDuahComeUXMobile
+	thisAppHerbieDuahComeUXMobile,
+	"thisAppHerbieDuahComeUX_zdtveq"
 ];
 export const thisAppHerbieDuahMobile = [
 	thisAppHerbieDuahMobileDesktop,
-	thisAppHerbieDuahMobileMobile
+	thisAppHerbieDuahMobileMobile,
+	"thisAppHerbieDuahMobile_egwzqm"
 ];
 export const thisAppHerokuDesktopPic = [
 	thisAppHerokuDesktopPicDesktop,
-	thisAppHerokuDesktopPicMobile
+	thisAppHerokuDesktopPicMobile,
+	"thisAppHerokuDesktopPic_ivwsnt"
 ];
