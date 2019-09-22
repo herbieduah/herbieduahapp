@@ -13,8 +13,7 @@ import {
 
 const header = "Gradients";
 
-const GradientsPage = ({ contentProps }) => {
-	const { fullScreen , minimalMode } = contentProps;
+const GradientsPage = () => {
 	return (
 		<Fragment>
 			<ContentShow less>
@@ -24,16 +23,13 @@ const GradientsPage = ({ contentProps }) => {
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>
-				{/* <div className='c-border marginLR paddingTB'> */}
 				<GenerateTheme type='gradient' />
-				<Paragraph className='c-margin-top-med'>
+				<Paragraph className='marginTopMed'>
 					Big shout out to{" "}
 					<Link href='https://webgradients.com/'>webgradients.com</Link> for
 					their stellar choices of gradients and the names to with theme.
 				</Paragraph>
-
-				<ContentCategory fullScreen={fullScreen} minimalMode={minimalMode} category='customize' />
-				{/* </div> */}
+				<ContentCategory category='customize' />
 			</ContentShow>
 		</Fragment>
 	);

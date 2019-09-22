@@ -5,19 +5,46 @@ import {
 	snapchatTheme,
 	themeColorMaker
 } from "./ThemeHelpers";
-import xvImage from "../bgImages/xv.png";
-import subtleGrungeImage from "../bgImages/subtle_grunge.png";
-import stardustImage from "../bgImages/stardust.png";
-import poolTableImage from "../bgImages/pool_table.png";
-import psNeutralImage from "../bgImages/ps_neutral.png";
-import pinkDustImage from "../bgImages/pink_dust.png";
-import oldMathematicsImage from "../bgImages/old_mathematics.png";
-import niceSnowImage from "../bgImages/nice_snow.png";
-import halftoneyellowImage from "../bgImages/halftone-yellow.png";
-import grungeWallImage from "../bgImages/grunge_wall.png";
-import greyFloralImage from "../bgImages/greyfloral.png";
-import cardboardFlatImage from "../bgImages/cardboard_flat.png";
-import carbonFibreImage from "../bgImages/carbon_fibre.png";
+// import xvImage from "../bgImages/xv.png";
+// import subtleGrungeImage from "../bgImages/subtle_grunge.png";
+// import stardustImage from "../bgImages/stardust.png";
+// import poolTableImage from "../bgImages/pool_table.png";
+// import psNeutralImage from "../bgImages/ps_neutral.png";
+// import pinkDustImage from "../bgImages/pink_dust.png";
+// import oldMathematicsImage from "../bgImages/old_mathematics.png";
+// import niceSnowImage from "../bgImages/nice_snow.png";
+// import halftoneyellowImage from "../bgImages/halftone-yellow.png";
+// import grungeWallImage from "../bgImages/grunge_wall.png";
+// import greyFloralImage from "../bgImages/greyfloral.png";
+// import cardboardFlatImage from "../bgImages/cardboard_flat.png";
+// import carbonFibreImage from "../bgImages/carbon_fibre.png";
+const xvImage =
+	"https://res.cloudinary.com/dwccyjn5e/image/upload/v1569195221/backgrounds/xv_tzrfol.png";
+const subtleGrungeImage =
+	"https://res.cloudinary.com/dwccyjn5e/image/upload/v1569195220/backgrounds/subtle_grunge_wtdfbz.png";
+const stardustImage =
+	"https://res.cloudinary.com/dwccyjn5e/image/upload/v1569195220/backgrounds/stardust_quu1gy.png";
+const poolTableImage =
+	"https://res.cloudinary.com/dwccyjn5e/image/upload/v1569195220/backgrounds/pool_table_us5m3p.png";
+const psNeutralImage =
+	"https://res.cloudinary.com/dwccyjn5e/image/upload/v1569195220/backgrounds/ps_neutral_rsr6gv.png";
+const pinkDustImage =
+	"https://res.cloudinary.com/dwccyjn5e/image/upload/v1569195220/backgrounds/pink_dust_gewnsg.png";
+const oldMathematicsImage =
+	"https://res.cloudinary.com/dwccyjn5e/image/upload/v1569195220/backgrounds/old_mathematics_nwbdix.png";
+const niceSnowImage =
+	"https://res.cloudinary.com/dwccyjn5e/image/upload/v1569195220/backgrounds/nice_snow_browh0.png";
+const halftoneyellowImage =
+	"https://res.cloudinary.com/dwccyjn5e/image/upload/v1569195220/backgrounds/halftone-yellow_xfvegk.png";
+const grungeWallImage =
+	"https://res.cloudinary.com/dwccyjn5e/image/upload/v1569195220/backgrounds/grunge_wall_lwhiyq.png";
+const greyFloralImage =
+	"https://res.cloudinary.com/dwccyjn5e/image/upload/v1569195220/backgrounds/greyfloral_kwhy5n.png";
+const cardboardFlatImage =
+	"https://res.cloudinary.com/dwccyjn5e/image/upload/v1569195220/backgrounds/cardboard_flat_w4dcdn.png";
+const carbonFibreImage =
+	"https://res.cloudinary.com/dwccyjn5e/image/upload/v1569195219/backgrounds/carbon_fibre_lsrcff.png";
+
 // const blackText = "#000000";
 // const whiteText = `#ffffff`;
 

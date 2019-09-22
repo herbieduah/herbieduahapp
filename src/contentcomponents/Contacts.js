@@ -8,13 +8,14 @@ import {
 	// HeadingThree,
 	// Image,
 	Link,
+	ContentCategory,
+	ContentShow,
 	// Small,
 	// Figure,
 	// Figcaption,
 	// Gif,
 	Header
 } from "../ContentHelpers";
-import { ContentShow } from "../ContentHelpers";
 // import Emoji from "a11y-react-emoji";
 // import Modal from "../maincomponents/Modal";
 // import cornishPastyPic from "../media/images/picsOfMe/hd-herbieSmile-1974.jpg";
@@ -24,7 +25,7 @@ import { ContentShow } from "../ContentHelpers";
 
 const header = "Contact";
 
-const ContactsPage = ({ contentProps }) => {
+const ContactsPage = () => {
 	return (
 		<Fragment>
 			<ContentShow less>
@@ -65,6 +66,7 @@ const ContactsPage = ({ contentProps }) => {
 						LinkedIn
 					</Link>{" "}
 				</Paragraph>
+				<ContentCategory category='work' />
 			</ContentShow>
 		</Fragment>
 	);

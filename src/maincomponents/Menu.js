@@ -7,7 +7,6 @@ import {
 	revealSecs,
 	getCurrentTransition
 } from "../helpers";
-import Text from "../stylecomponents/Text";
 import SubMenu from "./SubMenu";
 import { globalState } from "../State";
 import { MenuTabs, AccessibilityMode } from "../ComponentHelpers";
@@ -38,7 +37,7 @@ export const ContentMenu = () => {
 							<div className='animatecss-container'>
 								<div className='menu__less'>
 									<div className='menu__less-container'>
-										<MenuTabs showCategory={isShowingMore} tabIndex={-1} />
+										<MenuTabs showCategory={isShowingMore} defaultIndex={-1} />
 									</div>
 								</div>
 								<AccessibilityMode />

@@ -38,9 +38,7 @@ export const SliderLine = () => {
 					<ShowIf thisValue={isShowingMore} noAbsolute thatValue={true}>
 						<div className='slider__instructions-container'>
 							<span className='slider__instructions'>
-								<Text bold s>
-									Less
-								</Text>
+								<Text s>Less</Text>
 							</span>
 						</div>
 					</ShowIf>
@@ -57,9 +55,7 @@ export const SliderLine = () => {
 					<ShowIf noAbsolute thisValue={isShowingMore} thatValue={false}>
 						<div className='slider__instructions-container'>
 							<span className='slider__instructions'>
-								<Text bold s>
-									More
-								</Text>
+								<Text s>More</Text>
 							</span>
 						</div>
 					</ShowIf>

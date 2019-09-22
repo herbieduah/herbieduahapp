@@ -1,7 +1,5 @@
 /* eslint-disable no-unused-expressions */
 import React, { Fragment } from "react";
-// import Media from "../maincomponents/Media";
-// import Fade from "react-reveal/Fade";
 import {
 	ContentShow,
 	Gif,
@@ -30,8 +28,7 @@ import {
 
 const header = "About Me";
 
-const AboutMePage = ({ contentProps }) => {
-	const { fullScreen, minimalMode } = contentProps;
+const AboutMePage = () => {
 	return (
 		<Fragment>
 			<ContentShow less>
@@ -178,7 +175,7 @@ const AboutMePage = ({ contentProps }) => {
 				</FiGif>
 				<HeadingTwo>I love technology</HeadingTwo>
 				<Figure
-					className='paddingLR'
+					className='paddingLRSm'
 					alt='Me and my little bro next to my very first computer in Ghana'
 					width='1152'
 					height='864'
@@ -188,11 +185,7 @@ const AboutMePage = ({ contentProps }) => {
 						2002.
 					</Figcaption>
 				</Figure>
-				<ContentCategory
-					fullScreen={fullScreen}
-					minimalMode={minimalMode}
-					category='about'
-				/>
+				<ContentCategory category='about' />
 			</ContentShow>
 		</Fragment>
 	);

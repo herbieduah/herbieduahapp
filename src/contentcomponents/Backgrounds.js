@@ -18,7 +18,6 @@ import Text from "../stylecomponents/Text";
 const header = "Backgrounds";
 
 const BackgroundsPage = ({ contentProps }) => {
-	const { fullScreen, minimalMode } = contentProps;
 	return (
 		<Fragment>
 			<ContentShow less>
@@ -43,20 +42,20 @@ const BackgroundsPage = ({ contentProps }) => {
 					have a border, then font color is the current background.
 				</Paragraph> */}
 
-				<ReactTabs defaultIndex={0} className='c-margin-top-med'>
+				<ReactTabs defaultIndex={0} className='marginTopMed '>
 					<ElementReveal>
-						<TabList>
-							<Tab>
+						<TabList className='paddingLRSm react-tabs__tab-list'>
+							<Tab tabIndex='0'>
 								<Text format xs wide>
 									Colors
 								</Text>
 							</Tab>
-							<Tab>
+							<Tab tabIndex='0'>
 								<Text format xs wide>
 									Gradients
 								</Text>
 							</Tab>
-							<Tab>
+							<Tab tabIndex='0'>
 								<Text format xs wide>
 									Patterns
 								</Text>
@@ -65,7 +64,7 @@ const BackgroundsPage = ({ contentProps }) => {
 					</ElementReveal>
 					<TabPanel>
 						<GenerateTheme type='color' />
-						<Paragraph className='c-margin-top-med'>
+						<Paragraph className='marginTopMed'>
 							Big shout out to{" "}
 							<Link href='https://cloudflare.design/color/'>
 								cloudflare.design/color
@@ -75,7 +74,7 @@ const BackgroundsPage = ({ contentProps }) => {
 					</TabPanel>
 					<TabPanel>
 						<GenerateTheme type='gradient' />
-						<Paragraph className='c-margin-top-med'>
+						<Paragraph className='marginTopMed'>
 							Big shout out to{" "}
 							<Link href='https://webgradients.com/'>webgradients.com</Link> for
 							their stellar choices of gradients and the names to with theme.
@@ -83,7 +82,7 @@ const BackgroundsPage = ({ contentProps }) => {
 					</TabPanel>
 					<TabPanel>
 						<GenerateTheme type='bg' />
-						<Paragraph className='c-margin-top-med'>
+						<Paragraph className='marginTopMed'>
 							Big shout out to{" "}
 							<Link href='https://www.toptal.com/designers/subtlepatterns/'>
 								Toptal
@@ -93,11 +92,7 @@ const BackgroundsPage = ({ contentProps }) => {
 					</TabPanel>
 				</ReactTabs>
 
-				<ContentCategory
-					fullScreen={fullScreen}
-					minimalMode={minimalMode}
-					category='customize'
-				/>
+				<ContentCategory category='customize' />
 			</ContentShow>
 		</Fragment>
 	);

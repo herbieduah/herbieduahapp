@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-expressions */
 import React, { useState } from "react";
-import { Paragraph } from "../ContentHelpers";
-import Text from "../stylecomponents/Text";
+import { PunGen, Button, Instructions } from "../ContentHelpers";
 // import Emoji from "a11y-react-emoji";
 // import testVideoHorizontal from "../media/videos/videosOfme/404.mp4";
 // const header = "Pun Generator";
@@ -13,14 +12,13 @@ const PunsPage = () => {
 
 	return (
 		<div className='container'>
-			{/* <Header>{header}</Header> */}
-			<Paragraph>{puns}</Paragraph>
-			<Text
-				button
-				onClick={generatePun}
-				className='padding-left-right c-margin-bottom c-margin-top'>
-				Generate Pun
-			</Text>
+			<Instructions className='marginTopLarge'>
+				Rotate device to see view web app.
+			</Instructions>
+			<PunGen pun={puns} />
+			<Button onClick={generatePun} className='marginLRSm marginTopSm'>
+				Generate pun
+			</Button>
 		</div>
 	);
 };

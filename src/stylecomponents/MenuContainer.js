@@ -11,7 +11,7 @@ import {
 	// stupidNegativeMargin,
 	tablet,
 	// contentMenuMarginRight,
-	paddingLR,
+	paddingLRSm,
 	navBarSize
 } from "./StyleHelpers";
 import { fontColor, CTAColor } from "./Themes/ThemeVariables";
@@ -66,12 +66,12 @@ const MenuContainer = styled.aside`
 		isIOS && props.isPortrait ? slightBoxShadowAbove : `box-shadow: none`}; */
 	.react-tabs {
 		/* padding: 1rem 0; */
-		${paddingLR}
+		${paddingLRSm}
 		&__tab-list {
 			${props => (props.isPortrait ? `margin-right: auto` : `margin-left: auto`)};
 			max-width: 500px;
 			${props => (props.isPortrait ? `margin-top: 50px;` : ``)};
-			${paddingLR}
+			${paddingLRSm}
 			${tablet} {
 				max-width: 600px;
 			${props =>
@@ -132,7 +132,7 @@ const MenuContainer = styled.aside`
 			width: 100%;
 			height:100%;
 			${hideScrollbar}
-			${paddingLR}
+			${paddingLRSm}
 			flex-direction: column;
 			${props => (props.isPortrait ? `text-align: left;` : `text-align: right;`)};
 			
@@ -152,7 +152,7 @@ const MenuContainer = styled.aside`
 			${mainTransition}
 			text-align: ${props => (props.isPortrait ? `left;` : `right;`)};
 			margin-bottom: 0;
-			${paddingLR}
+			${paddingLRSm}
 			margin-top: 2rem;
 			${tablet}{
 				

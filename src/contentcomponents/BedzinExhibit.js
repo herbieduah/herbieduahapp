@@ -46,8 +46,7 @@ const workDuration = "January 2016 - May 2016";
 const workSkills = "Prototyping and UX Design";
 const workTools = "Sketch";
 
-const BedzinExhibitPage = ({ contentProps }) => {
-	const { techy, fullScreen , minimalMode } = contentProps;
+const BedzinExhibitPage = () => {
 	return (
 		<Fragment>
 			<ContentShow less>
@@ -57,7 +56,7 @@ const BedzinExhibitPage = ({ contentProps }) => {
 				</Paragraph>
 				<div className='less__container'>
 					<Image
-						className='paddingLR'
+						className='paddingLRSm'
 						src={bedzinCreationofExhibitDesktop}
 						alt='creation of the exhibit mockup page'
 					/>
@@ -65,7 +64,7 @@ const BedzinExhibitPage = ({ contentProps }) => {
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>
-				<WorkInfo techy={techy} workinfo={workinfo} />
+				<WorkInfo workinfo={workinfo} />
 				<Paragraph>
 					For my Computer Science capstone, my group was tasked with revamping
 					&nbsp;<Link href='http://bedzinexhibit.org/'>bedzinexhibit.org</Link>.
@@ -75,10 +74,10 @@ const BedzinExhibitPage = ({ contentProps }) => {
 				</Paragraph>
 				<Figure
 					mockup
-					className='paddingLR'
+					className='paddingLRSm'
 					alt='The Bezdin website before redesign'
 					src={bedzinExhibitOld}>
-					<Figcaption className='c-margin-bottom'>
+					<Figcaption className='marginBottomLarge'>
 						The web design before the redesign from &nbsp;
 						<Link href='https://archive.org/web/'>Wayback Machine</Link>
 					</Figcaption>
@@ -90,7 +89,7 @@ const BedzinExhibitPage = ({ contentProps }) => {
 				</Paragraph>
 
 				<HeadingTwo>Modern Look and Feel</HeadingTwo>
-				<Paragraph className='c-margin-bottom'>
+				<Paragraph className='marginBottomLarge'>
 					The main goal of the project was to bring a whole new look and feel to
 					the design of the website. Below you'll see some mockups I created for
 					the website. It's worth mentioning this was my very first website UX
@@ -98,10 +97,10 @@ const BedzinExhibitPage = ({ contentProps }) => {
 				</Paragraph>
 				<Figure
 					mockup
-					className='paddingLR'
+					className='paddingLRSm'
 					alt='a mock up of the creation of exhibit page for desktop'
 					src={bedzinCreationofExhibitDesktop}>
-					<Figcaption className='c-margin-bottom'>
+					<Figcaption className='marginBottomLarge'>
 						Creation of the Exhibit page for desktop
 					</Figcaption>
 				</Figure>
@@ -112,18 +111,18 @@ const BedzinExhibitPage = ({ contentProps }) => {
 					width='1480'
 					height='9042'
 					src={bedziniPhoneCreationofExhibit}>
-					<Figcaption className='c-margin-bottom'>
+					<Figcaption className='marginBottomLarge'>
 						Creation of the Exhibit page for mobile
 					</Figcaption>
 				</Figure>
 				<Figure
 					mockup
-					className='paddingLR'
+					className='paddingLRSm'
 					alt='a mock up of the desktop version of the homepage'
 					width='1480'
 					height='3193'
 					src={bedzinCreationofExhibitDesktop}>
-					<Figcaption className='c-margin-bottom'>
+					<Figcaption className='marginBottomLarge'>
 						Desktop version of the homepage
 					</Figcaption>
 				</Figure>
@@ -134,7 +133,7 @@ const BedzinExhibitPage = ({ contentProps }) => {
 					width='1480'
 					height='6938'
 					src={iPhoneExhibitMobile}>
-					<Figcaption className='c-margin-bottom'>
+					<Figcaption className='marginBottomLarge'>
 						Mobile version of the homepage
 					</Figcaption>
 				</Figure>
@@ -145,17 +144,17 @@ const BedzinExhibitPage = ({ contentProps }) => {
 					width='1480'
 					height='2877'
 					src={bedziniPhoneNavNormal}>
-					<Figcaption className='c-margin-bottom'>Mobile menu</Figcaption>
+					<Figcaption className='marginBottomLarge'>Mobile menu</Figcaption>
 				</Figure>
 
 				<Figure
 					mockup
-					className='paddingLR'
+					className='paddingLRSm'
 					alt='a mock up for the glossary pafe'
 					width='1480'
 					height='2749'
 					src={glossaryDesktop}>
-					<Figcaption className='c-margin-bottom'>
+					<Figcaption className='marginBottomLarge'>
 						Glossary page. Desktop version.
 					</Figcaption>
 				</Figure>
@@ -172,7 +171,7 @@ const BedzinExhibitPage = ({ contentProps }) => {
 					Będzin Ghetto. If you'd like to learn more about it, you can visit
 					&nbsp;<Link href='http://bedzinexhibit.org/'>bedzinexhibit.org</Link>
 				</Paragraph>
-				<ContentCategory fullScreen={fullScreen} minimalMode={minimalMode} category='work' />
+				<ContentCategory category='work' />
 			</ContentShow>
 		</Fragment>
 	);

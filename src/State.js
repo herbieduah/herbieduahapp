@@ -35,7 +35,7 @@ export const StateProvider = ({ children }) => {
 	const [navBarComplement, setNavBarComplement] = useState(false);
 	const [minimalMode, setMinimalMode] = useState(false);
 	const [lazyLoading, setLazyLoading] = useState(true);
-	const [techy, setTechy] = useState(false);
+	const [forDev, setForDev] = useState(false);
 	const [forYou, setForYou] = useState("");
 	const [modalContent, setModalContent] = useState("");
 	const [whom, setWhom] = useState("everyone");
@@ -91,8 +91,8 @@ export const StateProvider = ({ children }) => {
 		setLazyLoading,
 		forYou,
 		setForYou,
-		techy,
-		setTechy,
+		forDev,
+		setForDev,
 		videoControls,
 		setVideoControls,
 		accessible,

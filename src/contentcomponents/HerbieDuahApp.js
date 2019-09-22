@@ -46,7 +46,7 @@ const workTools = "Adobe Creative Suite, Github, Sketch, Visual Studio Code";
 
 // const HomePage = ({ contentProps }) => {
 const HerbieDuahAppPage = ({ contentProps }) => {
-	const { fullScreen, minimalMode, techy } = contentProps;
+	const { forDev } = contentProps;
 
 	return (
 		<Fragment>
@@ -63,13 +63,13 @@ const HerbieDuahAppPage = ({ contentProps }) => {
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>
-				<WorkInfo techy={techy} workinfo={workinfo} />
+				<WorkInfo workinfo={workinfo} />
 				<Paragraph>
 					<Emoji className='emoji' symbol='🚧' label='contruction' />
 					Coming Soon{" "}
 					<Emoji className='emoji' symbol='🚧' label='contruction' />
 				</Paragraph>
-				<ShowIf noAnimation thisValue={techy} thatValue={true}>
+				<ShowIf noAnimation thisValue={forDev} thatValue={true}>
 					<HeadingTwo>For My Devs</HeadingTwo>
 					<UL>
 						<LI>
@@ -153,11 +153,7 @@ const HerbieDuahAppPage = ({ contentProps }) => {
 					</Figcaption>
 				</Figure>
 
-				<ContentCategory
-					fullScreen={fullScreen}
-					minimalMode={minimalMode}
-					category='work'
-				/>
+				<ContentCategory category='work' />
 			</ContentShow>
 		</Fragment>
 	);

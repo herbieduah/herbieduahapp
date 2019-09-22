@@ -47,7 +47,7 @@ const workSkills = "Graphic Design, Print Design and Digital Art";
 const workTools = "Adobe Creative Suite and VideoScribe";
 
 const StartNowPage = ({ contentProps }) => {
-	const { techy, fullScreen , minimalMode } = contentProps;
+	const { forDev } = contentProps;
 
 	return (
 		<Fragment>
@@ -56,15 +56,15 @@ const StartNowPage = ({ contentProps }) => {
 				<Paragraph less>
 					I helped other students get jobs while I was in college.
 				</Paragraph>
-				<div className='less__container paddingLR'>
+				<div className='less__container paddingLRSm'>
 					<Image src={startNowCareerImageWithPeople} />
 				</div>
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>
-				<WorkInfo techy={techy} workinfo={workinfo} />
+				<WorkInfo workinfo={workinfo} />
 				<Image
-					className='padding-left-right'
+					className='paddingLRSm'
 					alt='A poster with construct a plan'
 					width='1952'
 					height='2874'
@@ -90,7 +90,7 @@ const StartNowPage = ({ contentProps }) => {
 					</Figcaption>
 				</Figure>
 				<Figure
-					className='padding-left-right'
+					className='paddingLRSm'
 					alt='know the game poster'
 					width='2000'
 					height='1500'
@@ -130,7 +130,7 @@ const StartNowPage = ({ contentProps }) => {
 				</Figure>
 
 				<Figure
-					className='padding-left-right'
+					className='paddingLRSm'
 					alt='poster with trees on it'
 					width='2000'
 					height='3000'
@@ -148,7 +148,7 @@ const StartNowPage = ({ contentProps }) => {
 					audience needed to be able to access the content on mobile, but the
 					CMS was not mobile-friendly.
 				</Paragraph>
-				<ShowIf noAnimation thisValue={techy} thatValue={true}>
+				<ShowIf noAnimation thisValue={forDev} thatValue={true}>
 					<Paragraph>
 						The limitation of the CMS was quite impressive. I tried injecting
 						javascript, throwing in the style tag and the wackiest code into it
@@ -158,7 +158,7 @@ const StartNowPage = ({ contentProps }) => {
 				</ShowIf>
 				<Paragraph>I had to get creative.</Paragraph>
 				<Figure
-					className='paddingLR'
+					className='paddingLRSm'
 					alt='photo of the NAU Start Now site'
 					width='1480'
 					height='1824'
@@ -170,7 +170,7 @@ const StartNowPage = ({ contentProps }) => {
 					</Figcaption>
 				</Figure>
 				<Figure
-					className='paddingLR'
+					className='paddingLRSm'
 					alt='photo of the NAU Start Now site start page'
 					width='1480'
 					height='1774'
@@ -209,7 +209,7 @@ const StartNowPage = ({ contentProps }) => {
 					face of Career Development at NAU for some time.
 				</Paragraph>
 				<Figure
-					className='padding-left-right'
+					className='paddingLRSm'
 					alt='a picture of me with an outrageous smile'
 					width='1480'
 					height='2220'
@@ -220,7 +220,7 @@ const StartNowPage = ({ contentProps }) => {
 					</Figcaption>
 				</Figure>
 				<Figure
-					className='padding-left-right'
+					className='paddingLRSm'
 					alt='A picture of me witha tiger woods yes pose'
 					width='1480'
 					height='2220'
@@ -229,7 +229,7 @@ const StartNowPage = ({ contentProps }) => {
 				</Figure>
 
 				<Figure
-					className='padding-left-right'
+					className='paddingLRSm'
 					alt='a picture of me being confused'
 					width='1480'
 					height='2220'
@@ -275,7 +275,7 @@ const StartNowPage = ({ contentProps }) => {
 				{/* <Figure alt='' width='' height='' src={CareerWidePosterPhotoshop1480x1973}>
 					<Figcaption>Something</Figcaption>
 				</Figure> */}
-				<ContentCategory fullScreen={fullScreen} minimalMode={minimalMode} category='work' />
+				<ContentCategory category='work' />
 			</ContentShow>
 		</Fragment>
 	);

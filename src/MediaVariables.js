@@ -540,14 +540,26 @@ export const peopleJohnnyGrad = [
 	peopleJohnnyGradMobile,
 	"peopleJohnnyGrad_cfomlq"
 ];
-export const peopleMeliPoet = [peopleMeliPoetDesktop, peopleMeliPoetMobile];
-export const peopleMelvin = [peopleMelvinDesktop, peopleMelvinMobile];
+export const peopleMeliPoet = [
+	peopleMeliPoetDesktop,
+	peopleMeliPoetMobile,
+	"peopleMeliPoet_ccsz4g"
+];
+export const peopleMelvin = [
+	peopleMelvinDesktop,
+	peopleMelvinMobile,
+	"peopleMelvinBenz_s7dxsh"
+];
 export const peopleMelvinBenz = [
 	peopleMelvinBenzDesktop,
 	peopleMelvinBenzMobile,
 	"peopleMelvinBenz_s7dxsh"
 ];
-export const peopleNana = [peopleNanaDesktop, peopleNanaMobile];
+export const peopleNana = [
+	peopleNanaDesktop,
+	peopleNanaMobile,
+	"peopleNana_dp1sa6"
+];
 export const peopleTesfayFamily = [
 	peopleTesfayFamilyDesktop,
 	peopleTesfayFamilyMobile,
@@ -849,7 +861,11 @@ export const peopleMelphotography = [
 	peopleMelphotographyMobile,
 	"peopleMelphotography_ysfcxe"
 ];
-export const peopleNatasha = [peopleNatashaDesktop, peopleNatashaMobile];
+export const peopleNatasha = [
+	peopleNatashaDesktop,
+	peopleNatashaMobile,
+	"peopleNatasha_auciwi"
+];
 export const picsOfMeDherbstaAndDinchman = [
 	picsOfMeDherbstaAndDinchmanDesktop,
 	picsOfMeDherbstaAndDinchmanMobile,

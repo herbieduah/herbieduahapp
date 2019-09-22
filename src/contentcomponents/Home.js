@@ -12,7 +12,7 @@ import {
 	ContentCategory,
 	// Figure,
 	// Figcaption,
-	Gif,
+	// Gif,
 	Header,
 	// Flex,
 	ContentShow
@@ -25,18 +25,17 @@ import { ForSomeone, forYouHelper } from "../maincomponents/ForYou";
 // import cornishPastyPic from "../media/images/picsOfMe/test.jpg";
 // import yes from "../media/images/startNow/Yes.jpg";
 // import testPicHorizontal from "../media/videos/videosOfme/raveMillyRock_1.mp4";
-import vneckcrewneck from "../media/videos/videosOfme/vNeckCrewNeck.mp4";
+// import vneckcrewneck from "../media/videos/videosOfme/vNeckCrewNeck.mp4";
 // import { ScrollDownPortrait } from "../stylecomponents/Base";
 // import { thisAppGatsbySmiling, placesicyAlley } from "../MediaVariables";
 // import YouTube from "react-youtube";
 import {
 	// picsOfMeHeroImageTwo,
-	picsOfMeHero,
-	picsOfMeSelfieOlympics
+	picsOfMeHero
 } from "../MediaVariables";
 // import ReactPlayer from "react-player";
 
-const header = "HerbieDuah.app";
+const header = "Hi, I'm Herbie";
 // There is an app for everything, in
 // 					the future, I believe there is going to be an app for everyone. I am
 // 					Herbie Duah, and this is my app.
@@ -81,9 +80,15 @@ const HomePage = ({ contentProps }) => {
 					<Image
 						cloud
 						src={picsOfMeHero}
-						className='paddingLR'
+						className='paddingLRSm'
 						alt='a picture of me smiling'
 					/>
+					<Paragraph>
+						I am a Phoenix based Web developer/designer with five years of
+						experience. I enjoy any opportunity that allows me to use my coding
+						and design skills in an original and creative way
+						<Emoji className='emoji' symbol='🤓' label='nerd' />.
+					</Paragraph>
 					<HeadingTwo>An App for everyone</HeadingTwo>
 					<Paragraph>
 						Nowadays, there is an app for everything. In the future, I believe

@@ -57,10 +57,11 @@ import {
 	// contentMenuPaddingRight,
 	// contentMenuPadding,
 	tablet,
-	// paddingLR,
+	// paddingLRSm,
 	// slightBoxShadowBelow,
 	userSelectNone,
-	marginLR
+	marginLRSm,
+	marginTopXLarge
 } from "./StyleHelpers";
 
 import { revealSecs } from "../helpers";
@@ -103,7 +104,7 @@ export const GlobalStyle = createGlobalStyle`
 //     font-size: 12px
 export const NavBarMiniContainer = styled.div`
 	position: fixed;
-  	padding: 1rem ${navBarSize};
+  	padding: 0.5rem ${navBarSize};
 	${mobile} {
 		padding: .5rem 1rem;
 	}
@@ -374,6 +375,7 @@ export const ReactTabs = styled(Tabs)`
 		&__tab-list {
 			display: flex;
 			margin-top: 0;
+			padding-left: 0;
 			justify-content: ${tabHeadingsJustifyContent};
 			width: 100%;
 			overflow-x: auto;
@@ -381,6 +383,7 @@ export const ReactTabs = styled(Tabs)`
 			${hideScrollbar}
 			border:0;
 			border-radius: 0;
+			max-width: 500px;
 			text-transform: uppercase;
 		}
 
@@ -411,6 +414,17 @@ export const ReactTabs = styled(Tabs)`
 				&:hover {
 					color: ${tabHeadingsColorHoverFocus};
 					border-bottom: 2px solid ${colorSlightOpacity};
+				}
+			}
+			&:focus {
+				span {
+					border: ${tabHeadingsBorderActive};
+					border-bottom: ${tabHeadingsBorderBottomActive};
+					color: ${tabHeadingsColorActive};
+					&:hover {
+						color: ${tabHeadingsColorActive};
+						border-bottom: ${tabHeadingsBorderBottomActive};
+					}
 				}
 			}
 
@@ -665,9 +679,8 @@ export const FullScreenOverlayContainer = styled.div`
 			padding-bottom: 200px;
 			${hideScrollbar}
 			text-align: left;
-			
+			${marginTopXLarge}
 			display: flex;
-			align-items: center;
 			justify-content: center;
 
 		}
@@ -839,7 +852,7 @@ export const AccessibilityContainer = styled.div`
 	justify-content: right;
 	button {
 		margin-left: auto;
-		${marginLR};
+		${marginLRSm};
 	}
 	margin-bottom: ${navBarSize};
 	${mobile} {

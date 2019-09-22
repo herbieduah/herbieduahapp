@@ -17,8 +17,7 @@ import "animate.css";
 
 const header = "Transitions (Beta)";
 
-const TransitionsPage = ({ contentProps }) => {
-	const { fullScreen, minimalMode } = contentProps;
+const TransitionsPage = () => {
 	return (
 		<Fragment>
 			<ContentShow less>
@@ -43,21 +42,17 @@ const TransitionsPage = ({ contentProps }) => {
 					bring this web app to life.
 				</Paragraph>
 				<Instructions>Select Transitions Below.</Instructions>
-				<div className='padding-left-right breather'>
+				<div className='paddingLRSm marginTopXLarge'>
 					<GenerateTransition />
 				</div>
-				{/* <ShowIf noAnimation thisValue={techy} thatValue={true}> */}
-				<Paragraph className='c-margin-top-med'>
+				{/* <ShowIf noAnimation thisValue={forDev} thatValue={true}> */}
+				<Paragraph className='marginTopMed'>
 					Shout out to <Link href='https://daneden.me/'>Daniel Edens'</Link>{" "}
 					amazing{" "}
 					<Link href='https://daneden.github.io/animate.css/'>Animate.css</Link>{" "}
 					library.
 				</Paragraph>
-				<ContentCategory
-					fullScreen={fullScreen}
-					minimalMode={minimalMode}
-					category='customize'
-				/>
+				<ContentCategory category='customize' />
 				{/* </ShowIf> */}
 			</ContentShow>
 		</Fragment>

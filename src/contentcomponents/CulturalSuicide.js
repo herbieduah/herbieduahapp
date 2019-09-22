@@ -21,7 +21,7 @@ import { ContentShow } from "../ContentHelpers";
 
 const header = "Cultural $uicide";
 
-const CulturalSuicidePage = ({ contentProps }) => {
+const CulturalSuicidePage = () => {
 	// const { whom , minimalMode } = contentProps;
 
 	return (

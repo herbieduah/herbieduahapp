@@ -3,15 +3,7 @@ import styled, { css } from "styled-components";
 import { NavLink } from "react-router-dom";
 import {
 	mobile,
-	// buttonColorActive,
-	// buttonColor,
-	// linkColor,
 	mainTransition,
-	// halyardDisplay,
-	// buttonBorderColorActive,
-	// buttonBorderColor,
-	// navColor,
-	// navColorActive,
 	tablet,
 	crossOut,
 	stripButtonStyle
@@ -58,9 +50,8 @@ const baseStyle = css`
 
 	font-size: ${props => {
 		if (props.xs) return "0.8em";
-		if (props.s) return ".85em";
+		if (props.s) return ".9em";
 		if (props.m) return "1em";
-		if (props.medium) return ".9em";
 		if (props.l) return "1.5em";
 		if (props.xl) return "2em";
 		if (props.xxl) return "2.4em";
@@ -71,7 +62,6 @@ const baseStyle = css`
 			if (props.xs) return "0.8em";
 			if (props.s) return "0.9em";
 			if (props.m) return "1em";
-			if (props.medium) return "1.07em";
 			if (props.l) return "1.3em";
 			if (props.xl) return "1.5em";
 			if (props.xxl) return "1.7em";
@@ -105,9 +95,6 @@ const HeadingOne = styled.h1`
 	${baseStyle};
 	font-weight: 800;
 	font-family: ${appfontFamilyExtraWide};
-	/* @media (max-width: 480px) {
-    font-size: 40px;
-  } */
 `;
 
 const HeadingTwo = styled.h2`
@@ -151,7 +138,6 @@ const Button = styled.button`
 	background: ${buttonBackground};
 	color: ${buttonColor};
 	padding: 0.75rem 1.2rem;
-	
 	cursor: pointer;
 	&:hover,
 	&:focus {
@@ -202,8 +188,6 @@ const MenuLink = styled(NavLink)`
 	font-weight: 500;
 	${mainTransition}
 	position:relative;
-	/* line-height: 1.2; */
-	/* letter-spacing: 1px; */
 	border: 0;
 	hyphens: manual;
 	background: none;
@@ -211,8 +195,6 @@ const MenuLink = styled(NavLink)`
 	font-family: ${appfontFamilyExtraWide};
 	border-bottom: 0;
 	cursor: pointer;
-	/* font-size: 2em; */
-	/* text-transform: capitalize; */
 	text-decoration: none;
 	&::before{
 		content: '';
@@ -220,12 +202,7 @@ const MenuLink = styled(NavLink)`
 		${mainTransition}
 		${crossOut};
 	}
-	${mobile} {
-		/* font-size: 1.7em; */
-	}
 	${tablet} {
-		/* font-size: 1.3em; */
-		/* margin-bottom: 0.5rem; */
 		hyphens: none;
 	}
 	&:hover,
@@ -257,104 +234,26 @@ const Text = ({
 	h4,
 	h5,
 	paragraph,
-	nomargin,
 	button,
 	buttontext,
-	right,
-	center,
 	link,
 	menuLink,
 	figcaption,
 	format,
 	...props
 }) => {
-	if (h1)
-		return (
-			<HeadingOne
-				nomargin={nomargin}
-				right={right}
-				center={center}
-				{...props}
-			/>
-		);
-	if (h2)
-		return (
-			<HeadingTwo
-				nomargin={nomargin}
-				right={right}
-				center={center}
-				{...props}
-			/>
-		);
-	if (h3)
-		return (
-			<HeadingThree
-				nomargin={nomargin}
-				right={right}
-				center={center}
-				{...props}
-			/>
-		);
-	if (h4)
-		return (
-			<HeadingFour
-				nomargin={nomargin}
-				right={right}
-				center={center}
-				{...props}
-			/>
-		);
-	if (h5)
-		return (
-			<HeadingFive
-				nomargin={nomargin}
-				right={right}
-				center={center}
-				{...props}
-			/>
-		);
-	if (button)
-		return (
-			<Button nomargin={nomargin} right={right} center={center} {...props} />
-		);
-	if (buttontext)
-		return (
-			<ButtonText
-				nomargin={nomargin}
-				right={right}
-				center={center}
-				{...props}
-			/>
-		);
-	if (link)
-		return (
-			<HyperLink nomargin={nomargin} right={right} center={center} {...props} />
-		);
-	if (menuLink)
-		return (
-			<MenuLink nomargin={nomargin} right={right} center={center} {...props} />
-		);
-	if (figcaption)
-		return (
-			<Figcaption
-				nomargin={nomargin}
-				right={right}
-				center={center}
-				{...props}
-			/>
-		);
-	if (format)
-		return (
-			<TextFormatter
-				nomargin={nomargin}
-				right={right}
-				center={center}
-				{...props}
-			/>
-		);
-	return (
-		<Paragraph nomargin={nomargin} right={right} center={center} {...props} />
-	);
+	if (h1) return <HeadingOne {...props} />;
+	if (h2) return <HeadingTwo {...props} />;
+	if (h3) return <HeadingThree {...props} />;
+	if (h4) return <HeadingFour {...props} />;
+	if (h5) return <HeadingFive {...props} />;
+	if (button) return <Button tabIndex='0' {...props} />;
+	if (buttontext) return <ButtonText {...props} />;
+	if (link) return <HyperLink tabIndex='0' {...props} />;
+	if (menuLink) return <MenuLink tabIndex='0' {...props} />;
+	if (figcaption) return <Figcaption {...props} />;
+	if (format) return <TextFormatter {...props} />;
+	return <Paragraph {...props} />;
 };
 
 export default Text;

@@ -78,7 +78,7 @@ class Modal extends React.Component {
 		}
 	}
 
-	componentWillReceiveProps(nextProps) {
+	UNSAFE_componentWillReceiveProps(nextProps) {
 		if (!this.props.visible && nextProps.visible) {
 			this.enter();
 		} else if (this.props.visible && !nextProps.visible) {

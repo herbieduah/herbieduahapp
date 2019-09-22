@@ -9,7 +9,8 @@ import {
 	Link,
 	Figure,
 	Header,
-	Figcaption
+	Figcaption,
+	ContentCategory
 } from "../ContentHelpers";
 // import herbieVictoriaNaboursScratch1480x2639 from "../media/images/modeling/photography-herbieVictoriaNaboursScratch-2639.jpg";
 // import herbieVictoriaNaboursJacket1480x2219 from "../media/images/modeling/photography-herbieVictoriaNaboursJacket-2219.jpg";
@@ -60,7 +61,7 @@ const Modeling = () => {
 					Sometimes, I like to stand infront of the camera and have talented
 					people take pictures of me.
 				</Paragraph>
-				<div className='less__container paddingLR'>
+				<div className='less__container paddingLRSm'>
 					<Image src={modelingJacketHoldNaboursDown} />
 					<Image src={modelingBethanyBAldWinsStars} />
 					<Image src={modelingConnerSnow} />
@@ -187,6 +188,7 @@ const Modeling = () => {
 							@wavyoceans
 						</Link>
 					</Figcaption> */}
+				<ContentCategory category='photography' />
 			</ContentShow>
 		</Fragment>
 	);

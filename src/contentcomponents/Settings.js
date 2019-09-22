@@ -30,8 +30,8 @@ const SettingsPage = ({ contentProps }) => {
 		setMinimalMode,
 		// lazyLoading,
 		// setLazyLoading,
-		techy,
-		setTechy,
+		forDev,
+		setForDev,
 		setSides,
 		switchSides,
 		fullScreen,
@@ -84,7 +84,7 @@ const SettingsPage = ({ contentProps }) => {
 	// };
 
 	const knowCode = () => {
-		techy ? setTechy(false) : setTechy(true);
+		forDev ? setForDev(false) : setForDev(true);
 	};
 
 	const failure = () => {
@@ -117,7 +117,7 @@ const SettingsPage = ({ contentProps }) => {
 					I created some settings that enable you to change certain aspects it.
 				</Paragraph>
 				<HeadingTwo>Developer Mode</HeadingTwo>
-				<ShowIf noAnimation thisValue={techy} thatValue={false}>
+				<ShowIf noAnimation thisValue={forDev} thatValue={false}>
 					<Paragraph>
 						I developed my web app for two types of people: people who know code
 						and people who do not. To give the best experience for both, I
@@ -126,7 +126,7 @@ const SettingsPage = ({ contentProps }) => {
 						suggest turning on this setting.
 					</Paragraph>
 				</ShowIf>
-				<ShowIf noAnimation thisValue={techy} thatValue={true}>
+				<ShowIf noAnimation thisValue={forDev} thatValue={true}>
 					<Paragraph>
 						I sprinkled some technical knowledge around the web app. I also only
 						show specific components like the Switch Sides setting for technical
@@ -135,10 +135,10 @@ const SettingsPage = ({ contentProps }) => {
 					</Paragraph>
 				</ShowIf>
 
-				<ShowIf noAnimation thisValue={techy} thatValue={true}>
+				<ShowIf noAnimation thisValue={forDev} thatValue={true}>
 					<Button onClick={knowCode}>De-Activate developer mode</Button>
 				</ShowIf>
-				<ShowIf noAnimation thisValue={techy} thatValue={false}>
+				<ShowIf noAnimation thisValue={forDev} thatValue={false}>
 					<Button onClick={knowCode}>Activate developer mode</Button>
 				</ShowIf>
 
@@ -182,49 +182,47 @@ const SettingsPage = ({ contentProps }) => {
 					</Button>
 				</ShowIf>
 
-				<ShowIf noAnimation thisValue={techy} thatValue={true}>
-					<DisableSetting
-						thisValue={fullScreen}
-						thatValue={true}
-						message="You can't interact with this setting because the web app is not set to Traditional.">
-						<HeadingTwo>Switch sides (Failure)</HeadingTwo>
-						<Paragraph>
-							This lets you switch the content and the menu. This was one of the
-							first settings I had when I started developing this app but I
-							neglected it and failed to keep up with.
-						</Paragraph>
-						{/* <Paragraph>
+				<DisableSetting
+					thisValue={fullScreen || !forDev}
+					thatValue={true}
+					message={`The web app has to be in it's Default mode and Developer Mode to use this setting.`}>
+					<HeadingTwo>Switch sides (Failure)</HeadingTwo>
+					<Paragraph>
+						This lets you switch the content and the menu. This was one of the
+						first settings I had when I started developing this app but I
+						neglected it and failed to keep up with.
+					</Paragraph>
+					{/* <Paragraph>
 						I mean it does what it's intended to do but it doesn't look good.
 					</Paragraph> */}
-						<Paragraph>
-							<strong>
-								Since this is a failed setting, it will revert back in 10
-								seconds
-							</strong>
-						</Paragraph>
-						<ShowIf noAnimation thisValue={switchSides} thatValue={true}>
-							<Button onClick={failure}>Switch sides for 10 Seconds</Button>
-						</ShowIf>
-						<ShowIf noAnimation thisValue={switchSides} thatValue={false}>
-							<Paragraph>Reverting back in 10 seconds</Paragraph>
-						</ShowIf>
-					</DisableSetting>
-				</ShowIf>
-				{/* <ShowIf noAnimation thisValue={techy} thatValue={true}>
+					<Paragraph>
+						<strong>
+							Since this is a failed setting, it will revert back in 10 seconds
+						</strong>
+					</Paragraph>
+					<ShowIf noAnimation thisValue={switchSides} thatValue={true}>
+						<Button onClick={failure}>Switch sides for 10 Seconds</Button>
+					</ShowIf>
+					<ShowIf noAnimation thisValue={switchSides} thatValue={false}>
+						<Paragraph>Reverting back in 10 seconds</Paragraph>
+					</ShowIf>
+				</DisableSetting>
+
+				{/* <ShowIf noAnimation thisValue={forDev} thatValue={true}>
 					<HeadingTwo>Lazy loading</HeadingTwo>
 				</ShowIf> */}
-				{/* <ShowIf noAnimation thisValue={techy} thatValue={false}>
+				{/* <ShowIf noAnimation thisValue={forDev} thatValue={false}>
 					<HeadingTwo>Best Experience Mode</HeadingTwo>
 				</ShowIf>
 
-				<ShowIf noAnimation thisValue={techy} thatValue={false}>
+				<ShowIf noAnimation thisValue={forDev} thatValue={false}>
 					<Paragraph>
 						Right now, all the images and gifs on the web app load as you
 						scroll. Activating this setting downloads every image and gif on the
 						site (No loading screens) therefore, giving you the best experience.
 					</Paragraph>
 				</ShowIf>
-				<ShowIf noAnimation thisValue={techy} thatValue={true}>
+				<ShowIf noAnimation thisValue={forDev} thatValue={true}>
 					<Paragraph>
 						Stop lazy loading images and videos and download everything all at
 						once. Speaking of lazy... it was either spending 2 hours to do this
@@ -237,10 +235,10 @@ const SettingsPage = ({ contentProps }) => {
 
 				<ShowIf noAnimation thisValue={lazyLoading} thatValue={true}>
 					<Button onClick={downloadEverything}>
-						<ShowIf noAnimation thisValue={techy} thatValue={false}>
+						<ShowIf noAnimation thisValue={forDev} thatValue={false}>
 							Activate Best Experience Mode
 						</ShowIf>
-						<ShowIf noAnimation thisValue={techy} thatValue={true}>
+						<ShowIf noAnimation thisValue={forDev} thatValue={true}>
 							Turn Off Lazy load
 						</ShowIf>
 					</Button>

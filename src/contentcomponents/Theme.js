@@ -18,7 +18,7 @@ import { ShowIf } from "../ComponentHelpers";
 const header = "Theme";
 
 const ThemePage = ({ contentProps }) => {
-	const { fullScreen, currentTheme, setTheme , minimalMode } = contentProps;
+	const { fullScreen, currentTheme, setTheme, minimalMode } = contentProps;
 	const setMatrixTheme = () => {
 		setTheme("matrix");
 	};
@@ -86,7 +86,7 @@ const ThemePage = ({ contentProps }) => {
 				<ShowIf noAnimation thisValue={isSnapchat} thatValue={true}>
 					<Small>Hmm {snapMessage()}</Small>
 				</ShowIf> */}
-				<ContentCategory fullScreen={fullScreen} minimalMode={minimalMode} category='customize' />
+				<ContentCategory category='customize' />
 			</ContentShow>
 		</Fragment>
 	);

@@ -1,8 +1,12 @@
 /* eslint-disable no-unused-expressions */
 import React, { Fragment } from "react";
-import { Paragraph, Image, Header } from "../ContentHelpers";
-import { ContentShow } from "../ContentHelpers";
-// import Emoji from "a11y-react-emoji";
+import {
+	Paragraph,
+	Image,
+	Header,
+	ContentCategory,
+	ContentShow
+} from "../ContentHelpers";
 
 import {
 	placesmountainsFlagstaff,
@@ -22,13 +26,13 @@ import {
 } from "../MediaVariables";
 const header = "Places";
 
-const PeoplePage = ({ contentProps }) => {
+const PeoplePage = () => {
 	return (
 		<Fragment>
 			<ContentShow less>
 				<Header less>{header}</Header>
 				<Paragraph less>I take pictures of different places.</Paragraph>
-				<div className='less__container paddingLR'>
+				<div className='less__container paddingLRSm'>
 					<Image src={placesbeautifulmountains} />
 					<Image src={placesbeauifulsunset} />
 				</div>
@@ -49,6 +53,7 @@ const PeoplePage = ({ contentProps }) => {
 				<Image src={placeschocolatefalls} />
 				<Image src={placesbeautifulmountains} />
 				<Image src={placesbeauifulsunset} />
+				<ContentCategory category='photography' />
 			</ContentShow>
 		</Fragment>
 	);

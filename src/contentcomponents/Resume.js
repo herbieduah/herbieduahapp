@@ -19,7 +19,6 @@ import {
 const header = "Experience";
 
 const Resume = ({ contentProps }) => {
-	const { fullScreen , minimalMode } = contentProps;
 	return (
 		<Fragment>
 			<ContentShow less>
@@ -42,7 +41,7 @@ const Resume = ({ contentProps }) => {
 						<strong>Bachelor of Science in Applied Computer Science</strong>
 					</Text>
 					<Text>Northern Arizona University, Flagstaff Arizona</Text>
-					<Text className='cMarginBottomSm'>
+					<Text className='marginBottomSm'>
 						<i>August 11 - May 2016</i>
 					</Text>
 				</Experience>
@@ -191,7 +190,7 @@ const Resume = ({ contentProps }) => {
 						</li>
 					</ul>
 				</Experience>
-				<ContentCategory fullScreen={fullScreen} minimalMode={minimalMode} category='about' />
+				<ContentCategory category='about' />
 			</ContentShow>
 		</Fragment>
 	);

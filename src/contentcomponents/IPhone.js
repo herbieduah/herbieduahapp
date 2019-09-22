@@ -3,7 +3,13 @@ import React, { Fragment } from "react";
 // import Text from "../stylecomponents/Text";
 // import Media from "../maincomponents/Media";
 // import Fade from "react-reveal/Fade";
-import { ContentShow, Header, Paragraph, Image } from "../ContentHelpers";
+import {
+	ContentShow,
+	Header,
+	Paragraph,
+	Image,
+	ContentCategory
+} from "../ContentHelpers";
 // import sunsetPoint1480x1110 from "../media/images/iPhone/sunsetPoint.jpg";
 // import santaMonicaBeach1480x1973 from "../media/images/iPhone/santaMonicaBeach.jpg";
 // import sunsetsnowlift1480x1973 from "../media/images/iPhone/photography-APC_1099-1973.jpg";
@@ -49,7 +55,7 @@ const iPhonePage = () => {
 			<ContentShow less>
 				<Header less>{header}</Header>
 				<Paragraph less>I enjoy taking pictures on my iPhone</Paragraph>
-				<div className='less__container paddingLR'>
+				<div className='less__container paddingLRSm'>
 					<Image src={iphonemexicoSunset} />
 					<Image src={iphonelockettJeepLife} />
 					<Image src={iphonesunsetPoint} />
@@ -75,6 +81,7 @@ const iPhonePage = () => {
 				<Image src={iphoneflagstaffPrettyColors} />
 				<Image src={iphoneflagstaffColorfulHouses} />
 				<Image src={iphoneafterDCTrip} className='paddingLRSm' />
+				<ContentCategory category='photography' />
 			</ContentShow>
 		</Fragment>
 	);

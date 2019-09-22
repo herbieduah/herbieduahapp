@@ -14,11 +14,16 @@ import Content from "./maincomponents/Content";
 // import { DragInstructions } from "./Actions";
 import { defaultAppTheme } from "./stylecomponents/Theme";
 import SliderLine from "./maincomponents/Revealer/SliderLine";
-import { FullScreenOverlay, NavBar, ShowIf } from "./ComponentHelpers";
+import {
+	FullScreenOverlay,
+	NavBar,
+	ShowIf,
+	AppStartUp
+} from "./ComponentHelpers";
 import queryString from "query-string";
 import Text from "./stylecomponents/Text";
 import { Puns } from "./Pages";
-import DownloadAllMedia from "./contentcomponents/DownloadAllMedia";
+// import DownloadAllMedia from "./contentcomponents/DownloadAllMedia";
 import Matrix from "./stylecomponents/Themes/Matrix";
 import { isMobileOnly } from "react-device-detect";
 import {
@@ -30,7 +35,6 @@ import {
 	defaultPaneSize,
 	isPortrait
 } from "./helpers";
-import { AppStartUp } from "./ContentHelpers";
 console.log(React.version);
 export const App = () => {
 	const {
@@ -104,7 +108,7 @@ export const App = () => {
 				showFSMobileHorizontal={showFSMobileHorizontal}
 				accessible={accessible}
 				dragging={dragging}>
-				<AppStartUp />
+				{/* <AppStartUp /> */}
 				<ShowIf noAnimation thisValue={currentTheme} thatValue={"matrix"}>
 					<Matrix fullscreen={true} isPortrait={isPortrait(ww, wh)} />
 				</ShowIf>

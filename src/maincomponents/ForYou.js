@@ -2,7 +2,6 @@ import React, { Fragment } from "react";
 import { ShowIf } from "../ComponentHelpers";
 import { Paragraph, HeadingTwo } from "../ContentHelpers";
 import { mobileModel, isMobileOnly } from "react-device-detect";
-import Emoji from "a11y-react-emoji";
 
 export const ForSomeone = props => {
 	const whom = props.whom;
@@ -67,14 +66,14 @@ export const ForSomeone = props => {
 				topping="contribute to Indeed's mission to help people get jobs."
 				forYou={forYou}
 			/>
-			<ShowIf noAnimation thisValue={""} thatValue={forYou}>
-				<Paragraph>
-					I am a Phoenix based Web developer/designer with five years of
-					experience. I enjoy any opportunity that allows me to use my coding
-					and design skills in an original and creative way
-					<Emoji className='emoji' symbol='🤓' label='nerd' />.
-				</Paragraph>
-			</ShowIf>
+			{/* <ShowIf noAnimation thisValue={""} thatValue={forYou}>
+			<Paragraph>
+				I am a Phoenix based Web developer/designer with five years of
+				experience. I enjoy any opportunity that allows me to use my coding
+				and design skills in an original and creative way
+				<Emoji className='emoji' symbol='🤓' label='nerd' />.
+			</Paragraph>
+		</ShowIf> */}
 		</Fragment>
 	);
 };

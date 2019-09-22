@@ -8,30 +8,20 @@ import {
 	tablet,
 	// navBarSize,
 	contentMenuPaddingRight,
-	paddingLR,
-	cPaddingTopSm,
-	marginLR,
-	paddingTB,
-	paddingLRLarge,
-	paddingLRMed,
-	marginLRLarge,
-	marginLRMed,
+	paddingLRSm,
+	paddingTopSm,
+	marginLRSm,
+	paddingTBSm,
 	slightBoxShadowBelow,
 	userSelectNone,
-	cMarginBottom,
-	cPaddingBottom,
-	cPaddingBottomMed,
-	cMarginBottomMed,
-	cMarginTopSm,
-	cMarginBottomSm,
-	cPaddingBottomSm,
+	paddingBottomMed,
+	marginBottomMed,
+	marginTopSm,
 	navBarSize,
-	cMarginTop,
-	breather,
-	breatherBottom,
+	marginTopXLarge,
 	// cPaddingTop,
 	// cPaddingTopMed,
-	paddingLRSm,
+	// paddingLRSm,
 	// absoluteOverlay,
 	crossOut
 } from "./StyleHelpers";
@@ -50,7 +40,8 @@ export const ContentContainer = styled.section`
 	${props => (props.isPortrait ? mobileSliderOnTop : ``)};
 	${hideScrollbar};
 	overflow: auto;
-	${props => (props.navBarRight ? contentMenuPaddingRight : contentMenuPadding)};
+	${props =>
+		props.navBarRight ? contentMenuPaddingRight : contentMenuPadding};
 	padding-bottom: 40vh;
 	${props => (props.minimalMode ? `margin:0 !important` : ``)};
 	${props => (props.minimalMode ? `padding:2.5rem 0 !important` : ``)};
@@ -59,31 +50,32 @@ export const ContentContainer = styled.section`
 	/* transform: perspective(300px) rotateX(15deg);  */
 	.less {
 		position: fixed;
-		h1, p {
-			&.paddingLR,&.padding-left-right {
-				${props => (props.isPortrait ? `` : `padding-right: 0; padding-left: 0;`)};
+		h1,
+		p {
+			&.paddingLRSm {
+				${props =>
+					props.isPortrait ? `` : `padding-right: 0; padding-left: 0;`};
 			}
 		}
 		${mainTransition}
 		width:  100%;
 		height: ${props => (props.showLess && !props.isPortrait ? `100%` : `100%`)};
-		
+
 		z-index: 10;
 		${props =>
 			props.isPortrait ? `margin-top: .5rem` : `margin-top: ${navBarSize}`};
 		max-width: 500px;
 		${tablet} {
-			${props => (props.isPortrait ? `height: 15vh` : `max-width:350px;`)};		
-		}
-		${tablet} {
+			${props => (props.isPortrait ? `height: 15vh` : `max-width:350px;`)};
 			width: 100%;
 			height: 100%;
 			${props => (props.isPortrait ? `padding-left: 0; padding:right: 0` : ``)};
-			.paddingLR,.padding-left-right {
-				${props => (props.isPortrait ? `padding-left: 0; padding:right: 0` : ``)};
+			.paddingLRSm {
+				${props =>
+					props.isPortrait ? `padding-left: 0; padding:right: 0` : ``};
 			}
 		}
-		
+
 		&__container {
 			padding-top: ${props => (props.isPortrait ? `0` : `${navBarSize}`)};
 			display: none;
@@ -96,14 +88,15 @@ export const ContentContainer = styled.section`
 				margin-bottom: 4vh;
 			}
 			${tablet} {
-				${props => (props.isPortrait ? `margin-bottom:4vh;` : ``)};		
+				${props => (props.isPortrait ? `margin-bottom:4vh;` : ``)};
 			}
 		}
 		&__main-text {
 			height: 20vh;
 			max-width: 500px;
 			display: block;
-			${props => (props.isPortrait ? `${cMarginBottomMed}` : `margin-bottom: 9.5vh`)};
+			${props =>
+				props.isPortrait ? `${marginBottomMed}` : `margin-bottom: 9.5vh`};
 		}
 		&__drag {
 			${props =>
@@ -114,15 +107,17 @@ export const ContentContainer = styled.section`
 			width: 100%;
 			height: 100vh;
 			displax: flex;
+			padding-left: 0;
 			align-items: center;
 			pointer-events: none;
 			`};
-			display:block;
+			display: block;
 		}
-		${props => (props.navBarRight ? contentMenuPaddingRight : contentMenuPadding)};
+		${props =>
+			props.navBarRight ? contentMenuPaddingRight : contentMenuPadding};
 		padding-top: 0;
 		padding-bottom: 0;
-		${mobile}{
+		${mobile} {
 			padding-top: 0;
 			padding-bottom: 0;
 			${props =>
@@ -130,17 +125,18 @@ export const ContentContainer = styled.section`
 					? `padding-left: 0; padding-right: ${navBarSize};`
 					: `padding-right: ${navBarSize}; padding-left: 0 `};
 			width: 100%;
-			height: 100%;	
+			height: 100%;
 		}
 	}
-			
+
 	.LazyLoad {
 		width: 100%;
 	}
 
-	img,video {
+	img,
+	video {
 		max-width: 100%;
-  		height: auto;
+		height: auto;
 	}
 	figure {
 		margin: 0;
@@ -149,18 +145,18 @@ export const ContentContainer = styled.section`
 		text-transform: uppercase;
 	}
 	span.alpha {
-		background:blue;
+		background: blue;
 		color: white;
-		font-weight:bold;
+		font-weight: bold;
 	}
 	.text-cap {
-		text-transform:capitalize;
+		text-transform: capitalize;
 	}
 	margin-top: 0;
 	.container {
-			max-width: 740px;
-			width: 100%;
-			${props => (props.fullScreen ? `margin: 0 auto` : ``)};
+		max-width: 740px;
+		width: 100%;
+		${props => (props.fullScreen ? `margin: 0 auto` : ``)};
 	}
 	.container-full {
 		width: 100%;
@@ -173,26 +169,17 @@ export const ContentContainer = styled.section`
 	}
 
 	.c-experience {
-		${marginLR};
-		${cPaddingTopSm};	
-		
+		${marginLRSm};
+		${paddingTopSm};
 		border-bottom: ${borderThin};
 	}
 	.c-no-wrap {
 		white-space: nowrap;
 	}
 
-	.cPaddingBottomSm, .c-padding-bottom-small{
-		${cPaddingBottomSm}
-	}
-	.cMarginBottomSm, .c-margin-bottom-small{
-		${cMarginBottomSm}
-
-	}
-
 	li {
 		color: ${fontColor};
-		${cMarginTopSm};
+		${marginTopSm};
 	}
 
 	.flex-container {
@@ -200,10 +187,11 @@ export const ContentContainer = styled.section`
 		flex-direction: row;
 		${hideScrollbar};
 		.react-reveal {
-			img,video {
-				height: 23vh!important;
+			img,
+			video {
+				height: 23vh !important;
 				width: auto !important;
-				margin: 0 .5rem !important; 
+				margin: 0 0.5rem !important;
 			}
 		}
 	}
@@ -225,96 +213,25 @@ export const ContentContainer = styled.section`
 			margin-bottom: ${props => (props.isPortrait ? `55vh` : `0`)};
 		}
 	}
-		
-	}
 
-	.c-margin-bottom,.cmb {
-
-		${cMarginBottom} 
-	} 
-	.c-padding-bottom,.cPaddingBottom {
-		${cPaddingBottom}
-	}
-	.breather {
-		${breather}
-	}
-	.breather-bottom {
-		${breatherBottom}
-	}
-	.c-padding-bottom-med, .cPaddingBottomMed {
-		${cPaddingBottomMed}
-	}
-	.c-margin-bottom-med {
-		${mobile} {
-			margin-bottom: 1rem;
-		}
-		${cMarginBottomMed}
-	}
-	.padding-left-right, .paddingLR {
-		${paddingLR}
-	}
-	.paddingLRMed {
-		${paddingLRMed}
-	}
-	.paddingLRSm {
-		${paddingLRSm}
-	}
-	.paddingLRLarge {
-		${paddingLRLarge}
-	}
-	.marginLRMed {
-		${marginLRMed}
-	}
-	
-	.marginLRLarge {
-		${marginLRLarge}
-	}
-	.padding-top-bottom, .paddingTB {
-		${paddingTB}
-	}
-	.margin-left-right, .marginLR {
-		${marginLR}
-	}
-	.c-margin-top {
-		${cMarginTop}
-	}
-	.c-margin-top-small{
-		${cMarginTopSm}
-	}
-	.c-margin-top-large {
-		margin-top: 4.5rem;
-		${mobile} {
-			margin-top: 4rem;
-		}
-	}
 	.emoji {
 		vertical-align: baseline;
 	}
 	.c-border {
 		border: ${navBarBorder};
-		 ${props => (props.isPortrait ? `` : `${paddingTB}`)};
-		 ${props => (props.isPortrait ? `` : `${marginLR}`)};
-		 ${props => (props.isPortrait ? `border: none !important;` : ``)};
+		${props => (props.isPortrait ? `` : `${paddingTBSm}`)};
+		${props => (props.isPortrait ? `` : `${marginLRSm}`)};
+		${props => (props.isPortrait ? `border: none !important;` : ``)};
+	}
 
-	}
-	.c-margin-top-med {
-		margin-top: 2.5rem;
-		${mobile} {
-			margin-top: 2rem;
-		}
-	}
 	s {
-		position:relative;
+		position: relative;
 		text-decoration: none;
-		&::before{
-			content: '';
+		&::before {
+			content: "";
 			border-bottom: 2px solid ${fontColor};
 			${crossOut};
 		}
-	}
-	
-	.c-margin-0 {
-		margin: 0;
 	}
 
 	ul.themeCircle {
@@ -323,38 +240,38 @@ export const ContentContainer = styled.section`
 		flex-wrap: wrap;
 		width: 100%;
 		margin: 0 auto;
-		${cPaddingBottomMed}
-		${paddingLR}
+		${paddingBottomMed}
+		${paddingLRSm}
 	}
 	ul.appTransition {
 		margin: 0;
-		padding: 0;	
+		padding: 0;
 		button {
-			padding:0;
+			padding: 0;
 		}
 	}
 
 	.c-category {
-		${breather};
-		${paddingLR}
+		${marginTopXLarge};
 		ul {
 			list-style-type: none;
-			margin:0;
+			margin: 0;
 			padding: 0;
 		}
+		height: 30vh;
 	}
 	.offset {
-		width:100%;
+		width: 100%;
 		height: 30vh;
-		display:block;
+		display: block;
 	}
 	.less-image {
-		padding:0 20%;
+		padding: 0 20%;
 	}
 
 	.c-disable {
 		${mainTransition};
-		opacity: .4;
+		opacity: 0.4;
 		pointer-events: none;
 	}
 	.c-mockup {
@@ -366,17 +283,17 @@ export const ContentContainer = styled.section`
 	}
 	.c-interact {
 		margin-top: 2rem !important;
-			width: 100%;
+		width: 100%;
 		${mobile} {
 			margin-top: 1.5rem !important;
 		}
 	}
 	.c-submenu {
-		${paddingLR};
+		${paddingLRSm};
 		ul {
-			list-style-type:none;
+			list-style-type: none;
 		}
-		
+
 		margin-top: 3.5rem;
 		${mobile} {
 			margin-top: 3rem;
@@ -388,18 +305,17 @@ export const ContentContainer = styled.section`
 			width: 100%;
 			margin: 0;
 			${mobile} {
-				display:block;
+				display: block;
 			}
-			
+
 			&__item {
-				
 				list-style-type: none;
 				margin-right: 1.5rem;
-				
+
 				white-space: wrap;
 				${mobile} {
 					margin-right: 1rem;
-					margin-bottom: .7rem;
+					margin-bottom: 0.7rem;
 				}
 			}
 			&__text {
@@ -409,38 +325,38 @@ export const ContentContainer = styled.section`
 				}
 			}
 		}
-	
 	}
-	.c-work-info{
-		${marginLR}
-		${cMarginBottomMed}
+	.c-work-info {
+		${marginLRSm}
+		${marginBottomMed}
 		padding-top: .5rem;
-		padding: .5rem 0;
+		padding: 0.5rem 0;
 		strong {
 			display: contents;
 		}
-		.react-reveal,li span {
-			margin:0;
-			padding:0;
+		.react-reveal,
+		li span {
+			margin: 0;
+			padding: 0;
 		}
 		li {
 			list-style-type: none;
 			margin: 0;
 		}
 		ul {
+			list-style-type: none;
 			margin: 0;
-			padding:0;
+			padding: 0;
 		}
 		border-top: ${borderThin};
 		border-bottom: ${borderThin};
 	}
-
-	.react-tabs {
-		&__tab-list {
-			max-width: 500px;
-			text-transform: uppercase;
-			${paddingLR}
-		}
+	.c-pun {
+		height: 2.5rem;
+	}
+	.react-tabs__tab-list {
+		max-width: 500px;
+		${paddingLRSm}
 	}
 `;
 

@@ -24,7 +24,6 @@ import {
 	borderThin,
 	sliderBg,
 	fontColorOpposite,
-	buttonColorHoverFocus,
 	fontColor
 } from "./Themes/ThemeVariables";
 import { pulseRing } from "./Animations";

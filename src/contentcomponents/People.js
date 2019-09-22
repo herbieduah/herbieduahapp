@@ -1,9 +1,14 @@
 /* eslint-disable no-unused-expressions */
 import React, { Fragment } from "react";
-import { Paragraph, Image, Header } from "../ContentHelpers";
-import { ContentShow } from "../ContentHelpers";
+import {
+	Paragraph,
+	Image,
+	Header,
+	ContentShow,
+	ContentCategory
+} from "../ContentHelpers";
 // import Emoji from "a11y-react-emoji";
-import photographyTesfayFamilyKiss1480x2220 from "../media/images/people/photography-photographyTesfayFamilyKiss2-2220.jpg";
+// import photographyTesfayFamilyKiss1480x2220 from "../media/images/people/photography-photographyTesfayFamilyKiss2-2220.jpg";
 // import abenaNightTime1480x2221 from "../media/images/people/photography-abenaNightTime-2221.jpg";
 // import ashleyTaylor1480x2221 from "../media/images/people/photography-ashleyTaylor-2222.jpg";
 // import connorGrad1480x2221 from "../media/images/people/photography-connorGrad-2221.jpg";
@@ -50,13 +55,13 @@ import {
 } from "../MediaVariables";
 const header = "People";
 
-const PeoplePage = ({ contentProps }) => {
+const PeoplePage = () => {
 	return (
 		<Fragment>
 			<ContentShow less>
 				<Header less>{header}</Header>
 				<Paragraph less>I take pictures of people.</Paragraph>
-				<div className='less__container paddingLR'>
+				<div className='less__container paddingLRSm'>
 					<Image src={peopleCeiphers} />
 					<Image src={peopleDyesa} />
 					<Image src={peopleJohnnyGrad} />
@@ -86,9 +91,9 @@ const PeoplePage = ({ contentProps }) => {
 				<Image src={peopleCeiphers} />
 				<Image src={peopleNatasha} />
 				<Image src={peopleGoldenFace} />
+				<ContentCategory category='photography' />
 			</ContentShow>
 		</Fragment>
 	);
 };
-
 export default PeoplePage;

@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-expressions */
 import React, { Fragment } from "react";
-import Text from "../stylecomponents/Text";
+// import Text from "../stylecomponents/Text";
 // import Media from "../maincomponents/Media";
 // import Fade from "react-reveal/Fade";
 import {
@@ -11,20 +11,16 @@ import {
 	Paragraph,
 	Link,
 	UL,
-	LI,
-	// Marquee,
-	ElementReveal
-	// Small
-	// HeadingThree
+	LI
 } from "../ContentHelpers";
 import { ShowIf } from "../ComponentHelpers";
 
 const header = "Special Thanks";
 
 const SpecialThanksPage = ({ contentProps }) => {
-	const { fullScreen, techy, minimalMode } = contentProps;
+	const { forDev } = contentProps;
 	// const [marqueePlay, setmarqueePlay] = useState(true);
-	const marqueePlay = true;
+	// const marqueePlay = true;
 	// const marqueePlaying = () => {
 	// 	marqueePlay ? setmarqueePlay(false) : setmarqueePlay(true);
 	// };
@@ -101,7 +97,7 @@ const SpecialThanksPage = ({ contentProps }) => {
 						button
 						m
 						onClick={marqueePlaying}
-						className=' padding-left-right'>
+						className=' paddingLRSm'>
 						make it stop
 					</Text>
 				</ShowIf>
@@ -114,11 +110,11 @@ const SpecialThanksPage = ({ contentProps }) => {
 						button
 						m
 						onClick={marqueePlaying}
-						className='padding-left-right'>
+						className='paddingLRSm'>
 						make it go again
 					</Text>
 				</ShowIf> */}
-				<ShowIf noAnimation thisValue={techy} thatValue={true}>
+				<ShowIf noAnimation thisValue={forDev} thatValue={true}>
 					<HeadingTwo>The Dev Community</HeadingTwo>
 					<Paragraph>
 						Shout out to the amazing developer community. I have truly learned a
@@ -143,11 +139,7 @@ const SpecialThanksPage = ({ contentProps }) => {
 						</Marquee>
 					</div> */}
 				</ShowIf>
-				<ContentCategory
-					fullScreen={fullScreen}
-					minimalMode={minimalMode}
-					category='about'
-				/>
+				<ContentCategory category='about' />
 			</ContentShow>
 		</Fragment>
 	);

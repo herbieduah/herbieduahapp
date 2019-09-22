@@ -35,9 +35,7 @@ const workDuration = "August 2016 - March 2018";
 const workSkills = "HTML5, CSS, Javascript, Prototyping, UX Design";
 const workTools = "Atom, Adobe Creative Suite, BitBucket, Visual Studio Code";
 
-const UggPage = ({ contentProps }) => {
-	const { techy, fullScreen, minimalMode } = contentProps;
-
+const UggPage = () => {
 	return (
 		<Fragment>
 			<ContentShow less>
@@ -55,7 +53,7 @@ const UggPage = ({ contentProps }) => {
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>
-				<WorkInfo techy={techy} workinfo={workinfo} />
+				<WorkInfo workinfo={workinfo} />
 				<FiGif url={uggslidesemail}>
 					<Figcaption>
 						{" "}
@@ -168,11 +166,7 @@ const UggPage = ({ contentProps }) => {
 					This Trudy prank which was orchestrated by multiple people brought joy
 					into our lives for months and will always be remembered.
 				</Paragraph> */}
-				<ContentCategory
-					fullScreen={fullScreen}
-					minimalMode={minimalMode}
-					category='work'
-				/>
+				<ContentCategory category='work' />
 			</ContentShow>
 		</Fragment>
 	);

@@ -8,17 +8,15 @@ import { videosofme404 } from "../VideoVariables";
 // import { from } from "rxjs";
 const header = "404";
 
-const FourOhFourPage = ({ contentProps }) => {
-	return (
-		<div className='container'>
-			<Header>{header}</Header>
-			<Paragraph>
-				Oh man <Emoji className='emoji' symbol='🙁' label='sad face' />
-			</Paragraph>
-			<Gif url={videosofme404} />
-			<Paragraph>Looks like you stumbled on the wrong page</Paragraph>
-		</div>
-	);
-};
+const FourOhFourPage = () => (
+	<div className='container'>
+		<Header>{header}</Header>
+		<Paragraph>
+			Oh man <Emoji className='emoji' symbol='🙁' label='sad face' />
+		</Paragraph>
+		<Gif url={videosofme404} />
+		<Paragraph>Looks like you stumbled on the wrong page</Paragraph>
+	</div>
+);
 
 export default FourOhFourPage;

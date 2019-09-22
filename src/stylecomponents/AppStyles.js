@@ -6,8 +6,9 @@ import {
 	mainTransition,
 	userSelectNone,
 	mobile,
-	paddingLR,
-	navBarSize
+	paddingLRSm,
+	navBarSize,
+	appMarginsAndPaddings
 } from "./StyleHelpers";
 import {
 	appBg,
@@ -30,6 +31,7 @@ export const HerbieDuahApp = styled.main`
 			props.fullscreen || props.accessible ? "" : "pointer-events: none;"};
 	}
 	}
+	${appMarginsAndPaddings}
 	
 	width: 100%;
 	overflow: hidden;
@@ -46,7 +48,7 @@ export const HerbieDuahApp = styled.main`
 		background-color: ${bgColorOverlay};
 		pointer-events: none;
 	}
-	button,link,a,span {
+	button,li,a,span {
 		&:focus{
 			outline: 0 !important;
 		}
@@ -110,7 +112,7 @@ export const HerbieDuahApp = styled.main`
 	p.alpha-text {
 			color: ${colorSlightOpacity};
 			width:100%;
-			${paddingLR};
+			${paddingLRSm};
 			text-align:left;
 			pointer-events: none;
 			padding-bottom: 2px;

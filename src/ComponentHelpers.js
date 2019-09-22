@@ -1,4 +1,4 @@
-import React, { Fragment, useContext } from "react";
+import React, { Fragment, useContext, useEffect, useState } from "react";
 import { globalState } from "./State";
 import {
 	revealValues,
@@ -14,6 +14,7 @@ import { browserName, mobileModel } from "react-device-detect";
 import {
 	NavBarContainer,
 	NavBarMiniContainer,
+	StartUp,
 	// DragInstructionsContainer,
 	FullScreenOverlayContainer
 	// ParallaxContainer
@@ -29,9 +30,8 @@ import Modal from "./maincomponents/Modal";
 import { Tab, TabList, TabPanel } from "react-tabs";
 import { ReactTabs, AccessibilityContainer } from "./stylecomponents/Base";
 import SubMenu from "./maincomponents/SubMenu";
-import { trackWindowScroll } from "react-lazy-load-image-component";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-// import Zoom from "react-reveal/Zoom";
+import Fade from "react-reveal/Fade";
 
 // export const DragInstructions = props => {
 // 	const {
@@ -100,7 +100,7 @@ export const NavBar = () => {
 						exact
 						className='navbar__logo-link'
 						to='/'
-						tabIndex='0'
+						tabIndex='1'
 						aria-label='Logo'
 						onClick={setMenuModalClose}>
 						<Media
@@ -114,7 +114,7 @@ export const NavBar = () => {
 							className='navbar__contact'
 							onClick={setMenuModalContent}
 							menuLink
-							tabIndex='0'
+							tabIndex='2'
 							to='/contacts'>
 							Contact
 						</Text>
@@ -357,28 +357,28 @@ export const SubMenuWrapper = props => {
 
 export const MenuTabs = props => {
 	const showCategory = props.showCategory;
-	const tabIndex = props.tabIndex || 0;
+	const defaultIndex = props.defaultIndex || 0;
 	return (
-		<ReactTabs defaultIndex={tabIndex} defaultFocus={true}>
+		<ReactTabs defaultIndex={defaultIndex}>
 			<ElementReveal>
 				<TabList>
-					<Tab>
-						<Text format xs tabIndex='-1'>
+					<Tab tabIndex='0'>
+						<Text format xs>
 							Customize
 						</Text>
 					</Tab>
-					<Tab>
-						<Text format xs tabIndex='-1'>
+					<Tab tabIndex='0'>
+						<Text format xs>
 							Work
 						</Text>
 					</Tab>
-					<Tab>
-						<Text format xs tabIndex='-1'>
+					<Tab tabIndex='0'>
+						<Text format xs>
 							Photography
 						</Text>
 					</Tab>
-					<Tab>
-						<Text format xs tabIndex='-1'>
+					<Tab tabIndex='0'>
+						<Text format xs>
 							About
 						</Text>
 					</Tab>
@@ -408,9 +408,9 @@ export const MenuTabs = props => {
 	);
 };
 
-export const MenuMini = props => {
+export const MenuMini = () => {
 	// const showCategory = props.showCategory;
-	return <MenuTabs />;
+	return <MenuTabs defaultIndex={-1} />;
 };
 
 export const Log = props => {
@@ -435,8 +435,8 @@ const ContentWrapperContainer = props => {
 		setMinimalMode,
 		lazyLoading,
 		setLazyLoading,
-		techy,
-		setTechy,
+		forDev,
+		setForDev,
 		setFullscreen,
 		setSides,
 		forYou,
@@ -477,8 +477,8 @@ const ContentWrapperContainer = props => {
 		setMinimalMode,
 		lazyLoading,
 		setLazyLoading,
-		techy,
-		setTechy,
+		forDev,
+		setForDev,
 		setSides,
 		switchSides,
 		forYou,
@@ -508,7 +508,7 @@ const ContentWrapperContainer = props => {
 	);
 };
 
-export const ContentWrapper = trackWindowScroll(ContentWrapperContainer);
+export const ContentWrapper = React.memo(ContentWrapperContainer);
 
 export const HeaderFullScreen = props => {
 	const { fullScreen, setFullScreening, setFullscreen } = useContext(
@@ -560,3 +560,61 @@ export const HeaderFullScreen = props => {
 // 		</ParallaxContainer>
 // 	);
 // };
+
+export const AppStartUp = () => {
+	const [showApp, setShowApp] = useState(true);
+	const startUpTransitions = {
+		// enter: "animated",
+		// 	enterActive: "bounceIn",
+		exit: "animated",
+		exitActive: "fadeOut"
+	};
+	const showTheApp = () => {
+		if (showApp) {
+			setTimeout(() => {
+				setShowApp(false);
+			}, 5000);
+		}
+	};
+	const skipIntro = () => {
+		setShowApp(false);
+	};
+
+	useEffect(() => {
+		showTheApp();
+	});
+	return (
+		<TransitionGroup>
+			{showApp ? (
+				<CSSTransition timeout={4000} classNames={startUpTransitions}>
+					<StartUp>
+						<div>
+							{/* <Fade duration={1000}>
+								<Text l wide className='startUp__nowadays'>
+									Nowadays, there is an app for everything. <br />
+								</Text>
+							</Fade> */}
+							<Fade duration={1000}>
+								<Text l wide className='startUp__future'>
+									In the future, there is going to be an app for everyone.
+								</Text>
+							</Fade>
+							<Fade delay={3000} duration={1500}>
+								<Text l wide className='startUp__my-own'>
+									So I made my own.
+								</Text>
+							</Fade>
+							<Fade duration={500}>
+								<div className='startUp__skip'>
+									<Text m buttontext onClick={skipIntro}>
+										skip intro
+									</Text>
+								</div>
+							</Fade>
+						</div>
+					</StartUp>
+				</CSSTransition>
+			) : null}
+		</TransitionGroup>
+	);
+};

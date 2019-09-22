@@ -1,4 +1,5 @@
-import React, { Fragment, useContext, useState } from "react";
+import React, { Fragment, useContext, useState, useEffect } from "react";
+import styled from "styled-components";
 import { globalState } from "./State";
 import {
 	revealSecs,
@@ -10,40 +11,75 @@ import {
 	getTransitionInfo,
 	camelCaseHelper
 } from "./helpers";
+import ClickNHold from "react-click-n-hold";
 import Reveal from "react-reveal/Reveal";
+import Fade from "react-reveal/Fade";
+// import Zoom from "react-ElementReveal/Zoom";
+// import SubMenu from "./maincomponents/SubMenu";
 import Text from "./stylecomponents/Text";
 import Media from "./maincomponents/Media";
 import { themes } from "./stylecomponents/Theme";
+// import ScrollAnimation from "react-animate-on-scroll";
 import {
 	ThemeCircleContainer,
 	TransitionTextContainer,
-	MarqueeWrapper
+	FlexContainer,
+	MarqueeWrapper,
+	StartUp
 } from "./stylecomponents/Base";
 import { ShowIf, MenuTabs } from "./ComponentHelpers";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { appTransitions } from "./stylecomponents/Transitions";
-
+import {
+	// marginBottomMed,
+	// marginTopMed,
+	marginBottomLarge,
+	marginTopLarge
+} from "./stylecomponents/StyleHelpers";
 export const defaultAlt = "I will be adding an alt tag to this image soon";
 export const defaultDesc = "This is a video, I will be describing it soon";
-
+const spacingBottom = "marginBottomLarge";
 const videoLocation = "cloud-gif";
-const imageLocation = "cloud-image";
+// const spacingBottomMed = "marginBottomMed";
+// const spacingTopBottom = "marginTopLarge marginBottomLarge";
+// const noSpacingTopBottom = "noMargin";
 
 export const ContentShow = props => {
 	const {
 		contentWidth: cw,
 		contentHeight: ch,
 		fullScreen,
+		setFullScreening,
+		setFullscreen,
 		currentTransition
 	} = useContext(globalState);
 	const { width: ww, height: wh } = useWindowResize();
 	const values = { ww, wh, cw, ch };
 	const isShowingMore = revealValues(values).isShowingMore;
 	const isContentPortrait = isPortrait(ww, wh);
+
+	// const isContentPortrait = isPortrait(ww, wh);
 	const showMore = fullScreen ? true : isShowingMore;
 	const showLess = fullScreen ? false : !isShowingMore;
+	// const headerClass = showLess ? noSpacingTopBottom : spacingTopBottom;
 	const transitionClasses = getCurrentTransition(currentTransition);
-	const whereToDrag = isContentPortrait ? "down" : "right";
+	// const values = { ww, wh, cw, ch };
+	// const isShowingMore = ElementRevealValues(values).isShowingMore;
+	const whereToDrag = isContentPortrait ? `down` : `right`;
+	const onFullScreening = () => {
+		setFullScreening(true);
+		console.log("Holding!!!");
+	};
+	const onFullScreenTimeOutEnded = () => {
+		setFullScreening(false);
+		fullScreen ? setFullscreen(false) : setFullscreen(true);
+		console.log("Hold timeout ended!");
+	};
+	const onFullScreenEnded = () => {
+		setFullScreening(false);
+		console.log("Hold ended!");
+	};
+
 	if (props.less) {
 		return (
 			<TransitionGroup>
@@ -76,24 +112,85 @@ export const ContentShow = props => {
 			</TransitionGroup>
 		);
 	}
+	if (props.header) {
+		return (
+			<ElementReveal>
+				<ClickNHold
+					time={2} // Time to keep pressing. Default is 2
+					isPortrait={isPortrait(ww, wh)}
+					fullScreen={fullScreen}
+					onStart={onFullScreening}
+					onClickNHold={onFullScreenTimeOutEnded} //Timeout callback
+					onEnd={onFullScreenEnded}>
+					<header className='content__header container'>
+						<Text s>{props.header}</Text>
+					</header>
+				</ClickNHold>
+			</ElementReveal>
+		);
+	}
 };
 
 export const Header = props => {
+	// const { fullScreen, setFullScreening, setFullscreen } = useContext(
+	// 	globalState
+	// );
+	// const onFullScreening = () => {
+	// 	setFullScreening(true);
+	// 	console.log("Holding!!!");
+	// };
+	// const onFullScreenTimeOutEnded = () => {
+	// 	setFullScreening(false);
+	// 	fullScreen ? setFullscreen(false) : setFullscreen(true);
+	// 	console.log("Hold timeout ended!");
+	// };
+	// const onFullScreenEnded = () => {
+	// 	setFullScreening(false);
+	// 	console.log("Hold ended!");
+	// };
+
 	return (
+		// <ElementReveal>
+		// 	<ClickNHold
+		// 		time={3} // Time to keep pressing. Default is 2
+		// 		fullScreen={fullScreen}
+		// 		onStart={onFullScreening}
+		// 		onClickNHold={onFullScreenTimeOutEnded} //Timeout callback
+		// 		onEnd={onFullScreenEnded}>
+
+		// 	</ClickNHold>
+		// </ElementReveal>
 		<Fragment>
-			<ShowIf noAnimation thisValue={props.less} thatValue={true}>
-				<Text h1 s className='paddingLRSm less__header'>
+			{props.less ? (
+				<Text h1 xs className='paddingLRSm less__header'>
 					{props.children}
 				</Text>
-			</ShowIf>
-			<ShowIf noAnimation thisValue={!props.less} thatValue={true}>
-				<header className='content__header'>
+			) : (
+				<header className='content__header container '>
 					<HeadingOne>{props.children}</HeadingOne>
 				</header>
-			</ShowIf>
+			)}
 		</Fragment>
 	);
 };
+
+// export const ComingSoon = props => {
+// 	return (
+// 		<Fade up duration={revealSecs}>
+// 			<div className='container'>
+// 				<Text m>Working on the content for {props.header}.</Text>
+// 			</div>
+// 		</Fade>
+// 	);
+// };
+
+// export const ElementReveal = props => {
+// 	return (
+// 		<Fade duration={revealSecs}>
+// 			<div>{props.children}</div>
+// 		</Fade>
+// 	);
+// };
 
 export const ElementReveal = props => {
 	const { currentTransition } = useContext(globalState);
@@ -109,24 +206,29 @@ export const ElementReveal = props => {
 };
 
 export const Instructions = props => {
-	const className = props.className || "";
 	return (
-		<Small
-			className={`paddingLRSm c-instructions all-caps marginBottomMed ${className}`}>
-			{props.children}
-		</Small>
+		<ElementReveal>
+			<Text
+				xs
+				className={`paddingLRSm instructions all-caps marginBottomMed ${props.className ||
+					""}`}>
+				{props.children}
+			</Text>
+		</ElementReveal>
 	);
 };
 
 export const ContentCategory = props => {
-	const { fullScreen } = useContext(globalState);
 	const categoryArr = ["customize", "work", "photography", "about"];
-	const defaultIndex = categoryArr.indexOf(props.category);
+	const tabIndex = categoryArr.indexOf(props.category);
 	return (
-		<ShowIf noAnimation thisValue={fullScreen} thatValue={true}>
+		<ShowIf
+			noAnimation
+			thisValue={props.fullScreen && !props.minimalMode}
+			thatValue={true}>
 			<ElementReveal duration={revealSecs}>
-				<div className='c-category marginLRSm'>
-					<MenuTabs showCategory={false} defaultIndex={defaultIndex} />
+				<div className='c-category'>
+					<MenuTabs showCategory={false} tabIndex={tabIndex} />
 				</div>
 			</ElementReveal>
 		</ShowIf>
@@ -153,15 +255,14 @@ export const Paragraph = props => {
 };
 
 export const Small = props => {
-	const className = props.className || "";
+	const compClassName = props.className ? props.className : "";
 	return (
 		<ElementReveal>
 			<small>
 				<Text
 					s
 					format
-					className={`marginBottomMed  paddingLRSm ${className}`}
-					{...props}>
+					className={`marginBottomMed  paddingLRSm ${compClassName}`}>
 					{props.children}
 				</Text>
 			</small>
@@ -169,15 +270,29 @@ export const Small = props => {
 	);
 };
 
+export const SettingButton = props => {
+	return (
+		<ShowIf
+			thisValue={props.var}
+			thatValue={props.bool}
+			className='stupidButtonHeight'>
+			<Text button onClick={props.func} className='paddingLRSm'>
+				{props.cta}
+			</Text>
+			<Small>{props.children}</Small>
+		</ShowIf>
+	);
+};
+
 export const HeadingOne = props => {
-	const className = props.className || "";
+	const compClassName = props.className ? props.className : "";
 	return (
 		<ElementReveal>
 			<Text
 				h1
 				l
 				semibold
-				className={`${className} marginBottomMed marginTopXLarge paddingLRSm`}>
+				className={`marginTopLarge-large ${compClassName} marginBottomMed paddingLRSm `}>
 				{props.children}
 			</Text>
 		</ElementReveal>
@@ -185,14 +300,14 @@ export const HeadingOne = props => {
 };
 
 export const HeadingTwo = props => {
-	const className = props.className || "";
+	const compClassName = props.className ? props.className : "";
 	return (
 		<ElementReveal>
 			<Text
 				h2
 				l
 				bold
-				className={`${className} marginTopXLarge marginBottomSm paddingLRSm`}>
+				className={` ${compClassName} container  marginTopXLarge marginBottomMed  paddingLRSm`}>
 				{props.children}
 			</Text>
 		</ElementReveal>
@@ -222,19 +337,19 @@ export const LI = props => {
 export const Experience = props => {
 	return (
 		<ElementReveal>
-			<div className='c-experience'>{props.children}</div>
+			<div className='c-experience '>{props.children}</div>
 		</ElementReveal>
 	);
 };
 
 export const HeadingThree = props => {
-	const className = props.className || "";
+	const compClassName = props.className ? props.className : "";
 	return (
 		<ElementReveal>
 			<Text
 				h3
 				l
-				className={`marginTopMed marginBottomMed paddingLRSm ${className}`}>
+				className={`marginTopMed  marginBottomMed paddingLRSm ${compClassName} `}>
 				{props.children}
 			</Text>
 		</ElementReveal>
@@ -243,30 +358,52 @@ export const HeadingThree = props => {
 
 export const Link = props => {
 	return (
-		<Text link href={props.href} target='_blank' {...props}>
+		<Text link href={props.href} target='_blank'>
 			{props.children}
 			<span>&#8599;</span>
 		</Text>
 	);
 };
 
+export const Flex = props => {
+	// const height = props.height
+	return (
+		<FlexContainer isPortrait={props.isPortrait} className='less__media'>
+			<ul className='less__media-wrapper'>{props.children}</ul>
+		</FlexContainer>
+	);
+};
+
 export const Image = props => {
+	// const height = props.height;
 	const src = props.src;
-	const alt = props.alt || defaultAlt;
-	const className = props.className || "";
+	const alt = props.alt ? props.alt : defaultAlt;
+	const imageClass = props.className ? props.className : "";
 	return (
 		<ElementReveal>
-			<Media
-				type={imageLocation}
-				src={src}
-				alt={alt}
-				className={`marginBottomLarge ${className}`}
-			/>
+			{props.cloud ? (
+				<Media
+					type='cloud-image'
+					src={src}
+					alt={alt}
+					className={`${spacingBottom} ${imageClass}`}
+				/>
+			) : (
+				<Media
+					type='image'
+					src={src}
+					alt={alt}
+					width={props.width}
+					height={props.height}
+					className={`${spacingBottom} ${imageClass}`}
+				/>
+			)}
 		</ElementReveal>
 	);
 };
 
 export const Figure = props => {
+	// const height = props.height;
 	const src = props.src;
 	const alt = props.alt ? props.alt : defaultAlt;
 	const figClass = props.className ? props.className : "";
@@ -307,9 +444,9 @@ export const Figure = props => {
 };
 
 export const Figcaption = props => {
-	const className = props.className || "";
+	const figClass = props.className ? props.className : "";
 	return (
-		<Text s figcaption center className={`${className} paddingLRSm`}>
+		<Text s className={`${figClass} paddingLRSm`} center figcaption>
 			{props.children}
 		</Text>
 	);
@@ -318,6 +455,7 @@ export const Figcaption = props => {
 export const Gif = props => {
 	const url = props.url;
 	const desc = props.desc ? props.desc : defaultDesc;
+	// const isCloud = props.cloud ? "cloud-" : "";
 	return (
 		<ElementReveal>
 			<Media
@@ -326,7 +464,7 @@ export const Gif = props => {
 				width={props.width}
 				height={props.height}
 				desc={desc}
-				className={`marginBottomLarge ${props.className}`}
+				className={`${spacingBottom} ${props.className}`}
 			/>
 		</ElementReveal>
 	);
@@ -335,9 +473,10 @@ export const Gif = props => {
 export const FiGif = props => {
 	const url = props.url;
 	const desc = props.desc ? props.desc : defaultDesc;
+	// const isCloud = props.cloud ? "cloud-" : "";
 	return (
 		<ElementReveal>
-			<figure className={`marginBottomLarge`}>
+			<figure className={`${spacingBottom}`}>
 				<Media
 					type={videoLocation}
 					width={props.width}
@@ -406,6 +545,9 @@ export const TransitionTexts = props => {
 	const [enterTextTransition, setEnterTextTransition] = useState("");
 	const [exitTextTransition, setExitTextTransition] = useState("");
 	const transitionValues = getTransitionInfo(props.transitionValue);
+	// const toggleAnimatedClass = setTimeout(() => {
+	// 	animatedClass = "animated";
+	// }, revealSecs);
 	const changeTransition = () => {
 		setCurrentTransition(props.transitionValue);
 		setEnterTextTransition(`${transitionValues.enterTransition} animated`);
@@ -418,19 +560,32 @@ export const TransitionTexts = props => {
 	const currentClass =
 		currentTransition === transitionValues.name ? "current" : "";
 
+	// const current = currentTheme === transitionValues.name ? true : false;
+
+	// useEffect(() => {
+	// 	const timer = setTimeout(() => {
+	// 	  animated =''
+	// 	}, revealSecs);
+	// 	return () => clearTimeout(timer);
+	//   }, []);
 	return (
 		<TransitionTextContainer
 			onClick={changeTransition}
 			className={`appTransition__item`}>
-			<Text s buttontext className={`appTransition__container ${currentClass}`}>
-				<span className={enterTextTransition}>
-					{camelCaseHelper(transitionValues.enterTransition)}
-				</span>
-				&nbsp;and&nbsp;
-				<span className={exitTextTransition}>
-					{camelCaseHelper(transitionValues.exitTransition)}
-				</span>
-			</Text>
+			<div className={`appTransition__container`}>
+				<Text
+					buttontext
+					className={`appTransition__container ${currentClass}`}
+					m>
+					<span className={enterTextTransition}>
+						{camelCaseHelper(transitionValues.enterTransition)}
+					</span>
+					&nbsp;and&nbsp;
+					<span className={exitTextTransition}>
+						{camelCaseHelper(transitionValues.exitTransition)}
+					</span>
+				</Text>
+			</div>
 		</TransitionTextContainer>
 	);
 };
@@ -451,7 +606,6 @@ export const GenerateTransition = props => {
 
 export const WorkInfo = props => {
 	const { workDuration, workSkills, workTools } = props.workinfo;
-	const { forDev } = useContext(globalState);
 	return (
 		<ElementReveal>
 			<ul className='c-work-info marginBottomXLarge'>
@@ -467,7 +621,7 @@ export const WorkInfo = props => {
 						{workSkills}
 					</Text>
 				</li>
-				<ShowIf noAnimation thisValue={forDev} thatValue={true}>
+				<ShowIf noAnimation thisValue={props.forDev} thatValue={true}>
 					<li>
 						<Text s format>
 							<strong>Tools:</strong>&nbsp;
@@ -495,9 +649,12 @@ export const Marquee = props => {
 };
 
 export const DisableSetting = props => {
+	// const { currentTransition } = useContext(globalState);
+	// const transitionClasses = getCurrentTransition(currentTransition);
 	const thisValue = props.thisValue;
 	const thatValue = props.thatValue;
 	const renderMe = thisValue === thatValue ? true : false;
+
 	return (
 		<Fragment>
 			{renderMe ? (
@@ -515,25 +672,74 @@ export const DisableSetting = props => {
 };
 
 export const Button = props => {
-	const className = props.className || "";
 	return (
 		<ElementReveal>
-			<Text
-				button
-				s
-				className={`${className} marginLRSm marginBottomSm`}
-				{...props}>
+			<Text button s className='marginLRSm marginBottomSm' {...props}>
 				{props.children}
 			</Text>
 		</ElementReveal>
 	);
 };
 
-export const PunGen = props => {
-	const pun = props.pun;
+export const Seperator = styled.div`
+	${marginBottomLarge};
+	${marginTopLarge};
+`;
+
+export const AppStartUp = () => {
+	const [showApp, setShowApp] = useState(true);
+	const startUpTransitions = {
+		// enter: "animated",
+		// 	enterActive: "bounceIn",
+		exit: "animated",
+		exitActive: "fadeOut"
+	};
+	const showTheApp = () => {
+		if (showApp) {
+			setTimeout(() => {
+				setShowApp(false);
+			}, 5000);
+		}
+	};
+	const skipIntro = () => {
+		setShowApp(false);
+	};
+
+	useEffect(() => {
+		showTheApp();
+	});
 	return (
-		<ElementReveal>
-			<Paragraph className='c-pun'>{pun}</Paragraph>
-		</ElementReveal>
+		<TransitionGroup>
+			{showApp ? (
+				<CSSTransition timeout={4000} classNames={startUpTransitions}>
+					<StartUp>
+						<div>
+							{/* <Fade duration={1000}>
+								<Text l wide className='startUp__nowadays'>
+									Nowadays, there is an app for everything. <br />
+								</Text>
+							</Fade> */}
+							<Fade duration={1000}>
+								<Text l wide className='startUp__future'>
+									In the future, there is going to be an app for everyone.
+								</Text>
+							</Fade>
+							<Fade delay={3000} duration={1500}>
+								<Text l wide className='startUp__my-own'>
+									So I made my own.
+								</Text>
+							</Fade>
+							<Fade duration={500}>
+								<div className='startUp__skip'>
+									<Text m buttontext onClick={skipIntro}>
+										skip intro
+									</Text>
+								</div>
+							</Fade>
+						</div>
+					</StartUp>
+				</CSSTransition>
+			) : null}
+		</TransitionGroup>
 	);
 };

@@ -76,7 +76,7 @@ position: absolute;
 
 export const stupidNegativeMargin = `margin-top:${sliderMobileWidth /
 	2}px!important`;
-export const paddingLR = `
+export const paddingLRSm = `
 padding-right: 20px;
 padding-left: 20px;
 ${mobile} {
@@ -92,13 +92,13 @@ ${mobile} {
 padding-right: 15%;
 }`;
 
-export const paddingLRSm = `
-padding-left: 10%;
-padding-right: 10%;
-${mobile} {
-	padding-left: 5%;
-padding-right: 5%;
-}`;
+// export const paddingLRSm = `
+// padding-left: 10%;
+// padding-right: 10%;
+// ${mobile} {
+// 	padding-left: 5%;
+// padding-right: 5%;
+// }`;
 
 export const paddingLRLarge = `
 padding-left: 25%;
@@ -124,7 +124,7 @@ ${mobile} {
 	margin-right: 20%;
 }`;
 
-export const paddingTB = `
+export const paddingTBSm = `
 padding-top: 20px;
 padding-bottom: 20px;
 ${mobile} {
@@ -132,7 +132,7 @@ ${mobile} {
 padding-bottom: 1rem;
 }`;
 
-export const marginLR = `
+export const marginLRSm = `
 margin-left: 20px;
 margin-right: 20px;
 
@@ -160,12 +160,12 @@ ${mobile} {
 	margin: 0;
 }`;
 
-export const cMarginBottom = `margin-bottom: 3rem;
+export const marginBottomLarge = `margin-bottom: 3rem;
 ${mobile} {
 	margin-bottom: 2.5rem;
 }`;
 
-export const cPaddingBottom = `padding-bottom: 3rem !important;
+export const paddingBottomLarge = `padding-bottom: 3rem !important;
 ${mobile} {
 	padding-bottom: 2.5rem!important;
 }`;
@@ -174,7 +174,7 @@ ${mobile} {
 	padding-top: 2.5rem!important;
 }`;
 
-export const cPaddingBottomMed = `padding-bottom: 2rem;
+export const paddingBottomMed = `padding-bottom: 2rem;
 ${mobile} {
 	padding-bottom: 1.5rem;
 }`;
@@ -184,18 +184,18 @@ ${mobile} {
 	padding-top: 1.5rem;
 }`;
 
-export const cMarginBottomMed = `margin-bottom: 1.5rem;
+export const marginBottomMed = `margin-bottom: 1.5rem;
 ${mobile} {
 	margin-bottom: 1rem;
 }
 `;
-export const cMarginTopMed = `margin-top 1.5rem;
+export const marginTopMed = `margin-top 1.5rem;
 ${mobile} {
 	margin-top: 1rem;
 }
 `;
 
-export const cMarginTopSm = `margin-top: 1rem;
+export const marginTopSm = `margin-top: 1rem;
 ${mobile} {
 	margin-top: .75rem;
 }
@@ -215,36 +215,36 @@ button:active {
     transform: scale(0.99);
 }`;
 
-export const cMarginBottomSm = `margin-bottom: 1.25rem;
+export const marginBottomSm = `margin-bottom: 1.25rem;
 ${mobile} {
 	margin-bottom: .75rem;
 }
 `;
 
-export const cPaddingBottomSm = `padding-bottom: 1.25rem;
+export const paddingBottomSm = `padding-bottom: 1.25rem;
 ${mobile} {
 	padding-bottom: .75rem;
 }
 `;
 
-export const cPaddingTopSm = `padding-top: 1.25rem;
+export const paddingTopSm = `padding-top: 1.25rem;
 ${mobile}{
 	padding-top: .75rem;
 }`;
 
-export const cMarginTop = `
+export const marginTopLarge = `
 margin-top: 3.5rem;
 		${mobile} {
 			margin-top: 3rem;
 		}
 `;
-export const breather = `
+export const marginTopXLarge = `
 margin-top: 4rem;
 		${mobile} {
 			margin-top: 3.5rem;
 		}
 `;
-export const breatherBottom = `
+export const marginBottomXLarge = `
 margin-bottom: 4rem;
 		${mobile} {
 			margin-bottom: 3.5rem;
@@ -267,45 +267,6 @@ ${mobile} {
 export const mainTransition = `transition: all ${revealSecs /
 	2}ms ease-in-out;`;
 
-// export const showMore = props => props.appValues.isShowingMore;
-// export const appGradient = props => rgba(props.theme.bgColor, 0.0);
-// export const appColor = props => props.theme.bgColor;
-// export const ctaColor = props => props.theme.ctaColor;
-// export const bgColor = props => props.theme.bgColor;
-// export const bgColorGradient = props => props.theme.bgColorGradient;
-// export const fontColor = props => props.theme.fontColor;
-
-// export const buttonColor = props => props.theme.fontColor;
-// // lighten(0.17, props.theme.fontColor);
-// export const buttonColorHover = props => props.theme.fontColor;
-// export const buttonColorActive = props => props.theme.fontColor;
-// export const buttonBorderColor = props => rgba(props.theme.fontColor, 0.75);
-// export const buttonBorderColorActive = props =>
-// 	lighten(0.15, props.theme.fontColor);
-// export const linkColor = props => props.theme.fontColor;
-// export const linkColorHover = props => props.theme.fontColor;
-// export const linkColorActive = props => props.theme.fontColor;
-// export const linkBorderColor = props => rgba(props.theme.fontColor, 0.3);
-// export const linkBorderColorActive = props => props.theme.fontColor;
-
-// export const navColor = props => rgba(props.theme.fontColor, 0.6);
-// export const navColorHover = props => props.theme.fontColor;
-// export const navColorActive = props => props.theme.fontColor;
-// export const navBorderColor = props => rgba(props.theme.fontColor, 0.5);
-// export const navBorderColorActive = props => props.theme.bgColor;
-
-// //BlockStyle.js
-// export const sliderCircleShadow = props => rgba(props.theme.bgColor, 0.5);
-// export const blockBorderColorHover = props => rgba(props.theme.ctaColor, 0.9);
-// export const blockBorderRadius = props => props.theme.blockBorderRadius;
-// export const blockBackground = props => props.theme.blockBackgroundColor;
-
-// //SliderStyles
-// export const sliderCircle = props => rgba(props.theme.ctaColor, 1);
-
-// //Overlay
-// export const overlayBackground = props => rgba(props.theme.bgColor, 0.8);
-
 export const niceShadow = `
 &:before {
 	content: "";
@@ -320,3 +281,71 @@ export const niceShadow = `
 	pointer-events: none;
 	box-shadow: 0 0 3rem 3rem ${bgColor}, 0 0 2rem 2rem ${bgColor};
 }`;
+
+export const appMarginsAndPaddings = `
+.noPadding {
+	padding: 0;
+}
+.paddingLRSm {
+	${paddingLRSm}
+}
+.paddingLRMed {
+	${paddingLRMed}
+}
+.paddingLRLarge {
+	${paddingLRLarge}
+}
+.paddingTBSm {
+	${paddingTBSm}
+}
+.paddingBottomSm {
+	${paddingBottomSm}
+}
+.paddingTopSm {
+	${paddingTopSm}
+}
+
+.paddingBottomMed {
+	${paddingBottomMed}
+}
+.paddingBottomLarge{
+	${paddingBottomLarge}
+}
+.marginLRSm {
+	${marginLRSm}
+}
+.marginLRMed {
+	${marginLRMed}
+}
+.marginLRLarge {
+	${marginLRLarge}
+}
+.marginBottomLarge {
+	${marginBottomLarge} 
+} 
+.marginBottomSm {
+	${marginBottomSm}
+}
+.marginTopXLarge {
+	${marginTopXLarge}
+}
+.marginBottomXLarge {
+	${marginBottomXLarge}
+}
+
+.marginBottomMed {
+	${marginBottomMed}
+}
+.marginTopLarge {
+	${marginTopLarge}
+}
+.marginTopSm{
+	${marginTopSm}
+}
+.marginTopMed {
+	${marginTopMed}
+}
+.noMargin {
+	margin: 0;
+}
+`;
