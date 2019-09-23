@@ -598,7 +598,7 @@ export const picsOfMeHerbieGhana = [
 export const picsOfMeHero = [
 	picsOfMeHeroDesktop,
 	picsOfMeHeroMobile,
-	"picsOfMeHero_qj1trg"
+	"picsOfMeHero_yjgmun"
 ];
 export const picsOfMeHero3 = [
 	picsOfMeHero3Desktop,
