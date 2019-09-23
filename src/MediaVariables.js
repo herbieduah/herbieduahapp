@@ -790,7 +790,11 @@ export const bedzinExhibitOld = [
 	bedzinExhibitOldMobile,
 	"bedzinExhibitOld_ztscty"
 ];
-export const dtLookingDown = [dtLookingDownDesktop, dtLookingDownMobile];
+export const dtLookingDown = [
+	dtLookingDownDesktop,
+	dtLookingDownMobile,
+	"dtLookingDown_iygxic"
+];
 export const dtShootMentoringNearMustang = [
 	dtShootMentoringNearMustangDesktop,
 	dtShootMentoringNearMustangMobile,

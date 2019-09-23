@@ -42,11 +42,11 @@ const TransitionsPage = () => {
 					bring this web app to life.
 				</Paragraph>
 				<Instructions>Select Transitions Below.</Instructions>
-				<div className='paddingLRSm marginTopXLarge'>
+				<div className='paddingLRSm marginTopMed'>
 					<GenerateTransition />
 				</div>
 				{/* <ShowIf noAnimation thisValue={forDev} thatValue={true}> */}
-				<Paragraph className='marginTopMed'>
+				<Paragraph className='marginTopLarge'>
 					Shout out to <Link href='https://daneden.me/'>Daniel Edens'</Link>{" "}
 					amazing{" "}
 					<Link href='https://daneden.github.io/animate.css/'>Animate.css</Link>{" "}

@@ -1,3 +1,4 @@
+//ContentHelpers file for my web app.
 import React, { Fragment, useContext, useState } from "react";
 import { globalState } from "./State";
 import {
@@ -22,10 +23,12 @@ import {
 import { ShowIf, MenuTabs } from "./ComponentHelpers";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { appTransitions } from "./stylecomponents/Transitions";
+// import PropTypes from "prop-types";
 
 export const defaultAlt = "I will be adding an alt tag to this image soon";
 export const defaultDesc = "This is a video, I will be describing it soon";
 
+//Switch to 'gif' or 'image' to pull videos and images locally
 const videoLocation = "cloud-gif";
 const imageLocation = "cloud-image";
 
@@ -134,9 +137,8 @@ export const ContentCategory = props => {
 };
 
 export const Paragraph = props => {
-	const compClassName = props.className ? props.className : "";
-	const lessClass = props.less ? "less__main-text " : "marginBottomMed ";
-
+	const className = props.className || "";
+	const lessClass = props.less ? "less__main-text " : "marginBottomMed";
 	return (
 		<Fragment>
 			<ElementReveal>
@@ -144,7 +146,7 @@ export const Paragraph = props => {
 					m={!props.less}
 					l={props.less}
 					wide={props.less || props.wide}
-					className={`${compClassName} ${lessClass} paddingLRSm`}>
+					className={`${className} ${lessClass} paddingLRSm`}>
 					{props.children}
 				</Text>
 			</ElementReveal>
@@ -268,17 +270,16 @@ export const Image = props => {
 
 export const Figure = props => {
 	const src = props.src;
-	const alt = props.alt ? props.alt : defaultAlt;
-	const figClass = props.className ? props.className : "";
+	const alt = props.alt || defaultAlt;
+	const className = props.className || "";
 	const mockup = props.mockup ? true : false;
-	const isCloud = props.cloud ? "cloud-" : "";
 	return (
 		<ElementReveal>
 			<figure className={`marginBottomLarge`}>
 				{mockup ? (
-					<div className={figClass}>
+					<div className={className}>
 						<Media
-							type={`${isCloud}image`}
+							type={imageLocation}
 							width={props.width}
 							height={props.height}
 							className='c-mockup'
@@ -289,9 +290,9 @@ export const Figure = props => {
 					</div>
 				) : (
 					<Fragment>
-						<div className={figClass}>
+						<div className={className}>
 							<Media
-								type={`${isCloud}image`}
+								type={imageLocation}
 								width={props.width}
 								height={props.height}
 								src={src}
@@ -317,7 +318,8 @@ export const Figcaption = props => {
 
 export const Gif = props => {
 	const url = props.url;
-	const desc = props.desc ? props.desc : defaultDesc;
+	const desc = props.desc || defaultDesc;
+	const className = props.className || "";
 	return (
 		<ElementReveal>
 			<Media
@@ -326,7 +328,7 @@ export const Gif = props => {
 				width={props.width}
 				height={props.height}
 				desc={desc}
-				className={`marginBottomLarge ${props.className}`}
+				className={`marginBottomLarge ${className}`}
 			/>
 		</ElementReveal>
 	);
@@ -334,10 +336,11 @@ export const Gif = props => {
 
 export const FiGif = props => {
 	const url = props.url;
-	const desc = props.desc ? props.desc : defaultDesc;
+	const className = props.className || "";
+	const desc = props.desc || defaultDesc;
 	return (
 		<ElementReveal>
-			<figure className={`marginBottomLarge`}>
+			<figure className={`marginBottomLarge ${className}`}>
 				<Media
 					type={videoLocation}
 					width={props.width}
@@ -435,19 +438,17 @@ export const TransitionTexts = props => {
 	);
 };
 
-export const GenerateTransition = props => {
-	return (
-		<ElementReveal>
-			<ul className='appTransition'>
-				{appTransitions.map(function(element, uniqueKey) {
-					return (
-						<TransitionTexts transitionValue={element.name} key={uniqueKey} />
-					);
-				})}
-			</ul>
-		</ElementReveal>
-	);
-};
+export const GenerateTransition = props => (
+	<ElementReveal>
+		<ul className='appTransition' {...props}>
+			{appTransitions.map(function(element, uniqueKey) {
+				return (
+					<TransitionTexts transitionValue={element.name} key={uniqueKey} />
+				);
+			})}
+		</ul>
+	</ElementReveal>
+);
 
 export const WorkInfo = props => {
 	const { workDuration, workSkills, workTools } = props.workinfo;

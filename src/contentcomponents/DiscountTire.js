@@ -76,7 +76,7 @@ const DiscountTirePage = () => (
 			</Figure>
 			<Figure src={dtLookingDown}>
 				<Figcaption className='marginBottomLarge'>
-					d you hear about the man who ran in front of the bus?He got tired.
+					Did you hear about the man who ran in front of the bus?He got tired.
 				</Figcaption>
 			</Figure>
 			<Figure src={dtShootMentoringNearMustang}>

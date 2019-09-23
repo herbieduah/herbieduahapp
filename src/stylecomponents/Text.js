@@ -1,3 +1,4 @@
+//Text Styled Components file for my web app.
 import React from "react";
 import styled, { css } from "styled-components";
 import { NavLink } from "react-router-dom";
@@ -33,7 +34,6 @@ const baseStyle = css`
 		if (props.extrawide) return appfontFamilyExtraWide;
 		return appfontFamily;
 	}};
-
 	line-height: ${props => {
 		if (props.nolineheight) return "1";
 		return "1.5";
@@ -83,14 +83,6 @@ const baseStyle = css`
 	margin: 0;
 `;
 
-baseStyle.defaultProps = {
-	theme: {
-		fontFamily: '"Assistant", sans-serif',
-		fontColor: "#111111",
-		ctaColor: "blue"
-	}
-};
-
 const HeadingOne = styled.h1`
 	${baseStyle};
 	font-weight: 800;
@@ -123,7 +115,6 @@ const Paragraph = styled.p`
 
 const Figcaption = styled.figcaption`
 	${baseStyle};
-	font-weight: 300;
 `;
 const TextFormatter = styled.span`
 	${baseStyle};
