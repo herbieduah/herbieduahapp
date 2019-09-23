@@ -107,7 +107,7 @@ const Media = props => {
 					publicId={`images/${props.src[2]}`}
 					width={mediaWidth}
 					crop='scale'
-					dpr='auto'
+					dpr='2.0'
 					alt={props.alt}
 					className={props.className || ""}
 				/>
