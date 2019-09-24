@@ -175,6 +175,24 @@ export const themes = [
 		desc: ""
 	},
 	{
+		name: "Color-F3BAC3-430C15",
+		properties: {
+			...themeColorMaker("Color-F3BAC3-430C15")
+		},
+		type: "color",
+		text: "",
+		desc: ""
+	},
+	{
+		name: "Color-430C15-F3BAC3",
+		properties: {
+			...themeColorMaker("Color-430C15-F3BAC3")
+		},
+		type: "color",
+		text: "",
+		desc: ""
+	},
+	{
 		name: "default",
 		properties: {
 			...defaultTheme

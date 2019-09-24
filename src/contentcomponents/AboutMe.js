@@ -49,7 +49,7 @@ const AboutMePage = () => {
 				<Header>{header}</Header>
 				<HeadingTwo>I was born and raised in Ghana</HeadingTwo>
 				<FiGif
-					className='paddingLRLarge'
+					className='paddingLRMed'
 					desc='A picture of me doing that Wakanda salute in Black Panther'
 					width='720'
 					height='900'
@@ -155,7 +155,7 @@ const AboutMePage = () => {
 				</Figure> */}
 				<HeadingTwo>I enjoy offroading</HeadingTwo>
 				<Gif
-					className='paddingLRLarge'
+					className='paddingLRMed'
 					desc='Offroading with some friends'
 					width='634'
 					height='1234'

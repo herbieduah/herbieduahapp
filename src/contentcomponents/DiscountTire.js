@@ -50,7 +50,7 @@ const DiscountTirePage = () => (
 		<ContentShow less>
 			<Header less>{header}</Header>
 			<Paragraph less>
-				rrently working at Discount Tire as a Front End Developer and a model?
+				Currently working at Discount Tire as a Front End Developer and a model?
 			</Paragraph>
 			<div className='less__container paddingLRSm'>
 				<Image className='paddingLRSm' src={dtCreepySmile} />
@@ -60,9 +60,10 @@ const DiscountTirePage = () => (
 			<Header>{header}</Header>
 			<WorkInfo workinfo={workinfo} />
 			<Paragraph>
-				am currently working at Discount Tire as a Front End Developer.My uties
-				consist of developing and designing webpages and updating co for a
-				legacy Intranet System so unfortunately, I can't show any of my work.
+				I am currently working at Discount Tire as a Front End Developer. My
+				uties consist of developing and designing webpages and updating co for a
+				legacy Intranet System so unfortunately, I can't show any of my work on
+				here.
 			</Paragraph>
 			<HeadingTwo>Modeling</HeadingTwo>
 			<Paragraph>
@@ -70,7 +71,7 @@ const DiscountTirePage = () => (
 			</Paragraph>
 			<Figure src={dtCheckOutTheseTires}>
 				<Figcaption className='marginBottomLarge'>
-					nfucius say, man who runs behind car will get exhausted, but man who
+					Confucius say, man who runs behind car will get exhausted, but man who
 					runs in front of car will get tired.
 				</Figcaption>
 			</Figure>
@@ -104,7 +105,7 @@ const DiscountTirePage = () => (
 			</Figure>
 			<Figure src={dtReceipt}>
 				<Figcaption className='marginBottomLarge'>
-					scount Tire (America's Tire in California) is the largest retailer
+					Discount Tire (America's Tire in California) is the largest retailer
 					ires and wheels in the world with 1000+ stores nationwide and I am
 					currently on every receipt holder and that's no joke
 				</Figcaption>
