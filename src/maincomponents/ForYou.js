@@ -66,6 +66,13 @@ export const ForSomeone = props => {
 				topping="contribute to Indeed's mission to help people get jobs."
 				forYou={forYou}
 			/>
+			<JobApplication
+				jobID='vrbo'
+				job='UX Developer'
+				city='Austin'
+				topping='partner with the engineering teams to deliver great experiences and patterns for Vrbo travelers and suppliers.'
+				forYou={forYou}
+			/>
 			{/* <ShowIf noAnimation thisValue={""} thatValue={forYou}>
 			<Paragraph>
 				I am a Phoenix based Web developer/designer with five years of
@@ -117,6 +124,9 @@ export const forYouHelper = forSomebody => {
 			return person;
 		case "cloudflare":
 			person = " Cloudflare Employer/Employee";
+			return person;
+		case "vrbo":
+			person = " Expedia Employer/Employee";
 			return person;
 		// case 'Mangoes':
 		// case 'Papayas':
