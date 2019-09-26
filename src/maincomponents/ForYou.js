@@ -35,15 +35,11 @@ export const ForSomeone = props => {
 				<Paragraph className=' '>
 					I'd like to say thanks. You could have been upvoting some reddit post
 					but instead you're here, checking out my web app. I really appreciate
-					you.
+					you. ()
 				</Paragraph>
 				<Paragraph className=' '>
 					Shoutout to r/webdev, r/reactjs/ ,r/design_critiques and
-					r/web_design/. Y'all are awesome!
-				</Paragraph>
-				<Paragraph>
-					I hope you're not in the Reddit in-app browser. If you are, please
-					open in an actual browser.
+					r/web_design/. (Also, this web app doesn't work in in-app browser)
 				</Paragraph>
 			</ShowIf>
 
