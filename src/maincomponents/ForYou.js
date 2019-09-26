@@ -30,7 +30,7 @@ export const ForSomeone = props => {
 				</Paragraph>
 			</ShowIf>
 			{/* Reddit */}
-			<ShowIf noAnimation thisValue={"reddit"} thatValue={whom}>
+			<ShowIf noAnimation thisValue={"reddit"} thatValue={forYou}>
 				<HeadingTwo>First Off</HeadingTwo>
 				<Paragraph className=' '>
 					I'd like to say thanks. You could have been upvoting some reddit post
@@ -38,7 +38,12 @@ export const ForSomeone = props => {
 					you.
 				</Paragraph>
 				<Paragraph className=' '>
-					Shoutout to r/webdev, r/reactjs/ and r/web_design/. Y'all are awesome!
+					Shoutout to r/webdev, r/reactjs/ ,r/design_critiques and
+					r/web_design/. Y'all are awesome!
+				</Paragraph>
+				<Paragraph>
+					I hope you're not in the Reddit in-app browser. If you are, please
+					open in an actual browser.
 				</Paragraph>
 			</ShowIf>
 
