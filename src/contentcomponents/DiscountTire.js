@@ -61,9 +61,9 @@ const DiscountTirePage = () => (
 			<WorkInfo workinfo={workinfo} />
 			<Paragraph>
 				I am currently working at Discount Tire as a Front End Developer. My
-				uties consist of developing and designing webpages and updating co for a
-				legacy Intranet System so unfortunately, I can't show any of my work on
-				here.
+				duties consist of developing and designing webpages and updating co for
+				a legacy Intranet System so unfortunately, I can't show any of my work
+				on here.
 			</Paragraph>
 			<HeadingTwo>Modeling</HeadingTwo>
 			<Paragraph>

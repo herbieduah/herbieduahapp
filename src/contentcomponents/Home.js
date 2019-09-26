@@ -69,8 +69,8 @@ const HomePage = ({ contentProps }) => {
 				<Header less>{header}</Header>
 				<Paragraph less>
 					Hi<span className='text-cap'>{forYouHelper(forYou)}</span>, I'm Herbie
-					and I love to design and develop for people like you
-					<Emoji className='emoji' symbol='😀' label='grinning emoji' />.
+					and this my personal web app.
+					<Emoji className='emoji' symbol='😀' label='a grinning emoji' />.
 				</Paragraph>
 			</ContentShow>
 			<ContentShow more>

@@ -54,7 +54,7 @@ const AboutMePage = () => {
 					width='720'
 					height='900'
 					url={videosofmewakanda}>
-					<Figcaption>Not Wakanka.</Figcaption>
+					<Figcaption>Not Wakanda.</Figcaption>
 				</FiGif>
 				{/* <HeadingTwo>I graduated at Northern Arizona University</HeadingTwo>
 				<Figure
