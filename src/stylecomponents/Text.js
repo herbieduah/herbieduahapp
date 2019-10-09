@@ -14,8 +14,8 @@ import {
 	CTAColor,
 	fontColor,
 	appfontFamily,
-	appfontFamilyWide,
-	appfontFamilyExtraWide,
+	appfontFamilyTertiary,
+	appfontFamilySecondary,
 	navBarButtonColor,
 	buttonColor,
 	buttonColorHoverFocus,
@@ -30,8 +30,8 @@ import {
 
 const baseStyle = css`
 	font-family: ${props => {
-		if (props.wide) return appfontFamilyWide;
-		if (props.extrawide) return appfontFamilyExtraWide;
+		if (props.micro) return appfontFamilyTertiary;
+		if (props.secondary) return appfontFamilySecondary;
 		return appfontFamily;
 	}};
 	line-height: ${props => {
@@ -53,6 +53,7 @@ const baseStyle = css`
 		if (props.s) return ".9em";
 		if (props.m) return "1em";
 		if (props.l) return "1.35em";
+		if (props.large) return "1.35em";
 		if (props.xl) return "2em";
 		if (props.xxl) return "2.4em";
 		return "1em";
@@ -63,6 +64,7 @@ const baseStyle = css`
 			if (props.s) return "0.9em";
 			if (props.m) return "1em";
 			if (props.l) return "1.3em";
+			if (props.large) return "1.3em";
 			if (props.xl) return "1.5em";
 			if (props.xxl) return "1.7em";
 			return "1em";
@@ -79,25 +81,24 @@ const baseStyle = css`
 		return "normal";
 	}};
 	max-width: 100%;
-	letter-spacing: 0.5px;
 	margin: 0;
 `;
 
 const HeadingOne = styled.h1`
 	${baseStyle};
 	font-weight: 800;
-	font-family: ${appfontFamilyExtraWide};
+	font-family: ${appfontFamilySecondary};
 `;
 
 const HeadingTwo = styled.h2`
 	${baseStyle};
-	font-family: ${appfontFamilyWide};
+	font-family: ${appfontFamilySecondary};
 	font-weight: 500;
 `;
 
 const HeadingThree = styled.h3`
 	${baseStyle};
-	font-family: ${appfontFamilyWide};
+	font-family: ${appfontFamilySecondary};
 	font-weight: 400;
 `;
 
@@ -115,6 +116,7 @@ const Paragraph = styled.p`
 
 const Figcaption = styled.figcaption`
 	${baseStyle};
+	font-family: ${appfontFamilyTertiary};
 `;
 const TextFormatter = styled.span`
 	${baseStyle};
@@ -124,6 +126,8 @@ const Button = styled.button`
 	${baseStyle};
 	${stripButtonStyle}
 	${mainTransition}
+	font-family: ${appfontFamilyTertiary};
+	text-transform: uppercase;
 	border: ${buttonBorder};
 	hyphens: manual;
 	background: ${buttonBackground};
@@ -147,6 +151,7 @@ const ButtonText = styled.button`
 	${mainTransition}
 	color: ${fontColor};
 	text-transform: uppercase;
+	font-family: ${appfontFamilyTertiary};
 	cursor: pointer;
 	background: transparent;
 	border: 0;
@@ -183,8 +188,9 @@ const MenuLink = styled(NavLink)`
 	hyphens: manual;
 	background: none;
 	color: ${navBarButtonColor};
-	font-family: ${appfontFamilyExtraWide};
+	font-family: ${appfontFamilySecondary};
 	border-bottom: 0;
+	text-transform: uppercase;
 	cursor: pointer;
 	text-decoration: none;
 	&::before{

@@ -22,7 +22,7 @@ export const SubMenu = props => {
 				<div>
 					{showCategory ? (
 						<ElementReveal>
-							<Text format s className='subMenu__text '>
+							<Text format micro s className='subMenu__text '>
 								Work
 							</Text>
 						</ElementReveal>
@@ -66,7 +66,7 @@ export const SubMenu = props => {
 				<div>
 					{showCategory ? (
 						<ElementReveal>
-							<Text format s className='subMenu__text'>
+							<Text format micro s className='subMenu__text'>
 								About
 							</Text>
 						</ElementReveal>
@@ -106,7 +106,7 @@ export const SubMenu = props => {
 				<div>
 					{showCategory ? (
 						<ElementReveal>
-							<Text format s className='subMenu__text margin-top-0 '>
+							<Text format micro s className='subMenu__text margin-top-0 '>
 								Customize
 							</Text>
 						</ElementReveal>
@@ -145,7 +145,7 @@ export const SubMenu = props => {
 				<div>
 					{showCategory ? (
 						<ElementReveal>
-							<Text format s className='subMenu__text'>
+							<Text format micro s className='subMenu__text'>
 								Photography
 							</Text>
 						</ElementReveal>

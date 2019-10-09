@@ -4,9 +4,9 @@ import cartographer from "../bgImages/cartographer.png";
 // ** fontColorSecondary;
 // const fontColor = readableColor("#cc208e");
 // const fontColorSecondary = fontColor;
-const mainFont = `"roc-grotesk", -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif`;
-const mainFontWide = `"roc-grotesk-wide", -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif`;
-const mainFontExtraWide = `"roc-grotesk-extrawide", -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif`;
+const mainFont = `"halyard-text", -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif`;
+const mainFontTertiary = `"halyard-micro", -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif`;
+const mainFontSecondary = `"halyard-display", -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif`;
 const bgColor = "#cc208e";
 // const bgColorSecondary = "#6713d2";
 const gradientValues = `#cc208e 0%, #6713d2 100%`;
@@ -25,8 +25,8 @@ export const themeMaker = (theme = defaultBaseValues) => {
 		appBgColor: `transparent`,
 		appBgMobile: `linear-gradient(to bottom, ${gradientValues})`,
 		appfontFamily: `${mainFont}`,
-		appfontFamilyExtraWide: `${mainFontExtraWide}`,
-		appfontFamilyWide: `${mainFontWide}`,
+		appfontFamilySecondary: `${mainFontSecondary}`,
+		appfontFamilyTertiary: `${mainFontTertiary}`,
 		bgColor: `${bgColor}`,
 		bgColorContent: `${rgba(fontColor, 0.2)}`,
 		bgColorOverlay: `${rgba(readableColor(fontColor), 0.2)}`,
@@ -108,8 +108,8 @@ export const themeBgMaker = (theme = defaultBgImageValues) => {
 		appBgColor: `${bgColor}`,
 		appBgMobile: `url(${bgImage})`,
 		appfontFamily: `${mainFont}`,
-		appfontFamilyExtraWide: `${mainFontExtraWide}`,
-		appfontFamilyWide: `${mainFontWide}`,
+		appfontFamilySecondary: `${mainFontSecondary}`,
+		appfontFamilyTertiary: `${mainFontTertiary}`,
 		bgColor: `${bgColor}`,
 		bgColorContent: `${rgba(fontColor, 0.2)}`,
 		bgColorOverlay: `${rgba(readableColor(fontColor), 0.19)}`,
@@ -187,8 +187,8 @@ export const themeColorMaker = (theme = "Color-ffffff-000000") => {
 		appBgColor: `${bgColor}`,
 		appBgMobile: `${bgColor}`,
 		appfontFamily: `${mainFont}`,
-		appfontFamilyExtraWide: `${mainFontExtraWide}`,
-		appfontFamilyWide: `${mainFontWide}`,
+		appfontFamilySecondary: `${mainFontSecondary}`,
+		appfontFamilyTertiary: `${mainFontTertiary}`,
 		bgColor: `${bgColor}`,
 		bgColorContent: `${rgba(fontColor, 0.2)}`,
 		bgColorOverlay: `transparent`,
@@ -265,8 +265,8 @@ export const matrixTheme = () => {
 		appBgColor: `${bgColor}`,
 		appBgMobile: `none`,
 		appfontFamily: `${mainFont}`,
-		appfontFamilyExtraWide: `${mainFontExtraWide}`,
-		appfontFamilyWide: `${mainFontWide}`,
+		appfontFamilySecondary: `${mainFontSecondary}`,
+		appfontFamilyTertiary: `${mainFontTertiary}`,
 		bgColor: `${bgColor}`,
 		bgColorContent: `${rgba(fontColor, 0.2)}`,
 		bgColorOverlay: `${rgba(readableColor(fontColor), 0.19)}`,
@@ -341,8 +341,8 @@ export const snapchatTheme = () => {
 		appBgColor: `${bgColor}`,
 		appBgMobile: `none`,
 		appfontFamily: `${mainFont}`,
-		appfontFamilyExtraWide: `${mainFontExtraWide}`,
-		appfontFamilyWide: `${mainFontWide}`,
+		appfontFamilySecondary: `${mainFontSecondary}`,
+		appfontFamilyTertiary: `${mainFontTertiary}`,
 		bgColor: `${bgColor}`,
 		bgColorContent: `${rgba(fontColor, 0.2)}`,
 		bgColorOverlay: `${rgba(readableColor(fontColor), 0.19)}`,

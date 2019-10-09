@@ -35,7 +35,7 @@ import {
 } from "../MediaVariables";
 // import ReactPlayer from "react-player";
 
-const header = "Hi, I'm Herbie";
+const header = "Herbie Duah";
 // There is an app for everything, in
 // 					the future, I believe there is going to be an app for everyone. I am
 // 					Herbie Duah, and this is my app.
@@ -69,8 +69,10 @@ const HomePage = ({ contentProps }) => {
 				<Header less>{header}</Header>
 				<Paragraph less>
 					Hi<span className='text-cap'>{forYouHelper(forYou)}</span>, I'm Herbie
-					and this is my personal web app
-					<Emoji className='emoji' symbol='😀' label='a grinning emoji' />.
+					and this is my personal web app.
+					<br />
+					<br />I built this portfolio as a way for me to learn and bring some
+					of my creative and original ideas to life.
 				</Paragraph>
 			</ContentShow>
 			<ContentShow more>

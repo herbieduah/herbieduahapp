@@ -3,9 +3,9 @@ export const appBgAnimation = props => props.theme.appBgAnimation;
 export const appBgColor = props => props.theme.appBgColor;
 export const appBgMobile = props => props.theme.appBgMobile;
 export const appfontFamily = props => props.theme.appfontFamily;
-export const appfontFamilyExtraWide = props =>
-	props.theme.appfontFamilyExtraWide;
-export const appfontFamilyWide = props => props.theme.appfontFamilyWide;
+export const appfontFamilySecondary = props =>
+	props.theme.appfontFamilySecondary;
+export const appfontFamilyTertiary = props => props.theme.appfontFamilyTertiary;
 export const bgColor = props => props.theme.bgColor;
 export const bgColorContent = props => props.theme.bgColorContent;
 export const bgColorOverlay = props => props.theme.bgColorOverlay;
