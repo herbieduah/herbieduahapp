@@ -18,9 +18,10 @@ import { themes } from "./stylecomponents/Theme";
 import {
 	ThemeCircleContainer,
 	TransitionTextContainer,
-	MarqueeWrapper
+	MarqueeWrapper,
+	ScrollDownPortrait
 } from "./stylecomponents/Base";
-import { ShowIf, MenuTabs } from "./ComponentHelpers";
+import { ShowIf, MenuTabs, ScrollDownIndicator } from "./ComponentHelpers";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { appTransitions } from "./stylecomponents/Transitions";
 // import PropTypes from "prop-types";
@@ -29,8 +30,8 @@ export const defaultAlt = "I will be adding an alt tag to this image soon";
 export const defaultDesc = "This is a video, I will be describing it soon";
 
 //Switch to 'gif' or 'image' to pull videos and images locally
-const videoLocation = "cloud-gif";
-const imageLocation = "cloud-image";
+const videoLocation = "gif";
+const imageLocation = "image";
 
 export const ContentShow = props => {
 	const {
@@ -71,6 +72,7 @@ export const ContentShow = props => {
 				{showMore ? (
 					<CSSTransition timeout={revealSecs} classNames={transitionClasses}>
 						<article className='container more'>
+							<ScrollDownIndicator />
 							{props.children}
 							<div className='offset' />
 						</article>
@@ -85,7 +87,7 @@ export const Header = props => {
 	return (
 		<Fragment>
 			<ShowIf noAnimation thisValue={props.less} thatValue={true}>
-				<Text h1 s className='paddingLRSm less__header'>
+				<Text h1 l className='paddingLRSm less__header'>
 					{props.children}
 				</Text>
 			</ShowIf>

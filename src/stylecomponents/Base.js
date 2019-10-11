@@ -44,7 +44,8 @@ import {
 	fontColor,
 	borderThin,
 	CTAUnderline,
-	colorSlightOpacity
+	colorSlightOpacity,
+	appfontFamily
 } from "./Themes/ThemeVariables";
 import {
 	mobile,
@@ -762,25 +763,28 @@ export const BorderDesktop = styled.div`
 `;
 
 export const ScrollDownPortrait = styled.div`
-	width: 40px;
-	height: 40px;
+	width: 200px;
+	height: 200px;
 	position: fixed;
 	left: 50%;
-	top: 0;
+	top: -60px;
 	transform: translate(-50%, 0);
 	z-index: 1000;
 	&::before {
-		display: block;
-		position: absolute;
+		display: flex;
+		position: fixed;
 		left: 50%;
 		top: 0;
-		content: "";
-		border-radius: 50%;
-		width: 20px;
-		height: 20px;
-		transform: translate(-50%, 40px) scale(0.5, 0.5);
-		background: red;
-		animation: ${scrollDownTouch} 1.5s linear infinite;
+		content: "SCROLL UP";
+		font-family: ${appfontFamily};
+		width: 100%;
+		justify-content: center;
+		/* border-radius: 50%; */
+		/* width: 30px;
+		height: 30px; */
+		transform: translate(-50%, 10px) scale(0.5, 0.5);
+		/* background: red; */
+		animation: ${scrollDownTouch} 3s linear infinite;
 	}
 `;
 

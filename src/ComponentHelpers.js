@@ -16,7 +16,8 @@ import {
 	NavBarMiniContainer,
 	StartUp,
 	// DragInstructionsContainer,
-	FullScreenOverlayContainer
+	FullScreenOverlayContainer,
+	ScrollDownPortrait
 	// ParallaxContainer
 	// FullScreeningBGContainer
 } from "./stylecomponents/Base";
@@ -363,22 +364,22 @@ export const MenuTabs = props => {
 			<ElementReveal>
 				<TabList>
 					<Tab tabIndex='0'>
-						<Text format xs>
+						<Text format micro s>
 							Customize
 						</Text>
 					</Tab>
 					<Tab tabIndex='0'>
-						<Text format xs>
+						<Text format micro s>
 							Work
 						</Text>
 					</Tab>
 					<Tab tabIndex='0'>
-						<Text format xs>
+						<Text format micro s>
 							Photography
 						</Text>
 					</Tab>
 					<Tab tabIndex='0'>
-						<Text format xs>
+						<Text format micro s>
 							About
 						</Text>
 					</Tab>
@@ -616,5 +617,52 @@ export const AppStartUp = () => {
 				</CSSTransition>
 			) : null}
 		</TransitionGroup>
+	);
+};
+
+export const ScrollDownIndicator = () => {
+	const {
+		dragging,
+		showScrollDown,
+		setShowScrollDown,
+		fullScreen
+	} = useContext(globalState);
+	// const [showScrollDown, setShowScrollDown] = useState(true);
+	// const [count, setCount] = useState(true);
+	// const startUpTransitions = {
+	// 	// enter: "animated",
+	// 	// 	enterActive: "bounceIn",
+	// 	exit: "animated",
+	// 	exitActive: "fadeOut"
+	// };
+	const showTheScrollDown = () => {
+		if (!dragging) {
+			setTimeout(() => {
+				setShowScrollDown(false);
+			}, 7500);
+		}
+	};
+	// const setScrollDownCount = () => {
+	// 	if (isShowingMore) {
+	// 		// setCount(count + 1);
+	// 	}
+	// 	console.log(`current count: ${count}`);
+	// };
+
+	useEffect(() => {
+		showTheScrollDown();
+		// setScrollDownCount();
+	});
+	return (
+		<ShowIf
+			noAbsolute
+			thisValue={showScrollDown && !fullScreen}
+			thatValue={true}>
+			{/* <ElementReveal> */}
+			<Fade delay={1000} duration={1000}>
+				<ScrollDownPortrait />
+			</Fade>
+			{/* </ElementReveal> */}
+		</ShowIf>
 	);
 };

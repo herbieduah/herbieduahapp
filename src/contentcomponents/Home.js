@@ -65,7 +65,6 @@ const HomePage = ({ contentProps }) => {
 	return (
 		<Fragment>
 			<ContentShow less>
-				{/* <ScrollDownPortrait /> */}
 				<Header less>{header}</Header>
 				<Paragraph less>
 					Hi<span className='text-cap'>{forYouHelper(forYou)}</span>, I'm Herbie
@@ -79,18 +78,19 @@ const HomePage = ({ contentProps }) => {
 				<div className='container'>
 					<Header>{header}</Header>
 					<ForSomeone whom={whom} forYou={forYou} />
+					<HeadingTwo></HeadingTwo>
+					<Paragraph>
+						I am a Phoenix based Web developer/designer with over five years of
+						experience. I enjoy any opportunity that allows me to use my coding
+						and design skills in an original and creative way.
+					</Paragraph>
 					<Image
 						src={picsOfMeHero}
 						className='paddingLRSm'
 						alt='a picture of me smiling'
 					/>
-					<Paragraph>
-						I am a Phoenix based Web developer/designer with five years of
-						experience. I enjoy any opportunity that allows me to use my coding
-						and design skills in an original and creative way
-						<Emoji className='emoji' symbol='🤓' label='nerd' />.
-					</Paragraph>
-					<HeadingTwo>An App for everyone</HeadingTwo>
+
+					{/* <HeadingTwo>An app for everyone</HeadingTwo>
 					<Paragraph>
 						Nowadays, there is an app for everything. In the future, I believe
 						there is going to be an app for everyone.
@@ -105,7 +105,7 @@ const HomePage = ({ contentProps }) => {
 					<Paragraph>
 						This belief and my passion for crafting user experiences inspired me
 						to design and engineer my portfolio as a web app.
-					</Paragraph>
+					</Paragraph> */}
 
 					{/* <HeadingTwo>A little bit about me and this web app</HeadingTwo>
 					<HeadingThree>Three facts about me</HeadingThree>

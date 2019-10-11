@@ -41,6 +41,7 @@ export const StateProvider = ({ children }) => {
 	const [whom, setWhom] = useState("everyone");
 	const [videoControls, setVideoControls] = useState(false);
 	const [accessible, setAccessible] = useState(false);
+	const [showScrollDown, setShowScrollDown] = useState(true);
 
 	// currentLeftTop: "LandscapePhotography",
 	//   currentTheme: "default",
@@ -96,7 +97,9 @@ export const StateProvider = ({ children }) => {
 		videoControls,
 		setVideoControls,
 		accessible,
-		setAccessible
+		setAccessible,
+		showScrollDown,
+		setShowScrollDown
 	};
 
 	// and we pass it down. Done!
