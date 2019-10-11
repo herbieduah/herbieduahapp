@@ -24,7 +24,7 @@
 		}
 	],
 	"start_url": ".",
-	"display": "browser",
+	"display": "minimal-ui",
 	"orientation": "portrait",
 	"theme_color": "#000000",
 	"background_color": "#ffffff",

@@ -146,7 +146,7 @@ export const Paragraph = props => {
 			<ElementReveal>
 				<Text
 					m
-					// secondary={props.less || props.secondary}
+					secondary={props.less || props.secondary}
 					className={`${className} ${lessClass} paddingLRSm`}>
 					{props.children}
 				</Text>
@@ -161,9 +161,9 @@ export const Small = props => {
 		<ElementReveal>
 			<small>
 				<Text
-					s
+					m
 					format
-					micro
+					tertiary
 					className={`marginBottomMed  paddingLRSm ${className}`}
 					{...props}>
 					{props.children}
@@ -179,7 +179,7 @@ export const HeadingOne = props => {
 		<ElementReveal>
 			<Text
 				h1
-				l
+				xl
 				semibold
 				className={`${className} marginBottomMed marginTopXLarge paddingLRSm`}>
 				{props.children}

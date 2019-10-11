@@ -273,6 +273,9 @@ export const AccessibilityMode = () => {
 				<Text buttontext s onClick={activateAccessibilityMode}>
 					Accessibility Mode
 				</Text>
+				<Text format s onClick={activateAccessibilityMode}>
+					You can de-activate in Settings.
+				</Text>
 			</ElementReveal>
 		</AccessibilityContainer>
 	);
@@ -639,7 +642,7 @@ export const ScrollDownIndicator = () => {
 		if (!dragging) {
 			setTimeout(() => {
 				setShowScrollDown(false);
-			}, 7500);
+			}, 6500);
 		}
 	};
 	// const setScrollDownCount = () => {
@@ -655,12 +658,12 @@ export const ScrollDownIndicator = () => {
 	});
 	return (
 		<ShowIf
-			noAbsolute
+			// noAbsolute
 			thisValue={showScrollDown && !fullScreen}
 			thatValue={true}>
 			{/* <ElementReveal> */}
 			<Fade delay={1000} duration={1000}>
-				<ScrollDownPortrait />
+				<ScrollDownPortrait dragging={dragging} />
 			</Fade>
 			{/* </ElementReveal> */}
 		</ShowIf>

@@ -45,7 +45,8 @@ import {
 	borderThin,
 	CTAUnderline,
 	colorSlightOpacity,
-	appfontFamily
+	appfontFamily,
+	appfontFamilyTertiary
 } from "./Themes/ThemeVariables";
 import {
 	mobile,
@@ -62,7 +63,8 @@ import {
 	// slightBoxShadowBelow,
 	userSelectNone,
 	marginLRSm,
-	marginTopXLarge
+	marginTopXLarge,
+	paddingLRSm
 } from "./StyleHelpers";
 
 import { revealSecs } from "../helpers";
@@ -763,22 +765,28 @@ export const BorderDesktop = styled.div`
 `;
 
 export const ScrollDownPortrait = styled.div`
-	width: 200px;
+	width: 100%;
 	height: 200px;
-	position: fixed;
+	position: absolute;
 	left: 50%;
+	
 	top: -60px;
+	${mobile} {
+		top: 0;
+	}
 	transform: translate(-50%, 0);
 	z-index: 1000;
 	&::before {
 		display: flex;
-		position: fixed;
+		position: absolute;
 		left: 50%;
 		top: 0;
-		content: "SCROLL UP";
-		font-family: ${appfontFamily};
+		${mainTransition}
+		content: "${props => (props.dragging ? "RELEASE SLIDER THEN" : "")} SCROLL";
+		font-family: ${appfontFamilyTertiary};
 		width: 100%;
 		justify-content: center;
+		color: ${fontColor};
 		/* border-radius: 50%; */
 		/* width: 30px;
 		height: 30px; */
@@ -854,10 +862,16 @@ export const AccessibilityContainer = styled.div`
 	display: flex;
 	flex-flow: row-reverse;
 	justify-content: right;
-	button {
-		margin-left: auto;
-		${marginLRSm};
+	${paddingLRSm};
+	button,
+	span {
+		text-align: right;
+		width: 100%;
 	}
+	span {
+		display: flex;
+	}
+
 	margin-bottom: ${navBarSize};
 	${mobile} {
 		margin-bottom: 0;

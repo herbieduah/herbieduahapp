@@ -30,7 +30,7 @@ import {
 
 const baseStyle = css`
 	font-family: ${props => {
-		if (props.micro) return appfontFamilyTertiary;
+		if (props.tertiary) return appfontFamilyTertiary;
 		if (props.secondary) return appfontFamilySecondary;
 		return appfontFamily;
 	}};
@@ -126,7 +126,7 @@ const Button = styled.button`
 	${baseStyle};
 	${stripButtonStyle}
 	${mainTransition}
-	font-family: ${appfontFamilyTertiary};
+	font-family: ${appfontFamilySecondary};
 	text-transform: uppercase;
 	border: ${buttonBorder};
 	hyphens: manual;
@@ -151,11 +151,12 @@ const ButtonText = styled.button`
 	${mainTransition}
 	color: ${fontColor};
 	text-transform: uppercase;
-	font-family: ${appfontFamilyTertiary};
+	font-family: ${appfontFamilySecondary};
 	cursor: pointer;
 	background: transparent;
 	border: 0;
 	padding: 0;
+	letter-spacing: 1px;
 	border-bottom: 2px solid rgba(0, 0, 0, 0);
 	&:focus,
 	&:hover {
