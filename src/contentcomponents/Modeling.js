@@ -67,128 +67,163 @@ const Modeling = () => {
 					<Image src={modelingConnerSnow} />
 				</div>
 			</ContentShow>
-			<ContentShow more>
-				<Header>{header}</Header>
-				<Figure src={modelingBWMembersONly}>
+			<ContentShow containerLarge more>
+				<Header className='container'>{header}</Header>
+				<Paragraph className='container'>
+					Here are some of my favorite photos I've taken of people.
+				</Paragraph>
+				<ul className='c-photos'>
+					<li>
+						<Figure src={modelingBWMembersONly}>
+							<Figcaption>
+								Taken by{" "}
+								<Link href='https://www.instagram.com/vmnphoto/'>
+									@vmnphoto
+								</Link>
+							</Figcaption>
+						</Figure>
+					</li>
+					<li>
+						<Figure src={modelingNaboursFavorite}>
+							<Figcaption>
+								Taken by{" "}
+								<Link href='https://www.instagram.com/vmnphoto/'>
+									@vmnphoto
+								</Link>
+							</Figcaption>
+						</Figure>
+					</li>
+					{/* <li><Figure src={modelingJacketHoldNaboursDown}>
 					<Figcaption>
 						Taken by{" "}
 						<Link href='https://www.instagram.com/vmnphoto/'>@vmnphoto</Link>
 					</Figcaption>
-				</Figure>
-				<Figure src={modelingNaboursFavorite}>
-					<Figcaption>
-						Taken by{" "}
-						<Link href='https://www.instagram.com/vmnphoto/'>@vmnphoto</Link>
-					</Figcaption>
-				</Figure>
-				{/* <Figure src={modelingJacketHoldNaboursDown}>
-					<Figcaption>
-						Taken by{" "}
-						<Link href='https://www.instagram.com/vmnphoto/'>@vmnphoto</Link>
-					</Figcaption>
-				</Figure> */}
-				<Figure src={modelingUmbertoScienceMuseumHandsFolded}>
+				</Figure></li> */}
+					<li>
+						<Figure src={modelingUmbertoScienceMuseumHandsFolded}>
+							<Figcaption>
+								Taken by{" "}
+								<Link href='https://www.instagram.com/umberto.luk/'>
+									@umberto.luk
+								</Link>
+							</Figcaption>
+						</Figure>
+					</li>
+					{/* <li><Figure src={modelingUmbertoScienceMuseum}>
 					<Figcaption>
 						Taken by{" "}
 						<Link href='https://www.instagram.com/umberto.luk/'>
 							@umberto.luk
 						</Link>
 					</Figcaption>
-				</Figure>
-				{/* <Figure src={modelingUmbertoScienceMuseum}>
-					<Figcaption>
-						Taken by{" "}
-						<Link href='https://www.instagram.com/umberto.luk/'>
-							@umberto.luk
-						</Link>
-					</Figcaption>
-				</Figure> */}
-				{/* <Figure src={herbieJacketNabours1480x2219}>
+				</Figure></li> */}
+					{/* <li><Figure src={herbieJacketNabours1480x2219}>
 					<Figcaption>
 						Taken by{" "}
 						<Link href='https://www.instagram.com/vmnphoto/'>@vmnphoto</Link>
 					</Figcaption>
-				</Figure> */}
-				<Figure src={modelingSnowInFlagstaffConner}>
-					<Figcaption>
-						Taken by{" "}
-						<Link href='https://www.instagram.com/yourbuddyconner/'>
-							@yourbuddyconner
-						</Link>
-					</Figcaption>
-				</Figure>
-				<Figure src={modelingSnowInFlagstaffConnerArmsFold}>
-					<Figcaption>
-						Taken by{" "}
-						<Link href='https://www.instagram.com/yourbuddyconner/'>
-							@yourbuddyconner
-						</Link>
-					</Figcaption>
-				</Figure>
-				<Figure src={modelingRobCaliLandscape}>
-					<Figcaption>
-						Taken by{" "}
-						<Link href='https://www.instagram.com/wavyoceans/'>
-							@wavyoceans
-						</Link>
-					</Figcaption>
-				</Figure>
-				<Figure src={modelingByNae}>
-					<Figcaption>
-						Taken by{" "}
-						<Link href='https://www.instagram.com/nae_babe/'>@nae_babe</Link>
-					</Figcaption>
-				</Figure>
-				<Figure src={modelingDyesaDTPhoenix}>
-					<Figcaption>
-						Taken by{" "}
-						<Link href='https://www.instagram.com/dyesv.photography/'>
-							@dyesv.photography
-						</Link>
-					</Figcaption>
-				</Figure>
+				</Figure></li> */}
+					<li>
+						<Figure src={modelingSnowInFlagstaffConner}>
+							<Figcaption>
+								Taken by{" "}
+								<Link href='https://www.instagram.com/yourbuddyconner/'>
+									@yourbuddyconner
+								</Link>
+							</Figcaption>
+						</Figure>
+					</li>
+					<li>
+						<Figure src={modelingSnowInFlagstaffConnerArmsFold}>
+							<Figcaption>
+								Taken by{" "}
+								<Link href='https://www.instagram.com/yourbuddyconner/'>
+									@yourbuddyconner
+								</Link>
+							</Figcaption>
+						</Figure>
+					</li>
+					<li>
+						<Figure src={modelingRobCaliLandscape}>
+							<Figcaption>
+								Taken by{" "}
+								<Link href='https://www.instagram.com/wavyoceans/'>
+									@wavyoceans
+								</Link>
+							</Figcaption>
+						</Figure>
+					</li>
+					<li>
+						<Figure src={modelingByNae}>
+							<Figcaption>
+								Taken by{" "}
+								<Link href='https://www.instagram.com/nae_babe/'>
+									@nae_babe
+								</Link>
+							</Figcaption>
+						</Figure>
+					</li>
+					<li>
+						<Figure src={modelingDyesaDTPhoenix}>
+							<Figcaption>
+								Taken by{" "}
+								<Link href='https://www.instagram.com/dyesv.photography/'>
+									@dyesv.photography
+								</Link>
+							</Figcaption>
+						</Figure>
+					</li>
 
-				<Figure src={modelingAndyDauterman}>
-					<Figcaption>
-						Taken by{" "}
-						<Link href='https://www.instagram.com/dauterman_photography/'>
-							@dauterman_photography
-						</Link>
-					</Figcaption>
-				</Figure>
-				<Figure src={modelingceiphersClothing}>
-					<Figcaption>
-						Taken by{" "}
-						<Link href='https://www.instagram.com/rachel_olweya/'>
-							@rachel_olweya
-						</Link>{" "}
-						for{" "}
-						<Link href='https://www.instagram.com/ceiphers_clothing/'>
-							@ceiphers_clothing
-						</Link>
-					</Figcaption>
-				</Figure>
-				<Figure src={modelingBethanyBaldwinDTFlagstaff}>
-					<Figcaption>
-						Taken by{" "}
-						<Link href='https://www.instagram.com/beelieve07/'>
-							@beelieve07
-						</Link>
-					</Figcaption>
-				</Figure>
-				<Figure src={modelingBrianaAfrican}>
-					<Figcaption>
-						I couldn't find her on instagram, but her name is Briana. I'll
-						update once I find her.
-					</Figcaption>
-				</Figure>
+					<li>
+						<Figure src={modelingAndyDauterman}>
+							<Figcaption>
+								Taken by{" "}
+								<Link href='https://www.instagram.com/dauterman_photography/'>
+									@dauterman_photography
+								</Link>
+							</Figcaption>
+						</Figure>
+					</li>
+					<li>
+						<Figure src={modelingceiphersClothing}>
+							<Figcaption>
+								Taken by{" "}
+								<Link href='https://www.instagram.com/rachel_olweya/'>
+									@rachel_olweya
+								</Link>{" "}
+								for{" "}
+								<Link href='https://www.instagram.com/ceiphers_clothing/'>
+									@ceiphers_clothing
+								</Link>
+							</Figcaption>
+						</Figure>
+					</li>
+					<li>
+						<Figure src={modelingBethanyBaldwinDTFlagstaff}>
+							<Figcaption>
+								Taken by{" "}
+								<Link href='https://www.instagram.com/beelieve07/'>
+									@beelieve07
+								</Link>
+							</Figcaption>
+						</Figure>
+					</li>
+					<li>
+						<Figure src={modelingBrianaAfrican}>
+							<Figcaption>
+								I couldn't find her on instagram, but her name is Briana. I'll
+								update once I find her.
+							</Figcaption>
+						</Figure>
+					</li>
+				</ul>
 				{/* <Figcaption>
 						Taken by{" "}
 						<Link href='https://www.instagram.com/wavyoceans/'>
 							@wavyoceans
 						</Link>
 					</Figcaption> */}
-				<ContentCategory category='photography' />
+				<ContentCategory category='photography' className='container' />
 			</ContentShow>
 		</Fragment>
 	);

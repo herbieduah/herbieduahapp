@@ -61,37 +61,86 @@ const PeoplePage = () => {
 			<ContentShow less>
 				<Header less>{header}</Header>
 				<Paragraph less>I take pictures of people.</Paragraph>
-				<div className='less__container paddingLRSm'>
+				{/* <div className='less__container paddingLRSm'>
 					<Image src={peopleCeiphers} />
 					<Image src={peopleDyesa} />
 					<Image src={peopleJohnnyGrad} />
-				</div>
+				</div> */}
 			</ContentShow>
-			<ContentShow more>
-				<Header>{header}</Header>
-				<Image src={peopleAshleyTaylor} />
-				<Image src={peopleGweg} />
-				<Image src={peopleMelvinBenz} />
-				<Image src={peopleAbena} />
-				<Image src={peopleDavid} />
-				<Image src={peopleTheGRand} />
-				<Image src={peopleNana} />
-				<Image src={peopleTesfayFamily} />
-				<Image src={peopleMelvin} />
-				<Image src={peopleMeliPoet} />
-				<Image src={peopleJohnnyGrad} />
-				<Image src={peopleJesseForte} />
-				<Image src={peopleHalle} />
-				<Image src={peopleGrindingWie} />
-				<Image src={peopleFashionShow} />
-				<Image src={peopleEmma} />
-				<Image src={peopleDyesa} />
-				<Image src={peopleCristian} />
-				<Image src={peopleconnorGrad} />
-				<Image src={peopleCeiphers} />
-				<Image src={peopleNatasha} />
-				<Image src={peopleGoldenFace} />
-				<ContentCategory category='photography' />
+			<ContentShow containerLarge more>
+				<Header className='container'>{header}</Header>
+				<Paragraph className='container'>
+					Here are some of my favorite photos I've taken of people.
+				</Paragraph>
+				<ul className='c-photos'>
+					<li>
+						<Image src={peopleAshleyTaylor} />
+					</li>
+					<li>
+						<Image src={peopleGweg} />
+					</li>
+					<li>
+						<Image src={peopleMelvinBenz} />
+					</li>
+					<li>
+						<Image src={peopleAbena} />
+					</li>
+					<li>
+						<Image src={peopleDavid} />
+					</li>
+					<li>
+						<Image src={peopleTheGRand} />
+					</li>
+					<li>
+						<Image src={peopleNana} />
+					</li>
+					<li>
+						<Image src={peopleTesfayFamily} />
+					</li>
+					<li>
+						<Image src={peopleMelvin} />
+					</li>
+					<li>
+						<Image src={peopleMeliPoet} />
+					</li>
+					<li>
+						<Image src={peopleJohnnyGrad} />
+					</li>
+					<li>
+						<Image src={peopleJesseForte} />
+					</li>
+					<li>
+						<Image src={peopleHalle} />
+					</li>
+					<li>
+						<Image src={peopleGrindingWie} />
+					</li>
+					<li>
+						<Image src={peopleFashionShow} />
+					</li>
+					<li>
+						<Image src={peopleEmma} />
+					</li>
+					<li>
+						<Image src={peopleDyesa} />
+					</li>
+					<li>
+						<Image src={peopleCristian} />
+					</li>
+					<li>
+						<Image src={peopleconnorGrad} />
+					</li>
+					<li>
+						<Image src={peopleCeiphers} />
+					</li>
+					<li>
+						<Image src={peopleNatasha} />
+					</li>
+					<li>
+						<Image src={peopleGoldenFace} />
+					</li>
+				</ul>
+				<ContentCategory category='photography' className='container' />
 			</ContentShow>
 		</Fragment>
 	);

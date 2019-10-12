@@ -363,7 +363,7 @@ export const MenuTabs = props => {
 	const showCategory = props.showCategory;
 	const defaultIndex = props.defaultIndex || 0;
 	return (
-		<ReactTabs defaultIndex={defaultIndex} menu>
+		<ReactTabs defaultIndex={defaultIndex}>
 			<ElementReveal>
 				<TabList>
 					<Tab tabIndex='0'>

@@ -23,7 +23,10 @@ import {
 	// cPaddingTopMed,
 	// paddingLRSm,
 	// absoluteOverlay,
-	crossOut
+	crossOut,
+	marginBottomLarge,
+	marginTopLarge,
+	marginTopMed
 } from "./StyleHelpers";
 import {
 	navBarBorder,
@@ -153,6 +156,11 @@ export const ContentContainer = styled.section`
 		width: 100%;
 		${props => (props.fullScreen ? `margin: 0 auto` : ``)};
 	}
+	.container-large {
+		max-width: 1200px;
+		width: 100%;
+		${props => (props.fullScreen ? `margin: 0 auto` : ``)};
+	}
 	.container-full {
 		width: 100%;
 	}
@@ -254,12 +262,25 @@ export const ContentContainer = styled.section`
 
 	.c-category {
 		${marginTopXLarge};
+		${paddingLRSm}
 		ul {
 			list-style-type: none;
 			margin: 0;
 			padding: 0;
 		}
 		height: 30vh;
+		.react-tabs__tab-list {
+		max-width: 500px;
+		margin: 0 auto;
+		width: 100%;
+		}
+		.subMenu {
+			${marginTopMed}
+			&__item{
+				text-align: center;
+			}
+		}
+		
 	}
 	.offset {
 		width: 100%;
@@ -355,8 +376,38 @@ export const ContentContainer = styled.section`
 	.c-pun {
 		height: 2.5rem;
 	}
+	.c-photos {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		${marginTopLarge}
+		display:flex;
+		flex-direction: column;
+		li:nth-of-type(even){ 
+			.react-reveal{
+				margin-left: auto;
+			}
+		}
+
+		.react-reveal {
+			max-width: 740px;
+		}
+			/* ${paddingLRSm} */
+		
+		li {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			width: 100%;
+		}
+		
+		
+				
+	}
 	.react-tabs__tab-list {
-		max-width: 100%;
+		max-width: 500px;
+		margin: 0 auto;
 		width: 100%;
 		/* margin: 0 auto; */
 		${marginBottomMed}

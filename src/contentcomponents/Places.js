@@ -37,23 +37,56 @@ const PeoplePage = () => {
 					<Image src={placesbeauifulsunset} />
 				</div>
 			</ContentShow>
-			<ContentShow more>
-				<Header>{header}</Header>
-				<Image src={placesmountainsFlagstaff} />
-				<Image src={placesflagstaffRoadd} />
-				<Image src={placesflagstaffWater} />
-				<Image src={placestreesInAutumn} />
-				<Image src={placesWinterMountain} />
-				<Image src={placessnowyRoad} />
-				<Image src={placesmysteriousDoor} />
-				<Image src={placesicyAlley} />
-				<Image src={placesflagstaffStreetOnAutumn} />
-				<Image src={placesfallFlagstaff} />
-				<Image src={placesevansTundra} />
-				<Image src={placeschocolatefalls} />
-				<Image src={placesbeautifulmountains} />
-				<Image src={placesbeauifulsunset} />
-				<ContentCategory category='photography' />
+			<ContentShow containerLarge more>
+				<Header className='container'>{header}</Header>
+				<Paragraph className='container'>
+					Here are some of my favorite photos I've taken of people.
+				</Paragraph>
+				<ul className='c-photos'>
+					<li>
+						<Image src={placesmountainsFlagstaff} />
+					</li>
+					<li>
+						<Image src={placesflagstaffRoadd} />
+					</li>
+					<li>
+						<Image src={placesflagstaffWater} />
+					</li>
+					<li>
+						<Image src={placestreesInAutumn} />
+					</li>
+					<li>
+						<Image src={placesWinterMountain} />
+					</li>
+					<li>
+						<Image src={placessnowyRoad} />
+					</li>
+					<li>
+						<Image src={placesmysteriousDoor} />
+					</li>
+					<li>
+						<Image src={placesicyAlley} />
+					</li>
+					<li>
+						<Image src={placesflagstaffStreetOnAutumn} />
+					</li>
+					<li>
+						<Image src={placesfallFlagstaff} />
+					</li>
+					<li>
+						<Image src={placesevansTundra} />
+					</li>
+					<li>
+						<Image src={placeschocolatefalls} />
+					</li>
+					<li>
+						<Image src={placesbeautifulmountains} />
+					</li>
+					<li>
+						<Image src={placesbeauifulsunset} />
+					</li>
+				</ul>
+				<ContentCategory category='photography' className='container' />
 			</ContentShow>
 		</Fragment>
 	);

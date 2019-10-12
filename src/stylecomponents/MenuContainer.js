@@ -108,6 +108,7 @@ const MenuContainer = styled.aside`
 			padding: 1rem 0;
 			margin-top: 1.3rem;
 			.subMenu {
+				${props => (props.isPortrait ? paddingLRSm : "")};
 			${props => (props.isPortrait ? `overflow-x: auto;` : ``)};
 			${props => (props.isPortrait ? `flex-direction: row;` : ``)};
 			}

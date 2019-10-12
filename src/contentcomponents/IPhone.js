@@ -47,7 +47,7 @@ import {
 	iphoneafterDCTrip
 } from "../MediaVariables";
 
-const header = "iPhone";
+const header = "ShotOniPhone";
 
 const iPhonePage = () => {
 	return (
@@ -61,27 +61,68 @@ const iPhonePage = () => {
 					<Image src={iphonesunsetPoint} />
 				</div>
 			</ContentShow>
-			<ContentShow more>
-				<Header>{header}</Header>
-				<Image src={iphonesantaMonicaBeach} className='paddingLRSm' />
-				<Image src={iphoneDavidBestIphonePic} className='paddingLRSm' />
-				<Image src={iphonejeepSnow} className='paddingLRSm' />
-				<Image src={iphonesantaMonicaBeach} className='paddingLRSm' />
-				<Image src={iphonehumphreysSkiSunset} className='paddingLRSm' />
-				<Image src={iphonegrandcanyonBlackandWhite} />
-				<Image src={iphonemexicoSunset} />
-				<Image src={iphonenaebabe} className='paddingLRSm' />
-				<Image src={iphonenauDome} />
-				<Image src={iphonelockettJeepLife} />
-				<Image src={iphonemelDaddy} className='paddingLRSm' />
-				<Image src={iphonegradAunty} />
-				<Image src={iphonetreesbyEdgeofTheWorld} />
-				<Image src={iphonegloomy} />
-				<Image src={iphoneflagstaffRailroad} />
-				<Image src={iphoneflagstaffPrettyColors} />
-				<Image src={iphoneflagstaffColorfulHouses} />
-				<Image src={iphoneafterDCTrip} className='paddingLRSm' />
-				<ContentCategory category='photography' />
+			<ContentShow containerLarge more>
+				<Header className='container'>{header}</Header>
+				<Paragraph className='container'>
+					Here are some of my favorite photos I've taken of people.
+				</Paragraph>
+				<ul className='c-photos'>
+					<li>
+						<Image src={iphonesantaMonicaBeach} />
+					</li>
+					<li>
+						<Image src={iphoneDavidBestIphonePic} />
+					</li>
+					<li>
+						<Image src={iphonejeepSnow} />
+					</li>
+					<li>
+						<Image src={iphonesantaMonicaBeach} />
+					</li>
+					<li>
+						<Image src={iphonehumphreysSkiSunset} />
+					</li>
+					<li>
+						<Image src={iphonegrandcanyonBlackandWhite} />
+					</li>
+					<li>
+						<Image src={iphonemexicoSunset} />
+					</li>
+					<li>
+						<Image src={iphonenaebabe} />
+					</li>
+					<li>
+						<Image src={iphonenauDome} />
+					</li>
+					<li>
+						<Image src={iphonelockettJeepLife} />
+					</li>
+					<li>
+						<Image src={iphonemelDaddy} />
+					</li>
+					<li>
+						<Image src={iphonegradAunty} />
+					</li>
+					<li>
+						<Image src={iphonetreesbyEdgeofTheWorld} />
+					</li>
+					<li>
+						<Image src={iphonegloomy} />
+					</li>
+					<li>
+						<Image src={iphoneflagstaffRailroad} />
+					</li>
+					<li>
+						<Image src={iphoneflagstaffPrettyColors} />
+					</li>
+					<li>
+						<Image src={iphoneflagstaffColorfulHouses} />
+					</li>
+					<li>
+						<Image src={iphoneafterDCTrip} />
+					</li>
+				</ul>
+				<ContentCategory category='photography' className='container' />
 			</ContentShow>
 		</Fragment>
 	);

@@ -48,6 +48,7 @@ export const ContentShow = props => {
 	const showLess = fullScreen ? false : !isShowingMore;
 	const transitionClasses = getCurrentTransition(currentTransition);
 	const whereToDrag = isContentPortrait ? "down" : "right";
+	const containerLarge = props.containerLarge ? "container-large" : "container";
 	if (props.less) {
 		return (
 			<TransitionGroup>
@@ -71,9 +72,14 @@ export const ContentShow = props => {
 			<TransitionGroup>
 				{showMore ? (
 					<CSSTransition timeout={revealSecs} classNames={transitionClasses}>
-						<article className='container more'>
+						<article className={`${containerLarge} more`}>
 							<ScrollDownIndicator />
 							{props.children}
+							{/* <ShowIf noAnimation thisValue={fullScreen} thatValue={false}>
+								<Instructions>
+									Continue to navigate {whereToDrag} for more.&nbsp;
+								</Instructions>
+							</ShowIf> */}
 							<div className='offset' />
 						</article>
 					</CSSTransition>
@@ -84,6 +90,7 @@ export const ContentShow = props => {
 };
 
 export const Header = props => {
+	const className = props.className || "";
 	return (
 		<Fragment>
 			<ShowIf noAnimation thisValue={props.less} thatValue={true}>
@@ -92,7 +99,7 @@ export const Header = props => {
 				</Text>
 			</ShowIf>
 			<ShowIf noAnimation thisValue={!props.less} thatValue={true}>
-				<header className='content__header'>
+				<header className={`content__header ${className}`}>
 					<HeadingOne>{props.children}</HeadingOne>
 				</header>
 			</ShowIf>
@@ -130,7 +137,7 @@ export const ContentCategory = props => {
 	return (
 		<ShowIf noAnimation thisValue={fullScreen} thatValue={true}>
 			<ElementReveal duration={revealSecs}>
-				<div className='c-category marginLRSm'>
+				<div className='c-category marginLRSm container'>
 					<MenuTabs showCategory={false} defaultIndex={defaultIndex} />
 				</div>
 			</ElementReveal>
