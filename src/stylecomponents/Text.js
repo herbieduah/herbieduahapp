@@ -142,6 +142,7 @@ const Button = styled.button`
 	}
 	&.active,&.current {
 		color: ${buttonColorHoverFocus};
+		background: ${buttonBackgroundHoverFocus};
 		text-decoration: ${CTAUnderline};
 	}
 `;
@@ -172,10 +173,11 @@ const HyperLink = styled.a`
 	${baseStyle};
 	${mainTransition}
 	cursor: pointer;
-	white-space: nowrap;
+	/* white-space: nowrap; */
 	&:hover,
 	&:focus {
 		text-decoration: underline;
+		font-weight: bold;
 	}
 	text-decoration: underline;
 `;

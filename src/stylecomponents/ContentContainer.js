@@ -40,8 +40,7 @@ export const ContentContainer = styled.section`
 	${props => (props.isPortrait ? mobileSliderOnTop : ``)};
 	${hideScrollbar};
 	overflow: auto;
-	${props =>
-		props.navBarRight ? contentMenuPaddingRight : contentMenuPadding};
+	${props => (props.navBarRight ? contentMenuPaddingRight : contentMenuPadding)};
 	padding-bottom: 40vh;
 	${props => (props.minimalMode ? `margin:0 !important` : ``)};
 	${props => (props.minimalMode ? `padding:2.5rem 0 !important` : ``)};
@@ -53,8 +52,7 @@ export const ContentContainer = styled.section`
 		h1,
 		p {
 			&.paddingLRSm {
-				${props =>
-					props.isPortrait ? `` : `padding-right: 0; padding-left: 0;`};
+				${props => (props.isPortrait ? `` : `padding-right: 0; padding-left: 0;`)};
 			}
 		}
 		${mainTransition}
@@ -71,8 +69,7 @@ export const ContentContainer = styled.section`
 			height: 100%;
 			${props => (props.isPortrait ? `padding-left: 0; padding:right: 0` : ``)};
 			.paddingLRSm {
-				${props =>
-					props.isPortrait ? `padding-left: 0; padding:right: 0` : ``};
+				${props => (props.isPortrait ? `padding-left: 0; padding:right: 0` : ``)};
 			}
 		}
 
@@ -95,8 +92,7 @@ export const ContentContainer = styled.section`
 			height: 20vh;
 			max-width: 500px;
 			display: block;
-			${props =>
-				props.isPortrait ? `${marginBottomMed}` : `margin-bottom: 9.5vh`};
+			${props => (props.isPortrait ? `${marginBottomMed}` : `margin-bottom: 9.5vh`)};
 		}
 		&__drag {
 			${props =>
@@ -113,8 +109,7 @@ export const ContentContainer = styled.section`
 			`};
 			display: block;
 		}
-		${props =>
-			props.navBarRight ? contentMenuPaddingRight : contentMenuPadding};
+		${props => (props.navBarRight ? contentMenuPaddingRight : contentMenuPadding)};
 		padding-top: 0;
 		padding-bottom: 0;
 		${mobile} {
@@ -241,14 +236,20 @@ export const ContentContainer = styled.section`
 		width: 100%;
 		margin: 0 auto;
 		${paddingBottomMed}
-		${paddingLRSm}
+		padding-left: 0;
+		padding-right: 0;
+		li {
+			margin-top: 0;
+			margin-bottom: 1rem;
+		}
+		/* ${paddingLRSm} */
 	}
 	ul.appTransition {
 		margin: 0;
 		padding: 0;
-		button {
+		/* button {
 			padding: 0;
-		}
+		} */
 	}
 
 	.c-category {
@@ -354,10 +355,10 @@ export const ContentContainer = styled.section`
 	.c-pun {
 		height: 2.5rem;
 	}
-	.react-tabs__tab-list {
+	/* .react-tabs__tab-list {
 		max-width: 500px;
-		${paddingLRSm}
-	}
+		/* ${paddingLRSm} */
+	} */
 `;
 
 export default ContentContainer;

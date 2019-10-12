@@ -64,7 +64,8 @@ import {
 	userSelectNone,
 	marginLRSm,
 	marginTopXLarge,
-	paddingLRSm
+	paddingLRSm,
+	paddingTBSm
 } from "./StyleHelpers";
 
 import { revealSecs } from "../helpers";
@@ -409,6 +410,9 @@ export const ReactTabs = styled(Tabs)`
 			${mobile} {
 				margin: 0 0.55rem;
 			}
+			.marginLRSm {
+				${marginLRSm}
+			}
 			span {
 				color: ${tabHeadingsColor};
 				${mainTransition}
@@ -554,68 +558,81 @@ export const ThemeCircleContainer = styled.li`
 	justify-content: center;
 	width: 33%;
 	cursor: pointer;
+	
 	.themeCircle {
 		&__container {
 			width: 100%;
+			${paddingLRSm}
 		}
 		&__button {
 			${mainTransition}
 			position: relative;
-			width: 9.5rem;
-			height: 9.5rem;
-			${mobile} {
+			width: 100%;
+			padding-bottom: 100%;
+			/* height: 9.5rem; */
+			
+			/* ${mobile} {
 				width: 5rem;
 				height: 5rem;
 			}
 			${tablet} {
 				width: 7rem;
 				height: 7rem;
-			}
+			} */
 			/* margin: 0 auto; */
 			display: block;
-			border-radius: 50%;
+			/* border-radius: 50%; */
 			cursor: pointer;
 			background: ${props =>
 				props.isPortrait
 					? props.themeValues.gradientPortrait
 					: props.themeValues.gradient};
-			border: 3px solid ${props => props.themeValues.borderColor};
-			&.current {
-				border: 3px solid ${props => props.themeValues.borderColor};
-				cursor: default;
-			}
+			border: ${borderThin};
+			cursor: default;
 			&:hover,
 			&:focus {
-				transform: scale(1.1);
+				transform: scale(1.02);
 			}
 		}
 		&__text {
-			color: ${CTAColor};
-			width: 9.5rem;
+			color: ${props => props.themeValues.borderColor};
+			/* width: 9.5rem;
 			${mobile} {
 				width: 5rem;
 			}
 			${tablet} {
 				width: 7rem;
-			}
-			text-align: center;
+			} */
+			margin-top: auto;
+			text-align: left;
 			display: block;
 			cursor: pointer;
 			padding: 0.25rem;
-			margin-bottom: 1rem;
+			width: 100%;
+			/* margin-bottom: 1rem; */
 			&.current {
 				color: ${fontColor};
 				cursor: default;
 			}
 		}
-		&__selected {
+		&__overlay {
 			${absoluteOverlay}
 			display:flex;
-			justify-content: center;
-			align-items: center;
-			span {
+			flex-direction: column;
+			/* justify-content: center; */
+			/* align-items: center; */
+			/* span {
 				color: ${fontColor};
-			}
+			} */
+		}
+		&__current-text {
+			color: ${fontColor};
+			display: block;
+			text-align: right;
+			width: 100%;
+			text-transform: uppercase;
+			margin-bottom: auto;
+			padding: 0.25rem;
 		}
 	}
 `;
@@ -623,14 +640,14 @@ export const ThemeCircleContainer = styled.li`
 export const TransitionTextContainer = styled.li`
 	position: relative;
 	list-style-type: none;
-	margin-bottom: 1.3rem;
+	margin-bottom: .5rem;
 	display: flex;
 	.appTransition {
 		&__container {
-			${mainTransition}
-			display: inline-block;
-			border-bottom: 2px solid rgba(0, 0, 0, 0);
-			cursor: pointer;
+			/* ${mainTransition} */
+			/* display: inline-block;
+			border-bottom: 2px solid rgba(0, 0, 0, 0); */
+			/* cursor: pointer; */
 		}
 	}
 
@@ -638,8 +655,22 @@ export const TransitionTextContainer = styled.li`
 		margin-bottom: 0.7rem;
 	}
 	button {
-		color: ${navBarButtonColor};
+		/* color: ${navBarButtonColor}; */
 		text-decoration: none;
+		width: 100%;
+		justify-content: space-between;
+		align-items: center;
+		display:flex;
+		padding:0  ${navBarSize};
+		${mobile} {
+			padding: 0 .5rem;
+		}
+		span {
+			
+		}
+		height: ${navBarSize};
+		
+		
 		&:hover {
 			text-decoration: none;
 		}
@@ -648,9 +679,9 @@ export const TransitionTextContainer = styled.li`
 	span.animated {
 		animation-duration: ${revealSecs}ms;
 	}
-	span {
+	/* span {
 		display: inline-block;
-	}
+	} */
 `;
 
 export const FullScreenOverlayContainer = styled.div`

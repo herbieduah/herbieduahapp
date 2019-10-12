@@ -88,7 +88,7 @@ export const themeMaker = (theme = defaultBaseValues) => {
 		tabHeadingsColor: `${rgba(fontColor, 1)}`,
 		tabHeadingsColorActive: `${fontColor}`,
 		tabHeadingsColorHoverFocus: `${fontColor}`,
-		tabHeadingsJustifyContent: `space-between`
+		tabHeadingsJustifyContent: `normal`
 	};
 };
 
@@ -173,7 +173,7 @@ export const themeBgMaker = (theme = defaultBgImageValues) => {
 		tabHeadingsColor: `${rgba(fontColor, 1)}`,
 		tabHeadingsColorActive: `${fontColor}`,
 		tabHeadingsColorHoverFocus: `${fontColor}`,
-		tabHeadingsJustifyContent: `space-between`
+		tabHeadingsJustifyContent: `normal`
 	};
 };
 
@@ -252,7 +252,7 @@ export const themeColorMaker = (theme = "Color-ffffff-000000") => {
 		tabHeadingsColor: `${rgba(fontColor, 1)}`,
 		tabHeadingsColorActive: `${fontColor}`,
 		tabHeadingsColorHoverFocus: `${fontColor}`,
-		tabHeadingsJustifyContent: `space-between`
+		tabHeadingsJustifyContent: `normal`
 	};
 };
 
@@ -328,7 +328,7 @@ export const matrixTheme = () => {
 		tabHeadingsColor: `${rgba(fontColor, 1)}`,
 		tabHeadingsColorActive: `${fontColor}`,
 		tabHeadingsColorHoverFocus: `${fontColor}`,
-		tabHeadingsJustifyContent: `space-between`
+		tabHeadingsJustifyContent: `normal`
 	};
 };
 
@@ -404,6 +404,6 @@ export const snapchatTheme = () => {
 		tabHeadingsColor: `${rgba(fontColor, 1)}`,
 		tabHeadingsColorActive: `${fontColor}`,
 		tabHeadingsColorHoverFocus: `${fontColor}`,
-		tabHeadingsJustifyContent: `space-between`
+		tabHeadingsJustifyContent: `normal`
 	};
 };

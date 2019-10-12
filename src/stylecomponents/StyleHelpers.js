@@ -28,7 +28,7 @@ export const crossOut = `
 width: 100%;
 position: absolute;
 right: 0;
-top: 52%;
+top: 50%;
 `;
 const minVW = `320px`;
 const maxVW = `1200px`;

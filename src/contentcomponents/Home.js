@@ -69,9 +69,9 @@ const HomePage = ({ contentProps }) => {
 				<Paragraph less>
 					Hi<span className='text-cap'>{forYouHelper(forYou)}</span>, I'm Herbie
 					and this is my personal web app.
-					<br />
+					{/* <br />
 					<br />I built this portfolio as a way for me to learn and bring some
-					of my creative and original ideas to life.
+					of my creative and original ideas to life. */}
 				</Paragraph>
 			</ContentShow>
 			<ContentShow more>

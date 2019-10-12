@@ -87,7 +87,7 @@ export const Header = props => {
 	return (
 		<Fragment>
 			<ShowIf noAnimation thisValue={props.less} thatValue={true}>
-				<Text h1 l className='paddingLRSm less__header'>
+				<Text h1 m className='paddingLRSm less__header'>
 					{props.children}
 				</Text>
 			</ShowIf>
@@ -145,7 +145,8 @@ export const Paragraph = props => {
 		<Fragment>
 			<ElementReveal>
 				<Text
-					m
+					m={!props.less}
+					l={props.less}
 					secondary={props.less || props.secondary}
 					className={`${className} ${lessClass} paddingLRSm`}>
 					{props.children}
@@ -364,6 +365,7 @@ export const ThemeCircles = props => {
 	const themeValues = getThemeInfo(props.themeValue);
 	const changeTheme = () => setTheme(props.themeValue);
 	const currentClass = currentTheme === themeValues.name ? "current" : "";
+	const themeText = themeValues.text ? themeValues.text : "Text Color";
 	const current = currentTheme === themeValues.name ? true : false;
 	return (
 		<ThemeCircleContainer
@@ -373,17 +375,20 @@ export const ThemeCircles = props => {
 			className='themeCircle__item'>
 			<ElementReveal className='themeCircle__container'>
 				<button className={`themeCircle__button ${currentClass}`}>
-					{current ? (
-						<div className='themeCircle__selected'>
-							<Text format m bold>
+					<div className='themeCircle__overlay'>
+						{current ? (
+							<Text format m bold className='themeCircle__current-text'>
 								Current
 							</Text>
-						</div>
-					) : null}
+						) : null}
+						<Text format m bold className={`themeCircle__text ${currentClass}`}>
+							{themeText}
+						</Text>
+					</div>
 				</button>
-				<Text format s className={`themeCircle__text ${currentClass}`}>
+				{/* <Text format s className={`themeCircle__text ${currentClass}`}>
 					{themeValues.text}
-				</Text>
+				</Text> */}
 			</ElementReveal>
 		</ThemeCircleContainer>
 	);
@@ -427,11 +432,11 @@ export const TransitionTexts = props => {
 		<TransitionTextContainer
 			onClick={changeTransition}
 			className={`appTransition__item`}>
-			<Text s buttontext className={`appTransition__container ${currentClass}`}>
+			<Text xs button className={`appTransition__container ${currentClass}`}>
 				<span className={enterTextTransition}>
 					{camelCaseHelper(transitionValues.enterTransition)}
 				</span>
-				&nbsp;and&nbsp;
+				{/* &nbsp;and&nbsp; */}
 				<span className={exitTextTransition}>
 					{camelCaseHelper(transitionValues.exitTransition)}
 				</span>

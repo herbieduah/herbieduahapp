@@ -41,7 +41,9 @@ const TransitionsPage = () => {
 					extensive collection of random transitions for you to choose how you
 					bring this web app to life.
 				</Paragraph>
-				<Instructions>Select Transitions Below.</Instructions>
+				<Instructions className='marginTopLarge'>
+					Select Transitions Below.
+				</Instructions>
 				<div className='paddingLRSm marginTopMed'>
 					<GenerateTransition />
 				</div>

@@ -36,7 +36,9 @@ const BackgroundsPage = ({ contentProps }) => {
 					patterns you can select to change the look of this web app in hopes
 					that you will find one that you'd like.
 				</Paragraph>
-				<Instructions>Select circle to change background.</Instructions>
+				<Instructions className='marginTopLarge'>
+					Select block to change background.
+				</Instructions>
 				{/* <Paragraph>
 					The border around the circle is the font color, so if a circle doesn't
 					have a border, then font color is the current background.
@@ -44,19 +46,19 @@ const BackgroundsPage = ({ contentProps }) => {
 
 				<ReactTabs defaultIndex={0} className='marginTopMed '>
 					<ElementReveal>
-						<TabList className='paddingLRSm react-tabs__tab-list'>
+						<TabList className='react-tabs__tab-list'>
 							<Tab tabIndex='0'>
-								<Text format xs wide>
+								<Text format m tertiary className='marginLRSm'>
 									Colors
 								</Text>
 							</Tab>
 							<Tab tabIndex='0'>
-								<Text format xs wide>
+								<Text format m tertiary className='marginLRSm'>
 									Gradients
 								</Text>
 							</Tab>
 							<Tab tabIndex='0'>
-								<Text format xs wide>
+								<Text format m tertiary className='marginLRSm'>
 									Patterns
 								</Text>
 							</Tab>
