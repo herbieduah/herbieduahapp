@@ -355,10 +355,12 @@ export const ContentContainer = styled.section`
 	.c-pun {
 		height: 2.5rem;
 	}
-	/* .react-tabs__tab-list {
-		max-width: 500px;
-		/* ${paddingLRSm} */
-	} */
+	.react-tabs__tab-list {
+		max-width: 100%;
+		width: 100%;
+		/* margin: 0 auto; */
+		${marginBottomMed}
+	}
 `;
 
 export default ContentContainer;

@@ -71,7 +71,7 @@ const MenuContainer = styled.aside`
 			${props => (props.isPortrait ? `margin-right: auto` : `margin-left: auto`)};
 			max-width: 500px;
 			${props => (props.isPortrait ? `margin-top: 50px;` : ``)};
-			${paddingLRSm}
+			/* ${paddingLRSm} */
 			${tablet} {
 				max-width: 600px;
 			${props =>
@@ -79,11 +79,11 @@ const MenuContainer = styled.aside`
 					? `height: auto;margin-top: 6vh; margin-bottom:1rem;`
 					: ``};
 			}
-			height: 6vh;
+			/* height: 6vh; */
 			margin-bottom: 10vh;
 			${mobile} {
-				height: 3vh;
-				margin-bottom: .4rem;
+				/* height: 3vh; */
+				margin-bottom: .7rem;
 			}
 		}
 		${hideScrollbar}
@@ -98,7 +98,7 @@ const MenuContainer = styled.aside`
 
 	.menu {
 		&__less {
-			
+			${paddingLRSm}
 			height: ${props => (props.isPortrait ? `auto` : `100vh`)};
 		}
 		&__less-container {
@@ -132,7 +132,8 @@ const MenuContainer = styled.aside`
 			width: 100%;
 			height:100%;
 			${hideScrollbar}
-			${paddingLRSm}
+			/* ${paddingLRSm} */
+			${props => (props.isPortrait ? `padding: 0;` : paddingLRSm)}
 			flex-direction: column;
 			${props => (props.isPortrait ? `text-align: left;` : `text-align: right;`)};
 			
@@ -166,19 +167,19 @@ const MenuContainer = styled.aside`
 		}
 		
 		&__item {
-			margin: .4rem 0 .5rem;
+			margin: .1rem 0 .5rem;
 			${tablet}{
 				&:last-child {
 					${props => (props.isPortrait ? `padding-right:4rem` : ``)};
 				}
-				${props => (props.isPortrait ? `margin: 0 1.4rem .3rem 0;` : ``)};
+				${props => (props.isPortrait ? `margin: 0 .7rem .3rem 0;` : ``)};
 				
 				padding: 0;
 			}	
 			${mobile} {
-				margin: .2rem 0 .5rem;
+				margin: .2rem 0 0rem;
 				${props =>
-					props.isShowingMore ? `margin: 0 0 .5rem` : `margin: .2rem 0 .5rem`};
+					props.isShowingMore ? `margin: 0 0 .3rem` : `margin: .2rem 0 .3rem`};
 				margin-right: 1.5rem;
 				a {
 					

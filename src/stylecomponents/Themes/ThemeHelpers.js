@@ -81,14 +81,14 @@ export const themeMaker = (theme = defaultBaseValues) => {
 		sliderCircleOpacity: `1`,
 		sliderLine: `linear-gradient(to right, transparent 50%, ${fontColor} 50%)`,
 		sliderLinePortrait: `linear-gradient(to bottom, transparent 50%, ${fontColor} 50%)`,
-		tabHeadingsBorder: `0`,
+		tabHeadingsBorder: `1px solid ${rgba(fontColor, 0.2)}`,
 		tabHeadingsBorderActive: `0`,
 		tabHeadingsBorderBottomActive: `2px solid ${fontColor}`,
 		tabHeadingsBorderRadius: `0`,
 		tabHeadingsColor: `${rgba(fontColor, 1)}`,
 		tabHeadingsColorActive: `${fontColor}`,
 		tabHeadingsColorHoverFocus: `${fontColor}`,
-		tabHeadingsJustifyContent: `normal`
+		tabHeadingsJustifyContent: `space-between`
 	};
 };
 
@@ -166,14 +166,14 @@ export const themeBgMaker = (theme = defaultBgImageValues) => {
 		sliderCircleOpacity: `1`,
 		sliderLine: `linear-gradient(to right, transparent 50%, ${fontColor} 50%)`,
 		sliderLinePortrait: `linear-gradient(to bottom, transparent 50%, ${fontColor} 50%)`,
-		tabHeadingsBorder: `0`,
+		tabHeadingsBorder: `1px solid ${rgba(fontColor, 0.2)}`,
 		tabHeadingsBorderActive: `0`,
 		tabHeadingsBorderBottomActive: `2px solid ${fontColor}`,
 		tabHeadingsBorderRadius: `0`,
 		tabHeadingsColor: `${rgba(fontColor, 1)}`,
 		tabHeadingsColorActive: `${fontColor}`,
 		tabHeadingsColorHoverFocus: `${fontColor}`,
-		tabHeadingsJustifyContent: `normal`
+		tabHeadingsJustifyContent: `space-between`
 	};
 };
 
@@ -245,14 +245,14 @@ export const themeColorMaker = (theme = "Color-ffffff-000000") => {
 		sliderCircleOpacity: `1`,
 		sliderLine: `linear-gradient(to right, transparent 50%, ${fontColor} 50%)`,
 		sliderLinePortrait: `linear-gradient(to bottom, transparent 50%, ${fontColor} 50%)`,
-		tabHeadingsBorder: `0`,
+		tabHeadingsBorder: `1px solid ${rgba(fontColor, 0.2)}`,
 		tabHeadingsBorderActive: `0`,
 		tabHeadingsBorderBottomActive: `2px solid ${fontColor}`,
 		tabHeadingsBorderRadius: `0`,
 		tabHeadingsColor: `${rgba(fontColor, 1)}`,
 		tabHeadingsColorActive: `${fontColor}`,
 		tabHeadingsColorHoverFocus: `${fontColor}`,
-		tabHeadingsJustifyContent: `normal`
+		tabHeadingsJustifyContent: `space-between`
 	};
 };
 
@@ -321,14 +321,14 @@ export const matrixTheme = () => {
 		sliderCircleOpacity: `1`,
 		sliderLine: `linear-gradient(to right, transparent 50%, ${fontColor} 50%)`,
 		sliderLinePortrait: `linear-gradient(to bottom, transparent 50%, ${fontColor} 50%)`,
-		tabHeadingsBorder: `0`,
+		tabHeadingsBorder: `1px solid ${rgba(fontColor, 0.2)}`,
 		tabHeadingsBorderActive: `0`,
 		tabHeadingsBorderBottomActive: `2px solid ${fontColor}`,
 		tabHeadingsBorderRadius: `0`,
 		tabHeadingsColor: `${rgba(fontColor, 1)}`,
 		tabHeadingsColorActive: `${fontColor}`,
 		tabHeadingsColorHoverFocus: `${fontColor}`,
-		tabHeadingsJustifyContent: `normal`
+		tabHeadingsJustifyContent: `space-between`
 	};
 };
 
@@ -397,13 +397,13 @@ export const snapchatTheme = () => {
 		sliderCircleOpacity: `1`,
 		sliderLine: `linear-gradient(to right, transparent 50%, ${fontColor} 50%)`,
 		sliderLinePortrait: `linear-gradient(to bottom, transparent 50%, ${fontColor} 50%)`,
-		tabHeadingsBorder: `0`,
+		tabHeadingsBorder: `1px solid ${rgba(fontColor, 0.2)}`,
 		tabHeadingsBorderActive: `0`,
 		tabHeadingsBorderBottomActive: `2px solid ${fontColor}`,
 		tabHeadingsBorderRadius: `0`,
 		tabHeadingsColor: `${rgba(fontColor, 1)}`,
 		tabHeadingsColorActive: `${fontColor}`,
 		tabHeadingsColorHoverFocus: `${fontColor}`,
-		tabHeadingsJustifyContent: `normal`
+		tabHeadingsJustifyContent: `space-between`
 	};
 };

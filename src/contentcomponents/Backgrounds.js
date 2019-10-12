@@ -44,8 +44,8 @@ const BackgroundsPage = ({ contentProps }) => {
 					have a border, then font color is the current background.
 				</Paragraph> */}
 
-				<ReactTabs defaultIndex={0} className='marginTopMed '>
-					<ElementReveal>
+				<ReactTabs defaultIndex={0}>
+					<ElementReveal className='paddingLRSm'>
 						<TabList className='react-tabs__tab-list'>
 							<Tab tabIndex='0'>
 								<Text format m tertiary className='marginLRSm'>

@@ -363,26 +363,26 @@ export const MenuTabs = props => {
 	const showCategory = props.showCategory;
 	const defaultIndex = props.defaultIndex || 0;
 	return (
-		<ReactTabs defaultIndex={defaultIndex}>
+		<ReactTabs defaultIndex={defaultIndex} menu>
 			<ElementReveal>
 				<TabList>
 					<Tab tabIndex='0'>
-						<Text format micro s>
+						<Text format tertiary xs>
 							Customize
 						</Text>
 					</Tab>
 					<Tab tabIndex='0'>
-						<Text format micro s>
+						<Text format tertiary xs>
 							Work
 						</Text>
 					</Tab>
 					<Tab tabIndex='0'>
-						<Text format micro s>
-							Photography
+						<Text format tertiary xs>
+							Photos
 						</Text>
 					</Tab>
 					<Tab tabIndex='0'>
-						<Text format micro s>
+						<Text format tertiary xs>
 							About
 						</Text>
 					</Tab>

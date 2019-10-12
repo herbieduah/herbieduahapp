@@ -46,7 +46,8 @@ import {
 	CTAUnderline,
 	colorSlightOpacity,
 	appfontFamily,
-	appfontFamilyTertiary
+	appfontFamilyTertiary,
+	fontColorOpposite
 } from "./Themes/ThemeVariables";
 import {
 	mobile,
@@ -374,57 +375,81 @@ export const ReactTabs = styled(Tabs)`
 	-webkit-tap-highlight-color: transparent;
 	width: 100%;
 	overflow: hidden;
+	&.space-between {
+		.react-tabs__tab-list {
+			justify-content: "space-between";
+		}
+	}
 
 	.react-tabs {
 		&__tab-list {
 			display: flex;
 			margin-top: 0;
-			padding-left: 0;
+			padding: 0;
+			/* ${marginLRSm} */
 			justify-content: ${tabHeadingsJustifyContent};
 			width: 100%;
 			overflow-x: auto;
 			list-style-type: none;
 			${hideScrollbar}
-			border:0;
+			border: 0;
 			border-radius: 0;
 			max-width: 500px;
 			text-transform: uppercase;
+			border: ${tabHeadingsBorder};
+			height: ${navBarSize};
+			align-items: center;
+
 		}
 
 		&__tab {
 			${mainTransition}
 			cursor: pointer;
-			margin: 0 0.7rem;
-			border: ${tabHeadingsBorder};
+			margin: 0;
+			display: flex;
+			align-items: center;
+			height: 100%;
+			width: 100%;
+			justify-content: center;
 			border-radius: ${tabHeadingsBorderRadius};
 			white-space: nowrap;
+			border-right: ${borderThin};
+			
 			&:last-child {
-				margin-right: 0;
+				/* margin-right: 0; */
+				border: 0;
 			}
-			&:first-child {
-				margin-left: 0;
-			}
-			${tablet} {
+			/* &:first-child {
+				border-right: ${borderThin};
+			} */
+			/* ${tablet} {
 				margin: 0 0.6rem;
 			}
 			${mobile} {
 				margin: 0 0.55rem;
-			}
-			.marginLRSm {
+			} */
+			/* .marginLRSm {
 				${marginLRSm}
-			}
+			} */
 			span {
-				color: ${tabHeadingsColor};
+				/* color: ${tabHeadingsColor};
 				${mainTransition}
 				border-bottom: 2px solid rgba(0,0,0,0);
 				&:focus,
 				&:hover {
 					color: ${tabHeadingsColorHoverFocus};
 					border-bottom: 2px solid ${colorSlightOpacity};
-				}
+				} */
+				/* ${mobile}{
+					padding: 0 5px;
+				} */
 			}
-			&:focus {
+			&:focus, &:hover {
+				background-color: ${fontColor};
 				span {
+					color:  ${fontColorOpposite};
+				}
+				/* span {
 					border: ${tabHeadingsBorderActive};
 					border-bottom: ${tabHeadingsBorderBottomActive};
 					color: ${tabHeadingsColorActive};
@@ -432,18 +457,20 @@ export const ReactTabs = styled(Tabs)`
 						color: ${tabHeadingsColorActive};
 						border-bottom: ${tabHeadingsBorderBottomActive};
 					}
-				}
+				} */
 			}
 
 			&--selected {
+				background-color: ${fontColor};
 				span {
-					border: ${tabHeadingsBorderActive};
+					color:  ${fontColorOpposite};
+					/* border: ${tabHeadingsBorderActive};
 					border-bottom: ${tabHeadingsBorderBottomActive};
 					color: ${tabHeadingsColorActive};
 					&:hover {
 						color: ${tabHeadingsColorActive};
 						border-bottom: ${tabHeadingsBorderBottomActive};
-					}
+					} */
 				}
 			}
 			&--disabled {
