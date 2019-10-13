@@ -40,7 +40,7 @@ const PeoplePage = () => {
 			<ContentShow containerLarge more>
 				<Header className='container'>{header}</Header>
 				<Paragraph className='container'>
-					Here are some of my favorite photos I've taken of people.
+					Here are some of my favorite photos I've taken at different places.
 				</Paragraph>
 				<ul className='c-photos'>
 					<li>

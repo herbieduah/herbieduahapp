@@ -108,7 +108,8 @@ const MenuContainer = styled.aside`
 			padding: 1rem 0;
 			margin-top: 1.3rem;
 			.subMenu {
-				${props => (props.isPortrait ? paddingLRSm : "")};
+				${paddingLRSm}
+				/* ${props => (props.isPortrait ? paddingLRSm : "padding: 0;")}; */
 			${props => (props.isPortrait ? `overflow-x: auto;` : ``)};
 			${props => (props.isPortrait ? `flex-direction: row;` : ``)};
 			}
@@ -134,7 +135,8 @@ const MenuContainer = styled.aside`
 			height:100%;
 			${hideScrollbar}
 			/* ${paddingLRSm} */
-			${props => (props.isPortrait ? `padding: 0;` : paddingLRSm)}
+			/* ${props => (props.isPortrait ? `padding: 0;` : paddingLRSm)} */
+			padding: 0;
 			flex-direction: column;
 			${props => (props.isPortrait ? `text-align: left;` : `text-align: right;`)};
 			

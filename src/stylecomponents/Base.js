@@ -921,17 +921,27 @@ export const AccessibilityContainer = styled.div`
 	flex-flow: row-reverse;
 	justify-content: right;
 	${paddingLRSm};
-	button,
-	span {
-		text-align: right;
-		width: 100%;
-	}
-	span {
-		display: flex;
+	.accessibility {
+		&__button-container {
+			display: flex;
+			justify-content: right;
+			button {
+				margin-left: auto;
+				height: ${navBarSize};
+				display: flex;
+				padding-top: 0;
+				padding-bottom: 0;
+				align-items: center;
+			}
+		}
+		&__text {
+			width: 100%;
+			display: flex;
+		}
 	}
 
 	margin-bottom: ${navBarSize};
 	${mobile} {
-		margin-bottom: 0;
+		margin-bottom: 1rem;
 	}
 `;

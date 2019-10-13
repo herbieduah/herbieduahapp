@@ -213,9 +213,11 @@ export const HeadingTwo = props => {
 
 export const UL = props => {
 	return (
-		<ul className='paddingLRSm' {...props}>
-			{props.children}
-		</ul>
+		<ElementReveal>
+			<ul className='paddingLRSm' {...props}>
+				{props.children}
+			</ul>
+		</ElementReveal>
 	);
 };
 

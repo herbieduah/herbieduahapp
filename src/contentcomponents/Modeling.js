@@ -70,7 +70,8 @@ const Modeling = () => {
 			<ContentShow containerLarge more>
 				<Header className='container'>{header}</Header>
 				<Paragraph className='container'>
-					Here are some of my favorite photos I've taken of people.
+					Here are some of my favorite photos of me taken by some aweomse
+					photographers.
 				</Paragraph>
 				<ul className='c-photos'>
 					<li>

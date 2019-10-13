@@ -126,13 +126,13 @@ const Button = styled.button`
 	${baseStyle};
 	${stripButtonStyle}
 	${mainTransition}
-	font-family: ${appfontFamilySecondary};
+	font-family: ${appfontFamilyTertiary};
 	text-transform: uppercase;
 	border: ${buttonBorder};
 	hyphens: manual;
 	background: ${buttonBackground};
 	color: ${buttonColor};
-	padding: 0.75rem 1.2rem;
+	padding: 0.55rem 1rem;
 	cursor: pointer;
 	&:hover,
 	&:focus {

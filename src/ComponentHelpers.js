@@ -270,11 +270,17 @@ export const AccessibilityMode = () => {
 	return (
 		<AccessibilityContainer>
 			<ElementReveal>
-				<Text buttontext s onClick={activateAccessibilityMode}>
-					Accessibility Mode
-				</Text>
-				<Text format s onClick={activateAccessibilityMode}>
-					You can de-activate in Settings.
+				<div className='accessibility__button-container'>
+					<Text button s onClick={activateAccessibilityMode}>
+						Accessibility Mode
+					</Text>
+				</div>
+				<Text
+					format
+					xs
+					onClick={activateAccessibilityMode}
+					className='accessibility__text'>
+					(You can de-activate in Settings)
 				</Text>
 			</ElementReveal>
 		</AccessibilityContainer>
