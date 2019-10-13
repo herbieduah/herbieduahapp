@@ -38,7 +38,8 @@ export const ContentShow = props => {
 		contentWidth: cw,
 		contentHeight: ch,
 		fullScreen,
-		currentTransition
+		currentTransition,
+		minimalMode
 	} = useContext(globalState);
 	const { width: ww, height: wh } = useWindowResize();
 	const values = { ww, wh, cw, ch };
@@ -74,6 +75,14 @@ export const ContentShow = props => {
 					<CSSTransition timeout={revealSecs} classNames={transitionClasses}>
 						<article className={`${containerLarge} more`}>
 							<ScrollDownIndicator />
+							<ShowIf
+								noAnimation
+								thisValue={fullScreen && !minimalMode}
+								thatValue={true}>
+								<Instructions className='marginTopMed'>
+									scroll to bottom for menu.
+								</Instructions>
+							</ShowIf>
 							{props.children}
 							{/* <ShowIf noAnimation thisValue={fullScreen} thatValue={false}>
 								<Instructions>

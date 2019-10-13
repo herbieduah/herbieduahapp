@@ -66,7 +66,8 @@ import {
 	marginLRSm,
 	marginTopXLarge,
 	paddingLRSm,
-	paddingTBSm
+	paddingTBSm,
+	marginTopMed
 } from "./StyleHelpers";
 
 import { revealSecs } from "../helpers";
@@ -747,7 +748,9 @@ export const FullScreenOverlayContainer = styled.div`
 		}
 	}
 	.menu {
-		max-width: 600px;
+		width: 100%;
+		max-width: 500px;
+		margin: 0 auto
 		ul {
 			list-style-type: none;
 			padding: 0;
@@ -758,11 +761,13 @@ export const FullScreenOverlayContainer = styled.div`
 		height: 35vh;
 	}
 	.subMenu {
+		${marginTopMed}
 		ul {
 			list-style-type: none;
 		}
 		&__item {
 			margin-bottom: 1rem;
+			text-align: center;
 		}
 	}
 	
