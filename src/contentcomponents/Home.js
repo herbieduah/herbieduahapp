@@ -86,10 +86,10 @@ const HomePage = ({ contentProps }) => {
 						I'm currently living in Phoenix, Arizona.
 					</Paragraph>
 
-					<Paragraph>
+					{/* <Paragraph>
 						Projects that allow me to use my coding and design skills in
 						creative and original ways make me very happy.
-					</Paragraph>
+					</Paragraph> */}
 					<Paragraph>I also love going out and taking photos.</Paragraph>
 					<Image
 						src={picsOfMeHero}
@@ -99,8 +99,9 @@ const HomePage = ({ contentProps }) => {
 					{/* <HeadingTwo>About this web app</HeadingTwo> */}
 					<Paragraph>
 						I'm very passionate when it comes to creating User Interfaces/User
-						Experiences. My goal for project was to challenge myself and create
-						a very innovative UI/UX while showing off my work and skillset.
+						Experiences. My goal for this project was to challenge myself and
+						create a very innovative UI/UX while showing off my work and
+						skillset.
 					</Paragraph>
 					{/* <Paragraph>
 						During development, I realized my website was becoming more of an

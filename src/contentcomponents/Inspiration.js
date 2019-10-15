@@ -21,7 +21,7 @@ const InspirationPage = () => {
 			<ContentShow less>
 				<Header less>{header}</Header>
 				<Paragraph less>
-					Nowadays,there is an app for everything, in the future, I believe
+					Nowadays, there is an app for everything, in the future, I believe
 					there is going to be an app for everyone.
 				</Paragraph>
 				<div className='less__container'>
@@ -79,11 +79,17 @@ const InspirationPage = () => {
 					you being fed into it?
 				</Paragraph>
 
-				<Paragraph>
+				{/* <Paragraph>
 					Netflix uses algorithms to select the cover images for their
 					selection, depending on its users. More companies are creating
 					algorithm-driven user interfaces, as described in this website. Is
 					your app going to have an algorithm-driven designed interface?
+				</Paragraph> */}
+				<Paragraph>
+					More companies are creating algorithm-driven user interfaces, as
+					described in{" "}
+					<Link href='https://algorithms.design/'>this website</Link>. Is your
+					app going to have an algorithm-driven designed interface?
 				</Paragraph>
 
 				<Paragraph>
@@ -92,9 +98,11 @@ const InspirationPage = () => {
 				</Paragraph>
 
 				<Paragraph>
-					Windows 10 requires 20gb of space on your hard drive. 5G download
-					speed is at least 20gb per second. Is your app going to have the
-					capabilities of an operating system?
+					Windows 10 requires 20gb of space on your hard drive.{" "}
+					<Link href='https://www.lifewire.com/5g-speed-4180992'>
+						5G download speed is at least 20gb per second
+					</Link>
+					. Is your app going to have the capabilities of an operating system?
 				</Paragraph>
 				<HeadingTwo>In the Future</HeadingTwo>
 				<Paragraph>

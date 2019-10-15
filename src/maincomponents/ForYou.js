@@ -21,12 +21,15 @@ export const ForSomeone = props => {
 				</Paragraph>
 			</ShowIf>
 			{/* Linked */}
-			<ShowIf noAnimation thisValue={"linkedin"} thatValue={whom}>
+			<ShowIf noAnimation thisValue={"linkedin"} thatValue={forYou}>
 				<HeadingTwo>First Off</HeadingTwo>
 				<Paragraph className=' '>
 					I'd like to say thanks. You could have been wishing your coworker or
 					some connection you don't really know a happy work anniversary but
-					instead you're here, checking out my web app. I really appreciate you.
+					instead you're here, checking out my web app.
+				</Paragraph>
+				<Paragraph className=' '>
+					If you have any feedback please let me know.
 				</Paragraph>
 			</ShowIf>
 			{/* Reddit */}
@@ -125,6 +128,9 @@ export const forYouHelper = forSomebody => {
 			return person;
 		case "cloudflare":
 			person = " Cloudflare Employer/Employee";
+			return person;
+		case "linkedin":
+			person = " LinkedIn Connection";
 			return person;
 		case "vrbo":
 			person = " Expedia Employer/Employee";
