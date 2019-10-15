@@ -21,7 +21,6 @@ import {
 	Puns,
 	Places,
 	Ugg,
-	UXvsHX,
 	Settings,
 	Backgrounds,
 	Transitions,
@@ -66,12 +65,11 @@ export const Content = ({ location }) => {
 							<Route path='/BedzinExhibit' component={BedzinExhibit} />
 							<Route path='/Gradients' component={Gradients} />
 							<Route path='/Backgrounds' component={Backgrounds} />
-							<Route path='/Transitions' component={Transitions} />
+							<Route path='/Animations' component={Transitions} />
 							<Route path='/Settings' component={Settings} />
 							<Route path='/DiscountTire' component={DiscountTire} />
 							<Route path='/CulturalSuicide' component={CulturalSuicide} />
 							<Route exact path='/' component={Home} />
-							<Route path='/Inspiration' component={Inspiration} />
 							<Route path='/peoplephotography' component={People} />
 							<Route path='/iphonephotography' component={IPhone} />
 							<Route path='/StartNow' component={StartNow} />
@@ -81,7 +79,7 @@ export const Content = ({ location }) => {
 							<Route path='/settings' component={Settings} />
 							<Route path='/placesphotography' component={Places} />
 							<Route path='/Ugg' component={Ugg} />
-							<Route path='/UXvsHX' component={UXvsHX} />
+							<Route path='/Inspiration' component={Inspiration} />
 							<Route path='/HerbieDuahApp' component={HerbieDuahApp} />
 							<Route path='/Puns' component={Puns} />
 							<Route path='/Contacts' component={Contacts} />

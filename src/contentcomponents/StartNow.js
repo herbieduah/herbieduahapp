@@ -65,7 +65,7 @@ const StartNowPage = ({ contentProps }) => {
 				<WorkInfo workinfo={workinfo} />
 				<Image
 					className='paddingLRSm'
-					alt='A poster with construct a plan'
+					alt='A poster with construction building with the title Contruct A Plan'
 					width='1952'
 					height='2874'
 					src={startNowConstructAPlan}
@@ -91,7 +91,7 @@ const StartNowPage = ({ contentProps }) => {
 				</Figure>
 				<Figure
 					className='paddingLRSm'
-					alt='know the game poster'
+					alt='know the game poster with arcade poster'
 					width='2000'
 					height='1500'
 					src={startNowKnowTheGame}>
@@ -110,7 +110,7 @@ const StartNowPage = ({ contentProps }) => {
 				</Paragraph>
 				<Figure
 					className='paddingLRMed'
-					alt=' A photo of the Construction of the Science and Health Building.'
+					alt=' A photo of the Construction of the Science and Health Building at Northern Arizona University'
 					width='2000'
 					height='1500'
 					src={startNowNAUConstruction}>
@@ -119,7 +119,7 @@ const StartNowPage = ({ contentProps }) => {
 					</Figcaption>
 				</Figure>
 				<Figure
-					alt='Construct a plan poster'
+					alt='Construct a plan poster with photo of the Construction of the Science and Health Building at Northern Arizona University'
 					width='2000'
 					height='1500'
 					src={startNowConstructAPlanHorizontal}>

@@ -35,7 +35,7 @@ import {
 } from "../MediaVariables";
 // import ReactPlayer from "react-player";
 
-const header = "Herbie Duah";
+const header = "HerbieDuah.app";
 // There is an app for everything, in
 // 					the future, I believe there is going to be an app for everyone. I am
 // 					Herbie Duah, and this is my app.
@@ -78,17 +78,35 @@ const HomePage = ({ contentProps }) => {
 				<div className='container'>
 					<Header>{header}</Header>
 					<ForSomeone whom={whom} forYou={forYou} />
-					<HeadingTwo></HeadingTwo>
+					<HeadingTwo>
+						Hello<span className='text-cap'>{forYouHelper(forYou)}</span>
+					</HeadingTwo>
 					<Paragraph>
-						I am a Phoenix based Web developer/designer with over five years of
-						experience. I enjoy any opportunity that allows me to use my coding
-						and design skills in an original and creative way.
+						I am a Web Developer/Designer with over five years of experience.
+						I'm currently living in Phoenix, Arizona.
 					</Paragraph>
+
+					<Paragraph>
+						Projects that allow me to use my coding and design skills in
+						creative and original ways make me very happy.
+					</Paragraph>
+					<Paragraph>I also love going out and taking photos.</Paragraph>
 					<Image
 						src={picsOfMeHero}
 						className='paddingLRSm'
-						alt='a picture of me smiling'
+						alt='A picture of me smiling infront of green plants '
 					/>
+					{/* <HeadingTwo>About this web app</HeadingTwo> */}
+					<Paragraph>
+						I'm very passionate when it comes to creating User Interfaces/User
+						Experiences. My goal for project was to challenge myself and create
+						a very innovative UI/UX while showing off my work and skillset.
+					</Paragraph>
+					{/* <Paragraph>
+						During development, I realized my website was becoming more of an
+						app. The compelling idea of creating my very own app was the main
+						inspiration for this project.
+					</Paragraph> */}
 
 					{/* <HeadingTwo>An app for everyone</HeadingTwo>
 					<Paragraph>

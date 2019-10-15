@@ -36,6 +36,7 @@ const BackgroundsPage = ({ contentProps }) => {
 					patterns you can select to change the look of this web app in hopes
 					that you will find one that you'd like.
 				</Paragraph>
+				<Paragraph>(I save your background for when you come back.)</Paragraph>
 				<Instructions className='marginTopLarge'>
 					Select block to change background.
 				</Instructions>

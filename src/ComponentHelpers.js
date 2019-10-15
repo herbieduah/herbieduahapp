@@ -648,7 +648,7 @@ export const ScrollDownIndicator = () => {
 		if (!dragging) {
 			setTimeout(() => {
 				setShowScrollDown(false);
-			}, 6500);
+			}, 8500);
 		}
 	};
 	// const setScrollDownCount = () => {

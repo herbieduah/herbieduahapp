@@ -32,10 +32,10 @@ import {
 } from "../MediaVariables";
 import { thisAppherokuappdesktop, thisAppGatsby } from "../VideoVariables";
 
-const header = "HerbieDuah.app";
-const workDuration = "January 2019 - Present";
-const workSkills = "HTML5, CSS, Javascript, Prototyping, UX Design";
-const workTools = "Adobe Creative Suite, Github, Sketch, Visual Studio Code";
+const header = "This Web app";
+// const workDuration = "January 2019 - Present";
+// const workSkills = "HTML5, CSS, Javascript, Prototyping, UX Design";
+// const workTools = "Adobe Creative Suite, Github, Sketch, Visual Studio Code";
 // There is an app for everything, in
 // 					the future, I believe there is going to be an app for everyone. I am
 // 					Herbie Duah, and this is my app.
@@ -63,7 +63,7 @@ const HerbieDuahAppPage = ({ contentProps }) => {
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>
-				<WorkInfo workinfo={workinfo} />
+				{/* <WorkInfo workinfo={workinfo} /> */}
 				<Paragraph>
 					<Emoji className='emoji' symbol='🚧' label='contruction' />
 					Coming Soon{" "}
@@ -72,12 +72,12 @@ const HerbieDuahAppPage = ({ contentProps }) => {
 				<ShowIf noAnimation thisValue={forDev} thatValue={true}>
 					<HeadingTwo>For My Devs</HeadingTwo>
 					<UL>
-						<LI>
+						{/* <LI>
 							I didn't intend for this to be an app. I wanted to make a website
 							that was customizable but during the development I realized it was
 							very "app-like". The idea of creating my own app later on inspired
 							me.
-						</LI>
+						</LI> */}
 						<LI>
 							This is built on create-react-app (no ejection). All client no
 							server baby!
@@ -153,16 +153,41 @@ const HerbieDuahAppPage = ({ contentProps }) => {
 					</Figcaption>
 				</Figure>
 
-				<ContentCategory category='work' />
+				<HeadingTwo>Special Thanks</HeadingTwo>
+				<Paragraph>
+					I am the sole developer, designer, engineer, UX writer etc and I put
+					countless hours into this project.
+				</Paragraph>
+				<Paragraph>It was tough.</Paragraph>
+				<Paragraph>Big shout out to these people for their support.</Paragraph>
+				<UL>
+					<LI wide>Daliza Jeffrey</LI>
+					<LI wide>Henry Duah</LI>
+					<LI wide>Kyle Mooney</LI>
+					<LI wide>Johnny Haizel-Cobbina</LI>
+					<LI wide>Nuvi Njinimbam</LI>
+				</UL>
+
+				<ShowIf noAnimation thisValue={forDev} thatValue={true}>
+					<HeadingTwo>The Dev Community</HeadingTwo>
+					<Paragraph>
+						Shout out to the amazing developer community. I have truly learned a
+						lot these past couple months. Once this project is wrapped, I hope
+						to be more active in Stack Overflow and also sharing my knowledge on
+						my&nbsp;<Link href='https://medium.com/@herbieduah'>Medium</Link>
+						&nbsp;account.
+					</Paragraph>
+				</ShowIf>
+				<ContentCategory category='about' />
 			</ContentShow>
 		</Fragment>
 	);
 };
 
-const workinfo = {
-	workDuration,
-	workSkills,
-	workTools
-};
+// const workinfo = {
+// 	workDuration,
+// 	workSkills,
+// 	workTools
+// };
 
 export default HerbieDuahAppPage;

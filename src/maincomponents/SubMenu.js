@@ -48,11 +48,7 @@ export const SubMenu = props => {
 								Discount Tire
 							</Text>
 						</li>
-						<li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink to='/HerbieDuahApp'>
-								Herbie&shy;Duah.app
-							</Text>
-						</li>
+
 						{/* <li onClick={hideModal} className='subMenu__item'>
 							<Text menuLink to='/CulturalSuicide'>
 								Cultural $uicide
@@ -78,15 +74,25 @@ export const SubMenu = props => {
 							</Text>
 						</li> */}
 						<li onClick={hideModal} className='subMenu__item'>
+							<Text menuLink to='/Inspiration'>
+								Inspiration
+							</Text>
+						</li>
+						<li onClick={hideModal} className='subMenu__item'>
+							<Text menuLink to='/HerbieDuahApp'>
+								This Web App
+							</Text>
+						</li>
+						<li onClick={hideModal} className='subMenu__item'>
 							<Text menuLink to='/Resume'>
 								Experience
 							</Text>
 						</li>
-						<li onClick={hideModal} className='subMenu__item'>
+						{/* <li onClick={hideModal} className='subMenu__item'>
 							<Text menuLink to='/SpecialThanks'>
 								Special&shy; Thanks
 							</Text>
-						</li>
+						</li> */}
 						{/* <li onClick={hideModal} className='subMenu__item'>
 							<Text menuLink to='/Inspiration'>
 								Inspiration
@@ -128,8 +134,8 @@ export const SubMenu = props => {
 							</Text>
 						</li>
 						<li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink to='/transitions'>
-								Transitions
+							<Text menuLink to='/animations'>
+								Animations
 							</Text>
 						</li>
 						<li onClick={hideModal} className='subMenu__item'>
@@ -163,7 +169,7 @@ export const SubMenu = props => {
 						</li>
 						<li onClick={hideModal} className='subMenu__item'>
 							<Text menuLink to='/iphonephotography'>
-								iPhone
+								ShotOniPhone
 							</Text>
 						</li>
 						<li onClick={hideModal} className='subMenu__item'>

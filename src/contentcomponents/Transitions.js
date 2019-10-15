@@ -15,7 +15,7 @@ import {
 import "animate.css";
 // import Emoji from "a11y-react-emoji";
 
-const header = "Transitions (Beta)";
+const header = "Animations (Beta)";
 
 const TransitionsPage = () => {
 	return (
@@ -37,12 +37,12 @@ const TransitionsPage = () => {
 			<ContentShow more>
 				<Header>{header}</Header>
 				<Paragraph>
-					Transitions bring the elements of this web app to life. I added an
-					extensive collection of random transitions for you to choose how you
+					Animations bring the elements of this web app to life. I added an
+					extensive collection of random animations for you to choose how you
 					bring this web app to life.
 				</Paragraph>
 				<Instructions className='marginTopLarge'>
-					Select Transitions Below.
+					Select Animations Below.
 				</Instructions>
 				<div className='paddingLRSm marginTopMed'>
 					<GenerateTransition />

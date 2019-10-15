@@ -79,7 +79,7 @@ const UggPage = () => {
 				</Paragraph>
 				<Paragraph>
 					Using MJML, I coordinated with our design and marketing team to
-					develop a couple of UGG emails. Some are now featured
+					develop a couple of UGG emails. Some are now featured&nbsp;
 					<Link href='https://reallygoodemails.com/search/emails/ugg%20/'>
 						reallygoodemails.com
 					</Link>{" "}

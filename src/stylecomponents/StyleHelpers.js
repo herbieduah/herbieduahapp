@@ -24,12 +24,7 @@ export function fluidType(minVW, maxVW, minFontSize, maxFontSize) {
 	}
 	return finalFontSize;
 }
-export const crossOut = `
-width: 100%;
-position: absolute;
-right: 0;
-top: 52%;
-`;
+
 const minVW = `320px`;
 const maxVW = `1200px`;
 const minFontSize = `16px`;
@@ -47,6 +42,16 @@ scrollbar-width: none;
 &::-webkit-scrollbar { 
 	display: none; 
 }`;
+
+export const crossOut = `
+width: 100%;
+position: absolute;
+right: 0;
+top: 50%;
+${mobile}{
+	top: 50.5%;
+}
+`;
 export const slightBoxShadowAbove =
 	"box-shadow: 0 -3px 15px rgba(0,0,0,0.10), 0 -3px 15px rgba(0,0,0,0.18);";
 export const slightBoxShadowBelow =

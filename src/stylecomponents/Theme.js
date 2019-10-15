@@ -192,6 +192,45 @@ export const themes = [
 		text: "",
 		desc: ""
 	},
+
+	{
+		name: "Color-F9F9F9-0310EA",
+		properties: {
+			...themeColorMaker("Color-F9F9F9-0310EA")
+		},
+		type: "color",
+		text: "",
+		desc: ""
+	},
+	{
+		name: "Color-0310EA-F9F9F9",
+		properties: {
+			...themeColorMaker("Color-0310EA-F9F9F9")
+		},
+		type: "color",
+		text: "",
+		desc: ""
+	},
+
+	{
+		name: "Color-7DCE94-101357",
+		properties: {
+			...themeColorMaker("Color-7DCE94-101357")
+		},
+		type: "color",
+		text: "",
+		desc: ""
+	},
+	{
+		name: "Color-101357-7DCE94",
+		properties: {
+			...themeColorMaker("Color-101357-7DCE94")
+		},
+		type: "color",
+		text: "",
+		desc: ""
+	},
+
 	{
 		name: "default",
 		properties: {

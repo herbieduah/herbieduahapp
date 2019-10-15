@@ -116,7 +116,6 @@ const Paragraph = styled.p`
 
 const Figcaption = styled.figcaption`
 	${baseStyle};
-	font-family: ${appfontFamilyTertiary};
 `;
 const TextFormatter = styled.span`
 	${baseStyle};

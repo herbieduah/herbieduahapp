@@ -110,7 +110,7 @@ const MenuContainer = styled.aside`
 			.subMenu {
 				${paddingLRSm}
 				/* ${props => (props.isPortrait ? paddingLRSm : "padding: 0;")}; */
-			${props => (props.isPortrait ? `overflow-x: auto;` : ``)};
+			${props => (props.isPortrait ? `overflow-x: auto;` : ``)}
 			${props => (props.isPortrait ? `flex-direction: row;` : ``)};
 			}
 		}
@@ -155,7 +155,7 @@ const MenuContainer = styled.aside`
 		&__text {
 			${mainTransition}
 			text-align: ${props => (props.isPortrait ? `left;` : `right;`)};
-			margin-bottom: 0;
+			margin-bottom: .2rem;
 			${paddingLRSm}
 			margin-top: 2rem;
 			${tablet}{
@@ -166,11 +166,12 @@ const MenuContainer = styled.aside`
 			display: block;
 			${mobile}{
 				margin-top: 0;
+				margin-bottom: 0;
 			}
 		}
 		
 		&__item {
-			margin: .1rem 0 .5rem;
+			margin: .1rem 0 .2rem;
 			${tablet}{
 				&:last-child {
 					${props => (props.isPortrait ? `padding-right:4rem` : ``)};
