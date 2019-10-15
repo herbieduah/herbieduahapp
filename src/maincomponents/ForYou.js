@@ -130,7 +130,7 @@ export const forYouHelper = forSomebody => {
 			person = " Cloudflare Employer/Employee";
 			return person;
 		case "linkedin":
-			person = " LinkedIn Connection";
+			person = " LinkedIn Connect";
 			return person;
 		case "vrbo":
 			person = " Expedia Employer/Employee";

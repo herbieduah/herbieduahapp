@@ -113,7 +113,7 @@ export const App = () => {
 					<Matrix fullscreen={true} isPortrait={isPortrait(ww, wh)} />
 				</ShowIf>
 				<div aria-hidden='true' className='in-dev'>
-					<Text xs className='alpha-text'>
+					<Text m tertiary className='alpha-text'>
 						Beta
 					</Text>
 				</div>
