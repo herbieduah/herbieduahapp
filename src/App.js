@@ -57,7 +57,7 @@ export const App = () => {
 	const values = { ww, wh, cw, ch };
 	const isShowingMore = revealValues(values).isShowingMore;
 	const { minSize, maxSize } = minSliderSize(ww, wh);
-	const mobileOveriPhone5Horizontal = ww > 453;
+	const mobileOveriPhone5Horizontal = ww > 492;
 	const showFSMobileHorizontal = mobileOveriPhone5Horizontal && isMobileOnly;
 	const onDragging = () => {
 		setDragging(true);
