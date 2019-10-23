@@ -370,7 +370,7 @@ export const MenuTabs = props => {
 	const defaultIndex = props.defaultIndex || 0;
 	return (
 		<ReactTabs defaultIndex={defaultIndex}>
-			<ElementReveal>
+			<ElementReveal className='react-tabs__wrapper'>
 				<TabList>
 					<Tab tabIndex='0'>
 						<Text format tertiary xs>

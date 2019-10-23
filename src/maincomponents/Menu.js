@@ -11,6 +11,7 @@ import SubMenu from "./SubMenu";
 import { globalState } from "../State";
 import { MenuTabs, AccessibilityMode } from "../ComponentHelpers";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
+import { ElementReveal } from "../ContentHelpers";
 export const ContentMenu = () => {
 	const {
 		contentWidth: cw,
@@ -30,12 +31,21 @@ export const ContentMenu = () => {
 			isShowingMore={isShowingMore}
 			navBarRight={navBarRight}
 			switchSides={switchSides}>
-			<div className='animatecss-tamer'>
+			<ElementReveal>
+				<div className='menu__nav'>
+					<div className='menu__nav-container'>
+						<MenuTabs defaultIndex={-1} />
+					</div>
+				</div>
+				<div className='accessibility__wrapper'></div>
+			</ElementReveal>
+			<AccessibilityMode />
+			{/* <div className='animatecss-tamer'>
 				<TransitionGroup>
 					{!isShowingMore ? (
 						<CSSTransition timeout={revealSecs} classNames={transitionClasses}>
 							<div className='animatecss-container'>
-								<div className='menu__less'>
+								<div className='menu__content'>
 									<div className='menu__less-container'>
 										<MenuTabs showCategory={isShowingMore} defaultIndex={-1} />
 									</div>
@@ -71,7 +81,7 @@ export const ContentMenu = () => {
 						</CSSTransition>
 					) : null}
 				</TransitionGroup>
-			</div>
+			</div> */}
 			{/* <div className='offset' /> */}
 		</MenuContainer>
 	);

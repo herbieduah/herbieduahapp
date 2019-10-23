@@ -12,7 +12,8 @@ import {
 	tablet,
 	// contentMenuMarginRight,
 	paddingLRSm,
-	navBarSize
+	navBarSize,
+	marginLRSm
 } from "./StyleHelpers";
 import { fontColor, CTAColor } from "./Themes/ThemeVariables";
 import { isIOS } from "react-device-detect";
@@ -41,6 +42,7 @@ const MenuContainer = styled.aside`
 	/* border-top: 1px solid ${CTAColor}; */
 	display: flex;
 	width: 100%;
+
 	z-index: 10;
 	/* ${props =>
 		props.navBarRight ? contentMenuMarginRight : contentMenuMargin}; */
@@ -97,12 +99,24 @@ const MenuContainer = styled.aside`
 	}
 
 	.menu {
-		&__less {
-			${paddingLRSm}
-			height: ${props => (props.isPortrait ? `auto` : `100vh`)};
-		}
-		&__less-container {
+		&__less,&__nav {
 			padding-top: ${props => (props.isPortrait ? `0` : `${navBarSize}`)};
+			height: ${props => (props.isPortrait ? `auto` : `100vh`)};
+			${mobile} {
+				.subMenu {
+					/* ${props => (props.isPortrait ? paddingLRSm : "padding: 0;")}; */
+				${paddingLRSm}
+				${props => (props.isPortrait ? `overflow-x: auto;` : ``)}
+				${props => (props.isPortrait ? `flex-direction: row;` : ``)};
+				}
+				.react-tabs__wrapper {
+					${paddingLRSm}
+					position: relative;
+				}
+			}
+		}
+		&__less-container, &__nav-container {
+			
 		}
 		&__more {
 			padding: 1rem 0;
@@ -200,15 +214,8 @@ const MenuContainer = styled.aside`
 			${props => (props.isPortrait ? `margin-right: 1rem;` : `margin-left: 1rem;`)};
 		}
 	}
-	.accessibility {
-		position:absolute;
-		bottom: 0;
-		width: 100%;
-		display:flex;
-		justify-content: right;
-    	button {
-			margin-left: auto;
-		}
+	.accessibility__wrapper {
+		display: flex;
 	}
 	
 	.alert-enter {

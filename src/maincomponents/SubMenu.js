@@ -29,28 +29,28 @@ export const SubMenu = props => {
 					) : null}
 					<SubMenuWrapper showCategory={showCategory}>
 						<li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink to='/StartNow'>
+							<Text menuLink xl={true} to='/StartNow'>
 								Start Now
 							</Text>
 						</li>
 						<li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink to='/BedzinExhibit'>
+							<Text menuLink xl={true} to='/BedzinExhibit'>
 								Bedzin Exhibit
 							</Text>
 						</li>
 						<li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink to='/UGG'>
+							<Text menuLink xl={true} to='/UGG'>
 								UGG
 							</Text>
 						</li>
 						<li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink to='/DiscountTire'>
+							<Text menuLink xl={true} to='/DiscountTire'>
 								Discount Tire
 							</Text>
 						</li>
 
 						{/* <li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink to='/CulturalSuicide'>
+							<Text menuLink xl={true} to='/CulturalSuicide'>
 								Cultural $uicide
 							</Text>
 						</li> */}
@@ -69,38 +69,38 @@ export const SubMenu = props => {
 					) : null}
 					<SubMenuWrapper showCategory={showCategory}>
 						{/* <li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink to='/UXvsHX'>
+							<Text menuLink xl={true} to='/UXvsHX'>
 								An App For Everyone
 							</Text>
 						</li> */}
 						<li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink to='/Inspiration'>
+							<Text menuLink xl={true} to='/Inspiration'>
 								Inspiration
 							</Text>
 						</li>
 						<li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink to='/HerbieDuahApp'>
+							<Text menuLink xl={true} to='/HerbieDuahApp'>
 								This Web App
 							</Text>
 						</li>
 						<li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink to='/Resume'>
+							<Text menuLink xl={true} to='/Resume'>
 								Experience
 							</Text>
 						</li>
 						{/* <li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink to='/SpecialThanks'>
+							<Text menuLink xl={true} to='/SpecialThanks'>
 								Special&shy; Thanks
 							</Text>
 						</li> */}
 						{/* <li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink to='/Inspiration'>
+							<Text menuLink xl={true} to='/Inspiration'>
 								Inspiration
 							</Text>
 						</li> */}
 
 						<li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink to='/AboutMe'>
+							<Text menuLink xl={true} to='/AboutMe'>
 								About Me
 							</Text>
 						</li>
@@ -119,27 +119,27 @@ export const SubMenu = props => {
 					) : null}
 					<SubMenuWrapper showCategory={showCategory}>
 						<li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink to='/settings'>
+							<Text menuLink xl={true} to='/settings'>
 								Settings
 							</Text>
 						</li>
 						{/* <li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink to='/gradients'>
+							<Text menuLink xl={true} to='/gradients'>
 								Gradients
 							</Text>
 						</li> */}
 						<li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink to='/backgrounds'>
+							<Text menuLink xl={true} to='/backgrounds'>
 								Backgrounds
 							</Text>
 						</li>
 						<li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink to='/animations'>
+							<Text menuLink xl={true} to='/animations'>
 								Animations
 							</Text>
 						</li>
 						<li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink to='/theme'>
+							<Text menuLink xl={true} to='/theme'>
 								Theme
 							</Text>
 						</li>
@@ -158,22 +158,22 @@ export const SubMenu = props => {
 					) : null}
 					<SubMenuWrapper showCategory={showCategory}>
 						<li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink to='/peoplephotography'>
+							<Text menuLink xl={true} to='/peoplephotography'>
 								People
 							</Text>
 						</li>
 						<li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink to='/placesphotography'>
+							<Text menuLink xl={true} to='/placesphotography'>
 								Places
 							</Text>
 						</li>
 						<li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink to='/iphonephotography'>
+							<Text menuLink xl={true} to='/iphonephotography'>
 								ShotOniPhone
 							</Text>
 						</li>
 						<li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink to='/modeling'>
+							<Text menuLink xl={true} to='/modeling'>
 								Modeling
 							</Text>
 						</li>
