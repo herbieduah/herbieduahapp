@@ -139,8 +139,8 @@ export const SubMenu = props => {
 							</Text>
 						</li>
 						<li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink xl={true} to='/theme'>
-								Theme
+							<Text menuLink xl={true} to='/themes'>
+								Themes
 							</Text>
 						</li>
 					</SubMenuWrapper>

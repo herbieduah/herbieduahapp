@@ -37,9 +37,18 @@ export const ContentMenu = () => {
 						<MenuTabs defaultIndex={-1} />
 					</div>
 				</div>
-				<div className='accessibility__wrapper'></div>
 			</ElementReveal>
-			<AccessibilityMode />
+
+			<div className='animatecss-tamer'>
+				<TransitionGroup>
+					{!isShowingMore ? (
+						<CSSTransition timeout={revealSecs} classNames={transitionClasses}>
+							<AccessibilityMode />
+						</CSSTransition>
+					) : null}
+				</TransitionGroup>
+			</div>
+
 			{/* <div className='animatecss-tamer'>
 				<TransitionGroup>
 					{!isShowingMore ? (

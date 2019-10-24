@@ -30,8 +30,8 @@ export const defaultAlt = "I will be adding an alt tag to this image soon";
 export const defaultDesc = "This is a video, I will be describing it soon";
 
 //Switch to 'gif' or 'image' to pull videos and images locally
-const videoLocation = "cloud-gif";
-const imageLocation = "cloud-image";
+const videoLocation = "gif";
+const imageLocation = "image";
 
 export const ContentShow = props => {
 	const {
@@ -76,10 +76,10 @@ export const ContentShow = props => {
 						<article className={`${containerLarge} more`}>
 							<ScrollDownIndicator />
 							<ShowIf
-								noAnimation
+								noAbsolute
 								thisValue={fullScreen && !minimalMode}
 								thatValue={true}>
-								<Instructions className='marginTopMed'>
+								<Instructions className='marginTopLarge'>
 									scroll to bottom for menu.
 								</Instructions>
 							</ShowIf>
@@ -133,7 +133,7 @@ export const Instructions = props => {
 	const className = props.className || "";
 	return (
 		<Small
-			className={`paddingLRSm c-instructions all-caps marginBottomMed ${className}`}>
+			className={`paddingLRSm c-instructions all-caps marginBottomMed letter-space-1 ${className}`}>
 			{props.children}
 		</Small>
 	);

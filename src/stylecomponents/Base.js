@@ -750,7 +750,8 @@ export const FullScreenOverlayContainer = styled.div`
 	.menu {
 		width: 100%;
 		max-width: 500px;
-		margin: 0 auto
+		margin: 0 auto;
+		${paddingLRSm}
 		ul {
 			list-style-type: none;
 			padding: 0;
@@ -925,10 +926,13 @@ export const AccessibilityContainer = styled.div`
 	display: flex;
 	flex-flow: row-reverse;
 	justify-content: right;
+	flex-direction: column;
+
 	${paddingLRSm};
 	.accessibility {
 		&__button-container {
 			display: flex;
+			flex-direction:column;
 			justify-content: right;
 			button {
 				margin-left: auto;
@@ -941,12 +945,20 @@ export const AccessibilityContainer = styled.div`
 		}
 		&__text {
 			width: 100%;
-			display: flex;
+			text-align: right;
+			display: block;
+			margin-left: auto;
 		}
+		/* &__wrapper {
+			padding: 0 ${navBarSize};
+		} */
 	}
 
 	margin-bottom: ${navBarSize};
 	${mobile} {
 		margin-bottom: 1rem;
+	}
+	${tablet}{
+		margin-bottom: 7rem;
 	}
 `;

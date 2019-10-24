@@ -272,6 +272,7 @@ export const ContentContainer = styled.section`
 		.react-tabs__tab-list {
 		max-width: 500px;
 		margin: 0 auto;
+		margin-bottom: 1rem;
 		width: 100%;
 		}
 		.subMenu {

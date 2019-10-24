@@ -353,4 +353,11 @@ export const appMarginsAndPaddings = `
 .noMargin {
 	margin: 0;
 }
+.pos-rel {
+	position: relative;
+}
+.letter-space-1 {
+	letter-spacing: 1px;
+}
+
 `;

@@ -32,7 +32,7 @@ import {
 } from "../MediaVariables";
 import { thisAppherokuappdesktop, thisAppGatsby } from "../VideoVariables";
 
-const header = "This Web app";
+const header = "This Web App";
 // const workDuration = "January 2019 - Present";
 // const workSkills = "HTML5, CSS, Javascript, Prototyping, UX Design";
 // const workTools = "Adobe Creative Suite, Github, Sketch, Visual Studio Code";

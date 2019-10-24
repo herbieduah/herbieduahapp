@@ -54,7 +54,7 @@ const baseStyle = css`
 		if (props.m) return "1em";
 		if (props.l) return "1.35em";
 		if (props.large) return "1.35em";
-		if (props.xl) return "2em";
+		if (props.xl) return "1.65em";
 		if (props.xxl) return "2.4em";
 		return "1em";
 	}};
@@ -65,7 +65,7 @@ const baseStyle = css`
 			if (props.m) return "1em";
 			if (props.l) return "1.3em";
 			if (props.large) return "1.3em";
-			if (props.xl) return "1.5em";
+			if (props.xl) return "1.55em";
 			if (props.xxl) return "1.7em";
 			return "1em";
 		}};
@@ -183,7 +183,8 @@ const HyperLink = styled.a`
 
 const MenuLink = styled(NavLink)`
 	${baseStyle};
-	font-weight: 500;
+	font-weight: 800;
+	letter-spacing: 1px;
 	${mainTransition}
 	position:relative;
 	border: 0;
@@ -195,34 +196,35 @@ const MenuLink = styled(NavLink)`
 	text-transform: uppercase;
 	cursor: pointer;
 	text-decoration: none;
-	&::before{
+	border-bottom: 2px solid rgba(0,0,0,0);
+	/* &::before{
 		content: '';
 		border-bottom: 2px solid rgba(0,0,0,0);
 		${mainTransition}
 		${crossOut};
-	}
+	} */
 	${tablet} {
 		hyphens: none;
 	}
 	&:hover,
 	&:focus {
 		color: ${navBarHoverFocus};
-		&::before{
+		/* &::before{
 		content: '';
 			border-bottom: 2px solid ${colorSlightOpacity};
-		}
+		} */
 		/* text-decoration: ${CTAUnderline}; */
 		/* border-bottom: 2px solid ${fontColor}; */
 	}
 	&.active,
 	&.current {
 		color: ${navBarButtonActive};
-		&::before {
+		/* &::before {
 		content: '';
 			border-bottom: 2px solid ${fontColor};
-		}
+		} */
 		/* text-decoration: ${CTAUnderline}; */
-		/* border-bottom: 2px solid ${fontColor}; */
+		border-bottom: 2px solid ${colorSlightOpacity};
 	}
 `;
 

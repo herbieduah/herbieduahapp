@@ -13,7 +13,8 @@ import {
 	// contentMenuMarginRight,
 	paddingLRSm,
 	navBarSize,
-	marginLRSm
+	marginLRSm,
+	absoluteOverlay
 } from "./StyleHelpers";
 import { fontColor, CTAColor } from "./Themes/ThemeVariables";
 import { isIOS } from "react-device-detect";
@@ -85,7 +86,7 @@ const MenuContainer = styled.aside`
 			margin-bottom: 10vh;
 			${mobile} {
 				/* height: 3vh; */
-				margin-bottom: .7rem;
+				margin-bottom: 1rem;
 			}
 		}
 		${hideScrollbar}
@@ -101,6 +102,7 @@ const MenuContainer = styled.aside`
 	.menu {
 		&__less,&__nav {
 			padding-top: ${props => (props.isPortrait ? `0` : `${navBarSize}`)};
+			${props => (props.isPortrait ? `` : paddingLRSm)};
 			height: ${props => (props.isPortrait ? `auto` : `100vh`)};
 			${mobile} {
 				.subMenu {
@@ -185,7 +187,7 @@ const MenuContainer = styled.aside`
 		}
 		
 		&__item {
-			margin: .1rem 0 .2rem;
+			margin: .1rem 0 1rem;
 			${tablet}{
 				&:last-child {
 					${props => (props.isPortrait ? `padding-right:4rem` : ``)};
@@ -214,9 +216,16 @@ const MenuContainer = styled.aside`
 			${props => (props.isPortrait ? `margin-right: 1rem;` : `margin-left: 1rem;`)};
 		}
 	}
-	.accessibility__wrapper {
-		display: flex;
+	.bottom-left{
+		${absoluteOverlay}
+		&__content {
+			position: relative;	
+			width:100%;
+			height: 100%;	
+		}
+
 	}
+
 	
 	.alert-enter {
 	opacity: 0;

@@ -74,7 +74,7 @@ export const Content = ({ location }) => {
 							<Route path='/iphonephotography' component={IPhone} />
 							<Route path='/StartNow' component={StartNow} />
 							<Route path='/Resume' component={Resume} />
-							<Route path='/theme' component={Theme} />
+							<Route path='/themes' component={Theme} />
 							<Route path='/SpecialThanks' component={SpecialThanks} />
 							<Route path='/settings' component={Settings} />
 							<Route path='/placesphotography' component={Places} />

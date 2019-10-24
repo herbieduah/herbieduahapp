@@ -256,8 +256,15 @@ export const AccessibilityMode = () => {
 		setFullscreen,
 		setVideoControls,
 		setNavBarComplement,
-		accessible
+		accessible,
+		contentWidth: cw,
+		contentHeight: ch
 	} = useContext(globalState);
+
+	const { height: wh, width: ww } = useWindowResize();
+	const values = { ww, wh, cw, ch };
+	const isShowingMore = revealValues(values).isShowingMore;
+	const isContentPortrait = isPortrait(ww, wh);
 
 	const activateAccessibilityMode = () => {
 		accessible ? setMinimalMode(false) : setMinimalMode(true);
@@ -268,7 +275,8 @@ export const AccessibilityMode = () => {
 	};
 
 	return (
-		<AccessibilityContainer>
+		// <ShowIf noAbsolute thisValue={isShowingMore} thatValue={false}>
+		<AccessibilityContainer isPortrait={isContentPortrait}>
 			<ElementReveal>
 				<div className='accessibility__button-container'>
 					<Text button s onClick={activateAccessibilityMode}>
@@ -284,6 +292,7 @@ export const AccessibilityMode = () => {
 				</Text>
 			</ElementReveal>
 		</AccessibilityContainer>
+		// </ShowIf>
 	);
 };
 
