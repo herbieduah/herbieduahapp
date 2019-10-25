@@ -187,7 +187,7 @@ export const NavBar = () => {
 										tabIndex='0'
 										className='navbar__home-text'
 										aria-hidden={showLess ? `true` : `false`}>
-										Home
+										HerbieDuah.app
 									</Text>
 								</CSSTransition>
 							) : null}

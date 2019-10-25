@@ -70,17 +70,17 @@ export const Content = ({ location }) => {
 							<Route path='/DiscountTire' component={DiscountTire} />
 							<Route path='/CulturalSuicide' component={CulturalSuicide} />
 							<Route exact path='/' component={Home} />
-							<Route path='/peoplephotography' component={People} />
-							<Route path='/iphonephotography' component={IPhone} />
+							<Route path='/PeoplePhotography' component={People} />
+							<Route path='/IphonePhotography' component={IPhone} />
 							<Route path='/StartNow' component={StartNow} />
 							<Route path='/Resume' component={Resume} />
-							<Route path='/themes' component={Theme} />
+							<Route path='/Themes' component={Theme} />
 							<Route path='/SpecialThanks' component={SpecialThanks} />
-							<Route path='/settings' component={Settings} />
-							<Route path='/placesphotography' component={Places} />
+							<Route path='/Settings' component={Settings} />
+							<Route path='/PlacesPhotography' component={Places} />
 							<Route path='/Ugg' component={Ugg} />
 							<Route path='/Inspiration' component={Inspiration} />
-							<Route path='/HerbieDuahApp' component={HerbieDuahApp} />
+							<Route path='/CaseStudy' component={HerbieDuahApp} />
 							<Route path='/Puns' component={Puns} />
 							<Route path='/Contacts' component={Contacts} />
 							<Route path='/Modeling' component={Modeling} />

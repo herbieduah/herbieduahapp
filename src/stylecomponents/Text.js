@@ -184,7 +184,6 @@ const HyperLink = styled.a`
 const MenuLink = styled(NavLink)`
 	${baseStyle};
 	font-weight: 800;
-	letter-spacing: 1px;
 	${mainTransition}
 	position:relative;
 	border: 0;
@@ -192,7 +191,10 @@ const MenuLink = styled(NavLink)`
 	background: none;
 	color: ${navBarButtonColor};
 	font-family: ${appfontFamilySecondary};
+	letter-spacing: 1px;
 	border-bottom: 0;
+	display: inline-block;
+	transform: scale(1);
 	text-transform: uppercase;
 	cursor: pointer;
 	text-decoration: none;
@@ -206,8 +208,11 @@ const MenuLink = styled(NavLink)`
 	${tablet} {
 		hyphens: none;
 	}
-	&:hover,
 	&:focus {
+		transform: scale(.97);
+	}
+	&:hover
+	 {
 		color: ${navBarHoverFocus};
 		/* &::before{
 		content: '';
@@ -216,15 +221,18 @@ const MenuLink = styled(NavLink)`
 		/* text-decoration: ${CTAUnderline}; */
 		/* border-bottom: 2px solid ${fontColor}; */
 	}
-	&.active,
-	&.current {
+	&.active,&.active:hover,
+	&.current,&.current:hover {
 		color: ${navBarButtonActive};
+		-webkit-text-stroke-width: 1px;
+    	-webkit-text-stroke-color: ${navBarButtonActive};
+    	-webkit-text-fill-color: transparent;
 		/* &::before {
 		content: '';
 			border-bottom: 2px solid ${fontColor};
 		} */
 		/* text-decoration: ${CTAUnderline}; */
-		border-bottom: 2px solid ${colorSlightOpacity};
+		/* border-bottom: 2px solid ${colorSlightOpacity}; */
 	}
 `;
 

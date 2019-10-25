@@ -445,8 +445,15 @@ export const ReactTabs = styled(Tabs)`
 					padding: 0 5px;
 				} */
 			}
-			&:focus, &:hover {
+			&:focus {
+				background-color: ${colorSlightOpacity};
+				span {
+					color:  ${fontColorOpposite};
+				}
+			}
+			&:hover {
 				background-color: ${fontColor};
+				
 				span {
 					color:  ${fontColorOpposite};
 				}
@@ -959,6 +966,6 @@ export const AccessibilityContainer = styled.div`
 		margin-bottom: 1rem;
 	}
 	${tablet}{
-		margin-bottom: 7rem;
+		margin-bottom: 5.5rem;
 	}
 `;

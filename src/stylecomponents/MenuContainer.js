@@ -76,10 +76,11 @@ const MenuContainer = styled.aside`
 			${props => (props.isPortrait ? `margin-top: 50px;` : ``)};
 			/* ${paddingLRSm} */
 			${tablet} {
-				max-width: 600px;
+				max-width: 500px;
+				margin: 0 auto;
 			${props =>
 				props.isPortrait
-					? `height: auto;margin-top: 6vh; margin-bottom:1rem;`
+					? `height: auto;margin-top: 6vh; margin-bottom:2rem;`
 					: ``};
 			}
 			/* height: 6vh; */
@@ -166,7 +167,6 @@ const MenuContainer = styled.aside`
 			display: flex;
 			margin: 0;
 			${props => (props.isPortrait ? `margin-left: auto;` : `margin-right: auto;`)};
-			
 
 		&__text {
 			${mainTransition}
@@ -189,9 +189,8 @@ const MenuContainer = styled.aside`
 		&__item {
 			margin: .1rem 0 1rem;
 			${tablet}{
-				&:last-child {
-					${props => (props.isPortrait ? `padding-right:4rem` : ``)};
-				}
+				${props => (props.isPortrait ? `display:flex; justify-content: center;` : ``)};
+				
 				${props => (props.isPortrait ? `margin: 0 .7rem .3rem 0;` : ``)};
 				
 				padding: 0;
