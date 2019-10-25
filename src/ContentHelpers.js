@@ -132,8 +132,7 @@ export const ElementReveal = props => {
 export const Instructions = props => {
 	const className = props.className || "";
 	return (
-		<Small
-			className={`paddingLRSm c-instructions all-caps marginBottomMed letter-space-1 ${className}`}>
+		<Small className={`c-instructions paddingLRSm ${className}`}>
 			{props.children}
 		</Small>
 	);

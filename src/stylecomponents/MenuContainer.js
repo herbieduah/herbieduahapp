@@ -78,6 +78,7 @@ const MenuContainer = styled.aside`
 			${tablet} {
 				max-width: 500px;
 				margin: 0 auto;
+				margin-bottom: 10vh;
 			${props =>
 				props.isPortrait
 					? `height: auto;margin-top: 6vh; margin-bottom:2rem;`

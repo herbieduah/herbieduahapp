@@ -311,6 +311,11 @@ export const ContentContainer = styled.section`
 			margin-top: 1.5rem !important;
 		}
 	}
+	.c-instructions {
+		letter-spacing: .5px;
+		text-transform: uppercase;
+		${marginBottomMed}
+	}
 	.c-submenu {
 		${paddingLRSm};
 		ul {
