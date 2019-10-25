@@ -35,6 +35,7 @@ const TransitionsPage = () => {
 				</div>
 			</ContentShow>
 			<ContentShow more>
+				{/* normal crazy ridiculous */}
 				<Header>{header}</Header>
 				<Paragraph>
 					Animations bring the elements of this web app to life. I added an

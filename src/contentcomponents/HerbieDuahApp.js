@@ -113,7 +113,7 @@ const HerbieDuahAppPage = ({ contentProps }) => {
 				</Paragraph>
 				<Figure src={thisAppHerbieDuahComeUX}>
 					<Figcaption>
-						HerbieDuah.com coming design UX Design Summer 2018{" "}
+						HerbieDuah.com coming soon design UX Design Summer 2018{" "}
 						<Emoji className='emoji' symbol='😂' label='laugh' />. What an
 						amateur.
 					</Figcaption>
