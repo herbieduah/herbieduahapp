@@ -582,6 +582,7 @@ export const HeaderFullScreen = props => {
 
 export const AppStartUp = () => {
 	const [showApp, setShowApp] = useState(true);
+	const { downloaded } = useContext(globalState);
 	const startUpTransitions = {
 		// enter: "animated",
 		// 	enterActive: "bounceIn",
@@ -614,14 +615,28 @@ export const AppStartUp = () => {
 								</Text>
 							</Fade> */}
 							<Fade duration={1000}>
-								<Text l wide className='startUp__future'>
-									In the future, there is going to be an app for everyone.
-								</Text>
+								<ShowIf noAnimation thisValue={downloaded} thatValue={false}>
+									<Text l wide className='startUp__future'>
+										In the future, there is going to be an app for everyone.
+									</Text>
+								</ShowIf>
+								<ShowIf noAnimation thisValue={downloaded} thatValue={true}>
+									<Text l wide className='startUp__future'>
+										Wow, you actually "downloaded" my app
+									</Text>
+								</ShowIf>
 							</Fade>
 							<Fade delay={3000} duration={1500}>
-								<Text l wide className='startUp__my-own'>
-									So I made my own.
-								</Text>
+								<ShowIf noAnimation thisValue={downloaded} thatValue={false}>
+									<Text l wide className='startUp__my-own'>
+										So I made my own.
+									</Text>
+								</ShowIf>
+								<ShowIf noAnimation thisValue={downloaded} thatValue={true}>
+									<Text l wide className='startUp__my-own'>
+										You're amazing.
+									</Text>
+								</ShowIf>
 							</Fade>
 							<Fade duration={500}>
 								<div className='startUp__skip'>

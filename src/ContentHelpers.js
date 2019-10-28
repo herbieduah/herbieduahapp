@@ -108,7 +108,7 @@ export const Header = props => {
 				</Text>
 			</ShowIf>
 			<ShowIf noAnimation thisValue={!props.less} thatValue={true}>
-				<header className={`content__header ${className}`}>
+				<header className={`content__header container ${className}`}>
 					<HeadingOne>{props.children}</HeadingOne>
 				</header>
 			</ShowIf>
@@ -212,6 +212,7 @@ export const HeadingOne = props => {
 			<Text
 				h1
 				xl
+				center
 				semibold
 				className={`${className} marginBottomMed marginTopXLarge paddingLRSm`}>
 				{props.children}
@@ -494,29 +495,48 @@ export const WorkInfo = props => {
 	const { workDuration, workSkills, workTools } = props.workinfo;
 	const { forDev } = useContext(globalState);
 	return (
-		<ElementReveal>
+		<ElementReveal className='container'>
 			<ul className='c-work-info marginBottomXLarge'>
 				<li>
-					<Text s format>
-						<strong>Duration:</strong>&nbsp;
-						{workDuration}
+					<Text s format className='c-work-info__row'>
+						<span className='c-work-info__title'>Duration</span>
+						<span className='c-work-info__desc'>{workDuration}</span>
 					</Text>
 				</li>
 				<li>
-					<Text s format>
-						<strong>Skills:</strong>&nbsp;
-						{workSkills}
+					<Text s format className='c-work-info__row'>
+						<span className='c-work-info__title'>Skills</span>
+						<span className='c-work-info__desc'>{workSkills}</span>
 					</Text>
 				</li>
 				<ShowIf noAnimation thisValue={forDev} thatValue={true}>
 					<li>
-						<Text s format>
-							<strong>Tools:</strong>&nbsp;
-							{workTools}
+						<Text s format className='c-work-info__row'>
+							<span className='c-work-info__title'>Tools</span>
+							<span className='c-work-info__desc'>{workTools}</span>
 						</Text>
 					</li>
 				</ShowIf>
 			</ul>
+
+			{/* <table>
+  <tbody>
+    <tr>
+      <td>Duration</td>
+      <td>{workDuration}</td>
+    </tr>
+	<tr>
+      <td>Skills</td>
+      <td>{workSkills}</td>
+    </tr>
+	<ShowIf noAnimation thisValue={forDev} thatValue={true}>
+	<tr>
+      <td>Tools</td>
+      <td>{workTools}</td>
+    </tr>
+	</ShowIf>
+	</tbody>
+</table> */}
 		</ElementReveal>
 	);
 };
@@ -576,5 +596,13 @@ export const PunGen = props => {
 		<ElementReveal>
 			<Paragraph className='c-pun'>{pun}</Paragraph>
 		</ElementReveal>
+	);
+};
+
+export const ZigZag = props => {
+	return (
+		<div {...props} className='c-zigzag'>
+			<div className='c-zigzag__content'>{props.children}</div>
+		</div>
 	);
 };

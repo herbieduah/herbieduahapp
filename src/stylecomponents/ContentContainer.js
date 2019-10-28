@@ -406,10 +406,22 @@ export const ContentContainer = styled.section`
 			padding: 0;
 			display: flex;
 			width: 100%;
+		}			
+	}
+
+	.c-zigzag {
+		${marginTopLarge}
+		display:flex;
+		flex-direction: column;
+		&:nth-of-type(odd){ 
+			.c-zigzag__content {
+				margin-left: auto;
+			}
 		}
-		
-		
-				
+		&__content {
+			max-width: 740px;
+		}
+			/* ${paddingLRSm} */		
 	}
 	.react-tabs__tab-list {
 		max-width: 500px;

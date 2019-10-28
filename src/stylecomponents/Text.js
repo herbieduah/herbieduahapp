@@ -209,7 +209,7 @@ const MenuLink = styled(NavLink)`
 		hyphens: none;
 	}
 	&:focus {
-		transform: scale(.97);
+		transform: scale(.94);
 	}
 	&:hover
 	 {
