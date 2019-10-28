@@ -171,6 +171,22 @@ export const Paragraph = props => {
 	);
 };
 
+export const Emphasis = props => {
+	const className = props.className || "";
+	return (
+		<Fragment>
+			<ElementReveal>
+				<Text
+					l
+					secondary
+					className={`${className} marginBottomMed marginTopMed paddingLRSm`}>
+					{props.children}
+				</Text>
+			</ElementReveal>
+		</Fragment>
+	);
+};
+
 export const Small = props => {
 	const className = props.className || "";
 	return (

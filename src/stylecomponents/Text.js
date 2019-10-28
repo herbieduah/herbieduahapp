@@ -52,8 +52,8 @@ const baseStyle = css`
 		if (props.xs) return "0.8em";
 		if (props.s) return ".9em";
 		if (props.m) return "1em";
-		if (props.l) return "1.35em";
-		if (props.large) return "1.35em";
+		if (props.l) return "1.30em";
+		if (props.large) return "1.30em";
 		if (props.xl) return "1.65em";
 		if (props.xxl) return "2.4em";
 		return "1em";
