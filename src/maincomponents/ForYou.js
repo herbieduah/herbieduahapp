@@ -72,7 +72,7 @@ export const ForSomeone = props => {
 			/>
 			<JobApplication
 				jobID='vrbo'
-				job='UX Developer'
+				job='UX Developer/Design Technologist'
 				city='Austin'
 				topping='partner with the engineering teams to deliver great experiences and patterns for Vrbo travelers and suppliers.'
 				forYou={forYou}

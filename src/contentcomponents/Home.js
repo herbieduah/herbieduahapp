@@ -7,7 +7,7 @@ import {
 	HeadingTwo,
 	// HeadingThree,
 	Image,
-
+	Emphasis,
 	// Link,
 	ContentCategory,
 	// Figure,
@@ -97,12 +97,17 @@ const HomePage = ({ contentProps }) => {
 						alt='A picture of me smiling infront of green plants '
 					/>
 					{/* <HeadingTwo>About this web app</HeadingTwo> */}
-					<Paragraph>
+					{/* <Paragraph>
 						I'm very passionate when it comes to creating User Interfaces/User
 						Experiences. My goal for this project was to challenge myself and
 						create a very innovative UI/UX while showing off my work and
 						skillset.
-					</Paragraph>
+					</Paragraph> */}
+					<Emphasis>
+						This project was created to help me learn and challenge myself to
+						create a very innovative User Interface while showing off my work
+						and skillset.
+					</Emphasis>
 					{/* <Paragraph>
 						During development, I realized my website was becoming more of an
 						app. The compelling idea of creating my very own app was the main
