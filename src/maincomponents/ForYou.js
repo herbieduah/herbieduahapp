@@ -133,7 +133,7 @@ export const forYouHelper = forSomebody => {
 			person = " LinkedIn Connect";
 			return person;
 		case "vrbo":
-			person = " Expedia Employer/Employee";
+			person = " Vrbo Employer/Employee";
 			return person;
 		// case 'Mangoes':
 		// case 'Papayas':
