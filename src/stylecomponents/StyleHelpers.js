@@ -356,6 +356,12 @@ export const appMarginsAndPaddings = `
 .pos-rel {
 	position: relative;
 }
+.text-center {
+	text-align: center;
+}
+.justify-center {
+	justify-content: center;
+}
 .letter-space-1 {
 	letter-spacing: 1px;
 }

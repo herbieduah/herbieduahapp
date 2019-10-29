@@ -39,7 +39,7 @@ export const ContentMenu = () => {
 				</div>
 			</ElementReveal>
 
-			<div className='animatecss-tamer'>
+			<div className='menu__accessibility'>
 				<TransitionGroup>
 					{!isShowingMore ? (
 						<CSSTransition timeout={revealSecs} classNames={transitionClasses}>

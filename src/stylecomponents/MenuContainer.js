@@ -102,6 +102,11 @@ const MenuContainer = styled.aside`
 	}
 
 	.menu {
+		&__accessibility {
+			width: 100%;
+			position: relative;
+			${props => (props.isShowingMore ? `height: 10%;` : `height: 100%;`)};
+		}
 		&__less,&__nav {
 			padding-top: ${props => (props.isPortrait ? `0` : `${navBarSize}`)};
 			${props => (props.isPortrait ? `` : paddingLRSm)};

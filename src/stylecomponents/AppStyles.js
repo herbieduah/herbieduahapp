@@ -47,10 +47,14 @@ export const HerbieDuahApp = styled.main`
 		${absoluteOverlay};
 		background-color: ${bgColorOverlay};
 		pointer-events: none;
+		
 	}
-	button,li,a,span {
+	button,li, span, a{
 		&:focus{
-			outline: 0 !important;
+			outline: none;
+			/* outline-width: 2px;
+   			outline-style: solid;
+    		outline-color: ${colorSlightOpacity}; */
 		}
 	}
 	

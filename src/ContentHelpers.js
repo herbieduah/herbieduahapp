@@ -79,7 +79,7 @@ export const ContentShow = props => {
 								noAbsolute
 								thisValue={fullScreen && !minimalMode}
 								thatValue={true}>
-								<Instructions className='marginTopLarge'>
+								<Instructions className='marginTopLarge justify-center'>
 									scroll to bottom for menu.
 								</Instructions>
 							</ShowIf>
@@ -156,6 +156,7 @@ export const ContentCategory = props => {
 export const Paragraph = props => {
 	const className = props.className || "";
 	const lessClass = props.less ? "less__main-text " : "marginBottomMed";
+	const center = props.center ? "text-center" : "";
 	return (
 		<Fragment>
 			<ElementReveal>
@@ -163,7 +164,7 @@ export const Paragraph = props => {
 					m={!props.less}
 					l={props.less}
 					secondary={props.less || props.secondary}
-					className={`${className} ${lessClass} paddingLRSm`}>
+					className={`${className} ${lessClass} ${center} paddingLRSm`}>
 					{props.children}
 				</Text>
 			</ElementReveal>
@@ -173,13 +174,15 @@ export const Paragraph = props => {
 
 export const Emphasis = props => {
 	const className = props.className || "";
+	const center = props.center ? "text-center" : "";
 	return (
 		<Fragment>
 			<ElementReveal>
 				<Text
 					l
 					secondary
-					className={`${className} marginBottomMed marginTopMed paddingLRSm`}>
+					center
+					className={`${className} ${center} marginBottomMed marginTopMed paddingLRSm`}>
 					{props.children}
 				</Text>
 			</ElementReveal>
@@ -498,45 +501,26 @@ export const WorkInfo = props => {
 		<ElementReveal className='container'>
 			<ul className='c-work-info marginBottomXLarge'>
 				<li>
-					<Text s format className='c-work-info__row'>
-						<span className='c-work-info__title'>Duration</span>
-						<span className='c-work-info__desc'>{workDuration}</span>
+					<Text s format>
+						<strong>Duration:</strong>&nbsp;
+						{workDuration}
 					</Text>
 				</li>
 				<li>
-					<Text s format className='c-work-info__row'>
-						<span className='c-work-info__title'>Skills</span>
-						<span className='c-work-info__desc'>{workSkills}</span>
+					<Text s format>
+						<strong>Skills:</strong>&nbsp;
+						{workSkills}
 					</Text>
 				</li>
 				<ShowIf noAnimation thisValue={forDev} thatValue={true}>
 					<li>
-						<Text s format className='c-work-info__row'>
-							<span className='c-work-info__title'>Tools</span>
-							<span className='c-work-info__desc'>{workTools}</span>
+						<Text s format>
+							<strong>Tools:</strong>&nbsp;
+							{workTools}
 						</Text>
 					</li>
 				</ShowIf>
 			</ul>
-
-			{/* <table>
-  <tbody>
-    <tr>
-      <td>Duration</td>
-      <td>{workDuration}</td>
-    </tr>
-	<tr>
-      <td>Skills</td>
-      <td>{workSkills}</td>
-    </tr>
-	<ShowIf noAnimation thisValue={forDev} thatValue={true}>
-	<tr>
-      <td>Tools</td>
-      <td>{workTools}</td>
-    </tr>
-	</ShowIf>
-	</tbody>
-</table> */}
 		</ElementReveal>
 	);
 };

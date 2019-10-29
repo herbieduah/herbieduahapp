@@ -69,7 +69,7 @@ const PeoplePage = () => {
 			</ContentShow>
 			<ContentShow containerLarge more>
 				<Header className='container'>{header}</Header>
-				<Paragraph className='container'>
+				<Paragraph className='container' center>
 					Here are some of my favorite photos I've taken of people.
 				</Paragraph>
 				<ul className='c-photos'>

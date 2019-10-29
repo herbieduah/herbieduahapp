@@ -26,7 +26,8 @@ import {
 	crossOut,
 	marginBottomLarge,
 	marginTopLarge,
-	marginTopMed
+	marginTopMed,
+	marginBottomSm
 } from "./StyleHelpers";
 import {
 	navBarBorder,
@@ -157,7 +158,7 @@ export const ContentContainer = styled.section`
 		${props => (props.fullScreen ? `margin: 0 auto` : ``)};
 	}
 	.container-large {
-		max-width: 1200px;
+		max-width: 1480px;
 		width: 100%;
 		${props => (props.fullScreen ? `margin: 0 auto` : ``)};
 	}
@@ -355,10 +356,14 @@ export const ContentContainer = styled.section`
 		}
 	}
 	.c-work-info {
-		${marginLRSm}
-		${marginBottomMed}
+		margin: 0 auto;
+		${marginBottomSm}
 		padding-top: .5rem;
 		padding: 0.5rem 0;
+		display: flex;
+		flex-direction:column;
+		justify-content: center;
+	 	width: 100%;
 		strong {
 			display: contents;
 		}
@@ -368,16 +373,31 @@ export const ContentContainer = styled.section`
 			padding: 0;
 		}
 		li {
+			${paddingLRSm}
 			list-style-type: none;
-			margin: 0;
+			padding-bottom: .75rem;
+			${mobile} {
+				margin: 0;
+				justify-content: left;
+			}
+			display: flex;
+			justify-content: center;
+			margin: 0 auto;
+			text-align: center;
+			${marginLRSm} 
+			&:last-child {
+				border-bottom: ${borderThin};
+			}
+			/* ${paddingLRSm} */
 		}
 		ul {
 			list-style-type: none;
 			margin: 0;
 			padding: 0;
 		}
-		border-top: ${borderThin};
-		border-bottom: ${borderThin};
+		
+		/* border-top: ${borderThin};  */
+		
 	}
 	.c-pun {
 		height: 2.5rem;

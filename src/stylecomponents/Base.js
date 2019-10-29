@@ -124,24 +124,13 @@ export const NavBarMiniContainer = styled.div`
 	border-bottom: ${props =>
 		props.modalVisible || props.navBarComplement ? navBarBorder : ``};
 	align-items: center;
- 	width: ${props => props.appHeight}px;
+ 	/* width: ${props => props.appHeight}px; */
 	justify-content: space-between;
 	${userSelectNone}
-	button {
-		border-bottom: 0;  
+	button { 
 		${mainTransition}
 		padding: 0;
-		color: ${props =>
-			props.navBarComplement
-				? navBarButtonComplementaryText
-				: navBarButtonColor};
-		&:hover,&:focus {
-			border-bottom: 0;
-			color:  ${props =>
-				props.navBarComplement
-					? navBarButtonComplementaryHoverText
-					: navBarHoverFocus};
-		}
+		
 		a {
 			cursor: pointer;
 			color: ${props =>
@@ -172,6 +161,17 @@ export const NavBarMiniContainer = styled.div`
 			}
 			.navbar__home-text {
 				color: ${navBarButtonActive};
+			}
+		}
+		&__logo-link {
+				transform: scale(1);						
+			&:hover {
+				svg {
+					opacity: 1;
+				}
+			}	
+			&:focus {
+				transform: scale(.9);
 			}
 		}
 
@@ -248,19 +248,8 @@ export const NavBarContainer = styled.div`
 		padding: 0 ${navBarSize};
 		height: 100%;
 		${mainTransition}
-		color: ${props =>
-			props.navBarComplement
-				? navBarButtonComplementaryText
-				: navBarButtonColor};
-		&:hover,&:focus {
-			border-bottom: 0;
-			transform: ${navBarHoverFocusAction};
-			color:  ${props =>
-				props.navBarComplement
-					? navBarButtonComplementaryHoverText
-					: navBarHoverFocus};
-		}
-		a {
+	
+		a {										
 			text-decoration: none;
 			color: ${props =>
 				props.navBarComplement
@@ -309,11 +298,15 @@ export const NavBarContainer = styled.div`
 			}	
 		}
 		&__logo-link {
-			&:hover,&:focus {
+				transform: scale(1);						
+			&:hover {
 				svg {
 					opacity: 1;
 				}
 			}	
+			&:focus {
+				transform: scale(.9);
+			}
 		}
 
 		&__logo-menu{

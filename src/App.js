@@ -115,7 +115,7 @@ export const App = () => {
 				showFSMobileHorizontal={showFSMobileHorizontal}
 				accessible={accessible}
 				dragging={dragging}>
-				<AppStartUp />
+				{/* <AppStartUp /> */}
 				<ShowIf noAnimation thisValue={currentTheme} thatValue={"matrix"}>
 					<Matrix fullscreen={true} isPortrait={isPortrait(ww, wh)} />
 				</ShowIf>
