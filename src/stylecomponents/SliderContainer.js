@@ -177,6 +177,7 @@ export const SliderController = styled.div`
 			left: 0;
 			right: 0;
 			margin: 0;
+			transform: scale(1);
 			border-radius: 50%;
 			border: ${sliderCircleBorder};
 			display: flex;
@@ -187,11 +188,13 @@ export const SliderController = styled.div`
 			background: ${props => (props.dragging ? sliderCircleActive : sliderCircleBg)};
 			position: relative;
 			/*  */
-			&:hover,
-			&:focus {
+			&:hover{
 				transform: scale(0.9);
 				transform: ${props => (props.dragging ? "scale(0.6)" : "scale(.95)")};
 				background: ${sliderCircleHoverFocus};
+			}
+			&:focus {
+				transform: scale(0.85);
 			}
 			transform: ${props => (props.dragging ? "scale(0.6)" : "scale(1)")};
 			${mobile} {

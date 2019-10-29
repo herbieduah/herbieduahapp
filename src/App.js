@@ -50,7 +50,8 @@ export const App = () => {
 		setWhom,
 		setForYou,
 		minimalMode,
-		accessible
+		accessible,
+		setDownloaded
 	} = useContext(globalState);
 	const currentThemeObject = getCurrentTheme(defaultAppTheme, currentTheme);
 	const { width: ww, height: wh } = useWindowResize();
@@ -69,6 +70,9 @@ export const App = () => {
 	const whoIsOnMyPage = who => {
 		setWhom(who);
 	};
+	const appDownloaded = () => {
+		setDownloaded(true);
+	};
 	const whoIsThisFor = forWho => {
 		setForYou(forWho);
 	};
@@ -86,6 +90,9 @@ export const App = () => {
 		}
 		if (values.for) {
 			whoIsThisFor(values.for.toLowerCase());
+		}
+		if (values.downloaded) {
+			appDownloaded();
 		}
 		downloadAllTheThings();
 

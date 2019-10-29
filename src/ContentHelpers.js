@@ -79,7 +79,7 @@ export const ContentShow = props => {
 								noAbsolute
 								thisValue={fullScreen && !minimalMode}
 								thatValue={true}>
-								<Instructions className='marginTopLarge'>
+								<Instructions className='marginTopLarge justify-center'>
 									scroll to bottom for menu.
 								</Instructions>
 							</ShowIf>
@@ -108,7 +108,7 @@ export const Header = props => {
 				</Text>
 			</ShowIf>
 			<ShowIf noAnimation thisValue={!props.less} thatValue={true}>
-				<header className={`content__header ${className}`}>
+				<header className={`content__header container ${className}`}>
 					<HeadingOne>{props.children}</HeadingOne>
 				</header>
 			</ShowIf>
@@ -156,6 +156,7 @@ export const ContentCategory = props => {
 export const Paragraph = props => {
 	const className = props.className || "";
 	const lessClass = props.less ? "less__main-text " : "marginBottomMed";
+	const center = props.center ? "text-center" : "";
 	return (
 		<Fragment>
 			<ElementReveal>
@@ -163,7 +164,7 @@ export const Paragraph = props => {
 					m={!props.less}
 					l={props.less}
 					secondary={props.less || props.secondary}
-					className={`${className} ${lessClass} paddingLRSm`}>
+					className={`${className} ${lessClass} ${center} paddingLRSm`}>
 					{props.children}
 				</Text>
 			</ElementReveal>
@@ -173,13 +174,15 @@ export const Paragraph = props => {
 
 export const Emphasis = props => {
 	const className = props.className || "";
+	const center = props.center ? "text-center" : "";
 	return (
 		<Fragment>
 			<ElementReveal>
 				<Text
 					l
 					secondary
-					className={`${className} marginBottomMed marginTopMed paddingLRSm`}>
+					center
+					className={`${className} ${center} marginBottomMed marginTopMed paddingLRSm`}>
 					{props.children}
 				</Text>
 			</ElementReveal>
@@ -212,6 +215,7 @@ export const HeadingOne = props => {
 			<Text
 				h1
 				xl
+				center
 				semibold
 				className={`${className} marginBottomMed marginTopXLarge paddingLRSm`}>
 				{props.children}
@@ -494,7 +498,7 @@ export const WorkInfo = props => {
 	const { workDuration, workSkills, workTools } = props.workinfo;
 	const { forDev } = useContext(globalState);
 	return (
-		<ElementReveal>
+		<ElementReveal className='container'>
 			<ul className='c-work-info marginBottomXLarge'>
 				<li>
 					<Text s format>
@@ -576,5 +580,13 @@ export const PunGen = props => {
 		<ElementReveal>
 			<Paragraph className='c-pun'>{pun}</Paragraph>
 		</ElementReveal>
+	);
+};
+
+export const ZigZag = props => {
+	return (
+		<div {...props} className='c-zigzag'>
+			<div className='c-zigzag__content'>{props.children}</div>
+		</div>
 	);
 };

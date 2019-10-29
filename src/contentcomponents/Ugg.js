@@ -18,7 +18,9 @@ import {
 	FiGif,
 	Header,
 	Figure,
-	ContentShow
+	ContentShow,
+	HeadingThree,
+	ZigZag
 } from "../ContentHelpers";
 import Emoji from "a11y-react-emoji";
 
@@ -51,90 +53,101 @@ const UggPage = () => {
 					/>
 				</div>
 			</ContentShow>
-			<ContentShow more>
+			<ContentShow containerLarge more>
 				<Header>{header}</Header>
 				<WorkInfo workinfo={workinfo} />
-				<FiGif url={uggslidesemail}>
-					<Figcaption>
-						{" "}
-						UGG email I developed with an interactive slider.
-					</Figcaption>
-				</FiGif>
-				<Paragraph>
-					I was a UI Developer for Deckers Brands,a footwear designer and
-					distributor for two years.
-				</Paragraph>
-				<HeadingTwo>Interactive Emails</HeadingTwo>
-				<Paragraph>
-					Creating new email templates that work on most email clients usually
-					took 30-40 hrs to develop and test. I demoed an email framework called
-					MJML to team. Once learned, you could build an email template before
-					lunch.
-				</Paragraph>
-				<Paragraph>
-					It also had some unique features like the ability to add an accordion,
-					carousal, or text on an image. These features are somewhat easy to
-					develop for web development but overlay complex on email on
-					development.
-				</Paragraph>
-				<Paragraph>
-					Using MJML, I coordinated with our design and marketing team to
-					develop a couple of UGG emails. Some are now featured&nbsp;
-					<Link href='https://reallygoodemails.com/search/emails/ugg%20/'>
-						reallygoodemails.com
-					</Link>{" "}
-					and the <Link href='https://mjml.io/templates'> MJML framework</Link>{" "}
-					site.
-				</Paragraph>
-				<FiGif url={uggslidesemail}>
-					<Figcaption>
-						The product changed colors on hover and lead right to exact the
-						product with the color when clicked.
-					</Figcaption>
-				</FiGif>
 
-				<HeadingTwo>Landing Pages</HeadingTwo>
-				<Paragraph>
-					Throughout my time on the <Link href='https://www.ugg.com/'>UGG</Link>
-					team, I got the chance to develop some unique landing pages.
-				</Paragraph>
-				<FiGif url={ugggiftguide}>
-					<Figcaption>
-						UGG Holiday Gift Guide page with sparkles{" "}
-						<Emoji className='emoji' symbol='✨' label='sparkles' />
-					</Figcaption>
-				</FiGif>
-				<FiGif url={uggPhillipLim}>
-					<Figcaption>
-						Landing page for fashion designer Phillip Lim with elements fading
-						into view on scroll
-					</Figcaption>
-				</FiGif>
-				{/* <FiGif url={Philip}>
+				<ZigZag>
+					<Paragraph>
+						I was a UI Developer for the Ugg Brand Team for two years.
+					</Paragraph>
+					{/* <FiGif url={uggslidesemail}>
+						<Figcaption>
+							{" "}
+							Ugg email I developed with an interactive slider.
+						</Figcaption>
+					</FiGif> */}
+				</ZigZag>
+				<ZigZag>
+					<HeadingTwo>Interactive Emails</HeadingTwo>
+					<Paragraph>
+						Creating new email templates that work on most email clients usually
+						took 30-40 hrs to develop and test. I demoed an email framework
+						called MJML to team. Once learned, you could build an email template
+						before lunch.
+					</Paragraph>
+					<Paragraph>
+						It also had some unique features like the ability to add an
+						accordion, carousal, or text on an image. These features are
+						somewhat easy to develop for web development but overlay complex on
+						email on development.
+					</Paragraph>
+					<Paragraph>
+						Using MJML, I coordinated with our design and marketing team to
+						develop a couple of UGG emails. Some are now featured&nbsp;
+						<Link href='https://reallygoodemails.com/search/emails/ugg%20/'>
+							reallygoodemails.com
+						</Link>{" "}
+						and the{" "}
+						<Link href='https://mjml.io/templates'> MJML framework</Link> site.
+					</Paragraph>
+					<FiGif url={uggslidesemail}>
+						<Figcaption>
+							The product changed colors on hover and lead right to exact the
+							product with the color when clicked.
+						</Figcaption>
+					</FiGif>
+				</ZigZag>
+				<ZigZag>
+					<HeadingTwo>Landing Pages</HeadingTwo>
+					<Paragraph>
+						Throughout my time on the{" "}
+						<Link href='https://www.ugg.com/'>UGG</Link>
+						team, I got the chance to develop some unique landing pages.
+					</Paragraph>
+
+					<HeadingThree>UGG Holiday Gift Guide</HeadingThree>
+					<FiGif url={ugggiftguide}>
+						<Figcaption>
+							UGG Holiday Gift Guide page with sparkles{" "}
+							<Emoji className='emoji' symbol='✨' label='sparkles' />
+						</Figcaption>
+					</FiGif>
+					<HeadingThree>Ugg X Phillip Lim</HeadingThree>
+					<FiGif url={uggPhillipLim}>
+						<Figcaption>
+							Landing page for fashion designer Phillip Lim with elements fading
+							into view on scroll
+						</Figcaption>
+					</FiGif>
+					{/* <FiGif url={Philip}>
 					<Figcaption>
 						Landing page for fashion designer Phillip Lim on mobile
 					</Figcaption>
 				</FiGif> */}
-				<FiGif url={uggJeremyScottDesktop}>
-					<Figcaption>
-						Stylish landing page for fashion designer Jeremy Scott featuring
-						Rita Ora and Lil Yatchy
-					</Figcaption>
-				</FiGif>
-				{/* <FiGif url={JeremyScottMobile}>
+					<HeadingThree>Ugg X Jeremy Scott</HeadingThree>
+					<FiGif url={uggJeremyScottDesktop}>
+						<Figcaption>
+							Stylish landing page for fashion designer Jeremy Scott featuring
+							Rita Ora and Lil Yatchy
+						</Figcaption>
+					</FiGif>
+					{/* <FiGif url={JeremyScottMobile}>
 					<Figcaption>Landing page for Jeremy Scott on mobile</Figcaption>
 				</FiGif> */}
-
-				<HeadingTwo>Unsolicited Ugg Homepage Redesign</HeadingTwo>
-				<Paragraph>I designed my version of Ugg homepage</Paragraph>
-				<Figure
-					mockup
-					src={uggUnsolicitedUggDesktop}
-					alt='A mock up of the UGG Homepage desktop'
-					width='2000'
-					height='3203'>
-					<Figcaption>Desktop version of the Ugg homepage</Figcaption>
-				</Figure>
+				</ZigZag>
+				<ZigZag>
+					<HeadingTwo>Ugg Homepage Redesign (Unsolicited)</HeadingTwo>
+					<Paragraph>I designed my version of Ugg homepage</Paragraph>
+					<Figure
+						mockup
+						src={uggUnsolicitedUggDesktop}
+						alt='A mock up of the UGG Homepage desktop'
+						width='2000'
+						height='3203'>
+						<Figcaption>Desktop version of the Ugg homepage</Figcaption>
+					</Figure>
+				</ZigZag>
 				{/* <HeadingTwo>Trudy Gillenwater</HeadingTwo>
 				<Paragraph>
 					I got a 35 dollar parking ticket because I forgot to move my vehicle

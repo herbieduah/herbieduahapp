@@ -165,7 +165,10 @@ export function getCurrentTheme(theDefaultTheme, theTheme) {
 	const found = themes.find(function(element) {
 		return element.name === theTheme;
 	});
-	const merged = Object.assign(theDefaultTheme, found.properties);
+	const merged = Object.assign(
+		theDefaultTheme,
+		found.properties || theDefaultTheme
+	);
 	localStorage.setItem("currentThemeObject", JSON.stringify(merged));
 	const currentThemeObject = JSON.parse(
 		localStorage.getItem("currentThemeObject")

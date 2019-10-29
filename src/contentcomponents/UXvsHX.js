@@ -13,8 +13,7 @@ const UXvsHXPage = () => {
 			<ContentShow less>
 				<Header less>{header}</Header>
 				<Paragraph less>
-					There is an app for everything, in the future, I believe there is
-					going to be an app for everyone.
+					In the future, I believe there is going to be an app for everyone.
 				</Paragraph>
 				<div className='less__container'>
 					{/* <Paragraph>

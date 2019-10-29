@@ -103,9 +103,9 @@ const HomePage = ({ contentProps }) => {
 						create a very innovative UI/UX while showing off my work and
 						skillset.
 					</Paragraph> */}
-					<Emphasis>
+					<Emphasis center>
 						This project was created to help me learn and challenge myself to
-						create a very innovative User Interface while showing off my work
+						craft an innovative human-centered design while showing off my work
 						and skillset.
 					</Emphasis>
 					{/* <Paragraph>

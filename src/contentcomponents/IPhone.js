@@ -63,7 +63,7 @@ const iPhonePage = () => {
 			</ContentShow>
 			<ContentShow containerLarge more>
 				<Header className='container'>{header}</Header>
-				<Paragraph className='container'>
+				<Paragraph className='container' center>
 					Here are some of my favorite photos I've shot on my iPhone.
 				</Paragraph>
 				<ul className='c-photos'>

@@ -43,7 +43,24 @@ const videoLocation = "cloud-gif";
 // const spacingBottomMed = "marginBottomMed";
 // const spacingTopBottom = "marginTopLarge marginBottomLarge";
 // const noSpacingTopBottom = "noMargin";
-
+<table>
+	<tbody>
+		<tr>
+			<td>Duration</td>
+			<td>{workDuration}</td>
+		</tr>
+		<tr>
+			<td>Skills</td>
+			<td>{workSkills}</td>
+		</tr>
+		<ShowIf noAnimation thisValue={forDev} thatValue={true}>
+			<tr>
+				<td>Tools</td>
+				<td>{workTools}</td>
+			</tr>
+		</ShowIf>
+	</tbody>
+</table>;
 export const ContentShow = props => {
 	const {
 		contentWidth: cw,

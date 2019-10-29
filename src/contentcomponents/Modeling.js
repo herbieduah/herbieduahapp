@@ -69,7 +69,7 @@ const Modeling = () => {
 			</ContentShow>
 			<ContentShow containerLarge more>
 				<Header className='container'>{header}</Header>
-				<Paragraph className='container'>
+				<Paragraph className='container' center>
 					Here are some of my favorite photos of me taken by some aweomse
 					photographers.
 				</Paragraph>

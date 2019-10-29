@@ -23,8 +23,8 @@
 			"type": "image/png"
 		}
 	],
-	"start_url": ".",
-	"display": "minimal-ui",
+	"start_url": "/?downloaded=true",
+	"display": "standalone",
 	"orientation": "portrait",
 	"theme_color": "#000000",
 	"background_color": "#ffffff",
