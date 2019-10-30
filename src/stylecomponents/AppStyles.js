@@ -63,6 +63,10 @@ export const HerbieDuahApp = styled.main`
 			opacity : ${props => (props.dragging ? "0" : "1")};
 			${props => (props.showFSMobileHorizontal ? "display:none;" : "")};
 	}
+	.accessibility {
+		${mainTransition}
+		opacity : ${props => (props.dragging ? "0" : "1")};
+	}
 	section.hdapp__menu aside{
 		${mobile} {
 			padding-right: ${props => (props.dragging ? "0 !important;" : "")};

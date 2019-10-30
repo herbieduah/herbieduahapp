@@ -16,9 +16,9 @@ import {
 	// Small
 } from "../ContentHelpers";
 
-const header = "Experience";
+const header = "Resume";
 
-const Resume = ({ contentProps }) => {
+const Resume = () => {
 	return (
 		<Fragment>
 			<ContentShow less>

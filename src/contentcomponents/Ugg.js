@@ -79,7 +79,7 @@ const UggPage = () => {
 					<Paragraph>
 						It also had some unique features like the ability to add an
 						accordion, carousal, or text on an image. These features are
-						somewhat easy to develop for web development but overlay complex on
+						somewhat easy to develop for web development but overly complex on
 						email on development.
 					</Paragraph>
 					<Paragraph>

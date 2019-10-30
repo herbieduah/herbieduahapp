@@ -110,8 +110,8 @@ const DiscountTirePage = () => (
 				<Figure src={dtReceipt}>
 					<Figcaption className='marginBottomLarge'>
 						Discount Tire (America's Tire in California) is the largest retailer
-						ires and wheels in the world with 1000+ stores nationwide and I am
-						currently on every receipt holder and that's no joke
+						tires and wheels in the world with 1000+ stores nationwide and I am
+						currently on every receipt holder.
 					</Figcaption>
 				</Figure>
 			</ZigZag>

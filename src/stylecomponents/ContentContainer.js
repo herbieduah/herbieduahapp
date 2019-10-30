@@ -158,7 +158,7 @@ export const ContentContainer = styled.section`
 		${props => (props.fullScreen ? `margin: 0 auto` : ``)};
 	}
 	.container-large {
-		max-width: 1480px;
+		max-width: 1280px;
 		width: 100%;
 		${props => (props.fullScreen ? `margin: 0 auto` : ``)};
 	}
@@ -269,11 +269,13 @@ export const ContentContainer = styled.section`
 			margin: 0;
 			padding: 0;
 		}
+
 		height: 30vh;
 		.react-tabs__tab-list {
 		max-width: 500px;
 		margin: 0 auto;
 		margin-bottom: 1rem;
+		${marginTopMed}
 		width: 100%;
 		}
 		.subMenu {
@@ -430,7 +432,8 @@ export const ContentContainer = styled.section`
 	}
 
 	.c-zigzag {
-		${marginTopLarge}
+		${marginTopMed}
+		${marginBottomMed}
 		display:flex;
 		flex-direction: column;
 		&:nth-of-type(odd){ 
