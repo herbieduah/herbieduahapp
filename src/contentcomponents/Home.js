@@ -15,7 +15,8 @@ import {
 	// Gif,
 	Header,
 	// Flex,
-	ContentShow
+	ContentShow,
+	ZigZag
 } from "../ContentHelpers";
 // import { ShowIf } from "../ComponentHelpers";
 // import { Image as CloudImage, Video } from "cloudinary-react";
@@ -46,7 +47,7 @@ const header = "HerbieDuah.app";
 
 // const HomePage = ({ contentProps }) => {
 const HomePage = ({ contentProps }) => {
-	const { whom, forYou, fullScreen, minimalMode } = contentProps;
+	const { whom, forYou } = contentProps;
 	// const opts = {
 	// 	height: "100%",
 	// 	width: "100%",
@@ -74,16 +75,18 @@ const HomePage = ({ contentProps }) => {
 					of my creative and original ideas to life. */}
 				</Paragraph>
 			</ContentShow>
-			<ContentShow more>
-				<div className='container'>
-					<Header>{header}</Header>
+			<ContentShow containerLarge more>
+				<Header>{header}</Header>
+				<ZigZag>
 					<ForSomeone whom={whom} forYou={forYou} />
+				</ZigZag>
+				<ZigZag>
 					<HeadingTwo>
 						Hello<span className='text-cap'>{forYouHelper(forYou)}</span>
 					</HeadingTwo>
+
 					<Paragraph>
 						I am a Web Developer/Designer with over five years of experience.
-						I'm currently living in Phoenix, Arizona.
 					</Paragraph>
 
 					{/* <Paragraph>
@@ -96,25 +99,28 @@ const HomePage = ({ contentProps }) => {
 						className='paddingLRSm'
 						alt='A picture of me smiling infront of green plants '
 					/>
-					{/* <HeadingTwo>About this web app</HeadingTwo> */}
-					{/* <Paragraph>
+				</ZigZag>
+				{/* <HeadingTwo>About this web app</HeadingTwo> */}
+				{/* <Paragraph>
 						I'm very passionate when it comes to creating User Interfaces/User
 						Experiences. My goal for this project was to challenge myself and
 						create a very innovative UI/UX while showing off my work and
 						skillset.
 					</Paragraph> */}
+				<ZigZag>
 					<Emphasis center>
-						This project was created to help me learn and challenge myself to
-						craft an innovative human-centered design while showing off my work
-						and skillset.
+						This project was created to help me learn <i>and</i> challenge
+						myself to craft an innovative human-centered design <i>while</i>{" "}
+						showing off my work and skillset.
 					</Emphasis>
-					{/* <Paragraph>
+				</ZigZag>
+				{/* <Paragraph>
 						During development, I realized my website was becoming more of an
 						app. The compelling idea of creating my very own app was the main
 						inspiration for this project.
 					</Paragraph> */}
 
-					{/* <HeadingTwo>An app for everyone</HeadingTwo>
+				{/* <HeadingTwo>An app for everyone</HeadingTwo>
 					<Paragraph>
 						Nowadays, there is an app for everything. In the future, I believe
 						there is going to be an app for everyone.
@@ -131,7 +137,7 @@ const HomePage = ({ contentProps }) => {
 						to design and engineer my portfolio as a web app.
 					</Paragraph> */}
 
-					{/* <HeadingTwo>A little bit about me and this web app</HeadingTwo>
+				{/* <HeadingTwo>A little bit about me and this web app</HeadingTwo>
 					<HeadingThree>Three facts about me</HeadingThree>
 					<UL>
 						<LI>
@@ -155,7 +161,7 @@ const HomePage = ({ contentProps }) => {
 					</Paragraph>
 					<HeadingThree>The solution</HeadingThree>
 					<Paragraph>This portfolio.</Paragraph> */}
-					{/* <HeadingTwo>An app for everyone</HeadingTwo>
+				{/* <HeadingTwo>An app for everyone</HeadingTwo>
 					<Paragraph>
 						In the future, I believe everyone is going to have their own app. I
 						imagine it will be a mixture between the data and features from all
@@ -165,7 +171,7 @@ const HomePage = ({ contentProps }) => {
 						having their own app was the main inspiration for the look and feel
 						of this web app.
 					</Paragraph> */}
-					{/* <HeadingTwo>Designed and engineered for you</HeadingTwo>
+				{/* <HeadingTwo>Designed and engineered for you</HeadingTwo>
 					<Image src={picsOfMeSelfieOlympics} alt='a picture of me smiling' />
 					<Paragraph>
 						I have a passion for developing and designing user experiences for
@@ -177,14 +183,14 @@ const HomePage = ({ contentProps }) => {
 					<Paragraph>
 						I am not quite finished yet but it is almost done.
 					</Paragraph> */}
-					{/* <Paragraph>
+				{/* <Paragraph>
 						I googled "Beta software development" on Google and straight out
 						plagiarized because I have to shower and go to work soon. I really
 						wanted to share the Beta out this morning. It's Aug 21 at 6:53 AM
 						right now. Damn! I still have to steam my dress pants and dress shirt!
 						AhhHH!!
 					</Paragraph> */}
-					{/* <Paragraph>
+				{/* <Paragraph>
 						Nullam id dolor id nibh ultricies vehicula ut id elit. Curabitur
 						blandit tempus porttitor. Morbi leo risus, porta ac consectetur ac,
 						vestibulum at eros.
@@ -204,12 +210,7 @@ const HomePage = ({ contentProps }) => {
 						<Figcaption>Me fat ass getting food</Figcaption>
 					</Figure>
 					<Gif url={testVideo} /> */}
-					<ContentCategory
-						fullScreen={fullScreen}
-						minimalMode={minimalMode}
-						category='customize'
-					/>
-				</div>
+				<ContentCategory category='customize' />
 			</ContentShow>
 		</Fragment>
 	);

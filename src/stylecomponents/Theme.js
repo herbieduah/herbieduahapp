@@ -63,171 +63,143 @@ export const themes = [
 			...themeColorMaker()
 		},
 		type: "color",
-		text: "",
-		desc: ""
-	},
-	// {
-	// 	name: "Color-F7F7F8-000000",
-	// 	properties: {
-	// 		...themeColorMaker("Color-F7F7F8-000000")
-	// 	},
-	// 	type: "color",
-	// 	text: "",
-	// 	desc: ""
-	// },
-	{
-		name: "Color-000000-F7F7F8",
-		properties: {
-			...themeColorMaker("Color-000000-F7F7F8")
-		},
-		type: "color",
-		text: "",
+		text: "Brilliant White",
 		desc: ""
 	},
 	{
-		name: "Color-FFFC00-1D1F20",
+		name: "Navy Blazer",
 		properties: {
-			...themeColorMaker("Color-FFFC00-1D1F20")
+			...themeColorMaker("3B3D4B")
 		},
 		type: "color",
-		text: "",
+		text: "Navy Blazer",
 		desc: ""
 	},
 	{
-		name: "Color-1D1F20-FFFC00",
+		name: "Ash",
 		properties: {
-			...themeColorMaker("Color-1D1F20-FFFC00")
+			...themeColorMaker("A09D9C")
 		},
 		type: "color",
-		text: "",
+		text: "Ash",
 		desc: ""
 	},
 	{
-		name: "Color-F8C296-341A04",
+		name: "Lark",
 		properties: {
-			...themeColorMaker("Color-F8C296-341A04")
+			...themeColorMaker("B49C73")
 		},
 		type: "color",
-		text: "",
+		text: "Lark",
 		desc: ""
 	},
 	{
-		name: "Color-341A04-F8C296",
+		name: "Flame Scarlet",
 		properties: {
-			...themeColorMaker("Color-341A04-F8C296")
+			...themeColorMaker("D13B40")
 		},
 		type: "color",
-		text: "",
+		text: "Flame Scarlet",
 		desc: ""
 	},
 	{
-		name: "Color-FDF1E7-4A00A0",
+		name: "Saffron",
 		properties: {
-			...themeColorMaker("Color-FDF1E7-4A00A0")
+			...themeColorMaker("FFAF12")
 		},
 		type: "color",
-		text: "",
+		text: "Saffron",
 		desc: ""
 	},
 	{
-		name: "Color-4A00A0-FDF1E7",
+		name: "Classic Blue",
 		properties: {
-			...themeColorMaker("Color-4A00A0-FDF1E7")
+			...themeColorMaker("34558B")
 		},
 		type: "color",
-		text: "",
+		text: "Classic Blue",
 		desc: ""
 	},
 	{
-		name: "Color-EFF8F3-1C422B",
+		name: "Biscay Green",
 		properties: {
-			...themeColorMaker("Color-EFF8F3-1C422B")
+			...themeColorMaker("4EC5A5")
 		},
 		type: "color",
-		text: "",
+		text: "Biscay Green",
 		desc: ""
 	},
 	{
-		name: "Color-1C422B-EFF8F3",
+		name: "Chive",
 		properties: {
-			...themeColorMaker("Color-1C422B-EFF8F3")
+			...themeColorMaker("565D47")
 		},
 		type: "color",
-		text: "",
+		text: "Chive",
 		desc: ""
 	},
 	{
-		name: "Color-F7F7F8-711423",
+		name: "Faded Denim",
 		properties: {
-			...themeColorMaker("Color-F7F7F8-711423")
+			...themeColorMaker("798FA8")
 		},
 		type: "color",
-		text: "",
+		text: "Faded Denim",
 		desc: ""
 	},
 	{
-		name: "Color-711423-F7F7F8",
+		name: "Orange Peel",
 		properties: {
-			...themeColorMaker("Color-711423-F7F7F8")
+			...themeColorMaker("FD823E")
 		},
 		type: "color",
-		text: "",
+		text: "Orange Peel",
 		desc: ""
 	},
 	{
-		name: "Color-F3BAC3-430C15",
+		name: "Mosaic Blue",
 		properties: {
-			...themeColorMaker("Color-F3BAC3-430C15")
+			...themeColorMaker("117893")
 		},
 		type: "color",
-		text: "",
+		text: "Mosaic Blue",
 		desc: ""
 	},
 	{
-		name: "Color-430C15-F3BAC3",
+		name: "Sunlight",
 		properties: {
-			...themeColorMaker("Color-430C15-F3BAC3")
+			...themeColorMaker("F0DAA4")
 		},
 		type: "color",
-		text: "",
+		text: "Sunlight",
+		desc: ""
+	},
+	{
+		name: "Coral Pink",
+		properties: {
+			...themeColorMaker("EAAC9D")
+		},
+		type: "color",
+		text: "Coral Pink",
 		desc: ""
 	},
 
 	{
-		name: "Color-F9F9F9-0310EA",
+		name: "Cinnamon Stick",
 		properties: {
-			...themeColorMaker("Color-F9F9F9-0310EA")
+			...themeColorMaker("A2553A")
 		},
 		type: "color",
-		text: "",
+		text: "Cinnamon Stick",
 		desc: ""
 	},
 	{
-		name: "Color-0310EA-F9F9F9",
+		name: "Grape Compote",
 		properties: {
-			...themeColorMaker("Color-0310EA-F9F9F9")
+			...themeColorMaker("72617D")
 		},
 		type: "color",
-		text: "",
-		desc: ""
-	},
-
-	{
-		name: "Color-7DCE94-101357",
-		properties: {
-			...themeColorMaker("Color-7DCE94-101357")
-		},
-		type: "color",
-		text: "",
-		desc: ""
-	},
-	{
-		name: "Color-101357-7DCE94",
-		properties: {
-			...themeColorMaker("Color-101357-7DCE94")
-		},
-		type: "color",
-		text: "",
+		text: "Grape Compote",
 		desc: ""
 	},
 

@@ -10,7 +10,9 @@ import {
 	Figcaption,
 	ContentCategory,
 	HeadingTwo,
-	Figure
+	Figure,
+	Emphasis,
+	ZigZag
 } from "../ContentHelpers";
 
 import {
@@ -18,7 +20,8 @@ import {
 	videosofmecarribeanQueen,
 	videosofmeStandUp,
 	videosofmeoffRoadingDriving,
-	videosofmesoreLoser
+	videosofmesoreLoser,
+	videosofmemillyrockgrandcanyon
 } from "../VideoVariables";
 import {
 	picsOfMeDherbstaAndDinchman,
@@ -45,17 +48,34 @@ const AboutMePage = () => {
 					</Paragraph> */}
 				</div>
 			</ContentShow>
-			<ContentShow more>
+			<ContentShow containerLarge more>
 				<Header>{header}</Header>
-				<HeadingTwo>I was born and raised in Ghana</HeadingTwo>
-				<FiGif
-					className='paddingLRMed'
-					desc='A picture of me doing that Wakanda salute in Black Panther'
-					width='720'
-					height='900'
-					url={videosofmewakanda}>
-					<Figcaption>Not Wakanda.</Figcaption>
-				</FiGif>
+				<ZigZag>
+					<Emphasis center>I was born and raised in Ghana</Emphasis>
+					<FiGif
+						className='paddingLRMed'
+						desc='A video of me doing that Wakanda salute in Black Panther'
+						width='720'
+						height='900'
+						url={videosofmewakanda}>
+						<Figcaption>Not Wakanda.</Figcaption>
+					</FiGif>
+				</ZigZag>
+				<ZigZag>
+					<Emphasis center>I'm currently living in Phoenix, Arizona.</Emphasis>
+					<FiGif
+						className='paddingLRMed'
+						desc='A video  of me Milly rocking infront of the Grand Canyon'
+						width='720'
+						height='900'
+						url={videosofmemillyrockgrandcanyon}>
+						<Figcaption>
+							Yeahhhh I am weird, if you don't mind that and you live in Phoenix
+							too we should grab coffee sometime.
+						</Figcaption>
+					</FiGif>
+				</ZigZag>
+
 				{/* <HeadingTwo>I graduated at Northern Arizona University</HeadingTwo>
 				<Figure
 					className='paddingLRLarge'
@@ -75,28 +95,32 @@ const AboutMePage = () => {
 					height='1973'
 					src={herbiePancakes1480x1973}
 				/> */}
-				<HeadingTwo>I absolutely love puns.</HeadingTwo>
-				<Figure
-					alt='A picture of a life cereal in the trash with the caption saying my I threw my life away'
-					width='1480'
-					height='1480'
-					src={picsOfMeMeme}>
-					<Figcaption>
-						Fun fact: This web app functions as Pun Generator when you flip your
-						phone to a landscape orientation.
-					</Figcaption>
-				</Figure>
-				<HeadingTwo>I suck at basketball</HeadingTwo>
-				<Figure
-					className='paddingLRLarge'
-					alt='Holding a basked while dressed as Prince from Dave Chappelle while sitting on my jeep'
-					width='1480'
-					height='1973'
-					src={picsOfMeRickJamesBball}>
-					<Figcaption>
-						I was dressed as Prince from the famous Dave Chappelle's skit.
-					</Figcaption>
-				</Figure>
+				<ZigZag>
+					<Emphasis center>I absolutely love puns.</Emphasis>
+					<Figure
+						alt='A picture of a life cereal in the trash with the caption saying my I threw my life away'
+						width='1480'
+						height='1480'
+						src={picsOfMeMeme}>
+						<Figcaption>
+							Fun fact: This web app functions as Pun Generator when you flip
+							your phone to a landscape orientation.
+						</Figcaption>
+					</Figure>
+				</ZigZag>
+				<ZigZag>
+					<Emphasis center>I suck at basketball</Emphasis>
+					<Figure
+						className='paddingLRLarge'
+						alt='Holding a basked while dressed as Prince from Dave Chappelle while sitting on my jeep'
+						width='1480'
+						height='1973'
+						src={picsOfMeRickJamesBball}>
+						<Figcaption>
+							I was dressed as Prince from the famous Dave Chappelle's skit.
+						</Figcaption>
+					</Figure>
+				</ZigZag>
 				{/* <HeadingTwo>I milly rock on every block</HeadingTwo>
 				<FiGif
 					className='paddingLRLarge'
@@ -125,25 +149,31 @@ const AboutMePage = () => {
 						I even milly rock at one of the seven wonders of the world.
 					</Figcaption>
 				</FiGif> */}
-				<HeadingTwo>I love dancing even though I am not that good</HeadingTwo>
-				<Gif
-					className='paddingLRLarge'
-					desc='My friend and I dancing in a hotel room'
-					width='720'
-					height='1280'
-					url={videosofmecarribeanQueen}
-				/>
-				<HeadingTwo>
-					I love playing video games... even though I suck
-				</HeadingTwo>
-				<FiGif
-					className='paddingLRLarge'
-					desc='playing video games with a disconcerned look'
-					width='720'
-					height='1280'
-					url={videosofmesoreLoser}>
-					<Figcaption>I've been told I am still fun to play with.</Figcaption>
-				</FiGif>
+				<ZigZag>
+					<Emphasis center>
+						I love dancing even though I am not that good
+					</Emphasis>
+					<Gif
+						className='paddingLRLarge'
+						desc='My friend and I dancing in a hotel room'
+						width='720'
+						height='1280'
+						url={videosofmecarribeanQueen}
+					/>
+				</ZigZag>
+				<ZigZag>
+					<Emphasis center>
+						I love playing video games... even though I suck
+					</Emphasis>
+					<FiGif
+						className='paddingLRLarge'
+						desc='playing video games with a disconcerned look'
+						width='720'
+						height='1280'
+						url={videosofmesoreLoser}>
+						<Figcaption>I've been told I am still fun to play with.</Figcaption>
+					</FiGif>
+				</ZigZag>
 				{/* <HeadingTwo>I love creativity</HeadingTwo>
 				<Figure
 					className='paddingLRLarge'
@@ -153,38 +183,46 @@ const AboutMePage = () => {
 					src={herbieSelfieVisionary1480x1479}>
 					<Figcaption>The 'Look Ma No Hands' mirror selfie.</Figcaption>
 				</Figure> */}
-				<HeadingTwo>I enjoy offroading</HeadingTwo>
-				<Gif
-					className='paddingLRMed'
-					desc='Offroading with some friends'
-					width='634'
-					height='1234'
-					url={videosofmeoffRoadingDriving}
-				/>
+
+				<ZigZag>
+					<Emphasis center>I enjoy offroading</Emphasis>
+					<Gif
+						className='paddingLRMed'
+						desc='Offroading with some friends'
+						width='634'
+						height='1234'
+						url={videosofmeoffRoadingDriving}
+					/>
+				</ZigZag>
 				{/* <Gif desc='' width='1920' height='1080' url={OffRoadSplash} /> */}
-				<HeadingTwo>I love putting smiles on peoples faces</HeadingTwo>
-				<FiGif
-					className='paddingLRMed'
-					desc='Doing some stand up'
-					width='960'
-					height='540'
-					url={videosofmeStandUp}>
-					<Figcaption>
-						One of the four seperate occassions where I've done stand up comedy.
-					</Figcaption>
-				</FiGif>
-				<HeadingTwo>I love technology</HeadingTwo>
-				<Figure
-					className='paddingLRSm'
-					alt='Me and my little bro next to my very first computer in Ghana'
-					width='1152'
-					height='864'
-					src={picsOfMeDherbstaAndDinchman}>
-					<Figcaption>
-						Me and my little bro next to my very first computer in Ghana in
-						2002.
-					</Figcaption>
-				</Figure>
+				<ZigZag>
+					<Emphasis center>I love putting smiles on peoples faces</Emphasis>
+					<FiGif
+						className='paddingLRMed'
+						desc='Doing some stand up'
+						width='960'
+						height='540'
+						url={videosofmeStandUp}>
+						<Figcaption>
+							One of the four seperate occassions where I've done stand up
+							comedy.
+						</Figcaption>
+					</FiGif>
+				</ZigZag>
+				<ZigZag>
+					<Emphasis center>I love technology</Emphasis>
+					<Figure
+						className='paddingLRSm'
+						alt='Me and my little bro next to my very first computer in Ghana'
+						width='1152'
+						height='864'
+						src={picsOfMeDherbstaAndDinchman}>
+						<Figcaption>
+							Me and my little bro next to my very first computer in Ghana in
+							2002.
+						</Figcaption>
+					</Figure>
+				</ZigZag>
 				<ContentCategory category='about' />
 			</ContentShow>
 		</Fragment>

@@ -71,9 +71,6 @@ const PeoplePage = () => {
 						<Image src={placesflagstaffStreetOnAutumn} />
 					</li>
 					<li>
-						<Image src={placesfallFlagstaff} />
-					</li>
-					<li>
 						<Image src={placesevansTundra} />
 					</li>
 					<li>

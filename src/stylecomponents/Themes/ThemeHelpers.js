@@ -177,10 +177,12 @@ export const themeBgMaker = (theme = defaultBgImageValues) => {
 	};
 };
 
-export const themeColorMaker = (theme = "Color-ffffff-000000") => {
-	const values = theme.split("-");
-	const bgColor = `#${values[1]}`;
-	const fontColor = `#${values[2]}`;
+export const themeColorMaker = (hexColor = "EFF0F1") => {
+	// const values = theme.split("-");
+	// const bgColor = `#${values[1]}`;
+	// const fontColor = `#${values[2]}`;
+	const bgColor = `#${hexColor}`;
+	const fontColor = `${readableColor(bgColor)}`;
 	return {
 		appBg: `${bgColor}`,
 		appBgAnimation: `${bgColor}`,

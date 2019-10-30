@@ -276,7 +276,9 @@ export const AccessibilityMode = () => {
 
 	return (
 		// <ShowIf noAbsolute thisValue={isShowingMore} thatValue={false}>
-		<AccessibilityContainer isPortrait={isContentPortrait}>
+		<AccessibilityContainer
+			className='accessibility'
+			isPortrait={isContentPortrait}>
 			<ElementReveal>
 				<div className='accessibility__button-container'>
 					<Text button s onClick={activateAccessibilityMode}>

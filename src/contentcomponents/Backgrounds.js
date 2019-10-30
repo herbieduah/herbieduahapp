@@ -69,10 +69,10 @@ const BackgroundsPage = ({ contentProps }) => {
 						<GenerateTheme type='color' />
 						<Paragraph className='marginTopMed'>
 							Big shout out to{" "}
-							<Link href='https://cloudflare.design/color/'>
-								cloudflare.design/color
+							<Link href='https://www.pantone.com/color-intelligence/fashion-color-trend-report/fashion-color-trend-report-new-york-spring-summer-2020'>
+								Pantone
 							</Link>{" "}
-							for accessible color combination tool.
+							for their 2020 Color Trend Report.
 						</Paragraph>
 					</TabPanel>
 					<TabPanel>

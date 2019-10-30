@@ -74,6 +74,16 @@ export const SubMenu = props => {
 							</Text>
 						</li> */}
 						<li onClick={hideModal} className='subMenu__item'>
+							<Text menuLink xl={true} to='/AboutMe'>
+								About Me
+							</Text>
+						</li>
+						<li onClick={hideModal} className='subMenu__item'>
+							<Text menuLink xl={true} to='/Resume'>
+								Resume
+							</Text>
+						</li>
+						<li onClick={hideModal} className='subMenu__item'>
 							<Text menuLink xl={true} to='/Inspiration'>
 								Inspiration
 							</Text>
@@ -83,11 +93,7 @@ export const SubMenu = props => {
 								Case Study
 							</Text>
 						</li>
-						<li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink xl={true} to='/Resume'>
-								Experience
-							</Text>
-						</li>
+
 						{/* <li onClick={hideModal} className='subMenu__item'>
 							<Text menuLink xl={true} to='/SpecialThanks'>
 								Special&shy; Thanks
@@ -98,12 +104,6 @@ export const SubMenu = props => {
 								Inspiration
 							</Text>
 						</li> */}
-
-						<li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink xl={true} to='/AboutMe'>
-								About Me
-							</Text>
-						</li>
 					</SubMenuWrapper>
 				</div>
 			);
