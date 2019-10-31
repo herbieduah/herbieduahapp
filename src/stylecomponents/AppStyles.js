@@ -51,10 +51,12 @@ export const HerbieDuahApp = styled.main`
 	}
 	button,li, span, a{
 		&:focus{
-			outline: none;
-			/* outline-width: 2px;
-   			outline-style: solid;
-    		outline-color: ${colorSlightOpacity}; */
+			${props =>
+				props.showOutline
+					? `outline-width: 2px;
+   			outline-style: dashed;`
+					: `outline: none;`}
+    		/* outline-color: ${colorSlightOpacity}; */
 		}
 	}
 	

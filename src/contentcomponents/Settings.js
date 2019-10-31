@@ -39,7 +39,8 @@ const SettingsPage = ({ contentProps }) => {
 		setAccessible,
 		accessible,
 		videoControls,
-		setVideoControls
+		setVideoControls,
+		downloaded
 	} = contentProps;
 
 	const controlVideoMode = () => {
@@ -274,17 +275,39 @@ const SettingsPage = ({ contentProps }) => {
 					</ShowIf>
 				</DisableSetting>
 
-				<HeadingTwo>Traditional</HeadingTwo>
-				<Paragraph>
-					This setting gets rids of the default slider and the vertical
-					navigation bar and replaces with a more traditional horizontal
-					navigation menu up top.
-				</Paragraph>
-				<ShowIf noAnimation thisValue={minimalMode} thatValue={true}>
-					<Button onClick={basicMode}>Change to Default</Button>
+				<ShowIf noAnimation thisValue={downloaded} thatValue={false}>
+					<HeadingTwo>Traditional or Default </HeadingTwo>
+					<Paragraph>
+						This setting gets rids of the default slider and the vertical
+						navigation bar and replaces with a more traditional horizontal
+						navigation menu up top.
+					</Paragraph>
+					<ShowIf noAnimation thisValue={minimalMode} thatValue={true}>
+						<Button onClick={basicMode}>Change to Default</Button>
+					</ShowIf>
+					<ShowIf noAnimation thisValue={minimalMode} thatValue={false}>
+						<Button onClick={basicMode}>Change to Traditional</Button>
+					</ShowIf>
 				</ShowIf>
-				<ShowIf noAnimation thisValue={minimalMode} thatValue={false}>
-					<Button onClick={basicMode}>Change to Traditional</Button>
+
+				<ShowIf noAnimation thisValue={downloaded} thatValue={true}>
+					<DisableSetting
+						thisValue={forDev}
+						thatValue={true}
+						message={`Unfortunately, the Slider causes problems when the app is "downloaded". You can use it if you switch to developer mode.`}>
+						<HeadingTwo>Traditional or Default </HeadingTwo>
+						<Paragraph>
+							This setting gets rids of the default slider and the vertical
+							navigation bar and replaces with a more traditional horizontal
+							navigation menu up top.
+						</Paragraph>
+						<ShowIf noAnimation thisValue={minimalMode} thatValue={true}>
+							<Button onClick={basicMode}>Change to Default</Button>
+						</ShowIf>
+						<ShowIf noAnimation thisValue={minimalMode} thatValue={false}>
+							<Button onClick={basicMode}>Change to Traditional</Button>
+						</ShowIf>
+					</DisableSetting>
 				</ShowIf>
 
 				<HeadingTwo>Add controls to videos</HeadingTwo>

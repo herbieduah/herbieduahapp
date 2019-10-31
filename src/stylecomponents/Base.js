@@ -888,6 +888,7 @@ export const StartUp = styled.div`
 	align-items: center;
 	z-index: 5000;
 	padding: 5%;
+	text-align: center;
 
 	flex-direction: column;
 	.react-reveal {
@@ -896,20 +897,20 @@ export const StartUp = styled.div`
 	p {
 		margin-bottom: 5vh;
 		width: 100%;
-		text-align: left;
 		max-width: 500px;
-		display: flex;
+		display: block;
+		text-align: center;
 	}
 	button {
 		margin: 0 auto;
 	}
 	.startUp__skip {
 		display: flex;
-		justify-content: right;
+		justify-content: center;
 		max-width: 500px;
 		width: 100%;
 		padding-top: 3rem;
-		text-align: right;
+		text-align: center;
 	}
 	/* .startup{
 	&__text {

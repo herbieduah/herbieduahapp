@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { ThemeProvider } from "styled-components";
 import {
 	GlobalStyle,
@@ -33,7 +33,8 @@ import {
 	useWindowResize,
 	minSliderSize,
 	defaultPaneSize,
-	isPortrait
+	isPortrait,
+	useKeyPress
 } from "./helpers";
 console.log(React.version);
 export const App = () => {
@@ -51,7 +52,10 @@ export const App = () => {
 		setForYou,
 		minimalMode,
 		accessible,
-		setDownloaded
+		setDownloaded,
+		downloaded,
+		setMinimalMode,
+		setFullscreen
 	} = useContext(globalState);
 	const currentThemeObject = getCurrentTheme(defaultAppTheme, currentTheme);
 	const { width: ww, height: wh } = useWindowResize();
@@ -60,9 +64,26 @@ export const App = () => {
 	const { minSize, maxSize } = minSliderSize(ww, wh);
 	const mobileOveriPhone5Horizontal = ww > 492;
 	const showFSMobileHorizontal = mobileOveriPhone5Horizontal && isMobileOnly;
+	const [showOutline, setShowOutline] = useState(false);
+	const tabIsPressed = useKeyPress("Tab");
 	const onDragging = () => {
 		setDragging(true);
 	};
+	const showOutlineAfterTabPress = () => {
+		setShowOutline(true);
+	};
+	// if (useKeyPress("h")) {
+	// 	console.log("Tab Pressed");
+	// 	setShowOutline(true);
+	// 	console.log(showOutline);
+	// showOutlineAfterTabPress();
+	// }
+
+	const basicMode = () => {
+		minimalMode ? setMinimalMode(false) : setMinimalMode(true);
+		fullScreen ? setFullscreen(false) : setFullscreen(true);
+	};
+
 	const onDraggingEnded = () => {
 		setDragging(false);
 	};
@@ -94,6 +115,12 @@ export const App = () => {
 		if (values.downloaded) {
 			appDownloaded();
 		}
+		if (tabIsPressed) {
+			showOutlineAfterTabPress();
+		}
+		if (downloaded) {
+			basicMode();
+		}
 		downloadAllTheThings();
 
 		// values.whom ?  : console.log("Hi");
@@ -114,8 +141,9 @@ export const App = () => {
 				fullScreen={fullScreen}
 				showFSMobileHorizontal={showFSMobileHorizontal}
 				accessible={accessible}
-				dragging={dragging}>
-				<AppStartUp />
+				dragging={dragging}
+				showOutline={showOutline}>
+				{/* <AppStartUp /> */}
 				<ShowIf noAnimation thisValue={currentTheme} thatValue={"matrix"}>
 					<Matrix fullscreen={true} isPortrait={isPortrait(ww, wh)} />
 				</ShowIf>

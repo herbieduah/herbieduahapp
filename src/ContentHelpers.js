@@ -30,8 +30,8 @@ export const defaultAlt = "I will be adding an alt tag to this image soon";
 export const defaultDesc = "This is a video, I will be describing it soon";
 
 //Switch to 'gif' or 'image' to pull videos and images locally
-const videoLocation = "cloud-gif";
-const imageLocation = "cloud-image";
+const videoLocation = "gif";
+const imageLocation = "image";
 
 export const ContentShow = props => {
 	const {
@@ -59,7 +59,7 @@ export const ContentShow = props => {
 							<div className='less__wrapper'>
 								{props.children}
 								<Instructions className='less__drag'>
-									Drag then release slider {whereToDrag} for more.&nbsp;
+									Drag slider {whereToDrag} then release for more.&nbsp;
 								</Instructions>
 							</div>
 						</aside>
@@ -103,14 +103,18 @@ export const Header = props => {
 	return (
 		<Fragment>
 			<ShowIf noAnimation thisValue={props.less} thatValue={true}>
-				<Text h1 m className='paddingLRSm less__header'>
-					{props.children}
-				</Text>
+				<ElementReveal>
+					<Text h1 m className='paddingLRSm less__header'>
+						{props.children}
+					</Text>
+				</ElementReveal>
 			</ShowIf>
 			<ShowIf noAnimation thisValue={!props.less} thatValue={true}>
-				<header className={`content__header container ${className}`}>
-					<HeadingOne>{props.children}</HeadingOne>
-				</header>
+				<ElementReveal>
+					<header className={`content__header container ${className}`}>
+						<HeadingOne>{props.children}</HeadingOne>
+					</header>
+				</ElementReveal>
 			</ShowIf>
 		</Fragment>
 	);
@@ -132,9 +136,11 @@ export const ElementReveal = props => {
 export const Instructions = props => {
 	const className = props.className || "";
 	return (
-		<Small className={`c-instructions paddingLRSm ${className}`}>
-			{props.children}
-		</Small>
+		<ElementReveal>
+			<Small className={`c-instructions paddingLRSm ${className}`}>
+				{props.children}
+			</Small>
+		</ElementReveal>
 	);
 };
 
@@ -144,7 +150,7 @@ export const ContentCategory = props => {
 	const defaultIndex = categoryArr.indexOf(props.category);
 	return (
 		<ShowIf noAnimation thisValue={fullScreen} thatValue={true}>
-			<ElementReveal duration={revealSecs}>
+			<ElementReveal>
 				<div className='c-category marginLRSm container'>
 					<MenuTabs showCategory={false} defaultIndex={defaultIndex} />
 				</div>

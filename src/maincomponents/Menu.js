@@ -9,7 +9,7 @@ import {
 } from "../helpers";
 import SubMenu from "./SubMenu";
 import { globalState } from "../State";
-import { MenuTabs, AccessibilityMode } from "../ComponentHelpers";
+import { MenuTabs, AccessibilityMode, ShowIf } from "../ComponentHelpers";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { ElementReveal } from "../ContentHelpers";
 export const ContentMenu = () => {
@@ -40,13 +40,15 @@ export const ContentMenu = () => {
 			</ElementReveal>
 
 			<div className='menu__accessibility'>
-				<TransitionGroup>
+				{/* <TransitionGroup>
 					{!isShowingMore ? (
-						<CSSTransition timeout={revealSecs} classNames={transitionClasses}>
-							<AccessibilityMode />
-						</CSSTransition>
+						<CSSTransition timeout={revealSecs} classNames={transitionClasses}> */}
+				<ShowIf noAnimation thisValue={isShowingMore} thatValue={false}>
+					<AccessibilityMode />
+				</ShowIf>
+				{/* </CSSTransition>
 					) : null}
-				</TransitionGroup>
+				</TransitionGroup> */}
 			</div>
 
 			{/* <div className='animatecss-tamer'>
