@@ -1,5 +1,5 @@
 //ContentHelpers file for my web app.
-import React, { Fragment, useContext, useState } from "react";
+import React, { Fragment, useContext, useState, useEffect } from "react";
 import { globalState } from "./State";
 import {
 	revealSecs,
@@ -50,6 +50,17 @@ export const ContentShow = props => {
 	const transitionClasses = getCurrentTransition(currentTransition);
 	const whereToDrag = isContentPortrait ? "down" : "right";
 	const containerLarge = props.containerLarge ? "container-large" : "container";
+
+	const [showInstructions, setShowInstructions] = useState(true);
+
+	const showTheInstructions = () => {
+		if (showMore) {
+			setShowInstructions(false);
+		}
+	};
+	useEffect(() => {
+		showTheInstructions();
+	});
 	if (props.less) {
 		return (
 			<TransitionGroup>
@@ -58,9 +69,14 @@ export const ContentShow = props => {
 						<aside className='less'>
 							<div className='less__wrapper'>
 								{props.children}
-								<Instructions className='less__drag'>
-									Drag slider {whereToDrag} then release for more.&nbsp;
-								</Instructions>
+								<ShowIf
+									noAnimation
+									thisValue={showInstructions}
+									thatValue={true}>
+									<Instructions className='less__drag'>
+										Drag slider {whereToDrag} then release for more.&nbsp;
+									</Instructions>
+								</ShowIf>
 							</div>
 						</aside>
 					</CSSTransition>
@@ -135,9 +151,10 @@ export const ElementReveal = props => {
 
 export const Instructions = props => {
 	const className = props.className || "";
+	const center = props.center ? "justify-center" : "";
 	return (
 		<ElementReveal>
-			<Small className={`c-instructions paddingLRSm ${className}`}>
+			<Small className={`c-instructions paddingLRSm ${className} ${center}`}>
 				{props.children}
 			</Small>
 		</ElementReveal>
@@ -487,17 +504,36 @@ export const TransitionTexts = props => {
 	);
 };
 
-export const GenerateTransition = props => (
-	<ElementReveal>
-		<ul className='appTransition' {...props}>
-			{appTransitions.map(function(element, uniqueKey) {
-				return (
-					<TransitionTexts transitionValue={element.name} key={uniqueKey} />
-				);
-			})}
-		</ul>
-	</ElementReveal>
-);
+// export const GenerateTransition = props => (
+// 	<ElementReveal>
+// 		<ul className='appTransition' {...props}>
+// 			{appTransitions.map(function(element, uniqueKey) {
+// 				return (
+// 					<TransitionTexts transitionValue={element.name} key={uniqueKey} />
+// 				);
+// 			})}
+// 		</ul>
+// 	</ElementReveal>
+// );
+
+export const GenerateTransition = props => {
+	const type = props.type;
+	return (
+		<ElementReveal>
+			<ul className='appTransition' {...props}>
+				{appTransitions.map(function(element, uniqueKey) {
+					if (element.type === type) {
+						return (
+							<TransitionTexts transitionValue={element.name} key={uniqueKey} />
+						);
+					} else {
+						return null;
+					}
+				})}
+			</ul>
+		</ElementReveal>
+	);
+};
 
 export const WorkInfo = props => {
 	const { workDuration, workSkills, workTools } = props.workinfo;

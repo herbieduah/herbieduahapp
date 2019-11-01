@@ -9,10 +9,15 @@ import {
 	ContentCategory,
 	GenerateTransition,
 	Link,
-	Instructions
+	Instructions,
+	ZigZag,
+	ElementReveal
 } from "../ContentHelpers";
 // import { ShowIf } from "../ComponentHelpers";
 import "animate.css";
+import { ReactTabs } from "../stylecomponents/Base";
+import { Tab, TabList, TabPanel } from "react-tabs";
+import Text from "../stylecomponents/Text";
 // import Emoji from "a11y-react-emoji";
 
 const header = "Animations (Beta)";
@@ -40,14 +45,33 @@ const TransitionsPage = () => {
 				<Paragraph>
 					Animations bring the elements of this web app to life. I added an
 					extensive collection of random animations for you to choose how you
-					bring this web app to life.
+					want to bring this web app to life.
 				</Paragraph>
-				<Instructions className='marginTopLarge'>
+				<Instructions className='marginTopLarge justify-center'>
 					Select Animations Below.
 				</Instructions>
-				<div className='paddingLRSm marginTopMed'>
-					<GenerateTransition />
-				</div>
+				<ReactTabs defaultIndex={0}>
+					<ElementReveal className='paddingLRSm'>
+						<TabList className='react-tabs__tab-list'>
+							<Tab tabIndex='0'>
+								<Text format m tertiary className='marginLRSm'>
+									Smooth
+								</Text>
+							</Tab>
+							<Tab tabIndex='0'>
+								<Text format m tertiary className='marginLRSm'>
+									Crazy
+								</Text>
+							</Tab>
+						</TabList>
+					</ElementReveal>
+					<TabPanel>
+						<GenerateTransition type='smooth' />
+					</TabPanel>
+					<TabPanel>
+						<GenerateTransition type='crazy' />
+					</TabPanel>
+				</ReactTabs>
 				{/* <ShowIf noAnimation thisValue={forDev} thatValue={true}> */}
 				<Paragraph className='marginTopLarge'>
 					Shout out to <Link href='https://daneden.me/'>Daniel Edens'</Link>{" "}

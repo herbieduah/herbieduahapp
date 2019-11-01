@@ -692,6 +692,8 @@ export const TransitionTextContainer = styled.li`
 		padding:0  ${navBarSize};
 		${mobile} {
 			padding: 0 .5rem;
+			border-left: none;
+			border-right: none;
 		}
 		span {
 			

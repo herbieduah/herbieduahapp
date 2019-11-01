@@ -90,11 +90,11 @@ padding-left: 1rem;
 }`;
 
 export const paddingLRMed = `
-padding-left: 20%;
-padding-right: 20%;
-${mobile} {
-	padding-left: 15%;
+padding-left: 15%;
 padding-right: 15%;
+${mobile} {
+	padding-left: 10%;
+padding-right: 10%;
 }`;
 
 // export const paddingLRSm = `
@@ -106,11 +106,11 @@ padding-right: 15%;
 // }`;
 
 export const paddingLRLarge = `
-padding-left: 25%;
-padding-right: 25%;
-${mobile} {
-	padding-left: 20%;
+padding-left: 20%;
 padding-right: 20%;
+${mobile} {
+	padding-left: 15%;
+padding-right: 15%;
 }`;
 
 export const marginLRMed = `

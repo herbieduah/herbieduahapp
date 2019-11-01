@@ -25,7 +25,8 @@ import {
 	colorSlightOpacity,
 	buttonBorder,
 	buttonBackground,
-	buttonBackgroundHoverFocus
+	buttonBackgroundHoverFocus,
+	buttonBorderFocus
 } from "./Themes/ThemeVariables";
 
 const baseStyle = css`
@@ -133,11 +134,13 @@ const Button = styled.button`
 	color: ${buttonColor};
 	padding: 0.55rem 1rem;
 	cursor: pointer;
-	&:hover,
-	&:focus {
+	&:hover{
 		color: ${buttonColorHoverFocus};
 		text-decoration: ${CTAUnderline};
 		background: ${buttonBackgroundHoverFocus};
+	}
+	&:focus {
+		border: ${buttonBorderFocus};
 	}
 	&.active,&.current {
 		color: ${buttonColorHoverFocus};

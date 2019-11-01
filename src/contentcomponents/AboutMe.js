@@ -26,7 +26,8 @@ import {
 import {
 	picsOfMeDherbstaAndDinchman,
 	picsOfMeRickJamesBball,
-	picsOfMeMeme
+	picsOfMeMeme,
+	picsOfMeSelfieOlympics
 } from "../MediaVariables";
 
 const header = "About Me";
@@ -70,10 +71,20 @@ const AboutMePage = () => {
 						height='900'
 						url={videosofmemillyrockgrandcanyon}>
 						<Figcaption>
-							Yeahhhh I am weird, if you don't mind that and you live in Phoenix
-							too we should grab coffee sometime.
+							Just milly rocking infront of the Grand Canyon.
 						</Figcaption>
 					</FiGif>
+				</ZigZag>
+				<ZigZag>
+					<Emphasis center>
+						I like solving problems in a creative and original way.
+					</Emphasis>
+					<Figure
+						className='paddingLRMed'
+						desc='Selfie'
+						src={picsOfMeSelfieOlympics}>
+						<Figcaption>I call that the Look Ma No Hands selfie.</Figcaption>
+					</Figure>
 				</ZigZag>
 
 				{/* <HeadingTwo>I graduated at Northern Arizona University</HeadingTwo>

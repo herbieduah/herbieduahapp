@@ -31,13 +31,16 @@ const BackgroundsPage = ({ contentProps }) => {
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>
+
 				<Paragraph>
 					I have chosen an extensive collection of colors, gradients, and
 					patterns you can select to change the look of this web app in hopes
 					that you will find one that you'd like.
 				</Paragraph>
+
 				<Paragraph>(I save your background for when you come back.)</Paragraph>
-				<Instructions className='marginTopLarge'>
+
+				<Instructions className='marginTopLarge justify-center'>
 					Select block to change background.
 				</Instructions>
 				{/* <Paragraph>

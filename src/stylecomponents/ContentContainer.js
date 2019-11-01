@@ -27,7 +27,8 @@ import {
 	marginBottomLarge,
 	marginTopLarge,
 	marginTopMed,
-	marginBottomSm
+	marginBottomSm,
+	paddingLRMed
 } from "./StyleHelpers";
 import {
 	navBarBorder,
@@ -410,6 +411,7 @@ export const ContentContainer = styled.section`
 		padding: 0;
 		${marginTopLarge}
 		display:flex;
+
 		flex-direction: column;
 		li:nth-of-type(even){ 
 			.react-reveal{
@@ -419,6 +421,16 @@ export const ContentContainer = styled.section`
 
 		.react-reveal {
 			max-width: 740px;
+			padding-left: 7%;
+			padding-right: 7%;
+			${mobile}{
+				padding-left: 0%;
+				padding-right: 0%;	
+			}
+			${tablet}{
+				padding-left: 0%;
+				padding-right: 0%;	
+			}
 		}
 			/* ${paddingLRSm} */
 		

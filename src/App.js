@@ -79,10 +79,10 @@ export const App = () => {
 	// showOutlineAfterTabPress();
 	// }
 
-	const basicMode = () => {
-		minimalMode ? setMinimalMode(false) : setMinimalMode(true);
-		fullScreen ? setFullscreen(false) : setFullscreen(true);
-	};
+	// const basicMode = () => {
+	// 	minimalMode ? setMinimalMode(false) : setMinimalMode(true);
+	// 	fullScreen ? setFullscreen(false) : setFullscreen(true);
+	// };
 
 	const onDraggingEnded = () => {
 		setDragging(false);
@@ -93,16 +93,18 @@ export const App = () => {
 	};
 	const appDownloaded = () => {
 		setDownloaded(true);
+		setMinimalMode(true);
+		setFullscreen(true);
 	};
 	const whoIsThisFor = forWho => {
 		setForYou(forWho);
 	};
 
-	const downloadAllTheThings = () => {
-		if (isShowingMore) {
-			setLazyLoading(false);
-		}
-	};
+	// const downloadAllTheThings = () => {
+	// 	if (isShowingMore) {
+	// 		setLazyLoading(false);
+	// 	}
+	// };
 
 	useEffect(() => {
 		const values = queryString.parse(window.location.search);
@@ -114,14 +116,15 @@ export const App = () => {
 		}
 		if (values.downloaded) {
 			appDownloaded();
+			// basicMode();
 		}
 		if (tabIsPressed) {
 			showOutlineAfterTabPress();
 		}
-		if (downloaded) {
-			basicMode();
-		}
-		downloadAllTheThings();
+		// if (downloaded) {
+
+		// }
+		// downloadAllTheThings();
 
 		// values.whom ?  : console.log("Hi");
 	});
