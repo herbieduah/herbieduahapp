@@ -118,6 +118,7 @@ const Paragraph = styled.p`
 const Figcaption = styled.figcaption`
 	${baseStyle};
 `;
+
 const TextFormatter = styled.span`
 	${baseStyle};
 	letter-spacing: 0.3px;
@@ -174,14 +175,15 @@ const ButtonText = styled.button`
 	}
 `;
 const HyperLink = styled.a`
-	${baseStyle};
 	${mainTransition}
 	cursor: pointer;
+	color: ${fontColor};
 	/* white-space: nowrap; */
 	&:hover,
 	&:focus {
 		text-decoration: underline;
 		font-weight: bold;
+		color: ${fontColor};
 	}
 	text-decoration: underline;
 `;

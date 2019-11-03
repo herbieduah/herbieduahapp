@@ -30,8 +30,8 @@ export const defaultAlt = "I will be adding an alt tag to this image soon";
 export const defaultDesc = "This is a video, I will be describing it soon";
 
 //Switch to 'gif' or 'image' to pull videos and images locally
-const videoLocation = "gif";
-const imageLocation = "image";
+const videoLocation = "cloud-gif";
+const imageLocation = "cloud-image";
 
 export const ContentShow = props => {
 	const {
@@ -74,7 +74,7 @@ export const ContentShow = props => {
 									thisValue={showInstructions}
 									thatValue={true}>
 									<Instructions className='less__drag'>
-										Drag slider {whereToDrag} then release for more.&nbsp;
+										Drag slider {whereToDrag} then release for more&nbsp;
 									</Instructions>
 								</ShowIf>
 							</div>
@@ -95,8 +95,8 @@ export const ContentShow = props => {
 								noAbsolute
 								thisValue={fullScreen && !minimalMode}
 								thatValue={true}>
-								<Instructions className='marginTopLarge justify-center'>
-									scroll to bottom for menu.
+								<Instructions className='marginTopLarge justify-center text-center'>
+									scroll to bottom or select minimize <br /> for menu
 								</Instructions>
 							</ShowIf>
 							{props.children}
@@ -265,7 +265,7 @@ export const HeadingOne = props => {
 				xl
 				center
 				semibold
-				className={`${className} marginBottomMed marginTopXLarge paddingLRSm`}>
+				className={`${className} marginBottomXLarge marginTopXLarge paddingLRSm`}>
 				{props.children}
 			</Text>
 		</ElementReveal>
@@ -462,11 +462,21 @@ export const ThemeCircles = props => {
 				<button className={`themeCircle__button ${currentClass}`}>
 					<div className='themeCircle__overlay'>
 						{current ? (
-							<Text format m bold className='themeCircle__current-text'>
+							<Text
+								format
+								s
+								tertiary
+								bold
+								className='themeCircle__current-text'>
 								Current
 							</Text>
 						) : null}
-						<Text format m bold className={`themeCircle__text ${currentClass}`}>
+						<Text
+							format
+							s
+							tertiary
+							bold
+							className={`themeCircle__text ${currentClass}`}>
 							{themeText}
 						</Text>
 					</div>
@@ -565,30 +575,35 @@ export const WorkInfo = props => {
 	const { workDuration, workSkills, workTools } = props.workinfo;
 	const { forDev } = useContext(globalState);
 	return (
-		<ElementReveal className='container'>
-			<ul className='c-work-info marginBottomXLarge'>
-				<li>
-					<Text s format>
-						<strong>Duration:</strong>&nbsp;
-						{workDuration}
-					</Text>
-				</li>
-				<li>
-					<Text s format>
-						<strong>Skills:</strong>&nbsp;
-						{workSkills}
-					</Text>
-				</li>
-				<ShowIf noAnimation thisValue={forDev} thatValue={true}>
+		<ZigZag>
+			<ElementReveal>
+				<ul className='c-work-info marginBottomXLarge'>
 					<li>
 						<Text s format>
-							<strong>Tools:</strong>&nbsp;
-							{workTools}
+							<strong>Duration</strong>
+							<br />
+							{workDuration}
 						</Text>
 					</li>
-				</ShowIf>
-			</ul>
-		</ElementReveal>
+					<ShowIf noAnimation thisValue={forDev} thatValue={true}>
+						<li>
+							<Text s format>
+								<strong>Skills</strong>
+								<br />
+								{workSkills}
+							</Text>
+						</li>
+						<li>
+							<Text s format>
+								<strong>Tools</strong>
+								<br />
+								{workTools}
+							</Text>
+						</li>
+					</ShowIf>
+				</ul>
+			</ElementReveal>
+		</ZigZag>
 	);
 };
 

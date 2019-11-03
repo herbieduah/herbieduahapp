@@ -5,6 +5,7 @@ import {
 	Gif,
 	Header,
 	Paragraph,
+	LessContent,
 	// Image,
 	FiGif,
 	Figcaption,
@@ -36,10 +37,9 @@ const AboutMePage = () => {
 	return (
 		<Fragment>
 			<ContentShow less>
-				<Header less>{header}</Header>
-				<Paragraph less>
+				<LessContent header={header}>
 					I am going to try to describe myself with pictures and gifs.
-				</Paragraph>
+				</LessContent>
 				<div className='less__container'>
 					{/* <Paragraph>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis
@@ -77,7 +77,7 @@ const AboutMePage = () => {
 				</ZigZag>
 				<ZigZag>
 					<Emphasis center>
-						I like solving problems in a creative and original way.
+						I love to solve problems in a creative and original way.
 					</Emphasis>
 					<Figure
 						className='paddingLRMed'

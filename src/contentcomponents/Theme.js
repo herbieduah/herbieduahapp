@@ -7,6 +7,7 @@ import {
 	ContentShow,
 	// ComingSoon,
 	Paragraph,
+	LessContent,
 	Small,
 	ContentCategory,
 	Button,
@@ -18,7 +19,7 @@ import { ShowIf } from "../ComponentHelpers";
 const header = "Theme";
 
 const ThemePage = ({ contentProps }) => {
-	const { fullScreen, currentTheme, setTheme, minimalMode } = contentProps;
+	const { currentTheme, setTheme } = contentProps;
 	const setMatrixTheme = () => {
 		setTheme("matrix");
 	};
@@ -44,8 +45,9 @@ const ThemePage = ({ contentProps }) => {
 	return (
 		<Fragment>
 			<ContentShow less>
-				<Header less>{header}</Header>
-				<Paragraph less>You can change the theme of the whole site.</Paragraph>
+				<LessContent header={header}>
+					You can change the theme of the whole site.
+				</LessContent>
 				<div className='less__container'>
 					{/* <Paragraph>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis
@@ -59,6 +61,9 @@ const ThemePage = ({ contentProps }) => {
 				<Header>{header}</Header>
 				<Paragraph>
 					I will be adding more Themes once this web app is out of Beta.
+				</Paragraph>
+				<Paragraph>
+					(Hot tip: Choosing a background turns of the Theme)
 				</Paragraph>
 				<HeadingTwo>Matrix</HeadingTwo>
 				<Paragraph>

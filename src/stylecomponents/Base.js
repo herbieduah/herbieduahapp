@@ -154,7 +154,6 @@ export const NavBarMiniContainer = styled.div`
 		
 		&__menu-text, &__logo {
 			position:relative;
-			${paddingLRSm};
 			z-index: 100;	
 		}
 		&__logo-menu, &__logo {

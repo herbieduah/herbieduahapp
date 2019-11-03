@@ -6,6 +6,7 @@ import {
 	Header,
 	ContentShow,
 	ContentCategory,
+	LessContent,
 	UL,
 	LI,
 	// Small,
@@ -78,7 +79,11 @@ const SettingsPage = ({ contentProps }) => {
 
 	const basicMode = () => {
 		minimalMode ? setMinimalMode(false) : setMinimalMode(true);
-		fullScreen ? setFullscreen(false) : setFullscreen(true);
+		if (!fullScreen) {
+			fullScreen ? setFullscreen(false) : setFullscreen(true);
+		} else {
+			setFullscreen(true);
+		}
 	};
 
 	// const downloadEverything = () => {
@@ -99,10 +104,9 @@ const SettingsPage = ({ contentProps }) => {
 	return (
 		<Fragment>
 			<ContentShow less>
-				<Header less>{header}</Header>
-				<Paragraph less>
+				<LessContent header={header}>
 					You can change certain aspects of this web app to your liking.
-				</Paragraph>
+				</LessContent>
 				<div className='less__container'>
 					{/* <Paragraph>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis
@@ -124,21 +128,33 @@ const SettingsPage = ({ contentProps }) => {
 				<ZigZag>
 					<HeadingTwo>Developer Mode</HeadingTwo>
 					<ShowIf noAnimation thisValue={forDev} thatValue={false}>
-						<Paragraph>
+						{/* <Paragraph>
 							I developed my web app for two types of people: people who know
 							code and people who do not. To give the best experience for both,
 							I decided to hide a lot of the technical jargon. If you're
 							knowledgable about coding or would like to learn more, then I
 							suggest turning on this setting.
+						</Paragraph> */}
+						<Paragraph>
+							Activate this if you recognize keywords such as: HTML5, ReactJS,
+							UX Design, Prototyping, Javascript, CSS, User Interface, User
+							Experience etc... (Or If you want to learn about those keywords).
 						</Paragraph>
 					</ShowIf>
 					<ShowIf noAnimation thisValue={forDev} thatValue={true}>
 						<Paragraph>
-							I sprinkled some technical knowledge around the web app. I also
-							only show specific components like the Switch Sides setting for
-							technical users. (I wanted to turn on the Matrix theme when
-							"Activate Developer mode" was clicked but that would have been too
-							cliché.)
+							(I wanted to turn on the Matrix theme when "Activate Developer
+							mode" was clicked but that would have been too cliché)
+						</Paragraph>
+						<Paragraph>
+							I sprinkled a lot of technical jargon around this web app but I
+							don't a great a job indicate where.
+						</Paragraph>
+						<Paragraph>
+							Why not have this setting as a default?
+							<br />
+							It's my personal app and 90% of the people I know don't know all
+							about these technical mambo jambo.
 						</Paragraph>
 					</ShowIf>
 

@@ -184,7 +184,7 @@ export const ContentContainer = styled.section`
 	}
 
 	&::-webkit-scrollbar {
-		width: 1rem;
+		width: 20px;
 		${mobile}{
 			width: 10px;
 		}
@@ -442,21 +442,16 @@ export const ContentContainer = styled.section`
 			padding: 0;
 		}
 		li {
-			${paddingLRSm}
+			/* ${paddingLRSm} */
 			list-style-type: none;
 			padding-bottom: .75rem;
 			${mobile} {
 				margin: 0;
-				justify-content: left;
 			}
 			display: flex;
-			justify-content: center;
 			margin: 0 auto;
 			text-align: center;
 			${marginLRSm} 
-			&:last-child {
-				border-bottom: ${borderThin};
-			}
 			/* ${paddingLRSm} */
 		}
 		ul {

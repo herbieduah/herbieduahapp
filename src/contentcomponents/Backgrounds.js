@@ -5,6 +5,7 @@ import {
 	Header,
 	GenerateTheme,
 	ContentCategory,
+	LessContent,
 	ContentShow,
 	Link,
 	Instructions,
@@ -21,10 +22,9 @@ const BackgroundsPage = ({ contentProps }) => {
 	return (
 		<Fragment>
 			<ContentShow less>
-				<Header less>{header}</Header>
-				<Paragraph less>
+				<LessContent header={header}>
 					I chose a splendid selection of backgrounds for your choosing.
-				</Paragraph>
+				</LessContent>
 				<div className='less__container'>
 					<GenerateTheme type='color' />
 				</div>
@@ -52,17 +52,17 @@ const BackgroundsPage = ({ contentProps }) => {
 					<ElementReveal className='paddingLRSm'>
 						<TabList className='react-tabs__tab-list'>
 							<Tab tabIndex='0'>
-								<Text format m tertiary className='marginLRSm'>
+								<Text format xs tertiary className='marginLRSm'>
 									Colors
 								</Text>
 							</Tab>
 							<Tab tabIndex='0'>
-								<Text format m tertiary className='marginLRSm'>
+								<Text format xs tertiary className='marginLRSm'>
 									Gradients
 								</Text>
 							</Tab>
 							<Tab tabIndex='0'>
-								<Text format m tertiary className='marginLRSm'>
+								<Text format xs tertiary className='marginLRSm'>
 									Patterns
 								</Text>
 							</Tab>

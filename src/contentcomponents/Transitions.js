@@ -7,6 +7,7 @@ import {
 	Header,
 	ContentShow,
 	ContentCategory,
+	LessContent,
 	GenerateTransition,
 	Link,
 	Instructions,
@@ -26,10 +27,9 @@ const TransitionsPage = () => {
 	return (
 		<Fragment>
 			<ContentShow less>
-				<Header less>{header}</Header>
-				<Paragraph less>
+				<LessContent header={header}>
 					You can choose how you bring the elements on this web app to life.
-				</Paragraph>
+				</LessContent>
 				<div className='less__container'>
 					{/* <Paragraph>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis
@@ -47,6 +47,10 @@ const TransitionsPage = () => {
 					extensive collection of random animations for you to choose how you
 					want to bring this web app to life.
 				</Paragraph>
+				<Paragraph>
+					(Hot tip: after you choose an animation, go to a different page to see
+					it in action.)
+				</Paragraph>
 				<Instructions className='marginTopLarge justify-center'>
 					Select Animations Below.
 				</Instructions>
@@ -54,12 +58,12 @@ const TransitionsPage = () => {
 					<ElementReveal className='paddingLRSm'>
 						<TabList className='react-tabs__tab-list'>
 							<Tab tabIndex='0'>
-								<Text format m tertiary className='marginLRSm'>
+								<Text format s tertiary className='marginLRSm'>
 									Smooth
 								</Text>
 							</Tab>
 							<Tab tabIndex='0'>
-								<Text format m tertiary className='marginLRSm'>
+								<Text format s tertiary className='marginLRSm'>
 									Crazy
 								</Text>
 							</Tab>

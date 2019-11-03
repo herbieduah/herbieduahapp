@@ -146,7 +146,7 @@ export const App = () => {
 				accessible={accessible}
 				dragging={dragging}
 				showOutline={showOutline}>
-				{/* <AppStartUp /> */}
+				<AppStartUp />
 				<ShowIf noAnimation thisValue={currentTheme} thatValue={"matrix"}>
 					<Matrix fullscreen={true} isPortrait={isPortrait(ww, wh)} />
 				</ShowIf>

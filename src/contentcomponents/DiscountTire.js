@@ -5,6 +5,7 @@ import {
 	Paragraph,
 	// HeadingOne,
 	HeadingTwo,
+	LessContent,
 	// Link,
 	Header,
 	// HeadingThree,
@@ -14,7 +15,8 @@ import {
 	Figure,
 	Figcaption,
 	ContentShow,
-	ZigZag
+	ZigZag,
+	Link
 	// Small,
 	// Figure,
 	// Figcaption,
@@ -49,10 +51,9 @@ const workTools =
 const DiscountTirePage = () => (
 	<Fragment>
 		<ContentShow less>
-			<Header less>{header}</Header>
-			<Paragraph less>
+			<LessContent header={header}>
 				Currently working at Discount Tire as a Front End Developer and a model?
-			</Paragraph>
+			</LessContent>
 			<div className='less__container paddingLRSm'>
 				<Image className='paddingLRSm' src={dtCreepySmile} />
 			</div>
@@ -62,56 +63,75 @@ const DiscountTirePage = () => (
 			<WorkInfo workinfo={workinfo} />
 			<ZigZag>
 				<Paragraph>
-					I am currently working at Discount Tire as a Front End Developer. My
-					duties consist of developing and designing webpages for a legacy
-					Intranet System so unfortunately, I can't show any of my work on{" "}
-					<i>this web app</i>.
+					Discount Tire Company is the largest tire and wheel retailer in the
+					world. I am currently working there as a Front End Developer.
+				</Paragraph>
+				<Paragraph>
+					My duties consist of developing and designing webpages for a legacy
+					Intranet so unfortunately, I can't show any of my work on this web
+					app.
+				</Paragraph>
+				<Paragraph>
+					(If you really want to know,{" "}
+					<Link href='mailto:herbduah@gmail.com'>contact me</Link>)
 				</Paragraph>
 			</ZigZag>
 			<ZigZag>
 				<HeadingTwo>Modeling</HeadingTwo>
 				<Paragraph>
-					I volunteered to be a model for one of their shoots.
+					I also work as a model for Discount Tire ( It's an inside joke. I
+					volunteered to be a model for one of their shoots).
 				</Paragraph>
-				<Figure src={dtCheckOutTheseTires}>
+				<Figure
+					alt='A photo of me and another dude dressed as discount tire employees doing a tire check.'
+					src={dtCheckOutTheseTires}>
 					<Figcaption className='marginBottomLarge'>
 						Confucius say, man who runs behind car will get exhausted, but man
 						who runs in front of car will get tired.
 					</Figcaption>
 				</Figure>
-				<Figure src={dtLookingDown}>
+				<Figure
+					alt='A photo of me and another dude dressed as discount tire employees looking down'
+					src={dtLookingDown}>
 					<Figcaption className='marginBottomLarge'>
 						Did you hear about the man who ran in front of the bus?He got tired.
 					</Figcaption>
 				</Figure>
-				<Figure src={dtShootMentoringNearMustang}>
+				<Figure
+					alt='A photo of me and another dude dressed as discount tire employees looking at each other next to a car while squatting'
+					src={dtShootMentoringNearMustang}>
 					<Figcaption className='marginBottomLarge'>
 						Why do you call a pickup truck?
 						<br />
 						Because ya got a flat tire.
 					</Figcaption>
 				</Figure>
-				<Figure src={dtShootWithMustang}>
+				<Figure
+					alt='A photo of me and another dude dressed as discount tire employees looking at each other next to a car while standing'
+					src={dtShootWithMustang}>
 					<Figcaption className='marginBottomLarge'>
-						Why did the bike fall over?Because it was two tired.
+						Why did the bike fall over? Because it was two tired.
 					</Figcaption>
 				</Figure>
-				<Figure src={dtTeamworkTools}>
+				<Figure
+					alt='A photo of me and another dude dressed as discount tire employees  in a shop just laughing it up'
+					src={dtTeamworkTools}>
 					<Figcaption className='marginBottomLarge'>
-						People would consider putting pedals on wheelchairs so that their
+						People should consider putting pedals on wheelchairs so that their
 						arms don’t get tired.
 					</Figcaption>
 				</Figure>
-				<Figure src={dtPostedUp}>
+				<Figure
+					alt='A photo of me and another dude dressed as discount tire employees. The other dude looks disgruntled'
+					src={dtPostedUp}>
 					<Figcaption className='marginBottomLarge'>
 						When your friend is wheely tired of your tire puns.
 					</Figcaption>
 				</Figure>
-				<Figure src={dtReceipt}>
+				<Figure alt='a discount tire pamphlet' src={dtReceipt}>
 					<Figcaption className='marginBottomLarge'>
-						Discount Tire (America's Tire in California) is the largest retailer
-						tires and wheels in the world with 1000+ stores nationwide and I am
-						currently on every receipt holder.
+						Oh yeah I am on every receipt holder for their 1000+ stores
+						nationawide so that's neat.
 					</Figcaption>
 				</Figure>
 			</ZigZag>
