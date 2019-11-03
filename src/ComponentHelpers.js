@@ -28,7 +28,7 @@ import Media from "./maincomponents/Media";
 import ContentContainer from "./stylecomponents/ContentContainer";
 import { NavLink } from "react-router-dom";
 import Modal from "./maincomponents/Modal";
-import { Tab, TabList, TabPanel } from "react-tabs";
+import { Tab, TabList, Tabs, TabPanel } from "react-tabs";
 import { ReactTabs, AccessibilityContainer } from "./stylecomponents/Base";
 import SubMenu from "./maincomponents/SubMenu";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
@@ -187,7 +187,7 @@ export const NavBar = () => {
 										tabIndex='0'
 										className='navbar__home-text'
 										aria-hidden={showLess ? `true` : `false`}>
-										HerbieDuah.app
+										<span className='navbar__hdappText'>.app</span>
 									</Text>
 								</CSSTransition>
 							) : null}
@@ -200,7 +200,7 @@ export const NavBar = () => {
 						aria-pressed={fullScreen ? `true` : `false`}
 						className='navbar__maximize'
 						onClick={setMaximizeAndMinimize}
-						tabindex='0'
+						tabIndex='0'
 						aria-hidden={showLess ? `true` : `false`}>
 						<ShowIf thisValue={fullScreen && !showLess} thatValue={true}>
 							Minimize

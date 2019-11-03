@@ -47,7 +47,10 @@ import {
 	colorSlightOpacity,
 	appfontFamily,
 	appfontFamilyTertiary,
-	fontColorOpposite
+	fontColorOpposite,
+	buttonBackgroundHoverFocus,
+	buttonBorderActive,
+	buttonColorHoverFocus
 } from "./Themes/ThemeVariables";
 import {
 	mobile,
@@ -287,6 +290,18 @@ export const NavBarContainer = styled.div`
 				border: none !important;
 			}
 		}
+		&__hdappText{
+			&::before {
+				content:'HerbieDuah';
+				${mobile}{
+				content:'HD';
+					}
+				${tablet}{
+				content:'Herbie';
+				}
+			}
+			
+		}
 		&__maximize {
 			padding: 0 !important;
 			display: flex;
@@ -440,6 +455,8 @@ export const ReactTabs = styled(Tabs)`
 				${marginLRSm}
 			} */
 			span {
+				transform: scale(1);
+				${mainTransition};
 				/* color: ${tabHeadingsColor};
 				${mainTransition}
 				border-bottom: 2px solid rgba(0,0,0,0);
@@ -452,17 +469,15 @@ export const ReactTabs = styled(Tabs)`
 					padding: 0 5px;
 				} */
 			}
-			&:focus {
-				background-color: ${colorSlightOpacity};
+			/* &:focus,&:hover {
 				span {
-					color:  ${fontColorOpposite};
+					transform: scale(1);
 				}
-			}
-			&:hover {
-				background-color: ${fontColor};
+			} */
+			&:focus,&:hover {
 				
 				span {
-					color:  ${fontColorOpposite};
+					transform: scale(.93);
 				}
 				/* span {
 					border: ${tabHeadingsBorderActive};
@@ -683,8 +698,9 @@ export const ThemeCircleContainer = styled.li`
 export const TransitionTextContainer = styled.li`
 	position: relative;
 	list-style-type: none;
-	margin-bottom: .5rem;
+	margin-bottom: ${navBarSize};
 	display: flex;
+	padding:0  ${navBarSize};
 	.appTransition {
 		&__container {
 			/* ${mainTransition} */
@@ -695,7 +711,7 @@ export const TransitionTextContainer = styled.li`
 	}
 
 	${mobile} {
-		margin-bottom: 0.7rem;
+		padding: 0;
 	}
 	button {
 		/* color: ${navBarButtonColor}; */
@@ -707,18 +723,28 @@ export const TransitionTextContainer = styled.li`
 		padding:0  ${navBarSize};
 		${mobile} {
 			padding: 0 .5rem;
-			border-left: none;
-			border-right: none;
+			border-left:0;
+			border-right: 0;
 		}
 		span {
 			
 		}
-		height: ${navBarSize};
+		height: 3rem;
 		
-		
-		&:hover {
-			text-decoration: none;
+		&.current {
+			${mobile} {
+			border-left:0;
+			border-right: 0;
+			}
 		}
+		&:hover,&:focus {
+			text-decoration: none;
+			${mobile} {
+			border-left:0;
+			border-right: 0;
+			}
+		}
+		
 	}
 
 	span.animated {

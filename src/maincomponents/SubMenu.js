@@ -79,13 +79,13 @@ export const SubMenu = props => {
 							</Text>
 						</li>
 						<li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink xl={true} to='/Resume'>
-								Resume
+							<Text menuLink xl={true} to='/Inspiration'>
+								Inspiration
 							</Text>
 						</li>
 						<li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink xl={true} to='/Inspiration'>
-								Inspiration
+							<Text menuLink xl={true} to='/Resume'>
+								Resume
 							</Text>
 						</li>
 						<li onClick={hideModal} className='subMenu__item'>

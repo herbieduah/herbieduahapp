@@ -8,7 +8,8 @@ import {
 	Header,
 	Paragraph,
 	Image,
-	ContentCategory
+	ContentCategory,
+	LessContent
 } from "../ContentHelpers";
 // import sunsetPoint1480x1110 from "../media/images/iPhone/sunsetPoint.jpg";
 // import santaMonicaBeach1480x1973 from "../media/images/iPhone/santaMonicaBeach.jpg";
@@ -53,12 +54,13 @@ const iPhonePage = () => {
 	return (
 		<Fragment>
 			<ContentShow less>
-				<Header less>{header}</Header>
-				<Paragraph less>I enjoy taking pictures on my iPhone</Paragraph>
+				<LessContent header={header}>
+					I enjoy taking pictures on my iPhone
+				</LessContent>
 				<div className='less__container paddingLRSm'>
-					<Image src={iphonemexicoSunset} />
-					<Image src={iphonelockettJeepLife} />
-					<Image src={iphonesunsetPoint} />
+					<Image alt='picture of ' src={iphonemexicoSunset} />
+					<Image alt='picture of ' src={iphonelockettJeepLife} />
+					<Image alt='picture of ' src={iphonesunsetPoint} />
 				</div>
 			</ContentShow>
 			<ContentShow containerLarge more>
@@ -68,58 +70,94 @@ const iPhonePage = () => {
 				</Paragraph>
 				<ul className='c-photos'>
 					<li>
-						<Image src={iphonesantaMonicaBeach} />
+						<Image
+							alt='picture of a beach in Santa Monica California'
+							src={iphonesantaMonicaBeach}
+						/>
 					</li>
 					<li>
-						<Image src={iphoneDavidBestIphonePic} />
+						<Image
+							alt='picture of kid jumping up'
+							src={iphoneDavidBestIphonePic}
+						/>
 					</li>
 					<li>
-						<Image src={iphonejeepSnow} />
+						<Image alt='picture of my Jeep in snow' src={iphonejeepSnow} />
 					</li>
 					<li>
-						<Image src={iphonesantaMonicaBeach} />
+						<Image
+							alt='picture of a sunset near a ski lift'
+							src={iphonehumphreysSkiSunset}
+						/>
 					</li>
 					<li>
-						<Image src={iphonehumphreysSkiSunset} />
+						<Image
+							alt='picture of of the Grand Canyon in black and white'
+							src={iphonegrandcanyonBlackandWhite}
+						/>
 					</li>
 					<li>
-						<Image src={iphonegrandcanyonBlackandWhite} />
+						<Image
+							alt='picture of a sunset in Mexico'
+							src={iphonemexicoSunset}
+						/>
 					</li>
 					<li>
-						<Image src={iphonemexicoSunset} />
+						<Image
+							alt='picture of girl infront of a blue sky '
+							src={iphonenaebabe}
+						/>
 					</li>
 					<li>
-						<Image src={iphonenaebabe} />
+						<Image alt='picture of Dome in snow' src={iphonenauDome} />
 					</li>
 					<li>
-						<Image src={iphonenauDome} />
+						<Image
+							alt='picture of a jeep on a picturesque landscape'
+							src={iphonelockettJeepLife}
+						/>
 					</li>
 					<li>
-						<Image src={iphonelockettJeepLife} />
+						<Image alt='picture of guy in sunglasses' src={iphonemelDaddy} />
 					</li>
 					<li>
-						<Image src={iphonemelDaddy} />
+						<Image
+							alt='picture of best friends surrounded their college graduate friend'
+							src={iphonegradAunty}
+						/>
 					</li>
 					<li>
-						<Image src={iphonegradAunty} />
+						<Image
+							alt='picture of colorful trees '
+							src={iphonetreesbyEdgeofTheWorld}
+						/>
 					</li>
 					<li>
-						<Image src={iphonetreesbyEdgeofTheWorld} />
+						<Image
+							alt='picture of a jeep infront of a gloomy sky '
+							src={iphonegloomy}
+						/>
 					</li>
 					<li>
-						<Image src={iphonegloomy} />
+						<Image
+							alt='picture of dark cloudy city infront of a train station '
+							src={iphoneflagstaffRailroad}
+						/>
 					</li>
 					<li>
-						<Image src={iphoneflagstaffRailroad} />
+						<Image
+							alt='picture of some pretty colors  in the sky'
+							src={iphoneflagstaffPrettyColors}
+						/>
 					</li>
 					<li>
-						<Image src={iphoneflagstaffPrettyColors} />
+						<Image
+							alt='picture of a snowy neighborhood with pretty skies '
+							src={iphoneflagstaffColorfulHouses}
+						/>
 					</li>
 					<li>
-						<Image src={iphoneflagstaffColorfulHouses} />
-					</li>
-					<li>
-						<Image src={iphoneafterDCTrip} />
+						<Image alt='picture of sunset' src={iphoneafterDCTrip} />
 					</li>
 				</ul>
 				<ContentCategory category='photography' className='container' />
