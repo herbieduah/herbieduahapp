@@ -149,7 +149,7 @@ export const SliderController = styled.div`
 				/* margin-top: ${sliderMobileWidth / 2 - 1}px;
 				border-top: ${borderThin};
 				${slightBoxShadowAbove}; */
-				${slightBoxShadowAbove}
+				/* ${slightBoxShadowAbove} */
 				overflow:hidden;
 			}
 			${absoluteOverlay}
@@ -230,7 +230,7 @@ export const SliderLineContainer = styled.div`
 	}
 	
 	.slider__line {
-		width: ${props => (props.isPortrait ? `4px` : `100%`)};
+		width: ${props => (props.isPortrait ? `1px` : `100%`)};
 		${mainTransition}
 		position:relative;
 		z-index: 10;
@@ -259,20 +259,20 @@ export const SliderLineContainer = styled.div`
 		height: 60px;
 		width: 60px;
 		position:relative;
-		/* &:before {
+		&:before {
 			content: '';
 			${absoluteOverlay}
 			display: block;
-			width: 300%;
-			height: 300%;
+			width: 200%;
+			height: 200%;
 			z-index: -1;
 			box-sizing: border-box;
-			margin-left: -100%;
-			margin-top: -100%;
+			margin-left: -50%;
+			margin-top: -50%;
 			border-radius: 50%;
 			background-color: ${CTAColor};
 			animation: ${pulseRing} 3.25s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
-		} */
+		}
 	}
 	&__line-content {
 			${mainTransition}

@@ -110,15 +110,16 @@ export const GlobalStyle = createGlobalStyle`
 //     font-size: 12px
 export const NavBarMiniContainer = styled.div`
 	position: fixed;
-  	padding: 0.5rem ${navBarSize};
+  	padding: 0rem ${navBarSize};
 	${mobile} {
-		padding: .5rem 1rem;
+		padding: 0rem 1rem;
 	}
     z-index: 1000;
     display: flex;
 	background: ${props =>
 		props.navBarComplement ? navBarBgComplement : navBarBg};
 	width: 100vw;
+	
 	background: ${props => (props.modalVisible ? modalFullScreenBg : ``)}!important;
 	${props => (props.modalVisible ? `box-shadow:none` : ``)};
 	border-bottom: ${props =>
@@ -153,7 +154,15 @@ export const NavBarMiniContainer = styled.div`
 		
 		&__menu-text, &__logo {
 			position:relative;
+			${paddingLRSm};
 			z-index: 100;	
+		}
+		&__logo-menu, &__logo {
+			${paddingLRSm};
+			${mobile} {
+				padding-left: 0;
+				padding-right: 0;
+			}
 		}
 		&__logo-link.active{
 			svg {
@@ -181,7 +190,8 @@ export const NavBarMiniContainer = styled.div`
 		}
 		
 		&__logo {
-			
+			height: 3rem;
+			overflow: hidden;
 			.inner-rect, .half-circle {
 				${mainTransition}
 				fill: ${fontColor};	
@@ -194,8 +204,8 @@ export const NavBarMiniContainer = styled.div`
 			svg {
 				${mainTransition}
 				/* transform: scale(.09); */
-				width: 1.5rem;
-				height: 1.5rem;
+				width: 3rem;
+				height: 3rem;
 				opacity: 1;
 				path {
 					
@@ -270,6 +280,7 @@ export const NavBarContainer = styled.div`
 		/* ${props =>
 			props.navBarRight ? `padding-right: 0!important` : navBarBorder}; 	 */
 			margin-left: ${navBarSize};
+			
 		}
 		button {
 			border: none !important;
@@ -313,6 +324,10 @@ export const NavBarContainer = styled.div`
 				display: flex;
 				align-items: center;
 				flex-direction: row-reverse;
+				${props =>
+					props.isPortrait
+						? `margin-right: 1rem;`
+						: `margin-right: ${navBarSize};`}; 
 			
 			button {
 				padding: 0;
@@ -393,7 +408,7 @@ export const ReactTabs = styled(Tabs)`
 			border: ${tabHeadingsBorder};
 			height: ${navBarSize};
 			align-items: center;
-
+			
 		}
 
 		&__tab {
@@ -597,6 +612,7 @@ export const ThemeCircleContainer = styled.li`
 			position: relative;
 			width: 100%;
 			padding-bottom: 100%;
+			cursor: pointer;
 			/* height: 9.5rem; */
 			
 			/* ${mobile} {

@@ -13,6 +13,7 @@ import {
 	Link,
 	Emphasis,
 	ZigZag,
+	LessContent,
 	ContentCategory
 } from "../ContentHelpers";
 
@@ -22,10 +23,12 @@ const InspirationPage = () => {
 	return (
 		<Fragment>
 			<ContentShow less>
-				<Header less>{header}</Header>
-				<Paragraph less>
+				<LessContent header={header}>
 					In the future, I believe there is going to be an app for everyone.
-				</Paragraph>
+					{/* <br />
+					<br />I built this portfolio as a way for me to learn and bring some
+					of my creative and original ideas to life. */}
+				</LessContent>
 				<div className='less__container'>
 					{/* <Paragraph>
 						In the future, I believe everyone is going to have their own app. I

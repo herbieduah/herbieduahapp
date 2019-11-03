@@ -99,7 +99,7 @@ export const NavBar = () => {
 					navBarComplement={navBarComplement}>
 					<NavLink
 						exact
-						className='navbar__logo-link'
+						className='navbar__logo-link '
 						to='/'
 						tabIndex='0'
 						aria-label='Logo'
@@ -120,7 +120,7 @@ export const NavBar = () => {
 							Contact
 						</Text>
 					</ShowIf>
-					<div className='navbar__logo-menu'>
+					<div className='navbar__logo-menu '>
 						<ShowIf noAnimation thisValue={modalVisible} thatValue={true}>
 							<ElementReveal>
 								<Text
@@ -525,6 +525,7 @@ const ContentWrapperContainer = props => {
 			showLess={showLess}
 			showMore={showMore}
 			navBarRight={navBarRight}
+			accessible={accessible}
 			minimalMode={minimalMode}>
 			{children}
 		</ContentContainer>

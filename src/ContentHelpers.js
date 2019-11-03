@@ -164,7 +164,9 @@ export const Instructions = props => {
 export const ContentCategory = props => {
 	const { fullScreen } = useContext(globalState);
 	const categoryArr = ["customize", "work", "photography", "about"];
-	const defaultIndex = categoryArr.indexOf(props.category);
+	const defaultIndex = props.category
+		? categoryArr.indexOf(props.category)
+		: -1;
 	return (
 		<ShowIf noAnimation thisValue={fullScreen} thatValue={true}>
 			<ElementReveal>
@@ -197,14 +199,38 @@ export const Paragraph = props => {
 
 export const Emphasis = props => {
 	const className = props.className || "";
-	const center = props.center ? "text-center" : "";
+	const lessClass = props.less ? "less__main-text " : "marginBottomMed";
 	return (
 		<Fragment>
 			<ElementReveal>
 				<Text
 					l
+					{...props}
 					secondary
-					className={`${className} ${center} marginBottomMed marginTopMed paddingLRSm`}>
+					className={`${className} ${lessClass} marginBottomMed marginTopMed paddingLRSm`}>
+					{props.children}
+				</Text>
+			</ElementReveal>
+		</Fragment>
+	);
+};
+
+export const LessContent = props => {
+	const className = props.className || "";
+	const header = props.header;
+	return (
+		<Fragment>
+			<ElementReveal>
+				<header>
+					<Text h1 xl className='paddingLRSm less__header'>
+						{header}
+					</Text>
+				</header>
+				<Text
+					l
+					{...props}
+					secondary
+					className={`${className} less__main-text paddingLRSm`}>
 					{props.children}
 				</Text>
 			</ElementReveal>
@@ -218,7 +244,7 @@ export const Small = props => {
 		<ElementReveal>
 			<small>
 				<Text
-					m
+					s
 					format
 					tertiary
 					className={`marginBottomMed  paddingLRSm ${className}`}

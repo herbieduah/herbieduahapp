@@ -66,7 +66,7 @@ const ContactsPage = () => {
 						LinkedIn
 					</Link>{" "}
 				</Paragraph>
-				<ContentCategory category='work' />
+				<ContentCategory />
 			</ContentShow>
 		</Fragment>
 	);
