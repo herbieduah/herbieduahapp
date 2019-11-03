@@ -15,6 +15,7 @@ export const buttonBackground = props => props.theme.buttonBackground;
 export const buttonBackgroundHoverFocus = props =>
 	props.theme.buttonBackgroundHoverFocus;
 export const buttonBorder = props => props.theme.buttonBorder;
+export const buttonBorderFocus = props => props.theme.buttonBorderFocus;
 export const buttonColor = props => props.theme.buttonColor;
 export const buttonColorHoverFocus = props => props.theme.buttonColorHoverFocus;
 export const buttonFontWeight = props => props.theme.buttonFontWeight;

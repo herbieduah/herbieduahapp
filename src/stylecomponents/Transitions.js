@@ -1,7 +1,7 @@
 export const appTransitions = [
 	{
 		name: "default",
-		type: "",
+		type: "smooth",
 		properties: {
 			enter: "animated",
 			enterActive: "fadeInUp",
@@ -11,7 +11,7 @@ export const appTransitions = [
 	},
 	{
 		name: "zoomInzoomOut",
-		type: "",
+		type: "smooth",
 		properties: {
 			enter: "animated",
 			enterActive: "zoomIn",
@@ -21,7 +21,7 @@ export const appTransitions = [
 	},
 	{
 		name: "bounceInbounceOut",
-		type: "",
+		type: "crazy",
 		properties: {
 			enter: "animated",
 			enterActive: "bounceIn",
@@ -31,7 +31,7 @@ export const appTransitions = [
 	},
 	{
 		name: "fadeInfadeOut",
-		type: "",
+		type: "smooth",
 		properties: {
 			enter: "animated",
 			enterActive: "fadeIn",
@@ -41,7 +41,7 @@ export const appTransitions = [
 	},
 	{
 		name: "jelloZoomOut",
-		type: "",
+		type: "crazy",
 		properties: {
 			enter: "animated",
 			enterActive: "jello",
@@ -51,7 +51,7 @@ export const appTransitions = [
 	},
 	{
 		name: "fadeInRightFadeOutRight",
-		type: "",
+		type: "smooth",
 		properties: {
 			enter: "animated",
 			enterActive: "fadeInRight",
@@ -61,7 +61,7 @@ export const appTransitions = [
 	},
 	{
 		name: "rotateInRotateOut",
-		type: "",
+		type: "crazy",
 		properties: {
 			enter: "animated",
 			enterActive: "rotateIn",
@@ -71,7 +71,7 @@ export const appTransitions = [
 	},
 	{
 		name: "flipInYFlipOutY",
-		type: "",
+		type: "crazy",
 		properties: {
 			enter: "animated",
 			enterActive: "flipInY",
@@ -81,7 +81,7 @@ export const appTransitions = [
 	},
 	{
 		name: "fadeInLeftfadeOutRight",
-		type: "",
+		type: "smooth",
 		properties: {
 			enter: "animated",
 			enterActive: "fadeInLeft",
@@ -91,7 +91,7 @@ export const appTransitions = [
 	},
 	{
 		name: "slideInLeftslideOutLeft",
-		type: "",
+		type: "smooth",
 		properties: {
 			enter: "animated",
 			enterActive: "slideInLeft",
@@ -101,7 +101,7 @@ export const appTransitions = [
 	},
 	{
 		name: "rotateOutrotateIn",
-		type: "",
+		type: "crazy",
 		properties: {
 			enter: "animated",
 			enterActive: "rotateIn",
@@ -111,7 +111,7 @@ export const appTransitions = [
 	},
 	{
 		name: "fadeInDownfadeOutDown",
-		type: "",
+		type: "smooth",
 		properties: {
 			enter: "animated",
 			enterActive: "fadeInDown",
@@ -121,7 +121,7 @@ export const appTransitions = [
 	},
 	{
 		name: "slideInDownslideOutDown",
-		type: "",
+		type: "smooth",
 		properties: {
 			enter: "animated",
 			enterActive: "slideInDown",
@@ -132,7 +132,7 @@ export const appTransitions = [
 
 	{
 		name: "bounceInDownbounceOutDown",
-		type: "",
+		type: "crazy",
 		properties: {
 			enter: "animated",
 			enterActive: "bounceInDown",
@@ -142,7 +142,7 @@ export const appTransitions = [
 	},
 	{
 		name: "lightSpeedInlightSpeedOut",
-		type: "",
+		type: "smooth",
 		properties: {
 			enter: "animated",
 			enterActive: "lightSpeedIn",
@@ -152,7 +152,7 @@ export const appTransitions = [
 	},
 	{
 		name: "flipInXFlipOutX",
-		type: "",
+		type: "crazy",
 		properties: {
 			enter: "animated",
 			enterActive: "flipInX",
@@ -162,12 +162,42 @@ export const appTransitions = [
 	},
 	{
 		name: "slideInLeftslideOutRight",
-		type: "",
+		type: "smooth",
 		properties: {
 			enter: "animated",
 			enterActive: "slideInLeft",
 			exit: "animated",
 			exitActive: "slideOutRight"
+		}
+	},
+	{
+		name: "rollInrollOut",
+		type: "crazy",
+		properties: {
+			enter: "animated",
+			enterActive: "rollIn",
+			exit: "animated",
+			exitActive: "rollOut"
+		}
+	},
+	{
+		name: "zoomInDownzoomInUp",
+		type: "crazy",
+		properties: {
+			enter: "animated",
+			enterActive: "zoomInUp",
+			exit: "animated",
+			exitActive: "zoomInDown"
+		}
+	},
+	{
+		name: "hingeJackInTheBox",
+		type: "crazy",
+		properties: {
+			enter: "animated",
+			enterActive: "hinge",
+			exit: "animated",
+			exitActive: "jackInTheBox"
 		}
 	}
 ];

@@ -4,9 +4,9 @@ import cartographer from "../bgImages/cartographer.png";
 // ** fontColorSecondary;
 // const fontColor = readableColor("#cc208e");
 // const fontColorSecondary = fontColor;
-const mainFont = `"aktiv-grotesk", -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif`;
-const mainFontTertiary = `"aktiv-grotesk-condensed", -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif`;
-const mainFontSecondary = `"aktiv-grotesk-extended", -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif`;
+const mainFont = `"halyard-display", -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif`;
+const mainFontTertiary = `"nimbus-sans", -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif`;
+const mainFontSecondary = `"nimbus-sans-extended", -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif`;
 const bgColor = "#cc208e";
 // const bgColorSecondary = "#6713d2";
 const gradientValues = `#cc208e 0%, #6713d2 100%`;
@@ -35,6 +35,7 @@ export const themeMaker = (theme = defaultBaseValues) => {
 		buttonBackground: `none`,
 		buttonBackgroundHoverFocus: `${fontColor}`,
 		buttonBorder: `1px solid ${rgba(fontColor, 0.2)}`,
+		buttonBorderFocus: `1px solid ${fontColor}`,
 		buttonColor: `${rgba(fontColor, 1)}`,
 		buttonColorHoverFocus: `${readableColor(fontColor)}`,
 		buttonFontWeight: `700`,
@@ -118,6 +119,7 @@ export const themeBgMaker = (theme = defaultBgImageValues) => {
 		buttonBackground: `none`,
 		buttonBackgroundHoverFocus: `${fontColor}`,
 		buttonBorder: `1px solid ${rgba(fontColor, 0.2)}`,
+		buttonBorderFocus: `1px solid ${fontColor}`,
 		buttonColor: `${rgba(fontColor, 1)}`,
 		buttonColorHoverFocus: `${readableColor(fontColor)}`,
 		buttonFontWeight: `700`,
@@ -199,6 +201,7 @@ export const themeColorMaker = (hexColor = "EFF0F1") => {
 		buttonBackground: `none`,
 		buttonBackgroundHoverFocus: `${fontColor}`,
 		buttonBorder: `1px solid ${rgba(fontColor, 0.2)}`,
+		buttonBorderFocus: `1px solid ${fontColor}`,
 		buttonColor: `${rgba(fontColor, 1)}`,
 		buttonColorHoverFocus: `${readableColor(fontColor)}`,
 		buttonFontWeight: `700`,
@@ -277,6 +280,7 @@ export const matrixTheme = () => {
 		buttonBackground: `none`,
 		buttonBackgroundHoverFocus: `${fontColor}`,
 		buttonBorder: `1px solid ${rgba(fontColor, 0.2)}`,
+		buttonBorderFocus: `1px solid ${fontColor}`,
 		buttonColor: `${rgba(fontColor, 1)}`,
 		buttonColorHoverFocus: `${readableColor(fontColor)}`,
 		buttonFontWeight: `700`,
@@ -353,6 +357,7 @@ export const snapchatTheme = () => {
 		buttonBackground: `none`,
 		buttonBackgroundHoverFocus: `${fontColor}`,
 		buttonBorder: `1px solid ${rgba(fontColor, 0.2)}`,
+		buttonBorderFocus: `1px solid ${fontColor}`,
 		buttonColor: `${rgba(fontColor, 1)}`,
 		buttonColorHoverFocus: `${readableColor(fontColor)}`,
 		buttonFontWeight: `700`,

@@ -5,6 +5,7 @@ import {
 	Gif,
 	Header,
 	Paragraph,
+	LessContent,
 	// Image,
 	FiGif,
 	Figcaption,
@@ -26,7 +27,8 @@ import {
 import {
 	picsOfMeDherbstaAndDinchman,
 	picsOfMeRickJamesBball,
-	picsOfMeMeme
+	picsOfMeMeme,
+	picsOfMeSelfieOlympics
 } from "../MediaVariables";
 
 const header = "About Me";
@@ -35,10 +37,9 @@ const AboutMePage = () => {
 	return (
 		<Fragment>
 			<ContentShow less>
-				<Header less>{header}</Header>
-				<Paragraph less>
+				<LessContent header={header}>
 					I am going to try to describe myself with pictures and gifs.
-				</Paragraph>
+				</LessContent>
 				<div className='less__container'>
 					{/* <Paragraph>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis
@@ -70,10 +71,20 @@ const AboutMePage = () => {
 						height='900'
 						url={videosofmemillyrockgrandcanyon}>
 						<Figcaption>
-							Yeahhhh I am weird, if you don't mind that and you live in Phoenix
-							too we should grab coffee sometime.
+							Just milly rocking infront of the Grand Canyon.
 						</Figcaption>
 					</FiGif>
+				</ZigZag>
+				<ZigZag>
+					<Emphasis center>
+						I love to solve problems in a creative and original way.
+					</Emphasis>
+					<Figure
+						className='paddingLRMed'
+						desc='Selfie'
+						src={picsOfMeSelfieOlympics}>
+						<Figcaption>I call that the Look Ma No Hands selfie.</Figcaption>
+					</Figure>
 				</ZigZag>
 
 				{/* <HeadingTwo>I graduated at Northern Arizona University</HeadingTwo>

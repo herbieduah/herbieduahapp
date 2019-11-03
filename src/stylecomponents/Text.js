@@ -25,7 +25,8 @@ import {
 	colorSlightOpacity,
 	buttonBorder,
 	buttonBackground,
-	buttonBackgroundHoverFocus
+	buttonBackgroundHoverFocus,
+	buttonBorderFocus
 } from "./Themes/ThemeVariables";
 
 const baseStyle = css`
@@ -50,24 +51,24 @@ const baseStyle = css`
 
 	font-size: ${props => {
 		if (props.xs) return "0.8em";
-		if (props.s) return ".9em";
-		if (props.m) return "1em";
-		if (props.l) return "1.30em";
-		if (props.large) return "1.30em";
+		if (props.s) return ".95em";
+		if (props.m) return "1.1em";
+		if (props.l) return "1.35em";
+		if (props.large) return "1.35em";
 		if (props.xl) return "1.65em";
 		if (props.xxl) return "2.4em";
-		return "1em";
+		return "1.1em";
 	}};
 	${mobile} {
 		font-size: ${props => {
-			if (props.xs) return "0.8em";
-			if (props.s) return "0.9em";
-			if (props.m) return "1em";
-			if (props.l) return "1.3em";
-			if (props.large) return "1.3em";
-			if (props.xl) return "1.55em";
+			if (props.xs) return "0.75em";
+			if (props.s) return "0.95em";
+			if (props.m) return "1.1em";
+			if (props.l) return "1.35em";
+			if (props.large) return "1.35em";
+			if (props.xl) return "1.50em";
 			if (props.xxl) return "1.7em";
-			return "1em";
+			return "1.1em";
 		}};
 	}
 	font-weight: ${props => {
@@ -117,12 +118,15 @@ const Paragraph = styled.p`
 const Figcaption = styled.figcaption`
 	${baseStyle};
 `;
+
 const TextFormatter = styled.span`
 	${baseStyle};
+	letter-spacing: 0.3px;
 	display: flex;
 `;
 const Button = styled.button`
 	${baseStyle};
+	letter-spacing: .5px;
 	${stripButtonStyle}
 	${mainTransition}
 	font-family: ${appfontFamilyTertiary};
@@ -133,11 +137,13 @@ const Button = styled.button`
 	color: ${buttonColor};
 	padding: 0.55rem 1rem;
 	cursor: pointer;
-	&:hover,
-	&:focus {
+	&:hover{
 		color: ${buttonColorHoverFocus};
 		text-decoration: ${CTAUnderline};
 		background: ${buttonBackgroundHoverFocus};
+	}
+	&:focus {
+		border: ${buttonBorderFocus};
 	}
 	&.active,&.current {
 		color: ${buttonColorHoverFocus};
@@ -169,14 +175,15 @@ const ButtonText = styled.button`
 	}
 `;
 const HyperLink = styled.a`
-	${baseStyle};
 	${mainTransition}
 	cursor: pointer;
+	color: ${fontColor};
 	/* white-space: nowrap; */
 	&:hover,
 	&:focus {
 		text-decoration: underline;
 		font-weight: bold;
+		color: ${fontColor};
 	}
 	text-decoration: underline;
 `;

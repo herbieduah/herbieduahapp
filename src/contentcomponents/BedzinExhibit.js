@@ -7,6 +7,7 @@ import {
 	HeadingTwo,
 	Link,
 	Header,
+	LessContent,
 	Figcaption,
 	Figure,
 	ContentCategory,
@@ -37,7 +38,7 @@ import {
 	// bedzinthroughbedzinDesktop,
 	bedzinCreationofExhibitDesktop,
 	bedzinExhibitOld,
-	iPhoneExhibitMobile,
+	// iPhoneExhibitMobile,
 	// bedzinIPhoneExhibit,
 	bedziniPhoneCreationofExhibit
 } from "../MediaVariables";
@@ -51,10 +52,9 @@ const BedzinExhibitPage = () => {
 	return (
 		<Fragment>
 			<ContentShow less>
-				<Header less>{header}</Header>
-				<Paragraph less>
+				<LessContent>
 					Revamped a traveling exhibit site for my senior capstone.
-				</Paragraph>
+				</LessContent>
 				<div className='less__container'>
 					<Image
 						className='paddingLRSm'
@@ -78,7 +78,7 @@ const BedzinExhibitPage = () => {
 					<Figure
 						mockup
 						className='paddingLRSm'
-						alt='The Bezdin website before redesign'
+						alt='A screenshot of The Bezdin website before redesign'
 						src={bedzinExhibitOld}>
 						<Figcaption className='marginBottomLarge'>
 							The web design before the redesign from &nbsp;
@@ -154,7 +154,7 @@ const BedzinExhibitPage = () => {
 					<Figure
 						mockup
 						className='paddingLRSm'
-						alt='a mock up for the glossary pafe'
+						alt='a mock up for the glossary page'
 						width='1480'
 						height='2749'
 						src={glossaryDesktop}>

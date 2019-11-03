@@ -79,10 +79,7 @@ const MenuContainer = styled.aside`
 				max-width: 500px;
 				margin: 0 auto;
 				margin-bottom: 10vh;
-			${props =>
-				props.isPortrait
-					? `height: auto;margin-top: 6vh; margin-bottom:2rem;`
-					: ``};
+			${props => (props.isPortrait ? `margin-top: 6vh; margin-bottom:2rem;` : ``)};
 			}
 			/* height: 6vh; */
 			margin-bottom: 10vh;
@@ -231,7 +228,13 @@ const MenuContainer = styled.aside`
 
 	}
 
-	
+	${tablet}{
+				
+		${props =>
+			props.isPortrait
+				? `padding-left: ${navBarSize}; padding-right: ${navBarSize};`
+				: ``};
+	}
 	.alert-enter {
 	opacity: 0;
 	transform: scale(0.9);

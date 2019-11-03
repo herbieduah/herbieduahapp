@@ -14,7 +14,8 @@ import {
 	ContentCategory,
 	ContentShow,
 	WorkInfo,
-	ZigZag
+	ZigZag,
+	LessContent
 } from "../ContentHelpers";
 import { ShowIf } from "../ComponentHelpers";
 // import Emoji from "a11y-react-emoji";
@@ -44,7 +45,7 @@ import { startNowcoverLetterGif, startNowresumeEmail } from "../VideoVariables";
 
 const header = "Start Now";
 const workDuration = "May 2014 - August 2016";
-const workSkills = "Graphic Design, Print Design and Digital Art";
+const workSkills = "Graphic Design, Web Design, Print Design and Digital Art";
 const workTools = "Adobe Creative Suite and VideoScribe";
 
 const StartNowPage = ({ contentProps }) => {
@@ -53,10 +54,9 @@ const StartNowPage = ({ contentProps }) => {
 	return (
 		<Fragment>
 			<ContentShow less>
-				<Header less>{header}</Header>
-				<Paragraph less>
+				<LessContent header={header}>
 					I helped other students get jobs while I was in college.
-				</Paragraph>
+				</LessContent>
 				<div className='less__container paddingLRSm'>
 					<Image src={startNowCareerImageWithPeople} />
 				</div>
@@ -89,7 +89,7 @@ const StartNowPage = ({ contentProps }) => {
 						src={startNowACMClubPhoto}>
 						<Figcaption>
 							An arcade machine created by Association for Computing Machinery
-							(ACM) club.
+							(ACM) club at NAU.
 						</Figcaption>
 					</Figure>
 					<Figure
@@ -125,8 +125,6 @@ const StartNowPage = ({ contentProps }) => {
 					</Figure>
 					<Figure
 						alt='Construct a plan poster with photo of the Construction of the Science and Health Building at Northern Arizona University'
-						width='2000'
-						height='1500'
 						src={startNowConstructAPlanHorizontal}>
 						<Figcaption>
 							"Construct A Plan" poster with the picture of construction of the
@@ -134,16 +132,10 @@ const StartNowPage = ({ contentProps }) => {
 						</Figcaption>
 					</Figure>
 
-					<Figure
+					<Image
 						className='paddingLRSm'
-						alt='poster with trees on it'
-						width='2000'
-						height='3000'
-						src={startNowStandOutFromTheRest}>
-						<Figcaption>
-							NAU is filled with a lot of trees... you get the point.
-						</Figcaption>
-					</Figure>
+						alt='Start Now poster with trees on it'
+						src={startNowStandOutFromTheRest}></Image>
 				</ZigZag>
 				<ZigZag>
 					<HeadingTwo>Web Design</HeadingTwo>
@@ -166,7 +158,7 @@ const StartNowPage = ({ contentProps }) => {
 					<Paragraph>I had to get creative.</Paragraph>
 					<Figure
 						className='paddingLRSm'
-						alt='photo of the NAU Start Now site'
+						alt='Screenshot of the NAU Start Now site'
 						width='1480'
 						height='1824'
 						src={startNowFullPage}>
@@ -178,7 +170,7 @@ const StartNowPage = ({ contentProps }) => {
 					</Figure>
 					<Figure
 						className='paddingLRSm'
-						alt='photo of the NAU Start Now site start page'
+						alt='Screenshot of the NAU Start Now site start page'
 						width='1480'
 						height='1774'
 						src={startNowFullSizeStudents}>
@@ -198,14 +190,18 @@ const StartNowPage = ({ contentProps }) => {
 						I utilized a software called VideoScribe to create two very
 						informative videos on how to write a resume and cover letter.
 					</Paragraph>
-					<FiGif url={startNowresumeEmail}>
+					<FiGif
+						url={startNowresumeEmail}
+						desc='How to Write an Excellent Resume Screen Capture'>
 						<Figcaption>
 							<Link href='https://www.youtube.com/watch?v=z8i6kHg0YoY'>
 								How to Write an Excellent Resume
 							</Link>{" "}
 						</Figcaption>
 					</FiGif>
-					<FiGif url={startNowcoverLetterGif}>
+					<FiGif
+						url={startNowcoverLetterGif}
+						desc='ow to Write an Excellent Cover Letter Screen Capture'>
 						<Figcaption>
 							<Link href='https://www.youtube.com/watch?v=I3WQa1AN_V0'>
 								How to Write an Excellent Cover Letter
@@ -221,7 +217,7 @@ const StartNowPage = ({ contentProps }) => {
 					</Paragraph>
 					<Figure
 						className='paddingLRSm'
-						alt='a picture of me with an outrageous smile'
+						alt='a picture of me in professional attire with an outrageous smile'
 						width='1480'
 						height='2220'
 						src={startNowsmileStock}>
@@ -232,7 +228,7 @@ const StartNowPage = ({ contentProps }) => {
 					</Figure>
 					<Figure
 						className='paddingLRSm'
-						alt='A picture of me witha tiger woods yes pose'
+						alt='A picture of me in professional attire with a tiger woods like yes pose'
 						width='1480'
 						height='2220'
 						src={startNowYes}>
@@ -241,7 +237,7 @@ const StartNowPage = ({ contentProps }) => {
 
 					<Figure
 						className='paddingLRSm'
-						alt='a picture of me being confused'
+						alt='a picture of me in professional attire being confused'
 						width='1480'
 						height='2220'
 						src={startNowidkwhatIamDoing}>
@@ -261,7 +257,7 @@ const StartNowPage = ({ contentProps }) => {
 					</Figure>
 
 					<Figure
-						alt='a picture of a wide panner'
+						alt='a picture of a wide banner'
 						width='1480'
 						height='1500'
 						src={startNowherbieCareerWidePoster}>

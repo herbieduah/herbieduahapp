@@ -99,9 +99,9 @@ export const NavBar = () => {
 					navBarComplement={navBarComplement}>
 					<NavLink
 						exact
-						className='navbar__logo-link'
+						className='navbar__logo-link '
 						to='/'
-						tabIndex='1'
+						tabIndex='0'
 						aria-label='Logo'
 						onClick={setMenuModalClose}>
 						<Media
@@ -115,12 +115,12 @@ export const NavBar = () => {
 							className='navbar__contact'
 							onClick={setMenuModalContent}
 							menuLink
-							tabIndex='2'
+							tabIndex='0'
 							to='/contacts'>
 							Contact
 						</Text>
 					</ShowIf>
-					<div className='navbar__logo-menu'>
+					<div className='navbar__logo-menu '>
 						<ShowIf noAnimation thisValue={modalVisible} thatValue={true}>
 							<ElementReveal>
 								<Text
@@ -465,7 +465,8 @@ const ContentWrapperContainer = props => {
 		setAccessible,
 		accessible,
 		videoControls,
-		setVideoControls
+		setVideoControls,
+		downloaded
 	} = useContext(globalState);
 	const { width: ww, height: wh } = useWindowResize();
 	const values = { ww, wh, cw, ch };
@@ -506,7 +507,8 @@ const ContentWrapperContainer = props => {
 		setAccessible,
 		accessible,
 		videoControls,
-		setVideoControls
+		setVideoControls,
+		downloaded
 	};
 	const children = React.Children.map(props.children, (child, index) => {
 		return React.cloneElement(child, {
@@ -523,6 +525,7 @@ const ContentWrapperContainer = props => {
 			showLess={showLess}
 			showMore={showMore}
 			navBarRight={navBarRight}
+			accessible={accessible}
 			minimalMode={minimalMode}>
 			{children}
 		</ContentContainer>
@@ -623,7 +626,7 @@ export const AppStartUp = () => {
 									</Text>
 								</ShowIf>
 								<ShowIf noAnimation thisValue={downloaded} thatValue={true}>
-									<Text l wide className='startUp__future'>
+									<Text l wide className='startUp__future '>
 										Wow, you actually "downloaded" my app
 									</Text>
 								</ShowIf>
@@ -635,7 +638,7 @@ export const AppStartUp = () => {
 									</Text>
 								</ShowIf>
 								<ShowIf noAnimation thisValue={downloaded} thatValue={true}>
-									<Text l wide className='startUp__my-own'>
+									<Text l wide className='startUp__my-own '>
 										You're amazing.
 									</Text>
 								</ShowIf>

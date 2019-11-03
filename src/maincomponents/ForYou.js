@@ -9,75 +9,76 @@ export const ForSomeone = props => {
 	return (
 		<Fragment>
 			{/* Dherbsta Twitter */}
-			<ShowIf noAnimation thisValue={"dherbstatwitter"} thatValue={whom}>
-				<Paragraph>
-					You know what's crazy? I am still not tired of MegTheeStallion
-					twerking on the timeline.
-					<ShowIf noAnimation thisValue={isMobileOnly} thatValue={true}>
-						&nbsp; I know she is blessing the lil {mobileModel} you holding
-						right now.
-					</ShowIf>
-					Anyways, here is my web app, it ain't done yet tho.
-				</Paragraph>
-			</ShowIf>
-			{/* Linked */}
-			<ShowIf noAnimation thisValue={"linkedin"} thatValue={forYou}>
-				<HeadingTwo>First Off</HeadingTwo>
-				<Paragraph className=' '>
-					I'd like to say thanks. You could have been wishing your coworker or
-					some connection you don't really know a happy work anniversary but
-					instead you're here, checking out my web app.
-				</Paragraph>
-				<Paragraph className=' '>
-					If you have any feedback please let me know.
-				</Paragraph>
-			</ShowIf>
-			{/* Reddit */}
-			<ShowIf noAnimation thisValue={"reddit"} thatValue={forYou}>
-				<HeadingTwo>First Off</HeadingTwo>
-				<Paragraph className=' '>
-					I'd like to say thanks. You could have been upvoting some reddit post
-					but instead you're here, checking out my web app. I really appreciate
-					you. ()
-				</Paragraph>
-				<Paragraph className=' '>
-					Shoutout to r/webdev, r/reactjs/ ,r/design_critiques and
-					r/web_design/. (Also, this web app doesn't work in in-app browser)
-				</Paragraph>
-			</ShowIf>
+			<div className='container'>
+				<ShowIf noAnimation thisValue={"dherbstatwitter"} thatValue={whom}>
+					<Paragraph>
+						You know what's crazy? I am still not tired of MegTheeStallion
+						twerking on the timeline.
+						<ShowIf noAnimation thisValue={isMobileOnly} thatValue={true}>
+							&nbsp; I know she is blessing the lil {mobileModel} you holding
+							right now.
+						</ShowIf>
+						Anyways, here is my web app, it ain't done yet tho.
+					</Paragraph>
+				</ShowIf>
+				{/* Linked */}
+				<ShowIf noAnimation thisValue={"linkedin"} thatValue={forYou}>
+					<HeadingTwo>First Off</HeadingTwo>
+					<Paragraph className=' '>
+						I'd like to say thanks. You could have been wishing your coworker or
+						some connection you don't really know a happy work anniversary but
+						instead you're here, checking out my web app.
+					</Paragraph>
+					<Paragraph className=' '>
+						If you have any feedback please let me know.
+					</Paragraph>
+				</ShowIf>
+				{/* Reddit */}
+				<ShowIf noAnimation thisValue={"reddit"} thatValue={forYou}>
+					<HeadingTwo>First Off</HeadingTwo>
+					<Paragraph className=' '>
+						I'd like to say thanks. You could have been upvoting some reddit
+						post but instead you're here, checking out my web app. I really
+						appreciate you. ()
+					</Paragraph>
+					<Paragraph className=' '>
+						Shoutout to r/webdev, r/reactjs/ ,r/design_critiques and
+						r/web_design/. (Also, this web app doesn't work in in-app browser)
+					</Paragraph>
+				</ShowIf>
 
-			{/* https://www.linkedin.com/jobs/view/1460515336/ */}
-			{/* Visa */}
-			{/* https://www.herbieduah.app/?=CyberSource */}
-			<JobApplication
-				jobID='cybersource'
-				job='Sr. UX Design Engineer'
-				city='Austin'
-				topping="contribute to CyberSource's growth as a global leader in e-Commerce Payment"
-				forYou={forYou}
-			/>
-			<JobApplication
-				jobID='cloudflare'
-				job='Front End Engineer'
-				city='Austin'
-				topping="contribute to Cloudflare's goal to help build a better Internet."
-				forYou={forYou}
-			/>
-			<JobApplication
-				jobID='indeed'
-				job='UX Developer'
-				city='Austin'
-				topping="contribute to Indeed's mission to help people get jobs."
-				forYou={forYou}
-			/>
-			<JobApplication
-				jobID='vrbo'
-				job='UX Developer/Design Technologist'
-				city='Austin'
-				topping='partner with the engineering teams to deliver great experiences and patterns for Vrbo travelers and suppliers.'
-				forYou={forYou}
-			/>
-			{/* <ShowIf noAnimation thisValue={""} thatValue={forYou}>
+				{/* https://www.linkedin.com/jobs/view/1460515336/ */}
+				{/* Visa */}
+				{/* https://www.herbieduah.app/?=CyberSource */}
+				<JobApplication
+					jobID='cybersource'
+					job='Sr. UX Design Engineer'
+					city='Austin'
+					topping="contribute to CyberSource's growth as a global leader in e-Commerce Payment"
+					forYou={forYou}
+				/>
+				<JobApplication
+					jobID='cloudflare'
+					job='Front End Engineer'
+					city='Austin'
+					topping="contribute to Cloudflare's goal to help build a better Internet."
+					forYou={forYou}
+				/>
+				<JobApplication
+					jobID='indeed'
+					job='UX Developer'
+					city='Austin'
+					topping="contribute to Indeed's mission to help people get jobs."
+					forYou={forYou}
+				/>
+				<JobApplication
+					jobID='vrbo'
+					job='UX Developer/Design Technologist'
+					city='Austin'
+					topping='partner with the engineering teams to deliver great experiences and patterns for Vrbo travelers and suppliers.'
+					forYou={forYou}
+				/>
+				{/* <ShowIf noAnimation thisValue={""} thatValue={forYou}>
 			<Paragraph>
 				I am a Phoenix based Web developer/designer with five years of
 				experience. I enjoy any opportunity that allows me to use my coding
@@ -85,6 +86,7 @@ export const ForSomeone = props => {
 				<Emoji className='emoji' symbol='🤓' label='nerd' />.
 			</Paragraph>
 		</ShowIf> */}
+			</div>
 		</Fragment>
 	);
 };

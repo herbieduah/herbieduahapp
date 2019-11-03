@@ -16,11 +16,12 @@ import {
 	Header,
 	// Flex,
 	ContentShow,
-	ZigZag
+	ZigZag,
+	LessContent
 } from "../ContentHelpers";
 // import { ShowIf } from "../ComponentHelpers";
 // import { Image as CloudImage, Video } from "cloudinary-react";
-import Emoji from "a11y-react-emoji";
+// import Emoji from "a11y-react-emoji";
 import { ForSomeone, forYouHelper } from "../maincomponents/ForYou";
 // import Modal from "../maincomponents/Modal";
 // import cornishPastyPic from "../media/images/picsOfMe/test.jpg";
@@ -66,14 +67,13 @@ const HomePage = ({ contentProps }) => {
 	return (
 		<Fragment>
 			<ContentShow less>
-				<Header less>{header}</Header>
-				<Paragraph less>
+				<LessContent header={header}>
 					Hi<span className='text-cap'>{forYouHelper(forYou)}</span>, I'm Herbie
 					and this is my personal web app.
 					{/* <br />
 					<br />I built this portfolio as a way for me to learn and bring some
 					of my creative and original ideas to life. */}
-				</Paragraph>
+				</LessContent>
 			</ContentShow>
 			<ContentShow containerLarge more>
 				<Header>{header}</Header>
@@ -81,19 +81,25 @@ const HomePage = ({ contentProps }) => {
 					<ForSomeone whom={whom} forYou={forYou} />
 				</ZigZag>
 				<ZigZag>
-					<HeadingTwo>
+					{/* <HeadingTwo>
 						Hello<span className='text-cap'>{forYouHelper(forYou)}</span>
-					</HeadingTwo>
+					</HeadingTwo> */}
 
-					<Paragraph>
-						I am a Web Developer/Designer with over five years of experience.
-					</Paragraph>
-
+					{/* <Paragraph>
+						I am a Web Developer/Designer with over five years of experience
+						that also likes taking photos.
+					</Paragraph> */}
+					<Emphasis>
+						Hello<span className='text-cap'>{forYouHelper(forYou)}</span>, I'm a
+						Web Developer/Designer and casual photographer.
+					</Emphasis>
 					{/* <Paragraph>
 						Projects that allow me to use my coding and design skills in
 						creative and original ways make me very happy.
 					</Paragraph> */}
-					<Paragraph>I also love going out and taking photos.</Paragraph>
+					{/* <Paragraph>I also love going out and taking photos.</Paragraph> */}
+				</ZigZag>
+				<ZigZag>
 					<Image
 						src={picsOfMeHero}
 						className='paddingLRSm'
@@ -108,10 +114,14 @@ const HomePage = ({ contentProps }) => {
 						skillset.
 					</Paragraph> */}
 				<ZigZag>
-					<Emphasis center>
-						This project was created to help me learn <i>and</i> challenge
-						myself to craft an innovative human-centered design <i>while</i>{" "}
+					{/* <Emphasis>
+						This project was created to help me learn and challenge myself to
+						craft an innovative human-centered design but at the same time
 						showing off my work and skillset.
+					</Emphasis> */}
+					<Emphasis>
+						The purpose of this portfolio is to help me learn <i>and</i>{" "}
+						challenge myself to craft an innovative human-centered design.
 					</Emphasis>
 				</ZigZag>
 				{/* <Paragraph>
@@ -210,7 +220,7 @@ const HomePage = ({ contentProps }) => {
 						<Figcaption>Me fat ass getting food</Figcaption>
 					</Figure>
 					<Gif url={testVideo} /> */}
-				<ContentCategory category='customize' />
+				<ContentCategory />
 			</ContentShow>
 		</Fragment>
 	);

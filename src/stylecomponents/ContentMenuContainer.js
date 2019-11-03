@@ -10,11 +10,11 @@ export const ContentMenuContainer = styled.section`
 	width: 100%;
 	height: 100%;
 
-	.fade-enter {
+	/* .fade-enter {
 		opacity: 0.01;
-	}
+	} */
 
-	.fade-enter.fade-enter-active {
+	/* .fade-enter.fade-enter-active {
 		opacity: 1;
 		transition: opacity ${revealSecs}ms ease-in;
 	}
@@ -26,9 +26,9 @@ export const ContentMenuContainer = styled.section`
 	.fade-exit.fade-exit-active {
 		opacity: 0.01;
 		transition: opacity ${revealSecs}ms ease-in;
-	}
+	} */
 
-	div.transition-group {
+	/* div.transition-group {
            position: relative;
       }
       div.route-section {
@@ -37,18 +37,7 @@ export const ContentMenuContainer = styled.section`
         top: 0;
         left: 0;
       }
-	/* &::-webkit-scrollbar-track {
-		background-color: ${props => props.theme.bgColor};
-	}
-
-	&::-webkit-scrollbar {
-		width: 10px;
-		background-color: ${props => props.theme.bgColor};
-	}
-
-	&::-webkit-scrollbar-thumb {
-		background-color: ${props => props.theme.bgColor};
-	} */
+	 */
 	/* ul.blocks {
 		margin: 0;
 		padding: 0;

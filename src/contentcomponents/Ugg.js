@@ -16,6 +16,7 @@ import {
 	WorkInfo,
 	Figcaption,
 	FiGif,
+	LessContent,
 	Header,
 	Figure,
 	ContentShow,
@@ -41,10 +42,9 @@ const UggPage = () => {
 	return (
 		<Fragment>
 			<ContentShow less>
-				<Header less>{header}</Header>
-				<Paragraph less>
+				<LessContent header={header}>
 					I worked on the Ugg brand team during my time at Deckers Brands.
-				</Paragraph>
+				</LessContent>
 				<div className='less__container'>
 					<Image
 						mockup
@@ -59,14 +59,15 @@ const UggPage = () => {
 
 				<ZigZag>
 					<Paragraph>
-						I was a UI Developer for the Ugg Brand Team for two years.
+						I was a User Interface Developer for the Ugg Brand Team for two
+						years.
 					</Paragraph>
-					{/* <FiGif url={uggslidesemail}>
+					<FiGif url={uggslidesemail}>
 						<Figcaption>
 							{" "}
 							Ugg email I developed with an interactive slider.
 						</Figcaption>
-					</FiGif> */}
+					</FiGif>
 				</ZigZag>
 				<ZigZag>
 					<HeadingTwo>Interactive Emails</HeadingTwo>

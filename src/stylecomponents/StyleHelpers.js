@@ -32,8 +32,9 @@ const maxFontSize = `24px`;
 export const sliderWidth = "3.4rem";
 export const sliderHeight = "2rem";
 export const fluidTypeInfo = fluidType(minVW, maxVW, minFontSize, maxFontSize);
-
+export const containerLargePx = `1280px`;
 export const mobile = "@media only screen and (max-width: 500px)";
+export const mobileSm = "@media only screen and (max-width: 340px)";
 export const tablet =
 	"@media screen and (max-width: 1200px) and (min-width: 768px)";
 export const mobileHorizontal = "@media only screen and (max-width: 1200px)";
@@ -90,11 +91,11 @@ padding-left: 1rem;
 }`;
 
 export const paddingLRMed = `
-padding-left: 20%;
-padding-right: 20%;
-${mobile} {
-	padding-left: 15%;
+padding-left: 15%;
 padding-right: 15%;
+${mobile} {
+	padding-left: 10%;
+padding-right: 10%;
 }`;
 
 // export const paddingLRSm = `
@@ -106,11 +107,11 @@ padding-right: 15%;
 // }`;
 
 export const paddingLRLarge = `
-padding-left: 25%;
-padding-right: 25%;
-${mobile} {
-	padding-left: 20%;
+padding-left: 20%;
 padding-right: 20%;
+${mobile} {
+	padding-left: 15%;
+padding-right: 15%;
 }`;
 
 export const marginLRMed = `

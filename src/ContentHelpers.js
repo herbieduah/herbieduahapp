@@ -1,5 +1,5 @@
 //ContentHelpers file for my web app.
-import React, { Fragment, useContext, useState } from "react";
+import React, { Fragment, useContext, useState, useEffect } from "react";
 import { globalState } from "./State";
 import {
 	revealSecs,
@@ -50,6 +50,17 @@ export const ContentShow = props => {
 	const transitionClasses = getCurrentTransition(currentTransition);
 	const whereToDrag = isContentPortrait ? "down" : "right";
 	const containerLarge = props.containerLarge ? "container-large" : "container";
+
+	const [showInstructions, setShowInstructions] = useState(true);
+
+	const showTheInstructions = () => {
+		if (showMore) {
+			setShowInstructions(false);
+		}
+	};
+	useEffect(() => {
+		showTheInstructions();
+	});
 	if (props.less) {
 		return (
 			<TransitionGroup>
@@ -58,9 +69,14 @@ export const ContentShow = props => {
 						<aside className='less'>
 							<div className='less__wrapper'>
 								{props.children}
-								<Instructions className='less__drag'>
-									Drag then release slider {whereToDrag} for more.&nbsp;
-								</Instructions>
+								<ShowIf
+									noAnimation
+									thisValue={showInstructions}
+									thatValue={true}>
+									<Instructions className='less__drag'>
+										Drag slider {whereToDrag} then release for more&nbsp;
+									</Instructions>
+								</ShowIf>
 							</div>
 						</aside>
 					</CSSTransition>
@@ -79,8 +95,8 @@ export const ContentShow = props => {
 								noAbsolute
 								thisValue={fullScreen && !minimalMode}
 								thatValue={true}>
-								<Instructions className='marginTopLarge justify-center'>
-									scroll to bottom for menu.
+								<Instructions className='marginTopLarge justify-center text-center'>
+									scroll to bottom or select minimize <br /> for menu
 								</Instructions>
 							</ShowIf>
 							{props.children}
@@ -103,14 +119,18 @@ export const Header = props => {
 	return (
 		<Fragment>
 			<ShowIf noAnimation thisValue={props.less} thatValue={true}>
-				<Text h1 m className='paddingLRSm less__header'>
-					{props.children}
-				</Text>
+				<ElementReveal>
+					<Text h1 m className='paddingLRSm less__header'>
+						{props.children}
+					</Text>
+				</ElementReveal>
 			</ShowIf>
 			<ShowIf noAnimation thisValue={!props.less} thatValue={true}>
-				<header className={`content__header container ${className}`}>
-					<HeadingOne>{props.children}</HeadingOne>
-				</header>
+				<ElementReveal>
+					<header className={`content__header container ${className}`}>
+						<HeadingOne>{props.children}</HeadingOne>
+					</header>
+				</ElementReveal>
 			</ShowIf>
 		</Fragment>
 	);
@@ -131,20 +151,25 @@ export const ElementReveal = props => {
 
 export const Instructions = props => {
 	const className = props.className || "";
+	const center = props.center ? "justify-center" : "";
 	return (
-		<Small className={`c-instructions paddingLRSm ${className}`}>
-			{props.children}
-		</Small>
+		<ElementReveal>
+			<Small className={`c-instructions paddingLRSm ${className} ${center}`}>
+				{props.children}
+			</Small>
+		</ElementReveal>
 	);
 };
 
 export const ContentCategory = props => {
 	const { fullScreen } = useContext(globalState);
 	const categoryArr = ["customize", "work", "photography", "about"];
-	const defaultIndex = categoryArr.indexOf(props.category);
+	const defaultIndex = props.category
+		? categoryArr.indexOf(props.category)
+		: -1;
 	return (
 		<ShowIf noAnimation thisValue={fullScreen} thatValue={true}>
-			<ElementReveal duration={revealSecs}>
+			<ElementReveal>
 				<div className='c-category marginLRSm container'>
 					<MenuTabs showCategory={false} defaultIndex={defaultIndex} />
 				</div>
@@ -174,14 +199,38 @@ export const Paragraph = props => {
 
 export const Emphasis = props => {
 	const className = props.className || "";
-	const center = props.center ? "text-center" : "";
+	const lessClass = props.less ? "less__main-text " : "marginBottomMed";
 	return (
 		<Fragment>
 			<ElementReveal>
 				<Text
 					l
+					{...props}
 					secondary
-					className={`${className} ${center} marginBottomMed marginTopMed paddingLRSm`}>
+					className={`${className} ${lessClass} marginBottomMed marginTopMed paddingLRSm`}>
+					{props.children}
+				</Text>
+			</ElementReveal>
+		</Fragment>
+	);
+};
+
+export const LessContent = props => {
+	const className = props.className || "";
+	const header = props.header;
+	return (
+		<Fragment>
+			<ElementReveal>
+				<header>
+					<Text h1 xl className='paddingLRSm less__header'>
+						{header}
+					</Text>
+				</header>
+				<Text
+					l
+					{...props}
+					secondary
+					className={`${className} less__main-text paddingLRSm`}>
 					{props.children}
 				</Text>
 			</ElementReveal>
@@ -195,7 +244,7 @@ export const Small = props => {
 		<ElementReveal>
 			<small>
 				<Text
-					m
+					s
 					format
 					tertiary
 					className={`marginBottomMed  paddingLRSm ${className}`}
@@ -216,7 +265,7 @@ export const HeadingOne = props => {
 				xl
 				center
 				semibold
-				className={`${className} marginBottomMed marginTopXLarge paddingLRSm`}>
+				className={`${className} marginBottomXLarge marginTopXLarge paddingLRSm`}>
 				{props.children}
 			</Text>
 		</ElementReveal>
@@ -413,11 +462,21 @@ export const ThemeCircles = props => {
 				<button className={`themeCircle__button ${currentClass}`}>
 					<div className='themeCircle__overlay'>
 						{current ? (
-							<Text format m bold className='themeCircle__current-text'>
+							<Text
+								format
+								s
+								tertiary
+								bold
+								className='themeCircle__current-text'>
 								Current
 							</Text>
 						) : null}
-						<Text format m bold className={`themeCircle__text ${currentClass}`}>
+						<Text
+							format
+							s
+							tertiary
+							bold
+							className={`themeCircle__text ${currentClass}`}>
 							{themeText}
 						</Text>
 					</div>
@@ -481,46 +540,70 @@ export const TransitionTexts = props => {
 	);
 };
 
-export const GenerateTransition = props => (
-	<ElementReveal>
-		<ul className='appTransition' {...props}>
-			{appTransitions.map(function(element, uniqueKey) {
-				return (
-					<TransitionTexts transitionValue={element.name} key={uniqueKey} />
-				);
-			})}
-		</ul>
-	</ElementReveal>
-);
+// export const GenerateTransition = props => (
+// 	<ElementReveal>
+// 		<ul className='appTransition' {...props}>
+// 			{appTransitions.map(function(element, uniqueKey) {
+// 				return (
+// 					<TransitionTexts transitionValue={element.name} key={uniqueKey} />
+// 				);
+// 			})}
+// 		</ul>
+// 	</ElementReveal>
+// );
+
+export const GenerateTransition = props => {
+	const type = props.type;
+	return (
+		<ElementReveal>
+			<ul className='appTransition' {...props}>
+				{appTransitions.map(function(element, uniqueKey) {
+					if (element.type === type) {
+						return (
+							<TransitionTexts transitionValue={element.name} key={uniqueKey} />
+						);
+					} else {
+						return null;
+					}
+				})}
+			</ul>
+		</ElementReveal>
+	);
+};
 
 export const WorkInfo = props => {
 	const { workDuration, workSkills, workTools } = props.workinfo;
 	const { forDev } = useContext(globalState);
 	return (
-		<ElementReveal className='container'>
-			<ul className='c-work-info marginBottomXLarge'>
-				<li>
-					<Text s format>
-						<strong>Duration:</strong>&nbsp;
-						{workDuration}
-					</Text>
-				</li>
-				<li>
-					<Text s format>
-						<strong>Skills:</strong>&nbsp;
-						{workSkills}
-					</Text>
-				</li>
-				<ShowIf noAnimation thisValue={forDev} thatValue={true}>
+		<ZigZag>
+			<ElementReveal>
+				<ul className='c-work-info marginBottomXLarge'>
 					<li>
 						<Text s format>
-							<strong>Tools:</strong>&nbsp;
-							{workTools}
+							<strong>Duration</strong>
+							<br />
+							{workDuration}
 						</Text>
 					</li>
-				</ShowIf>
-			</ul>
-		</ElementReveal>
+					<ShowIf noAnimation thisValue={forDev} thatValue={true}>
+						<li>
+							<Text s format>
+								<strong>Skills</strong>
+								<br />
+								{workSkills}
+							</Text>
+						</li>
+						<li>
+							<Text s format>
+								<strong>Tools</strong>
+								<br />
+								{workTools}
+							</Text>
+						</li>
+					</ShowIf>
+				</ul>
+			</ElementReveal>
+		</ZigZag>
 	);
 };
 

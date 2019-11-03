@@ -27,13 +27,17 @@ import {
 	marginBottomLarge,
 	marginTopLarge,
 	marginTopMed,
-	marginBottomSm
+	marginBottomSm,
+	paddingLRMed,
+	mobileSm,
+	containerLargePx
 } from "./StyleHelpers";
 import {
 	navBarBorder,
 	CTAColor,
 	borderThin,
-	fontColor
+	fontColor,
+	colorSlightOpacity
 } from "./Themes/ThemeVariables";
 
 export const ContentContainer = styled.section`
@@ -42,7 +46,6 @@ export const ContentContainer = styled.section`
 	/* position: relative !important; */
 	${mainTransition}
 	${props => (props.isPortrait ? mobileSliderOnTop : ``)};
-	${hideScrollbar};
 	overflow: auto;
 	${props => (props.navBarRight ? contentMenuPaddingRight : contentMenuPadding)};
 	padding-bottom: 40vh;
@@ -64,16 +67,23 @@ export const ContentContainer = styled.section`
 		height: ${props => (props.showLess && !props.isPortrait ? `100%` : `100%`)};
 
 		z-index: 10;
-		${props =>
-			props.isPortrait ? `margin-top: .5rem` : `margin-top: ${navBarSize}`};
+		${props => (props.isPortrait ? `margin-top: 1rem` : `margin-top:0`)};
 		max-width: 500px;
 		${tablet} {
-			${props => (props.isPortrait ? `height: 15vh` : `max-width:350px;`)};
+			margin:0 auto;
+			${props =>
+				props.isPortrait ? `display:flex;padding-right:${navBarSize}` : ``};
 			width: 100%;
 			height: 100%;
-			${props => (props.isPortrait ? `padding-left: 0; padding:right: 0` : ``)};
+			${props =>
+				props.isPortrait
+					? `max-width: 100%;
+		width: 100vw; margin: 0 auto; `
+					: `max-width:350px;`};
+			${props => (props.isPortrait ? `padding-left: 0;` : ``)};
+			
 			.paddingLRSm {
-				${props => (props.isPortrait ? `padding-left: 0; padding:right: 0` : ``)};
+				${props => (props.isPortrait ? `padding-left: 0; padding-right: 0` : ``)};
 			}
 		}
 
@@ -82,14 +92,23 @@ export const ContentContainer = styled.section`
 			display: none;
 		}
 		&__header {
+			
+		letter-spacing: 2px;
 			height: 6vh;
 			margin-bottom: 10vh;
 			${mobile} {
-				height: 4vh;
-				margin-bottom: 4vh;
+				height: auto;
+				${marginBottomLarge};
+				text-align: center;
+				hyphens: auto;
+			}
+			${mobileSm} {
+				padding-left:0 !important;
+				padding-right: 0 !important;
 			}
 			${tablet} {
 				${props => (props.isPortrait ? `margin-bottom:4vh;` : ``)};
+				${props => (props.isPortrait ? `text-align: center;` : ``)};
 			}
 		}
 		&__main-text {
@@ -97,7 +116,19 @@ export const ContentContainer = styled.section`
 			max-width: 500px;
 			display: block;
 			${props => (props.isPortrait ? `${marginBottomMed}` : `margin-bottom: 9.5vh`)};
+			${mobile}{
+				height: auto;
+				${marginBottomLarge};
+				text-align:center;	
+			}	
+			${tablet} {
+				${props =>
+					props.isPortrait
+						? `text-align: center;height: auto;text-align:center;${marginBottomMed}	`
+						: ``};
+			}
 		}
+		
 		&__drag {
 			${props =>
 				props.isPortrait
@@ -112,21 +143,57 @@ export const ContentContainer = styled.section`
 			pointer-events: none;
 			`};
 			display: block;
+			${mobile}{
+				text-align:center;
+				justify-content: center;	
+			}
+
 		}
-		${props => (props.navBarRight ? contentMenuPaddingRight : contentMenuPadding)};
-		padding-top: 0;
-		padding-bottom: 0;
-		${mobile} {
+		.c-instructions {
+			${mobile}{
+				justify-content: center;	
+			}
+			${tablet} {
+				${props => (props.isPortrait ? `display: flex;justify-content:center;	` : ``)};
+			}
+		}
+		
+		&__wrapper {
+			${mainTransition}
+			${props => (props.navBarRight ? contentMenuPaddingRight : contentMenuPadding)};
+			
+			${mobile}{
+			${props => (props.dragging ? `padding-left: 0; padding-right: 0;` : ``)};
 			padding-top: 0;
 			padding-bottom: 0;
-			${props =>
-				props.navBarRight
-					? `padding-left: 0; padding-right: ${navBarSize};`
-					: `padding-right: ${navBarSize}; padding-left: 0 `};
+			}
+			${tablet} {
+				${props => (props.isPortrait ? `margin: 0 auto;	` : ``)};
+			}
+		}
+		${mobile} {
+			padding-bottom: 0;
+			
 			width: 100%;
 			height: 100%;
 		}
 	}
+
+	&::-webkit-scrollbar-track {
+		background-color:${colorSlightOpacity};
+	}
+
+	&::-webkit-scrollbar {
+		width: 20px;
+		${mobile}{
+			width: 10px;
+		}
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color:${fontColor};
+	}
+	${props => (props.accessible ? `` : hideScrollbar)};
 
 	.LazyLoad {
 		width: 100%;
@@ -158,7 +225,7 @@ export const ContentContainer = styled.section`
 		${props => (props.fullScreen ? `margin: 0 auto` : ``)};
 	}
 	.container-large {
-		max-width: 1280px;
+		max-width: ${containerLargePx};
 		width: 100%;
 		${props => (props.fullScreen ? `margin: 0 auto` : ``)};
 	}
@@ -375,21 +442,16 @@ export const ContentContainer = styled.section`
 			padding: 0;
 		}
 		li {
-			${paddingLRSm}
+			/* ${paddingLRSm} */
 			list-style-type: none;
 			padding-bottom: .75rem;
 			${mobile} {
 				margin: 0;
-				justify-content: left;
 			}
 			display: flex;
-			justify-content: center;
 			margin: 0 auto;
 			text-align: center;
 			${marginLRSm} 
-			&:last-child {
-				border-bottom: ${borderThin};
-			}
 			/* ${paddingLRSm} */
 		}
 		ul {
@@ -410,6 +472,7 @@ export const ContentContainer = styled.section`
 		padding: 0;
 		${marginTopLarge}
 		display:flex;
+
 		flex-direction: column;
 		li:nth-of-type(even){ 
 			.react-reveal{
@@ -419,6 +482,16 @@ export const ContentContainer = styled.section`
 
 		.react-reveal {
 			max-width: 740px;
+			padding-left: 7%;
+			padding-right: 7%;
+			${mobile}{
+				padding-left: 0%;
+				padding-right: 0%;	
+			}
+			${tablet}{
+				padding-left: 0%;
+				padding-right: 0%;	
+			}
 		}
 			/* ${paddingLRSm} */
 		
@@ -436,6 +509,16 @@ export const ContentContainer = styled.section`
 		${marginBottomMed}
 		display:flex;
 		flex-direction: column;
+		${props =>
+			props.minimalMode
+				? `padding-left: ${navBarSize};
+		padding-right: ${navBarSize};`
+				: ``};
+		
+		${mobile} {
+			padding-left: 0;
+			padding-right: 0;
+		}
 		&:nth-of-type(odd){ 
 			.c-zigzag__content {
 				margin-left: auto;
