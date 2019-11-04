@@ -80,6 +80,13 @@ z-index: 1;
 position: absolute;
 `;
 
+export const starWarsPerspective = `transform: perspective(200px) rotateX(10deg);
+${tablet} {
+	transform: perspective(0) rotateX(0);
+}
+${mobile} {
+	transform: perspective(0) rotateX(0);
+}`;
 export const stupidNegativeMargin = `margin-top:${sliderMobileWidth /
 	2}px!important`;
 export const paddingLRSm = `

@@ -54,6 +54,7 @@ export const ContentContainer = styled.section`
 	${props => (props.showMore ? `` : `padding-top: 0 !important;`)};
 	padding-top: 0 !important;
 	/* transform: perspective(300px) rotateX(15deg);  */
+	
 	.less {
 		position: fixed;
 		h1,

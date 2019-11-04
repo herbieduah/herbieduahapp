@@ -2,7 +2,7 @@ import {
 	themeMaker,
 	themeBgMaker,
 	matrixTheme,
-	snapchatTheme,
+	themeStarWars,
 	themeColorMaker
 } from "./ThemeHelpers";
 // import xvImage from "../bgImages/xv.png";
@@ -51,7 +51,7 @@ const carbonFibreImage =
 export const defaultTheme = themeMaker();
 export const cartographer = themeBgMaker();
 export const matrix = matrixTheme();
-export const snapchat = snapchatTheme();
+export const starWarsTheme = themeStarWars();
 export const white = themeColorMaker();
 
 const carbonFibre = {

@@ -160,7 +160,7 @@ const ButtonText = styled.button`
 	${baseStyle};
 	${stripButtonStyle}
 	${mainTransition}
-	color: ${fontColor};
+	color: ${buttonColor};
 	text-transform: uppercase;
 	font-family: ${appfontFamilySecondary};
 	cursor: pointer;

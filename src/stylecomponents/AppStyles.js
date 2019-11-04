@@ -8,7 +8,8 @@ import {
 	mobile,
 	paddingLRSm,
 	navBarSize,
-	appMarginsAndPaddings
+	appMarginsAndPaddings,
+	starWarsPerspective
 } from "./StyleHelpers";
 import {
 	appBg,
@@ -75,10 +76,16 @@ export const HerbieDuahApp = styled.main`
 			padding-left: ${props => (props.dragging ? "0 !important;" : "")};
 		}	
 	}
+	section.content-container {
+		${props => (props.currentTheme === "starwars" ? `${starWarsPerspective}` : "")}
+	}
 	section.hdapp__content{
+		
 	 .content {
 		/* transform: perspective(300px) rotateX(15deg); */
 		${mobile} {
+			/* transform: perspective(300px) rotateX(15deg) scale(.7); */
+			padding-bottom: 10rem;
 			padding-right: ${props => (props.dragging ? "0 !important;" : "")};
 			padding-left: ${props => (props.dragging ? "0 !important;" : "")};
 		}	
@@ -106,6 +113,10 @@ export const HerbieDuahApp = styled.main`
 		}
 		&__border{
 			opacity : ${props => (props.minimalMode ? "0" : "1")};
+			${props =>
+				props.currentTheme === "starwars"
+					? `border-left: none !important;`
+					: ""}
 		}
 		
 		

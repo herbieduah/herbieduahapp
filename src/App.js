@@ -145,16 +145,17 @@ export const App = () => {
 				showFSMobileHorizontal={showFSMobileHorizontal}
 				accessible={accessible}
 				dragging={dragging}
+				currentTheme={currentTheme}
 				showOutline={showOutline}>
-				{/* <AppStartUp /> */}
+				<AppStartUp />
 				<ShowIf noAnimation thisValue={currentTheme} thatValue={"matrix"}>
 					<Matrix fullscreen={true} isPortrait={isPortrait(ww, wh)} />
 				</ShowIf>
-				<div aria-hidden='true' className='in-dev'>
+				{/* <div aria-hidden='true' className='in-dev'>
 					<Text m tertiary className='alpha-text'>
 						Beta.
 					</Text>
-				</div>
+				</div> */}
 				<GlobalStyle />
 				<NavBar />
 				{isPortrait(ww, wh) ? null : (

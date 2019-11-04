@@ -1,5 +1,7 @@
 import { rgba, invert, readableColor, complement } from "polished";
 import cartographer from "../bgImages/cartographer.png";
+import starWarsBgImage from "../bgImages/darkness.png";
+import totallyNinetiesBgImage from "../bgImages/bgplaystation.gif";
 // ** bgColor is first color;
 // ** fontColorSecondary;
 // const fontColor = readableColor("#cc208e");
@@ -8,6 +10,11 @@ const mainFont = `"halyard-display", -apple-system, BlinkMacSystemFont, Oxygen, 
 const mainFontTertiary = `"nimbus-sans", -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif`;
 const mainFontSecondary = `"nimbus-sans-extended", -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif`;
 const bgColor = "#cc208e";
+
+const courierNewFont = `Courier New", Courier, monospace`;
+const lucidaConsoleFont = `"Lucida Console", Monaco, monospace`;
+const timesNewRomanFont = `"Times New Roman", Times, serif`;
+const comicSansFont = `"Comic Sans","Comic Sans MS","Chalkboard","ChalkboardSE-Regular","Marker Felt","Purisa","URW Chancery L",cursive,sans-serif`;
 // const bgColorSecondary = "#6713d2";
 const gradientValues = `#cc208e 0%, #6713d2 100%`;
 
@@ -342,14 +349,15 @@ export const matrixTheme = () => {
 	};
 };
 
-export const snapchatTheme = () => {
-	const bgColor = "#3CB2E2";
-	const fontColor = "#FFFFFF";
+export const themeStarWars = () => {
+	const bgColor = "#000000";
+	const fontColor = "#ffd54e";
+	const starWarsBlue = "#4bd5ee";
 	return {
-		appBg: `none`,
+		appBg: `url(${starWarsBgImage})`,
 		appBgAnimation: `${bgColor}`,
 		appBgColor: `${bgColor}`,
-		appBgMobile: `none`,
+		appBgMobile: `url(${starWarsBgImage})`,
 		appfontFamily: `${mainFont}`,
 		appfontFamilySecondary: `${mainFontSecondary}`,
 		appfontFamilyTertiary: `${mainFontTertiary}`,
@@ -370,36 +378,119 @@ export const snapchatTheme = () => {
 		buttonSpanDisplay: `block`,
 		buttonTextTransform: `uppercase`,
 		colorSlightOpacity: `${rgba(fontColor, 0.56)}`,
-		CTAColor: `${rgba(fontColor, 1)}`,
-		CTAColorSecondary: `${rgba(fontColor, 1)}`,
+		CTAColor: `${rgba(starWarsBlue, 1)}`,
+		CTAColorSecondary: `${rgba(starWarsBlue, 1)}`,
 		CTAUnderline: `none`,
 		fontColor: `${fontColor}`,
 		fontColorOpposite: `${readableColor(fontColor)}`,
 		fontColorSecondary: `${fontColor}`,
 		fontSelection: `${invert(fontColor)}`,
-		fullScreenHoldBg: `${invert(bgColor)}`,
+		fullScreenHoldBg: ` linear-gradient( ${invert(bgColor)}, ${invert(
+			bgColor
+		)})`,
 		logoBgColor: `${rgba(fontColor, 1)}`,
 		logoBgHoverColor: `${fontColor}`,
 		logoBorderBottom: `1px solid ${rgba(fontColor, 1)}`,
 		logoBorderRadius: `0`,
-		logoInnerFillColor: `#FFFC00`,
-		logoInnerFillColorHoverFocus: `#e92754`,
-		logoOuterFillColor: `${fontColor}`,
+		logoInnerFillColor: `${starWarsBlue}`,
+		logoInnerFillColorHoverFocus: `${starWarsBlue}`,
+		logoOuterFillColor: `${starWarsBlue}`,
 		modalFullScreenBg: `${bgColor}`,
 		modalFullScreenBgColor: `transparent`,
 		modalFullScreenBgMobile: `${bgColor}`,
-		navBarBg: "#transparent",
-		navBarBgComplement: `#9B5580`,
+		navBarBg: "transparent",
+		navBarBgComplement: `${bgColor}`,
 		navBarBorder: `1px solid ${rgba(fontColor, 0.2)}`,
-		navBarButtonColor: `${fontColor}`,
-		navBarButtonActive: `${rgba(fontColor, 0.55)}`,
+		navBarButtonColor: `${starWarsBlue}`,
+		navBarButtonActive: `${rgba(starWarsBlue, 0.55)}`,
 		navBarButtonComplementaryHoverText: `${rgba(fontColor, 0.55)}`,
 		navBarButtonComplementaryText: `${rgba(fontColor, 1)}`,
-		navBarHoverFocus: `${rgba(fontColor, 0.55)}`,
+		navBarHoverFocus: `${rgba(starWarsBlue, 0.55)}`,
 		navBarHoverFocusAction: "none",
 		sliderArrow: `${fontColor}`,
 		sliderArrowActive: `${fontColor}`,
-		sliderArrowOpacity: "0",
+		sliderArrowOpacity: "1",
+		sliderArrowSecondary: `${fontColor}`,
+		sliderBg: `${rgba(fontColor, 0.2)}`,
+		sliderCircleActive: `${fontColor}`,
+		sliderCircleBg: `${rgba(fontColor, 0.2)}`,
+		sliderCircleBorder: `${rgba(fontColor, 0.2)}`,
+		sliderCircleHoverFocus: `${rgba(fontColor, 0.2)}`,
+		sliderCircleOpacity: `1`,
+		sliderLine: `linear-gradient(to right, transparent 50%, ${fontColor} 50%)`,
+		sliderLinePortrait: `linear-gradient(to bottom, transparent 50%, ${fontColor} 50%)`,
+		tabHeadingsBorder: `1px solid ${rgba(fontColor, 0.2)}`,
+		tabHeadingsBorderActive: `0`,
+		tabHeadingsBorderBottomActive: `2px solid ${fontColor}`,
+		tabHeadingsBorderRadius: `0`,
+		tabHeadingsColor: `${rgba(fontColor, 1)}`,
+		tabHeadingsColorActive: `${fontColor}`,
+		tabHeadingsColorHoverFocus: `${fontColor}`,
+		tabHeadingsJustifyContent: `space-between`
+	};
+};
+
+export const themeNineties = () => {
+	const bgColor = "#ffffff";
+	const fontColor = "#000000";
+	const starWarsBlue = "#000000";
+	return {
+		appBg: `url(${totallyNinetiesBgImage})`,
+		appBgAnimation: `${bgColor}`,
+		appBgColor: `${bgColor}`,
+		appBgMobile: `url(${totallyNinetiesBgImage})`,
+		appfontFamily: `${timesNewRomanFont}`,
+		appfontFamilySecondary: `${comicSansFont}`,
+		appfontFamilyTertiary: `${comicSansFont}`,
+		bgColor: `${bgColor}`,
+		bgColorContent: `${rgba(fontColor, 0.2)}`,
+		bgColorOverlay: `${rgba(readableColor(fontColor), 0.19)}`,
+		bgColorSecondary: `${bgColor}`,
+		borderThin: `1px solid ${rgba(fontColor, 0.2)}`,
+		buttonBackground: `none`,
+		buttonBackgroundHoverFocus: `transparent`,
+		buttonBorder: `1px solid ${rgba(fontColor, 0.2)}`,
+		buttonBorderFocus: `1px solid ${fontColor}`,
+		buttonBorderActive: `2px solid ${fontColor}`,
+		buttonColor: `${rgba(fontColor, 1)}`,
+		buttonColorHoverFocus: `${fontColor}`,
+		buttonFontWeight: `700`,
+		buttonLineHeight: ` 1.2`,
+		buttonSpanDisplay: `block`,
+		buttonTextTransform: `uppercase`,
+		colorSlightOpacity: `${rgba(fontColor, 0.56)}`,
+		CTAColor: `${rgba(starWarsBlue, 1)}`,
+		CTAColorSecondary: `${rgba(starWarsBlue, 1)}`,
+		CTAUnderline: `none`,
+		fontColor: `${fontColor}`,
+		fontColorOpposite: `${readableColor(fontColor)}`,
+		fontColorSecondary: `${fontColor}`,
+		fontSelection: `${invert(fontColor)}`,
+		fullScreenHoldBg: ` linear-gradient( ${invert(bgColor)}, ${invert(
+			bgColor
+		)})`,
+		logoBgColor: `${rgba(fontColor, 1)}`,
+		logoBgHoverColor: `${fontColor}`,
+		logoBorderBottom: `1px solid ${rgba(fontColor, 1)}`,
+		logoBorderRadius: `0`,
+		logoInnerFillColor: `${starWarsBlue}`,
+		logoInnerFillColorHoverFocus: `${starWarsBlue}`,
+		logoOuterFillColor: `${starWarsBlue}`,
+		modalFullScreenBg: `${bgColor}`,
+		modalFullScreenBgColor: `transparent`,
+		modalFullScreenBgMobile: `${bgColor}`,
+		navBarBg: "transparent",
+		navBarBgComplement: `${bgColor}`,
+		navBarBorder: `1px solid ${rgba(fontColor, 0.2)}`,
+		navBarButtonColor: `${starWarsBlue}`,
+		navBarButtonActive: `${rgba(starWarsBlue, 0.55)}`,
+		navBarButtonComplementaryHoverText: `${rgba(fontColor, 0.55)}`,
+		navBarButtonComplementaryText: `${rgba(fontColor, 1)}`,
+		navBarHoverFocus: `${rgba(starWarsBlue, 0.55)}`,
+		navBarHoverFocusAction: "none",
+		sliderArrow: `${fontColor}`,
+		sliderArrowActive: `${fontColor}`,
+		sliderArrowOpacity: "1",
 		sliderArrowSecondary: `${fontColor}`,
 		sliderBg: `${rgba(fontColor, 0.2)}`,
 		sliderCircleActive: `${fontColor}`,
