@@ -150,7 +150,7 @@ class Modal extends React.Component {
 					"modal modal-fade-" + state.animationType + " " + props.className
 				}
 				onAnimationEnd={this.animationEnd}
-				tabIndex='-1'
+				tabIndex='0'
 				ref={el => {
 					this.el = el;
 				}}

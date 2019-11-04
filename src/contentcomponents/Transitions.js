@@ -11,7 +11,6 @@ import {
 	GenerateTransition,
 	Link,
 	Instructions,
-	ZigZag,
 	ElementReveal
 } from "../ContentHelpers";
 // import { ShowIf } from "../ComponentHelpers";
@@ -58,12 +57,12 @@ const TransitionsPage = () => {
 					<ElementReveal className='paddingLRSm'>
 						<TabList className='react-tabs__tab-list'>
 							<Tab tabIndex='0'>
-								<Text format s tertiary className='marginLRSm'>
+								<Text format xs tertiary className='marginLRSm'>
 									Smooth
 								</Text>
 							</Tab>
 							<Tab tabIndex='0'>
-								<Text format s tertiary className='marginLRSm'>
+								<Text format xs tertiary className='marginLRSm'>
 									Crazy
 								</Text>
 							</Tab>

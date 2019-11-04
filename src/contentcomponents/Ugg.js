@@ -103,8 +103,8 @@ const UggPage = () => {
 					<HeadingTwo>Landing Pages</HeadingTwo>
 					<Paragraph>
 						Throughout my time on the{" "}
-						<Link href='https://www.ugg.com/'>UGG</Link>
-						team, I got the chance to develop some unique landing pages.
+						<Link href='https://www.ugg.com/'>UGG</Link> team, I got the chance
+						to develop some unique landing pages.
 					</Paragraph>
 
 					<HeadingThree>UGG Holiday Gift Guide</HeadingThree>

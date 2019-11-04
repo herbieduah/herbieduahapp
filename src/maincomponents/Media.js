@@ -13,6 +13,7 @@ import { isMobileOnly } from "react-device-detect";
 import VisibilitySensor from "react-visibility-sensor";
 // import "react-lazy-load-image-component/src/effects/blur.css";
 const mediaWidth = isMobileOnly ? "400" : "740";
+const lazyLoadOffset = isMobileOnly ? 400 : 800;
 // const mediaSize = isMobileOnly ? 1 : 0;
 const LazyLoadWrapper = props => {
 	// const { lazyLoading } = useContext(globalState);
@@ -26,7 +27,9 @@ const LazyLoadWrapper = props => {
 		// 		<Fragment>{props.children}</Fragment>
 		// 	)}
 		// </Fragment>
-		<VisibilitySensor offset={{ top: 400 }}>{props.children}</VisibilitySensor>
+		<VisibilitySensor offset={{ top: lazyLoadOffset }}>
+			{props.children}
+		</VisibilitySensor>
 	);
 };
 

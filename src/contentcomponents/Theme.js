@@ -12,20 +12,24 @@ import {
 	ContentCategory,
 	Button,
 	Header,
-	HeadingTwo
+	HeadingTwo,
+	Instructions
 } from "../ContentHelpers";
 import { ShowIf } from "../ComponentHelpers";
 
-const header = "Theme";
+const header = "Theme (Beta)";
 
 const ThemePage = ({ contentProps }) => {
 	const { currentTheme, setTheme } = contentProps;
 	const setMatrixTheme = () => {
 		setTheme("matrix");
 	};
-	// const setSnapchatTheme = () => {
-	// 	setTheme("snapchat");
-	// };
+	const setStarWarsTheme = () => {
+		setTheme("starwars");
+	};
+	const setNinetiesTheme = () => {
+		setTheme("nineties");
+	};
 
 	// const snapMessage = () => {
 	// 	setTimeout(() => {
@@ -33,7 +37,8 @@ const ThemePage = ({ contentProps }) => {
 	// 	}, 10000);
 	// };
 	const isMatrix = currentTheme === "matrix" ? true : false;
-	// const isSnapchat = currentTheme === "snapchat" ? true : false;
+	const isStarWars = currentTheme === "starwars" ? true : false;
+	const isNineties = currentTheme === "nineties" ? true : false;
 	// const setNigerianTheme = () => {
 	// 	currentTheme('nigerian');
 	// };
@@ -62,14 +67,9 @@ const ThemePage = ({ contentProps }) => {
 				<Paragraph>
 					I will be adding more Themes once this web app is out of Beta.
 				</Paragraph>
-				<Paragraph>
-					(Hot tip: Choosing a background turns of the Theme)
-				</Paragraph>
+
 				<HeadingTwo>Matrix</HeadingTwo>
-				<Paragraph>
-					This Matrix theme is based on the Matrix Trilogy starring Keanu
-					Reeves.
-				</Paragraph>
+				<Paragraph>This Matrix theme is based on the Matrix Trilogy.</Paragraph>
 				<ShowIf noAnimation thisValue={isMatrix} thatValue={false}>
 					<Button onClick={setMatrixTheme}>Take the Red Pill</Button>
 					<Small>
@@ -78,19 +78,32 @@ const ThemePage = ({ contentProps }) => {
 					</Small>
 				</ShowIf>
 				<ShowIf noAnimation thisValue={isMatrix} thatValue={true}>
-					<Small>You are currently in the Matrix.</Small>
+					<Paragraph>You are currently in the Matrix.</Paragraph>
+
+					<Instructions>Select a background to turn off theme</Instructions>
 				</ShowIf>
-				{/* <HeadingTwo>Snapchat</HeadingTwo>
-				<Paragraph>
-					The Snapchat theme borrows some of the looks and colors from Snapchat.
-				</Paragraph>
-				<ShowIf noAnimation thisValue={isSnapchat} thatValue={false}>
-					<Button onClick={setSnapchatTheme}>Add Filter</Button>
-					<Small>This web app is totally catfish.</Small>
+				<HeadingTwo>Star Wars</HeadingTwo>
+				<Paragraph>A long time ago in a galaxy far, far away...</Paragraph>
+				<ShowIf noAnimation thisValue={isStarWars} thatValue={false}>
+					<Button onClick={setStarWarsTheme}>Feel the Force</Button>
 				</ShowIf>
-				<ShowIf noAnimation thisValue={isSnapchat} thatValue={true}>
-					<Small>Hmm {snapMessage()}</Small>
-				</ShowIf> */}
+				<ShowIf noAnimation thisValue={isStarWars} thatValue={true}>
+					<Paragraph>
+						Why can't Darth Vader find love? Because he keeps looking for love
+						in Alderaan places.
+					</Paragraph>
+					<Instructions>Select a background to turn off theme</Instructions>
+				</ShowIf>
+
+				<HeadingTwo>Totally 90s</HeadingTwo>
+				<Paragraph>Here is a theme with somes 90s nostalgia</Paragraph>
+				<ShowIf noAnimation thisValue={isNineties} thatValue={false}>
+					<Button onClick={setNinetiesTheme}>get jiggy</Button>
+				</ShowIf>
+				<ShowIf noAnimation thisValue={isNineties} thatValue={true}>
+					<Paragraph>Duuuude like totally.</Paragraph>
+					<Instructions>Select a background to turn off theme</Instructions>
+				</ShowIf>
 				<ContentCategory category='customize' />
 			</ContentShow>
 		</Fragment>

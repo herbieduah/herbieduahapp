@@ -77,9 +77,7 @@ const HomePage = ({ contentProps }) => {
 			</ContentShow>
 			<ContentShow containerLarge more>
 				<Header>{header}</Header>
-				<ZigZag>
-					<ForSomeone whom={whom} forYou={forYou} />
-				</ZigZag>
+
 				<ZigZag>
 					{/* <HeadingTwo>
 						Hello<span className='text-cap'>{forYouHelper(forYou)}</span>
@@ -98,6 +96,9 @@ const HomePage = ({ contentProps }) => {
 						creative and original ways make me very happy.
 					</Paragraph> */}
 					{/* <Paragraph>I also love going out and taking photos.</Paragraph> */}
+				</ZigZag>
+				<ZigZag>
+					<ForSomeone whom={whom} forYou={forYou} />
 				</ZigZag>
 				<ZigZag>
 					<Image
@@ -123,6 +124,12 @@ const HomePage = ({ contentProps }) => {
 						The purpose of this portfolio is to help me learn <i>and</i>{" "}
 						challenge myself to craft an innovative human-centered design.
 					</Emphasis>
+				</ZigZag>
+				<ZigZag>
+					<Paragraph>
+						(Officially out of Beta 11/3/2019. I will still be making some minor
+						changes.)
+					</Paragraph>
 				</ZigZag>
 				{/* <Paragraph>
 						During development, I realized my website was becoming more of an

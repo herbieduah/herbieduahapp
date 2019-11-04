@@ -28,6 +28,7 @@ import {
 	picsOfMeDherbstaAndDinchman,
 	picsOfMeRickJamesBball,
 	picsOfMeMeme,
+	dtCreepySmile,
 	picsOfMeSelfieOlympics
 } from "../MediaVariables";
 
@@ -81,7 +82,7 @@ const AboutMePage = () => {
 					</Emphasis>
 					<Figure
 						className='paddingLRMed'
-						desc='Selfie'
+						alt='A picture of me taking Selfie with my phone propped up on a listerine bottle'
 						src={picsOfMeSelfieOlympics}>
 						<Figcaption>I call that the Look Ma No Hands selfie.</Figcaption>
 					</Figure>
@@ -209,7 +210,7 @@ const AboutMePage = () => {
 				<ZigZag>
 					<Emphasis center>I love putting smiles on peoples faces</Emphasis>
 					<FiGif
-						className='paddingLRMed'
+						className='paddingLRSm'
 						desc='Doing some stand up'
 						width='960'
 						height='540'
@@ -225,12 +226,22 @@ const AboutMePage = () => {
 					<Figure
 						className='paddingLRSm'
 						alt='Me and my little bro next to my very first computer in Ghana'
-						width='1152'
-						height='864'
 						src={picsOfMeDherbstaAndDinchman}>
 						<Figcaption>
 							Me and my little bro next to my very first computer in Ghana in
 							2002.
+						</Figcaption>
+					</Figure>
+				</ZigZag>
+				<ZigZag>
+					<Emphasis center>I love you, yes you.</Emphasis>
+					<Figure
+						className='paddingLRSm'
+						alt='Apicture of me dressed up as Discount tire employee with a creepy smile on'
+						src={dtCreepySmile}>
+						<Figcaption>
+							Seriously, thank for checking out my web app. (I know this photo
+							is a bit creepy)
 						</Figcaption>
 					</Figure>
 				</ZigZag>

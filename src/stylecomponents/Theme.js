@@ -52,10 +52,13 @@ import {
 	fabledSunsetTheme,
 	newRetrowaveTheme,
 	deepBlueTheme,
-	snapchat,
 	matrix
 } from "./Themes/ThemeFactory";
-import { themeColorMaker } from "./Themes/ThemeHelpers";
+import {
+	themeColorMaker,
+	themeStarWars,
+	themeNineties
+} from "./Themes/ThemeHelpers";
 export const themes = [
 	{
 		name: "white",
@@ -66,6 +69,25 @@ export const themes = [
 		text: "Brilliant White",
 		desc: ""
 	},
+	{
+		name: "starwars",
+		properties: {
+			...themeStarWars()
+		},
+		type: "theme",
+		text: "Star Wars",
+		desc: ""
+	},
+	{
+		name: "nineties",
+		properties: {
+			...themeNineties()
+		},
+		type: "theme",
+		text: "Nineties",
+		desc: ""
+	},
+
 	{
 		name: "Navy Blazer",
 		properties: {
@@ -219,15 +241,6 @@ export const themes = [
 		},
 		type: "theme",
 		text: "Matrix",
-		desc: ""
-	},
-	{
-		name: "snapchat",
-		properties: {
-			...snapchat
-		},
-		type: "theme",
-		text: "Snapchat",
 		desc: ""
 	},
 	{

@@ -5,7 +5,8 @@ import {
 	Image,
 	Header,
 	ContentShow,
-	ContentCategory
+	ContentCategory,
+	LessContent
 } from "../ContentHelpers";
 // import Emoji from "a11y-react-emoji";
 // import photographyTesfayFamilyKiss1480x2220 from "../media/images/people/photography-photographyTesfayFamilyKiss2-2220.jpg";
@@ -59,12 +60,11 @@ const PeoplePage = () => {
 	return (
 		<Fragment>
 			<ContentShow less>
-				<Header less>{header}</Header>
-				<Paragraph less>I take pictures of people.</Paragraph>
+				<LessContent header={header}>I take pictures of people.</LessContent>
 				{/* <div className='less__container paddingLRSm'>
-					<Image src={peopleCeiphers} />
-					<Image src={peopleDyesa} />
-					<Image src={peopleJohnnyGrad} />
+					<Image alt="photograph of " src={peopleCeiphers} />
+					<Image alt="photograph of " src={peopleDyesa} />
+					<Image alt="photograph of " src={peopleJohnnyGrad} />
 				</div> */}
 			</ContentShow>
 			<ContentShow containerLarge more>
@@ -74,70 +74,115 @@ const PeoplePage = () => {
 				</Paragraph>
 				<ul className='c-photos'>
 					<li>
-						<Image src={peopleAshleyTaylor} />
+						<Image
+							alt='photograph of a girl kneeling in snow'
+							src={peopleAshleyTaylor}
+						/>
 					</li>
 					<li>
-						<Image src={peopleGweg} />
+						<Image
+							alt='photograph of my friend surrounded by his family while being promoted to Lieutenant'
+							src={peopleGweg}
+						/>
 					</li>
 					<li>
-						<Image src={peopleMelvinBenz} />
+						<Image
+							alt='photograph of my friend next to a fence'
+							src={peopleMelvinBenz}
+						/>
 					</li>
 					<li>
-						<Image src={peopleAbena} />
+						<Image alt='photograph of girl looking up' src={peopleAbena} />
 					</li>
 					<li>
-						<Image src={peopleDavid} />
+						<Image alt='photograph of kid smiling' src={peopleDavid} />
 					</li>
 					<li>
-						<Image src={peopleTheGRand} />
+						<Image
+							alt='photograph of siblings infront of a gate looking all cool and stuff'
+							src={peopleTheGRand}
+						/>
 					</li>
 					<li>
-						<Image src={peopleNana} />
+						<Image alt='photograph of a girl looking up' src={peopleNana} />
 					</li>
 					<li>
-						<Image src={peopleTesfayFamily} />
+						<Image
+							alt='photograph of a nice happy familyy '
+							src={peopleTesfayFamily}
+						/>
 					</li>
 					<li>
-						<Image src={peopleMelvin} />
+						<Image
+							alt='photograph of guy sitting up on a window ledge '
+							src={peopleMelvin}
+						/>
 					</li>
 					<li>
-						<Image src={peopleMeliPoet} />
+						<Image
+							alt='photograph of of girl sitting on a rock'
+							src={peopleMeliPoet}
+						/>
 					</li>
 					<li>
-						<Image src={peopleJohnnyGrad} />
+						<Image
+							alt='photograph of nice graduation hug'
+							src={peopleJohnnyGrad}
+						/>
 					</li>
 					<li>
-						<Image src={peopleJesseForte} />
+						<Image
+							alt='photograph of guy leaning next to a Cactus '
+							src={peopleJesseForte}
+						/>
 					</li>
 					<li>
-						<Image src={peopleHalle} />
+						<Image
+							alt='photograph of a girl with a nice big smile'
+							src={peopleHalle}
+						/>
 					</li>
 					<li>
-						<Image src={peopleGrindingWie} />
+						<Image
+							alt='photograph of a man infront of an escalator'
+							src={peopleGrindingWie}
+						/>
 					</li>
 					<li>
-						<Image src={peopleFashionShow} />
+						<Image
+							alt='photograph of girl at a fashion show'
+							src={peopleFashionShow}
+						/>
 					</li>
 					<li>
-						<Image src={peopleEmma} />
+						<Image alt='portait of an European girl ' src={peopleEmma} />
 					</li>
 					<li>
-						<Image src={peopleDyesa} />
+						<Image
+							alt='portait of a girl within beautiful flowers'
+							src={peopleDyesa}
+						/>
 					</li>
 					<li>
-						<Image src={peopleCristian} />
+						<Image
+							alt='photograph of kid crossing his arms'
+							src={peopleCristian}
+						/>
 					</li>
 					<li>
-						<Image src={peopleconnorGrad} />
+						<Image
+							alt='photograph of a guy standing infront of a trea '
+							src={peopleconnorGrad}
+						/>
 					</li>
 					<li>
-						<Image src={peopleCeiphers} />
+						<Image alt='photograph of  a couple' src={peopleCeiphers} />
 					</li>
 					<li>
-						<Image src={peopleNatasha} />
-					</li>
-					<li>
-						<Image src={peopleGoldenFace} />
+						<Image
+							alt='photograph of girl in walking down a stairs witha  graduation cap'
+							src={peopleGoldenFace}
+						/>
 					</li>
 				</ul>
 				<ContentCategory category='photography' className='container' />

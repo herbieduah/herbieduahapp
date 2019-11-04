@@ -26,7 +26,8 @@ import {
 	buttonBorder,
 	buttonBackground,
 	buttonBackgroundHoverFocus,
-	buttonBorderFocus
+	buttonBorderFocus,
+	buttonBorderActive
 } from "./Themes/ThemeVariables";
 
 const baseStyle = css`
@@ -88,6 +89,7 @@ const baseStyle = css`
 const HeadingOne = styled.h1`
 	${baseStyle};
 	font-weight: 800;
+	letter-spacing: -0.7px;
 	font-family: ${appfontFamilySecondary};
 `;
 
@@ -136,18 +138,21 @@ const Button = styled.button`
 	background: ${buttonBackground};
 	color: ${buttonColor};
 	padding: 0.55rem 1rem;
+	transform: scale(1);
 	cursor: pointer;
 	&:hover{
 		color: ${buttonColorHoverFocus};
 		text-decoration: ${CTAUnderline};
 		background: ${buttonBackgroundHoverFocus};
+		border: ${buttonBorderFocus};
 	}
 	&:focus {
-		border: ${buttonBorderFocus};
+		transform: scale(.94);
 	}
 	&.active,&.current {
 		color: ${buttonColorHoverFocus};
 		background: ${buttonBackgroundHoverFocus};
+		border: ${buttonBorderActive};
 		text-decoration: ${CTAUnderline};
 	}
 `;
@@ -155,7 +160,7 @@ const ButtonText = styled.button`
 	${baseStyle};
 	${stripButtonStyle}
 	${mainTransition}
-	color: ${fontColor};
+	color: ${buttonColor};
 	text-transform: uppercase;
 	font-family: ${appfontFamilySecondary};
 	cursor: pointer;

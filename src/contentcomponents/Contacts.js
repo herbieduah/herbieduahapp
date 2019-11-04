@@ -10,6 +10,7 @@ import {
 	Link,
 	ContentCategory,
 	ContentShow,
+	LessContent,
 	// Small,
 	// Figure,
 	// Figcaption,
@@ -33,10 +34,9 @@ const ContactsPage = () => {
 					Hello, I'm Herbie, a Photographer and Front End Developer with a
 					passion for designing and engineering user experiences for you.
 				</Paragraph> */}
-				<Header less>{header}</Header>
-				<Paragraph less>
+				<LessContent header={header}>
 					<Link href='mailto:herbduah@gmail.com'>Email me</Link>
-				</Paragraph>
+				</LessContent>
 				<div className='less__container'>
 					<Paragraph>
 						You can also message me on&nbsp;

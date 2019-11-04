@@ -16,8 +16,10 @@ import {
 	WorkInfo,
 	ContentCategory,
 	ContentShow,
+	LessContent,
 	// Gif,
-	Header
+	Header,
+	Emphasis
 } from "../ContentHelpers";
 import { ShowIf } from "../ComponentHelpers";
 import Emoji from "a11y-react-emoji";
@@ -51,8 +53,7 @@ const HerbieDuahAppPage = ({ contentProps }) => {
 	return (
 		<Fragment>
 			<ContentShow less>
-				<Header less>{header}</Header>
-				<Paragraph less>Why I made this portolio.</Paragraph>
+				<LessContent header={header}>Why I made this portolio.</LessContent>
 				<div className='less__container'>
 					<Figure src={thisAppHDRHomeTop}>
 						<Figcaption>
@@ -64,11 +65,12 @@ const HerbieDuahAppPage = ({ contentProps }) => {
 			<ContentShow more>
 				<Header>{header}</Header>
 				{/* <WorkInfo workinfo={workinfo} /> */}
-				<Paragraph>
+				<Emphasis>
 					<Emoji className='emoji' symbol='🚧' label='contruction' />
-					Coming Soon{" "}
+					You're only seeing this because you chose "Developer Mode". I am still
+					working on this part, wanted to get everything wrapped up first.
 					<Emoji className='emoji' symbol='🚧' label='contruction' />
-				</Paragraph>
+				</Emphasis>
 				<ShowIf noAnimation thisValue={forDev} thatValue={true}>
 					<HeadingTwo>For My Devs</HeadingTwo>
 					<UL>
@@ -89,7 +91,8 @@ const HerbieDuahAppPage = ({ contentProps }) => {
 							&nbsp;
 						</LI>
 						<LI>
-							I used asked for feedback on r/webdev r/userexperience subreddit
+							I used asked for feedback on r/webdev r/userexperience
+							r/designcriques subreddit
 						</LI>
 						<LI>
 							I host on
@@ -98,12 +101,6 @@ const HerbieDuahAppPage = ({ contentProps }) => {
 						<LI>
 							I kept the content at a max-width of 740px so I wouldn't have to
 							resize a lot of images.
-						</LI>
-						<LI>
-							<s>
-								I am aware my site is not accessible and I am working on it.
-							</s>
-							I gotta add some alt tags.
 						</LI>
 					</UL>
 				</ShowIf>

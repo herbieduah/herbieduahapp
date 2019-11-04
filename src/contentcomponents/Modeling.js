@@ -8,6 +8,7 @@ import {
 	Image,
 	Link,
 	Figure,
+	LessContent,
 	Header,
 	Figcaption,
 	ContentCategory
@@ -56,11 +57,10 @@ const Modeling = () => {
 	return (
 		<Fragment>
 			<ContentShow less>
-				<Header less>{header}</Header>
-				<Paragraph less>
+				<LessContent header={header}>
 					Sometimes, I like to stand infront of the camera and have talented
 					people take pictures of me.
-				</Paragraph>
+				</LessContent>
 				<div className='less__container paddingLRSm'>
 					<Image src={modelingJacketHoldNaboursDown} />
 					<Image src={modelingBethanyBAldWinsStars} />
@@ -75,7 +75,9 @@ const Modeling = () => {
 				</Paragraph>
 				<ul className='c-photos'>
 					<li>
-						<Figure src={modelingBWMembersONly}>
+						<Figure
+							alt='Photo of me in black and white wearing a members only jacket'
+							src={modelingBWMembersONly}>
 							<Figcaption>
 								Taken by{" "}
 								<Link href='https://www.instagram.com/vmnphoto/'>
@@ -85,7 +87,9 @@ const Modeling = () => {
 						</Figure>
 					</li>
 					<li>
-						<Figure src={modelingNaboursFavorite}>
+						<Figure
+							alt='Photo of me in a members only jacket looking very stressed'
+							src={modelingNaboursFavorite}>
 							<Figcaption>
 								Taken by{" "}
 								<Link href='https://www.instagram.com/vmnphoto/'>
@@ -94,14 +98,16 @@ const Modeling = () => {
 							</Figcaption>
 						</Figure>
 					</li>
-					{/* <li><Figure src={modelingJacketHoldNaboursDown}>
+					{/* <li><Figure alt="Photo of me" src={modelingJacketHoldNaboursDown}>
 					<Figcaption>
 						Taken by{" "}
 						<Link href='https://www.instagram.com/vmnphoto/'>@vmnphoto</Link>
 					</Figcaption>
 				</Figure></li> */}
 					<li>
-						<Figure src={modelingUmbertoScienceMuseumHandsFolded}>
+						<Figure
+							alt='Photo of me in shorts and a short sleeve'
+							src={modelingUmbertoScienceMuseumHandsFolded}>
 							<Figcaption>
 								Taken by{" "}
 								<Link href='https://www.instagram.com/umberto.luk/'>
@@ -110,7 +116,7 @@ const Modeling = () => {
 							</Figcaption>
 						</Figure>
 					</li>
-					{/* <li><Figure src={modelingUmbertoScienceMuseum}>
+					{/* <li><Figure alt="Photo of me" src={modelingUmbertoScienceMuseum}>
 					<Figcaption>
 						Taken by{" "}
 						<Link href='https://www.instagram.com/umberto.luk/'>
@@ -118,14 +124,16 @@ const Modeling = () => {
 						</Link>
 					</Figcaption>
 				</Figure></li> */}
-					{/* <li><Figure src={herbieJacketNabours1480x2219}>
+					{/* <li><Figure alt="Photo of me" src={herbieJacketNabours1480x2219}>
 					<Figcaption>
 						Taken by{" "}
 						<Link href='https://www.instagram.com/vmnphoto/'>@vmnphoto</Link>
 					</Figcaption>
 				</Figure></li> */}
 					<li>
-						<Figure src={modelingSnowInFlagstaffConner}>
+						<Figure
+							alt='Photo of me in snow'
+							src={modelingSnowInFlagstaffConner}>
 							<Figcaption>
 								Taken by{" "}
 								<Link href='https://www.instagram.com/yourbuddyconner/'>
@@ -135,7 +143,9 @@ const Modeling = () => {
 						</Figure>
 					</li>
 					<li>
-						<Figure src={modelingSnowInFlagstaffConnerArmsFold}>
+						<Figure
+							alt='Photo of me with my hands folded'
+							src={modelingSnowInFlagstaffConnerArmsFold}>
 							<Figcaption>
 								Taken by{" "}
 								<Link href='https://www.instagram.com/yourbuddyconner/'>
@@ -145,7 +155,9 @@ const Modeling = () => {
 						</Figure>
 					</li>
 					<li>
-						<Figure src={modelingRobCaliLandscape}>
+						<Figure
+							alt='Photo of me in between some palm trees'
+							src={modelingRobCaliLandscape}>
 							<Figcaption>
 								Taken by{" "}
 								<Link href='https://www.instagram.com/wavyoceans/'>
@@ -155,7 +167,7 @@ const Modeling = () => {
 						</Figure>
 					</li>
 					<li>
-						<Figure src={modelingByNae}>
+						<Figure alt='Photo of me on some stairs' src={modelingByNae}>
 							<Figcaption>
 								Taken by{" "}
 								<Link href='https://www.instagram.com/nae_babe/'>
@@ -165,7 +177,9 @@ const Modeling = () => {
 						</Figure>
 					</li>
 					<li>
-						<Figure src={modelingDyesaDTPhoenix}>
+						<Figure
+							alt='Photo of me walking down some stairs'
+							src={modelingDyesaDTPhoenix}>
 							<Figcaption>
 								Taken by{" "}
 								<Link href='https://www.instagram.com/dyesv.photography/'>
@@ -176,7 +190,7 @@ const Modeling = () => {
 					</li>
 
 					<li>
-						<Figure src={modelingAndyDauterman}>
+						<Figure alt='Photo of me in a beanie' src={modelingAndyDauterman}>
 							<Figcaption>
 								Taken by{" "}
 								<Link href='https://www.instagram.com/dauterman_photography/'>
@@ -186,7 +200,9 @@ const Modeling = () => {
 						</Figure>
 					</li>
 					<li>
-						<Figure src={modelingceiphersClothing}>
+						<Figure
+							alt='Photo of me in a bow tie'
+							src={modelingceiphersClothing}>
 							<Figcaption>
 								Taken by{" "}
 								<Link href='https://www.instagram.com/rachel_olweya/'>
@@ -200,7 +216,9 @@ const Modeling = () => {
 						</Figure>
 					</li>
 					<li>
-						<Figure src={modelingBethanyBaldwinDTFlagstaff}>
+						<Figure
+							alt='Photo of me in downtown flagstaff'
+							src={modelingBethanyBaldwinDTFlagstaff}>
 							<Figcaption>
 								Taken by{" "}
 								<Link href='https://www.instagram.com/beelieve07/'>
@@ -210,7 +228,9 @@ const Modeling = () => {
 						</Figure>
 					</li>
 					<li>
-						<Figure src={modelingBrianaAfrican}>
+						<Figure
+							alt='Photo of me in African clothing with my arms crossed'
+							src={modelingBrianaAfrican}>
 							<Figcaption>
 								I couldn't find her on instagram, but her name is Briana. I'll
 								update once I find her.

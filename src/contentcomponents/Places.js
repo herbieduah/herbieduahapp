@@ -5,7 +5,8 @@ import {
 	Image,
 	Header,
 	ContentCategory,
-	ContentShow
+	ContentShow,
+	LessContent
 } from "../ContentHelpers";
 
 import {
@@ -30,11 +31,12 @@ const PeoplePage = () => {
 	return (
 		<Fragment>
 			<ContentShow less>
-				<Header less>{header}</Header>
-				<Paragraph less>I take pictures of different places.</Paragraph>
+				<LessContent header={header}>
+					I take pictures of different places.
+				</LessContent>
 				<div className='less__container paddingLRSm'>
-					<Image src={placesbeautifulmountains} />
-					<Image src={placesbeauifulsunset} />
+					<Image alt='INSERT ALT HERE' src={placesbeautifulmountains} />
+					<Image alt='INSERT ALT HERE' src={placesbeauifulsunset} />
 				</div>
 			</ContentShow>
 			<ContentShow containerLarge more>
@@ -44,43 +46,76 @@ const PeoplePage = () => {
 				</Paragraph>
 				<ul className='c-photos'>
 					<li>
-						<Image src={placesmountainsFlagstaff} />
+						<Image
+							alt='mountains in black and white'
+							src={placesmountainsFlagstaff}
+						/>
 					</li>
 					<li>
-						<Image src={placesflagstaffRoadd} />
+						<Image
+							alt='photograph of a road with nice looking trees'
+							src={placesflagstaffRoadd}
+						/>
 					</li>
 					<li>
-						<Image src={placesflagstaffWater} />
+						<Image
+							alt='cloudy skys looking over a lake'
+							src={placesflagstaffWater}
+						/>
 					</li>
 					<li>
-						<Image src={placestreesInAutumn} />
+						<Image alt='wall of trees in autumn' src={placestreesInAutumn} />
 					</li>
 					<li>
-						<Image src={placesWinterMountain} />
+						<Image
+							alt='reflection of a snowy mountain'
+							src={placesWinterMountain}
+						/>
 					</li>
 					<li>
-						<Image src={placessnowyRoad} />
+						<Image
+							alt='road in snow that is leading into a curve'
+							src={placessnowyRoad}
+						/>
 					</li>
 					<li>
-						<Image src={placesmysteriousDoor} />
+						<Image
+							alt='black and white picture of a mysterious door'
+							src={placesmysteriousDoor}
+						/>
 					</li>
 					<li>
-						<Image src={placesicyAlley} />
+						<Image alt='picture of an icy alley' src={placesicyAlley} />
 					</li>
 					<li>
-						<Image src={placesflagstaffStreetOnAutumn} />
+						<Image
+							alt='A road with overlapping fall trees'
+							src={placesflagstaffStreetOnAutumn}
+						/>
 					</li>
 					<li>
-						<Image src={placesevansTundra} />
+						<Image
+							alt='toyota tundra driving through dirt'
+							src={placesevansTundra}
+						/>
 					</li>
 					<li>
-						<Image src={placeschocolatefalls} />
+						<Image
+							alt='a beautiful chocolate looking waterfall'
+							src={placeschocolatefalls}
+						/>
 					</li>
 					<li>
-						<Image src={placesbeautifulmountains} />
+						<Image
+							alt='gorgeous landscape mountain'
+							src={placesbeautifulmountains}
+						/>
 					</li>
 					<li>
-						<Image src={placesbeauifulsunset} />
+						<Image
+							alt='beautiful purple skies with a within a snowy area'
+							src={placesbeauifulsunset}
+						/>
 					</li>
 				</ul>
 				<ContentCategory category='photography' className='container' />

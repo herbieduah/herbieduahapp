@@ -28,7 +28,7 @@ import Media from "./maincomponents/Media";
 import ContentContainer from "./stylecomponents/ContentContainer";
 import { NavLink } from "react-router-dom";
 import Modal from "./maincomponents/Modal";
-import { Tab, TabList, TabPanel } from "react-tabs";
+import { Tab, TabList, Tabs, TabPanel } from "react-tabs";
 import { ReactTabs, AccessibilityContainer } from "./stylecomponents/Base";
 import SubMenu from "./maincomponents/SubMenu";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
@@ -187,7 +187,7 @@ export const NavBar = () => {
 										tabIndex='0'
 										className='navbar__home-text'
 										aria-hidden={showLess ? `true` : `false`}>
-										HerbieDuah.app
+										<span className='navbar__hdappText'>.app</span>
 									</Text>
 								</CSSTransition>
 							) : null}
@@ -200,7 +200,7 @@ export const NavBar = () => {
 						aria-pressed={fullScreen ? `true` : `false`}
 						className='navbar__maximize'
 						onClick={setMaximizeAndMinimize}
-						tabindex='0'
+						tabIndex='0'
 						aria-hidden={showLess ? `true` : `false`}>
 						<ShowIf thisValue={fullScreen && !showLess} thatValue={true}>
 							Minimize
@@ -517,7 +517,7 @@ const ContentWrapperContainer = props => {
 	});
 	return (
 		<ContentContainer
-			className='content'
+			className='content content-container'
 			isShowingMore={isShowingMore}
 			isPortrait={isContentPortrait}
 			dragging={dragging}
@@ -621,24 +621,24 @@ export const AppStartUp = () => {
 							</Fade> */}
 							<Fade duration={1000}>
 								<ShowIf noAnimation thisValue={downloaded} thatValue={false}>
-									<Text l wide className='startUp__future'>
+									<Text l secondary bold className='startUp__future'>
 										In the future, there is going to be an app for everyone.
 									</Text>
 								</ShowIf>
 								<ShowIf noAnimation thisValue={downloaded} thatValue={true}>
-									<Text l wide className='startUp__future '>
+									<Text l secondary bold className='startUp__future '>
 										Wow, you actually "downloaded" my app
 									</Text>
 								</ShowIf>
 							</Fade>
 							<Fade delay={3000} duration={1500}>
 								<ShowIf noAnimation thisValue={downloaded} thatValue={false}>
-									<Text l wide className='startUp__my-own'>
+									<Text l secondary bold className='startUp__my-own'>
 										So I made my own.
 									</Text>
 								</ShowIf>
 								<ShowIf noAnimation thisValue={downloaded} thatValue={true}>
-									<Text l wide className='startUp__my-own '>
+									<Text l secondary bold className='startUp__my-own '>
 										You're amazing.
 									</Text>
 								</ShowIf>

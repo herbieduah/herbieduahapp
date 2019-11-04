@@ -25,7 +25,7 @@ import Text from "./stylecomponents/Text";
 import { Puns } from "./Pages";
 // import DownloadAllMedia from "./contentcomponents/DownloadAllMedia";
 import Matrix from "./stylecomponents/Themes/Matrix";
-import { isMobileOnly } from "react-device-detect";
+import { isMobileOnly, isBrowser } from "react-device-detect";
 import {
 	getCurrentTheme,
 	splitDir,
@@ -145,16 +145,17 @@ export const App = () => {
 				showFSMobileHorizontal={showFSMobileHorizontal}
 				accessible={accessible}
 				dragging={dragging}
+				currentTheme={currentTheme}
 				showOutline={showOutline}>
 				<AppStartUp />
 				<ShowIf noAnimation thisValue={currentTheme} thatValue={"matrix"}>
 					<Matrix fullscreen={true} isPortrait={isPortrait(ww, wh)} />
 				</ShowIf>
-				<div aria-hidden='true' className='in-dev'>
+				{/* <div aria-hidden='true' className='in-dev'>
 					<Text m tertiary className='alpha-text'>
-						Beta
+						Beta.
 					</Text>
-				</div>
+				</div> */}
 				<GlobalStyle />
 				<NavBar />
 				{isPortrait(ww, wh) ? null : (
