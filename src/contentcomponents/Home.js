@@ -77,9 +77,7 @@ const HomePage = ({ contentProps }) => {
 			</ContentShow>
 			<ContentShow containerLarge more>
 				<Header>{header}</Header>
-				<ZigZag>
-					<ForSomeone whom={whom} forYou={forYou} />
-				</ZigZag>
+
 				<ZigZag>
 					{/* <HeadingTwo>
 						Hello<span className='text-cap'>{forYouHelper(forYou)}</span>
@@ -98,6 +96,9 @@ const HomePage = ({ contentProps }) => {
 						creative and original ways make me very happy.
 					</Paragraph> */}
 					{/* <Paragraph>I also love going out and taking photos.</Paragraph> */}
+				</ZigZag>
+				<ZigZag>
+					<ForSomeone whom={whom} forYou={forYou} />
 				</ZigZag>
 				<ZigZag>
 					<Image

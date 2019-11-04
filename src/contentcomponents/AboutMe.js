@@ -210,7 +210,7 @@ const AboutMePage = () => {
 				<ZigZag>
 					<Emphasis center>I love putting smiles on peoples faces</Emphasis>
 					<FiGif
-						className='paddingLRMed'
+						className='paddingLRSm'
 						desc='Doing some stand up'
 						width='960'
 						height='540'
@@ -237,9 +237,12 @@ const AboutMePage = () => {
 					<Emphasis center>I love you, yes you.</Emphasis>
 					<Figure
 						className='paddingLRSm'
-						alt='P apicture of me dressed up as Discount tire employee with a creepy smile on'
+						alt='Apicture of me dressed up as Discount tire employee with a creepy smile on'
 						src={dtCreepySmile}>
-						<Figcaption>This photo is not creepy at all.</Figcaption>
+						<Figcaption>
+							Seriously, thank for checking out my web app. (I know this photo
+							is a bit creepy)
+						</Figcaption>
 					</Figure>
 				</ZigZag>
 				<ContentCategory category='about' />

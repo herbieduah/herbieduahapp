@@ -3,7 +3,7 @@ import { globalState } from "../State";
 import Text from "../stylecomponents/Text";
 // import Fade from "react-reveal/Fade";
 // import { CSSTransition } from "react-transition-group";
-import { SubMenuWrapper } from "../ComponentHelpers";
+import { SubMenuWrapper, ShowIf } from "../ComponentHelpers";
 // import Fade from "react-reveal/Fade";
 import { ElementReveal } from "../ContentHelpers";
 // import TransitionGroup from "react-transition-group/TransitionGroup";
@@ -11,7 +11,7 @@ import { ElementReveal } from "../ContentHelpers";
 export const SubMenu = props => {
 	let category = props.category;
 	const showCategory = props.showCategory;
-	const { setModalVisible } = useContext(globalState);
+	const { setModalVisible, forDev } = useContext(globalState);
 
 	const hideModal = () => {
 		setModalVisible(false);
@@ -79,21 +79,22 @@ export const SubMenu = props => {
 							</Text>
 						</li>
 						<li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink xl={true} to='/Inspiration'>
-								Inspiration
-							</Text>
-						</li>
-						<li onClick={hideModal} className='subMenu__item'>
 							<Text menuLink xl={true} to='/Resume'>
 								Resume
 							</Text>
 						</li>
 						<li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink xl={true} to='/CaseStudy'>
-								Case Study
+							<Text menuLink xl={true} to='/Inspiration'>
+								Inspiration
 							</Text>
 						</li>
-
+						<ShowIf noAnimation thisValue={forDev} thatValue={true}>
+							<li onClick={hideModal} className='subMenu__item'>
+								<Text menuLink xl={true} to='/CaseStudy'>
+									Case Study
+								</Text>
+							</li>
+						</ShowIf>
 						{/* <li onClick={hideModal} className='subMenu__item'>
 							<Text menuLink xl={true} to='/SpecialThanks'>
 								Special&shy; Thanks

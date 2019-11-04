@@ -9,7 +9,10 @@ import {
 	Paragraph,
 	Header,
 	HeadingTwo,
-	Experience
+	Experience,
+	LessContent,
+	Link,
+	Emphasis
 
 	// HeadingThree,
 	// HeadingOne,
@@ -22,8 +25,13 @@ const Resume = () => {
 	return (
 		<Fragment>
 			<ContentShow less>
-				<Header less>{header}</Header>
-				<Paragraph less>My work experience.</Paragraph>
+				{/* <LessContent header={header}>My work experience.</LessContent> */}
+
+				<LessContent header={header}>
+					<Link href='https://drive.google.com/file/d/1CtJxRPJxSRPlrDE0k28YKkFA165i3Cax/view'>
+						Check Out My Resume
+					</Link>
+				</LessContent>
 				<div className='less__container'>
 					<Paragraph>
 						Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo
@@ -190,6 +198,18 @@ const Resume = () => {
 						</li>
 					</ul>
 				</Experience>
+				<div className='marginTopLarge'>
+					<Emphasis>
+						<Link href='https://drive.google.com/file/d/1CtJxRPJxSRPlrDE0k28YKkFA165i3Cax/view'>
+							Check Out My Resume
+						</Link>
+					</Emphasis>
+					<Emphasis>
+						<Link href='https://www.linkedin.com/in/herbieduah/'>
+							Connect with me on LinkedIn
+						</Link>
+					</Emphasis>
+				</div>
 				<ContentCategory category='about' />
 			</ContentShow>
 		</Fragment>

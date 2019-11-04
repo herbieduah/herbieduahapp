@@ -142,19 +142,20 @@ const SettingsPage = ({ contentProps }) => {
 						</Paragraph>
 					</ShowIf>
 					<ShowIf noAnimation thisValue={forDev} thatValue={true}>
-						<Paragraph>
+						{/* <Paragraph>
 							(I wanted to turn on the Matrix theme when "Activate Developer
 							mode" was clicked but that would have been too cliché)
-						</Paragraph>
+						</Paragraph> */}
 						<Paragraph>
 							I sprinkled a lot of technical jargon around this web app but I
-							don't a great a job indicate where.
+							don't a great a job indicating where.
 						</Paragraph>
 						<Paragraph>
-							Why not have this setting as a default?
+							(Why not have this setting as a default?
 							<br />
-							It's my personal app and 90% of the people I know don't know all
-							about these technical mambo jambo.
+							It's my personal app and 95% of the people I know don't know all
+							about these technical mambo jambo. I also wanted the tone to be
+							easy to understand for everyone.
 						</Paragraph>
 					</ShowIf>
 
