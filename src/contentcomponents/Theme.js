@@ -64,10 +64,6 @@ const ThemePage = ({ contentProps }) => {
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>
-				<Paragraph>
-					I will be adding more Themes once this web app is out of Beta.
-				</Paragraph>
-
 				<HeadingTwo>Matrix</HeadingTwo>
 				<Paragraph>This Matrix theme is based on the Matrix Trilogy.</Paragraph>
 				<ShowIf noAnimation thisValue={isMatrix} thatValue={false}>
@@ -98,7 +94,7 @@ const ThemePage = ({ contentProps }) => {
 				<HeadingTwo>Totally 90s</HeadingTwo>
 				<Paragraph>Here is a theme with somes 90s nostalgia</Paragraph>
 				<ShowIf noAnimation thisValue={isNineties} thatValue={false}>
-					<Button onClick={setNinetiesTheme}>get jiggy</Button>
+					<Button onClick={setNinetiesTheme}>get jiggy with it</Button>
 				</ShowIf>
 				<ShowIf noAnimation thisValue={isNineties} thatValue={true}>
 					<Paragraph>Duuuude like totally.</Paragraph>

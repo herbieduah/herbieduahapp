@@ -125,12 +125,12 @@ const HomePage = ({ contentProps }) => {
 						challenge myself to craft an innovative human-centered design.
 					</Emphasis>
 				</ZigZag>
-				<ZigZag>
+				{/* <ZigZag>
 					<Paragraph>
 						(Officially out of Beta 11/3/2019. I will still be making some minor
 						changes.)
 					</Paragraph>
-				</ZigZag>
+				</ZigZag> */}
 				{/* <Paragraph>
 						During development, I realized my website was becoming more of an
 						app. The compelling idea of creating my very own app was the main

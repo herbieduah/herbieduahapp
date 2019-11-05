@@ -617,6 +617,7 @@ export const ThemeCircleContainer = styled.li`
 	cursor: pointer;
 	
 	.themeCircle {
+		cursor: pointer;
 		&__container {
 			width: 100%;
 			${paddingLRSm}

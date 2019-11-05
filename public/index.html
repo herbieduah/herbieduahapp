@@ -46,6 +46,41 @@
 		<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 		<title>Herbie Duah App</title>
 	</head>
+	<style>
+		@-webkit-keyframes fadeIn {
+			from {
+				opacity: 0.3;
+			}
+		}
+
+		@keyframes fadeIn {
+			from {
+				opacity: 0.3;
+			}
+		}
+
+		.before-react-container {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
+			justify-content: center;
+			width: 100vw;
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+			-ms-flex-direction: column;
+			flex-direction: column;
+			height: 100vh;
+			opacity: 0.9;
+			-webkit-animation: fadeIn 1.5s infinite alternate;
+			animation: fadeIn 1.5s infinite alternate;
+		}
+	</style>
+
 	<body>
 		<noscript>You need to enable JavaScript to run this app.</noscript>
 		<div id="root">
@@ -54,11 +89,29 @@
 			>
 				HerbieDuah.app Loading...
 			</p> -->
-			<p
-				style='font-family:  -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;'
+
+			<svg
+				width="20%"
+				height="20%"
+				viewBox="0 0 1000 1000"
+				version="1.1"
+				xmlns="http://www.w3.org/2000/svg"
+				xmlns:xlink="http://www.w3.org/1999/xlink"
 			>
-				HerbieDuah.app loading...
-			</p>
+				<g
+					id="HerbieDuahLogoSubtract"
+					stroke="none"
+					stroke-width="1"
+					fill="none"
+					fill-rule="evenodd"
+				>
+					<path
+						d="M0,0 L1000,0 L1000,1000 L0,1000 L0,0 Z M550.5,150.000408 L550.5,150.000379 L550.5,849.999592 C729.210401,849.708012 874,693.119589 874,500 C874,306.880411 729.210401,150.291988 550.5,150.000408 Z M150,150 L150,425 L400,425 L400,150 L150,150 Z M150,575 L150,850 L400,850 L400,575 L150,575 Z"
+						id="Combined-Shape"
+						fill="#000000"
+					></path>
+				</g>
+			</svg>
 		</div>
 	</body>
 </html>
