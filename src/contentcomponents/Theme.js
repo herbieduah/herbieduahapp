@@ -92,7 +92,7 @@ const ThemePage = ({ contentProps }) => {
 				</ShowIf>
 
 				<HeadingTwo>Totally 90s</HeadingTwo>
-				<Paragraph>Here is a theme with somes 90s nostalgia</Paragraph>
+				<Paragraph>Here is a theme with some 90s nostalgia.</Paragraph>
 				<ShowIf noAnimation thisValue={isNineties} thatValue={false}>
 					<Button onClick={setNinetiesTheme}>get jiggy with it</Button>
 				</ShowIf>
