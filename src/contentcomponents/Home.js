@@ -227,7 +227,7 @@ const HomePage = ({ contentProps }) => {
 						<Figcaption>Me fat ass getting food</Figcaption>
 					</Figure>
 					<Gif url={testVideo} /> */}
-				<ContentCategory />
+				<ContentCategory category='customize' />
 			</ContentShow>
 		</Fragment>
 	);
