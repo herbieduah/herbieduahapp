@@ -234,7 +234,7 @@ const SettingsPage = ({ contentProps }) => {
 								navigation menu up top.
 							</Paragraph>
 							<ShowIf noAnimation thisValue={minimalMode} thatValue={true}>
-								<Button onClick={basicMode}>Change to Default</Button>
+								<Button onClick={basicMode}>Change to Slider</Button>
 							</ShowIf>
 							<ShowIf noAnimation thisValue={minimalMode} thatValue={false}>
 								<Button onClick={basicMode}>Change to Traditional</Button>

@@ -88,8 +88,8 @@ const HomePage = ({ contentProps }) => {
 						that also likes taking photos.
 					</Paragraph> */}
 					<Emphasis>
-						Hello<span className='text-cap'>{forYouHelper(forYou)}</span>, I'm a
-						Web Developer/Designer and photographer.
+						Hello<span className='text-cap'>{forYouHelper(forYou)}</span>, I'm
+						Herbie Duah and I'm a Web Developer/Designer and photographer.
 					</Emphasis>
 					{/* <Paragraph>
 						Projects that allow me to use my coding and design skills in
