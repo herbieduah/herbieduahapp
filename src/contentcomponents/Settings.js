@@ -82,7 +82,7 @@ const SettingsPage = ({ contentProps }) => {
 		if (!fullScreen) {
 			fullScreen ? setFullscreen(false) : setFullscreen(true);
 		} else {
-			setFullscreen(true);
+			setFullscreen(false);
 		}
 	};
 
@@ -207,7 +207,7 @@ const SettingsPage = ({ contentProps }) => {
 						</Button>
 					</ShowIf>
 				</ZigZag>
-				{/* <ZigZag>
+				<ZigZag>
 					<ShowIf noAnimation thisValue={downloaded} thatValue={false}>
 						<HeadingTwo>Traditional or Slider </HeadingTwo>
 						<Paragraph>
@@ -241,7 +241,7 @@ const SettingsPage = ({ contentProps }) => {
 							</ShowIf>
 						</DisableSetting>
 					</ShowIf>
-				</ZigZag> */}
+				</ZigZag>
 				{/* <ZigZag>
 					<DisableSetting
 						thisValue={fullScreen || !forDev}
