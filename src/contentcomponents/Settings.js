@@ -209,14 +209,14 @@ const SettingsPage = ({ contentProps }) => {
 				</ZigZag>
 				<ZigZag>
 					<ShowIf noAnimation thisValue={downloaded} thatValue={false}>
-						<HeadingTwo>Traditional or Default </HeadingTwo>
+						<HeadingTwo>Traditional or Slider </HeadingTwo>
 						<Paragraph>
 							This setting lets you choose between a more traditional horizontal
-							navigation menu up top <i>or</i> the default slider and the
-							vertical navigation bar.
+							navigation menu up top <i>or</i> a slider and vertical navigation
+							bar.
 						</Paragraph>
 						<ShowIf noAnimation thisValue={minimalMode} thatValue={true}>
-							<Button onClick={basicMode}>Change to Default</Button>
+							<Button onClick={basicMode}>Change to Slider</Button>
 						</ShowIf>
 						<ShowIf noAnimation thisValue={minimalMode} thatValue={false}>
 							<Button onClick={basicMode}>Change to Traditional</Button>
@@ -340,7 +340,7 @@ const SettingsPage = ({ contentProps }) => {
 					<HeadingTwo>Add controls to videos</HeadingTwo>
 					<Paragraph>
 						By default, all the videos on this web app autoplay (they all have
-						no sound) and have no controls. This setting lets you add or remove
+						no sound and have no controls). This setting lets you add or remove
 						controls for the videos.
 					</Paragraph>
 					<ShowIf noAnimation thisValue={videoControls} thatValue={true}>

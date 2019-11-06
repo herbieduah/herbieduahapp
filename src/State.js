@@ -29,11 +29,11 @@ export const StateProvider = ({ children }) => {
 	const [dimensions, setDimensions] = useState({});
 	const [dragging, setDragging] = useState(false);
 	const [fullScreening, setFullScreening] = useState(false);
-	const [fullScreen, setFullscreen] = useState(false);
+	const [fullScreen, setFullscreen] = useState(true);
 	const [navBarRight, setNavBarRight] = useState(true);
 	const [modalVisible, setModalVisible] = useState(false);
 	const [navBarComplement, setNavBarComplement] = useState(false);
-	const [minimalMode, setMinimalMode] = useState(false);
+	const [minimalMode, setMinimalMode] = useState(true);
 	const [lazyLoading, setLazyLoading] = useState(true);
 	const [forDev, setForDev] = useState(false);
 	const [forYou, setForYou] = useState("");
