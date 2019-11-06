@@ -30,7 +30,8 @@ import {
 	marginBottomSm,
 	paddingLRMed,
 	mobileSm,
-	containerLargePx
+	containerLargePx,
+	paddingTopXLarge
 } from "./StyleHelpers";
 import {
 	navBarBorder,
@@ -53,6 +54,8 @@ export const ContentContainer = styled.section`
 	${props => (props.minimalMode ? `padding:2.5rem 0 !important` : ``)};
 	${props => (props.showMore ? `` : `padding-top: 0 !important;`)};
 	padding-top: 0 !important;
+	${props =>
+		props.minimalMode ? `${paddingTopXLarge}` : `padding-top: 0 !important;`};
 	/* transform: perspective(300px) rotateX(15deg);  */
 	
 	.less {

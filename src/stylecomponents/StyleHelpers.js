@@ -33,7 +33,7 @@ export const sliderWidth = "3.4rem";
 export const sliderHeight = "2rem";
 export const fluidTypeInfo = fluidType(minVW, maxVW, minFontSize, maxFontSize);
 export const containerLargePx = `1280px`;
-export const mobile = "@media only screen and (max-width: 500px)";
+export const mobile = "@media only screen and (max-width: 530px)";
 export const mobileSm = "@media only screen and (max-width: 340px)";
 export const tablet =
 	"@media screen and (max-width: 1200px) and (min-width: 768px)";
@@ -255,6 +255,13 @@ export const marginTopXLarge = `
 margin-top: 4rem;
 		${mobile} {
 			margin-top: 3.5rem;
+		}
+`;
+
+export const paddingTopXLarge = `
+padding-top: 4rem;
+		${mobile} {
+			padding-top: 3.5rem !important;
 		}
 `;
 export const marginBottomXLarge = `
