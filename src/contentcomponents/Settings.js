@@ -166,6 +166,110 @@ const SettingsPage = ({ contentProps }) => {
 						<Button onClick={knowCode}>Activate developer mode</Button>
 					</ShowIf>
 				</ZigZag>
+
+				<ZigZag>
+					<ShowIf noAnimation thisValue={downloaded} thatValue={false}>
+						<HeadingTwo>Traditional or Slider </HeadingTwo>
+						<Paragraph>
+							This setting lets you choose between a more traditional horizontal
+							navigation menu up top <i>or</i> a slider and vertical navigation
+							bar.
+						</Paragraph>
+						<ShowIf noAnimation thisValue={minimalMode} thatValue={true}>
+							<Button onClick={basicMode}>Change to Slider</Button>
+						</ShowIf>
+						<ShowIf noAnimation thisValue={minimalMode} thatValue={false}>
+							<Button onClick={basicMode}>Change to Traditional</Button>
+						</ShowIf>
+					</ShowIf>
+					<ShowIf noAnimation thisValue={downloaded} thatValue={true}>
+						<DisableSetting
+							thisValue={forDev}
+							thatValue={true}
+							message={`Unfortunately, the Slider causes problems when the app is "downloaded". You can use it if you switch to developer mode.`}>
+							<HeadingTwo>Traditional or Slider </HeadingTwo>
+							<Paragraph>
+								This setting lets you choose between a more traditional
+								horizontal navigation menu up top <i>or</i> a slider and
+								vertical navigation bar.
+							</Paragraph>
+							<ShowIf noAnimation thisValue={minimalMode} thatValue={true}>
+								<Button onClick={basicMode}>Change to Slider</Button>
+							</ShowIf>
+							<ShowIf noAnimation thisValue={minimalMode} thatValue={false}>
+								<Button onClick={basicMode}>Change to Traditional</Button>
+							</ShowIf>
+						</DisableSetting>
+					</ShowIf>
+				</ZigZag>
+				{/* <ZigZag>
+					<DisableSetting
+						thisValue={fullScreen || !forDev}
+						thatValue={true}
+						message={`The web app has to be in it's Default mode and Developer Mode.`}>
+						<HeadingTwo>Switch sides (Failure)</HeadingTwo>
+						<Paragraph>
+							This lets you switch the content and the menu. This was one of the
+							first settings I had when I started developing this app but I
+							neglected it and failed to keep up with.
+						</Paragraph>
+					
+						<Paragraph>
+							<strong>
+								Since this is a failed setting, it will revert back in 10
+								seconds
+							</strong>
+						</Paragraph>
+						<ShowIf noAnimation thisValue={switchSides} thatValue={true}>
+							<Button onClick={failure}>Switch sides for 10 Seconds</Button>
+						</ShowIf>
+						<ShowIf noAnimation thisValue={switchSides} thatValue={false}>
+							<Paragraph>Reverting back in 10 seconds</Paragraph>
+						</ShowIf>
+					</DisableSetting>
+				</ZigZag> */}
+				{/* <ZigZag> */}
+				{/* <ShowIf noAnimation thisValue={forDev} thatValue={true}>
+					<HeadingTwo>Lazy loading</HeadingTwo>
+				</ShowIf> */}
+				{/* <ShowIf noAnimation thisValue={forDev} thatValue={false}>
+					<HeadingTwo>Best Experience Mode</HeadingTwo>
+				</ShowIf>
+
+				<ShowIf noAnimation thisValue={forDev} thatValue={false}>
+					<Paragraph>
+						Right now, all the images and gifs on the web app load as you
+						scroll. Activating this setting downloads every image and gif on the
+						site (No loading screens) therefore, giving you the best experience.
+					</Paragraph>
+				</ShowIf>
+				<ShowIf noAnimation thisValue={forDev} thatValue={true}>
+					<Paragraph>
+						Stop lazy loading images and videos and download everything all at
+						once. Speaking of lazy... it was either spending 2 hours to do this
+						or 5-6 hours optimzing 100+ images and gifs for mobile and tablet or
+						moving this to Gatsby or something (I will optimize for mobile and
+						tablet when it is out of Beta). It's only ~ 30mb worth of images and
+						videos(gifs)
+					</Paragraph>
+				</ShowIf>
+
+				<ShowIf noAnimation thisValue={lazyLoading} thatValue={true}>
+					<Button onClick={downloadEverything}>
+						<ShowIf noAnimation thisValue={forDev} thatValue={false}>
+							Activate Best Experience Mode
+						</ShowIf>
+						<ShowIf noAnimation thisValue={forDev} thatValue={true}>
+							Turn Off Lazy load
+						</ShowIf>
+					</Button>
+				</ShowIf>
+				<ShowIf noAnimation thisValue={lazyLoading} thatValue={false}>
+					<Paragraph>
+						You can change this setting again if you refresh or come back to the
+						site again
+					</Paragraph>
+				</ShowIf>  */}
 				<ZigZag>
 					<HeadingTwo>Accessibility Mode (Beta)</HeadingTwo>
 					<ShowIf noAnimation thisValue={accessible} thatValue={false}>
@@ -208,108 +312,6 @@ const SettingsPage = ({ contentProps }) => {
 					</ShowIf>
 				</ZigZag>
 				<ZigZag>
-					<ShowIf noAnimation thisValue={downloaded} thatValue={false}>
-						<HeadingTwo>Traditional or Slider </HeadingTwo>
-						<Paragraph>
-							This setting lets you choose between a more traditional horizontal
-							navigation menu up top <i>or</i> a slider and vertical navigation
-							bar.
-						</Paragraph>
-						<ShowIf noAnimation thisValue={minimalMode} thatValue={true}>
-							<Button onClick={basicMode}>Change to Slider</Button>
-						</ShowIf>
-						<ShowIf noAnimation thisValue={minimalMode} thatValue={false}>
-							<Button onClick={basicMode}>Change to Traditional</Button>
-						</ShowIf>
-					</ShowIf>
-					<ShowIf noAnimation thisValue={downloaded} thatValue={true}>
-						<DisableSetting
-							thisValue={forDev}
-							thatValue={true}
-							message={`Unfortunately, the Slider causes problems when the app is "downloaded". You can use it if you switch to developer mode.`}>
-							<HeadingTwo>Traditional or Default </HeadingTwo>
-							<Paragraph>
-								This setting gets rids of the default slider and the vertical
-								navigation bar and replaces with a more traditional horizontal
-								navigation menu up top.
-							</Paragraph>
-							<ShowIf noAnimation thisValue={minimalMode} thatValue={true}>
-								<Button onClick={basicMode}>Change to Slider</Button>
-							</ShowIf>
-							<ShowIf noAnimation thisValue={minimalMode} thatValue={false}>
-								<Button onClick={basicMode}>Change to Traditional</Button>
-							</ShowIf>
-						</DisableSetting>
-					</ShowIf>
-				</ZigZag>
-				{/* <ZigZag>
-					<DisableSetting
-						thisValue={fullScreen || !forDev}
-						thatValue={true}
-						message={`The web app has to be in it's Default mode and Developer Mode.`}>
-						<HeadingTwo>Switch sides (Failure)</HeadingTwo>
-						<Paragraph>
-							This lets you switch the content and the menu. This was one of the
-							first settings I had when I started developing this app but I
-							neglected it and failed to keep up with.
-						</Paragraph>
-					
-						<Paragraph>
-							<strong>
-								Since this is a failed setting, it will revert back in 10
-								seconds
-							</strong>
-						</Paragraph>
-						<ShowIf noAnimation thisValue={switchSides} thatValue={true}>
-							<Button onClick={failure}>Switch sides for 10 Seconds</Button>
-						</ShowIf>
-						<ShowIf noAnimation thisValue={switchSides} thatValue={false}>
-							<Paragraph>Reverting back in 10 seconds</Paragraph>
-						</ShowIf>
-					</DisableSetting>
-				</ZigZag> */}
-				<ZigZag>
-					{/* <ShowIf noAnimation thisValue={forDev} thatValue={true}>
-					<HeadingTwo>Lazy loading</HeadingTwo>
-				</ShowIf> */}
-					{/* <ShowIf noAnimation thisValue={forDev} thatValue={false}>
-					<HeadingTwo>Best Experience Mode</HeadingTwo>
-				</ShowIf>
-
-				<ShowIf noAnimation thisValue={forDev} thatValue={false}>
-					<Paragraph>
-						Right now, all the images and gifs on the web app load as you
-						scroll. Activating this setting downloads every image and gif on the
-						site (No loading screens) therefore, giving you the best experience.
-					</Paragraph>
-				</ShowIf>
-				<ShowIf noAnimation thisValue={forDev} thatValue={true}>
-					<Paragraph>
-						Stop lazy loading images and videos and download everything all at
-						once. Speaking of lazy... it was either spending 2 hours to do this
-						or 5-6 hours optimzing 100+ images and gifs for mobile and tablet or
-						moving this to Gatsby or something (I will optimize for mobile and
-						tablet when it is out of Beta). It's only ~ 30mb worth of images and
-						videos(gifs)
-					</Paragraph>
-				</ShowIf>
-
-				<ShowIf noAnimation thisValue={lazyLoading} thatValue={true}>
-					<Button onClick={downloadEverything}>
-						<ShowIf noAnimation thisValue={forDev} thatValue={false}>
-							Activate Best Experience Mode
-						</ShowIf>
-						<ShowIf noAnimation thisValue={forDev} thatValue={true}>
-							Turn Off Lazy load
-						</ShowIf>
-					</Button>
-				</ShowIf>
-				<ShowIf noAnimation thisValue={lazyLoading} thatValue={false}>
-					<Paragraph>
-						You can change this setting again if you refresh or come back to the
-						site again
-					</Paragraph>
-				</ShowIf>  */}
 					<DisableSetting
 						thisValue={minimalMode}
 						thatValue={true}
@@ -350,6 +352,7 @@ const SettingsPage = ({ contentProps }) => {
 						<Button onClick={controlVideoMode}>Add controls</Button>
 					</ShowIf>
 				</ZigZag>
+
 				<ZigZag>
 					<DisableSetting
 						thisValue={minimalMode}
