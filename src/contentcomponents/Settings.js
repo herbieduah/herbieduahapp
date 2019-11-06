@@ -148,14 +148,14 @@ const SettingsPage = ({ contentProps }) => {
 						</Paragraph> */}
 						<Paragraph>
 							I sprinkled a lot of technical jargon around this web app but I
-							don't a great a job indicating where.
+							don't do a great a job indicating where.
 						</Paragraph>
 						<Paragraph>
 							(Why not have this setting as a default?
 							<br />
-							It's my personal app and 95% of the people I know don't know all
-							about these technical mambo jambo. I also wanted the tone to be
-							easy to understand for everyone.
+							95% of the people I know don't know all about these technical
+							mambo jambo. I also wanted the tone to be easy to understand for
+							everyone.
 						</Paragraph>
 					</ShowIf>
 
@@ -167,7 +167,7 @@ const SettingsPage = ({ contentProps }) => {
 					</ShowIf>
 				</ZigZag>
 				<ZigZag>
-					<HeadingTwo>Accessibility Mode</HeadingTwo>
+					<HeadingTwo>Accessibility Mode (Beta)</HeadingTwo>
 					<ShowIf noAnimation thisValue={accessible} thatValue={false}>
 						<Paragraph>Accessibility Mode changes these settings:</Paragraph>
 						<UL>
@@ -208,6 +208,41 @@ const SettingsPage = ({ contentProps }) => {
 					</ShowIf>
 				</ZigZag>
 				<ZigZag>
+					<ShowIf noAnimation thisValue={downloaded} thatValue={false}>
+						<HeadingTwo>Traditional or Default </HeadingTwo>
+						<Paragraph>
+							This setting lets you choose between a more traditional horizontal
+							navigation menu up top <i>or</i> the default slider and the
+							vertical navigation bar.
+						</Paragraph>
+						<ShowIf noAnimation thisValue={minimalMode} thatValue={true}>
+							<Button onClick={basicMode}>Change to Default</Button>
+						</ShowIf>
+						<ShowIf noAnimation thisValue={minimalMode} thatValue={false}>
+							<Button onClick={basicMode}>Change to Traditional</Button>
+						</ShowIf>
+					</ShowIf>
+					<ShowIf noAnimation thisValue={downloaded} thatValue={true}>
+						<DisableSetting
+							thisValue={forDev}
+							thatValue={true}
+							message={`Unfortunately, the Slider causes problems when the app is "downloaded". You can use it if you switch to developer mode.`}>
+							<HeadingTwo>Traditional or Default </HeadingTwo>
+							<Paragraph>
+								This setting gets rids of the default slider and the vertical
+								navigation bar and replaces with a more traditional horizontal
+								navigation menu up top.
+							</Paragraph>
+							<ShowIf noAnimation thisValue={minimalMode} thatValue={true}>
+								<Button onClick={basicMode}>Change to Default</Button>
+							</ShowIf>
+							<ShowIf noAnimation thisValue={minimalMode} thatValue={false}>
+								<Button onClick={basicMode}>Change to Traditional</Button>
+							</ShowIf>
+						</DisableSetting>
+					</ShowIf>
+				</ZigZag>
+				{/* <ZigZag>
 					<DisableSetting
 						thisValue={fullScreen || !forDev}
 						thatValue={true}
@@ -218,9 +253,7 @@ const SettingsPage = ({ contentProps }) => {
 							first settings I had when I started developing this app but I
 							neglected it and failed to keep up with.
 						</Paragraph>
-						{/* <Paragraph>
-						I mean it does what it's intended to do but it doesn't look good.
-					</Paragraph> */}
+					
 						<Paragraph>
 							<strong>
 								Since this is a failed setting, it will revert back in 10
@@ -234,7 +267,7 @@ const SettingsPage = ({ contentProps }) => {
 							<Paragraph>Reverting back in 10 seconds</Paragraph>
 						</ShowIf>
 					</DisableSetting>
-				</ZigZag>
+				</ZigZag> */}
 				<ZigZag>
 					{/* <ShowIf noAnimation thisValue={forDev} thatValue={true}>
 					<HeadingTwo>Lazy loading</HeadingTwo>
@@ -302,41 +335,7 @@ const SettingsPage = ({ contentProps }) => {
 						</ShowIf>
 					</DisableSetting>
 				</ZigZag>
-				<ZigZag>
-					<ShowIf noAnimation thisValue={downloaded} thatValue={false}>
-						<HeadingTwo>Traditional or Default </HeadingTwo>
-						<Paragraph>
-							This setting lets you choose between a more traditional horizontal
-							navigation menu up top <i>or</i> the default slider and the
-							vertical navigation bar.
-						</Paragraph>
-						<ShowIf noAnimation thisValue={minimalMode} thatValue={true}>
-							<Button onClick={basicMode}>Change to Default</Button>
-						</ShowIf>
-						<ShowIf noAnimation thisValue={minimalMode} thatValue={false}>
-							<Button onClick={basicMode}>Change to Traditional</Button>
-						</ShowIf>
-					</ShowIf>
-					<ShowIf noAnimation thisValue={downloaded} thatValue={true}>
-						<DisableSetting
-							thisValue={forDev}
-							thatValue={true}
-							message={`Unfortunately, the Slider causes problems when the app is "downloaded". You can use it if you switch to developer mode.`}>
-							<HeadingTwo>Traditional or Default </HeadingTwo>
-							<Paragraph>
-								This setting gets rids of the default slider and the vertical
-								navigation bar and replaces with a more traditional horizontal
-								navigation menu up top.
-							</Paragraph>
-							<ShowIf noAnimation thisValue={minimalMode} thatValue={true}>
-								<Button onClick={basicMode}>Change to Default</Button>
-							</ShowIf>
-							<ShowIf noAnimation thisValue={minimalMode} thatValue={false}>
-								<Button onClick={basicMode}>Change to Traditional</Button>
-							</ShowIf>
-						</DisableSetting>
-					</ShowIf>
-				</ZigZag>
+
 				<ZigZag>
 					<HeadingTwo>Add controls to videos</HeadingTwo>
 					<Paragraph>

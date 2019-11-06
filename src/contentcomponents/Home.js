@@ -69,7 +69,7 @@ const HomePage = ({ contentProps }) => {
 			<ContentShow less>
 				<LessContent header={header}>
 					Hi<span className='text-cap'>{forYouHelper(forYou)}</span>, I'm Herbie
-					and this is my personal web app.
+					Duah and this is my personal web app.
 					{/* <br />
 					<br />I built this portfolio as a way for me to learn and bring some
 					of my creative and original ideas to life. */}
@@ -89,7 +89,7 @@ const HomePage = ({ contentProps }) => {
 					</Paragraph> */}
 					<Emphasis>
 						Hello<span className='text-cap'>{forYouHelper(forYou)}</span>, I'm a
-						Web Developer/Designer and casual photographer.
+						Web Developer/Designer and photographer.
 					</Emphasis>
 					{/* <Paragraph>
 						Projects that allow me to use my coding and design skills in

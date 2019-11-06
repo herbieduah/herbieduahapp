@@ -64,6 +64,10 @@ const ThemePage = ({ contentProps }) => {
 			</ContentShow>
 			<ContentShow more>
 				<Header>{header}</Header>
+				<Paragraph>
+					Themes give the web app a completely new look. These were the last
+					additions to my web app.
+				</Paragraph>
 				<HeadingTwo>Matrix</HeadingTwo>
 				<Paragraph>This Matrix theme is based on the Matrix Trilogy.</Paragraph>
 				<ShowIf noAnimation thisValue={isMatrix} thatValue={false}>
