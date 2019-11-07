@@ -132,7 +132,7 @@ const SettingsPage = ({ contentProps }) => {
 				<ShowIf noAnimation thisValue={minimalMode} thatValue={true}>
 					<Paragraph>
 						I had a different look and feel in mind for my web app, you should
-						check it out. (If you don’t like it, you can refresh the page too)
+						check it out.
 					</Paragraph>
 				</ShowIf>
 				<ShowIf noAnimation thisValue={minimalMode} thatValue={false}>
