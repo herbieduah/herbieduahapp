@@ -35,7 +35,7 @@ export const StateProvider = ({ children }) => {
 	const [navBarComplement, setNavBarComplement] = useState(false);
 	const [minimalMode, setMinimalMode] = useState(true);
 	const [lazyLoading, setLazyLoading] = useState(true);
-	const [forDev, setForDev] = useState(false);
+	const [forDev, setForDev] = useState(true);
 	const [forYou, setForYou] = useState("");
 	const [modalContent, setModalContent] = useState("");
 	const [whom, setWhom] = useState("everyone");

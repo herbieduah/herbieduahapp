@@ -88,13 +88,13 @@ export const SubMenu = props => {
 								Inspiration
 							</Text>
 						</li>
-						<ShowIf noAnimation thisValue={forDev} thatValue={true}>
+						{/* <ShowIf noAnimation thisValue={forDev} thatValue={true}>
 							<li onClick={hideModal} className='subMenu__item'>
 								<Text menuLink xl={true} to='/CaseStudy'>
 									Case Study
 								</Text>
 							</li>
-						</ShowIf>
+						</ShowIf> */}
 						{/* <li onClick={hideModal} className='subMenu__item'>
 							<Text menuLink xl={true} to='/SpecialThanks'>
 								Special&shy; Thanks

@@ -19,9 +19,10 @@ import {
 	ZigZag,
 	LessContent
 } from "../ContentHelpers";
+import { ShowIf } from "../ComponentHelpers";
 // import { ShowIf } from "../ComponentHelpers";
 // import { Image as CloudImage, Video } from "cloudinary-react";
-// import Emoji from "a11y-react-emoji";
+import Emoji from "a11y-react-emoji";
 import { ForSomeone, forYouHelper } from "../maincomponents/ForYou";
 // import Modal from "../maincomponents/Modal";
 // import cornishPastyPic from "../media/images/picsOfMe/test.jpg";
@@ -48,7 +49,7 @@ const header = "HerbieDuah.app";
 
 // const HomePage = ({ contentProps }) => {
 const HomePage = ({ contentProps }) => {
-	const { whom, forYou } = contentProps;
+	const { whom, forYou, minimalMode, forDev } = contentProps;
 	// const opts = {
 	// 	height: "100%",
 	// 	width: "100%",
@@ -75,38 +76,46 @@ const HomePage = ({ contentProps }) => {
 					of my creative and original ideas to life. */}
 				</LessContent>
 			</ContentShow>
-			<ContentShow containerLarge more>
+			<ContentShow more>
 				<Header>{header}</Header>
 
-				<ZigZag>
-					{/* <HeadingTwo>
+				{/* <ZigZag> */}
+				{/* <HeadingTwo>
 						Hello<span className='text-cap'>{forYouHelper(forYou)}</span>
 					</HeadingTwo> */}
 
-					{/* <Paragraph>
+				{/* <Paragraph>
 						I am a Web Developer/Designer with over five years of experience
 						that also likes taking photos.
 					</Paragraph> */}
-					<Emphasis>
-						Hello<span className='text-cap'>{forYouHelper(forYou)}</span>, I'm
-						Herbie Duah and I'm a Web Developer/Designer and photographer.
-					</Emphasis>
-					{/* <Paragraph>
+				<Emphasis>
+					Hello<span className='text-cap'>{forYouHelper(forYou)}</span>, I'm
+					Herbie.
+				</Emphasis>
+
+				<Emphasis>
+					I'm a Web Developer/Designer and photographer
+					<ShowIf noAnimation thisValue={forDev} thatValue={true}>
+						&nbsp;with a passion for human-centered design
+					</ShowIf>
+					.
+				</Emphasis>
+				{/* <Paragraph>
 						Projects that allow me to use my coding and design skills in
 						creative and original ways make me very happy.
 					</Paragraph> */}
-					{/* <Paragraph>I also love going out and taking photos.</Paragraph> */}
-				</ZigZag>
-				<ZigZag>
-					<ForSomeone whom={whom} forYou={forYou} />
-				</ZigZag>
-				<ZigZag>
-					<Image
-						src={picsOfMeHero}
-						className='paddingLRSm'
-						alt='A picture of me smiling infront of green plants '
-					/>
-				</ZigZag>
+				{/* <Paragraph>I also love going out and taking photos.</Paragraph> */}
+				{/* </ZigZag>
+				<ZigZag> */}
+				<ForSomeone whom={whom} forYou={forYou} />
+				{/* </ZigZag>
+				<ZigZag> */}
+				<Image
+					src={picsOfMeHero}
+					className='paddingLRSm'
+					alt='A picture of me smiling infront of green plants '
+				/>
+				{/* </ZigZag> */}
 				{/* <HeadingTwo>About this web app</HeadingTwo> */}
 				{/* <Paragraph>
 						I'm very passionate when it comes to creating User Interfaces/User
@@ -114,17 +123,17 @@ const HomePage = ({ contentProps }) => {
 						create a very innovative UI/UX while showing off my work and
 						skillset.
 					</Paragraph> */}
-				<ZigZag>
-					{/* <Emphasis>
+				{/* <ZigZag> */}
+				{/* <Emphasis>
 						This project was created to help me learn and challenge myself to
 						craft an innovative human-centered design but at the same time
 						showing off my work and skillset.
 					</Emphasis> */}
-					<Emphasis>
+				{/* <Emphasis>
 						The purpose of this portfolio is to help me learn <i>and</i>{" "}
 						challenge myself to craft an innovative human-centered design.
 					</Emphasis>
-				</ZigZag>
+				</ZigZag> */}
 				{/* <ZigZag>
 					<Paragraph>
 						(Officially out of Beta 11/3/2019. I will still be making some minor
@@ -227,6 +236,12 @@ const HomePage = ({ contentProps }) => {
 						<Figcaption>Me fat ass getting food</Figcaption>
 					</Figure>
 					<Gif url={testVideo} /> */}
+				{/* <ShowIf noAnimation thisValue={minimalMode} thatValue={true}>
+					<Paragraph center>
+						You should check out that Customize category{" "}
+						<Emoji className='emoji' symbol='😉' label='smile' />
+					</Paragraph>
+				</ShowIf> */}
 				<ContentCategory category='customize' />
 			</ContentShow>
 		</Fragment>

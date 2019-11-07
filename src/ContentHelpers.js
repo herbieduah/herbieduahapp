@@ -323,8 +323,9 @@ export const HeadingThree = props => {
 		<ElementReveal>
 			<Text
 				h3
-				l
-				className={`marginTopMed marginBottomMed paddingLRSm ${className}`}>
+				m
+				bold
+				className={`marginTopLarge marginBottomMed paddingLRSm ${className}`}>
 				{props.children}
 			</Text>
 		</ElementReveal>
