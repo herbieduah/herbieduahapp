@@ -120,7 +120,7 @@ export const JobApplication = props => {
 	);
 };
 export const forYouHelper = forSomebody => {
-	let person = forSomebody === "" ? "" : ` ${forSomebody}`;
+	let person = forSomebody === "" ? " there" : ` ${forSomebody}`;
 	switch (forSomebody) {
 		case "indeed":
 			person = " Indeed Employer/Employee";

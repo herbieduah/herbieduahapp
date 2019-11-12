@@ -206,7 +206,8 @@ export const Emphasis = props => {
 				<Text
 					l
 					{...props}
-					secondary
+					bold
+					tertiary
 					className={`${className} ${lessClass} marginBottomMed marginTopMed paddingLRSm`}>
 					{props.children}
 				</Text>

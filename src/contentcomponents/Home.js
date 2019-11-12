@@ -12,7 +12,7 @@ import {
 	ContentCategory,
 	// Figure,
 	// Figcaption,
-	// Gif,
+	Gif,
 	Header,
 	// Flex,
 	ContentShow,
@@ -37,7 +37,10 @@ import {
 	picsOfMeHero
 } from "../MediaVariables";
 // import ReactPlayer from "react-player";
-
+import {
+	videosofmevNeckCrewNeck,
+	videosofmephotosSedona
+} from "../VideoVariables";
 const header = "HerbieDuah.app";
 // There is an app for everything, in
 // 					the future, I believe there is going to be an app for everyone. I am
@@ -76,8 +79,10 @@ const HomePage = ({ contentProps }) => {
 					of my creative and original ideas to life. */}
 				</LessContent>
 			</ContentShow>
-			<ContentShow more>
-				<Header>{header}</Header>
+			<ContentShow containerLarge more>
+				<Header>
+					Hey<span>{forYouHelper(forYou)}</span>,
+				</Header>
 
 				{/* <ZigZag> */}
 				{/* <HeadingTwo>
@@ -88,18 +93,21 @@ const HomePage = ({ contentProps }) => {
 						I am a Web Developer/Designer with over five years of experience
 						that also likes taking photos.
 					</Paragraph> */}
-				<Emphasis>
-					Hello<span className='text-cap'>{forYouHelper(forYou)}</span>, I'm
-					Herbie.
-				</Emphasis>
+				{/* <div className='marginBottomXLarge marginTopXLarge'>
+					<Emphasis center>
+						Hey<span>{forYouHelper(forYou)}</span>,
+					</Emphasis>
+				</div> */}
 
-				<Emphasis>
-					I'm a Web Developer/Designer and photographer
-					<ShowIf noAnimation thisValue={forDev} thatValue={true}>
-						&nbsp;with a passion for human-centered design
-					</ShowIf>
-					.
-				</Emphasis>
+				{/* <ZigZag>
+					<Emphasis>
+						I'm a Web Developer/Designer and photographer
+						<ShowIf noAnimation thisValue={forDev} thatValue={true}>
+							&nbsp;with a passion for human-centered design
+						</ShowIf>
+						.
+					</Emphasis>
+				</ZigZag> */}
 				{/* <Paragraph>
 						Projects that allow me to use my coding and design skills in
 						creative and original ways make me very happy.
@@ -107,13 +115,50 @@ const HomePage = ({ contentProps }) => {
 				{/* <Paragraph>I also love going out and taking photos.</Paragraph> */}
 				{/* </ZigZag>
 				<ZigZag> */}
-				<ForSomeone whom={whom} forYou={forYou} />
-				{/* </ZigZag>
-				<ZigZag> */}
-				<Image
-					src={picsOfMeHero}
-					className='paddingLRSm'
-					alt='A picture of me smiling infront of green plants '
+				{/* <div className='container'>
+					<ForSomeone whom={whom} forYou={forYou} />
+				</div> */}
+				<ZigZag>
+					<Emphasis center>I'm Herbie Duah.</Emphasis>
+					<ForSomeone whom={whom} forYou={forYou} />
+					<Image
+						src={picsOfMeHero}
+						className='paddingLRMed'
+						alt='A picture of me smiling infront of green plants '
+					/>
+				</ZigZag>
+
+				<ZigZag>
+					<Emphasis center>
+						I love designing and coding websites for humans.
+					</Emphasis>
+					<Image
+						src={picsOfMeHero}
+						className='paddingLRMed'
+						alt='A picture of me smiling infront of green plants '
+					/>
+				</ZigZag>
+				<ZigZag>
+					<Emphasis center>I also love to take photos.</Emphasis>
+					<Gif
+						className='paddingLRMed'
+						desc='me pointing to myself'
+						url={videosofmephotosSedona}
+					/>
+				</ZigZag>
+
+				<div className='container'>
+					<Emphasis center>
+						In the future, I believe everyone is going to have their own app.
+					</Emphasis>
+				</div>
+				<div className='container'>
+					<Emphasis center>So I made my own.</Emphasis>
+				</div>
+				<Gif
+					className='paddingLRLarge'
+					desc='me pointing to myself'
+					url={videosofmevNeckCrewNeck}
 				/>
 				{/* </ZigZag> */}
 				{/* <HeadingTwo>About this web app</HeadingTwo> */}

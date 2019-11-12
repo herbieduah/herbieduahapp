@@ -175,14 +175,17 @@ export const NavBarMiniContainer = styled.div`
 			}
 		}
 		&__logo-link {
-				transform: scale(1);						
+										
 			&:hover {
 				svg {
 					opacity: 1;
 				}
+				
 			}	
-			&:focus {
-				transform: scale(.9);
+			&:focus {	
+				.inner-rect, .half-circle  {
+					transform: scale(.9);
+				}
 			}
 		}
 
@@ -196,6 +199,7 @@ export const NavBarMiniContainer = styled.div`
 			overflow: hidden;
 			.inner-rect, .half-circle {
 				${mainTransition}
+				transform: scale(1);
 				fill: ${fontColor};	
 			}
 			.outer-rect {
