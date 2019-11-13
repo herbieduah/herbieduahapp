@@ -52,7 +52,7 @@ const header = "HerbieDuah.app";
 
 // const HomePage = ({ contentProps }) => {
 const HomePage = ({ contentProps }) => {
-	const { whom, forYou, minimalMode, forDev } = contentProps;
+	const { whom, forYou, ww, wh } = contentProps;
 	// const opts = {
 	// 	height: "100%",
 	// 	width: "100%",
@@ -80,9 +80,7 @@ const HomePage = ({ contentProps }) => {
 				</LessContent>
 			</ContentShow>
 			<ContentShow containerLarge more>
-				<Header>
-					Hey<span>{forYouHelper(forYou)}</span>,
-				</Header>
+				<Header>{header}</Header>
 
 				{/* <ZigZag> */}
 				{/* <HeadingTwo>
@@ -119,8 +117,13 @@ const HomePage = ({ contentProps }) => {
 					<ForSomeone whom={whom} forYou={forYou} />
 				</div> */}
 				<ZigZag>
-					<Emphasis>I'm Herbie Duah.</Emphasis>
+					<Emphasis>
+						Hey<span>{forYouHelper(forYou)}</span>,
+					</Emphasis>
 					<ForSomeone whom={whom} forYou={forYou} />
+				</ZigZag>
+				<ZigZag>
+					<Emphasis>I'm Herbie.</Emphasis>
 					<Image
 						src={picsOfMeHero}
 						className='paddingLRSm'
