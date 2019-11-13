@@ -66,7 +66,7 @@ export const themes = [
 			...themeColorMaker()
 		},
 		type: "color",
-		text: "Brilliant White",
+		text: "White",
 		desc: ""
 	},
 	{

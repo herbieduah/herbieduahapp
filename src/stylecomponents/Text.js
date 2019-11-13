@@ -56,7 +56,7 @@ const baseStyle = css`
 		if (props.m) return "1.2em";
 		if (props.l) return "1.5em";
 		if (props.large) return "1.5em";
-		if (props.xl) return "1.7em";
+		if (props.xl) return "1.9em";
 		if (props.xxl) return "2.4em";
 		return "1.1em";
 	}};
@@ -75,7 +75,7 @@ const baseStyle = css`
 	font-weight: ${props => {
 		if (props.semibold) return "500";
 		if (props.bold) return "700";
-		if (props.extrabold) return "900";
+		if (props.extrabold) return "800";
 		return "300";
 	}};
 	font-style: ${props => {

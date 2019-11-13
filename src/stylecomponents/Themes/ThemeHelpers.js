@@ -6,9 +6,9 @@ import totallyNinetiesBgImage from "../bgImages/bgplaystation.gif";
 // ** fontColorSecondary;
 // const fontColor = readableColor("#cc208e");
 // const fontColorSecondary = fontColor;
-const mainFont = `"halyard-display", -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif`;
-const mainFontTertiary = `"nimbus-sans", -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif`;
-const mainFontSecondary = `"nimbus-sans-extended", -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif`;
+const mainFont = `"aktiv-grotesk", -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif`;
+const mainFontTertiary = `"aktiv-grotesk-condensed", -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif`;
+const mainFontSecondary = `"aktiv-grotesk-extended", -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif`;
 const bgColor = "#cc208e";
 
 const courierNewFont = `Courier New", Courier, monospace`;
@@ -188,7 +188,7 @@ export const themeBgMaker = (theme = defaultBgImageValues) => {
 	};
 };
 
-export const themeColorMaker = (hexColor = "EFF0F1") => {
+export const themeColorMaker = (hexColor = "FFFFFF") => {
 	// const values = theme.split("-");
 	// const bgColor = `#${values[1]}`;
 	// const fontColor = `#${values[2]}`;

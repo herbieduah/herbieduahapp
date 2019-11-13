@@ -119,47 +119,52 @@ const HomePage = ({ contentProps }) => {
 					<ForSomeone whom={whom} forYou={forYou} />
 				</div> */}
 				<ZigZag>
-					<Emphasis center>I'm Herbie Duah.</Emphasis>
+					<Emphasis>I'm Herbie Duah.</Emphasis>
 					<ForSomeone whom={whom} forYou={forYou} />
 					<Image
 						src={picsOfMeHero}
-						className='paddingLRMed'
+						className='paddingLRSm'
 						alt='A picture of me smiling infront of green plants '
 					/>
 				</ZigZag>
 
 				<ZigZag>
-					<Emphasis center>
-						I love designing and coding websites for humans.
-					</Emphasis>
+					<Emphasis>I love designing and coding websites for humans.</Emphasis>
 					<Image
 						src={picsOfMeHero}
-						className='paddingLRMed'
+						className='paddingLRSm'
 						alt='A picture of me smiling infront of green plants '
 					/>
 				</ZigZag>
 				<ZigZag>
-					<Emphasis center>I also love to take photos.</Emphasis>
+					<Emphasis>I also love to take photos.</Emphasis>
 					<Gif
-						className='paddingLRMed'
 						desc='me pointing to myself'
 						url={videosofmephotosSedona}
+						className='paddingLRSm'
 					/>
 				</ZigZag>
 
 				<div className='container'>
-					<Emphasis center>
-						In the future, I believe everyone is going to have their own app.
+					<Emphasis>
+						Nowadays, there is an app for everything. In the future, I believe
+						there is going to be an app for everyone. I envision every user
+						having a different experience with your app, just like they do in
+						real life.
+					</Emphasis>
+					<Emphasis>
+						This belief and my passion for crafting user experiences inspired me
+						to design and engineer my portfolio as a web app.
 					</Emphasis>
 				</div>
-				<div className='container'>
+				{/* <div className='container'>
 					<Emphasis center>So I made my own.</Emphasis>
-				</div>
-				<Gif
+				</div> */}
+				{/* <Gif
 					className='paddingLRLarge'
 					desc='me pointing to myself'
 					url={videosofmevNeckCrewNeck}
-				/>
+				/> */}
 				{/* </ZigZag> */}
 				{/* <HeadingTwo>About this web app</HeadingTwo> */}
 				{/* <Paragraph>

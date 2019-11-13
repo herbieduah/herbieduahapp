@@ -32,7 +32,7 @@ const maxFontSize = `24px`;
 export const sliderWidth = "3.4rem";
 export const sliderHeight = "2rem";
 export const fluidTypeInfo = fluidType(minVW, maxVW, minFontSize, maxFontSize);
-export const containerLargePx = `1280px`;
+export const containerLargePx = `1600px`;
 export const mobile = "@media only screen and (max-width: 530px)";
 export const mobileSm = "@media only screen and (max-width: 340px)";
 export const tablet =
@@ -173,44 +173,44 @@ ${mobile} {
 	margin: 0;
 }`;
 
-export const marginBottomLarge = `margin-bottom: 3rem;
+export const marginBottomLarge = `margin-bottom: 5rem;
 ${mobile} {
-	margin-bottom: 2.5rem;
+	margin-bottom: 3.5rem;
 }`;
 
-export const paddingBottomLarge = `padding-bottom: 3rem !important;
+export const paddingBottomLarge = `padding-bottom: 5rem !important;
 ${mobile} {
-	padding-bottom: 2.5rem!important;
+	padding-bottom: 3.5rem!important;
 }`;
-export const cPaddingTop = `padding-top: 3rem !important;
+export const cPaddingTop = `padding-top: 5rem !important;
 ${mobile} {
-	padding-top: 2.5rem!important;
+	padding-top: 3.5rem!important;
 }`;
 
-export const paddingBottomMed = `padding-bottom: 2rem;
+export const paddingBottomMed = `padding-bottom: 4rem;
 ${mobile} {
 	padding-bottom: 1.5rem;
 }`;
 
 export const cPaddingTopMed = `padding-top: 2rem;
 ${mobile} {
-	padding-top: 1.5rem;
+	padding-top: 2.5rem;
 }`;
 
-export const marginBottomMed = `margin-bottom: 1.5rem;
+export const marginBottomMed = `margin-bottom: 3.5rem;
 ${mobile} {
-	margin-bottom: 1rem;
+	margin-bottom: 2rem;
 }
 `;
-export const marginTopMed = `margin-top 1.5rem;
+export const marginTopMed = `margin-top 3.5rem;
 ${mobile} {
-	margin-top: 1rem;
+	margin-top: 2rem;
 }
 `;
 
-export const marginTopSm = `margin-top: 1rem;
+export const marginTopSm = `margin-top: 2rem;
 ${mobile} {
-	margin-top: .75rem;
+	margin-top: 1rem;
 }
 `;
 
@@ -228,9 +228,9 @@ button:active {
     transform: scale(0.99);
 }`;
 
-export const marginBottomSm = `margin-bottom: 1.25rem;
+export const marginBottomSm = `margin-bottom: 3.25rem;
 ${mobile} {
-	margin-bottom: .75rem;
+	margin-bottom: 1.5rem;
 }
 `;
 
@@ -246,28 +246,28 @@ ${mobile}{
 }`;
 
 export const marginTopLarge = `
-margin-top: 3.5rem;
+margin-top: 5.5rem;
 		${mobile} {
-			margin-top: 3rem;
+			margin-top: 4rem;
 		}
 `;
 export const marginTopXLarge = `
-margin-top: 4rem;
+margin-top: 6rem;
 		${mobile} {
-			margin-top: 3.5rem;
+			margin-top: 4.5rem;
 		}
 `;
 
 export const paddingTopXLarge = `
-padding-top: 4rem;
+padding-top: 6rem;
 		${mobile} {
-			padding-top: 3.5rem !important;
+			padding-top: 4.5rem !important;
 		}
 `;
 export const marginBottomXLarge = `
-margin-bottom: 4rem;
+margin-bottom: 6rem;
 		${mobile} {
-			margin-bottom: 3.5rem;
+			margin-bottom: 4.5rem;
 		}
 `;
 

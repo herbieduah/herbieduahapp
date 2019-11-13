@@ -125,8 +125,7 @@ export const NavBar = () => {
 							<ElementReveal>
 								<Text
 									buttontext
-									m
-									wide
+									s
 									className='navbar__menu-text'
 									onClick={setMenuModalContent}>
 									Back
@@ -137,8 +136,7 @@ export const NavBar = () => {
 							<ElementReveal>
 								<Text
 									buttontext
-									m
-									wide
+									s
 									className='navbar__menu-text'
 									onClick={setMenuModalContent}>
 									Menu

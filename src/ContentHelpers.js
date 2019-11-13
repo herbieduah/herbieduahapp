@@ -30,8 +30,8 @@ export const defaultAlt = "I will be adding an alt tag to this image soon";
 export const defaultDesc = "This is a video, I will be describing it soon";
 
 //Switch to 'gif' or 'image' to pull videos and images locally
-const videoLocation = "cloud-gif";
-const imageLocation = "cloud-image";
+const videoLocation = "gif";
+const imageLocation = "image";
 
 export const ContentShow = props => {
 	const {
@@ -206,8 +206,7 @@ export const Emphasis = props => {
 				<Text
 					l
 					{...props}
-					bold
-					tertiary
+					secondary
 					className={`${className} ${lessClass} marginBottomMed marginTopMed paddingLRSm`}>
 					{props.children}
 				</Text>
@@ -280,7 +279,7 @@ export const HeadingTwo = props => {
 			<Text
 				h2
 				l
-				bold
+				extrabold
 				className={`${className} marginTopXLarge marginBottomSm paddingLRSm`}>
 				{props.children}
 			</Text>

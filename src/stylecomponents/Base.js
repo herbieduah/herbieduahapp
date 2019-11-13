@@ -113,9 +113,9 @@ export const GlobalStyle = createGlobalStyle`
 //     font-size: 12px
 export const NavBarMiniContainer = styled.div`
 	position: fixed;
-  	padding: 0rem ${navBarSize};
+  	padding:${navBarSize};
 	${mobile} {
-		padding: 0rem 1rem;
+		padding: 1rem;
 	}
     z-index: 1000;
     display: flex;
@@ -123,10 +123,6 @@ export const NavBarMiniContainer = styled.div`
 		props.navBarComplement ? navBarBgComplement : navBarBg};
 	width: 100vw;
 	
-	background: ${props => (props.modalVisible ? modalFullScreenBg : ``)}!important;
-	${props => (props.modalVisible ? `box-shadow:none` : ``)};
-	border-bottom: ${props =>
-		props.modalVisible || props.navBarComplement ? navBarBorder : ``};
 	align-items: center;
  	/* width: ${props => props.appHeight}px; */
 	justify-content: space-between;
@@ -195,7 +191,7 @@ export const NavBarMiniContainer = styled.div`
 		}
 		
 		&__logo {
-			height: 3rem;
+			height: 2rem;
 			overflow: hidden;
 			.inner-rect, .half-circle {
 				${mainTransition}
@@ -210,8 +206,8 @@ export const NavBarMiniContainer = styled.div`
 			svg {
 				${mainTransition}
 				/* transform: scale(.09); */
-				width: 3rem;
-				height: 3rem;
+				width: 2rem;
+				height: 2rem;
 				opacity: 1;
 				path {
 					

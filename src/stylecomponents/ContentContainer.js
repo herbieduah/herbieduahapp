@@ -350,7 +350,7 @@ export const ContentContainer = styled.section`
 		width: 100%;
 		}
 		.subMenu {
-			${marginTopMed}
+			${marginTopSm}
 			&__item{
 				text-align: center;
 			}
