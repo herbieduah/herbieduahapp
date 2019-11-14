@@ -1,4 +1,4 @@
-import { rgba, invert, readableColor, complement } from "polished";
+import { rgba, invert, readableColor, lighten } from "polished";
 import cartographer from "../bgImages/cartographer.png";
 import starWarsBgImage from "../bgImages/darkness.png";
 import totallyNinetiesBgImage from "../bgImages/bgplaystation.gif";
@@ -50,6 +50,7 @@ export const themeMaker = (theme = defaultBaseValues) => {
 		buttonLineHeight: ` 1.2`,
 		buttonSpanDisplay: `block`,
 		buttonTextTransform: `uppercase`,
+		colorLight: `${lighten(0.42, fontColor)}`,
 		colorSlightOpacity: `${rgba(fontColor, 0.56)}`,
 		CTAColor: `${rgba(fontColor, 1)}`,
 		CTAColorSecondary: `${rgba(fontColor, 1)}`,
@@ -135,6 +136,7 @@ export const themeBgMaker = (theme = defaultBgImageValues) => {
 		buttonLineHeight: ` 1.2`,
 		buttonSpanDisplay: `block`,
 		buttonTextTransform: `uppercase`,
+		colorLight: `${lighten(0.42, fontColor)}`,
 		colorSlightOpacity: `${rgba(fontColor, 0.56)}`,
 		CTAColor: `${rgba(fontColor, 1)}`,
 		CTAColorSecondary: `${rgba(fontColor, 1)}`,
@@ -218,6 +220,7 @@ export const themeColorMaker = (hexColor = "FFFFFF") => {
 		buttonLineHeight: ` 1.2`,
 		buttonSpanDisplay: `block`,
 		buttonTextTransform: `uppercase`,
+		colorLight: `${lighten(0.42, fontColor)}`,
 		colorSlightOpacity: `${rgba(fontColor, 0.56)}`,
 		CTAColor: `${rgba(fontColor, 1)}`,
 		CTAColorSecondary: `${rgba(fontColor, 1)}`,
@@ -298,6 +301,7 @@ export const matrixTheme = () => {
 		buttonLineHeight: ` 1.2`,
 		buttonSpanDisplay: `block`,
 		buttonTextTransform: `uppercase`,
+		colorLight: `${lighten(0.42, fontColor)}`,
 		colorSlightOpacity: `${rgba(fontColor, 0.56)}`,
 		CTAColor: `${rgba(fontColor, 1)}`,
 		CTAColorSecondary: `${rgba(fontColor, 1)}`,
@@ -377,6 +381,7 @@ export const themeStarWars = () => {
 		buttonLineHeight: ` 1.2`,
 		buttonSpanDisplay: `block`,
 		buttonTextTransform: `uppercase`,
+		colorLight: `${lighten(0.42, fontColor)}`,
 		colorSlightOpacity: `${rgba(fontColor, 0.56)}`,
 		CTAColor: `${rgba(starWarsBlue, 1)}`,
 		CTAColorSecondary: `${rgba(starWarsBlue, 1)}`,
@@ -458,6 +463,7 @@ export const themeNineties = () => {
 		buttonLineHeight: ` 1.2`,
 		buttonSpanDisplay: `block`,
 		buttonTextTransform: `uppercase`,
+		colorLight: `${lighten(0.42, fontColor)}`,
 		colorSlightOpacity: `${rgba(fontColor, 0.56)}`,
 		CTAColor: `${rgba(starWarsBlue, 1)}`,
 		CTAColorSecondary: `${rgba(starWarsBlue, 1)}`,

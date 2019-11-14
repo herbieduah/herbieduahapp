@@ -24,6 +24,7 @@ export const buttonLineHeight = props => props.theme.buttonLineHeight;
 export const buttonSpanDisplay = props => props.theme.buttonSpanDisplay;
 export const buttonTextTransform = props => props.theme.buttonTextTransform;
 export const colorSlightOpacity = props => props.theme.colorSlightOpacity;
+export const colorLight = props => props.theme.colorLight;
 export const CTAColor = props => props.theme.CTAColor;
 export const CTAColorSecondary = props => props.theme.CTAColorSecondary;
 export const CTAUnderline = props => props.theme.CTAUnderline;

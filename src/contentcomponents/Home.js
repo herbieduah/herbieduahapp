@@ -80,7 +80,16 @@ const HomePage = ({ contentProps }) => {
 				</LessContent>
 			</ContentShow>
 			<ContentShow containerLarge more>
-				<Header>{header}</Header>
+				<Header>
+					Hello&nbsp;
+					<span>
+						{forYouHelper(forYou) ? (
+							forYouHelper(forYou)
+						) : (
+							<Emoji className='emoji' symbol='😄' label='smile' />
+						)}
+					</span>
+				</Header>
 
 				{/* <ZigZag> */}
 				{/* <HeadingTwo>
@@ -116,12 +125,15 @@ const HomePage = ({ contentProps }) => {
 				{/* <div className='container'>
 					<ForSomeone whom={whom} forYou={forYou} />
 				</div> */}
-				<ZigZag>
+				{/* <ZigZag>
 					<Emphasis>
 						Hey<span>{forYouHelper(forYou)}</span>,
 					</Emphasis>
 					<ForSomeone whom={whom} forYou={forYou} />
-				</ZigZag>
+				</ZigZag> */}
+				{/* <ZigZag>
+					
+				</ZigZag> */}
 				<ZigZag>
 					<Emphasis>I'm Herbie.</Emphasis>
 					<Image
@@ -148,18 +160,21 @@ const HomePage = ({ contentProps }) => {
 					/>
 				</ZigZag>
 
-				<div className='container'>
+				<ZigZag>
 					<Emphasis>
-						Nowadays, there is an app for everything. In the future, I believe
-						there is going to be an app for everyone. I envision every user
-						having a different experience with your app, just like they do in
-						real life.
+						In the future, I believe there is going to be an app for everyone. I
+						envision every user having a different experience with your app,
+						just like they do in real life{" "}
+						<Emoji className='emoji' symbol='😳' label='flushed face' />
 					</Emphasis>
+				</ZigZag>
+				<ZigZag>
 					<Emphasis>
-						This belief and my passion for crafting user experiences inspired me
-						to design and engineer my portfolio as a web app.
+						This belief inspired me to craft my portfolio as a web app that
+						allows <i>you</i> to customize your experience{" "}
+						<Emoji className='emoji' symbol='😉' label='wink' />
 					</Emphasis>
-				</div>
+				</ZigZag>
 				{/* <div className='container'>
 					<Emphasis center>So I made my own.</Emphasis>
 				</div> */}

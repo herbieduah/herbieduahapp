@@ -108,7 +108,6 @@ const Media = props => {
 				<CloudImage
 					cloudName='dwccyjn5e'
 					publicId={`images/${props.src[2]}`}
-					width={mediaWidth}
 					crop='scale'
 					dpr='2.0'
 					alt={props.alt}

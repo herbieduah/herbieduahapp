@@ -30,8 +30,8 @@ export const defaultAlt = "I will be adding an alt tag to this image soon";
 export const defaultDesc = "This is a video, I will be describing it soon";
 
 //Switch to 'gif' or 'image' to pull videos and images locally
-const videoLocation = "cloud-gif";
-const imageLocation = "cloud-image";
+const videoLocation = "gif";
+const imageLocation = "image";
 
 export const ContentShow = props => {
 	const {
@@ -205,8 +205,8 @@ export const Emphasis = props => {
 			<ElementReveal>
 				<Text
 					l
+					semibold
 					{...props}
-					secondary
 					className={`${className} ${lessClass} marginBottomMed marginTopMed paddingLRSm`}>
 					{props.children}
 				</Text>
@@ -247,6 +247,7 @@ export const Small = props => {
 					s
 					format
 					tertiary
+					light
 					className={`marginBottomMed  paddingLRSm ${className}`}
 					{...props}>
 					{props.children}
@@ -279,7 +280,6 @@ export const HeadingTwo = props => {
 			<Text
 				h2
 				l
-				extrabold
 				className={`${className} marginTopXLarge marginBottomSm paddingLRSm`}>
 				{props.children}
 			</Text>
@@ -323,7 +323,7 @@ export const HeadingThree = props => {
 		<ElementReveal>
 			<Text
 				h3
-				m
+				l
 				bold
 				className={`marginTopLarge marginBottomMed paddingLRSm ${className}`}>
 				{props.children}

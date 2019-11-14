@@ -38,7 +38,8 @@ import {
 	CTAColor,
 	borderThin,
 	fontColor,
-	colorSlightOpacity
+	colorSlightOpacity,
+	colorLight
 } from "./Themes/ThemeVariables";
 
 export const ContentContainer = styled.section`
@@ -255,6 +256,7 @@ export const ContentContainer = styled.section`
 	li {
 		color: ${fontColor};
 		${marginTopSm};
+		list-style-type: square;
 	}
 
 	.flex-container {
@@ -276,7 +278,6 @@ export const ContentContainer = styled.section`
 			h1 {
 				${mainTransition}
 				${userSelectNone}
-				cursor: pointer;
 				&:hover {
 					color: ${CTAColor};
 				}
@@ -353,6 +354,7 @@ export const ContentContainer = styled.section`
 			${marginTopSm}
 			&__item{
 				text-align: center;
+				margin-top: .7rem;
 			}
 		}
 		
@@ -378,6 +380,8 @@ export const ContentContainer = styled.section`
 			margin-bottom: 5px;
 		}
 	}
+
+		
 	.c-interact {
 		margin-top: 2rem !important;
 		width: 100%;

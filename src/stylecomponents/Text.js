@@ -27,7 +27,8 @@ import {
 	buttonBackground,
 	buttonBackgroundHoverFocus,
 	buttonBorderFocus,
-	buttonBorderActive
+	buttonBorderActive,
+	colorLight
 } from "./Themes/ThemeVariables";
 
 const baseStyle = css`
@@ -42,6 +43,7 @@ const baseStyle = css`
 	}};
 	color: ${props => {
 		if (props.ctacolor) return CTAColor;
+		if (props.light) return colorLight;
 		return fontColor;
 	}};
 	text-align: ${props => {
@@ -63,11 +65,11 @@ const baseStyle = css`
 	${mobile} {
 		font-size: ${props => {
 			if (props.xs) return "0.75em";
-			if (props.s) return "1em";
-			if (props.m) return "1.2em";
+			if (props.s) return ".95em";
+			if (props.m) return "1.15em";
 			if (props.l) return "1.45em";
 			if (props.large) return "1.45em";
-			if (props.xl) return "1.55em";
+			if (props.xl) return "1.65em";
 			if (props.xxl) return "1.7em";
 			return "1.1em";
 		}};
@@ -96,13 +98,13 @@ const HeadingOne = styled.h1`
 const HeadingTwo = styled.h2`
 	${baseStyle};
 	font-family: ${appfontFamilySecondary};
-	font-weight: 500;
+	font-weight: 800;
 `;
 
 const HeadingThree = styled.h3`
 	${baseStyle};
 	font-family: ${appfontFamilySecondary};
-	font-weight: 400;
+	font-weight: 500;
 `;
 
 const HeadingFour = styled.h4`
@@ -195,7 +197,7 @@ const HyperLink = styled.a`
 
 const MenuLink = styled(NavLink)`
 	${baseStyle};
-	font-weight: 800;
+	font-weight: 900;
 	${mainTransition}
 	position:relative;
 	border: 0;
@@ -203,7 +205,7 @@ const MenuLink = styled(NavLink)`
 	background: none;
 	color: ${navBarButtonColor};
 	font-family: ${appfontFamilySecondary};
-	letter-spacing: 1px;
+	letter-spacing: 2px;
 	border-bottom: 0;
 	display: inline-block;
 	transform: scale(1);

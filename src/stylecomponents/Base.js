@@ -70,7 +70,8 @@ import {
 	marginTopXLarge,
 	paddingLRSm,
 	paddingTBSm,
-	marginTopMed
+	marginTopMed,
+	marginTopSm
 } from "./StyleHelpers";
 
 import { revealSecs } from "../helpers";
@@ -678,6 +679,7 @@ export const ThemeCircleContainer = styled.li`
 			${absoluteOverlay}
 			display:flex;
 			flex-direction: column;
+			cursor: pointer;
 			/* justify-content: center; */
 			/* align-items: center; */
 			/* span {
@@ -803,10 +805,10 @@ export const FullScreenOverlayContainer = styled.div`
 	}
 	
 	nav {
-		height: 35vh;
+		height: 37vh;
 	}
 	.subMenu {
-		${marginTopMed}
+		${marginTopSm}
 		ul {
 			list-style-type: none;
 		}

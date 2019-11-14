@@ -1,5 +1,5 @@
 import { stripUnit } from "polished";
-import { bgColor } from "./Themes/ThemeVariables";
+import { bgColor, colorLight } from "./Themes/ThemeVariables";
 import { sliderMobileWidth, revealSecs } from "../helpers";
 export function fluidType(minVW, maxVW, minFontSize, maxFontSize) {
 	let u1 = stripUnit(minVW)[1];
@@ -380,5 +380,6 @@ export const appMarginsAndPaddings = `
 .letter-space-1 {
 	letter-spacing: 1px;
 }
+
 
 `;
