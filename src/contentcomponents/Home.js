@@ -33,7 +33,8 @@ import { ForSomeone, forYouHelper } from "../maincomponents/ForYou";
 // import { thisAppGatsbySmiling, placesicyAlley } from "../MediaVariables";
 // import YouTube from "react-youtube";
 import {
-	// picsOfMeHeroImageTwo,
+	picsOfMesnowsmilephotography,
+	picsOfMeshowingtilly,
 	picsOfMeHero
 } from "../MediaVariables";
 // import ReactPlayer from "react-player";
@@ -135,7 +136,9 @@ const HomePage = ({ contentProps }) => {
 					
 				</ZigZag> */}
 				<ZigZag>
-					<Emphasis>I'm Herbie.</Emphasis>
+					<Emphasis className='paddingLRMed' center>
+						I'm Herbie Duah.
+					</Emphasis>
 					<Image
 						src={picsOfMeHero}
 						className='paddingLRSm'
@@ -144,34 +147,38 @@ const HomePage = ({ contentProps }) => {
 				</ZigZag>
 
 				<ZigZag>
-					<Emphasis>I love designing and coding websites for humans.</Emphasis>
+					<Emphasis className='paddingLRMed' center>
+						I love designing and coding websites for humans.
+					</Emphasis>
 					<Image
-						src={picsOfMeHero}
-						className='paddingLRSm'
+						src={picsOfMeshowingtilly}
+						className='paddingLRMed'
 						alt='A picture of me smiling infront of green plants '
 					/>
 				</ZigZag>
 				<ZigZag>
-					<Emphasis>I also love to take photos.</Emphasis>
-					<Gif
-						desc='me pointing to myself'
-						url={videosofmephotosSedona}
-						className='paddingLRSm'
+					<Emphasis className='paddingLRMed' center>
+						I also love to take photos.
+					</Emphasis>
+					<Image
+						src={picsOfMesnowsmilephotography}
+						className='paddingLRMed'
+						alt='A picture of me smiling infront of green plants '
 					/>
 				</ZigZag>
 
 				<ZigZag>
 					<Emphasis>
 						In the future, I believe there is going to be an app for everyone. I
-						envision every user having a different experience with your app,
-						just like they do in real life{" "}
+						envision every user having a unique experience with your app
 						<Emoji className='emoji' symbol='😳' label='flushed face' />
 					</Emphasis>
 				</ZigZag>
 				<ZigZag>
 					<Emphasis>
-						This belief inspired me to craft my portfolio as a web app that
-						allows <i>you</i> to customize your experience{" "}
+						This belief inspired me to craft this web app to showcase my Web
+						Development/Design work and photos, but at the same time enabling{" "}
+						<i>you</i> to customize your experience{" "}
 						<Emoji className='emoji' symbol='😉' label='wink' />
 					</Emphasis>
 				</ZigZag>

@@ -132,8 +132,15 @@ import thisAppHDRHomeUXDesktop from "./media/appImages/desktop/thisAppHDRHomeUX.
 import thisAppHerbieDuahComeUXDesktop from "./media/appImages/desktop/thisAppHerbieDuahComeUX.jpg";
 import thisAppHerbieDuahMobileDesktop from "./media/appImages/desktop/thisAppHerbieDuahMobile.jpg";
 import thisAppHerokuDesktopPicDesktop from "./media/appImages/desktop/thisAppHerokuDesktopPic.jpg";
+import picsOfMeshowingtillyDesktop from "./media/appImages/desktop/picsOfMeshowingtilly.jpg";
+import picsOfMesmileOnPhoneDesktop from "./media/appImages/desktop/picsOfMesmileOnPhone.jpg";
+import picsOfMesnowsmilephotographyDesktop from "./media/appImages/desktop/picsOfMesnowsmilephotography.jpg";
 
 //Mobile
+import picsOfMeshowingtillyMobile from "./media/appImages/mobile/picsOfMeshowingtilly.jpg";
+import picsOfMesmileOnPhoneMobile from "./media/appImages/mobile/picsOfMesmileOnPhone.jpg";
+import picsOfMesnowsmilephotographyMobile from "./media/appImages/mobile/picsOfMesnowsmilephotography.jpg";
+
 import bedzinCreationofExhibitDesktopMobile from "./media/appImages/mobile/bedzinCreationofExhibitDesktop.jpg";
 import bedziniPhoneCreationofExhibitMobile from "./media/appImages/mobile/bedziniPhoneCreationofExhibit.jpg";
 import bedzinIPhoneExhibitMobile from "./media/appImages/mobile/bedzinIPhoneExhibit.jpg";
@@ -268,6 +275,24 @@ import thisAppHDRHomeUXMobile from "./media/appImages/mobile/thisAppHDRHomeUX.jp
 import thisAppHerbieDuahComeUXMobile from "./media/appImages/mobile/thisAppHerbieDuahComeUX.jpg";
 import thisAppHerbieDuahMobileMobile from "./media/appImages/mobile/thisAppHerbieDuahMobile.jpg";
 import thisAppHerokuDesktopPicMobile from "./media/appImages/mobile/thisAppHerokuDesktopPic.jpg";
+
+export const picsOfMeshowingtilly = [
+	picsOfMeshowingtillyDesktop,
+	picsOfMeshowingtillyMobile,
+	"picsOfMeshowingtilly_vo4pdr"
+];
+
+export const picsOfMesnowsmilephotography = [
+	picsOfMesnowsmilephotographyDesktop,
+	picsOfMesnowsmilephotographyMobile,
+	"picsOfMesnowsmilephotography_qxdjgh"
+];
+
+export const picsOfMesmileOnPhone = [
+	picsOfMesmileOnPhoneDesktop,
+	picsOfMesmileOnPhoneMobile,
+	"picsOfMesmileOnPhone_xm2set"
+];
 
 export const bedzinCreationofExhibitDesktop = [
 	bedzinCreationofExhibitDesktopDesktop,

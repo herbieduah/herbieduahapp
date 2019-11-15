@@ -197,18 +197,18 @@ ${mobile} {
 	padding-top: 2.5rem;
 }`;
 
-export const marginBottomMed = `margin-bottom: 3.5rem;
+export const marginBottomMed = `margin-bottom: 3rem;
 ${mobile} {
 	margin-bottom: 2rem;
 }
 `;
-export const marginTopMed = `margin-top 3.5rem;
+export const marginTopMed = `margin-top 3rem;
 ${mobile} {
 	margin-top: 2rem;
 }
 `;
 
-export const marginTopSm = `margin-top: 2rem;
+export const marginTopSm = `margin-top: 1.5rem;
 ${mobile} {
 	margin-top: 1rem;
 }
@@ -228,7 +228,7 @@ button:active {
     transform: scale(0.99);
 }`;
 
-export const marginBottomSm = `margin-bottom: 3.25rem;
+export const marginBottomSm = `margin-bottom: 2rem;
 ${mobile} {
 	margin-bottom: 1.5rem;
 }
@@ -376,6 +376,9 @@ export const appMarginsAndPaddings = `
 }
 .justify-center {
 	justify-content: center;
+}
+.display-block {
+	display-block;
 }
 .letter-space-1 {
 	letter-spacing: 1px;

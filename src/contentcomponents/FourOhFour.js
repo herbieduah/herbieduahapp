@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-expressions */
 import React from "react";
-import { Paragraph, Header, Gif } from "../ContentHelpers";
+import { Paragraph, Header, Gif, Emphasis } from "../ContentHelpers";
 import Emoji from "a11y-react-emoji";
 import { videosofme404 } from "../VideoVariables";
 // import fourohfour from "../media/videos/videosOfme/404.mp4";
@@ -11,11 +11,11 @@ const header = "404";
 const FourOhFourPage = () => (
 	<div className='container'>
 		<Header>{header}</Header>
-		<Paragraph>
+		<Emphasis center>
 			Oh man <Emoji className='emoji' symbol='🙁' label='sad face' />
-		</Paragraph>
+		</Emphasis>
 		<Gif url={videosofme404} />
-		<Paragraph>Looks like you stumbled on the wrong page</Paragraph>
+		<Emphasis center>Looks like you stumbled on the wrong page</Emphasis>
 	</div>
 );
 

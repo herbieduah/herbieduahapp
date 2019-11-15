@@ -255,7 +255,7 @@ export const ContentContainer = styled.section`
 
 	li {
 		color: ${fontColor};
-		${marginTopSm};
+		${marginBottomSm};
 		list-style-type: square;
 	}
 

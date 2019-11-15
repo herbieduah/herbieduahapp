@@ -205,7 +205,6 @@ export const Emphasis = props => {
 			<ElementReveal>
 				<Text
 					l
-					semibold
 					{...props}
 					className={`${className} ${lessClass} marginBottomMed marginTopMed paddingLRSm`}>
 					{props.children}
@@ -240,6 +239,7 @@ export const LessContent = props => {
 
 export const Small = props => {
 	const className = props.className || "";
+	const center = props.center ? "justify-center" : "";
 	return (
 		<ElementReveal>
 			<small>
@@ -248,8 +248,8 @@ export const Small = props => {
 					format
 					tertiary
 					light
-					className={`marginBottomMed  paddingLRSm ${className}`}
-					{...props}>
+					className={`marginBottomMed ${center} paddingLRSm ${className}`}
+					>
 					{props.children}
 				</Text>
 			</small>

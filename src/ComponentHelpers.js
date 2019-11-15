@@ -137,6 +137,7 @@ export const NavBar = () => {
 								<Text
 									buttontext
 									s
+									light
 									className='navbar__menu-text'
 									onClick={setMenuModalContent}>
 									Menu
