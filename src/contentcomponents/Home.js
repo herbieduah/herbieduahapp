@@ -157,9 +157,7 @@ const HomePage = ({ contentProps }) => {
 						className='paddingLRMed'
 						alt='A photo of me with dog on a desk'
 						src={picsOfMeshowingtilly}>
-						<Figcaption>
-							It's not easy, sometimes I need help from non-humans.
-						</Figcaption>
+						<Figcaption>Sometimes I need help from non-humans.</Figcaption>
 					</Figure>
 				</ZigZag>
 				<ZigZag>
@@ -173,19 +171,20 @@ const HomePage = ({ contentProps }) => {
 					/>
 				</ZigZag>
 
-				<div className='container'>
-					<Emphasis>
-						In the future, I believe there is going to be an app for everyone. I
-						envision every user having a unique experience with your app.
-					</Emphasis>
-					<div className='marginTopLarge marginBottomMed'>
-						<Paragraph>
-							This belief inspired me to craft this web app to showcase my Web
-							Development/Design work and photos, but at the same time enabling{" "}
-							<i>you</i> to customize your experience{" "}
-							<Emoji className='emoji' symbol='😉' label='wink' />
-						</Paragraph>
+				<div className='container marginBottomMed marginTopMed'>
+					<div className='marginTopXLarge marginBottomLarge'>
+						<Emphasis>
+							Nowadays, there is an app for everything. In the future, I believe
+							there is going to be an app for everyone.
+						</Emphasis>
 					</div>
+					<Paragraph>
+						I envision every user having a unique experience with your app. This
+						vision inspired me to craft this web app to showcase my Web
+						Development/Design work and photos, but at the same time enabling{" "}
+						<i>you</i> to customize your experience{" "}
+						<Emoji className='emoji' symbol='😉' label='wink' />
+					</Paragraph>
 				</div>
 				{/* <ZigZag>
 					<Emphasis center>

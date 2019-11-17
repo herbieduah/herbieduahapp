@@ -43,6 +43,7 @@ export const App = () => {
 		contentWidth: cw,
 		contentHeight: ch,
 		currentTheme,
+		setTheme,
 		setDragging,
 		fullScreen,
 		dragging,
@@ -100,6 +101,14 @@ export const App = () => {
 		setForYou(forWho);
 	};
 
+	const activateDarkMode = () => {
+		setTheme("black");
+	};
+
+	const activateLightMode = () => {
+		setTheme("white");
+	};
+
 	// const downloadAllTheThings = () => {
 	// 	if (isShowingMore) {
 	// 		setLazyLoading(false);
@@ -120,6 +129,37 @@ export const App = () => {
 		}
 		if (tabIsPressed) {
 			showOutlineAfterTabPress();
+		}
+
+		if (currentTheme === "default") {
+			const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)")
+				.matches;
+			const isLightMode = window.matchMedia("(prefers-color-scheme: light)")
+				.matches;
+			const isNotSpecified = window.matchMedia(
+				"(prefers-color-scheme: no-preference)"
+			).matches;
+			const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified;
+
+			window
+				.matchMedia("(prefers-color-scheme: dark)")
+				.addListener(e => e.matches && activateDarkMode());
+			window
+				.matchMedia("(prefers-color-scheme: light)")
+				.addListener(e => e.matches && activateLightMode());
+
+			if (isDarkMode) activateDarkMode();
+			if (isLightMode) activateLightMode();
+			if (isNotSpecified || hasNoSupport) {
+				console.log(
+					"You specified no preference for a color scheme or your browser does not support it. I schedule dark mode during night time."
+				);
+				let now = new Date();
+				let hour = now.getHours();
+				if (hour < 4 || hour >= 16) {
+					activateDarkMode();
+				}
+			}
 		}
 		// if (downloaded) {
 

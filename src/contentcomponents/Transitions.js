@@ -8,6 +8,7 @@ import {
 	ContentShow,
 	ContentCategory,
 	LessContent,
+	Small,
 	GenerateTransition,
 	Link,
 	Instructions,
@@ -46,10 +47,11 @@ const TransitionsPage = () => {
 					extensive collection of random animations for you to choose how you
 					want to bring this web app to life.
 				</Paragraph>
-				<Paragraph>
-					(Hot tip: after you choose an animation, go to a different page to see
-					it in action.)
-				</Paragraph>
+
+				<Small className='marginTopMed'>
+					After you choose an animation, navigate to a different page to see it
+					in action.
+				</Small>
 				<Instructions className='marginTopLarge justify-center'>
 					Select Animations Below.
 				</Instructions>

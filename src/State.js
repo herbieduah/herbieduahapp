@@ -21,7 +21,7 @@ export const StateProvider = ({ children }) => {
 	const [contentWidth, onContentResizeWidth] = useState(defaultContentWidth);
 	const [contentHeight, onContentResizeHeight] = useState(defaultContentHeight);
 	// const [currentTheme, setTheme] = useState("white");
-	const [currentTheme, setTheme] = useLocalStorage("theme", "white");
+	const [currentTheme, setTheme] = useLocalStorage("theme", "default");
 	const [currentTransition, setCurrentTransition] = useState("default");
 	const [currentContent, setCurrentContent] = useState("home");
 	const [overlay, setOverlay] = useState(false);

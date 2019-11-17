@@ -65,7 +65,7 @@ const baseStyle = css`
 	${mobile} {
 		font-size: ${props => {
 			if (props.xs) return "0.75em";
-			if (props.s) return ".9rem";
+			if (props.s) return ".9em";
 			if (props.m) return "1.1em";
 			if (props.l) return "1.45em";
 			if (props.large) return "1.45em";

@@ -748,6 +748,7 @@ export const TransitionTextContainer = styled.li`
 			border-left:0;
 			border-right: 0;
 			}
+			transform: scale(1);
 		}
 		
 	}
@@ -807,7 +808,11 @@ export const FullScreenOverlayContainer = styled.div`
 		.react-tabs__tab-list {
 		max-width: 500px;
 		margin: 0 auto;
-		${marginBottomMed}
+		margin-bottom: 2rem;
+		${mobile} {
+			margin-bottom: .5rem;
+		}
+		
 		${marginTopMed}
 		width: 100%;
 		}

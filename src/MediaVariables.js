@@ -279,19 +279,19 @@ import thisAppHerokuDesktopPicMobile from "./media/appImages/mobile/thisAppHerok
 export const picsOfMeshowingtilly = [
 	picsOfMeshowingtillyDesktop,
 	picsOfMeshowingtillyMobile,
-	"picsOfMeshowingtilly_vo4pdr"
+	"picsOfMeshowingtilly_ewdtdc"
 ];
 
 export const picsOfMesnowsmilephotography = [
 	picsOfMesnowsmilephotographyDesktop,
 	picsOfMesnowsmilephotographyMobile,
-	"picsOfMesnowsmilephotography_qxdjgh"
+	"picsOfMesnowsmilephotography_xtjnm1"
 ];
 
 export const picsOfMesmileOnPhone = [
 	picsOfMesmileOnPhoneDesktop,
 	picsOfMesmileOnPhoneMobile,
-	"picsOfMesmileOnPhone_xm2set"
+	"picsOfMesmileOnPhone_qgbpcs"
 ];
 
 export const bedzinCreationofExhibitDesktop = [

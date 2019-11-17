@@ -61,12 +61,30 @@ import {
 } from "./Themes/ThemeHelpers";
 export const themes = [
 	{
+		name: "default",
+		properties: {
+			...themeColorMaker()
+		},
+		type: "",
+		text: "Default",
+		desc: ""
+	},
+	{
 		name: "white",
 		properties: {
 			...themeColorMaker()
 		},
 		type: "color",
-		text: "White",
+		text: "Light Theme",
+		desc: ""
+	},
+	{
+		name: "black",
+		properties: {
+			...themeColorMaker("121212")
+		},
+		type: "color",
+		text: "Dark Theme",
 		desc: ""
 	},
 	{

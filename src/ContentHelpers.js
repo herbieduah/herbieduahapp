@@ -1,4 +1,3 @@
-//ContentHelpers file for my web app.
 import React, { Fragment, useContext, useState, useEffect } from "react";
 import { globalState } from "./State";
 import {
@@ -30,8 +29,8 @@ export const defaultAlt = "I will be adding an alt tag to this image soon";
 export const defaultDesc = "This is a video, I will be describing it soon";
 
 //Switch to 'gif' or 'image' to pull videos and images locally
-const videoLocation = "gif";
-const imageLocation = "image";
+const videoLocation = "cloud-gif";
+const imageLocation = "cloud-image";
 
 export const ContentShow = props => {
 	const {
@@ -154,9 +153,16 @@ export const Instructions = props => {
 	const center = props.center ? "justify-center" : "";
 	return (
 		<ElementReveal>
-			<Small className={`c-instructions paddingLRSm ${className} ${center}`}>
-				{props.children}
-			</Small>
+			<small>
+				<Text
+					s
+					format
+					light
+					tertiary
+					className={`c-instructions paddingLRSm ${className} ${center}`}>
+					{props.children}
+				</Text>
+			</small>
 		</ElementReveal>
 	);
 };
@@ -244,7 +250,7 @@ export const Small = props => {
 		<ElementReveal>
 			<small>
 				<Text
-					s
+					m
 					format
 					light
 					tertiary
