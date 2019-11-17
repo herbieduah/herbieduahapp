@@ -120,7 +120,7 @@ export const Header = props => {
 		<Fragment>
 			<ShowIf noAnimation thisValue={props.less} thatValue={true}>
 				<ElementReveal>
-					<Text h1 m className='paddingLRSm less__header'>
+					<Text h1 m extrabold className='paddingLRSm less__header'>
 						{props.children}
 					</Text>
 				</ElementReveal>
@@ -189,7 +189,7 @@ export const Paragraph = props => {
 					m={!props.less}
 					l={props.less}
 					secondary={props.less || props.secondary}
-					className={`${className} ${lessClass} ${center} paddingLRSm`}>
+					className={`${className} ${lessClass} ${center} paddingLRParagraph`}>
 					{props.children}
 				</Text>
 			</ElementReveal>
@@ -246,8 +246,8 @@ export const Small = props => {
 				<Text
 					s
 					format
-					tertiary
 					light
+					tertiary
 					className={`marginBottomMed ${center} paddingLRSm ${className}`}>
 					{props.children}
 				</Text>

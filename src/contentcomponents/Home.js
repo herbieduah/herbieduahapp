@@ -10,8 +10,8 @@ import {
 	Emphasis,
 	// Link,
 	ContentCategory,
-	// Figure,
-	// Figcaption,
+	Figure,
+	Figcaption,
 	Gif,
 	Header,
 	// Flex,
@@ -127,7 +127,7 @@ const HomePage = ({ contentProps }) => {
 					
 				</ZigZag> */}
 				<ZigZag>
-					<Emphasis className='paddingLRMed' center>
+					<Emphasis className='paddingLRMed'>
 						{/* Hey there */}
 						<span>
 							{forYouHelper(forYou)
@@ -144,29 +144,32 @@ const HomePage = ({ contentProps }) => {
 					</div> */}
 					<Image
 						src={picsOfMeHero}
-						className='paddingLRSm'
+						className='paddingLRMed'
 						alt='A picture of me smiling infront of green plants '
 					/>
 				</ZigZag>
 
 				<ZigZag>
-					<Emphasis className='paddingLRMed' center>
+					<Emphasis className='paddingLRMed'>
 						I love designing and coding websites for humans.
 					</Emphasis>
-					<Image
-						src={picsOfMeshowingtilly}
+					<Figure
 						className='paddingLRMed'
-						alt='A picture of me smiling infront of green plants '
-					/>
+						alt='A photo of me with dog on a desk'
+						src={picsOfMeshowingtilly}>
+						<Figcaption>
+							It's not easy, sometimes I need help from non-humans.
+						</Figcaption>
+					</Figure>
 				</ZigZag>
 				<ZigZag>
-					<Emphasis className='paddingLRMed' center>
+					<Emphasis className='paddingLRMed'>
 						I also love to take photos.
 					</Emphasis>
 					<Image
 						src={picsOfMesnowsmilephotography}
 						className='paddingLRMed'
-						alt='A picture of me smiling infront of green plants '
+						alt='A picture of me sitting on snow while holding a camera'
 					/>
 				</ZigZag>
 
@@ -176,12 +179,12 @@ const HomePage = ({ contentProps }) => {
 						envision every user having a unique experience with your app.
 					</Emphasis>
 					<div className='marginTopLarge marginBottomMed'>
-						<Emphasis>
+						<Paragraph>
 							This belief inspired me to craft this web app to showcase my Web
 							Development/Design work and photos, but at the same time enabling{" "}
 							<i>you</i> to customize your experience{" "}
 							<Emoji className='emoji' symbol='😉' label='wink' />
-						</Emphasis>
+						</Paragraph>
 					</div>
 				</div>
 				{/* <ZigZag>

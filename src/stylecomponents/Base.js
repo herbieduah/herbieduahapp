@@ -817,7 +817,7 @@ export const FullScreenOverlayContainer = styled.div`
 			&__item{
 				text-align: center;
 				margin-top: 0rem;
-				margin-bottom: .3rem;
+				margin-bottom: .7rem;
 			}
 		}
 	}

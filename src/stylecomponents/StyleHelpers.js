@@ -105,6 +105,14 @@ ${mobile} {
 padding-right: 10%;
 }`;
 
+export const paddingLRParagraph = `
+padding-left: 20px;
+padding-right: 25%;
+${mobile} {
+	padding-right: 1rem;
+padding-left: 1rem;
+}`;
+
 // export const paddingLRSm = `
 // padding-left: 10%;
 // padding-right: 10%;
@@ -382,6 +390,9 @@ export const appMarginsAndPaddings = `
 }
 .letter-space-1 {
 	letter-spacing: 1px;
+}
+.paddingLRParagraph {
+	${paddingLRParagraph}
 }
 
 

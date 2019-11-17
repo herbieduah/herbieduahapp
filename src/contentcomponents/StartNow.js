@@ -202,6 +202,7 @@ const StartNowPage = ({ contentProps }) => {
 					</Paragraph>
 					<FiGif
 						url={startNowresumeEmail}
+						className='paddingLRSm'
 						desc='How to Write an Excellent Resume Screen Capture'>
 						<Figcaption>
 							<Link href='https://www.youtube.com/watch?v=z8i6kHg0YoY'>
@@ -211,6 +212,7 @@ const StartNowPage = ({ contentProps }) => {
 					</FiGif>
 					<FiGif
 						url={startNowcoverLetterGif}
+						className='paddingLRSm'
 						desc='ow to Write an Excellent Cover Letter Screen Capture'>
 						<Figcaption>
 							<Link href='https://www.youtube.com/watch?v=I3WQa1AN_V0'>
@@ -268,8 +270,6 @@ const StartNowPage = ({ contentProps }) => {
 
 					<Figure
 						alt='a picture of a wide banner'
-						width='1480'
-						height='1500'
 						src={startNowherbieCareerWidePoster}>
 						<Figcaption>
 							I designed the huge banner to hold the posters and the poster on
@@ -278,8 +278,6 @@ const StartNowPage = ({ contentProps }) => {
 					</Figure>
 					<Figure
 						alt='me on the cover of a career resource guide'
-						width='1480'
-						height='1500'
 						src={startNowCareerResourseGuide}>
 						<Figcaption>
 							I was on the cover of a Career Resource Guide

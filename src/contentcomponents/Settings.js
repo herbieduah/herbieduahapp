@@ -120,18 +120,17 @@ const SettingsPage = ({ contentProps }) => {
 				</div>
 			</ContentShow>
 			<ContentShow containerLarge more>
-				<Header>
-					{header}
-					<Small className='marginTopSm' center>
-						Refreshing web app resets Settings to default.
-					</Small>
-				</Header>
+				<Header>{header}</Header>
+
 				<ZigZag>
 					<Paragraph>
 						I want to make sure you have the best experience using my web app,
-						so I created some settings that enable you to change certain aspects
-						of it.
+						so I created settings that enable you to change certain aspects of
+						it.
 					</Paragraph>
+					<Instructions className='marginTopMed'>
+						Refresh web app to reset settings
+					</Instructions>
 				</ZigZag>
 				<ZigZag>
 					<HeadingTwo>
@@ -140,8 +139,9 @@ const SettingsPage = ({ contentProps }) => {
 					</HeadingTwo>
 					<ShowIf noAnimation thisValue={minimalMode} thatValue={true}>
 						<Paragraph>
-							I had a different look and feel in mind for my web app, you should
-							check it out.
+							I had a different look and feel in mind for my web app, but I was
+							to worried because it's different from any User Interface I've
+							used.
 						</Paragraph>
 					</ShowIf>
 					<ShowIf noAnimation thisValue={minimalMode} thatValue={false}>
@@ -163,12 +163,14 @@ const SettingsPage = ({ contentProps }) => {
 					<HeadingThree>Accessibility Mode (Beta)</HeadingThree>
 					<ShowIf noAnimation thisValue={accessible} thatValue={false}>
 						<Paragraph>Accessibility Mode changes these settings:</Paragraph>
-						<UL>
+						<UL className='marginBottomMed'>
 							<LI>Adds Background color to Navigation Bar</LI>
-							<LI>Changes the web app to a Traditional look</LI>
+							<LI>Turns off the different look and feel </LI>
 							<LI>Adds controls to video players</LI>
-							<LI>(Also adds a scrollbar)</LI>
 						</UL>
+						<Paragraph>
+							It also adds a scrollbar to browsers that allow scrollbars.
+						</Paragraph>
 						{/* <Instructions>
 						Find more details about these settings below.
 					</Instructions> */}
@@ -183,9 +185,12 @@ const SettingsPage = ({ contentProps }) => {
 						<Paragraph>Accessibility Mode changes these settings:</Paragraph>
 						<UL>
 							<LI>Adds Background color to navigation bar</LI>
-							<LI>Changes the web app to a traditional mode</LI>
+							<LI>Turns off the different look and feel </LI>
 							<LI>Adds controls to video players</LI>
 						</UL>
+						<Paragraph>
+							It also adds a scrollbar to browsers that allow scrollbars.
+						</Paragraph>
 						<Instructions>
 							Find more details about these settings below.
 						</Instructions>
@@ -267,7 +272,7 @@ const SettingsPage = ({ contentProps }) => {
 					</ShowIf>
 					<ShowIf noAnimation thisValue={forDev} thatValue={true}>
 						<Paragraph>
-							Some parts of the site have a lot of technical words, if you don’t
+							Some parts of the site have a lot of technical lingo, if you don’t
 							like you can switch to a more normal tone.
 						</Paragraph>
 					</ShowIf>

@@ -191,7 +191,7 @@ export const ContentContainer = styled.section`
 	&::-webkit-scrollbar {
 		width: 20px;
 		${mobile}{
-			width: 10px;
+			width: 5px;
 		}
 	}
 
@@ -255,7 +255,7 @@ export const ContentContainer = styled.section`
 
 	li {
 		color: ${fontColor};
-		${marginBottomSm};
+		margin-bottom: 1rem;
 		list-style-type: square;
 	}
 
@@ -356,7 +356,7 @@ export const ContentContainer = styled.section`
 			&__item{
 				text-align: center;
 				margin-top: 0rem;
-				margin-bottom: .3rem;
+				margin-bottom: .7rem;
 			}
 		}
 		
