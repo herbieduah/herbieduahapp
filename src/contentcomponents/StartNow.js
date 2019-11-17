@@ -70,28 +70,11 @@ const StartNowPage = ({ contentProps }) => {
 						Director for the Northern Arizona University (deep breath) College
 						of Engineering and Natural Sciences (CEFNS).
 					</Paragraph>
-					<Image
-						className='paddingLRSm'
-						alt='A poster with construction building with the title Contruct A Plan'
-						width='1952'
-						height='2874'
-						src={startNowConstructAPlan}
-					/>
 
 					<Paragraph>
 						Our main goal was to help CEFNS students start their career.
 					</Paragraph>
-					<Figure
-						className='paddingLRMed'
-						alt='Arcade machine'
-						width='2000'
-						height='2667'
-						src={startNowACMClubPhoto}>
-						<Figcaption>
-							An arcade machine created by Association for Computing Machinery
-							(ACM) club at NAU.
-						</Figcaption>
-					</Figure>
+
 					<Figure
 						className='paddingLRSm'
 						alt='know the game poster with arcade poster'
@@ -100,6 +83,17 @@ const StartNowPage = ({ contentProps }) => {
 						src={startNowKnowTheGame}>
 						<Figcaption>
 							"Know The Game" poster with the arcade machine.
+						</Figcaption>
+					</Figure>
+					<Figure
+						className='paddingLRSm'
+						alt='Arcade machine'
+						width='2000'
+						height='2667'
+						src={startNowACMClubPhoto}>
+						<Figcaption>
+							An arcade machine created by Association for Computing Machinery
+							(ACM) club at NAU.
 						</Figcaption>
 					</Figure>
 				</ZigZag>
@@ -114,7 +108,7 @@ const StartNowPage = ({ contentProps }) => {
 						direction because starting a career is like a journey.
 					</Paragraph>
 					<Figure
-						className='paddingLRMed'
+						className='paddingLRSm'
 						alt=' A photo of the Construction of the Science and Health Building at Northern Arizona University'
 						width='2000'
 						height='1500'
@@ -123,19 +117,35 @@ const StartNowPage = ({ contentProps }) => {
 							Construction of the Science and Health Building.
 						</Figcaption>
 					</Figure>
-					<Figure
+					{/* <Figure
 						alt='Construct a plan poster with photo of the Construction of the Science and Health Building at Northern Arizona University'
 						src={startNowConstructAPlanHorizontal}>
 						<Figcaption>
 							"Construct A Plan" poster with the picture of construction of the
 							Science and Health Building.
 						</Figcaption>
+					</Figure> */}
+					{/* <Image
+						className='paddingLRSm'
+						alt='A poster with construction building with the title Contruct A Plan'
+						width='1952'
+						height='2874'
+						src={startNowConstructAPlan}
+					/> */}
+					<Figure
+						alt='Construct a plan poster with photo of the Construction of the Science and Health Building at Northern Arizona University'
+						className='paddingLRSm'
+						src={startNowConstructAPlan}>
+						<Figcaption>
+							"Construct A Plan" poster with the picture of construction of the
+							Science and Health Building.
+						</Figcaption>
 					</Figure>
 
-					<Image
+					{/* <Image
 						className='paddingLRSm'
 						alt='Start Now poster with trees on it'
-						src={startNowStandOutFromTheRest}></Image>
+						src={startNowStandOutFromTheRest}></Image> */}
 				</ZigZag>
 				<ZigZag>
 					<HeadingTwo>Web Design</HeadingTwo>
@@ -147,14 +157,14 @@ const StartNowPage = ({ contentProps }) => {
 						audience needed to be able to access the content on mobile, but the
 						CMS was not mobile-friendly.
 					</Paragraph>
-					<ShowIf noAnimation thisValue={forDev} thatValue={true}>
+					{/* <ShowIf noAnimation thisValue={forDev} thatValue={true}>
 						<Paragraph>
 							The limitation of the CMS was quite impressive. I tried injecting
 							javascript, throwing in the style tag and the wackiest code into
 							it and it wouldn't budge. I thought it could be manipulated since
 							it was old but no.
 						</Paragraph>
-					</ShowIf>
+					</ShowIf> */}
 					<Paragraph>I had to get creative.</Paragraph>
 					<Figure
 						className='paddingLRSm'
@@ -184,7 +194,7 @@ const StartNowPage = ({ contentProps }) => {
 				</ZigZag>
 				<ZigZag>
 					<HeadingTwo>
-						How To Write an Excellent Resume and Cover Letter.
+						How To Write an Excellent Resume and Cover Letter
 					</HeadingTwo>
 					<Paragraph>
 						I utilized a software called VideoScribe to create two very

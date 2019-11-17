@@ -346,15 +346,17 @@ export const ContentContainer = styled.section`
 		.react-tabs__tab-list {
 		max-width: 500px;
 		margin: 0 auto;
-		margin-bottom: 1rem;
+		${marginBottomMed}
 		${marginTopMed}
 		width: 100%;
 		}
 		.subMenu {
-			${marginTopSm}
+			${marginTopMed}
+			margin-top: 0;
 			&__item{
 				text-align: center;
-				margin-top: .7rem;
+				margin-top: 0rem;
+				margin-bottom: .3rem;
 			}
 		}
 		

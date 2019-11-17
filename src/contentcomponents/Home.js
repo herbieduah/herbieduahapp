@@ -81,16 +81,7 @@ const HomePage = ({ contentProps }) => {
 				</LessContent>
 			</ContentShow>
 			<ContentShow containerLarge more>
-				<Header>
-					Hello&nbsp;
-					<span>
-						{forYouHelper(forYou) ? (
-							forYouHelper(forYou)
-						) : (
-							<Emoji className='emoji' symbol='😄' label='smile' />
-						)}
-					</span>
-				</Header>
+				<Header>{header}</Header>
 
 				{/* <ZigZag> */}
 				{/* <HeadingTwo>
@@ -137,8 +128,20 @@ const HomePage = ({ contentProps }) => {
 				</ZigZag> */}
 				<ZigZag>
 					<Emphasis className='paddingLRMed' center>
-						I'm Herbie Duah.
+						{/* Hey there */}
+						<span>
+							{forYouHelper(forYou)
+								? forYouHelper(forYou)
+								: // <Emoji className='emoji' symbol='😄' label='smile' />
+								  "Hi, I'm Herbie."}
+						</span>
+						<br />
 					</Emphasis>
+					{/* <div className='marginTopLarge'>
+						<Emphasis className='paddingLRMed' center>
+							I'm Herbie.
+						</Emphasis>
+					</div> */}
 					<Image
 						src={picsOfMeHero}
 						className='paddingLRSm'
@@ -167,25 +170,33 @@ const HomePage = ({ contentProps }) => {
 					/>
 				</ZigZag>
 
-				<ZigZag>
+				<div className='container'>
 					<Emphasis>
 						In the future, I believe there is going to be an app for everyone. I
-						envision every user having a unique experience with your app
-						<Emoji className='emoji' symbol='😳' label='flushed face' />
+						envision every user having a unique experience with your app.
 					</Emphasis>
-				</ZigZag>
-				<ZigZag>
-					<Emphasis>
+					<div className='marginTopLarge marginBottomMed'>
+						<Emphasis>
+							This belief inspired me to craft this web app to showcase my Web
+							Development/Design work and photos, but at the same time enabling{" "}
+							<i>you</i> to customize your experience{" "}
+							<Emoji className='emoji' symbol='😉' label='wink' />
+						</Emphasis>
+					</div>
+				</div>
+				{/* <ZigZag>
+					<Emphasis center>
 						This belief inspired me to craft this web app to showcase my Web
 						Development/Design work and photos, but at the same time enabling{" "}
 						<i>you</i> to customize your experience{" "}
 						<Emoji className='emoji' symbol='😉' label='wink' />
 					</Emphasis>
-				</ZigZag>
+				</ZigZag> */}
 				{/* <div className='container'>
 					<Emphasis center>So I made my own.</Emphasis>
 				</div> */}
 				{/* <Gif
+
 					className='paddingLRLarge'
 					desc='me pointing to myself'
 					url={videosofmevNeckCrewNeck}

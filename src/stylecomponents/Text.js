@@ -55,7 +55,7 @@ const baseStyle = css`
 	font-size: ${props => {
 		if (props.xs) return "0.7em";
 		if (props.s) return ".75em";
-		if (props.m) return "1.2em";
+		if (props.m) return "1.1em";
 		if (props.l) return "1.5em";
 		if (props.large) return "1.5em";
 		if (props.xl) return "1.9em";
@@ -66,15 +66,16 @@ const baseStyle = css`
 		font-size: ${props => {
 			if (props.xs) return "0.75em";
 			if (props.s) return ".90em";
-			if (props.m) return "1.15em";
+			if (props.m) return "1.1em";
 			if (props.l) return "1.45em";
 			if (props.large) return "1.45em";
 			if (props.xl) return "1.65em";
-			if (props.xxl) return "1.7em";
+			if (props.xxl) return "2em";
 			return "1.1em";
 		}};
 	}
 	font-weight: ${props => {
+		if (props.thin) return "300";
 		if (props.semibold) return "500";
 		if (props.bold) return "700";
 		if (props.extrabold) return "800";
@@ -90,9 +91,8 @@ const baseStyle = css`
 
 const HeadingOne = styled.h1`
 	${baseStyle};
-	font-weight: 800;
-	letter-spacing: -0.7px;
 	font-family: ${appfontFamilySecondary};
+	letter-spacing: 1px;
 `;
 
 const HeadingTwo = styled.h2`

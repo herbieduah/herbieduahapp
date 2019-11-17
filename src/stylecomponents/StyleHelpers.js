@@ -199,7 +199,7 @@ ${mobile} {
 
 export const marginBottomMed = `margin-bottom: 3rem;
 ${mobile} {
-	margin-bottom: 2rem;
+	margin-bottom: 1.5rem;
 }
 `;
 export const marginTopMed = `margin-top 3rem;

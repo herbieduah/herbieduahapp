@@ -204,7 +204,7 @@ export const Emphasis = props => {
 		<Fragment>
 			<ElementReveal>
 				<Text
-					l
+					xxl
 					{...props}
 					className={`${className} ${lessClass} marginBottomMed marginTopMed paddingLRSm`}>
 					{props.children}
@@ -248,8 +248,7 @@ export const Small = props => {
 					format
 					tertiary
 					light
-					className={`marginBottomMed ${center} paddingLRSm ${className}`}
-					>
+					className={`marginBottomMed ${center} paddingLRSm ${className}`}>
 					{props.children}
 				</Text>
 			</small>
@@ -263,9 +262,10 @@ export const HeadingOne = props => {
 		<ElementReveal>
 			<Text
 				h1
-				xl
+				xxl
 				center
-				semibold
+				extrabold
+				secondary
 				className={`${className} marginBottomXLarge marginTopXLarge paddingLRSm`}>
 				{props.children}
 			</Text>

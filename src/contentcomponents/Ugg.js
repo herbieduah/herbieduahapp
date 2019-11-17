@@ -77,12 +77,12 @@ const UggPage = () => {
 						called MJML to team. Once learned, you could build an email template
 						before lunch.
 					</Paragraph>
-					<Paragraph>
+					{/* <Paragraph>
 						It also had some unique features like the ability to add an
 						accordion, carousal, or text on an image. These features are
 						somewhat easy to develop for web development but overly complex on
 						email on development.
-					</Paragraph>
+					</Paragraph> */}
 					<Paragraph>
 						Using MJML, I coordinated with our design and marketing team to
 						develop a couple of UGG emails. Some are now featured&nbsp;

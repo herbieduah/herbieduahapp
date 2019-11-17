@@ -71,7 +71,8 @@ import {
 	paddingLRSm,
 	paddingTBSm,
 	marginTopMed,
-	marginTopSm
+	marginTopSm,
+	marginBottomMed
 } from "./StyleHelpers";
 
 import { revealSecs } from "../helpers";
@@ -114,14 +115,15 @@ export const GlobalStyle = createGlobalStyle`
 //     font-size: 12px
 export const NavBarMiniContainer = styled.div`
 	position: fixed;
-  	padding:${navBarSize};
+  	padding: ${navBarSize};
 	${mobile} {
-		padding: 1rem;
+		padding:.5rem 1rem;
 	}
     z-index: 1000;
     display: flex;
 	background: ${props =>
 		props.navBarComplement ? navBarBgComplement : navBarBg};
+	border: ${props => (props.navBarComplement ? borderThin : "none")};
 	width: 100vw;
 	
 	align-items: center;
@@ -192,7 +194,7 @@ export const NavBarMiniContainer = styled.div`
 		}
 		
 		&__logo {
-			height: 2rem;
+			height: 1.5rem;
 			overflow: hidden;
 			.inner-rect, .half-circle {
 				${mainTransition}
@@ -207,8 +209,8 @@ export const NavBarMiniContainer = styled.div`
 			svg {
 				${mainTransition}
 				/* transform: scale(.09); */
-				width: 2rem;
-				height: 2rem;
+				width: 1.5rem;
+				height: 1.5rem;
 				opacity: 1;
 				path {
 					
@@ -802,6 +804,22 @@ export const FullScreenOverlayContainer = styled.div`
 			list-style-type: none;
 			padding: 0;
 		}
+		.react-tabs__tab-list {
+		max-width: 500px;
+		margin: 0 auto;
+		${marginBottomMed}
+		${marginTopMed}
+		width: 100%;
+		}
+		.subMenu {
+			${marginTopMed}
+			margin-top: 0;
+			&__item{
+				text-align: center;
+				margin-top: 0rem;
+				margin-bottom: .3rem;
+			}
+		}
 	}
 	
 	nav {
@@ -813,7 +831,7 @@ export const FullScreenOverlayContainer = styled.div`
 			list-style-type: none;
 		}
 		&__item {
-			margin-bottom: 1rem;
+			/* margin-bottom: 1rem; */
 			text-align: center;
 		}
 	}

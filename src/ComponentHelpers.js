@@ -115,6 +115,7 @@ export const NavBar = () => {
 							className='navbar__contact'
 							onClick={setMenuModalContent}
 							menuLink
+							s
 							tabIndex='0'
 							to='/contacts'>
 							Contact
