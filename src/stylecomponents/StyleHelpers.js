@@ -205,7 +205,7 @@ ${mobile} {
 	padding-top: 2.5rem;
 }`;
 
-export const marginBottomMed = `margin-bottom: 3rem;
+export const marginBottomMed = `margin-bottom: 2rem;
 ${mobile} {
 	margin-bottom: 1.5rem;
 }
@@ -236,9 +236,9 @@ button:active {
     transform: scale(0.99);
 }`;
 
-export const marginBottomSm = `margin-bottom: 2rem;
+export const marginBottomSm = `margin-bottom: 1.5rem;
 ${mobile} {
-	margin-bottom: 1.5rem;
+	margin-bottom: 1rem;
 }
 `;
 

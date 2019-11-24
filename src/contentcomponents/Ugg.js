@@ -54,13 +54,14 @@ const UggPage = () => {
 				</div>
 			</ContentShow>
 			<ContentShow containerLarge more>
-				<Header>{header}</Header>
+				<ZigZag>
+					<Header>{header}</Header>
+				</ZigZag>
 				<WorkInfo workinfo={workinfo} />
 
 				<ZigZag>
 					<Paragraph>
-						I was a User Interface Developer for the Ugg Brand Team for two
-						years.
+						I was a User Interface Developer for the Ugg Brand team.
 					</Paragraph>
 					<FiGif url={uggslidesemail}>
 						<Figcaption>

@@ -383,22 +383,22 @@ export const MenuTabs = props => {
 		<ReactTabs defaultIndex={defaultIndex}>
 			<ElementReveal className='react-tabs__wrapper'>
 				<TabList>
-					<Tab tabIndex='0'>
+					<Tab>
 						<Text format tertiary xs>
 							Customize
 						</Text>
 					</Tab>
-					<Tab tabIndex='0'>
+					<Tab>
 						<Text format tertiary xs>
 							Work
 						</Text>
 					</Tab>
-					<Tab tabIndex='0'>
+					<Tab>
 						<Text format tertiary xs>
 							Photos
 						</Text>
 					</Tab>
-					<Tab tabIndex='0'>
+					<Tab>
 						<Text format tertiary xs>
 							About
 						</Text>

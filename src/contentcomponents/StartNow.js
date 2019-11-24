@@ -57,12 +57,14 @@ const StartNowPage = ({ contentProps }) => {
 				<LessContent header={header}>
 					I helped other students get jobs while I was in college.
 				</LessContent>
-				<div className='less__container paddingLRSm'>
+				<div className='less__container paddingLRParagraph'>
 					<Image src={startNowCareerImageWithPeople} />
 				</div>
 			</ContentShow>
 			<ContentShow containerLarge more>
-				<Header>{header}</Header>
+				<ZigZag>
+					<Header>{header}</Header>
+				</ZigZag>
 				<WorkInfo workinfo={workinfo} />
 				<ZigZag>
 					<Paragraph>
@@ -76,7 +78,7 @@ const StartNowPage = ({ contentProps }) => {
 					</Paragraph>
 
 					<Figure
-						className='paddingLRSm'
+						className='paddingLRParagraph'
 						alt='know the game poster with arcade poster'
 						width='2000'
 						height='1500'
@@ -86,7 +88,7 @@ const StartNowPage = ({ contentProps }) => {
 						</Figcaption>
 					</Figure>
 					<Figure
-						className='paddingLRSm'
+						className='paddingLRParagraph'
 						alt='Arcade machine'
 						width='2000'
 						height='2667'
@@ -108,7 +110,7 @@ const StartNowPage = ({ contentProps }) => {
 						direction because starting a career is like a journey.
 					</Paragraph>
 					<Figure
-						className='paddingLRSm'
+						className='paddingLRParagraph'
 						alt=' A photo of the Construction of the Science and Health Building at Northern Arizona University'
 						width='2000'
 						height='1500'
@@ -126,7 +128,7 @@ const StartNowPage = ({ contentProps }) => {
 						</Figcaption>
 					</Figure> */}
 					{/* <Image
-						className='paddingLRSm'
+						className='paddingLRParagraph'
 						alt='A poster with construction building with the title Contruct A Plan'
 						width='1952'
 						height='2874'
@@ -134,7 +136,7 @@ const StartNowPage = ({ contentProps }) => {
 					/> */}
 					<Figure
 						alt='Construct a plan poster with photo of the Construction of the Science and Health Building at Northern Arizona University'
-						className='paddingLRSm'
+						className='paddingLRParagraph'
 						src={startNowConstructAPlan}>
 						<Figcaption>
 							"Construct A Plan" poster with the picture of construction of the
@@ -143,7 +145,7 @@ const StartNowPage = ({ contentProps }) => {
 					</Figure>
 
 					{/* <Image
-						className='paddingLRSm'
+						className='paddingLRParagraph'
 						alt='Start Now poster with trees on it'
 						src={startNowStandOutFromTheRest}></Image> */}
 				</ZigZag>
@@ -167,7 +169,7 @@ const StartNowPage = ({ contentProps }) => {
 					</ShowIf> */}
 					<Paragraph>I had to get creative.</Paragraph>
 					<Figure
-						className='paddingLRSm'
+						className='paddingLRParagraph'
 						alt='Screenshot of the NAU Start Now site'
 						width='1480'
 						height='1824'
@@ -179,7 +181,7 @@ const StartNowPage = ({ contentProps }) => {
 						</Figcaption>
 					</Figure>
 					<Figure
-						className='paddingLRSm'
+						className='paddingLRParagraph'
 						alt='Screenshot of the NAU Start Now site start page'
 						width='1480'
 						height='1774'
@@ -200,26 +202,26 @@ const StartNowPage = ({ contentProps }) => {
 						I utilized a software called VideoScribe to create two very
 						informative videos on how to write a resume and cover letter.
 					</Paragraph>
-					<FiGif
-						url={startNowresumeEmail}
-						className='paddingLRSm'
-						desc='How to Write an Excellent Resume Screen Capture'>
-						<Figcaption>
-							<Link href='https://www.youtube.com/watch?v=z8i6kHg0YoY'>
-								How to Write an Excellent Resume
-							</Link>{" "}
-						</Figcaption>
-					</FiGif>
-					<FiGif
-						url={startNowcoverLetterGif}
-						className='paddingLRSm'
-						desc='ow to Write an Excellent Cover Letter Screen Capture'>
-						<Figcaption>
-							<Link href='https://www.youtube.com/watch?v=I3WQa1AN_V0'>
-								How to Write an Excellent Cover Letter
-							</Link>{" "}
-						</Figcaption>
-					</FiGif>
+					<div className='paddingLRParagraph'>
+						<FiGif
+							url={startNowresumeEmail}
+							desc='How to Write an Excellent Resume Screen Capture'>
+							<Figcaption>
+								<Link href='https://www.youtube.com/watch?v=z8i6kHg0YoY'>
+									How to Write an Excellent Resume
+								</Link>{" "}
+							</Figcaption>
+						</FiGif>
+						<FiGif
+							url={startNowcoverLetterGif}
+							desc='ow to Write an Excellent Cover Letter Screen Capture'>
+							<Figcaption>
+								<Link href='https://www.youtube.com/watch?v=I3WQa1AN_V0'>
+									How to Write an Excellent Cover Letter
+								</Link>{" "}
+							</Figcaption>
+						</FiGif>
+					</div>
 				</ZigZag>
 				<ZigZag>
 					<HeadingTwo>Modeling for Career Development</HeadingTwo>
@@ -228,7 +230,7 @@ const StartNowPage = ({ contentProps }) => {
 						face of Career Development at NAU for some time.
 					</Paragraph>
 					<Figure
-						className='paddingLRSm'
+						className='paddingLRParagraph'
 						alt='a picture of me in professional attire with an outrageous smile'
 						width='1480'
 						height='2220'
@@ -239,7 +241,7 @@ const StartNowPage = ({ contentProps }) => {
 						</Figcaption>
 					</Figure>
 					<Figure
-						className='paddingLRSm'
+						className='paddingLRParagraph'
 						alt='A picture of me in professional attire with a tiger woods like yes pose'
 						width='1480'
 						height='2220'
@@ -248,7 +250,7 @@ const StartNowPage = ({ contentProps }) => {
 					</Figure>
 
 					<Figure
-						className='paddingLRSm'
+						className='paddingLRParagraph'
 						alt='a picture of me in professional attire being confused'
 						width='1480'
 						height='2220'
@@ -262,6 +264,7 @@ const StartNowPage = ({ contentProps }) => {
 						alt='a picture of me On a Career and Premedical Professions Fair poster.'
 						width='1480'
 						height='1500'
+						className='paddingLRParagraph'
 						src={startNowCareerPoster}>
 						<Figcaption>
 							On a Career and Premedical Professions Fair poster.
@@ -270,6 +273,7 @@ const StartNowPage = ({ contentProps }) => {
 
 					<Figure
 						alt='a picture of a wide banner'
+						className='paddingLRParagraph'
 						src={startNowherbieCareerWidePoster}>
 						<Figcaption>
 							I designed the huge banner to hold the posters and the poster on
@@ -277,6 +281,7 @@ const StartNowPage = ({ contentProps }) => {
 						</Figcaption>
 					</Figure>
 					<Figure
+						className='paddingLRParagraph'
 						alt='me on the cover of a career resource guide'
 						src={startNowCareerResourseGuide}>
 						<Figcaption>

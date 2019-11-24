@@ -115,7 +115,7 @@ export const GlobalStyle = createGlobalStyle`
 //     font-size: 12px
 export const NavBarMiniContainer = styled.div`
 	position: fixed;
-  	padding: ${navBarSize};
+  	padding:1rem  ${navBarSize};
 	${mobile} {
 		padding:.5rem 1rem;
 	}
@@ -705,7 +705,8 @@ export const TransitionTextContainer = styled.li`
 	list-style-type: none;
 	margin-bottom: ${navBarSize};
 	display: flex;
-	padding:0  ${navBarSize};
+	max-width: 500px;
+	padding: 0;
 	.appTransition {
 		&__container {
 			/* ${mainTransition} */

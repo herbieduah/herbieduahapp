@@ -120,7 +120,9 @@ const SettingsPage = ({ contentProps }) => {
 				</div>
 			</ContentShow>
 			<ContentShow containerLarge more>
-				<Header>{header}</Header>
+				<ZigZag>
+					<Header>{header}</Header>
+				</ZigZag>
 
 				<ZigZag>
 					<Paragraph>
@@ -128,7 +130,7 @@ const SettingsPage = ({ contentProps }) => {
 						so I created settings that enable you to change certain aspects of
 						it.
 					</Paragraph>
-					<Instructions className='marginTopMed'>
+					<Instructions zigzag className='marginTopMed'>
 						Refresh web app to reset settings
 					</Instructions>
 				</ZigZag>

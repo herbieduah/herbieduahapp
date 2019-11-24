@@ -191,7 +191,7 @@ export const ContentContainer = styled.section`
 	}
 
 	&::-webkit-scrollbar {
-		width: 20px;
+		width: 10px;
 		${mobile}{
 			width: 5px;
 		}
@@ -330,7 +330,10 @@ export const ContentContainer = styled.section`
 	}
 	ul.appTransition {
 		margin: 0;
-		padding: 0;
+		${paddingLRSm}
+		${mobile}{
+			padding: 0;
+		}
 		/* button {
 			padding: 0;
 		} */
@@ -351,23 +354,25 @@ export const ContentContainer = styled.section`
 		height: 30vh;
 		.react-tabs__tab-list {
 		max-width: 500px;
-		margin: 0 auto;
+		/* margin: 0 auto; */
 		/* ${marginBottomMed} */
 		margin-bottom: 2rem;
+		width: 100%;
 		${mobile} {
 			margin-bottom: .5rem;
+			width:100%;
 		}
 		
 		${marginTopMed}
-		width: 100%;
+	
 		}
 		.subMenu {
 			${marginTopMed}
 			margin-top: 0;
 			&__item{
-				text-align: center;
+				text-align: left;
 				margin-top: 0rem;
-				margin-bottom: .7rem;
+				margin-bottom: 0;
 			}
 		}
 		
@@ -540,19 +545,28 @@ export const ContentContainer = styled.section`
 			padding-left: 0;
 			padding-right: 0;
 		}
-		&:nth-of-type(odd){ 
+		&:nth-of-type(even){ 
 			.c-zigzag__content {
 				margin-left: auto;
+			}
+			.paddingLRParagraph {
+				padding-left: 25%;
+				padding-right: 20px;
+				${mobile} {
+					padding-right: 1rem;
+					padding-left: 1rem;
+				}
 			}
 		}
 		&__content {
 			max-width: 740px;
+			width: 100%;
 		}
 			/* ${paddingLRSm} */		
 	}
 	.react-tabs__tab-list {
 		max-width: 500px;
-		margin: 0 auto;
+		/* margin: 0 auto; */
 		width: 100%;
 		/* margin: 0 auto; */
 		${marginBottomMed}

@@ -53,25 +53,25 @@ const baseStyle = css`
 	}};
 
 	font-size: ${props => {
-		if (props.xs) return "0.7em";
-		if (props.s) return "1em";
-		if (props.m) return "1.1em";
-		if (props.l) return "1.5em";
-		if (props.large) return "1.5em";
-		if (props.xl) return "1.9em";
-		if (props.xxl) return "2.4em";
-		return "1.1em";
+		if (props.xs) return "0.7rem";
+		if (props.s) return ".8rem";
+		if (props.m) return "1rem";
+		if (props.l) return "1.5rem";
+		if (props.large) return "1.5rem";
+		if (props.xl) return "1.9rem";
+		if (props.xxl) return "2.4rem";
+		return "1.1rem";
 	}};
 	${mobile} {
 		font-size: ${props => {
-			if (props.xs) return "0.75em";
-			if (props.s) return ".9em";
-			if (props.m) return "1.1em";
-			if (props.l) return "1.45em";
-			if (props.large) return "1.45em";
-			if (props.xl) return "1.65em";
-			if (props.xxl) return "2em";
-			return "1.1em";
+			if (props.xs) return "0.75rem";
+			if (props.s) return ".8rem";
+			if (props.m) return "1.05rem";
+			if (props.l) return "1.45rem";
+			if (props.large) return "1.45rem";
+			if (props.xl) return "1.65rem";
+			if (props.xxl) return "2rem";
+			return "1rem";
 		}};
 	}
 	font-weight: ${props => {
@@ -273,7 +273,7 @@ const Text = ({
 	if (button) return <Button tabIndex='0' {...props} />;
 	if (buttontext) return <ButtonText {...props} />;
 	if (link) return <HyperLink tabIndex='0' {...props} />;
-	if (menuLink) return <MenuLink tabIndex='0' {...props} />;
+	if (menuLink) return <MenuLink {...props} />;
 	if (figcaption) return <Figcaption {...props} />;
 	if (format) return <TextFormatter {...props} />;
 	return <Paragraph {...props} />;

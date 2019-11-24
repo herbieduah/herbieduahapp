@@ -4,6 +4,7 @@ import {
 	Paragraph,
 	// HeadingTwo,
 	// Image,
+	ZigZag,
 	Header,
 	ContentShow,
 	ContentCategory,
@@ -39,51 +40,56 @@ const TransitionsPage = () => {
 					</Paragraph> */}
 				</div>
 			</ContentShow>
-			<ContentShow more>
+			<ContentShow containerLarge more>
 				{/* normal crazy ridiculous */}
-				<Header>{header}</Header>
-				<Paragraph>
-					Animations bring the elements of this web app to life. I added an
-					extensive collection of random animations for you to choose how you
-					want to bring this web app to life.
-				</Paragraph>
+				<ZigZag>
+					<Header>{header}</Header>
+				</ZigZag>
+				<ZigZag>
+					<Paragraph>
+						Animations bring the elements of this web app to life. I added an
+						extensive collection of random animations for you to choose how you
+						want to bring this web app to life.
+					</Paragraph>
+				</ZigZag>
 
-				<Small className='marginTopMed'>
-					After you choose an animation, navigate to a different page to see it
-					in action.
-				</Small>
-				<Instructions className='marginTopLarge justify-center'>
-					Select Animations Below.
-				</Instructions>
-				<ReactTabs defaultIndex={0}>
-					<ElementReveal className='paddingLRSm'>
-						<TabList className='react-tabs__tab-list'>
-							<Tab tabIndex='0'>
-								<Text format xs tertiary className='marginLRSm'>
-									Smooth
-								</Text>
-							</Tab>
-							<Tab tabIndex='0'>
-								<Text format xs tertiary className='marginLRSm'>
-									Crazy
-								</Text>
-							</Tab>
-						</TabList>
-					</ElementReveal>
-					<TabPanel>
-						<GenerateTransition type='smooth' />
-					</TabPanel>
-					<TabPanel>
-						<GenerateTransition type='crazy' />
-					</TabPanel>
-				</ReactTabs>
-				{/* <ShowIf noAnimation thisValue={forDev} thatValue={true}> */}
-				<Paragraph className='marginTopLarge'>
-					Shout out to <Link href='https://daneden.me/'>Daniel Edens'</Link>{" "}
-					amazing{" "}
-					<Link href='https://daneden.github.io/animate.css/'>Animate.css</Link>{" "}
-					library.
-				</Paragraph>
+				<ZigZag>
+					<Small className='marginTopMed'>
+						Tip: After you choose an animation, navigate to a different page to
+						see it in action.
+					</Small>
+					<ReactTabs defaultIndex={0}>
+						<ElementReveal className='paddingLRSm'>
+							<TabList className='react-tabs__tab-list'>
+								<Tab tabIndex='0'>
+									<Text format xs tertiary className='marginLRSm'>
+										Smooth
+									</Text>
+								</Tab>
+								<Tab tabIndex='0'>
+									<Text format xs tertiary className='marginLRSm'>
+										Crazy
+									</Text>
+								</Tab>
+							</TabList>
+						</ElementReveal>
+						<TabPanel>
+							<GenerateTransition type='smooth' />
+						</TabPanel>
+						<TabPanel>
+							<GenerateTransition type='crazy' />
+						</TabPanel>
+					</ReactTabs>
+					{/* <ShowIf noAnimation thisValue={forDev} thatValue={true}> */}
+					<Paragraph className='marginTopLarge'>
+						Shout out to <Link href='https://daneden.me/'>Daniel Edens'</Link>{" "}
+						amazing{" "}
+						<Link href='https://daneden.github.io/animate.css/'>
+							Animate.css
+						</Link>{" "}
+						library.
+					</Paragraph>
+				</ZigZag>
 				<ContentCategory category='customize' />
 				{/* </ShowIf> */}
 			</ContentShow>

@@ -29,8 +29,8 @@ export const defaultAlt = "I will be adding an alt tag to this image soon";
 export const defaultDesc = "This is a video, I will be describing it soon";
 
 //Switch to 'gif' or 'image' to pull videos and images locally
-const videoLocation = "cloud-gif";
-const imageLocation = "cloud-image";
+const videoLocation = "gif";
+const imageLocation = "image";
 
 export const ContentShow = props => {
 	const {
@@ -151,6 +151,7 @@ export const ElementReveal = props => {
 export const Instructions = props => {
 	const className = props.className || "";
 	const center = props.center ? "justify-center" : "";
+	const zigzag = props.zigzag ? "paddingLRParagraph" : "paddingLRSm";
 	return (
 		<ElementReveal>
 			<small>
@@ -159,7 +160,7 @@ export const Instructions = props => {
 					format
 					light
 					tertiary
-					className={`c-instructions paddingLRSm ${className} ${center}`}>
+					className={`c-instructions paddingLRSm ${className} ${zigzag} ${center}`}>
 					{props.children}
 				</Text>
 			</small>
@@ -175,11 +176,13 @@ export const ContentCategory = props => {
 		: -1;
 	return (
 		<ShowIf noAnimation thisValue={fullScreen} thatValue={true}>
-			<ElementReveal>
-				<div className='c-category marginLRSm container'>
-					<MenuTabs showCategory={false} defaultIndex={defaultIndex} />
-				</div>
-			</ElementReveal>
+			<ZigZag>
+				<ElementReveal>
+					<div className='c-category'>
+						<MenuTabs showCategory={false} defaultIndex={defaultIndex} />
+					</div>
+				</ElementReveal>
+			</ZigZag>
 		</ShowIf>
 	);
 };
@@ -254,7 +257,7 @@ export const Small = props => {
 					format
 					light
 					tertiary
-					className={`marginBottomMed ${center} paddingLRSm ${className}`}>
+					className={`marginBottomMed ${center} paddingLRParagraph ${className}`}>
 					{props.children}
 				</Text>
 			</small>
@@ -269,8 +272,7 @@ export const HeadingOne = props => {
 			<Text
 				h1
 				xxl
-				center
-				extrabold
+				bold
 				secondary
 				className={`${className} marginBottomXLarge marginTopXLarge paddingLRSm`}>
 				{props.children}
@@ -286,7 +288,7 @@ export const HeadingTwo = props => {
 			<Text
 				h2
 				l
-				className={`${className} marginTopXLarge marginBottomSm paddingLRSm`}>
+				className={`${className} marginTopXLarge marginBottomSm paddingLRParagraph`}>
 				{props.children}
 			</Text>
 		</ElementReveal>
@@ -295,17 +297,15 @@ export const HeadingTwo = props => {
 
 export const UL = props => {
 	return (
-		<ElementReveal>
-			<ul className='paddingLRSm' {...props}>
-				{props.children}
-			</ul>
+		<ElementReveal className='paddingLRParagraph'>
+			<ul {...props}>{props.children}</ul>
 		</ElementReveal>
 	);
 };
 
 export const LI = props => {
 	return (
-		<li className='marginLRSm'>
+		<li>
 			<ElementReveal>
 				<Text format m {...props}>
 					{props.children}
@@ -331,7 +331,7 @@ export const HeadingThree = props => {
 				h3
 				l
 				bold
-				className={`marginTopLarge marginBottomMed paddingLRSm ${className}`}>
+				className={`marginTopLarge marginBottomMed paddingLRParagraph ${className}`}>
 				{props.children}
 			</Text>
 		</ElementReveal>
@@ -405,7 +405,7 @@ export const Figure = props => {
 export const Figcaption = props => {
 	const className = props.className || "";
 	return (
-		<Text s figcaption center className={`${className} paddingLRSm`}>
+		<Text s figcaption className={`${className} paddingLRParagraph`}>
 			{props.children}
 		</Text>
 	);
@@ -583,8 +583,8 @@ export const WorkInfo = props => {
 	const { forDev } = useContext(globalState);
 	return (
 		<ZigZag>
-			<ElementReveal>
-				<ul className='c-work-info marginBottomXLarge'>
+			<ElementReveal className='paddingLRParagraph'>
+				<ul className='c-work-info marginBottomXLarge '>
 					<li>
 						<Text s format>
 							<strong>Duration</strong>
@@ -651,12 +651,8 @@ export const DisableSetting = props => {
 export const Button = props => {
 	const className = props.className || "";
 	return (
-		<ElementReveal>
-			<Text
-				button
-				xs
-				className={`${className} marginLRSm marginBottomSm`}
-				{...props}>
+		<ElementReveal className='paddingLRParagraph'>
+			<Text button xs className={`${className} marginBottomSm`} {...props}>
 				{props.children}
 			</Text>
 		</ElementReveal>

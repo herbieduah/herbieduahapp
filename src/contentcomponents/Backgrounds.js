@@ -32,7 +32,9 @@ const BackgroundsPage = ({ contentProps }) => {
 				</div>
 			</ContentShow>
 			<ContentShow containerLarge more>
-				<Header>{header}</Header>
+				<ZigZag>
+					<Header>{header}</Header>
+				</ZigZag>
 				<ZigZag>
 					<Paragraph>
 						I have chosen an extensive collection of colors, gradients, and
@@ -44,9 +46,9 @@ const BackgroundsPage = ({ contentProps }) => {
 				</ZigZag>
 				<ZigZag>
 					<Small className='marginTopMed'>
-						The Light Theme and Dark Theme backgrounds change automatically
-						depending on your device dark mode settings or the time you are
-						accessing this web app.
+						By default, the Light Theme and Dark Theme backgrounds change
+						automatically depending on your device dark mode settings or the
+						time you are accessing this web app.
 					</Small>
 					{/* <Paragraph>
 					The border around the circle is the font color, so if a circle doesn't

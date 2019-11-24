@@ -81,7 +81,9 @@ const HomePage = ({ contentProps }) => {
 				</LessContent>
 			</ContentShow>
 			<ContentShow containerLarge more>
-				<Header>{header}</Header>
+				<ZigZag>
+					<Header>{header}</Header>
+				</ZigZag>
 
 				{/* <ZigZag> */}
 				{/* <HeadingTwo>
@@ -127,7 +129,7 @@ const HomePage = ({ contentProps }) => {
 					
 				</ZigZag> */}
 				<ZigZag>
-					<Emphasis className='paddingLRMed'>
+					<Emphasis className='paddingLRParagraph'>
 						{/* Hey there */}
 						<span>
 							{forYouHelper(forYou)
@@ -135,7 +137,6 @@ const HomePage = ({ contentProps }) => {
 								: // <Emoji className='emoji' symbol='😄' label='smile' />
 								  "Hi, I'm Herbie."}
 						</span>
-						<br />
 					</Emphasis>
 					{/* <div className='marginTopLarge'>
 						<Emphasis className='paddingLRMed' center>
@@ -144,48 +145,48 @@ const HomePage = ({ contentProps }) => {
 					</div> */}
 					<Image
 						src={picsOfMeHero}
-						className='paddingLRMed'
+						className='paddingLRParagraph'
 						alt='A picture of me smiling infront of green plants '
 					/>
 				</ZigZag>
 
 				<ZigZag>
-					<Emphasis className='paddingLRMed'>
+					<Emphasis className='paddingLRParagraph'>
 						I love designing and coding websites for humans.
 					</Emphasis>
 					<Figure
-						className='paddingLRMed'
+						className='paddingLRParagraph'
 						alt='A photo of me with dog on a desk'
 						src={picsOfMeshowingtilly}>
 						<Figcaption>Sometimes I need help from non-humans.</Figcaption>
 					</Figure>
 				</ZigZag>
 				<ZigZag>
-					<Emphasis className='paddingLRMed'>
+					<Emphasis className='paddingLRParagraph'>
 						I also love to take photos.
 					</Emphasis>
 					<Image
 						src={picsOfMesnowsmilephotography}
-						className='paddingLRMed'
+						className='paddingLRParagraph'
 						alt='A picture of me sitting on snow while holding a camera'
 					/>
 				</ZigZag>
-
-				<div className='container marginBottomMed marginTopMed'>
-					<div className='marginTopXLarge marginBottomLarge'>
-						<Emphasis>
-							Nowadays, there is an app for everything. In the future, I believe
-							there is going to be an app for everyone.
-						</Emphasis>
+				<ZigZag>
+					<div className='marginBottomMed marginTopMed'>
+						<div className='marginTopXLarge marginBottomLarge'>
+							<Emphasis className='paddingLRParagraph'>
+								Nowadays, there is an app for everything. In the future, I
+								believe there is going to be an app for everyone.
+							</Emphasis>
+						</div>
+						<Paragraph className='paddingLRParagraph'>
+							I envision every user having a unique experience with your app.
+							This vision inspired me to craft my portfolio as web app that
+							enables you to customize your experience{" "}
+							<Emoji className='emoji' symbol='😉' label='wink' />
+						</Paragraph>
 					</div>
-					<Paragraph>
-						I envision every user having a unique experience with your app. This
-						vision inspired me to craft this web app to showcase my Web
-						Development/Design work and photos, but at the same time enabling{" "}
-						<i>you</i> to customize your experience{" "}
-						<Emoji className='emoji' symbol='😉' label='wink' />
-					</Paragraph>
-				</div>
+				</ZigZag>
 				{/* <ZigZag>
 					<Emphasis center>
 						This belief inspired me to craft this web app to showcase my Web
