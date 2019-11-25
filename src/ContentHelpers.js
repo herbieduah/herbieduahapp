@@ -53,7 +53,7 @@ export const ContentShow = props => {
 	const [showInstructions, setShowInstructions] = useState(true);
 
 	const showTheInstructions = () => {
-		if (showMore) {
+		if (showMore && !minimalMode) {
 			setShowInstructions(false);
 		}
 	};
@@ -95,7 +95,7 @@ export const ContentShow = props => {
 								thisValue={fullScreen && !minimalMode}
 								thatValue={true}>
 								<Instructions className='marginTopLarge justify-center text-center'>
-									scroll to bottom or select minimize <br /> for menu
+									scroll to bottom for menu
 								</Instructions>
 							</ShowIf>
 							{props.children}
@@ -405,7 +405,7 @@ export const Figure = props => {
 export const Figcaption = props => {
 	const className = props.className || "";
 	return (
-		<Text s figcaption className={`${className} paddingLRParagraph`}>
+		<Text s center figcaption className={`${className} paddingLRSm`}>
 			{props.children}
 		</Text>
 	);
@@ -583,7 +583,7 @@ export const WorkInfo = props => {
 	const { forDev } = useContext(globalState);
 	return (
 		<ZigZag>
-			<ElementReveal className='paddingLRParagraph'>
+			<ElementReveal>
 				<ul className='c-work-info marginBottomXLarge '>
 					<li>
 						<Text s format>

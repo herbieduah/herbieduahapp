@@ -6,7 +6,8 @@ import {
 	Header,
 	ContentCategory,
 	ContentShow,
-	LessContent
+	LessContent,
+	ZigZag
 } from "../ContentHelpers";
 
 import {
@@ -40,10 +41,14 @@ const PeoplePage = () => {
 				</div>
 			</ContentShow>
 			<ContentShow containerLarge more>
-				<Header className='container'>{header}</Header>
-				<Paragraph className='container' center>
-					Here are some of my favorite photos I've taken at different places.
-				</Paragraph>
+				<ZigZag>
+					<Header>{header}</Header>
+				</ZigZag>
+				<ZigZag>
+					<Paragraph>
+						Here are some of my favorite photos I've taken at different places.
+					</Paragraph>
+				</ZigZag>
 				<ul className='c-photos'>
 					<li>
 						<Image

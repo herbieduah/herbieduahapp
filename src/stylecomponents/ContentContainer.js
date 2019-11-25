@@ -228,7 +228,7 @@ export const ContentContainer = styled.section`
 	}
 	margin-top: 0;
 	.container {
-		max-width: 740px;
+		max-width: 500px;
 		width: 100%;
 		${props => (props.fullScreen ? `margin: 0 auto` : ``)};
 	}
@@ -507,9 +507,9 @@ export const ContentContainer = styled.section`
 		}
 
 		.react-reveal {
-			max-width: 740px;
-			padding-left: 7%;
-			padding-right: 7%;
+			max-width: 500px;
+			${paddingLRSm}
+			${marginTopLarge}
 			${mobile}{
 				padding-left: 0%;
 				padding-right: 0%;	
@@ -550,7 +550,7 @@ export const ContentContainer = styled.section`
 				margin-left: auto;
 			}
 			.paddingLRParagraph {
-				padding-left: 25%;
+				padding-left: 20;
 				padding-right: 20px;
 				${mobile} {
 					padding-right: 1rem;
@@ -559,7 +559,7 @@ export const ContentContainer = styled.section`
 			}
 		}
 		&__content {
-			max-width: 740px;
+			max-width: 500px;
 			width: 100%;
 		}
 			/* ${paddingLRSm} */		

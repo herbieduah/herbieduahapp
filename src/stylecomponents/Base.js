@@ -629,6 +629,7 @@ export const ThemeCircleContainer = styled.li`
 			${mainTransition}
 			position: relative;
 			width: 100%;
+			
 			padding-bottom: 100%;
 			cursor: pointer;
 			/* height: 9.5rem; */
@@ -651,9 +652,10 @@ export const ThemeCircleContainer = styled.li`
 					: props.themeValues.gradient};
 			border: ${borderThin};
 			cursor: default;
+			
 			&:hover,
 			&:focus {
-				transform: scale(1.02);
+				border:1px solid ${props => props.themeValues.borderColor};
 			}
 		}
 		&__text {
@@ -682,6 +684,7 @@ export const ThemeCircleContainer = styled.li`
 			display:flex;
 			flex-direction: column;
 			cursor: pointer;
+			
 			/* justify-content: center; */
 			/* align-items: center; */
 			/* span {

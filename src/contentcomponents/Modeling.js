@@ -11,6 +11,7 @@ import {
 	LessContent,
 	Header,
 	Figcaption,
+	ZigZag,
 	ContentCategory
 } from "../ContentHelpers";
 // import herbieVictoriaNaboursScratch1480x2639 from "../media/images/modeling/photography-herbieVictoriaNaboursScratch-2639.jpg";
@@ -68,11 +69,15 @@ const Modeling = () => {
 				</div>
 			</ContentShow>
 			<ContentShow containerLarge more>
-				<Header className='container'>{header}</Header>
-				<Paragraph className='container' center>
-					Here are some of my favorite photos of me taken by some aweomse
-					photographers.
-				</Paragraph>
+				<ZigZag>
+					<Header>{header}</Header>
+				</ZigZag>
+				<ZigZag>
+					<Paragraph>
+						Here are some of my favorite photos of me taken by some aweomse
+						photographers.
+					</Paragraph>
+				</ZigZag>
 				<ul className='c-photos'>
 					<li>
 						<Figure

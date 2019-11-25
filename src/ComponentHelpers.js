@@ -267,11 +267,12 @@ export const AccessibilityMode = () => {
 	const isContentPortrait = isPortrait(ww, wh);
 
 	const activateAccessibilityMode = () => {
-		accessible ? setMinimalMode(false) : setMinimalMode(true);
-		accessible ? setFullscreen(false) : setFullscreen(true);
-		accessible ? setVideoControls(false) : setVideoControls(true);
-		accessible ? setNavBarComplement(false) : setNavBarComplement(true);
-		accessible ? setAccessible(false) : setAccessible(true);
+		 setMinimalMode(true);
+		// accessible ? setMinimalMode(false) : setMinimalMode(true);
+		// accessible ? setFullscreen(false) : setFullscreen(true);
+		// accessible ? setVideoControls(false) : setVideoControls(true);
+		// accessible ? setNavBarComplement(false) : setNavBarComplement(true);
+		// accessible ? setAccessible(false) : setAccessible(true);
 	};
 
 	return (
@@ -281,17 +282,17 @@ export const AccessibilityMode = () => {
 			isPortrait={isContentPortrait}>
 			<ElementReveal>
 				<div className='accessibility__button-container'>
-					<Text button s onClick={activateAccessibilityMode}>
-						Accessibility Mode
+					<Text buttontext s onClick={activateAccessibilityMode}>
+						turn off slider ui
 					</Text>
 				</div>
-				<Text
+				{/* <Text
 					format
 					xs
 					onClick={activateAccessibilityMode}
 					className='accessibility__text'>
 					(You can de-activate in Settings)
-				</Text>
+				</Text> */}
 			</ElementReveal>
 		</AccessibilityContainer>
 		// </ShowIf>

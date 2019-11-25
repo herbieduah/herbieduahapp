@@ -107,7 +107,7 @@ padding-right: 10%;
 
 export const paddingLRParagraph = `
 padding-left: 20px;
-padding-right: 25%;
+padding-right: 20px;
 ${mobile} {
 	padding-right: 1rem;
 padding-left: 1rem;
@@ -283,7 +283,7 @@ export const halyardDisplay = `
 font-weight: 200;`;
 
 export const container = `
-max-width: 740px;
+max-width: 500px;
 			width: 100%;
 			margin: 0 auto;
 `;
@@ -292,8 +292,7 @@ export const userSelectNone = `
 ${mobile} {
 	user-select: none;
 }`;
-export const mainTransition = `transition: all ${revealSecs /
-	2}ms ease-in-out;`;
+export const mainTransition = `transition: all ${revealSecs / 2}ms;`;
 
 export const niceShadow = `
 &:before {

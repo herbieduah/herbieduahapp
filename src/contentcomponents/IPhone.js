@@ -9,7 +9,8 @@ import {
 	Paragraph,
 	Image,
 	ContentCategory,
-	LessContent
+	LessContent,
+	ZigZag
 } from "../ContentHelpers";
 // import sunsetPoint1480x1110 from "../media/images/iPhone/sunsetPoint.jpg";
 // import santaMonicaBeach1480x1973 from "../media/images/iPhone/santaMonicaBeach.jpg";
@@ -64,10 +65,14 @@ const iPhonePage = () => {
 				</div>
 			</ContentShow>
 			<ContentShow containerLarge more>
-				<Header className='container'>{header}</Header>
-				<Paragraph className='container' center>
-					Here are some of my favorite photos I've shot on my iPhone.
-				</Paragraph>
+				<ZigZag>
+					<Header>{header}</Header>
+				</ZigZag>
+				<ZigZag>
+					<Paragraph>
+						Here are some of my favorite photos I've shot on my iPhone.
+					</Paragraph>
+				</ZigZag>
 				<ul className='c-photos'>
 					<li>
 						<Image

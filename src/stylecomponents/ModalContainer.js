@@ -71,7 +71,7 @@ export const ModalContainer = styled.div`
 		}
 	}
 	.modal__container {
-		max-width: 740px;
+		max-width: 500px;
 		width: 100%;
 		margin: 0 auto;
 		padding-top: ${navBarSize};

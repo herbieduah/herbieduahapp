@@ -99,7 +99,7 @@ const HerbieDuahAppPage = ({ contentProps }) => {
 							<Link href='https://app.netlify.com/'>Netlify</Link>&nbsp;
 						</LI>
 						<LI>
-							I kept the content at a max-width of 740px so I wouldn't have to
+							I kept the content at a max-width of 500px so I wouldn't have to
 							resize a lot of images.
 						</LI>
 					</UL>

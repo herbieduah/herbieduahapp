@@ -98,13 +98,13 @@ const HeadingOne = styled.h1`
 const HeadingTwo = styled.h2`
 	${baseStyle};
 	font-family: ${appfontFamilySecondary};
-	font-weight: 800;
+	font-weight: 500;
 `;
 
 const HeadingThree = styled.h3`
 	${baseStyle};
 	font-family: ${appfontFamilySecondary};
-	font-weight: 500;
+	font-weight: 300;
 `;
 
 const HeadingFour = styled.h4`

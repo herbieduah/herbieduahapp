@@ -61,7 +61,7 @@ const MenuContainer = styled.aside`
 	${tablet} {
 		${props =>
 			props.isPortrait
-				? `max-width: 740px;
+				? `max-width: 500px;
 		width: 100%; margin: 0 auto;`
 				: ``};
 	}
