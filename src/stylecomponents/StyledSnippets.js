@@ -210,7 +210,7 @@ export const HerbieDuahApp = styled.div`
 	
 
 	.container {
-		max-width: 500px;
+		max-width: 540px;
 		width: 100%;
 		margin: 0 auto;
 	}

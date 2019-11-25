@@ -22,6 +22,7 @@ import {
 import { ShowIf } from "../ComponentHelpers";
 // import Text from "../stylecomponents/Text";
 import Emoji from "a11y-react-emoji";
+import { isMobile } from "react-device-detect";
 const header = "Settings";
 
 const SettingsPage = ({ contentProps }) => {
@@ -130,30 +131,35 @@ const SettingsPage = ({ contentProps }) => {
 						so I created settings that enable you to change certain aspects of
 						it.
 					</Paragraph>
-					<Instructions zigzag className='marginTopMed'>
-						Refresh web app to reset settings
-					</Instructions>
+					<Small className='marginTopMed'>
+						Refreshing web app resets all settings.
+					</Small>
 				</ZigZag>
 				<ZigZag>
-					<HeadingTwo>
-						Different look and feel
-						<Emoji className='emoji' symbol='😎' label='smile with shades' />
-					</HeadingTwo>
+					<HeadingTwo>Slider UI</HeadingTwo>
 					<ShowIf noAnimation thisValue={minimalMode} thatValue={true}>
 						<Paragraph>
-							I had a different look and feel in mind for my web app, but I was
-							to worried because it's different from any User Interface I've
-							used.
+							I had a different User Interface in mind for my web app. I ended
+							make it a setting because I was worried it may not have the best
+							user experience.
 						</Paragraph>
 					</ShowIf>
 					<ShowIf noAnimation thisValue={minimalMode} thatValue={false}>
-						<Paragraph>New look and feel not doing it for you?</Paragraph>
+						<Paragraph>Slider UI not doing it for you?</Paragraph>
 					</ShowIf>
 					<ShowIf noAnimation thisValue={minimalMode} thatValue={true}>
-						<Button onClick={basicMode}>change look and feel</Button>
+						<Small className='marginTopMed'>
+							For the best experience, use the native browser on your device.
+						</Small>
+					</ShowIf>
+					<ShowIf noAnimation thisValue={minimalMode} thatValue={true}>
+						<Button onClick={basicMode}>try it out</Button>
 					</ShowIf>
 					<ShowIf noAnimation thisValue={minimalMode} thatValue={false}>
 						<Button onClick={basicMode}>change it back</Button>
+						<Small className='marginTopSm'>
+							Thank you for trying it out, it means a lot.
+						</Small>
 					</ShowIf>
 				</ZigZag>
 				<ZigZag>
@@ -211,18 +217,17 @@ const SettingsPage = ({ contentProps }) => {
 					<DisableSetting
 						thisValue={minimalMode}
 						thatValue={true}
-						message='This setting only works with the different look and feel'>
+						message='This setting only works with Slider UI.'>
 						<HeadingThree>Move navigation bar</HeadingThree>
 						<Paragraph>
 							This setting moves navigations bar to the right or left. (It's
-							useful on mobile if you're left handed.)
+							useful on mobile if you're left handed).
 						</Paragraph>
-						<ShowIf
-							noAnimation
-							thisValue={navBarRight}
-							thatValue={true}></ShowIf>
 						<ShowIf noAnimation thisValue={navBarRight} thatValue={false}>
 							<Button onClick={moveNavBar}>Move Navigation Bar right</Button>
+						</ShowIf>
+						<ShowIf noAnimation thisValue={navBarRight} thatValue={true}>
+							<Button onClick={moveNavBar}>Move Navigation Bar left</Button>
 						</ShowIf>
 					</DisableSetting>
 
@@ -239,7 +244,7 @@ const SettingsPage = ({ contentProps }) => {
 					<DisableSetting
 						thisValue={minimalMode}
 						thatValue={false}
-						message='This setting only works when the web app is set to the default look'>
+						message='This setting only works when Slider UI is turned off.'>
 						<HeadingThree>Navigation Bar background color</HeadingThree>
 						<Paragraph>
 							{" "}

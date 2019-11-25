@@ -228,14 +228,36 @@ export const ContentContainer = styled.section`
 	}
 	margin-top: 0;
 	.container {
-		max-width: 500px;
+		max-width: 740px;
 		width: 100%;
 		${props => (props.fullScreen ? `margin: 0 auto` : ``)};
+		.c-zigzag__content {
+			margin-left: 0 !important;
+			max-width: 740px;
+			
+		}
+		.c-zigzag {
+			padding-left: 0;
+			padding-right: 0;
+		}
 	}
 	.container-large {
-		max-width: ${containerLargePx};
 		width: 100%;
 		${props => (props.fullScreen ? `margin: 0 auto` : ``)};
+		max-width: ${props => (props.fullScreen ? `${containerLargePx}` : `740px`)};
+		${props =>
+			!props.fullScreen
+				? `
+		.c-zigzag__content {
+			margin-left: 0 !important;
+			max-width: 740px;	
+		}
+		.c-zigzag {
+			padding-left: 0;
+			padding-right: 0;
+		}
+		`
+				: ``};
 	}
 	.container-full {
 		width: 100%;
@@ -353,7 +375,7 @@ export const ContentContainer = styled.section`
 
 		height: 30vh;
 		.react-tabs__tab-list {
-		max-width: 500px;
+		max-width: 540px;
 		/* margin: 0 auto; */
 		/* ${marginBottomMed} */
 		margin-bottom: 2rem;
@@ -507,7 +529,7 @@ export const ContentContainer = styled.section`
 		}
 
 		.react-reveal {
-			max-width: 500px;
+			max-width: 540px;
 			${paddingLRSm}
 			${marginTopLarge}
 			${mobile}{
@@ -531,7 +553,7 @@ export const ContentContainer = styled.section`
 	}
 
 	.c-zigzag {
-		${marginTopMed}
+		${marginTopSm}
 		${marginBottomMed}
 		display:flex;
 		flex-direction: column;
@@ -559,13 +581,13 @@ export const ContentContainer = styled.section`
 			}
 		}
 		&__content {
-			max-width: 500px;
+			max-width: 540px;
 			width: 100%;
 		}
 			/* ${paddingLRSm} */		
 	}
 	.react-tabs__tab-list {
-		max-width: 500px;
+		max-width: 5o0px;
 		/* margin: 0 auto; */
 		width: 100%;
 		/* margin: 0 auto; */

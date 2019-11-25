@@ -32,7 +32,7 @@ const maxFontSize = `24px`;
 export const sliderWidth = "3.4rem";
 export const sliderHeight = "2rem";
 export const fluidTypeInfo = fluidType(minVW, maxVW, minFontSize, maxFontSize);
-export const containerLargePx = `1600px`;
+export const containerLargePx = `1440px`;
 export const mobile = "@media only screen and (max-width: 530px)";
 export const mobileSm = "@media only screen and (max-width: 340px)";
 export const tablet =
@@ -283,7 +283,7 @@ export const halyardDisplay = `
 font-weight: 200;`;
 
 export const container = `
-max-width: 500px;
+max-width: 540px;
 			width: 100%;
 			margin: 0 auto;
 `;

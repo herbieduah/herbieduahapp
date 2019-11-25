@@ -205,7 +205,7 @@ const MenuLink = styled(NavLink)`
 	background: none;
 	color: ${navBarButtonColor};
 	font-family: ${appfontFamilySecondary};
-	letter-spacing: 2px;
+	letter-spacing: .5px;
 	border-bottom: 0;
 	display: inline-block;
 	transform: scale(1);

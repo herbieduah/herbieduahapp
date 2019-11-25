@@ -6,7 +6,7 @@ import {
 	Header,
 	Paragraph,
 	LessContent,
-	// Image,
+	Image,
 	FiGif,
 	Figcaption,
 	ContentCategory,
@@ -51,9 +51,11 @@ const AboutMePage = () => {
 				</div>
 			</ContentShow>
 			<ContentShow containerLarge more>
-				<Header>{header}</Header>
 				<ZigZag>
-					<Emphasis center>I was born and raised in Ghana</Emphasis>
+					<Header>{header}</Header>
+				</ZigZag>
+				<ZigZag>
+					<Emphasis center>I was born and raised in Ghana.</Emphasis>
 					<FiGif
 						className='paddingLRMed'
 						desc='A video of me doing that Wakanda salute in Black Panther'
@@ -121,17 +123,11 @@ const AboutMePage = () => {
 					</Figure>
 				</ZigZag>
 				<ZigZag>
-					<Emphasis center>I suck at basketball</Emphasis>
-					<Figure
+					<Emphasis center>I suck at basketball.</Emphasis>
+					<Image
 						className='paddingLRLarge'
 						alt='Holding a basked while dressed as Prince from Dave Chappelle while sitting on my jeep'
-						width='1480'
-						height='1973'
-						src={picsOfMeRickJamesBball}>
-						<Figcaption>
-							I was dressed as Prince from the famous Dave Chappelle's skit.
-						</Figcaption>
-					</Figure>
+						src={picsOfMeRickJamesBball}></Image>
 				</ZigZag>
 				{/* <HeadingTwo>I milly rock on every block</HeadingTwo>
 				<FiGif
@@ -163,7 +159,7 @@ const AboutMePage = () => {
 				</FiGif> */}
 				<ZigZag>
 					<Emphasis center>
-						I love dancing even though I am not that good
+						I love dancing even though I am not that good.
 					</Emphasis>
 					<Gif
 						className='paddingLRLarge'
@@ -175,7 +171,7 @@ const AboutMePage = () => {
 				</ZigZag>
 				<ZigZag>
 					<Emphasis center>
-						I love playing video games... even though I suck
+						I love playing video games... even though I suck.
 					</Emphasis>
 					<FiGif
 						className='paddingLRLarge'
@@ -197,7 +193,7 @@ const AboutMePage = () => {
 				</Figure> */}
 
 				<ZigZag>
-					<Emphasis center>I enjoy offroading</Emphasis>
+					<Emphasis center>I enjoy offroading.</Emphasis>
 					<Gif
 						className='paddingLRMed'
 						desc='Offroading with some friends'
@@ -208,7 +204,7 @@ const AboutMePage = () => {
 				</ZigZag>
 				{/* <Gif desc='' width='1920' height='1080' url={OffRoadSplash} /> */}
 				<ZigZag>
-					<Emphasis center>I love putting smiles on peoples faces</Emphasis>
+					<Emphasis center>I love putting smiles on peoples faces.</Emphasis>
 					<FiGif
 						className='paddingLRSm'
 						desc='Doing some stand up'
@@ -222,7 +218,7 @@ const AboutMePage = () => {
 					</FiGif>
 				</ZigZag>
 				<ZigZag>
-					<Emphasis center>I love technology</Emphasis>
+					<Emphasis center>I love technology.</Emphasis>
 					<Figure
 						className='paddingLRSm'
 						alt='Me and my little bro next to my very first computer in Ghana'

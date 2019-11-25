@@ -110,7 +110,7 @@ export const NavBar = () => {
 							src={HerbieDuahLogoSubtract}
 						/>
 					</NavLink>
-					<ShowIf noAnimation thisValue={modalVisible} thatValue={true}>
+					{/* <ShowIf noAnimation thisValue={modalVisible} thatValue={true}>
 						<Text
 							className='navbar__contact'
 							onClick={setMenuModalContent}
@@ -120,7 +120,7 @@ export const NavBar = () => {
 							to='/contacts'>
 							Contact
 						</Text>
-					</ShowIf>
+					</ShowIf> */}
 					<div className='navbar__logo-menu '>
 						<ShowIf noAnimation thisValue={modalVisible} thatValue={true}>
 							<ElementReveal>
@@ -251,12 +251,12 @@ export const FullScreenModal = () => {
 
 export const AccessibilityMode = () => {
 	const {
-		setAccessible,
+		// setAccessible,
 		setMinimalMode,
 		setFullscreen,
-		setVideoControls,
-		setNavBarComplement,
-		accessible,
+		// setVideoControls,
+		// setNavBarComplement,
+		// accessible,
 		contentWidth: cw,
 		contentHeight: ch
 	} = useContext(globalState);
@@ -267,7 +267,8 @@ export const AccessibilityMode = () => {
 	const isContentPortrait = isPortrait(ww, wh);
 
 	const activateAccessibilityMode = () => {
-		 setMinimalMode(true);
+		setMinimalMode(true);
+		setFullscreen(true);
 		// accessible ? setMinimalMode(false) : setMinimalMode(true);
 		// accessible ? setFullscreen(false) : setFullscreen(true);
 		// accessible ? setVideoControls(false) : setVideoControls(true);
@@ -279,7 +280,8 @@ export const AccessibilityMode = () => {
 		// <ShowIf noAbsolute thisValue={isShowingMore} thatValue={false}>
 		<AccessibilityContainer
 			className='accessibility'
-			isPortrait={isContentPortrait}>
+			// isPortrait={isContentPortrait}
+		>
 			<ElementReveal>
 				<div className='accessibility__button-container'>
 					<Text buttontext s onClick={activateAccessibilityMode}>

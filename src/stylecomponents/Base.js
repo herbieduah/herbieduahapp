@@ -811,22 +811,25 @@ export const FullScreenOverlayContainer = styled.div`
 		}
 		.react-tabs__tab-list {
 		max-width: 500px;
-		margin: 0 auto;
+		/* margin: 0 auto; */
+		/* ${marginBottomMed} */
 		margin-bottom: 2rem;
+		width: 100%;
 		${mobile} {
 			margin-bottom: .5rem;
+			width:100%;
 		}
 		
 		${marginTopMed}
-		width: 100%;
+	
 		}
 		.subMenu {
 			${marginTopMed}
 			margin-top: 0;
 			&__item{
-				text-align: center;
+				text-align: left;
 				margin-top: 0rem;
-				margin-bottom: .7rem;
+				margin-bottom: 0;
 			}
 		}
 	}
@@ -1015,6 +1018,9 @@ export const AccessibilityContainer = styled.div`
 				padding-top: 0;
 				padding-bottom: 0;
 				align-items: center;
+				${mobile} {
+					margin: 0 auto;
+				}
 			}
 		}
 		&__text {

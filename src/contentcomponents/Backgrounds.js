@@ -41,8 +41,6 @@ const BackgroundsPage = ({ contentProps }) => {
 						patterns you can select to change the look of this web app in hopes
 						that you will find one that you'd like.
 					</Paragraph>
-
-					<Small>I save your background for when you come back.</Small>
 				</ZigZag>
 				<ZigZag>
 					<Small className='marginTopMed'>

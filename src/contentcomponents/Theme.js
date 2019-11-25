@@ -12,6 +12,7 @@ import {
 	ContentCategory,
 	Button,
 	Header,
+	ZigZag,
 	HeadingTwo,
 	Instructions
 } from "../ContentHelpers";
@@ -62,48 +63,57 @@ const ThemePage = ({ contentProps }) => {
 					</Paragraph> */}
 				</div>
 			</ContentShow>
-			<ContentShow more>
-				<Header>{header}</Header>
-				<Paragraph>
-					Themes give the web app a completely new look. These were the last
-					additions to my web app.
-				</Paragraph>
-				<HeadingTwo>Matrix</HeadingTwo>
-				<Paragraph>This Matrix theme is based on the Matrix Trilogy.</Paragraph>
-				<ShowIf noAnimation thisValue={isMatrix} thatValue={false}>
-					<Button onClick={setMatrixTheme}>Take the Red Pill</Button>
-					<Small>
-						You stay in Wonderland, and I show you how deep the rabbit hole
-						goes...
-					</Small>
-				</ShowIf>
-				<ShowIf noAnimation thisValue={isMatrix} thatValue={true}>
-					<Paragraph>You are currently in the Matrix.</Paragraph>
-
-					<Instructions>Select a background to turn off theme</Instructions>
-				</ShowIf>
-				<HeadingTwo>Star Wars</HeadingTwo>
-				<Paragraph>A long time ago in a galaxy far, far away...</Paragraph>
-				<ShowIf noAnimation thisValue={isStarWars} thatValue={false}>
-					<Button onClick={setStarWarsTheme}>Feel the Force</Button>
-				</ShowIf>
-				<ShowIf noAnimation thisValue={isStarWars} thatValue={true}>
+			<ContentShow containerLarge more>
+				<ZigZag>
+					<Header>{header}</Header>
+				</ZigZag>
+				<ZigZag>
+					<Paragraph>Themes give the web app a completely new look.</Paragraph>
+					<Small>I save your theme for when you come back.</Small>
+				</ZigZag>
+				<ZigZag>
+					<HeadingTwo>Matrix</HeadingTwo>
 					<Paragraph>
-						Why can't Darth Vader find love? Because he keeps looking for love
-						in Alderaan places.
+						This Matrix theme is based on the Matrix Trilogy.
 					</Paragraph>
-					<Instructions>Select a background to turn off theme</Instructions>
-				</ShowIf>
+					<ShowIf noAnimation thisValue={isMatrix} thatValue={false}>
+						<Button onClick={setMatrixTheme}>Take the Red Pill</Button>
+						{/* <Small>
+							You stay in Wonderland, and I show you how deep the rabbit hole
+							goes...
+						</Small> */}
+					</ShowIf>
+					<ShowIf noAnimation thisValue={isMatrix} thatValue={true}>
+						<Paragraph>You are currently in the Matrix.</Paragraph>
 
-				<HeadingTwo>Totally 90s</HeadingTwo>
-				<Paragraph>Here is a theme with some 90s nostalgia.</Paragraph>
-				<ShowIf noAnimation thisValue={isNineties} thatValue={false}>
-					<Button onClick={setNinetiesTheme}>get jiggy with it</Button>
-				</ShowIf>
-				<ShowIf noAnimation thisValue={isNineties} thatValue={true}>
-					<Paragraph>Duuuude like totally.</Paragraph>
-					<Instructions>Select a background to turn off theme</Instructions>
-				</ShowIf>
+						<Instructions>Select a background to turn off theme</Instructions>
+					</ShowIf>
+				</ZigZag>
+				<ZigZag>
+					<HeadingTwo>Star Wars</HeadingTwo>
+					<Paragraph>A long time ago in a galaxy far, far away...</Paragraph>
+					<ShowIf noAnimation thisValue={isStarWars} thatValue={false}>
+						<Button onClick={setStarWarsTheme}>Feel the Force</Button>
+					</ShowIf>
+					<ShowIf noAnimation thisValue={isStarWars} thatValue={true}>
+						<Paragraph>
+							Why can't Darth Vader find love? Because he keeps looking for love
+							in Alderaan places.
+						</Paragraph>
+						<Instructions>Select a background to turn off theme</Instructions>
+					</ShowIf>
+				</ZigZag>
+				<ZigZag>
+					<HeadingTwo>Totally 90s</HeadingTwo>
+					<Paragraph>Here is a theme with some 90s nostalgia.</Paragraph>
+					<ShowIf noAnimation thisValue={isNineties} thatValue={false}>
+						<Button onClick={setNinetiesTheme}>get jiggy with it</Button>
+					</ShowIf>
+					<ShowIf noAnimation thisValue={isNineties} thatValue={true}>
+						<Paragraph>Duuuude like totally.</Paragraph>
+						<Instructions>Select a background to turn off theme</Instructions>
+					</ShowIf>
+				</ZigZag>
 				<ContentCategory category='customize' />
 			</ContentShow>
 		</Fragment>

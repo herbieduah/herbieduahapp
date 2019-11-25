@@ -119,7 +119,7 @@ export const Header = props => {
 		<Fragment>
 			<ShowIf noAnimation thisValue={props.less} thatValue={true}>
 				<ElementReveal>
-					<Text h1 m extrabold className='paddingLRSm less__header'>
+					<Text h1 m bold className='paddingLRSm less__header'>
 						{props.children}
 					</Text>
 				</ElementReveal>
@@ -441,7 +441,6 @@ export const FiGif = props => {
 					width={props.width}
 					height={props.height}
 					url={url}
-					className={props.className || ""}
 					desc={desc}
 				/>
 				{props.children}

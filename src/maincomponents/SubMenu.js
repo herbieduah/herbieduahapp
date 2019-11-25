@@ -11,7 +11,7 @@ import { ElementReveal } from "../ContentHelpers";
 export const SubMenu = props => {
 	let category = props.category;
 	const showCategory = props.showCategory;
-	const { setModalVisible, forDev } = useContext(globalState);
+	const { setModalVisible, forDev, minimalMode } = useContext(globalState);
 
 	const hideModal = () => {
 		setModalVisible(false);
@@ -95,6 +95,13 @@ export const SubMenu = props => {
 								</Text>
 							</li>
 						</ShowIf> */}
+						<ShowIf noAnimation thisValue={minimalMode} thatValue={true}>
+							<li onClick={hideModal} className='subMenu__item'>
+								<Text menuLink xl={true} to='/Contacts'>
+									Contact
+								</Text>
+							</li>
+						</ShowIf>
 						{/* <li onClick={hideModal} className='subMenu__item'>
 							<Text menuLink xl={true} to='/SpecialThanks'>
 								Special&shy; Thanks

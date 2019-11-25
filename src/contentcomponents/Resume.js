@@ -199,16 +199,16 @@ const Resume = () => {
 					</ul>
 				</Experience>
 				<div className='marginTopLarge'>
-					<Emphasis>
+					<Paragraph>
 						<Link href='https://drive.google.com/file/d/1CtJxRPJxSRPlrDE0k28YKkFA165i3Cax/view'>
-							Check Out My Resume
+							Check Out My Resume.
 						</Link>
-					</Emphasis>
-					<Emphasis>
+					</Paragraph>
+					<Paragraph>
 						<Link href='https://www.linkedin.com/in/herbieduah/'>
-							Connect with me on LinkedIn
+							Connect with me on LinkedIn.
 						</Link>
-					</Emphasis>
+					</Paragraph>
 				</div>
 				<ContentCategory category='about' />
 			</ContentShow>

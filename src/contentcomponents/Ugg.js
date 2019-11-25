@@ -38,16 +38,19 @@ const workDuration = "August 2016 - March 2018";
 const workSkills = "HTML5, CSS, Javascript, Prototyping, UX Design";
 const workTools = "Atom, Adobe Creative Suite, BitBucket, Visual Studio Code";
 
-const UggPage = () => {
+const UGGPage = () => {
 	return (
 		<Fragment>
 			<ContentShow less>
 				<LessContent header={header}>
-					I worked on the Ugg brand team during my time at Deckers Brands.
+					I worked on the<span className='all-caps'>Ugg</span>brand team during
+					my time at Deckers Brands.
 				</LessContent>
 				<div className='less__container'>
 					<Image
 						mockup
+						className='paddingLRSm'
+						url={uggslidesemail}
 						src={uggUnsolicitedUggDesktop}
 						alt='A mock up of the UGG Homepage desktop'
 					/>
@@ -61,12 +64,14 @@ const UggPage = () => {
 
 				<ZigZag>
 					<Paragraph>
-						I was a User Interface Developer for the Ugg Brand team.
+						I was a User Interface Developer for the{" "}
+						<span className='all-caps'>Ugg</span> Brand team.
 					</Paragraph>
-					<FiGif url={uggslidesemail}>
+					<FiGif className='paddingLRSm' url={uggslidesemail}>
 						<Figcaption>
 							{" "}
-							Ugg email I developed with an interactive slider.
+							<span className='all-caps'>Ugg</span> email I developed with an
+							interactive slider.
 						</Figcaption>
 					</FiGif>
 				</ZigZag>
@@ -86,14 +91,15 @@ const UggPage = () => {
 					</Paragraph> */}
 					<Paragraph>
 						Using MJML, I coordinated with our design and marketing team to
-						develop a couple of UGG emails. Some are now featured&nbsp;
+						develop a couple <span className='all-caps'>Ugg</span> emails. Some
+						are now featured&nbsp;
 						<Link href='https://reallygoodemails.com/search/emails/ugg%20/'>
 							reallygoodemails.com
 						</Link>{" "}
 						and the{" "}
 						<Link href='https://mjml.io/templates'> MJML framework</Link> site.
 					</Paragraph>
-					<FiGif url={uggslidesemail}>
+					<FiGif className='paddingLRSm' url={uggslidesemail}>
 						<Figcaption>
 							The product changed colors on hover and lead right to exact the
 							product with the color when clicked.
@@ -104,50 +110,66 @@ const UggPage = () => {
 					<HeadingTwo>Landing Pages</HeadingTwo>
 					<Paragraph>
 						Throughout my time on the{" "}
-						<Link href='https://www.ugg.com/'>UGG</Link> team, I got the chance
-						to develop some unique landing pages.
+						<Link href='https://www.ugg.com/'>
+							<span className='all-caps'>Ugg</span>
+						</Link>{" "}
+						team, I got the chance to develop some unique landing pages.
 					</Paragraph>
 
-					<HeadingThree>UGG Holiday Gift Guide</HeadingThree>
-					<FiGif url={ugggiftguide}>
+					<HeadingThree>
+						<span className='all-caps'>Ugg</span> Holiday Gift Guide
+					</HeadingThree>
+					<FiGif className='paddingLRSm' url={ugggiftguide}>
 						<Figcaption>
-							UGG Holiday Gift Guide page with sparkles{" "}
-							<Emoji className='emoji' symbol='✨' label='sparkles' />
+							<span className='all-caps'>Ugg</span> Holiday Gift Guide page with
+							sparkles <Emoji className='emoji' symbol='✨' label='sparkles' />
 						</Figcaption>
 					</FiGif>
-					<HeadingThree>Ugg X Phillip Lim</HeadingThree>
-					<FiGif url={uggPhillipLim}>
+					<HeadingThree>
+						<span className='all-caps'>Ugg</span> X Phillip Lim
+					</HeadingThree>
+					<FiGif className='paddingLRSm' url={uggPhillipLim}>
 						<Figcaption>
 							Landing page for fashion designer Phillip Lim with elements fading
 							into view on scroll
 						</Figcaption>
 					</FiGif>
-					{/* <FiGif url={Philip}>
+					{/* <FiGif  className="paddingLRSm" url={Philip}>
 					<Figcaption>
 						Landing page for fashion designer Phillip Lim on mobile
 					</Figcaption>
 				</FiGif> */}
-					<HeadingThree>Ugg X Jeremy Scott</HeadingThree>
-					<FiGif url={uggJeremyScottDesktop}>
+					<HeadingThree>
+						<span className='all-caps'>Ugg</span> X Jeremy Scott
+					</HeadingThree>
+					<FiGif className='paddingLRSm' url={uggJeremyScottDesktop}>
 						<Figcaption>
 							Stylish landing page for fashion designer Jeremy Scott featuring
 							Rita Ora and Lil Yatchy
 						</Figcaption>
 					</FiGif>
-					{/* <FiGif url={JeremyScottMobile}>
+					{/* <FiGif  className="paddingLRSm" url={JeremyScottMobile}>
 					<Figcaption>Landing page for Jeremy Scott on mobile</Figcaption>
 				</FiGif> */}
 				</ZigZag>
 				<ZigZag>
-					<HeadingTwo>Ugg Homepage Redesign (Unsolicited)</HeadingTwo>
-					<Paragraph>I designed my version of Ugg homepage</Paragraph>
+					<HeadingTwo>
+						<span className='all-caps'>Ugg</span> Homepage Redesign
+						(Unsolicited)
+					</HeadingTwo>
+					<Paragraph>
+						I designed my version of <span className='all-caps'>Ugg</span>{" "}
+						homepage
+					</Paragraph>
 					<Figure
 						mockup
 						src={uggUnsolicitedUggDesktop}
 						alt='A mock up of the UGG Homepage desktop'
-						width='2000'
-						height='3203'>
-						<Figcaption>Desktop version of the Ugg homepage</Figcaption>
+						className='paddingLRSm'>
+						<Figcaption>
+							Desktop version of the <span className='all-caps'>Ugg</span>{" "}
+							homepage
+						</Figcaption>
 					</Figure>
 				</ZigZag>
 				{/* <HeadingTwo>Trudy Gillenwater</HeadingTwo>
@@ -187,7 +209,7 @@ const UggPage = () => {
 	);
 };
 
-export default UggPage;
+export default UGGPage;
 
 const workinfo = {
 	workDuration,

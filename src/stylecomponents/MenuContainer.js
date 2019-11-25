@@ -26,7 +26,7 @@ const MenuContainer = styled.aside`
 	/* margin-top: 10px !important; */
 	${hideScrollbar}
 	width: 100%;
-	/* max-width: 500px; */
+	/* max-width: 540px; */
 	height: 100%;
 	/* ${props =>
 		props.isShowingMore && props.isPortrait ? `position:absolute;` : ``}; */
@@ -190,7 +190,7 @@ const MenuContainer = styled.aside`
 		}
 		
 		&__item {
-			margin: .1rem 0 1rem;
+			margin: 0;
 			${tablet}{
 				${props => (props.isPortrait ? `display:flex; justify-content: center;` : ``)};
 				
