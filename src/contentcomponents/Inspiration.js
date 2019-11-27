@@ -42,7 +42,7 @@ const InspirationPage = () => {
 				</div>
 			</ContentShow>
 			<ContentShow containerLarge more>
-				<Header>{header}</Header>
+			<ZigZag><Header>{header}</Header></ZigZag>
 				<ZigZag>
 					<HeadingTwo>What if there was an app for you?</HeadingTwo>
 					<Paragraph>

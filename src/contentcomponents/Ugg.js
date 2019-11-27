@@ -59,8 +59,9 @@ const UGGPage = () => {
 			<ContentShow containerLarge more>
 				<ZigZag>
 					<Header>{header}</Header>
+					<WorkInfo workinfo={workinfo} />
 				</ZigZag>
-				<WorkInfo workinfo={workinfo} />
+				
 
 				<ZigZag>
 					<Paragraph>

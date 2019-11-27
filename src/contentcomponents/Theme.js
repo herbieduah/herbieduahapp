@@ -18,7 +18,7 @@ import {
 } from "../ContentHelpers";
 import { ShowIf } from "../ComponentHelpers";
 
-const header = "Theme (Beta)";
+const header = "Themes";
 
 const ThemePage = ({ contentProps }) => {
 	const { currentTheme, setTheme } = contentProps;
@@ -65,9 +65,7 @@ const ThemePage = ({ contentProps }) => {
 			</ContentShow>
 			<ContentShow containerLarge more>
 				<ZigZag>
-					<Header>{header}</Header>
-				</ZigZag>
-				<ZigZag>
+					<Header beta>{header}</Header>
 					<Paragraph>Themes give the web app a completely new look.</Paragraph>
 					<Small>I save your theme for when you come back.</Small>
 				</ZigZag>

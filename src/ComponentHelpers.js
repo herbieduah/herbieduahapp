@@ -29,7 +29,7 @@ import ContentContainer from "./stylecomponents/ContentContainer";
 import { NavLink } from "react-router-dom";
 import Modal from "./maincomponents/Modal";
 import { Tab, TabList, Tabs, TabPanel } from "react-tabs";
-import { ReactTabs, AccessibilityContainer } from "./stylecomponents/Base";
+import { ReactTabs, SliderUIContainer } from "./stylecomponents/Base";
 import SubMenu from "./maincomponents/SubMenu";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import Fade from "react-reveal/Fade";
@@ -249,22 +249,23 @@ export const FullScreenModal = () => {
 	);
 };
 
-export const AccessibilityMode = () => {
+export const SliderUIMode = () => {
 	const {
 		// setAccessible,
 		setMinimalMode,
 		setFullscreen,
+		navBarRight
 		// setVideoControls,
 		// setNavBarComplement,
 		// accessible,
-		contentWidth: cw,
-		contentHeight: ch
+		// contentWidth: cw,
+		// contentHeight: ch
 	} = useContext(globalState);
 
-	const { height: wh, width: ww } = useWindowResize();
-	const values = { ww, wh, cw, ch };
-	const isShowingMore = revealValues(values).isShowingMore;
-	const isContentPortrait = isPortrait(ww, wh);
+	// const { height: wh, width: ww } = useWindowResize();
+	// const values = { ww, wh, cw, ch };
+	// const isShowingMore = revealValues(values).isShowingMore;
+	// const isContentPortrait = isPortrait(ww, wh);
 
 	const activateAccessibilityMode = () => {
 		setMinimalMode(true);
@@ -278,25 +279,22 @@ export const AccessibilityMode = () => {
 
 	return (
 		// <ShowIf noAbsolute thisValue={isShowingMore} thatValue={false}>
-		<AccessibilityContainer
-			className='accessibility'
-			// isPortrait={isContentPortrait}
-		>
-			<ElementReveal>
-				<div className='accessibility__button-container'>
+		<SliderUIContainer className='sliderui' navBarRight={navBarRight}>
+			<div className='sliderui__button-container'>
+				<ElementReveal>
 					<Text buttontext s onClick={activateAccessibilityMode}>
-						turn off slider ui
+						disable slider ui
 					</Text>
-				</div>
-				{/* <Text
+				</ElementReveal>
+			</div>
+			{/* <Text
 					format
 					xs
 					onClick={activateAccessibilityMode}
 					className='accessibility__text'>
 					(You can de-activate in Settings)
 				</Text> */}
-			</ElementReveal>
-		</AccessibilityContainer>
+		</SliderUIContainer>
 		// </ShowIf>
 	);
 };

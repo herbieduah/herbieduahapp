@@ -99,10 +99,12 @@ const MenuContainer = styled.aside`
 	}
 
 	.menu {
-		&__accessibility {
+		&__sliderui {
 			width: 100%;
+			margin: ${navBarSize};
 			position: relative;
-			${props => (props.isShowingMore ? `height: 10%;` : `height: 100%;`)};
+			height: 100%;
+			/* ${props => (props.isShowingMore ? `height: 10%;` : `height: 100%;`)}; */
 		}
 		&__less,&__nav {
 			padding-top: ${props => (props.isPortrait ? `0` : `${navBarSize}`)};

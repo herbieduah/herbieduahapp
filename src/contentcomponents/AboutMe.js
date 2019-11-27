@@ -173,14 +173,13 @@ const AboutMePage = () => {
 					<Emphasis center>
 						I love playing video games... even though I suck.
 					</Emphasis>
-					<FiGif
+					<Gif
 						className='paddingLRLarge'
 						desc='playing video games with a disconcerned look'
 						width='720'
 						height='1280'
 						url={videosofmesoreLoser}>
-						<Figcaption>I've been told I am still fun to play with.</Figcaption>
-					</FiGif>
+					</Gif>
 				</ZigZag>
 				{/* <HeadingTwo>I love creativity</HeadingTwo>
 				<Figure

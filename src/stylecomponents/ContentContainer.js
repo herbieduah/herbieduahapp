@@ -173,6 +173,10 @@ export const ContentContainer = styled.section`
 			${props => (props.dragging ? `padding-left: 0; padding-right: 0;` : ``)};
 			padding-top: 0;
 			padding-bottom: 0;
+			${props => (props.navBarRight ? "" : "padding-left: 0")};
+			.paddingLRSm {
+				${props => (props.navBarRight ? "" : "padding-left: 0; margin-right: 1rem")};	
+			}
 			}
 			${tablet} {
 				${props => (props.isPortrait ? `margin: 0 auto;	` : ``)};
@@ -218,6 +222,9 @@ export const ContentContainer = styled.section`
 	.all-caps {
 		text-transform: uppercase;
 	}
+	.capitalize {
+		text-transform: capitalize;
+	}
 	span.alpha {
 		background: blue;
 		color: white;
@@ -250,7 +257,7 @@ export const ContentContainer = styled.section`
 				? `
 		.c-zigzag__content {
 			margin-left: 0 !important;
-			max-width: 740px;	
+			max-width: 540px;	
 		}
 		.c-zigzag {
 			padding-left: 0;
@@ -407,10 +414,15 @@ export const ContentContainer = styled.section`
 	.less-image {
 		padding: 0 20%;
 	}
+	.c-beta {
+		text-transform: uppercase;
+		display: inline-block;
+		padding-left: .5rem;
+	}
 
 	.c-disable {
 		${mainTransition};
-		opacity: 0.4;
+		opacity: 0.35;
 		pointer-events: none;
 	}
 	.c-mockup {

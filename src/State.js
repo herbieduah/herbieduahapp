@@ -41,7 +41,7 @@ export const StateProvider = ({ children }) => {
 	const [whom, setWhom] = useState("everyone");
 	const [videoControls, setVideoControls] = useState(false);
 	const [accessible, setAccessible] = useState(false);
-	const [showScrollDown, setShowScrollDown] = useState(true);
+	const [showScrollDown, setShowScrollDown] = useState(false);
 	const [downloaded, setDownloaded] = useState(false);
 
 	// currentLeftTop: "LandscapePhotography",

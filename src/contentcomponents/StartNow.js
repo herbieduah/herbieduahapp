@@ -64,8 +64,9 @@ const StartNowPage = ({ contentProps }) => {
 			<ContentShow containerLarge more>
 				<ZigZag>
 					<Header>{header}</Header>
+					<WorkInfo workinfo={workinfo} />
 				</ZigZag>
-				<WorkInfo workinfo={workinfo} />
+				
 				<ZigZag>
 					<Paragraph>
 						My first job was working directly with the Career Development

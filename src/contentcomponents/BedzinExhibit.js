@@ -64,8 +64,8 @@ const BedzinExhibitPage = () => {
 				</div>
 			</ContentShow>
 			<ContentShow containerLarge more>
-				<Header>{header}</Header>
-				<WorkInfo workinfo={workinfo} />
+				<ZigZag><Header>{header}</Header><WorkInfo workinfo={workinfo} /></ZigZag>
+				
 				<ZigZag>
 					<Paragraph>
 						For my Computer Science capstone, my group was tasked with revamping

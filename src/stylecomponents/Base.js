@@ -50,7 +50,8 @@ import {
 	fontColorOpposite,
 	buttonBackgroundHoverFocus,
 	buttonBorderActive,
-	buttonColorHoverFocus
+	buttonColorHoverFocus,
+	buttonBorderFocus
 } from "./Themes/ThemeVariables";
 import {
 	mobile,
@@ -655,7 +656,7 @@ export const ThemeCircleContainer = styled.li`
 			
 			&:hover,
 			&:focus {
-				border:1px solid ${props => props.themeValues.borderColor};
+				border:${buttonBorderFocus};
 			}
 		}
 		&__text {
@@ -996,7 +997,7 @@ export const StartUp = styled.div`
 } */
 `;
 
-export const AccessibilityContainer = styled.div`
+export const SliderUIContainer = styled.div`
 	position: absolute;
 	bottom: 0;
 	width: 100%;
@@ -1004,13 +1005,23 @@ export const AccessibilityContainer = styled.div`
 	flex-flow: row-reverse;
 	justify-content: right;
 	flex-direction: column;
-
+	
 	${paddingLRSm};
-	.accessibility {
+	
+	.sliderui {
 		&__button-container {
 			display: flex;
+			${mainTransition}
+			margin: 0 ${navBarSize};
 			flex-direction:column;
 			justify-content: right;
+			${mobile}{
+				margin: 0;
+				${props =>
+					props.navBarRight
+						? `padding-right: ${navBarSize};`
+						: `padding-left: 0;`}
+			}
 			button {
 				margin-left: auto;
 				height: ${navBarSize};
@@ -1037,6 +1048,7 @@ export const AccessibilityContainer = styled.div`
 	margin-bottom: ${navBarSize};
 	${mobile} {
 		margin-bottom: 1rem;
+		${props => (props.navBarRight ? `` : `padding-left: 0;`)}
 	}
 	${tablet}{
 		margin-bottom: 5.5rem;

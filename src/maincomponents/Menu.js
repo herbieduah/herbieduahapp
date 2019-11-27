@@ -9,7 +9,7 @@ import {
 } from "../helpers";
 import SubMenu from "./SubMenu";
 import { globalState } from "../State";
-import { MenuTabs, AccessibilityMode, ShowIf } from "../ComponentHelpers";
+import { MenuTabs, SliderUIMode, ShowIf } from "../ComponentHelpers";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { ElementReveal } from "../ContentHelpers";
 export const ContentMenu = () => {
@@ -36,20 +36,23 @@ export const ContentMenu = () => {
 					<div className='menu__nav-container'>
 						<MenuTabs defaultIndex={-1} />
 					</div>
+					{/* <div className='menu__sliderui'> */}
+
+					{/* </div> */}
 				</div>
 			</ElementReveal>
-
-			<div className='menu__accessibility'>
-				{/* <TransitionGroup>
+			<SliderUIMode />
+			{/* <div className='menu__sliderui'> */}
+			{/* <TransitionGroup>
 					{!isShowingMore ? (
 						<CSSTransition timeout={revealSecs} classNames={transitionClasses}> */}
-				<ShowIf noAnimation thisValue={isShowingMore} thatValue={false}>
-					<AccessibilityMode />
-				</ShowIf>
-				{/* </CSSTransition>
+			{/* <ShowIf noAnimation thisValue={isShowingMore} thatValue={false}> */}
+			{/* <SliderUIMode /> */}
+			{/* </ShowIf> */}
+			{/* </CSSTransition>
 					) : null}
 				</TransitionGroup> */}
-			</div>
+			{/* </div> */}
 
 			{/* <div className='animatecss-tamer'>
 				<TransitionGroup>
@@ -61,7 +64,7 @@ export const ContentMenu = () => {
 										<MenuTabs showCategory={isShowingMore} defaultIndex={-1} />
 									</div>
 								</div>
-								<AccessibilityMode />
+								<SliderUIMode />
 							</div>
 						</CSSTransition>
 					) : null}

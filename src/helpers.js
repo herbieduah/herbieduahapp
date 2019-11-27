@@ -29,7 +29,11 @@ export function useWindowResize() {
 		height
 	};
 }
-
+const utc = new Date()
+	.toJSON()
+	.slice(0, 10)
+	.replace(/-/g, ".");
+export const appVersionNumber = `1.5`;
 export function useKeyPress(targetKey) {
 	// State for keeping track of whether key is pressed
 	const [keyPressed, setKeyPressed] = useState(false);

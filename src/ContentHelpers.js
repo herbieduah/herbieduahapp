@@ -8,7 +8,8 @@ import {
 	getCurrentTransition,
 	getThemeInfo,
 	getTransitionInfo,
-	camelCaseHelper
+	camelCaseHelper,
+	appVersionNumber
 } from "./helpers";
 import Reveal from "react-reveal/Reveal";
 import Text from "./stylecomponents/Text";
@@ -29,8 +30,8 @@ export const defaultAlt = "I will be adding an alt tag to this image soon";
 export const defaultDesc = "This is a video, I will be describing it soon";
 
 //Switch to 'gif' or 'image' to pull videos and images locally
-const videoLocation = "gif";
-const imageLocation = "image";
+const videoLocation = "cloud-gif";
+const imageLocation = "cloud-image";
 
 export const ContentShow = props => {
 	const {
@@ -39,6 +40,8 @@ export const ContentShow = props => {
 		fullScreen,
 		currentTransition,
 		minimalMode
+		// showScrollDown,
+		// setShowScrollDown
 	} = useContext(globalState);
 	const { width: ww, height: wh } = useWindowResize();
 	const values = { ww, wh, cw, ch };
@@ -50,16 +53,21 @@ export const ContentShow = props => {
 	const whereToDrag = isContentPortrait ? "down" : "right";
 	const containerLarge = props.containerLarge ? "container-large" : "container";
 
-	const [showInstructions, setShowInstructions] = useState(true);
-
-	const showTheInstructions = () => {
-		if (showMore && !minimalMode) {
-			setShowInstructions(false);
-		}
-	};
-	useEffect(() => {
-		showTheInstructions();
-	});
+	// const [sshowScrollDown, setShowScrollDown] = useState(true);
+	// showScrollDown, setShowScrollDown
+	// const showTheInstructions = () => {
+	// 	if (showMore && !minimalMode) {
+	// 		setShowScrollDown(true);
+	// 	}
+	// };
+	// useEffect(() => {
+	// 	showTheInstructions();
+	// 	if (showScrollDown) {
+	// 		setTimeout(() => {
+	// 			setShowScrollDown(false);
+	// 		}, 4000);
+	// 	}
+	// });
 	if (props.less) {
 		return (
 			<TransitionGroup>
@@ -68,14 +76,9 @@ export const ContentShow = props => {
 						<aside className='less'>
 							<div className='less__wrapper'>
 								{props.children}
-								<ShowIf
-									noAnimation
-									thisValue={showInstructions}
-									thatValue={true}>
-									<Instructions className='less__drag'>
-										Drag slider {whereToDrag} then release for more&nbsp;
-									</Instructions>
-								</ShowIf>
+								<Instructions className='less__drag'>
+									Drag slider {whereToDrag} then release for more&nbsp;
+								</Instructions>
 							</div>
 						</aside>
 					</CSSTransition>
@@ -127,7 +130,9 @@ export const Header = props => {
 			<ShowIf noAnimation thisValue={!props.less} thatValue={true}>
 				<ElementReveal>
 					<header className={`content__header container ${className}`}>
-						<HeadingOne>{props.children}</HeadingOne>
+						<HeadingOne beta={props.beta} version={props.version}>
+							{props.children}
+						</HeadingOne>
 					</header>
 				</ElementReveal>
 			</ShowIf>
@@ -230,7 +235,7 @@ export const LessContent = props => {
 		<Fragment>
 			<ElementReveal>
 				<header>
-					<Text h1 xl className='paddingLRSm less__header'>
+					<Text h1 xl bold className='paddingLRSm less__header'>
 						{header}
 					</Text>
 				</header>
@@ -276,6 +281,16 @@ export const HeadingOne = props => {
 				secondary
 				className={`${className} marginBottomXLarge marginTopXLarge paddingLRSm`}>
 				{props.children}
+				<ShowIf noAnimation thisValue={props.beta} thatValue={true}>
+					<Text format s secondary light className='c-beta'>
+						Beta
+					</Text>
+				</ShowIf>
+				<ShowIf noAnimation thisValue={props.version} thatValue={true}>
+					<Text format s secondary light className='c-beta'>
+						{appVersionNumber}
+					</Text>
+				</ShowIf>
 			</Text>
 		</ElementReveal>
 	);
@@ -290,6 +305,11 @@ export const HeadingTwo = props => {
 				l
 				className={`${className} marginTopXLarge marginBottomSm paddingLRParagraph`}>
 				{props.children}
+				<ShowIf noAnimation thisValue={props.beta} thatValue={true}>
+					<Text format s secondary light className='c-beta'>
+						Beta
+					</Text>
+				</ShowIf>
 			</Text>
 		</ElementReveal>
 	);
@@ -333,6 +353,11 @@ export const HeadingThree = props => {
 				bold
 				className={`marginTopLarge marginBottomMed paddingLRParagraph ${className}`}>
 				{props.children}
+				<ShowIf noAnimation thisValue={props.beta} thatValue={true}>
+					<Text format s secondary light className='c-beta'>
+						Beta
+					</Text>
+				</ShowIf>
 			</Text>
 		</ElementReveal>
 	);
@@ -581,35 +606,33 @@ export const WorkInfo = props => {
 	const { workDuration, workSkills, workTools } = props.workinfo;
 	const { forDev } = useContext(globalState);
 	return (
-		<ZigZag>
-			<ElementReveal>
-				<ul className='c-work-info marginBottomXLarge '>
+		<ElementReveal>
+			<ul className='c-work-info marginBottomXLarge '>
+				<li>
+					<Text s format>
+						<strong>Duration</strong>
+						<br />
+						{workDuration}
+					</Text>
+				</li>
+				<ShowIf noAnimation thisValue={forDev} thatValue={true}>
 					<li>
 						<Text s format>
-							<strong>Duration</strong>
+							<strong>Skills</strong>
 							<br />
-							{workDuration}
+							{workSkills}
 						</Text>
 					</li>
-					<ShowIf noAnimation thisValue={forDev} thatValue={true}>
-						<li>
-							<Text s format>
-								<strong>Skills</strong>
-								<br />
-								{workSkills}
-							</Text>
-						</li>
-						<li>
-							<Text s format>
-								<strong>Tools</strong>
-								<br />
-								{workTools}
-							</Text>
-						</li>
-					</ShowIf>
-				</ul>
-			</ElementReveal>
-		</ZigZag>
+					<li>
+						<Text s format>
+							<strong>Tools</strong>
+							<br />
+							{workTools}
+						</Text>
+					</li>
+				</ShowIf>
+			</ul>
+		</ElementReveal>
 	);
 };
 
@@ -636,9 +659,9 @@ export const DisableSetting = props => {
 			{renderMe ? (
 				<Fragment>
 					<div className='c-disable'>{props.children}</div>
-					<Paragraph className='paddingLRSm'>
+					<Small>
 						<strong>{props.message}</strong>
-					</Paragraph>
+					</Small>
 				</Fragment>
 			) : (
 				<Fragment>{props.children}</Fragment>
@@ -651,7 +674,7 @@ export const Button = props => {
 	const className = props.className || "";
 	return (
 		<ElementReveal className='paddingLRParagraph'>
-			<Text button xs className={`${className} marginBottomSm`} {...props}>
+			<Text button s className={`${className} marginBottomSm`} {...props}>
 				{props.children}
 			</Text>
 		</ElementReveal>

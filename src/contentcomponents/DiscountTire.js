@@ -59,8 +59,10 @@ const DiscountTirePage = () => (
 			</div>
 		</ContentShow>
 		<ContentShow containerLarge more>
-			<Header>{header}</Header>
-			<WorkInfo workinfo={workinfo} />
+			<ZigZag>
+				<Header>{header}</Header>
+				<WorkInfo workinfo={workinfo} />
+			</ZigZag>
 			<ZigZag>
 				<Paragraph>
 					Discount Tire Company is the largest tire and wheel retailer in the

@@ -71,178 +71,164 @@ const Modeling = () => {
 			<ContentShow containerLarge more>
 				<ZigZag>
 					<Header>{header}</Header>
-				</ZigZag>
-				<ZigZag>
 					<Paragraph>
-						Here are some of my favorite photos of me taken by some aweomse
+						Here are some of my favorite photos of me taken by some amazing
 						photographers.
 					</Paragraph>
 				</ZigZag>
-				<ul className='c-photos'>
-					<li>
-						<Figure
-							alt='Photo of me in black and white wearing a members only jacket'
-							src={modelingBWMembersONly}>
-							<Figcaption>
-								Taken by{" "}
-								<Link href='https://www.instagram.com/vmnphoto/'>
-									@vmnphoto
-								</Link>
-							</Figcaption>
-						</Figure>
-					</li>
-					<li>
-						<Figure
-							alt='Photo of me in a members only jacket looking very stressed'
-							src={modelingNaboursFavorite}>
-							<Figcaption>
-								Taken by{" "}
-								<Link href='https://www.instagram.com/vmnphoto/'>
-									@vmnphoto
-								</Link>
-							</Figcaption>
-						</Figure>
-					</li>
-					{/* <li><Figure alt="Photo of me" src={modelingJacketHoldNaboursDown}>
+				<ZigZag>
+					<Figure
+						alt='Photo of me in black and white wearing a members only jacket'
+						src={modelingBWMembersONly}>
+						<Figcaption>
+							Taken by{" "}
+							<Link href='https://www.instagram.com/vmnphoto/'>@vmnphoto</Link>
+						</Figcaption>
+					</Figure>
+				</ZigZag>
+				<ZigZag>
+					<Figure
+						alt='Photo of me in a members only jacket looking very stressed'
+						src={modelingNaboursFavorite}>
+						<Figcaption>
+							Taken by{" "}
+							<Link href='https://www.instagram.com/vmnphoto/'>@vmnphoto</Link>
+						</Figcaption>
+					</Figure>
+				</ZigZag>
+				{/* <ZigZag><Figure alt="Photo of me" src={modelingJacketHoldNaboursDown}>
 					<Figcaption>
 						Taken by{" "}
 						<Link href='https://www.instagram.com/vmnphoto/'>@vmnphoto</Link>
 					</Figcaption>
-				</Figure></li> */}
-					<li>
-						<Figure
-							alt='Photo of me in shorts and a short sleeve'
-							src={modelingUmbertoScienceMuseumHandsFolded}>
-							<Figcaption>
-								Taken by{" "}
-								<Link href='https://www.instagram.com/umberto.luk/'>
-									@umberto.luk
-								</Link>
-							</Figcaption>
-						</Figure>
-					</li>
-					{/* <li><Figure alt="Photo of me" src={modelingUmbertoScienceMuseum}>
+				</Figure></ZigZag> */}
+				<ZigZag>
+					<Figure
+						alt='Photo of me in shorts and a short sleeve'
+						src={modelingUmbertoScienceMuseumHandsFolded}>
+						<Figcaption>
+							Taken by{" "}
+							<Link href='https://www.instagram.com/umberto.luk/'>
+								@umberto.luk
+							</Link>
+						</Figcaption>
+					</Figure>
+				</ZigZag>
+				{/* <ZigZag><Figure alt="Photo of me" src={modelingUmbertoScienceMuseum}>
 					<Figcaption>
 						Taken by{" "}
 						<Link href='https://www.instagram.com/umberto.luk/'>
 							@umberto.luk
 						</Link>
 					</Figcaption>
-				</Figure></li> */}
-					{/* <li><Figure alt="Photo of me" src={herbieJacketNabours1480x2219}>
+				</Figure></ZigZag> */}
+				{/* <ZigZag><Figure alt="Photo of me" src={herbieJacketNabours1480x2219}>
 					<Figcaption>
 						Taken by{" "}
 						<Link href='https://www.instagram.com/vmnphoto/'>@vmnphoto</Link>
 					</Figcaption>
-				</Figure></li> */}
-					<li>
-						<Figure
-							alt='Photo of me in snow'
-							src={modelingSnowInFlagstaffConner}>
-							<Figcaption>
-								Taken by{" "}
-								<Link href='https://www.instagram.com/yourbuddyconner/'>
-									@yourbuddyconner
-								</Link>
-							</Figcaption>
-						</Figure>
-					</li>
-					<li>
-						<Figure
-							alt='Photo of me with my hands folded'
-							src={modelingSnowInFlagstaffConnerArmsFold}>
-							<Figcaption>
-								Taken by{" "}
-								<Link href='https://www.instagram.com/yourbuddyconner/'>
-									@yourbuddyconner
-								</Link>
-							</Figcaption>
-						</Figure>
-					</li>
-					<li>
-						<Figure
-							alt='Photo of me in between some palm trees'
-							src={modelingRobCaliLandscape}>
-							<Figcaption>
-								Taken by{" "}
-								<Link href='https://www.instagram.com/wavyoceans/'>
-									@wavyoceans
-								</Link>
-							</Figcaption>
-						</Figure>
-					</li>
-					<li>
-						<Figure alt='Photo of me on some stairs' src={modelingByNae}>
-							<Figcaption>
-								Taken by{" "}
-								<Link href='https://www.instagram.com/nae_babe/'>
-									@nae_babe
-								</Link>
-							</Figcaption>
-						</Figure>
-					</li>
-					<li>
-						<Figure
-							alt='Photo of me walking down some stairs'
-							src={modelingDyesaDTPhoenix}>
-							<Figcaption>
-								Taken by{" "}
-								<Link href='https://www.instagram.com/dyesv.photography/'>
-									@dyesv.photography
-								</Link>
-							</Figcaption>
-						</Figure>
-					</li>
+				</Figure></ZigZag> */}
+				<ZigZag>
+					<Figure alt='Photo of me in snow' src={modelingSnowInFlagstaffConner}>
+						<Figcaption>
+							Taken by{" "}
+							<Link href='https://www.instagram.com/yourbuddyconner/'>
+								@yourbuddyconner
+							</Link>
+						</Figcaption>
+					</Figure>
+				</ZigZag>
+				<ZigZag>
+					<Figure
+						alt='Photo of me with my hands folded'
+						src={modelingSnowInFlagstaffConnerArmsFold}>
+						<Figcaption>
+							Taken by{" "}
+							<Link href='https://www.instagram.com/yourbuddyconner/'>
+								@yourbuddyconner
+							</Link>
+						</Figcaption>
+					</Figure>
+				</ZigZag>
+				<ZigZag>
+					<Figure
+						alt='Photo of me in between some palm trees'
+						src={modelingRobCaliLandscape}>
+						<Figcaption>
+							Taken by{" "}
+							<Link href='https://www.instagram.com/wavyoceans/'>
+								@wavyoceans
+							</Link>
+						</Figcaption>
+					</Figure>
+				</ZigZag>
+				<ZigZag>
+					<Figure alt='Photo of me on some stairs' src={modelingByNae}>
+						<Figcaption>
+							Taken by{" "}
+							<Link href='https://www.instagram.com/nae_babe/'>@nae_babe</Link>
+						</Figcaption>
+					</Figure>
+				</ZigZag>
+				<ZigZag>
+					<Figure
+						alt='Photo of me walking down some stairs'
+						src={modelingDyesaDTPhoenix}>
+						<Figcaption>
+							Taken by{" "}
+							<Link href='https://www.instagram.com/dyesv.photography/'>
+								@dyesv.photography
+							</Link>
+						</Figcaption>
+					</Figure>
+				</ZigZag>
 
-					<li>
-						<Figure alt='Photo of me in a beanie' src={modelingAndyDauterman}>
-							<Figcaption>
-								Taken by{" "}
-								<Link href='https://www.instagram.com/dauterman_photography/'>
-									@dauterman_photography
-								</Link>
-							</Figcaption>
-						</Figure>
-					</li>
-					<li>
-						<Figure
-							alt='Photo of me in a bow tie'
-							src={modelingceiphersClothing}>
-							<Figcaption>
-								Taken by{" "}
-								<Link href='https://www.instagram.com/rachel_olweya/'>
-									@rachel_olweya
-								</Link>{" "}
-								for{" "}
-								<Link href='https://www.instagram.com/ceiphers_clothing/'>
-									@ceiphers_clothing
-								</Link>
-							</Figcaption>
-						</Figure>
-					</li>
-					<li>
-						<Figure
-							alt='Photo of me in downtown flagstaff'
-							src={modelingBethanyBaldwinDTFlagstaff}>
-							<Figcaption>
-								Taken by{" "}
-								<Link href='https://www.instagram.com/beelieve07/'>
-									@beelieve07
-								</Link>
-							</Figcaption>
-						</Figure>
-					</li>
-					<li>
-						<Figure
-							alt='Photo of me in African clothing with my arms crossed'
-							src={modelingBrianaAfrican}>
-							<Figcaption>
-								I couldn't find her on instagram, but her name is Briana. I'll
-								update once I find her.
-							</Figcaption>
-						</Figure>
-					</li>
-				</ul>
+				<ZigZag>
+					<Figure alt='Photo of me in a beanie' src={modelingAndyDauterman}>
+						<Figcaption>
+							Taken by{" "}
+							<Link href='https://www.instagram.com/dauterman_photography/'>
+								@dauterman_photography
+							</Link>
+						</Figcaption>
+					</Figure>
+				</ZigZag>
+				<ZigZag>
+					<Figure alt='Photo of me in a bow tie' src={modelingceiphersClothing}>
+						<Figcaption>
+							Taken by{" "}
+							<Link href='https://www.instagram.com/rachel_olweya/'>
+								@rachel_olweya
+							</Link>{" "}
+							for{" "}
+							<Link href='https://www.instagram.com/ceiphers_clothing/'>
+								@ceiphers_clothing
+							</Link>
+						</Figcaption>
+					</Figure>
+				</ZigZag>
+				<ZigZag>
+					<Figure
+						alt='Photo of me in downtown flagstaff'
+						src={modelingBethanyBaldwinDTFlagstaff}>
+						<Figcaption>
+							Taken by{" "}
+							<Link href='https://www.instagram.com/beelieve07/'>
+								@beelieve07
+							</Link>
+						</Figcaption>
+					</Figure>
+				</ZigZag>
+				<ZigZag>
+					<Figure
+						alt='Photo of me in African clothing with my arms crossed'
+						src={modelingBrianaAfrican}>
+						<Figcaption>
+							I couldn't find her on instagram, but her name is Briana. I'll
+							update once I find her.
+						</Figcaption>
+					</Figure>
+				</ZigZag>
 				{/* <Figcaption>
 						Taken by{" "}
 						<Link href='https://www.instagram.com/wavyoceans/'>

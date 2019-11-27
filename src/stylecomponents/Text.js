@@ -67,9 +67,9 @@ const baseStyle = css`
 			if (props.xs) return "0.75rem";
 			if (props.s) return ".8rem";
 			if (props.m) return "1.05rem";
-			if (props.l) return "1.45rem";
-			if (props.large) return "1.45rem";
-			if (props.xl) return "1.65rem";
+			if (props.l) return "1.35rem";
+			if (props.large) return "1.35rem";
+			if (props.xl) return "1.55rem";
 			if (props.xxl) return "2rem";
 			return "1rem";
 		}};
@@ -205,7 +205,7 @@ const MenuLink = styled(NavLink)`
 	background: none;
 	color: ${navBarButtonColor};
 	font-family: ${appfontFamilySecondary};
-	letter-spacing: .5px;
+	letter-spacing: 1px;
 	border-bottom: 0;
 	display: inline-block;
 	transform: scale(1);

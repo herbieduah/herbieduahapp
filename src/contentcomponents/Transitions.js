@@ -22,7 +22,7 @@ import { Tab, TabList, TabPanel } from "react-tabs";
 import Text from "../stylecomponents/Text";
 // import Emoji from "a11y-react-emoji";
 
-const header = "Animations (Beta)";
+const header = "Animations";
 
 const TransitionsPage = () => {
 	return (
@@ -43,14 +43,15 @@ const TransitionsPage = () => {
 			<ContentShow containerLarge more>
 				{/* normal crazy ridiculous */}
 				<ZigZag>
-					<Header>{header}</Header>
-				</ZigZag>
-				<ZigZag>
+					<Header beta>{header}</Header>
 					<Paragraph>
 						Animations bring the elements of this web app to life. I added an
 						extensive collection of random animations for you to choose how you
 						want to bring this web app to life.
 					</Paragraph>
+					<Small className='marginTopMed'>
+						Refreshing web app resets animation to default.
+					</Small>
 				</ZigZag>
 
 				<ZigZag>

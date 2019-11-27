@@ -34,9 +34,11 @@ import {
 	minSliderSize,
 	defaultPaneSize,
 	isPortrait,
-	useKeyPress
+	useKeyPress,
+	appVersionNumber
 } from "./helpers";
-console.log(React.version);
+console.log(`React Version: ${React.version}`);
+console.log(`HerbieDuah.app: ${appVersionNumber}`);
 export const App = () => {
 	const {
 		switchSides,
@@ -187,7 +189,9 @@ export const App = () => {
 				dragging={dragging}
 				currentTheme={currentTheme}
 				showOutline={showOutline}>
-				{/* <AppStartUp /> */}
+				<ShowIf noAnimation thisValue={downloaded} thatValue={true}>
+					<AppStartUp />
+				</ShowIf>
 				<ShowIf noAnimation thisValue={currentTheme} thatValue={"matrix"}>
 					<Matrix fullscreen={true} isPortrait={isPortrait(ww, wh)} />
 				</ShowIf>

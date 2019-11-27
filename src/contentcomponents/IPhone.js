@@ -67,104 +67,97 @@ const iPhonePage = () => {
 			<ContentShow containerLarge more>
 				<ZigZag>
 					<Header>{header}</Header>
-				</ZigZag>
-				<ZigZag>
 					<Paragraph>
 						Here are some of my favorite photos I've shot on my iPhone.
 					</Paragraph>
 				</ZigZag>
-				<ul className='c-photos'>
-					<li>
-						<Image
-							alt='picture of a beach in Santa Monica California'
-							src={iphonesantaMonicaBeach}
-						/>
-					</li>
-					<li>
-						<Image
-							alt='picture of kid jumping up'
-							src={iphoneDavidBestIphonePic}
-						/>
-					</li>
-					<li>
-						<Image alt='picture of my Jeep in snow' src={iphonejeepSnow} />
-					</li>
-					<li>
-						<Image
-							alt='picture of a sunset near a ski lift'
-							src={iphonehumphreysSkiSunset}
-						/>
-					</li>
-					<li>
-						<Image
-							alt='picture of of the Grand Canyon in black and white'
-							src={iphonegrandcanyonBlackandWhite}
-						/>
-					</li>
-					<li>
-						<Image
-							alt='picture of a sunset in Mexico'
-							src={iphonemexicoSunset}
-						/>
-					</li>
-					<li>
-						<Image
-							alt='picture of girl infront of a blue sky '
-							src={iphonenaebabe}
-						/>
-					</li>
-					<li>
-						<Image alt='picture of Dome in snow' src={iphonenauDome} />
-					</li>
-					<li>
-						<Image
-							alt='picture of a jeep on a picturesque landscape'
-							src={iphonelockettJeepLife}
-						/>
-					</li>
-					<li>
-						<Image alt='picture of guy in sunglasses' src={iphonemelDaddy} />
-					</li>
-					<li>
-						<Image
-							alt='picture of best friends surrounded their college graduate friend'
-							src={iphonegradAunty}
-						/>
-					</li>
-					<li>
-						<Image
-							alt='picture of colorful trees '
-							src={iphonetreesbyEdgeofTheWorld}
-						/>
-					</li>
-					<li>
-						<Image
-							alt='picture of a jeep infront of a gloomy sky '
-							src={iphonegloomy}
-						/>
-					</li>
-					<li>
-						<Image
-							alt='picture of dark cloudy city infront of a train station '
-							src={iphoneflagstaffRailroad}
-						/>
-					</li>
-					<li>
-						<Image
-							alt='picture of some pretty colors  in the sky'
-							src={iphoneflagstaffPrettyColors}
-						/>
-					</li>
-					<li>
-						<Image
-							alt='picture of a snowy neighborhood with pretty skies '
-							src={iphoneflagstaffColorfulHouses}
-						/>
-					</li>
-					<li>
-						<Image alt='picture of sunset' src={iphoneafterDCTrip} />
-					</li>
-				</ul>
+				<ZigZag>
+					<Image
+						alt='picture of a beach in Santa Monica California'
+						src={iphonesantaMonicaBeach}
+					/>
+				</ZigZag>
+				<ZigZag>
+					<Image
+						alt='picture of kid jumping up'
+						src={iphoneDavidBestIphonePic}
+					/>
+				</ZigZag>
+				<ZigZag>
+					<Image alt='picture of my Jeep in snow' src={iphonejeepSnow} />
+				</ZigZag>
+				<ZigZag>
+					<Image
+						alt='picture of a sunset near a ski lift'
+						src={iphonehumphreysSkiSunset}
+					/>
+				</ZigZag>
+				<ZigZag>
+					<Image
+						alt='picture of of the Grand Canyon in black and white'
+						src={iphonegrandcanyonBlackandWhite}
+					/>
+				</ZigZag>
+				<ZigZag>
+					<Image alt='picture of a sunset in Mexico' src={iphonemexicoSunset} />
+				</ZigZag>
+				<ZigZag>
+					<Image
+						alt='picture of girl infront of a blue sky '
+						src={iphonenaebabe}
+					/>
+				</ZigZag>
+				<ZigZag>
+					<Image alt='picture of Dome in snow' src={iphonenauDome} />
+				</ZigZag>
+				<ZigZag>
+					<Image
+						alt='picture of a jeep on a picturesque landscape'
+						src={iphonelockettJeepLife}
+					/>
+				</ZigZag>
+				<ZigZag>
+					<Image alt='picture of guy in sunglasses' src={iphonemelDaddy} />
+				</ZigZag>
+				<ZigZag>
+					<Image
+						alt='picture of best friends surrounded their college graduate friend'
+						src={iphonegradAunty}
+					/>
+				</ZigZag>
+				<ZigZag>
+					<Image
+						alt='picture of colorful trees '
+						src={iphonetreesbyEdgeofTheWorld}
+					/>
+				</ZigZag>
+				<ZigZag>
+					<Image
+						alt='picture of a jeep infront of a gloomy sky '
+						src={iphonegloomy}
+					/>
+				</ZigZag>
+				<ZigZag>
+					<Image
+						alt='picture of dark cloudy city infront of a train station '
+						src={iphoneflagstaffRailroad}
+					/>
+				</ZigZag>
+				<ZigZag>
+					<Image
+						alt='picture of some pretty colors  in the sky'
+						src={iphoneflagstaffPrettyColors}
+					/>
+				</ZigZag>
+				<ZigZag>
+					<Image
+						alt='picture of a snowy neighborhood with pretty skies '
+						src={iphoneflagstaffColorfulHouses}
+					/>
+				</ZigZag>
+				<ZigZag>
+					<Image alt='picture of sunset' src={iphoneafterDCTrip} />
+				</ZigZag>
 				<ContentCategory category='photography' className='container' />
 			</ContentShow>
 		</Fragment>

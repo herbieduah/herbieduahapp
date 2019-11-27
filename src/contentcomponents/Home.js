@@ -12,7 +12,8 @@ import {
 	ContentCategory,
 	Figure,
 	Figcaption,
-	Gif,
+	Small,
+	// Gif,
 	Header,
 	// Flex,
 	ContentShow,
@@ -82,7 +83,11 @@ const HomePage = ({ contentProps }) => {
 			</ContentShow>
 			<ContentShow containerLarge more>
 				<ZigZag>
-					<Header>{header}</Header>
+					<Header version>{header}</Header>
+					<Small>
+						Everyone is going to have their own app in the future, so I made my
+						own.
+					</Small>
 				</ZigZag>
 
 				{/* <ZigZag> */}
@@ -131,12 +136,14 @@ const HomePage = ({ contentProps }) => {
 				<ZigZag>
 					<Emphasis className='paddingLRParagraph'>
 						{/* Hey there */}
-						<span>
+						<span className='capitalize '>
 							{forYouHelper(forYou)
-								? forYouHelper(forYou)
+								? `Hey ${forYouHelper(forYou)}`
 								: // <Emoji className='emoji' symbol='😄' label='smile' />
-								  "Hi, I'm Herbie."}
+								  "Hello, I'm Herbie"}
 						</span>
+						&nbsp;
+						<Emoji className='emoji' symbol='😄' label='smile' />
 					</Emphasis>
 					{/* <div className='marginTopLarge'>
 						<Emphasis className='paddingLRMed' center>
@@ -181,7 +188,7 @@ const HomePage = ({ contentProps }) => {
 						</div>
 						<Paragraph className='paddingLRParagraph'>
 							I envision every user having a unique experience with your app.
-							This vision inspired me to craft my portfolio as web app that
+							This vision inspired me to craft my portfolio as a web app that
 							enables you to customize your experience{" "}
 							<Emoji className='emoji' symbol='😉' label='wink' />
 						</Paragraph>

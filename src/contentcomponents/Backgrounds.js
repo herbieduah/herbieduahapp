@@ -34,13 +34,14 @@ const BackgroundsPage = ({ contentProps }) => {
 			<ContentShow containerLarge more>
 				<ZigZag>
 					<Header>{header}</Header>
-				</ZigZag>
-				<ZigZag>
 					<Paragraph>
 						I have chosen an extensive collection of colors, gradients, and
 						patterns you can select to change the look of this web app in hopes
 						that you will find one that you'd like.
 					</Paragraph>
+					<Small className='marginTopMed'>
+						I save your background for when you come back.
+					</Small>
 				</ZigZag>
 				<ZigZag>
 					<Small className='marginTopMed'>

@@ -123,9 +123,6 @@ const SettingsPage = ({ contentProps }) => {
 			<ContentShow containerLarge more>
 				<ZigZag>
 					<Header>{header}</Header>
-				</ZigZag>
-
-				<ZigZag>
 					<Paragraph>
 						I want to make sure you have the best experience using my web app,
 						so I created settings that enable you to change certain aspects of
@@ -136,12 +133,12 @@ const SettingsPage = ({ contentProps }) => {
 					</Small>
 				</ZigZag>
 				<ZigZag>
-					<HeadingTwo>Slider UI</HeadingTwo>
+					<HeadingTwo beta>Slider UI</HeadingTwo>
 					<ShowIf noAnimation thisValue={minimalMode} thatValue={true}>
 						<Paragraph>
 							I had a different User Interface in mind for my web app. I ended
-							make it a setting because I was worried it may not have the best
-							user experience.
+							up making it a setting because it's I was worried it was too
+							different.
 						</Paragraph>
 					</ShowIf>
 					<ShowIf noAnimation thisValue={minimalMode} thatValue={false}>
@@ -168,13 +165,13 @@ const SettingsPage = ({ contentProps }) => {
 						These settings make certain parts of the web app more easier to
 						experience.
 					</Paragraph>
-					<HeadingThree>Accessibility Mode (Beta)</HeadingThree>
+					<HeadingThree beta>Accessibility Mode</HeadingThree>
 					<ShowIf noAnimation thisValue={accessible} thatValue={false}>
 						<Paragraph>Accessibility Mode changes these settings:</Paragraph>
 						<UL className='marginBottomMed'>
-							<LI>Adds Background color to Navigation Bar</LI>
-							<LI>Turns off the different look and feel </LI>
-							<LI>Adds controls to video players</LI>
+							<LI>Adds Background color to Navigation Bar.</LI>
+							<LI>Turns off Slider UI.</LI>
+							<LI>Adds controls to video players.</LI>
 						</UL>
 						<Paragraph>
 							It also adds a scrollbar to browsers that allow scrollbars.
@@ -192,9 +189,9 @@ const SettingsPage = ({ contentProps }) => {
 						</Paragraph>
 						<Paragraph>Accessibility Mode changes these settings:</Paragraph>
 						<UL>
-							<LI>Adds Background color to navigation bar</LI>
-							<LI>Turns off the different look and feel </LI>
-							<LI>Adds controls to video players</LI>
+							<LI>Adds Background color to navigation bar.</LI>
+							<LI>Turns off the different look and feel.</LI>
+							<LI>Adds controls to video players.</LI>
 						</UL>
 						<Paragraph>
 							It also adds a scrollbar to browsers that allow scrollbars.
@@ -267,7 +264,8 @@ const SettingsPage = ({ contentProps }) => {
 				<ZigZag>
 					<HeadingTwo>Tone</HeadingTwo>
 					<Paragraph>
-						Tones pertain to certain wordings on different areas of the web app.
+						Tones pertain to specific wordings on different areas of the web
+						app.
 					</Paragraph>
 					<HeadingThree>Technical Tone</HeadingThree>
 					<ShowIf noAnimation thisValue={forDev} thatValue={false}>
