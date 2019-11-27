@@ -81,7 +81,7 @@ export const themes = [
 	{
 		name: "black",
 		properties: {
-			...themeColorMaker("000000")
+			...themeColorMaker("111111")
 		},
 		type: "color",
 		text: "Dark Theme",

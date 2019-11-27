@@ -47,7 +47,7 @@ const BackgroundsPage = ({ contentProps }) => {
 					<Small className='marginTopMed'>
 						By default, the Light Theme and Dark Theme backgrounds change
 						automatically depending on your device dark mode settings or the
-						time you are accessing this web app.
+						time you are accessing the web app.
 					</Small>
 					{/* <Paragraph>
 					The border around the circle is the font color, so if a circle doesn't
