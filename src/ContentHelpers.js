@@ -33,6 +33,89 @@ export const defaultDesc = "This is a video, I will be describing it soon";
 const videoLocation = "gif";
 const imageLocation = "image";
 
+// export const ContentShow = props => {
+// 	const {
+// 		contentWidth: cw,
+// 		contentHeight: ch,
+// 		fullScreen,
+// 		currentTransition,
+// 		minimalMode
+// 		// showScrollDown,
+// 		// setShowScrollDown
+// 	} = useContext(globalState);
+// 	const { width: ww, height: wh } = useWindowResize();
+// 	const values = { ww, wh, cw, ch };
+// 	const isShowingMore = revealValues(values).isShowingMore;
+// 	const isContentPortrait = isPortrait(ww, wh);
+// 	const showMore = fullScreen ? true : isShowingMore;
+// 	const showLess = fullScreen ? false : !isShowingMore;
+// 	const transitionClasses = getCurrentTransition(currentTransition);
+// 	const whereToDrag = isContentPortrait ? "down" : "right";
+// 	const containerLarge = props.containerLarge ? "container-large" : "container";
+
+// 	const [sshowScrollDown, setShowScrollDown] = useState(true);
+// 	showScrollDown, setShowScrollDown
+// 	const showTheInstructions = () => {
+// 		if (showMore && !minimalMode) {
+// 			setShowScrollDown(true);
+// 		}
+// 	};
+// 	useEffect(() => {
+// 		showTheInstructions();
+// 		if (showScrollDown) {
+// 			setTimeout(() => {
+// 				setShowScrollDown(false);
+// 			}, 4000);
+// 		}
+// 	});
+// 	if (props.less) {
+// 		return (
+// 			<TransitionGroup>
+// 				{showLess ? (
+// 					<CSSTransition timeout={revealSecs} classNames={transitionClasses}>
+// 						<aside className='less'>
+// 							<div className='less__wrapper'>
+// 								{props.children}
+// 								<Instructions className='less__drag'>
+// 									Drag slider {whereToDrag} then release for more&nbsp;
+// 								</Instructions>
+// 							</div>
+// 						</aside>
+// 					</CSSTransition>
+// 				) : null}
+// 			</TransitionGroup>
+// 		);
+// 	}
+// 	if (props.more) {
+// 		return (
+// 			<TransitionGroup>
+// 				{showMore ? (
+// 					<CSSTransition timeout={revealSecs} classNames={transitionClasses}>
+// 						<article className={`${containerLarge} more`}>
+// 							<ScrollDownIndicator />
+// 							<ShowIf
+// 								noAbsolute
+// 								thisValue={fullScreen && !minimalMode}
+// 								thatValue={true}>
+// 								<Instructions className='marginTopLarge justify-center text-center'>
+// 									scroll to bottom for menu
+// 								</Instructions>
+// 							</ShowIf>
+// 							{props.children}
+// 							{/* <ShowIf noAnimation thisValue={fullScreen} thatValue={false}>
+// 								<Instructions>
+// 									Continue to navigate {whereToDrag} for more.&nbsp;
+// 								</Instructions>
+// 							</ShowIf> */}
+// 							<div className='offset' />
+// 						</article>
+// 					</CSSTransition>
+// 				) : null}
+// 			</TransitionGroup>
+// 		);
+// 	}
+// };
+
 export const ContentShow = props => {
 	const {
 		contentWidth: cw,
@@ -69,48 +152,31 @@ export const ContentShow = props => {
 	// 	}
 	// });
 	if (props.less) {
-		return (
-			<TransitionGroup>
-				{showLess ? (
-					<CSSTransition timeout={revealSecs} classNames={transitionClasses}>
-						<aside className='less'>
-							<div className='less__wrapper'>
-								{props.children}
-								<Instructions className='less__drag'>
-									Drag slider {whereToDrag} then release for more&nbsp;
-								</Instructions>
-							</div>
-						</aside>
-					</CSSTransition>
-				) : null}
-			</TransitionGroup>
-		);
+		return null;
 	}
 	if (props.more) {
 		return (
 			<TransitionGroup>
-				{showMore ? (
-					<CSSTransition timeout={revealSecs} classNames={transitionClasses}>
-						<article className={`${containerLarge} more`}>
-							<ScrollDownIndicator />
-							<ShowIf
-								noAbsolute
-								thisValue={fullScreen && !minimalMode}
-								thatValue={true}>
-								<Instructions className='marginTopLarge justify-center text-center'>
-									scroll to bottom for menu
-								</Instructions>
-							</ShowIf>
-							{props.children}
-							{/* <ShowIf noAnimation thisValue={fullScreen} thatValue={false}>
+				<CSSTransition timeout={revealSecs} classNames={transitionClasses}>
+					<article className={`${containerLarge} more`}>
+						<ScrollDownIndicator />
+						<ShowIf
+							noAbsolute
+							thisValue={fullScreen && !minimalMode}
+							thatValue={true}>
+							<Instructions className='marginTopLarge justify-center text-center'>
+								scroll to bottom for menu
+							</Instructions>
+						</ShowIf>
+						{props.children}
+						{/* <ShowIf noAnimation thisValue={fullScreen} thatValue={false}>
 								<Instructions>
 									Continue to navigate {whereToDrag} for more.&nbsp;
 								</Instructions>
 							</ShowIf> */}
-							<div className='offset' />
-						</article>
-					</CSSTransition>
-				) : null}
+						<div className='offset' />
+					</article>
+				</CSSTransition>
 			</TransitionGroup>
 		);
 	}

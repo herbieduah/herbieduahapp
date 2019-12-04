@@ -29,10 +29,10 @@ export function useWindowResize() {
 		height
 	};
 }
-const utc = new Date()
-	.toJSON()
-	.slice(0, 10)
-	.replace(/-/g, ".");
+// const utc = new Date()
+// 	.toJSON()
+// 	.slice(0, 10)
+// 	.replace(/-/g, ".");
 export const appVersionNumber = `1.5`;
 export function useKeyPress(targetKey) {
 	// State for keeping track of whether key is pressed
@@ -112,7 +112,10 @@ export function minSliderSize(width, height) {
 	let minSize, maxSize;
 	isPortrait(width, height)
 		? (minSize = height * sliderMinSizeMobile)
-		: (minSize = width * sliderMinSize);
+		: (minSize = 455);
+	// isPortrait(width, height)
+	// ? (minSize = height * sliderMinSizeMobile)
+	// : (minSize = width * sliderMinSize);
 	isPortrait(width, height)
 		? (maxSize = height - minSize)
 		: (maxSize = width - minSize);

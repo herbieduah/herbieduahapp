@@ -617,7 +617,7 @@ export const ThemeCircleContainer = styled.li`
 	flex-direction: column;
 	/* margin: 0.5rem; */
 	justify-content: center;
-	width: 33%;
+	width: 33.3333333%;
 	cursor: pointer;
 	
 	.themeCircle {

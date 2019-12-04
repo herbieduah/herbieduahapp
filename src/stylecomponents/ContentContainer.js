@@ -39,7 +39,8 @@ import {
 	borderThin,
 	fontColor,
 	colorSlightOpacity,
-	colorLight
+	colorLight,
+	bgColor
 } from "./Themes/ThemeVariables";
 
 export const ContentContainer = styled.section`
@@ -191,18 +192,20 @@ export const ContentContainer = styled.section`
 	}
 
 	&::-webkit-scrollbar-track {
-		background-color:${colorSlightOpacity};
+		
+		background-color:${bgColor};
+		border: ${borderThin};
 	}
 
 	&::-webkit-scrollbar {
-		width: 10px;
+		width: 12px;
 		${mobile}{
 			width: 5px;
 		}
 	}
 
 	&::-webkit-scrollbar-thumb {
-		background-color:${fontColor};
+		background-color:${colorSlightOpacity};
 	}
 	${props => (props.minimalMode ? `` : hideScrollbar)};
 
@@ -251,7 +254,8 @@ export const ContentContainer = styled.section`
 	.container-large {
 		width: 100%;
 		${props => (props.fullScreen ? `margin: 0 auto` : ``)};
-		max-width: ${props => (props.fullScreen ? `${containerLargePx}` : `740px`)};
+		max-width:${containerLargePx} 
+		/* ${props => (props.fullScreen ? `${containerLargePx}` : `740px`)}; */
 		${props =>
 			!props.fullScreen
 				? `
@@ -566,7 +570,6 @@ export const ContentContainer = styled.section`
 
 	.c-zigzag {
 		${marginTopSm}
-		${marginBottomMed}
 		display:flex;
 		flex-direction: column;
 		${props =>
