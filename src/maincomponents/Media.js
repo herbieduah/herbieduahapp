@@ -2,7 +2,7 @@ import React, { Fragment, useContext } from "react";
 import ReactSVG from "react-svg";
 import ReactPlayer from "react-player";
 import { globalState } from "../State";
-import { Image as CloudImage, Video } from "cloudinary-react";
+import { Image as CloudImage, Video, Transformation } from "cloudinary-react";
 import { isMobileOnly } from "react-device-detect";
 // import ImageLoader from "./ImageLoader";
 // import {
@@ -12,7 +12,8 @@ import { isMobileOnly } from "react-device-detect";
 // import Img from "react-image";
 import VisibilitySensor from "react-visibility-sensor";
 // import "react-lazy-load-image-component/src/effects/blur.css";
-const mediaWidth = isMobileOnly ? "400" : "740";
+// const mediaWidth = isMobileOnly ? "400" : "740";
+const mediaWidth = "500";
 const lazyLoadOffset = isMobileOnly ? 400 : 1000;
 // const mediaSize = isMobileOnly ? 1 : 0;
 const LazyLoadWrapper = props => {
@@ -67,7 +68,6 @@ const Media = props => {
 						cloudName='dwccyjn5e'
 						publicId={`herbieduahapp/${props.url[0]}`}
 						controls={videoControls}
-						width='740'
 						preload='auto'
 						autoPlay
 						muted
@@ -75,7 +75,9 @@ const Media = props => {
 						loop
 						aria-describedby={props.desc}
 						className={props.className || ""}
-						inline='true'></Video>
+						inline='true'>
+						<Transformation width='540' crop='scale' />
+					</Video>
 				</LazyLoadWrapper>
 			);
 		case "video":
@@ -104,16 +106,17 @@ const Media = props => {
 			);
 		case "cloud-image":
 			return (
-				// <LazyLoadWrapper>
-				<CloudImage
-					cloudName='dwccyjn5e'
-					publicId={`images/${props.src[2]}`}
-					crop='scale'
-					dpr='2.0'
-					alt={props.alt}
-					className={props.className || ""}
-				/>
-				// </LazyLoadWrapper>
+				<LazyLoadWrapper>
+					<CloudImage
+						cloudName='dwccyjn5e'
+						publicId={`images/${props.src[2]}`}
+						crop='scale'
+						dpr='2.0'
+						alt={props.alt}
+						className={props.className || ""}>
+						<Transformation width='540' crop='scale' />
+					</CloudImage>
+				</LazyLoadWrapper>
 			);
 		default:
 			return null;

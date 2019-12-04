@@ -85,6 +85,8 @@ const SettingsPage = ({ contentProps }) => {
 		minimalMode ? setMinimalMode(false) : setMinimalMode(true);
 		if (!fullScreen) {
 			fullScreen ? setFullscreen(false) : setFullscreen(true);
+		} else if (fullScreen && !minimalMode) {
+			setFullscreen(true);
 		} else {
 			setFullscreen(false);
 		}
