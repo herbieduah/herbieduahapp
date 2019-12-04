@@ -204,7 +204,7 @@ export const ContentContainer = styled.section`
 	&::-webkit-scrollbar-thumb {
 		background-color:${fontColor};
 	}
-	${props => (props.accessible ? `` : hideScrollbar)};
+	${props => (props.minimalMode ? `` : hideScrollbar)};
 
 	.LazyLoad {
 		width: 100%;
