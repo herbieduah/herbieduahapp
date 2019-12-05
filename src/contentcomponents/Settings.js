@@ -41,7 +41,7 @@ const SettingsPage = ({ contentProps }) => {
 		switchSides,
 		fullScreen,
 		setFullscreen,
-
+		isContentPortrait,
 		setAccessible,
 		accessible,
 		videoControls,
@@ -138,17 +138,28 @@ const SettingsPage = ({ contentProps }) => {
 					<HeadingTwo beta>Slider UI</HeadingTwo>
 					<ShowIf noAnimation thisValue={minimalMode} thatValue={true}>
 						<Paragraph>
-							I had a different User Interface in mind for my web app. I ended
-							up making it a setting because it's I was worried it was too
-							different.
+							Slider UI was supposed to be the default experience.
 						</Paragraph>
+						<ShowIf noAnimation thisValue={isContentPortrait} thatValue={true}>
+							<Paragraph>
+								It was made for a comfortable one-handed experience.
+							</Paragraph>
+						</ShowIf>
+						<ShowIf noAnimation thisValue={isContentPortrait} thatValue={false}>
+							<Paragraph>
+								The odd left and right super white space layout was created
+								because each side is supposed to represent a complete thought.
+								The slider was created to bring the thoughts together.
+							</Paragraph>
+						</ShowIf>
 					</ShowIf>
 					<ShowIf noAnimation thisValue={minimalMode} thatValue={false}>
 						<Paragraph>Slider UI not doing it for you?</Paragraph>
 					</ShowIf>
-					<ShowIf noAnimation thisValue={minimalMode} thatValue={true}>
+					<ShowIf noAnimation thisValue={isContentPortrait} thatValue={true}>
 						<Small className='marginTopMed'>
-							For the best experience, use the native browser on your device.
+							Use the native browser on your device, you're going to have
+							problems with a Instagram, Facebook, Reddit browser etc.
 						</Small>
 					</ShowIf>
 					<ShowIf noAnimation thisValue={minimalMode} thatValue={true}>
@@ -157,7 +168,7 @@ const SettingsPage = ({ contentProps }) => {
 					<ShowIf noAnimation thisValue={minimalMode} thatValue={false}>
 						<Button onClick={basicMode}>change it back</Button>
 						<Small className='marginTopSm'>
-							Thank you for trying it out, it means a lot.
+							Thank you for trying it out though, it means a lot.
 						</Small>
 					</ShowIf>
 				</ZigZag>
@@ -175,9 +186,6 @@ const SettingsPage = ({ contentProps }) => {
 							<LI>Turns off Slider UI.</LI>
 							<LI>Adds controls to video players.</LI>
 						</UL>
-						<Paragraph>
-							It also adds a scrollbar to browsers that allow scrollbars.
-						</Paragraph>
 						{/* <Instructions>
 						Find more details about these settings below.
 					</Instructions> */}

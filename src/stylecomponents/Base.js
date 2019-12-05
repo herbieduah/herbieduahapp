@@ -1051,6 +1051,6 @@ export const SliderUIContainer = styled.div`
 		${props => (props.navBarRight ? `` : `padding-left: 0;`)}
 	}
 	${tablet}{
-		margin-bottom: 5.5rem;
+		margin-bottom: 2rem;
 	}
 `;

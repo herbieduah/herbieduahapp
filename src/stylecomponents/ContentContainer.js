@@ -194,7 +194,7 @@ export const ContentContainer = styled.section`
 	&::-webkit-scrollbar-track {
 		
 		background-color:${bgColor};
-		border: ${borderThin};
+		border-left: ${borderThin};
 	}
 
 	&::-webkit-scrollbar {

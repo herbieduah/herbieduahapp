@@ -417,7 +417,7 @@ export const HeadingThree = props => {
 				h3
 				l
 				bold
-				className={`marginTopLarge marginBottomMed paddingLRParagraph ${className}`}>
+				className={`marginTopMed marginBottomMed paddingLRParagraph ${className}`}>
 				{props.children}
 				<ShowIf noAnimation thisValue={props.beta} thatValue={true}>
 					<Text format s secondary light className='c-beta'>
