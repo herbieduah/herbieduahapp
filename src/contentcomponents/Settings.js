@@ -130,9 +130,11 @@ const SettingsPage = ({ contentProps }) => {
 						so I created settings that enable you to change certain aspects of
 						it.
 					</Paragraph>
-					<Small className='marginTopMed'>
-						Refreshing web app resets all settings.
-					</Small>
+					<div className='marginBottomMed'>
+						<Small className='marginTopMed'>
+							Refreshing web app resets all settings.
+						</Small>
+					</div>
 				</ZigZag>
 				<ZigZag>
 					<HeadingTwo beta>Slider UI</HeadingTwo>

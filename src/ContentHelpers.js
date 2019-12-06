@@ -135,6 +135,7 @@ export const ContentShow = props => {
 	const transitionClasses = getCurrentTransition(currentTransition);
 	const whereToDrag = isContentPortrait ? "down" : "right";
 	const containerLarge = props.containerLarge ? "container-large" : "container";
+	const containerClass = props.className ? props.className : "";
 
 	// const [sshowScrollDown, setShowScrollDown] = useState(true);
 	// showScrollDown, setShowScrollDown
@@ -158,7 +159,7 @@ export const ContentShow = props => {
 		return (
 			<TransitionGroup>
 				<CSSTransition timeout={revealSecs} classNames={transitionClasses}>
-					<article className={`${containerLarge} more`}>
+					<article className={`${containerLarge} ${containerClass} more`}>
 						<ScrollDownIndicator />
 						<ShowIf
 							noAbsolute
@@ -286,7 +287,7 @@ export const Emphasis = props => {
 				<Text
 					xxl
 					{...props}
-					className={`${className} ${lessClass} marginBottomMed marginTopMed paddingLRSm`}>
+					className={`${className} ${lessClass} marginTopMed paddingLRSm`}>
 					{props.children}
 				</Text>
 			</ElementReveal>
@@ -526,7 +527,7 @@ export const FiGif = props => {
 	const desc = props.desc || defaultDesc;
 	return (
 		<ElementReveal>
-			<figure className={`marginBottomLarge ${className}`}>
+			<figure className={`marginBottomMed ${className}`}>
 				<Media
 					type={videoLocation}
 					width={props.width}

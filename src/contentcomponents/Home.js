@@ -84,10 +84,12 @@ const HomePage = ({ contentProps }) => {
 			<ContentShow containerLarge more>
 				<ZigZag>
 					<Header version>{header}</Header>
-					<Small>
-						Everyone is going to have their own app in the future, so I made my
-						own.
-					</Small>
+					<div className='marginBottomLarge'>
+						<Small className='marginBottomLarge'>
+							Everyone is going to have their own app in the future, so I made
+							my own.
+						</Small>
+					</div>
 				</ZigZag>
 
 				{/* <ZigZag> */}
@@ -179,20 +181,18 @@ const HomePage = ({ contentProps }) => {
 					/>
 				</ZigZag>
 				<ZigZag>
-					<div className='marginBottomMed marginTopMed'>
-						<div className='marginTopXLarge marginBottomLarge'>
-							<Emphasis className='paddingLRParagraph'>
-								Nowadays, there is an app for everything. In the future, I
-								believe there is going to be an app for everyone.
-							</Emphasis>
-						</div>
-						<Paragraph className='paddingLRParagraph'>
-							I envision every user having a unique experience with your app.
-							This vision inspired me to craft my portfolio as a web app that
-							enables you to customize your experience{" "}
-							<Emoji className='emoji' symbol='😉' label='wink' />
-						</Paragraph>
+					<div className='marginTopLarge marginBottomLarge'>
+						<Emphasis className='paddingLRParagraph'>
+							Nowadays, there is an app for everything. In the future, I believe
+							there is going to be an app for everyone.
+						</Emphasis>
 					</div>
+					<Paragraph className='paddingLRParagraph'>
+						I envision every user having a unique experience with your app. This
+						vision inspired me to craft my portfolio as a web app that enables
+						you to customize your experience{" "}
+						<Emoji className='emoji' symbol='😉' label='wink' />
+					</Paragraph>
 				</ZigZag>
 				{/* <ZigZag>
 					<Emphasis center>

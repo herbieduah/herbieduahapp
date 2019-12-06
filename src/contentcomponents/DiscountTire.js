@@ -64,7 +64,7 @@ const DiscountTirePage = () => (
 				<WorkInfo workinfo={workinfo} />
 			</ZigZag>
 			<ZigZag>
-				<Paragraph>
+				<Paragraph className='marginTopXLarge'>
 					Discount Tire Company is the largest tire and wheel retailer in the
 					world. I am currently working there as a Front End Developer.
 				</Paragraph>
@@ -133,7 +133,7 @@ const DiscountTirePage = () => (
 				<Figure alt='a discount tire pamphlet' src={dtReceipt}>
 					<Figcaption className='marginBottomLarge'>
 						Oh yeah I am on every receipt holder for their 1000+ stores
-						nationawide so that's neat.
+						nationwide so that's neat.
 					</Figcaption>
 				</Figure>
 			</ZigZag>

@@ -66,9 +66,9 @@ const StartNowPage = ({ contentProps }) => {
 					<Header>{header}</Header>
 					<WorkInfo workinfo={workinfo} />
 				</ZigZag>
-				
+
 				<ZigZag>
-					<Paragraph>
+					<Paragraph className='marginTopXLarge'>
 						My first job was working directly with the Career Development
 						Director for the Northern Arizona University (deep breath) College
 						of Engineering and Natural Sciences (CEFNS).

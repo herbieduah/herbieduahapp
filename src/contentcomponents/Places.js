@@ -40,7 +40,7 @@ const PeoplePage = () => {
 					<Image alt='INSERT ALT HERE' src={placesbeauifulsunset} />
 				</div>
 			</ContentShow>
-			<ContentShow containerLarge more>
+			<ContentShow containerLarge more className='c-photos'>
 				<ZigZag>
 					<Header>{header}</Header>
 					<Paragraph>

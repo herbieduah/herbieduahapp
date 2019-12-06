@@ -44,7 +44,7 @@ const BackgroundsPage = ({ contentProps }) => {
 					</Small>
 				</ZigZag>
 				<ZigZag>
-					<Small className='marginTopMed'>
+					<Small className='marginTopXLarge'>
 						By default, the Light Theme and Dark Theme backgrounds change
 						automatically depending on your device dark mode settings or the
 						time you are accessing the web app.
@@ -76,7 +76,7 @@ const BackgroundsPage = ({ contentProps }) => {
 						</ElementReveal>
 						<TabPanel>
 							<GenerateTheme type='color' />
-							<Paragraph className='marginTopMed'>
+							<Paragraph>
 								Big shout out to{" "}
 								<Link href='https://www.pantone.com/color-intelligence/fashion-color-trend-report/fashion-color-trend-report-new-york-spring-summer-2020'>
 									Pantone
@@ -86,7 +86,7 @@ const BackgroundsPage = ({ contentProps }) => {
 						</TabPanel>
 						<TabPanel>
 							<GenerateTheme type='gradient' />
-							<Paragraph className='marginTopMed'>
+							<Paragraph>
 								Big shout out to{" "}
 								<Link href='https://webgradients.com/'>webgradients.com</Link>{" "}
 								for their stellar choices of gradients and the names to with
@@ -95,7 +95,7 @@ const BackgroundsPage = ({ contentProps }) => {
 						</TabPanel>
 						<TabPanel>
 							<GenerateTheme type='bg' />
-							<Paragraph className='marginTopMed'>
+							<Paragraph>
 								Big shout out to{" "}
 								<Link href='https://www.toptal.com/designers/subtlepatterns/'>
 									Toptal

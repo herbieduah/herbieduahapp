@@ -73,7 +73,8 @@ import {
 	paddingTBSm,
 	marginTopMed,
 	marginTopSm,
-	marginBottomMed
+	marginBottomMed,
+	paddingLRSmNav
 } from "./StyleHelpers";
 
 import { revealSecs } from "../helpers";
@@ -159,8 +160,16 @@ export const NavBarMiniContainer = styled.div`
 			position:relative;
 			z-index: 100;	
 		}
+		
 		&__logo-menu, &__logo {
 			${paddingLRSm};
+			${mobile} {
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+		&__logo-menu {
+			padding-right: 30px;
 			${mobile} {
 				padding-left: 0;
 				padding-right: 0;

@@ -64,10 +64,13 @@ const BedzinExhibitPage = () => {
 				</div>
 			</ContentShow>
 			<ContentShow containerLarge more>
-				<ZigZag><Header>{header}</Header><WorkInfo workinfo={workinfo} /></ZigZag>
-				
 				<ZigZag>
-					<Paragraph>
+					<Header>{header}</Header>
+					<WorkInfo workinfo={workinfo} />
+				</ZigZag>
+
+				<ZigZag>
+					<Paragraph className='marginTopXLarge'>
 						For my Computer Science capstone, my group was tasked with revamping
 						&nbsp;
 						<Link href='http://bedzinexhibit.org/'>bedzinexhibit.org</Link>. The

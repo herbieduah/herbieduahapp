@@ -68,7 +68,7 @@ const PeoplePage = () => {
 					<Image alt="photograph of " src={peopleJohnnyGrad} />
 				</div> */}
 			</ContentShow>
-			<ContentShow containerLarge more>
+			<ContentShow containerLarge more className='c-photos'>
 				<ZigZag>
 					<Header>{header}</Header>
 					<Paragraph className='marginTopMed'>

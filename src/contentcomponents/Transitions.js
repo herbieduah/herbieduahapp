@@ -55,7 +55,7 @@ const TransitionsPage = () => {
 				</ZigZag>
 
 				<ZigZag>
-					<Small className='marginTopMed'>
+					<Small className='marginTopXLarge'>
 						Tip: After you choose an animation, navigate to a different page to
 						see it in action.
 					</Small>
@@ -82,14 +82,16 @@ const TransitionsPage = () => {
 						</TabPanel>
 					</ReactTabs>
 					{/* <ShowIf noAnimation thisValue={forDev} thatValue={true}> */}
-					<Paragraph className='marginTopLarge'>
-						Shout out to <Link href='https://daneden.me/'>Daniel Edens'</Link>{" "}
-						amazing{" "}
-						<Link href='https://daneden.github.io/animate.css/'>
-							Animate.css
-						</Link>{" "}
-						library.
-					</Paragraph>
+					<div className='marginTopMed'>
+						<Paragraph>
+							Shout out to <Link href='https://daneden.me/'>Daniel Edens'</Link>{" "}
+							amazing{" "}
+							<Link href='https://daneden.github.io/animate.css/'>
+								Animate.css
+							</Link>{" "}
+							library.
+						</Paragraph>
+					</div>
 				</ZigZag>
 				<ContentCategory category='customize' />
 				{/* </ShowIf> */}

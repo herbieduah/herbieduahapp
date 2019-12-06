@@ -31,7 +31,9 @@ import {
 	paddingLRMed,
 	mobileSm,
 	containerLargePx,
-	paddingTopXLarge
+	paddingTopXLarge,
+	maxContentWidth,
+	removeNegativeMargin
 } from "./StyleHelpers";
 import {
 	navBarBorder,
@@ -237,7 +239,8 @@ export const ContentContainer = styled.section`
 		text-transform: capitalize;
 	}
 	margin-top: 0;
-	.container {
+	.container {	
+		
 		max-width: 740px;
 		width: 100%;
 		${props => (props.fullScreen ? `margin: 0 auto` : ``)};
@@ -252,6 +255,10 @@ export const ContentContainer = styled.section`
 		}
 	}
 	.container-large {
+		${props =>
+			props.minimalMode || props.fullScreen
+				? `${removeNegativeMargin}{${paddingTopXLarge}}`
+				: ``}
 		width: 100%;
 		${props => (props.fullScreen ? `margin: 0 auto` : ``)};
 		max-width:${containerLargePx} 
@@ -261,7 +268,7 @@ export const ContentContainer = styled.section`
 				? `
 		.c-zigzag__content {
 			margin-left: 0 !important;
-			max-width: 540px;	
+			max-width: ${maxContentWidth};	
 		}
 		.c-zigzag {
 			padding-left: 0;
@@ -269,6 +276,60 @@ export const ContentContainer = styled.section`
 		}
 		`
 				: ``};
+	}
+	.c-photos {
+		.c-zigzag {
+			${props =>
+				props.minimalMode || props.fullScreen
+					? `margin-top: 0 !important;`
+					: ``}
+		}
+	}
+	.c-zigzag {
+		/* ${marginTopSm} */
+		
+		${props =>
+			props.minimalMode || props.fullScreen
+				? `${removeNegativeMargin}{margin-top: -6rem;}`
+				: ``}
+		display:flex;
+		flex-direction: column;
+		${props =>
+			props.minimalMode
+				? `padding-left: ${navBarSize};
+		padding-right: ${navBarSize};`
+				: ``};
+		
+		${mobile} {
+			padding-left: 0;
+			padding-right: 0;
+		}
+		
+		&:nth-of-type(even){ 
+			.c-zigzag__content {
+				margin-left: auto;
+			}
+			.paddingLRParagraph {
+				padding-left: 20;
+				padding-right: 20px;
+				${mobile} {
+					padding-right: 1rem;
+					padding-left: 1rem;
+				}
+			}
+		}
+		&__content {
+			max-width: ${maxContentWidth};
+			width: 100%;
+		}
+			/* ${paddingLRSm} */		
+	}
+	.react-tabs__tab-list {
+		max-width: 500px;
+		/* margin: 0 auto; */
+		width: 100%;
+		/* margin: 0 auto; */
+		${marginBottomMed}
 	}
 	.container-full {
 		width: 100%;
@@ -530,7 +591,7 @@ export const ContentContainer = styled.section`
 	.c-pun {
 		height: 2.5rem;
 	}
-	.c-photos {
+	.c-photos-legacy {
 		list-style-type: none;
 		margin: 0;
 		padding: 0;
@@ -568,46 +629,7 @@ export const ContentContainer = styled.section`
 		}			
 	}
 
-	.c-zigzag {
-		${marginTopSm}
-		display:flex;
-		flex-direction: column;
-		${props =>
-			props.minimalMode
-				? `padding-left: ${navBarSize};
-		padding-right: ${navBarSize};`
-				: ``};
-		
-		${mobile} {
-			padding-left: 0;
-			padding-right: 0;
-		}
-		&:nth-of-type(even){ 
-			.c-zigzag__content {
-				margin-left: auto;
-			}
-			.paddingLRParagraph {
-				padding-left: 20;
-				padding-right: 20px;
-				${mobile} {
-					padding-right: 1rem;
-					padding-left: 1rem;
-				}
-			}
-		}
-		&__content {
-			max-width: 540px;
-			width: 100%;
-		}
-			/* ${paddingLRSm} */		
-	}
-	.react-tabs__tab-list {
-		max-width: 5o0px;
-		/* margin: 0 auto; */
-		width: 100%;
-		/* margin: 0 auto; */
-		${marginBottomMed}
-	}
+	
 `;
 
 export default ContentContainer;

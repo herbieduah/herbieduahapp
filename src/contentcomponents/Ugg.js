@@ -61,10 +61,9 @@ const UGGPage = () => {
 					<Header>{header}</Header>
 					<WorkInfo workinfo={workinfo} />
 				</ZigZag>
-				
 
 				<ZigZag>
-					<Paragraph>
+					<Paragraph className='marginTopXLarge'>
 						I was a User Interface Developer for the{" "}
 						<span className='all-caps'>Ugg</span> Brand team.
 					</Paragraph>

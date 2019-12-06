@@ -64,7 +64,7 @@ const iPhonePage = () => {
 					<Image alt='picture of ' src={iphonesunsetPoint} />
 				</div>
 			</ContentShow>
-			<ContentShow containerLarge more>
+			<ContentShow containerLarge more className='c-photos'>
 				<ZigZag>
 					<Header>{header}</Header>
 					<Paragraph>

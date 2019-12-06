@@ -32,12 +32,15 @@ const maxFontSize = `24px`;
 export const sliderWidth = "3.4rem";
 export const sliderHeight = "2rem";
 export const fluidTypeInfo = fluidType(minVW, maxVW, minFontSize, maxFontSize);
-export const containerLargePx = `1100px`;
+export const containerLargePx = `1280px`;
+export const maxContentWidth = `600px`;
 export const mobile = "@media only screen and (max-width: 540px)";
 export const mobileSm = "@media only screen and (max-width: 340px)";
 export const tablet =
 	"@media screen and (max-width: 1200px) and (min-width: 768px)";
 export const mobileHorizontal = "@media only screen and (max-width: 1200px)";
+export const removeNegativeMargin =
+	"@media only screen and (min-width: 1240px)";
 export const hideScrollbar = `-ms-overflow-style: none;  
 scrollbar-width: none;
 &::-webkit-scrollbar { 
@@ -92,6 +95,13 @@ export const stupidNegativeMargin = `margin-top:${sliderMobileWidth /
 export const paddingLRSm = `
 padding-right: 20px;
 padding-left: 20px;
+${mobile} {
+	padding-right: 1rem;
+padding-left: 1rem;
+}`;
+export const paddingLRSmNav = `
+padding-right: 30px;
+padding-left: 30px;
 ${mobile} {
 	padding-right: 1rem;
 padding-left: 1rem;
