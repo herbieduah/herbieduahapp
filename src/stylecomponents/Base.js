@@ -74,7 +74,8 @@ import {
 	marginTopMed,
 	marginTopSm,
 	marginBottomMed,
-	paddingLRSmNav
+	paddingLRSmNav,
+	paddingBottomMed
 } from "./StyleHelpers";
 
 import { revealSecs } from "../helpers";
@@ -127,7 +128,10 @@ export const NavBarMiniContainer = styled.div`
 		props.navBarComplement ? navBarBgComplement : navBarBg};
 	border: ${props => (props.navBarComplement ? borderThin : "none")};
 	width: 100vw;
-	
+	/* MOCKUPSTUFF */
+	${mobile}{
+		padding-top: 2.5rem;
+	}
 	align-items: center;
  	/* width: ${props => props.appHeight}px; */
 	justify-content: space-between;

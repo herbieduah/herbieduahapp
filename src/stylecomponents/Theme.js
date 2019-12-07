@@ -244,7 +244,7 @@ export const themes = [
 	},
 
 	{
-		name: "default",
+		name: "Plum Bath",
 		properties: {
 			...defaultTheme
 		},

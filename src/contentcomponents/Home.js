@@ -181,6 +181,18 @@ const HomePage = ({ contentProps }) => {
 					/>
 				</ZigZag>
 				<ZigZag>
+					{/* <div className='marginTopLarge marginBottomLarge'>
+						<Emphasis className='paddingLRParagraph'>
+							Nowadays, there is an app for everything. In the future, I believe
+							there is going to be an app for everyone.
+						</Emphasis>
+					</div> */}
+					{/* MockupStuff */}
+					<div className='marginTopLarge marginBottomLarge'>
+						<Emphasis className='paddingLRParagraph'>
+							In the future, everyone is going to have their own
+						</Emphasis>
+					</div>
 					<div className='marginTopLarge marginBottomLarge'>
 						<Emphasis className='paddingLRParagraph'>
 							Nowadays, there is an app for everything. In the future, I believe

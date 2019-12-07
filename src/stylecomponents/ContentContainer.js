@@ -210,7 +210,8 @@ export const ContentContainer = styled.section`
 		background-color:${colorSlightOpacity};
 	}
 	${props => (props.minimalMode ? `` : hideScrollbar)};
-
+	/* MOCKUPSTUFF */
+  	${hideScrollbar}
 	.LazyLoad {
 		width: 100%;
 	}
@@ -287,7 +288,7 @@ export const ContentContainer = styled.section`
 	}
 	.c-zigzag {
 		/* ${marginTopSm} */
-		
+		${mainTransition}
 		${props =>
 			props.minimalMode || props.fullScreen
 				? `${removeNegativeMargin}{margin-top: -6rem;}`
