@@ -188,11 +188,11 @@ const HomePage = ({ contentProps }) => {
 						</Emphasis>
 					</div> */}
 					{/* MockupStuff */}
-					<div className='marginTopLarge marginBottomLarge'>
+					{/* <div className='marginTopLarge marginBottomLarge'>
 						<Emphasis className='paddingLRParagraph'>
 							In the future, everyone is going to have their own
 						</Emphasis>
-					</div>
+					</div> */}
 					<div className='marginTopLarge marginBottomLarge'>
 						<Emphasis className='paddingLRParagraph'>
 							Nowadays, there is an app for everything. In the future, I believe

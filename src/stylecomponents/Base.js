@@ -174,6 +174,9 @@ export const NavBarMiniContainer = styled.div`
 		}
 		&__logo-menu {
 			padding-right: 30px;
+			${tablet}{
+				padding-right: 20px;
+			}
 			${mobile} {
 				padding-left: 0;
 				padding-right: 0;

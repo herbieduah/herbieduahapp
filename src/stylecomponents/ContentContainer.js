@@ -211,7 +211,7 @@ export const ContentContainer = styled.section`
 	}
 	${props => (props.minimalMode ? `` : hideScrollbar)};
 	/* MOCKUPSTUFF */
-  	${hideScrollbar}
+  	/* ${hideScrollbar} */
 	.LazyLoad {
 		width: 100%;
 	}
