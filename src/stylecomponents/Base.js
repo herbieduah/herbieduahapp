@@ -312,7 +312,7 @@ export const NavBarContainer = styled.div`
 		}
 		&__hdappText{
 			&::before {
-				content:'HerbieDuah';
+				content:'Herbie';
 				${mobile}{
 				content:'HD';
 					}
