@@ -61,7 +61,12 @@ export const ContentContainer = styled.section`
 	${props =>
 		props.minimalMode ? `${paddingTopXLarge}` : `padding-top: 0 !important;`};
 	/* transform: perspective(300px) rotateX(15deg);  */
-	
+	#awwwards {
+		${mainTransition}
+		position: fixed; z-index: 3999; transform: translateY(-50%); top: 50%;
+		${props => (props.navBarRight ? "left: 0" : "right: 0")};
+		 
+	}
 	.less {
 		position: fixed;
 		h1,
