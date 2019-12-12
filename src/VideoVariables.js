@@ -27,7 +27,11 @@ import videosofmetoast_1Local from "./media/appVideos/videosofmetoast_1.mp4";
 import videosofmevNeckCrewNeckLocal from "./media/appVideos/videosofmevNeckCrewNeck.mp4";
 import videosofmewakandaLocal from "./media/appVideos/videosofmewakanda.mp4";
 import videosofmehammockChilling_1Local from "./media/appVideos/videosofmehammockChilling_1.mp4";
+import SliderUIMobileLocal from "./media/appVideos/SliderUIMobile.mp4";
+import SliderUIDesktopLocal from "./media/appVideos/SliderUIDesktop.mp4";
 
+export const SliderUIMobile = ["SliderUIMobile_pznkhl", SliderUIMobileLocal];
+export const SliderUIDesktop = ["SliderUIDesktop_yxaz6z", SliderUIDesktopLocal];
 export const uggPhillipLim = ["uggPhillipLim_pem01g", uggPhillipLimLocal];
 export const videosofmecarribeanQueen = [
 	"videosofmecarribeanQueen_i8wj6f",

@@ -126,11 +126,11 @@ export const NavBarMiniContainer = styled.div`
     display: flex;
 	background: ${props =>
 		props.navBarComplement ? navBarBgComplement : navBarBg};
-	border: ${props => (props.navBarComplement ? borderThin : "none")};
+	border-bottom: ${props => (props.navBarComplement ? borderThin : "none")};
 	width: 100vw;
 	/* MOCKUPSTUFF */
 	${mobile}{
-		padding-top: 2.5rem;
+		/* padding-top: 2.5rem; */
 	}
 	align-items: center;
  	/* width: ${props => props.appHeight}px; */
@@ -725,7 +725,7 @@ export const TransitionTextContainer = styled.li`
 	list-style-type: none;
 	margin-bottom: ${navBarSize};
 	display: flex;
-	max-width: 500px;
+	/* max-width: 500px; */
 	padding: 0;
 	.appTransition {
 		&__container {

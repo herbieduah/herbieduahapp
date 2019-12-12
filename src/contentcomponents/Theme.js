@@ -14,9 +14,15 @@ import {
 	Header,
 	ZigZag,
 	HeadingTwo,
-	Instructions
+	Instructions,
+	Image
 } from "../ContentHelpers";
 import { ShowIf } from "../ComponentHelpers";
+import {
+	TotallyNinetyTheme,
+	MatrixTheme,
+	StarWarsTheme
+} from "../MediaVariables";
 
 const header = "Themes";
 
@@ -71,6 +77,11 @@ const ThemePage = ({ contentProps }) => {
 				</ZigZag>
 				<ZigZag>
 					<HeadingTwo>Matrix</HeadingTwo>
+					<Image
+						className='paddingLRSm'
+						alt='A mockup of the Matrix theme in Desktop and Mobile'
+						src={MatrixTheme}
+					/>
 					<Paragraph>
 						This Matrix theme is based on the Matrix Trilogy.
 					</Paragraph>
@@ -89,6 +100,11 @@ const ThemePage = ({ contentProps }) => {
 				</ZigZag>
 				<ZigZag>
 					<HeadingTwo>Star Wars</HeadingTwo>
+					<Image
+						className='paddingLRSm'
+						alt='A mockup of the Star Wars theme in Desktop and Mobile'
+						src={StarWarsTheme}
+					/>
 					<Paragraph>A long time ago in a galaxy far, far away...</Paragraph>
 					<ShowIf noAnimation thisValue={isStarWars} thatValue={false}>
 						<Button onClick={setStarWarsTheme}>Feel the Force</Button>
@@ -103,6 +119,11 @@ const ThemePage = ({ contentProps }) => {
 				</ZigZag>
 				<ZigZag>
 					<HeadingTwo>Totally 90s</HeadingTwo>
+					<Image
+						className='paddingLRSm'
+						alt='A mockup of the Totally 90s theme in Desktop and Mobile'
+						src={TotallyNinetyTheme}
+					/>
 					<Paragraph>Here is a theme with some 90s nostalgia.</Paragraph>
 					<ShowIf noAnimation thisValue={isNineties} thatValue={false}>
 						<Button onClick={setNinetiesTheme}>get jiggy with it</Button>

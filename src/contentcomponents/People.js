@@ -53,7 +53,8 @@ import {
 	peopleCristian,
 	peopleconnorGrad,
 	peopleCeiphers,
-	peopleAshleyTaylor
+	peopleAshleyTaylor,
+	alessondria
 } from "../MediaVariables";
 const header = "People";
 
@@ -79,6 +80,12 @@ const PeoplePage = () => {
 					<Image
 						alt='photograph of a girl kneeling in snow'
 						src={peopleAshleyTaylor}
+					/>
+				</ZigZag>
+				<ZigZag>
+					<Image
+						alt='photograph of a girl infront fo a poinsettia'
+						src={alessondria}
 					/>
 				</ZigZag>
 				<ZigZag>

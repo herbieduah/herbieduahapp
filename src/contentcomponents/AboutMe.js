@@ -29,7 +29,8 @@ import {
 	picsOfMeRickJamesBball,
 	picsOfMeMeme,
 	dtCreepySmile,
-	picsOfMeSelfieOlympics
+	picsOfMeSelfieOlympics,
+	pointsetta
 } from "../MediaVariables";
 
 const header = "About Me";
@@ -178,8 +179,7 @@ const AboutMePage = () => {
 						desc='playing video games with a disconcerned look'
 						width='720'
 						height='1280'
-						url={videosofmesoreLoser}>
-					</Gif>
+						url={videosofmesoreLoser}></Gif>
 				</ZigZag>
 				{/* <HeadingTwo>I love creativity</HeadingTwo>
 				<Figure
@@ -229,14 +229,13 @@ const AboutMePage = () => {
 					</Figure>
 				</ZigZag>
 				<ZigZag>
-					<Emphasis center>I love you, yes you.</Emphasis>
+					<Emphasis center>I appreciate you.</Emphasis>
 					<Figure
 						className='paddingLRSm'
-						alt='Apicture of me dressed up as Discount tire employee with a creepy smile on'
-						src={dtCreepySmile}>
+						alt='A picture of me smiling infront of a poinsettia decorated tree'
+						src={pointsetta}>
 						<Figcaption>
-							Seriously, thank for checking out my web app. (I know this photo
-							is a bit creepy)
+							Seriously, thank for checking out my web app.
 						</Figcaption>
 					</Figure>
 				</ZigZag>

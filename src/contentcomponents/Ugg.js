@@ -33,7 +33,7 @@ import {
 	uggJeremyScottDesktop,
 	uggslidesemail
 } from "../VideoVariables";
-const header = "Ugg";
+const header = "UGG";
 const workDuration = "August 2016 - March 2018";
 const workSkills = "HTML5, CSS, Javascript, Prototyping, UX Design";
 const workTools = "Atom, Adobe Creative Suite, BitBucket, Visual Studio Code";

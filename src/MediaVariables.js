@@ -135,8 +135,31 @@ import thisAppHerokuDesktopPicDesktop from "./media/appImages/desktop/thisAppHer
 import picsOfMeshowingtillyDesktop from "./media/appImages/desktop/picsOfMeshowingtilly.jpg";
 import picsOfMesmileOnPhoneDesktop from "./media/appImages/desktop/picsOfMesmileOnPhone.jpg";
 import picsOfMesnowsmilephotographyDesktop from "./media/appImages/desktop/picsOfMesnowsmilephotography.jpg";
+//finalconteount
+import TechnicalThemeDesktop from "./media/appImages/desktop/TechnicalTheme.jpg";
+import WhatIfHomepageDesktop from "./media/appImages/desktop/WhatIfHomepage.jpg";
+import WhatIfAnAppForEveryoneDesktop from "./media/appImages/desktop/WhatIfAnAppForEveryone.jpg";
+import TotallyNinetyThemeDesktop from "./media/appImages/desktop/TotallyNinetyTheme.jpg";
+import pointsettaDesktop from "./media/appImages/desktop/pointsetta.jpg";
+import StarWarsThemeDesktop from "./media/appImages/desktop/StarWarsTheme.jpg";
+import MatrixThemeDesktop from "./media/appImages/desktop/MatrixTheme.jpg";
+import camelbackDesktop from "./media/appImages/desktop/camelback.jpg";
+import alessondriaDesktop from "./media/appImages/desktop/alessondria.jpg";
+import AccessibilitySettingDesktop from "./media/appImages/desktop/AccessibilitySetting.jpg";
 
 //Mobile
+//content
+import TechnicalThemeMobile from "./media/appImages/mobile/TechnicalTheme.jpg";
+import WhatIfHomepageMobile from "./media/appImages/mobile/WhatIfHomepage.jpg";
+import WhatIfAnAppForEveryoneMobile from "./media/appImages/mobile/WhatIfAnAppForEveryone.jpg";
+import TotallyNinetyThemeMobile from "./media/appImages/mobile/TotallyNinetyTheme.jpg";
+import pointsettaMobile from "./media/appImages/mobile/pointsetta.jpg";
+import StarWarsThemeMobile from "./media/appImages/mobile/StarWarsTheme.jpg";
+import MatrixThemeMobile from "./media/appImages/mobile/MatrixTheme.jpg";
+import camelbackMobile from "./media/appImages/mobile/camelback.jpg";
+import alessondriaMobile from "./media/appImages/mobile/alessondria.jpg";
+import AccessibilitySettingMobile from "./media/appImages/mobile/AccessibilitySetting.jpg";
+
 import picsOfMeshowingtillyMobile from "./media/appImages/mobile/picsOfMeshowingtilly.jpg";
 import picsOfMesmileOnPhoneMobile from "./media/appImages/mobile/picsOfMesmileOnPhone.jpg";
 import picsOfMesnowsmilephotographyMobile from "./media/appImages/mobile/picsOfMesnowsmilephotography.jpg";
@@ -275,6 +298,57 @@ import thisAppHDRHomeUXMobile from "./media/appImages/mobile/thisAppHDRHomeUX.jp
 import thisAppHerbieDuahComeUXMobile from "./media/appImages/mobile/thisAppHerbieDuahComeUX.jpg";
 import thisAppHerbieDuahMobileMobile from "./media/appImages/mobile/thisAppHerbieDuahMobile.jpg";
 import thisAppHerokuDesktopPicMobile from "./media/appImages/mobile/thisAppHerokuDesktopPic.jpg";
+
+export const TechnicalTheme = [
+	TechnicalThemeDesktop,
+	TechnicalThemeMobile,
+	"TechnicalTheme_hfyq4m"
+];
+export const WhatIfHomepage = [
+	WhatIfHomepageDesktop,
+	WhatIfHomepageMobile,
+	"WhatIfHomepage_le10yw"
+];
+export const WhatIfAnAppForEveryone = [
+	WhatIfAnAppForEveryoneDesktop,
+	WhatIfAnAppForEveryoneMobile,
+	"WhatIfAnAppForEveryone_j8h7cs"
+];
+export const TotallyNinetyTheme = [
+	TotallyNinetyThemeDesktop,
+	TotallyNinetyThemeMobile,
+	"TotallyNinetyTheme_cltntq"
+];
+export const pointsetta = [
+	pointsettaDesktop,
+	pointsettaMobile,
+	"pointsetta_xehuoh"
+];
+export const StarWarsTheme = [
+	StarWarsThemeDesktop,
+	StarWarsThemeMobile,
+	"StarWarsTheme_w6vd8t"
+];
+export const MatrixTheme = [
+	MatrixThemeDesktop,
+	MatrixThemeMobile,
+	"MatrixTheme_bbjxzo"
+];
+export const camelback = [
+	camelbackDesktop,
+	camelbackMobile,
+	"camelback_wzh0dx"
+];
+export const alessondria = [
+	alessondriaDesktop,
+	alessondriaMobile,
+	"alessondria_enzqrk"
+];
+export const AccessibilitySetting = [
+	AccessibilitySettingDesktop,
+	AccessibilitySettingMobile,
+	"AccessibilitySetting_ela1z0"
+];
 
 export const picsOfMeshowingtilly = [
 	picsOfMeshowingtillyDesktop,

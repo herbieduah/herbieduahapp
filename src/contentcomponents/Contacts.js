@@ -56,8 +56,7 @@ const ContactsPage = () => {
 				</Paragraph>
 				<HeadingTwo>Social</HeadingTwo>
 				<Paragraph>
-					You can message me or keep up on this project on any of these
-					platforms as well.{" "}
+					You can message me on any of these platforms as well.{" "}
 				</Paragraph>
 				<Paragraph>
 					<Link href='https://instagram.com/herbieduah'>Instagram</Link>&nbsp;

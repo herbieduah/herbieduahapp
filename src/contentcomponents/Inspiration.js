@@ -14,9 +14,10 @@ import {
 	Emphasis,
 	ZigZag,
 	LessContent,
-	ContentCategory
+	ContentCategory,
+	Image
 } from "../ContentHelpers";
-
+import { WhatIfHomepage, WhatIfAnAppForEveryone } from "../MediaVariables";
 const header = "Inspiration";
 
 const InspirationPage = () => {
@@ -42,7 +43,19 @@ const InspirationPage = () => {
 				</div>
 			</ContentShow>
 			<ContentShow containerLarge more>
-			<ZigZag><Header>{header}</Header></ZigZag>
+				<ZigZag>
+					<Header>{header}</Header>
+					<Image
+						src={WhatIfAnAppForEveryone}
+						className='paddingLRParagraph'
+						alt='Mockups of this web  app on an iPhone XR'
+					/>
+					<Image
+						src={WhatIfHomepage}
+						className='paddingLRParagraph'
+						alt='Mockups of this web  app on an iPad'
+					/>
+				</ZigZag>
 				<ZigZag>
 					<HeadingTwo>What if there was an app for you?</HeadingTwo>
 					<Paragraph>

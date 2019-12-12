@@ -25,6 +25,7 @@ import { ShowIf } from "../ComponentHelpers";
 // import { Image as CloudImage, Video } from "cloudinary-react";
 import Emoji from "a11y-react-emoji";
 import { ForSomeone, forYouHelper } from "../maincomponents/ForYou";
+import { isMobile } from "react-device-detect";
 // import Modal from "../maincomponents/Modal";
 // import cornishPastyPic from "../media/images/picsOfMe/test.jpg";
 // import yes from "../media/images/startNow/Yes.jpg";
@@ -36,7 +37,9 @@ import { ForSomeone, forYouHelper } from "../maincomponents/ForYou";
 import {
 	picsOfMesnowsmilephotography,
 	picsOfMeshowingtilly,
-	picsOfMeHero
+	picsOfMeHero,
+	WhatIfHomepage,
+	WhatIfAnAppForEveryone
 } from "../MediaVariables";
 // import ReactPlayer from "react-player";
 import {
@@ -193,16 +196,29 @@ const HomePage = ({ contentProps }) => {
 							In the future, everyone is going to have their own
 						</Emphasis>
 					</div> */}
-					<div className='marginTopLarge marginBottomLarge'>
+					<div className='marginTopLarge '>
 						<Emphasis className='paddingLRParagraph'>
-							Nowadays, there is an app for everything. In the future, I believe
-							there is going to be an app for everyone.
+							In the future, I believe there is going to be an app for everyone.
 						</Emphasis>
+						<ShowIf noAnimation thisValue={isMobile} thatValue={true}>
+							<Image
+								src={WhatIfAnAppForEveryone}
+								className='paddingLRParagraph'
+								alt='Mockups of this web  app on an iPhone XR'
+							/>
+						</ShowIf>
+						<ShowIf noAnimation thisValue={isMobile} thatValue={false}>
+							<Image
+								src={WhatIfHomepage}
+								className='paddingLRParagraph'
+								alt='Mockups of this web  app on an iPad'
+							/>
+						</ShowIf>
 					</div>
 					<Paragraph className='paddingLRParagraph'>
 						I envision every user having a unique experience with your app. This
-						vision inspired me to craft my portfolio as a web app that enables
-						you to customize your experience{" "}
+						vision inspired me to craft my portfolio as a web app that lets you
+						customize your experience{" "}
 						<Emoji className='emoji' symbol='😉' label='wink' />
 					</Paragraph>
 				</ZigZag>

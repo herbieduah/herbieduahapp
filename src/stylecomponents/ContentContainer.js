@@ -212,6 +212,13 @@ export const ContentContainer = styled.section`
 	${props => (props.minimalMode ? `` : hideScrollbar)};
 	/* MOCKUPSTUFF */
   	/* ${hideScrollbar} */
+	  ${tablet} {
+		  /* ${hideScrollbar} */
+	  }
+	  ${mobile}{
+		${hideScrollbar}
+	  }
+	   
 	.LazyLoad {
 		width: 100%;
 	}
@@ -326,7 +333,7 @@ export const ContentContainer = styled.section`
 			/* ${paddingLRSm} */		
 	}
 	.react-tabs__tab-list {
-		max-width: 500px;
+		max-width: 100%;
 		/* margin: 0 auto; */
 		width: 100%;
 		/* margin: 0 auto; */

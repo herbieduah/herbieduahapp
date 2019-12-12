@@ -16,9 +16,7 @@ const PunsPage = () => {
 				Rotate device to see view web app.
 			</Instructions>
 			<PunGen pun={puns} />
-			<Button onClick={generatePun} className='marginLRSm marginTopSm'>
-				Generate pun
-			</Button>
+			<Button onClick={generatePun}>Generate pun</Button>
 		</div>
 	);
 };

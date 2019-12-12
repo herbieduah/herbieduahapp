@@ -34,7 +34,7 @@ export const ContentMenu = () => {
 			<ElementReveal>
 				<div className='menu__nav'>
 					<div className='menu__nav-container'>
-						<MenuTabs defaultIndex={-1} />
+						<MenuTabs defaultIndex={0} />
 					</div>
 					{/* <div className='menu__sliderui'> */}
 

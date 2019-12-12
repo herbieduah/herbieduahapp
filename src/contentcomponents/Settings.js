@@ -12,6 +12,8 @@ import {
 	Small,
 	Button,
 	Emphasis,
+	Gif,
+	Image,
 	// SettingButton,
 	DisableSetting,
 	Link,
@@ -22,7 +24,10 @@ import {
 import { ShowIf } from "../ComponentHelpers";
 // import Text from "../stylecomponents/Text";
 import Emoji from "a11y-react-emoji";
-import { isMobile } from "react-device-detect";
+
+import { SliderUIDesktop, SliderUIMobile } from "../VideoVariables";
+
+import { AccessibilitySetting, TechnicalTheme } from "../MediaVariables";
 const header = "Settings";
 
 const SettingsPage = ({ contentProps }) => {
@@ -74,8 +79,8 @@ const SettingsPage = ({ contentProps }) => {
 	// };
 
 	const activateAccessibilityMode = () => {
-		accessible ? setMinimalMode(false) : setMinimalMode(true);
-		accessible ? setFullscreen(false) : setFullscreen(true);
+		setMinimalMode(true);
+		setFullscreen(true);
 		accessible ? setVideoControls(false) : setVideoControls(true);
 		accessible ? setNavBarComplement(false) : setNavBarComplement(true);
 		accessible ? setAccessible(false) : setAccessible(true);
@@ -139,19 +144,31 @@ const SettingsPage = ({ contentProps }) => {
 				<ZigZag>
 					<HeadingTwo beta>Slider UI</HeadingTwo>
 					<ShowIf noAnimation thisValue={minimalMode} thatValue={true}>
-						<Paragraph>
-							Slider UI was supposed to be the default experience.
-						</Paragraph>
 						<ShowIf noAnimation thisValue={isContentPortrait} thatValue={true}>
+							<Gif
+								className='paddingLRSm'
+								desc='A video of the Slider UI on mobile'
+								url={SliderUIMobile}></Gif>
 							<Paragraph>
-								It was made for a comfortable one-handed experience.
+								Slider UI was supposed to be the default experience.
+							</Paragraph>
+							<Paragraph>
+								It was made for a comfortable one-handed experience on mobile.
 							</Paragraph>
 						</ShowIf>
+
 						<ShowIf noAnimation thisValue={isContentPortrait} thatValue={false}>
+							<Gif
+								className='paddingLRSm'
+								desc='A video of the Slider UI on desktop'
+								url={SliderUIDesktop}></Gif>
 							<Paragraph>
-								The odd left and right super white space layout was created
-								because each side is supposed to represent a complete thought.
-								The slider was created to bring the thoughts together.
+								Slider UI was supposed to be the default experience.
+							</Paragraph>
+							<Paragraph>
+								The left and right layout was created because each side is
+								supposed to represent a complete thought. The slider was created
+								to bring the thoughts together.
 							</Paragraph>
 						</ShowIf>
 					</ShowIf>
@@ -176,9 +193,13 @@ const SettingsPage = ({ contentProps }) => {
 				</ZigZag>
 				<ZigZag>
 					<HeadingTwo>Accessibility</HeadingTwo>
+					<Image
+						className='paddingLRSm'
+						alt='A mockup of an example of the Accessibility Setting on mobile and desktop'
+						src={AccessibilitySetting}
+					/>
 					<Paragraph>
-						These settings make certain parts of the web app more easier to
-						experience.
+						These settings provide a better experience for the web app.
 					</Paragraph>
 					<HeadingThree beta>Accessibility Mode</HeadingThree>
 					<ShowIf noAnimation thisValue={accessible} thatValue={false}>
@@ -275,6 +296,11 @@ const SettingsPage = ({ contentProps }) => {
 				</ZigZag>
 				<ZigZag>
 					<HeadingTwo>Tone</HeadingTwo>
+					<Image
+						className='paddingLRSm'
+						alt='A mockup of an example of the Technical theme difference'
+						src={TechnicalTheme}
+					/>
 					<Paragraph>
 						Tones pertain to specific wordings on different areas of the web
 						app.
@@ -289,8 +315,8 @@ const SettingsPage = ({ contentProps }) => {
 					</ShowIf>
 					<ShowIf noAnimation thisValue={forDev} thatValue={true}>
 						<Paragraph>
-							Some parts of the site have a lot of technical lingo, if you don’t
-							like you can switch to a more normal tone.
+							Some parts of the site have a technical tone, if you don’t like it
+							you can switch to a more normal non-technical tone.
 						</Paragraph>
 					</ShowIf>
 					<ShowIf noAnimation thisValue={forDev} thatValue={true}>

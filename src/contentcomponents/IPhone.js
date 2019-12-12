@@ -46,7 +46,8 @@ import {
 	iphonegradAunty,
 	iphoneflagstaffColorfulHouses,
 	iphoneDavidBestIphonePic,
-	iphoneafterDCTrip
+	iphoneafterDCTrip,
+	camelback
 } from "../MediaVariables";
 
 const header = "ShotOniPhone";
@@ -82,6 +83,9 @@ const iPhonePage = () => {
 						alt='picture of kid jumping up'
 						src={iphoneDavidBestIphonePic}
 					/>
+				</ZigZag>
+				<ZigZag>
+					<Image alt='photograph of sunrise on a mountain' src={camelback} />
 				</ZigZag>
 				<ZigZag>
 					<Image alt='picture of my Jeep in snow' src={iphonejeepSnow} />

@@ -37,7 +37,7 @@ export const maxContentWidth = `600px`;
 export const mobile = "@media only screen and (max-width: 540px)";
 export const mobileSm = "@media only screen and (max-width: 340px)";
 export const tablet =
-	"@media screen and (max-width: 1200px) and (min-width: 768px)";
+	"@media screen and (max-width: 1199px) and (min-width: 768px)";
 export const mobileHorizontal = "@media only screen and (max-width: 1200px)";
 export const removeNegativeMargin =
 	"@media only screen and (min-width: 1240px)";
@@ -84,6 +84,11 @@ position: absolute;
 `;
 
 export const starWarsPerspective = `transform: perspective(200px) rotateX(10deg);
+-ms-overflow-style: none !important;  
+scrollbar-width: none!important;
+&::-webkit-scrollbar { 
+	display: none !important; 
+}
 ${tablet} {
 	transform: perspective(0) rotateX(0);
 }
