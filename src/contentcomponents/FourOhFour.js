@@ -11,11 +11,11 @@ const header = "404";
 const FourOhFourPage = () => (
 	<div className='container'>
 		<Header>{header}</Header>
-		<Emphasis center>
+		<Emphasis >
 			Oh man <Emoji className='emoji' symbol='🙁' label='sad face' />
 		</Emphasis>
 		<Gif url={videosofme404} />
-		<Emphasis center>Looks like you stumbled on the wrong page</Emphasis>
+		<Emphasis >Looks like you stumbled on the wrong page</Emphasis>
 	</div>
 );
 

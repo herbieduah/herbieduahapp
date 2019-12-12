@@ -291,6 +291,10 @@ export const ContentContainer = styled.section`
 				props.minimalMode || props.fullScreen
 					? `margin-top: 0 !important;`
 					: ``}
+
+					img {
+						${marginBottomLarge}
+					}
 		}
 	}
 	.c-zigzag {

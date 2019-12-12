@@ -82,12 +82,12 @@ const PeoplePage = () => {
 						src={peopleAshleyTaylor}
 					/>
 				</ZigZag>
-				<ZigZag>
+				{/* <ZigZag>
 					<Image
 						alt='photograph of a girl infront fo a poinsettia'
 						src={alessondria}
 					/>
-				</ZigZag>
+				</ZigZag> */}
 				<ZigZag>
 					<Image
 						alt='photograph of my friend surrounded by his family while being promoted to Lieutenant'
