@@ -173,9 +173,9 @@ export const NavBarMiniContainer = styled.div`
 			}
 		}
 		&__logo-menu {
-			padding-right: 30px;
+			${props => (props.accessible ? `padding-right: 30px;` : ``)};
 			${tablet}{
-				padding-right: 20px;
+				${paddingLRSm};
 			}
 			${mobile} {
 				padding-left: 0;

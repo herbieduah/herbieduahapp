@@ -208,6 +208,7 @@ const SettingsPage = ({ contentProps }) => {
 							<LI>Adds Background color to Navigation Bar.</LI>
 							<LI>Turns off Slider UI.</LI>
 							<LI>Adds controls to video players.</LI>
+							<LI>Adds a scrollbar</LI>
 						</UL>
 						{/* <Instructions>
 						Find more details about these settings below.

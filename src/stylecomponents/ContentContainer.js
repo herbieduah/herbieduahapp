@@ -209,11 +209,11 @@ export const ContentContainer = styled.section`
 	&::-webkit-scrollbar-thumb {
 		background-color:${colorSlightOpacity};
 	}
-	${props => (props.minimalMode ? `` : hideScrollbar)};
+	${props => (props.accessible ? `` : hideScrollbar)};
 	/* MOCKUPSTUFF */
   	/* ${hideScrollbar} */
 	  ${tablet} {
-		  /* ${hideScrollbar} */
+		  ${hideScrollbar}
 	  }
 	  ${mobile}{
 		${hideScrollbar}

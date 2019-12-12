@@ -71,7 +71,8 @@ export const NavBar = () => {
 		navBarRight,
 		currentTransition,
 		navBarComplement,
-		minimalMode
+		minimalMode,
+		accessible
 	} = useContext(globalState);
 	const { height: wh, width: ww } = useWindowResize();
 	const values = { ww, wh, cw, ch };
@@ -95,6 +96,7 @@ export const NavBar = () => {
 				<NavBarMiniContainer
 					className='navbar'
 					isPortrait={isContentPortrait}
+					accessible={accessible}
 					modalVisible={modalVisible}
 					navBarComplement={navBarComplement}>
 					<NavLink
