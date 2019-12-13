@@ -515,7 +515,7 @@ export const Gif = props => {
 				width={props.width}
 				height={props.height}
 				desc={desc}
-				className={`marginBottomLarge ${className}`}
+				className={`marginBottomMed ${className}`}
 			/>
 		</ElementReveal>
 	);

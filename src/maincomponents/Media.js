@@ -76,7 +76,7 @@ const Media = props => {
 						aria-describedby={props.desc}
 						className={props.className || ""}
 						inline='true'>
-						<Transformation width='540' crop='scale' />
+						<Transformation width='740' crop='scale' />
 					</Video>
 				</LazyLoadWrapper>
 			);
@@ -114,7 +114,7 @@ const Media = props => {
 						dpr='2.0'
 						alt={props.alt}
 						className={props.className || ""}>
-						<Transformation width='540' crop='scale' />
+						<Transformation width='630' crop='scale' />
 					</CloudImage>
 				</LazyLoadWrapper>
 			);

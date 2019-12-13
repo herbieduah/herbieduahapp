@@ -811,7 +811,7 @@ export const FullScreenOverlayContainer = styled.div`
 			padding-bottom: 200px;
 			${hideScrollbar}
 			text-align: left;
-			${marginTopXLarge}
+			${marginTopMed}
 			display: flex;
 			justify-content: center;
 
