@@ -146,7 +146,7 @@ const SettingsPage = ({ contentProps }) => {
 					<ShowIf noAnimation thisValue={minimalMode} thatValue={true}>
 						<ShowIf noAnimation thisValue={isContentPortrait} thatValue={true}>
 							<Gif
-								className='paddingLRSm'
+								className='paddingLRMed'
 								desc='A video of the Slider UI on mobile'
 								url={SliderUIMobile}></Gif>
 							<Paragraph>
