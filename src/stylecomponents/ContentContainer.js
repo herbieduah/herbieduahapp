@@ -296,6 +296,22 @@ export const ContentContainer = styled.section`
 						${marginBottomLarge}
 					}
 		}
+		&.no-margin {
+			.c-zigzag {
+			${props =>
+				props.minimalMode || props.fullScreen
+					? `margin-top: 0 !important;`
+					: ``}
+
+					img {
+						margin: 0;
+					}
+					figure {
+						${marginBottomLarge}
+					}
+		}
+
+		}
 	}
 	.c-zigzag {
 		/* ${marginTopSm} */

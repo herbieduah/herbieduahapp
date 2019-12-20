@@ -68,7 +68,7 @@ const Modeling = () => {
 					<Image src={modelingConnerSnow} />
 				</div>
 			</ContentShow>
-			<ContentShow containerLarge more className='c-photos'>
+			<ContentShow containerLarge more className='c-photos no-margin'>
 				<ZigZag>
 					<Header>{header}</Header>
 					<Paragraph>
