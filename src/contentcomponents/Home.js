@@ -57,7 +57,7 @@ const header = "HerbieDuah.app";
 
 // const HomePage = ({ contentProps }) => {
 const HomePage = ({ contentProps }) => {
-	const { whom, forYou, ww, wh } = contentProps;
+	const { whom, forYou, ww, wh, isContentPortrait } = contentProps;
 	// const opts = {
 	// 	height: "100%",
 	// 	width: "100%",
@@ -88,10 +88,23 @@ const HomePage = ({ contentProps }) => {
 				<ZigZag>
 					<Header version>{header}</Header>
 					<div className='marginBottomLarge'>
-						<Small className='marginBottomLarge'>
-							Everyone is going to have their own app in the future, so I made
-							my own.
-						</Small>
+						<ShowIf noAnimation thisValue={isContentPortrait} thatValue={true}>
+							<Small className='marginBottomLarge'>
+								Everyone is going to have their own app in the future, so I made
+								my own.
+							</Small>
+						</ShowIf>
+
+						<ShowIf noAnimation thisValue={isContentPortrait} thatValue={false}>
+							<Small className='marginBottomLarge'>
+								Check this out on your phone when you get the chance&nbsp;{" "}
+								<Emoji
+									className='emoji'
+									symbol='😜'
+									label='face with stuck out tongue'
+								/>
+							</Small>
+						</ShowIf>
 					</div>
 				</ZigZag>
 
@@ -141,7 +154,7 @@ const HomePage = ({ contentProps }) => {
 				<ZigZag>
 					<Emphasis className='paddingLRParagraph'>
 						{/* Hey there */}
-						<span className='capitalize '>
+						<span>
 							{forYouHelper(forYou)
 								? `Hey ${forYouHelper(forYou)}`
 								: // <Emoji className='emoji' symbol='😄' label='smile' />
@@ -150,6 +163,7 @@ const HomePage = ({ contentProps }) => {
 						&nbsp;
 						<Emoji className='emoji' symbol='😄' label='smile' />
 					</Emphasis>
+
 					{/* <div className='marginTopLarge'>
 						<Emphasis className='paddingLRMed' center>
 							I'm Herbie.

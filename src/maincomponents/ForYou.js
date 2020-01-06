@@ -120,8 +120,8 @@ export const JobApplication = props => {
 	);
 };
 export const forYouHelper = forSomebody => {
-	let person = forSomebody === "" ? "" : ` ${forSomebody},`;
-	switch (forSomebody) {
+	let person = forSomebody === "" ? "" : ` ${forSomebody}`;
+	switch (forSomebody.toLowerCase()) {
 		case "indeed":
 			person = " Indeed Employer/Employee";
 			return person;
@@ -137,10 +137,33 @@ export const forYouHelper = forSomebody => {
 		case "vrbo":
 			person = " Vrbo Employer/Employee";
 			return person;
-		// case 'Mangoes':
-		// case 'Papayas':
-		//   console.log('Mangoes and papayas are $2.79 a pound.');
-		//   break;
+		case "adp":
+			person = " ADP Employee";
+			return person;
+		case "psjob":
+			person = " Playstation Employee";
+			return person;
+		case "ticket":
+			person = " Ticketmaster Employee";
+			return person;
+		case "hulu":
+			person = " Hulu Employee";
+			return person;
+		case "google":
+			person = " Google Employee";
+			return person;
+		case "houzz":
+			person = " Houzz Employee";
+			return person;
+		case "amazon":
+			person = " Amazon Employee";
+			return person;
+		case "disneydev":
+			person = " Disney Employee";
+			return person;
+		case "daliza":
+			person = " My Love";
+			return person;
 		default:
 			return person;
 	}

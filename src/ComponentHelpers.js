@@ -614,7 +614,7 @@ export const AppStartUp = () => {
 	return (
 		<TransitionGroup>
 			{showApp ? (
-				<CSSTransition timeout={4000} classNames={startUpTransitions}>
+				<CSSTransition timeout={1000} classNames={startUpTransitions}>
 					<StartUp>
 						<div>
 							{/* <Fade duration={1000}>

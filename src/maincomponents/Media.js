@@ -12,8 +12,8 @@ import { isMobileOnly } from "react-device-detect";
 // import Img from "react-image";
 import VisibilitySensor from "react-visibility-sensor";
 // import "react-lazy-load-image-component/src/effects/blur.css";
-// const mediaWidth = isMobileOnly ? "400" : "740";
-const mediaWidth = "500";
+const mediaWidth = isMobileOnly ? "400" : "720";
+// const mediaWidth = "720";
 const lazyLoadOffset = isMobileOnly ? 400 : 1000;
 // const mediaSize = isMobileOnly ? 1 : 0;
 const LazyLoadWrapper = props => {

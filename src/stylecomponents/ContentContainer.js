@@ -318,7 +318,7 @@ export const ContentContainer = styled.section`
 		${mainTransition}
 		${props =>
 			props.minimalMode || props.fullScreen
-				? `${removeNegativeMargin}{margin-top: -6rem;}`
+				? `${removeNegativeMargin}{margin-top: -5rem;}`
 				: ``}
 		display:flex;
 		flex-direction: column;

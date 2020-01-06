@@ -189,9 +189,7 @@ export const App = () => {
 				dragging={dragging}
 				currentTheme={currentTheme}
 				showOutline={showOutline}>
-				<ShowIf noAnimation thisValue={downloaded} thatValue={true}>
-					<AppStartUp />
-				</ShowIf>
+				<AppStartUp />
 				<ShowIf noAnimation thisValue={currentTheme} thatValue={"matrix"}>
 					<Matrix fullscreen={true} isPortrait={isPortrait(ww, wh)} />
 				</ShowIf>
