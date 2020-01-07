@@ -130,7 +130,7 @@ export const JobApplication = props => {
 					I believe I have the skills for your {job} position. I'll also love to
 					support {company}'s mission to
 					{topping}. I designed and engineered this portfolio with a role like
-					this in mind. Looking forward to hearing back from you.
+					this in mind. Looking forward to hearing from you.
 				</Paragraph>
 				{/* <Paragraph>
 					If I am not a good fit the role, please let me know why so I can learn
