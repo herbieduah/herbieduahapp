@@ -163,6 +163,7 @@ const HomePage = ({ contentProps }) => {
 						&nbsp;
 						<Emoji className='emoji' symbol='😄' label='smile' />
 					</Emphasis>
+					<ForSomeone whom={whom} forYou={forYou} />
 
 					{/* <div className='marginTopLarge'>
 						<Emphasis className='paddingLRMed' center>

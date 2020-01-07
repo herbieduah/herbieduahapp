@@ -9,7 +9,7 @@ export const ForSomeone = props => {
 	return (
 		<Fragment>
 			{/* Dherbsta Twitter */}
-			<div className='container'>
+			<div className='marginTopMed'>
 				<ShowIf noAnimation thisValue={"dherbstatwitter"} thatValue={whom}>
 					<Paragraph>
 						You know what's crazy? I am still not tired of MegTheeStallion
@@ -50,23 +50,11 @@ export const ForSomeone = props => {
 				{/* https://www.linkedin.com/jobs/view/1460515336/ */}
 				{/* Visa */}
 				{/* https://www.herbieduah.app/?=CyberSource */}
-				<JobApplication
-					jobID='cybersource'
-					job='Sr. UX Design Engineer'
-					city='Austin'
-					topping="contribute to CyberSource's growth as a global leader in e-Commerce Payment"
-					forYou={forYou}
-				/>
-				<JobApplication
-					jobID='cloudflare'
-					job='Front End Engineer'
-					city='Austin'
-					topping="contribute to Cloudflare's goal to help build a better Internet."
-					forYou={forYou}
-				/>
+
 				<JobApplication
 					jobID='indeed'
 					job='UX Developer'
+					company='Indeed'
 					city='Austin'
 					topping="contribute to Indeed's mission to help people get jobs."
 					forYou={forYou}
@@ -74,8 +62,41 @@ export const ForSomeone = props => {
 				<JobApplication
 					jobID='vrbo'
 					job='UX Developer/Design Technologist'
+					company='VRBO'
 					city='Austin'
 					topping='partner with the engineering teams to deliver great experiences and patterns for Vrbo travelers and suppliers.'
+					forYou={forYou}
+				/>
+				<JobApplication
+					jobID='adp'
+					job='Associate UX Engineer/Lead UX Engineer'
+					company='ADP'
+					city='Pasadena'
+					topping='deliver innovative HR technologies and solutions that help employees all over the world do their jobs better.'
+					forYou={forYou}
+				/>
+				<JobApplication
+					jobID='disneydev'
+					job='Software Developer/Sr UX Engineer'
+					company='Disney'
+					city='Burbank'
+					topping='align technology, content and distribution platforms to expand the Company’s global footprint and deliver world-class, personalized entertainment experiences to consumers around the world.'
+					forYou={forYou}
+				/>
+				<JobApplication
+					jobID='psjob'
+					company='Playstation'
+					job='Software Engineer II, Front End'
+					city='Los Angeles'
+					topping='apply web technologies to the core user experience on PlayStation®4 and beyond, with which millions of customers around the world interact daily.'
+					forYou={forYou}
+				/>
+				<JobApplication
+					jobID='google'
+					company='Google'
+					job='Software Engineer, Front End'
+					city='Los Angeles'
+					topping='develop the next-generation technologies that change how billions of users connect, explore, and interact with information and one another. '
 					forYou={forYou}
 				/>
 				{/* <ShowIf noAnimation thisValue={""} thatValue={forYou}>
@@ -96,25 +117,26 @@ export const JobApplication = props => {
 	const city = props.city;
 	const topping = props.topping ? ` and ${props.topping}` : "";
 	const jobID = props.jobID;
+	const company = props.company;
 	const forYou = props.forYou;
 	return (
 		<Fragment>
 			<ShowIf noAnimation thisValue={jobID} thatValue={forYou}>
-				<HeadingTwo>{job} position</HeadingTwo>
-				<Paragraph>
+				<Paragraph className='paddingLRParagraph'>
 					I appreciate you taking the time to check out my application and
 					portfolio. Hope all is well at the {city} location.
 				</Paragraph>
 				<Paragraph>
-					I believe I have the skills to fill the role for your {job}
+					I believe I have the skills for your {job} position. I'll also love to
+					support {company}'s mission to
 					{topping}. I designed and engineered this portfolio with a role like
-					this in mind.
+					this in mind. Looking forward to hearing back from you.
 				</Paragraph>
-				<Paragraph>
+				{/* <Paragraph>
 					If I am not a good fit the role, please let me know why so I can learn
 					to improve my skills. I hope you have a pleasant experience on my web
 					app (I'm open to feedback on it too!).
-				</Paragraph>
+				</Paragraph> */}
 			</ShowIf>
 		</Fragment>
 	);
