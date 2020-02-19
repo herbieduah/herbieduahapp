@@ -1,4 +1,6 @@
 # herbieduahapp
+
+![WhatIfTherewasanapp](./src/media/appImages/desktop/WhatIfHomepage.jpg  "App Mock Up on iPhone X"))
 **This is a very personal project and was never meant for public eyes so please excuse my terrible coding practices and commits.**<br />
 This is project was designed... by coding meaning there was no Mockup or boilerplate to go off for the project.
 <br />
