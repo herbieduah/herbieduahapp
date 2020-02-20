@@ -16,7 +16,7 @@ Check it out here
 [HerbieDuah.app](https://www.herbieduah.app).
 <br />
 
-**It won some awards and feature though!**
+**It won some awards and featurespr though!**
 *[Awwwards](https://www.awwwards.com/sites/herbieduah-app)
 *[CSS Design Awards](https://www.cssdesignawards.com/sites/herbieduah-app/36099/)
 *[Mindsparkle](https://mindsparklemag.com/website/herbieduah-app-by-herbie-duah/)
