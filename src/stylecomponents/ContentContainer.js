@@ -265,7 +265,7 @@ export const ContentContainer = styled.section`
 	.container-large {
 		${props =>
 			props.minimalMode || props.fullScreen
-				? `${removeNegativeMargin}{${paddingTopXLarge}}`
+				? ``
 				: ``}
 		width: 100%;
 		${props => (props.fullScreen ? `margin: 0 auto` : ``)};
@@ -318,7 +318,7 @@ export const ContentContainer = styled.section`
 		${mainTransition}
 		${props =>
 			props.minimalMode || props.fullScreen
-				? `${removeNegativeMargin}{margin-top: -5rem;}`
+				? ``
 				: ``}
 		display:flex;
 		flex-direction: column;

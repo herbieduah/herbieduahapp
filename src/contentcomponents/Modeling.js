@@ -71,7 +71,7 @@ const Modeling = () => {
 			<ContentShow containerLarge more className='c-photos no-margin'>
 				<ZigZag>
 					<Header>{header}</Header>
-					<Paragraph>
+					<Paragraph className="paddingBottomLarge">
 						Here are some of my favorite photos of me taken by some amazing
 						photographers.
 					</Paragraph>

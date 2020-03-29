@@ -68,7 +68,7 @@ const iPhonePage = () => {
 			<ContentShow containerLarge more className='c-photos'>
 				<ZigZag>
 					<Header>{header}</Header>
-					<Paragraph>
+					<Paragraph className="paddingBottomLarge">
 						Here are some of my favorite photos I've shot on my iPhone.
 					</Paragraph>
 				</ZigZag>

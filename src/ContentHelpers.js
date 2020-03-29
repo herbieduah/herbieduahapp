@@ -30,8 +30,13 @@ export const defaultAlt = "I will be adding an alt tag to this image soon";
 export const defaultDesc = "This is a video, I will be describing it soon";
 
 //Switch to 'gif' or 'image' to pull videos and images locally
-const videoLocation = "cloud-gif";
-const imageLocation = "cloud-image";
+let videoLocation = "gif";
+let imageLocation = "image";
+
+if (process.env.NODE_ENV === 'production') {
+	videoLocation = "cloud-gif";
+    imageLocation = "cloud-image";
+}
 
 // export const ContentShow = props => {
 // 	const {
@@ -449,7 +454,7 @@ export const Image = props => {
 				type={imageLocation}
 				src={src}
 				alt={alt}
-				className={`marginBottomMed ${className}`}
+				className={`marginBottomLarge ${className}`}
 			/>
 		</ElementReveal>
 	);
