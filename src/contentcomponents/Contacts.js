@@ -59,8 +59,8 @@ const ContactsPage = () => {
         <HeadingTwo>Social</HeadingTwo>
         <Paragraph>You can message me on any of these platforms as well. </Paragraph>
         <Paragraph>
-          <Link href="https://instagram.com/herbieduah">Instagram</Link>&nbsp;
-          <Link href="https://twitter.com/herbieduah">Twitter</Link>&nbsp;
+          <Link href="https://instagram.com/herbieduah">Instagram</Link>&nbsp;&nbsp;
+          <Link href="https://twitter.com/herbieduah">Twitter</Link>&nbsp;&nbsp;
           <Link href="https://www.linkedin.com/in/herbieduah/">LinkedIn</Link>{" "}
         </Paragraph>
         <Figure alt="picture of me smiling on a phone call" className="marginTopLarge" src={picsOfMesmileOnPhone}>

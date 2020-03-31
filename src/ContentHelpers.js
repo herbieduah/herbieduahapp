@@ -454,7 +454,7 @@ export const Image = props => {
 				type={imageLocation}
 				src={src}
 				alt={alt}
-				className={`marginBottomLarge ${className}`}
+				className={`marginBottomMed ${className}`}
 			/>
 		</ElementReveal>
 	);
