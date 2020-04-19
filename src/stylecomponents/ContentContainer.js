@@ -1,48 +1,48 @@
 import styled from "styled-components";
 import {
-	mobile,
-	hideScrollbar,
-	mainTransition,
-	mobileSliderOnTop,
-	contentMenuPadding,
-	tablet,
-	// navBarSize,
-	contentMenuPaddingRight,
-	paddingLRSm,
-	paddingTopSm,
-	marginLRSm,
-	paddingTBSm,
-	slightBoxShadowBelow,
-	userSelectNone,
-	paddingBottomMed,
-	marginBottomMed,
-	marginTopSm,
-	navBarSize,
-	marginTopXLarge,
-	// cPaddingTop,
-	// cPaddingTopMed,
-	// paddingLRSm,
-	// absoluteOverlay,
-	crossOut,
-	marginBottomLarge,
-	marginTopLarge,
-	marginTopMed,
-	marginBottomSm,
-	paddingLRMed,
-	mobileSm,
-	containerLargePx,
-	paddingTopXLarge,
-	maxContentWidth,
-	removeNegativeMargin
+  mobile,
+  hideScrollbar,
+  mainTransition,
+  mobileSliderOnTop,
+  contentMenuPadding,
+  tablet,
+  // navBarSize,
+  contentMenuPaddingRight,
+  paddingLRSm,
+  paddingTopSm,
+  marginLRSm,
+  paddingTBSm,
+  slightBoxShadowBelow,
+  userSelectNone,
+  paddingBottomMed,
+  marginBottomMed,
+  marginTopSm,
+  navBarSize,
+  marginTopXLarge,
+  // cPaddingTop,
+  // cPaddingTopMed,
+  // paddingLRSm,
+  // absoluteOverlay,
+  crossOut,
+  marginBottomLarge,
+  marginTopLarge,
+  marginTopMed,
+  marginBottomSm,
+  paddingLRMed,
+  mobileSm,
+  containerLargePx,
+  paddingTopXLarge,
+  maxContentWidth,
+  removeNegativeMargin,
 } from "./StyleHelpers";
 import {
-	navBarBorder,
-	CTAColor,
-	borderThin,
-	fontColor,
-	colorSlightOpacity,
-	colorLight,
-	bgColor
+  navBarBorder,
+  CTAColor,
+  borderThin,
+  fontColor,
+  colorSlightOpacity,
+  colorLight,
+  bgColor,
 } from "./Themes/ThemeVariables";
 
 export const ContentContainer = styled.section`
@@ -50,16 +50,15 @@ export const ContentContainer = styled.section`
 	height: 100vh;
 	/* position: relative !important; */
 	${mainTransition}
-	${props => (props.isPortrait ? mobileSliderOnTop : ``)};
+	${(props) => (props.isPortrait ? mobileSliderOnTop : ``)};
 	overflow: auto;
-	${props => (props.navBarRight ? contentMenuPaddingRight : contentMenuPadding)};
+	${(props) => (props.navBarRight ? contentMenuPaddingRight : contentMenuPadding)};
 	padding-bottom: 40vh;
-	${props => (props.minimalMode ? `margin:0 !important` : ``)};
-	${props => (props.minimalMode ? `padding:2.5rem 0 !important` : ``)};
-	${props => (props.showMore ? `` : `padding-top: 0 !important;`)};
+	${(props) => (props.minimalMode ? `margin:0 !important` : ``)};
+	${(props) => (props.minimalMode ? `padding:2.5rem 0 !important` : ``)};
+	${(props) => (props.showMore ? `` : `padding-top: 0 !important;`)};
 	padding-top: 0 !important;
-	${props =>
-		props.minimalMode ? `${paddingTopXLarge}` : `padding-top: 0 !important;`};
+	${(props) => (props.minimalMode ? `${paddingTopXLarge}` : `padding-top: 0 !important;`)};
 	/* transform: perspective(300px) rotateX(15deg);  */
 	
 	.less {
@@ -67,36 +66,35 @@ export const ContentContainer = styled.section`
 		h1,
 		p {
 			&.paddingLRSm {
-				${props => (props.isPortrait ? `` : `padding-right: 0; padding-left: 0;`)};
+				${(props) => (props.isPortrait ? `` : `padding-right: 0; padding-left: 0;`)};
 			}
 		}
 		${mainTransition}
 		width:  100%;
-		height: ${props => (props.showLess && !props.isPortrait ? `100%` : `100%`)};
+		height: ${(props) => (props.showLess && !props.isPortrait ? `100%` : `100%`)};
 
 		z-index: 10;
-		${props => (props.isPortrait ? `margin-top: 1rem` : `margin-top:0`)};
+		${(props) => (props.isPortrait ? `margin-top: 1rem` : `margin-top:0`)};
 		max-width: 500px;
 		${tablet} {
 			margin:0 auto;
-			${props =>
-				props.isPortrait ? `display:flex;padding-right:${navBarSize}` : ``};
+			${(props) => (props.isPortrait ? `display:flex;padding-right:${navBarSize}` : ``)};
 			width: 100%;
 			height: 100%;
-			${props =>
-				props.isPortrait
-					? `max-width: 100%;
+			${(props) =>
+        props.isPortrait
+          ? `max-width: 100%;
 		width: 100vw; margin: 0 auto; `
-					: `max-width:350px;`};
-			${props => (props.isPortrait ? `padding-left: 0;` : ``)};
+          : `max-width:350px;`};
+			${(props) => (props.isPortrait ? `padding-left: 0;` : ``)};
 			
 			.paddingLRSm {
-				${props => (props.isPortrait ? `padding-left: 0; padding-right: 0` : ``)};
+				${(props) => (props.isPortrait ? `padding-left: 0; padding-right: 0` : ``)};
 			}
 		}
 
 		&__container {
-			padding-top: ${props => (props.isPortrait ? `0` : `${navBarSize}`)};
+			padding-top: ${(props) => (props.isPortrait ? `0` : `${navBarSize}`)};
 			display: none;
 		}
 		&__header {
@@ -115,35 +113,32 @@ export const ContentContainer = styled.section`
 				padding-right: 0 !important;
 			}
 			${tablet} {
-				${props => (props.isPortrait ? `margin-bottom:4vh;` : ``)};
-				${props => (props.isPortrait ? `text-align: center;` : ``)};
+				${(props) => (props.isPortrait ? `margin-bottom:4vh;` : ``)};
+				${(props) => (props.isPortrait ? `text-align: center;` : ``)};
 			}
 		}
 		&__main-text {
 			height: 20vh;
 			max-width: 500px;
 			display: block;
-			${props => (props.isPortrait ? `${marginBottomMed}` : `margin-bottom: 9.5vh`)};
+			${(props) => (props.isPortrait ? `${marginBottomMed}` : `margin-bottom: 9.5vh`)};
 			${mobile}{
 				height: auto;
 				${marginBottomLarge};
 				text-align:center;	
 			}	
 			${tablet} {
-				${props =>
-					props.isPortrait
-						? `text-align: center;height: auto;text-align:center;${marginBottomMed}	`
-						: ``};
+				${(props) => (props.isPortrait ? `text-align: center;height: auto;text-align:center;${marginBottomMed}	` : ``)};
 			}
 		}
 
 			
 		
 		&__drag {
-			${props =>
-				props.isPortrait
-					? ``
-					: `
+			${(props) =>
+        props.isPortrait
+          ? ``
+          : `
 			position: fixed;
 			width: 100%;
 			height: 100vh;
@@ -164,25 +159,25 @@ export const ContentContainer = styled.section`
 				justify-content: center;	
 			}
 			${tablet} {
-				${props => (props.isPortrait ? `display: flex;justify-content:center;	` : ``)};
+				${(props) => (props.isPortrait ? `display: flex;justify-content:center;	` : ``)};
 			}
 		}
 		
 		&__wrapper {
 			${mainTransition}
-			${props => (props.navBarRight ? contentMenuPaddingRight : contentMenuPadding)};
+			${(props) => (props.navBarRight ? contentMenuPaddingRight : contentMenuPadding)};
 			
 			${mobile}{
-			${props => (props.dragging ? `padding-left: 0; padding-right: 0;` : ``)};
+			${(props) => (props.dragging ? `padding-left: 0; padding-right: 0;` : ``)};
 			padding-top: 0;
 			padding-bottom: 0;
-			${props => (props.navBarRight ? "" : "padding-left: 0")};
+			${(props) => (props.navBarRight ? "" : "padding-left: 0")};
 			.paddingLRSm {
-				${props => (props.navBarRight ? "" : "padding-left: 0; margin-right: 1rem")};	
+				${(props) => (props.navBarRight ? "" : "padding-left: 0; margin-right: 1rem")};	
 			}
 			}
 			${tablet} {
-				${props => (props.isPortrait ? `margin: 0 auto;	` : ``)};
+				${(props) => (props.isPortrait ? `margin: 0 auto;	` : ``)};
 			}
 		}
 		${mobile} {
@@ -209,7 +204,7 @@ export const ContentContainer = styled.section`
 	&::-webkit-scrollbar-thumb {
 		background-color:${colorSlightOpacity};
 	}
-	${props => (props.accessible ? `` : hideScrollbar)};
+	${(props) => (props.accessible ? `` : hideScrollbar)};
 	/* MOCKUPSTUFF */
   	/* ${hideScrollbar} */
 	  ${tablet} {
@@ -251,7 +246,7 @@ export const ContentContainer = styled.section`
 		
 		max-width: 740px;
 		width: 100%;
-		${props => (props.fullScreen ? `margin: 0 auto` : ``)};
+		${(props) => (props.fullScreen ? `margin: 0 auto` : ``)};
 		.c-zigzag__content {
 			margin-left: 0 !important;
 			max-width: 740px;
@@ -263,17 +258,14 @@ export const ContentContainer = styled.section`
 		}
 	}
 	.container-large {
-		${props =>
-			props.minimalMode || props.fullScreen
-				? ``
-				: ``}
+		${(props) => (props.minimalMode || props.fullScreen ? `` : ``)}
 		width: 100%;
-		${props => (props.fullScreen ? `margin: 0 auto` : ``)};
+		${(props) => (props.fullScreen ? `margin: 0 auto` : ``)};
 		max-width:${containerLargePx} 
-		/* ${props => (props.fullScreen ? `${containerLargePx}` : `740px`)}; */
-		${props =>
-			!props.fullScreen
-				? `
+		/* ${(props) => (props.fullScreen ? `${containerLargePx}` : `740px`)}; */
+		${(props) =>
+      !props.fullScreen
+        ? `
 		.c-zigzag__content {
 			margin-left: 0 !important;
 			max-width: ${maxContentWidth};	
@@ -283,14 +275,11 @@ export const ContentContainer = styled.section`
 			padding-right: 0;
 		}
 		`
-				: ``};
+        : ``};
 	}
 	.c-photos {
 		.c-zigzag {
-			${props =>
-				props.minimalMode || props.fullScreen
-					? `margin-top: 0 !important;`
-					: ``}
+			${(props) => (props.minimalMode || props.fullScreen ? `margin-top: 0 !important;` : ``)}
 
 					img {
 						${marginBottomLarge}
@@ -298,10 +287,7 @@ export const ContentContainer = styled.section`
 		}
 		&.no-margin {
 			.c-zigzag {
-			${props =>
-				props.minimalMode || props.fullScreen
-					? `margin-top: 0 !important;`
-					: ``}
+			${(props) => (props.minimalMode || props.fullScreen ? `margin-top: 0 !important;` : ``)}
 
 					img {
 						margin: 0;
@@ -316,17 +302,14 @@ export const ContentContainer = styled.section`
 	.c-zigzag {
 		/* ${marginTopSm} */
 		${mainTransition}
-		${props =>
-			props.minimalMode || props.fullScreen
-				? ``
-				: ``}
+		${(props) => (props.minimalMode || props.fullScreen ? `` : ``)}
 		display:flex;
 		flex-direction: column;
-		${props =>
-			props.minimalMode
-				? `padding-left: ${navBarSize};
+		${(props) =>
+      props.minimalMode
+        ? `padding-left: ${navBarSize};
 		padding-right: ${navBarSize};`
-				: ``};
+        : ``};
 		
 		${mobile} {
 			padding-left: 0;
@@ -411,7 +394,7 @@ export const ContentContainer = styled.section`
 		&__more {
 			${mainTransition}
 			padding: 0 2rem;
-			margin-bottom: ${props => (props.isPortrait ? `55vh` : `0`)};
+			margin-bottom: ${(props) => (props.isPortrait ? `55vh` : `0`)};
 		}
 	}
 
@@ -420,9 +403,9 @@ export const ContentContainer = styled.section`
 	}
 	.c-border {
 		border: ${navBarBorder};
-		${props => (props.isPortrait ? `` : `${paddingTBSm}`)};
-		${props => (props.isPortrait ? `` : `${marginLRSm}`)};
-		${props => (props.isPortrait ? `border: none !important;` : ``)};
+		${(props) => (props.isPortrait ? `` : `${paddingTBSm}`)};
+		${(props) => (props.isPortrait ? `` : `${marginLRSm}`)};
+		${(props) => (props.isPortrait ? `border: none !important;` : ``)};
 	}
 
 	s {
@@ -526,7 +509,6 @@ export const ContentContainer = styled.section`
 		}
 	}
 
-		
 	.c-interact {
 		margin-top: 2rem !important;
 		width: 100%;

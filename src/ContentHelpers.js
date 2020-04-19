@@ -194,7 +194,7 @@ export const Header = props => {
 		<Fragment>
 			<ShowIf noAnimation thisValue={props.less} thatValue={true}>
 				<ElementReveal>
-					<Text h1 m bold className='paddingLRSm less__header'>
+					<Text h1 m bold className={`paddingLRSm less__header ${className}`}>
 						{props.children}
 					</Text>
 				</ElementReveal>
