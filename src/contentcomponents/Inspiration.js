@@ -1,21 +1,14 @@
-/* eslint-disable no-unused-expressions */
 import React, { Fragment } from "react";
-// import Text from "../stylecomponents/Text";
-// import Media from "../maincomponents/Media";
-// import Fade from "react-reveal/Fade";
 import {
   ContentShow,
   Paragraph,
   Header,
   HeadingTwo,
-  UL,
-  LI,
-  Link,
-  Emphasis,
   ZigZag,
   LessContent,
+  Link,
   ContentCategory,
-  Image
+  Image,
 } from "../ContentHelpers";
 import { WhatIfHomepage, WhatIfAnAppForEveryone } from "../MediaVariables";
 const header = "Inspiration";

@@ -12,11 +12,11 @@ import {
   placesmysteriousDoor,
   placesicyAlley,
   placesflagstaffStreetOnAutumn,
-  placesfallFlagstaff,
+  // placesfallFlagstaff,
   placesevansTundra,
   placeschocolatefalls,
   placesbeautifulmountains,
-  placesbeauifulsunset
+  placesbeauifulsunset,
 } from "../MediaVariables";
 const header = "Places";
 
