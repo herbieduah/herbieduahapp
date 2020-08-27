@@ -15,7 +15,7 @@ import {
   Figure,
   Figcaption,
   // Gif,
-  Header
+  Header,
 } from "../ContentHelpers";
 
 import { picsOfMesmileOnPhone } from "../MediaVariables";

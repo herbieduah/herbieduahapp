@@ -2,23 +2,23 @@
 import React, { Fragment } from "react";
 // import Text from "../stylecomponents/Text";
 import {
-	Paragraph,
-	// HeadingOne,
-	HeadingTwo,
-	// HeadingThree,
-	Image,
-	Emphasis,
-	// Link,
-	ContentCategory,
-	Figure,
-	Figcaption,
-	Small,
-	// Gif,
-	Header,
-	// Flex,
-	ContentShow,
-	ZigZag,
-	LessContent
+  Paragraph,
+  // HeadingOne,
+  HeadingTwo,
+  // HeadingThree,
+  Image,
+  Emphasis,
+  // Link,
+  ContentCategory,
+  Figure,
+  Figcaption,
+  Small,
+  // Gif,
+  Header,
+  // Flex,
+  ContentShow,
+  ZigZag,
+  LessContent,
 } from "../ContentHelpers";
 import { ShowIf } from "../ComponentHelpers";
 // import { ShowIf } from "../ComponentHelpers";
@@ -35,17 +35,14 @@ import { isMobile } from "react-device-detect";
 // import { thisAppGatsbySmiling, placesicyAlley } from "../MediaVariables";
 // import YouTube from "react-youtube";
 import {
-	picsOfMesnowsmilephotography,
-	picsOfMeshowingtilly,
-	picsOfMeHero,
-	WhatIfHomepage,
-	WhatIfAnAppForEveryone
+  picsOfMesnowsmilephotography,
+  picsOfMeshowingtilly,
+  picsOfMeHero,
+  WhatIfHomepage,
+  WhatIfAnAppForEveryone,
 } from "../MediaVariables";
 // import ReactPlayer from "react-player";
-import {
-	videosofmevNeckCrewNeck,
-	videosofmephotosSedona
-} from "../VideoVariables";
+import { videosofmevNeckCrewNeck, videosofmephotosSedona } from "../VideoVariables";
 const header = "HerbieDuah.app";
 // There is an app for everything, in
 // 					the future, I believe there is going to be an app for everyone. I am
@@ -57,73 +54,67 @@ const header = "HerbieDuah.app";
 
 // const HomePage = ({ contentProps }) => {
 const HomePage = ({ contentProps }) => {
-	const { whom, forYou, ww, wh, isContentPortrait } = contentProps;
-	// const opts = {
-	// 	height: "100%",
-	// 	width: "100%",
-	// 	playerVars: {
-	// 		autoplay: 1,
-	// 		controls: 0,
-	// 		cc_load_policy: 0,
-	// 		fs: 0,
-	// 		iv_load_policy: 3,
-	// 		modestbranding: 1,
-	// 		rel: 0,
-	// 		showinfo: 0
-	// 	}
-	// };
+  const { whom, forYou, ww, wh, isContentPortrait } = contentProps;
+  // const opts = {
+  // 	height: "100%",
+  // 	width: "100%",
+  // 	playerVars: {
+  // 		autoplay: 1,
+  // 		controls: 0,
+  // 		cc_load_policy: 0,
+  // 		fs: 0,
+  // 		iv_load_policy: 3,
+  // 		modestbranding: 1,
+  // 		rel: 0,
+  // 		showinfo: 0
+  // 	}
+  // };
 
-	return (
-		<Fragment>
-			<ContentShow less>
-				<LessContent header={header}>
-					Hi<span className='text-cap'>{forYouHelper(forYou)}</span>, I'm Herbie
-					Duah and this is my personal web app.
-					{/* <br />
+  return (
+    <Fragment>
+      <ContentShow less>
+        <LessContent header={header}>
+          Hi<span className="text-cap">{forYouHelper(forYou)}</span>, I'm Herbie Duah and this is my personal web app.
+          {/* <br />
 					<br />I built this portfolio as a way for me to learn and bring some
 					of my creative and original ideas to life. */}
-				</LessContent>
-			</ContentShow>
-			<ContentShow containerLarge more>
-				<ZigZag>
-					<Header version>{header}</Header>
-					<div className='marginBottomLarge'>
-						<ShowIf noAnimation thisValue={isContentPortrait} thatValue={true}>
-							<Small className='marginBottomLarge'>
-								Everyone is going to have their own app in the future, so I made
-								my own.
-							</Small>
-						</ShowIf>
+        </LessContent>
+      </ContentShow>
+      <ContentShow containerLarge more>
+        <ZigZag>
+          <Header version>{header}</Header>
+          <div className="marginBottomLarge">
+            <ShowIf noAnimation thisValue={isContentPortrait} thatValue={true}>
+              <Small className="marginBottomLarge">
+                Everyone is going to have their own app in the future, so I made my own.
+              </Small>
+            </ShowIf>
 
-						<ShowIf noAnimation thisValue={isContentPortrait} thatValue={false}>
-							<Small className='marginBottomLarge'>
-								Check this out on your phone when you get the chance&nbsp;{" "}
-								<Emoji
-									className='emoji'
-									symbol='😜'
-									label='face with stuck out tongue'
-								/>
-							</Small>
-						</ShowIf>
-					</div>
-				</ZigZag>
+            <ShowIf noAnimation thisValue={isContentPortrait} thatValue={false}>
+              <Small className="marginBottomLarge">
+                Check this out on your phone when you get the chance&nbsp;{" "}
+                <Emoji className="emoji" symbol="😜" label="face with stuck out tongue" />
+              </Small>
+            </ShowIf>
+          </div>
+        </ZigZag>
 
-				{/* <ZigZag> */}
-				{/* <HeadingTwo>
+        {/* <ZigZag> */}
+        {/* <HeadingTwo>
 						Hello<span className='text-cap'>{forYouHelper(forYou)}</span>
 					</HeadingTwo> */}
 
-				{/* <Paragraph>
+        {/* <Paragraph>
 						I am a Web Developer/Designer with over five years of experience
 						that also likes taking photos.
 					</Paragraph> */}
-				{/* <div className='marginBottomXLarge marginTopXLarge'>
+        {/* <div className='marginBottomXLarge marginTopXLarge'>
 					<Emphasis center>
 						Hey<span>{forYouHelper(forYou)}</span>,
 					</Emphasis>
 				</div> */}
 
-				{/* <ZigZag>
+        {/* <ZigZag>
 					<Emphasis>
 						I'm a Web Developer/Designer and photographer
 						<ShowIf noAnimation thisValue={forDev} thatValue={true}>
@@ -132,112 +123,100 @@ const HomePage = ({ contentProps }) => {
 						.
 					</Emphasis>
 				</ZigZag> */}
-				{/* <Paragraph>
+        {/* <Paragraph>
 						Projects that allow me to use my coding and design skills in
 						creative and original ways make me very happy.
 					</Paragraph> */}
-				{/* <Paragraph>I also love going out and taking photos.</Paragraph> */}
-				{/* </ZigZag>
+        {/* <Paragraph>I also love going out and taking photos.</Paragraph> */}
+        {/* </ZigZag>
 				<ZigZag> */}
-				{/* <div className='container'>
+        {/* <div className='container'>
 					<ForSomeone whom={whom} forYou={forYou} />
 				</div> */}
-				{/* <ZigZag>
+        {/* <ZigZag>
 					<Emphasis>
 						Hey<span>{forYouHelper(forYou)}</span>,
 					</Emphasis>
 					<ForSomeone whom={whom} forYou={forYou} />
 				</ZigZag> */}
-				{/* <ZigZag>
+        {/* <ZigZag>
 					
 				</ZigZag> */}
-				<ZigZag>
-					<Emphasis className='paddingLRParagraph'>
-						{/* Hey there */}
-						<span>
-							{forYouHelper(forYou)
-								? `Hey ${forYouHelper(forYou)}`
-								: // <Emoji className='emoji' symbol='😄' label='smile' />
-								  "Hello, I'm Herbie"}
-						</span>
-						&nbsp;
-						<Emoji className='emoji' symbol='😄' label='smile' />
-					</Emphasis>
-					<ForSomeone whom={whom} forYou={forYou} />
+        <ZigZag>
+          <Emphasis className="paddingLRParagraph">
+            {/* Hey there */}
+            <span>
+              {forYouHelper(forYou)
+                ? `Hey ${forYouHelper(forYou)}`
+                : // <Emoji className='emoji' symbol='😄' label='smile' />
+                  "Hello, I'm Herbie"}
+            </span>
+            &nbsp;
+            <Emoji className="emoji" symbol="😄" label="smile" />
+          </Emphasis>
+          <ForSomeone whom={whom} forYou={forYou} />
 
-					{/* <div className='marginTopLarge'>
+          {/* <div className='marginTopLarge'>
 						<Emphasis className='paddingLRMed' center>
 							I'm Herbie.
 						</Emphasis>
 					</div> */}
-					<Image
-						src={picsOfMeHero}
-						className='paddingLRParagraph'
-						alt='A picture of me smiling infront of green plants '
-					/>
-				</ZigZag>
+          <Image
+            src={picsOfMeHero}
+            className="paddingLRParagraph"
+            alt="A picture of me smiling infront of green plants "
+          />
+        </ZigZag>
 
-				<ZigZag>
-					<Emphasis className='paddingLRParagraph'>
-						I love designing and coding websites for humans.
-					</Emphasis>
-					<Figure
-						className='paddingLRParagraph'
-						alt='A photo of me with dog on a desk'
-						src={picsOfMeshowingtilly}>
-						<Figcaption>Sometimes I need help from non-humans.</Figcaption>
-					</Figure>
-				</ZigZag>
-				<ZigZag>
-					<Emphasis className='paddingLRParagraph'>
-						I also love to take photos.
-					</Emphasis>
-					<Image
-						src={picsOfMesnowsmilephotography}
-						className='paddingLRParagraph'
-						alt='A picture of me sitting on snow while holding a camera'
-					/>
-				</ZigZag>
-				<ZigZag>
-					{/* <div className='marginTopLarge marginBottomLarge'>
+        <ZigZag>
+          <Emphasis className="paddingLRParagraph">I love designing and coding websites for humans.</Emphasis>
+          <Figure className="paddingLRParagraph" alt="A photo of me with dog on a desk" src={picsOfMeshowingtilly}>
+            <Figcaption>Sometimes I need help from non-humans.</Figcaption>
+          </Figure>
+        </ZigZag>
+        <ZigZag>
+          <Emphasis className="paddingLRParagraph">I also love to take photos.</Emphasis>
+          <Image
+            src={picsOfMesnowsmilephotography}
+            className="paddingLRParagraph"
+            alt="A picture of me sitting on snow while holding a camera"
+          />
+        </ZigZag>
+        <ZigZag>
+          {/* <div className='marginTopLarge marginBottomLarge'>
 						<Emphasis className='paddingLRParagraph'>
 							Nowadays, there is an app for everything. In the future, I believe
 							there is going to be an app for everyone.
 						</Emphasis>
 					</div> */}
-					{/* MockupStuff */}
-					{/* <div className='marginTopLarge marginBottomLarge'>
+          {/* MockupStuff */}
+          {/* <div className='marginTopLarge marginBottomLarge'>
 						<Emphasis className='paddingLRParagraph'>
 							In the future, everyone is going to have their own
 						</Emphasis>
 					</div> */}
-					<div className='marginTopLarge '>
-						<Emphasis className='paddingLRParagraph'>
-							In the future, I believe there is going to be an app for everyone.
-						</Emphasis>
-						<ShowIf noAnimation thisValue={isMobile} thatValue={true}>
-							<Image
-								src={WhatIfAnAppForEveryone}
-								className='paddingLRParagraph'
-								alt='Mockups of this web  app on an iPhone XR'
-							/>
-						</ShowIf>
-						<ShowIf noAnimation thisValue={isMobile} thatValue={false}>
-							<Image
-								src={WhatIfHomepage}
-								className='paddingLRParagraph'
-								alt='Mockups of this web  app on an iPad'
-							/>
-						</ShowIf>
-					</div>
-					<Paragraph className='paddingLRParagraph'>
-						I envision every user having a unique experience with your app. This
-						vision inspired me to craft my portfolio as a web app that lets you
-						customize your experience{" "}
-						<Emoji className='emoji' symbol='😉' label='wink' />
-					</Paragraph>
-				</ZigZag>
-				{/* <ZigZag>
+          <div className="marginTopLarge ">
+            <Emphasis className="paddingLRParagraph">
+              In the future, I believe there is going to be an app for everyone.
+            </Emphasis>
+            <ShowIf noAnimation thisValue={isMobile} thatValue={true}>
+              <Image
+                src={WhatIfAnAppForEveryone}
+                className="paddingLRParagraph"
+                alt="Mockups of this web  app on an iPhone XR"
+              />
+            </ShowIf>
+            <ShowIf noAnimation thisValue={isMobile} thatValue={false}>
+              <Image src={WhatIfHomepage} className="paddingLRParagraph" alt="Mockups of this web  app on an iPad" />
+            </ShowIf>
+          </div>
+          <Paragraph className="paddingLRParagraph">
+            I envision every user having a unique experience with your app. This vision inspired me to craft my
+            portfolio as a web app that lets you customize your experience{" "}
+            <Emoji className="emoji" symbol="😉" label="wink" />
+          </Paragraph>
+        </ZigZag>
+        {/* <ZigZag>
 					<Emphasis center>
 						This belief inspired me to craft this web app to showcase my Web
 						Development/Design work and photos, but at the same time enabling{" "}
@@ -245,47 +224,47 @@ const HomePage = ({ contentProps }) => {
 						<Emoji className='emoji' symbol='😉' label='wink' />
 					</Emphasis>
 				</ZigZag> */}
-				{/* <div className='container'>
+        {/* <div className='container'>
 					<Emphasis center>So I made my own.</Emphasis>
 				</div> */}
-				{/* <Gif
+        {/* <Gif
 
 					className='paddingLRLarge'
 					desc='me pointing to myself'
 					url={videosofmevNeckCrewNeck}
 				/> */}
-				{/* </ZigZag> */}
-				{/* <HeadingTwo>About this web app</HeadingTwo> */}
-				{/* <Paragraph>
+        {/* </ZigZag> */}
+        {/* <HeadingTwo>About this web app</HeadingTwo> */}
+        {/* <Paragraph>
 						I'm very passionate when it comes to creating User Interfaces/User
 						Experiences. My goal for this project was to challenge myself and
 						create a very innovative UI/UX while showing off my work and
 						skillset.
 					</Paragraph> */}
-				{/* <ZigZag> */}
-				{/* <Emphasis>
+        {/* <ZigZag> */}
+        {/* <Emphasis>
 						This project was created to help me learn and challenge myself to
 						craft an innovative human-centered design but at the same time
 						showing off my work and skillset.
 					</Emphasis> */}
-				{/* <Emphasis>
+        {/* <Emphasis>
 						The purpose of this portfolio is to help me learn <i>and</i>{" "}
 						challenge myself to craft an innovative human-centered design.
 					</Emphasis>
 				</ZigZag> */}
-				{/* <ZigZag>
+        {/* <ZigZag>
 					<Paragraph>
 						(Officially out of Beta 11/3/2019. I will still be making some minor
 						changes.)
 					</Paragraph>
 				</ZigZag> */}
-				{/* <Paragraph>
+        {/* <Paragraph>
 						During development, I realized my website was becoming more of an
 						app. The compelling idea of creating my very own app was the main
 						inspiration for this project.
 					</Paragraph> */}
 
-				{/* <HeadingTwo>An app for everyone</HeadingTwo>
+        {/* <HeadingTwo>An app for everyone</HeadingTwo>
 					<Paragraph>
 						Nowadays, there is an app for everything. In the future, I believe
 						there is going to be an app for everyone.
@@ -302,7 +281,7 @@ const HomePage = ({ contentProps }) => {
 						to design and engineer my portfolio as a web app.
 					</Paragraph> */}
 
-				{/* <HeadingTwo>A little bit about me and this web app</HeadingTwo>
+        {/* <HeadingTwo>A little bit about me and this web app</HeadingTwo>
 					<HeadingThree>Three facts about me</HeadingThree>
 					<UL>
 						<LI>
@@ -326,7 +305,7 @@ const HomePage = ({ contentProps }) => {
 					</Paragraph>
 					<HeadingThree>The solution</HeadingThree>
 					<Paragraph>This portfolio.</Paragraph> */}
-				{/* <HeadingTwo>An app for everyone</HeadingTwo>
+        {/* <HeadingTwo>An app for everyone</HeadingTwo>
 					<Paragraph>
 						In the future, I believe everyone is going to have their own app. I
 						imagine it will be a mixture between the data and features from all
@@ -336,7 +315,7 @@ const HomePage = ({ contentProps }) => {
 						having their own app was the main inspiration for the look and feel
 						of this web app.
 					</Paragraph> */}
-				{/* <HeadingTwo>Designed and engineered for you</HeadingTwo>
+        {/* <HeadingTwo>Designed and engineered for you</HeadingTwo>
 					<Image src={picsOfMeSelfieOlympics} alt='a picture of me smiling' />
 					<Paragraph>
 						I have a passion for developing and designing user experiences for
@@ -348,14 +327,14 @@ const HomePage = ({ contentProps }) => {
 					<Paragraph>
 						I am not quite finished yet but it is almost done.
 					</Paragraph> */}
-				{/* <Paragraph>
+        {/* <Paragraph>
 						I googled "Beta software development" on Google and straight out
 						plagiarized because I have to shower and go to work soon. I really
 						wanted to share the Beta out this morning. It's Aug 21 at 6:53 AM
 						right now. Damn! I still have to steam my dress pants and dress shirt!
 						AhhHH!!
 					</Paragraph> */}
-				{/* <Paragraph>
+        {/* <Paragraph>
 						Nullam id dolor id nibh ultricies vehicula ut id elit. Curabitur
 						blandit tempus porttitor. Morbi leo risus, porta ac consectetur ac,
 						vestibulum at eros.
@@ -375,16 +354,16 @@ const HomePage = ({ contentProps }) => {
 						<Figcaption>Me fat ass getting food</Figcaption>
 					</Figure>
 					<Gif url={testVideo} /> */}
-				{/* <ShowIf noAnimation thisValue={minimalMode} thatValue={true}>
+        {/* <ShowIf noAnimation thisValue={minimalMode} thatValue={true}>
 					<Paragraph center>
 						You should check out that Customize category{" "}
 						<Emoji className='emoji' symbol='😉' label='smile' />
 					</Paragraph>
 				</ShowIf> */}
-				<ContentCategory category='customize' />
-			</ContentShow>
-		</Fragment>
-	);
+        <ContentCategory category="customize" />
+      </ContentShow>
+    </Fragment>
+  );
 };
 
 export default HomePage;
