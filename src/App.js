@@ -20,7 +20,7 @@ import Text from "./stylecomponents/Text";
 import { Puns } from "./Pages";
 // import DownloadAllMedia from "./contentcomponents/DownloadAllMedia";
 import Matrix from "./stylecomponents/Themes/Matrix";
-import { isMobileOnly, isBrowser } from "react-device-detect";
+import { isMobileOnly, isBrowser, isTablet } from "react-device-detect";
 import {
   getCurrentTheme,
   splitDir,
@@ -62,7 +62,7 @@ export const App = () => {
   const isShowingMore = revealValues(values).isShowingMore;
   const { minSize, maxSize } = minSliderSize(ww, wh);
   const mobileOveriPhone5Horizontal = ww > 492;
-  const showFSMobileHorizontal = mobileOveriPhone5Horizontal && isMobileOnly;
+  const showFSMobileHorizontal = mobileOveriPhone5Horizontal && isMobileOnly && !isTablet;
   const [showOutline, setShowOutline] = useState(false);
   const tabIsPressed = useKeyPress("Tab");
   const onDragging = () => {

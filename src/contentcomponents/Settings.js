@@ -22,6 +22,7 @@ import {
   HeadingThree,
 } from "../ContentHelpers";
 import { ShowIf } from "../ComponentHelpers";
+import InApp from "detect-inapp";
 // import Text from "../stylecomponents/Text";
 // import Emoji from "a11y-react-emoji";
 
@@ -55,6 +56,8 @@ const SettingsPage = ({ contentProps }) => {
     setShowAwardsBanner,
     // downloaded
   } = contentProps;
+  const { inapp } = new InApp(navigator.userAgent || navigator.vendor || window.opera);
+  const isInApp = inapp.isInApp();
 
   const controlVideoMode = () => {
     videoControls ? setVideoControls(false) : setVideoControls(true);
@@ -162,10 +165,9 @@ const SettingsPage = ({ contentProps }) => {
           <ShowIf noAnimation thisValue={minimalMode} thatValue={false}>
             <Paragraph>Slider UI not doing it for you?</Paragraph>
           </ShowIf>
-          <ShowIf noAnimation thisValue={isContentPortrait} thatValue={true}>
+          <ShowIf noAnimation thisValue={isInApp} thatValue={true}>
             <Small className="marginTopMed">
-              Use the native browser on your device, you're going to have problems with a Instagram, Facebook, Reddit
-              browser etc.
+              You are in an app browser for {inapp.browser}, so you mgiht have some troubles with this setting.
             </Small>
           </ShowIf>
           <ShowIf noAnimation thisValue={minimalMode} thatValue={true}>
