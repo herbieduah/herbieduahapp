@@ -22,6 +22,7 @@ export const StateProvider = ({ children }) => {
   const [contentHeight, onContentResizeHeight] = useState(defaultContentHeight);
   // const [currentTheme, setTheme] = useState("white");
   const [currentTheme, setTheme] = useLocalStorage("theme", "default");
+  const [showAwardsBanner, setShowAwardsBanner] = useState(true);
   const [currentTransition, setCurrentTransition] = useState("default");
   const [currentContent, setCurrentContent] = useState("home");
   const [overlay, setOverlay] = useState(false);
@@ -103,18 +104,11 @@ export const StateProvider = ({ children }) => {
     setShowScrollDown,
     downloaded,
     setDownloaded,
+    showAwardsBanner,
+    setShowAwardsBanner,
   };
 
-  // and we pass it down. Done!
-  // We just need to include `<ContextProvider>` somewhere at the root
-  // of our app
   return <Provider value={context}>{children}</Provider>;
 };
 
-/**
- * Small shortcut
- * Instead of using `useContext(globalState)` every time,
- * and having to import `useContext` and `globalState`,
- * with this, we can just import `useGlobalState()`
- */
 export const useGlobalState = () => useContext(globalState);

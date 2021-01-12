@@ -32,6 +32,7 @@ import {
   useKeyPress,
   appVersionNumber,
 } from "./helpers";
+import AwardsBanner from "./maincomponents/AwardsBanners";
 console.log(`React Version: ${React.version}`);
 console.log(`HerbieDuah.app: ${appVersionNumber}`);
 export const App = () => {
@@ -181,6 +182,7 @@ export const App = () => {
         <ShowIf noAnimation thisValue={currentTheme} thatValue={"matrix"}>
           <Matrix fullscreen={true} isPortrait={isPortrait(ww, wh)} />
         </ShowIf>
+        <AwardsBanner />
         {/* <div aria-hidden='true' className='in-dev'>
 					<Text m tertiary className='alpha-text'>
 						Beta.

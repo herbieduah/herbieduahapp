@@ -418,6 +418,8 @@ const ContentWrapperContainer = (props) => {
     videoControls,
     setVideoControls,
     downloaded,
+    showAwardsBanner,
+    setShowAwardsBanner,
   } = useContext(globalState);
   const { width: ww, height: wh } = useWindowResize();
   const values = { ww, wh, cw, ch };
@@ -460,6 +462,8 @@ const ContentWrapperContainer = (props) => {
     videoControls,
     setVideoControls,
     downloaded,
+    showAwardsBanner,
+    setShowAwardsBanner,
   };
   const children = React.Children.map(props.children, (child, index) => {
     return React.cloneElement(child, {

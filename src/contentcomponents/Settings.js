@@ -51,6 +51,8 @@ const SettingsPage = ({ contentProps }) => {
     accessible,
     videoControls,
     setVideoControls,
+    showAwardsBanner,
+    setShowAwardsBanner,
     // downloaded
   } = contentProps;
 
@@ -103,6 +105,9 @@ const SettingsPage = ({ contentProps }) => {
 
   const knowCode = () => {
     forDev ? setForDev(false) : setForDev(true);
+  };
+  const setAwardsBanner = () => {
+    showAwardsBanner ? setShowAwardsBanner(false) : showAwardsBanner(true);
   };
 
   //   const failure = () => {
@@ -215,9 +220,10 @@ const SettingsPage = ({ contentProps }) => {
           </ShowIf>
 
           <DisableSetting thisValue={minimalMode} thatValue={true} message="This setting only works with Slider UI.">
-            <HeadingThree>Move navigation bar</HeadingThree>
+            <HeadingThree>Move navigation bar {navBarRight ? "right" : "left"}.</HeadingThree>
             <Paragraph>
-              This setting moves navigations bar to the right or left. (It's useful on mobile if you're left handed).
+              This setting moves navigations bar to the {navBarRight ? "right" : "left"}. (It's useful on mobile if
+              you're left handed).
             </Paragraph>
             <ShowIf noAnimation thisValue={navBarRight} thatValue={false}>
               <Button onClick={moveNavBar}>Move Navigation Bar right</Button>
@@ -227,14 +233,24 @@ const SettingsPage = ({ contentProps }) => {
             </ShowIf>
           </DisableSetting>
 
-          <HeadingThree>Add controls to videos</HeadingThree>
-          <Paragraph>This setting lets you add or remove controls for the videos.</Paragraph>
+          <HeadingThree> {showAwardsBanner ? "Remove" : "Add"} Awards Banner</HeadingThree>
+          <Paragraph>This setting lets {showAwardsBanner ? "remove" : "add"} Awwwards banner.</Paragraph>
+          <ShowIf noAnimation thisValue={showAwardsBanner} thatValue={true}>
+            <Button onClick={setAwardsBanner}>Remove Awwwards Banner</Button>
+          </ShowIf>
+          <ShowIf noAnimation thisValue={showAwardsBanner} thatValue={false}>
+            <Button onClick={setAwardsBanner}>Add Awwwards Banner</Button>
+          </ShowIf>
+
+          <HeadingThree>{videoControls ? "Remove" : "Add"} controls to videos/gifs</HeadingThree>
+          <Paragraph>This setting lets you {videoControls ? "remove" : "add"} controls for the videos/gifs.</Paragraph>
           <ShowIf noAnimation thisValue={videoControls} thatValue={true}>
             <Button onClick={controlVideoMode}>Remove controls</Button>
           </ShowIf>
           <ShowIf noAnimation thisValue={videoControls} thatValue={false}>
             <Button onClick={controlVideoMode}>Add controls</Button>
           </ShowIf>
+
           <DisableSetting
             thisValue={minimalMode}
             thatValue={false}

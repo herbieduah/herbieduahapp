@@ -673,7 +673,7 @@ export const Button = (props) => {
   const className = props.className || "";
   return (
     <ElementReveal className="paddingLRParagraph">
-      <Text button s className={`${className} marginBottomSm`} {...props}>
+      <Text button s bold className={`${className} marginBottomSm`} {...props}>
         {props.children}
       </Text>
     </ElementReveal>
