@@ -205,7 +205,7 @@ export const App = () => {
         {showFSMobileHorizontal ? <Puns /> : null}
         {/* <Content /> */}
         {/* {fullScreen ? <h1>Here I am</h1> : null} */}
-        {/* {dragging ? <SliderLine /> : null} */}
+        {dragging ? <SliderLine /> : null}
 
         {/* {fullScreening ? <FullScreeningBG /> : null} */}
 
