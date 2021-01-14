@@ -56,8 +56,8 @@ const SettingsPage = ({ contentProps }) => {
     setShowAwardsBanner,
     // downloaded
   } = contentProps;
-  const { inapp } = new InApp(navigator.userAgent || navigator.vendor || window.opera);
-  const isInApp = inapp.isInApp();
+  const inapp = new InApp(navigator.userAgent || navigator.vendor || window.opera);
+  const isInApp = inapp.isInApp;
 
   const controlVideoMode = () => {
     videoControls ? setVideoControls(false) : setVideoControls(true);
@@ -167,7 +167,7 @@ const SettingsPage = ({ contentProps }) => {
           </ShowIf>
           <ShowIf noAnimation thisValue={isInApp} thatValue={true}>
             <Small className="marginTopMed">
-              You are in an app browser for {inapp.browser}, so you mgiht have some troubles with this setting.
+              You are in an app browser, so you mgiht have some troubles with this setting.
             </Small>
           </ShowIf>
           <ShowIf noAnimation thisValue={minimalMode} thatValue={true}>
