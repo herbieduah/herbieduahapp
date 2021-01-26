@@ -90,6 +90,10 @@ const HomePage = ({ contentProps }) => {
               </Small>
             </ShowIf>
 
+            <Paragraph className="paddingLRParagraph marginBottomLarge">
+              Updating my Portfolio site this week to reflect my latest work experience. - Herbie 1/25/2021
+            </Paragraph>
+
             <ShowIf noAnimation thisValue={isContentPortrait} thatValue={false}>
               <Small className="marginBottomLarge">
                 Check this out on your phone when you get the chance&nbsp;{" "}

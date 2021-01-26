@@ -11,7 +11,6 @@ import { isMobileOnly } from "react-device-detect";
 // } from "react-lazy-load-image-component";
 // import Img from "react-image";
 import VisibilitySensor from "react-visibility-sensor";
-// import "react-lazy-load-image-component/src/effects/blur.css";
 const mediaWidth = isMobileOnly ? "400" : "720";
 // const mediaWidth = "720";
 const lazyLoadOffset = isMobileOnly ? 400 : 1000;
@@ -117,40 +116,3 @@ const Media = (props) => {
 };
 
 export default Media;
-
-/* <ReactPlayer
-								url={testVideo}
-								width='100%'
-								height='100%'
-								playing
-								loop
-								muted
-								playsinline
-							/> */
-
-// {
-/* <Fragment>
-{props.nolazyload ? (
-<img
-alt={props.alt}
-width={props.width || "100%"}
-height={props.height || "100%"}
-src={props.src}
-className={props.className || ""}
-threshold={250}
-/>
-) : (
-<LazyLoadImage
-alt={props.alt}
-effect='blur'
-width={props.width || "100%"}
-height={props.height || "100%"}
-src={props.src}
-className={props.className}
-threshold={250}
-/>
-)}
-</Fragment> */
-// }
-
-// https://github.com/tjallingt/react-youtube/issues/164

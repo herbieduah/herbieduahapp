@@ -106,8 +106,9 @@ const SettingsPage = ({ contentProps }) => {
   const knowCode = () => {
     forDev ? setForDev(false) : setForDev(true);
   };
+
   const setAwardsBanner = () => {
-    showAwardsBanner ? setShowAwardsBanner(false) : showAwardsBanner(true);
+    showAwardsBanner ? setShowAwardsBanner(false) : setShowAwardsBanner(true);
   };
 
   //   const failure = () => {
