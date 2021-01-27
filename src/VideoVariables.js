@@ -30,103 +30,44 @@ import videosofmehammockChilling_1Local from "./media/appVideos/videosofmehammoc
 import SliderUIMobileLocal from "./media/appVideos/SliderUIMobile.mp4";
 import SliderUIDesktopLocal from "./media/appVideos/SliderUIDesktop.mp4";
 
-export const SliderUIMobile = ["SliderUIMobile_pznkhl", SliderUIMobileLocal];
-export const SliderUIDesktop = ["SliderUIDesktop_yxaz6z", SliderUIDesktopLocal];
+import eightFortySixmobileLocal from "./media/appVideos/eightFortySixmobile.mp4";
+import eightFortySixdesktopLocal from "./media/appVideos/eightFortySixdesktop.mp4";
+import eightFortySixdesktop2Local from "./media/appVideos/eightFortySixdesktop2.mp4";
+
+export const eightFortySixmobile = ["eightFortySixmobile_bjaf2r", eightFortySixmobileLocal];
+export const eightFortySixdesktop = ["eightFortySixdesktop_w7egt8", eightFortySixdesktopLocal];
+export const eightFortySixdesktop2 = ["eightFortySixdesktop2_jvxnfp", eightFortySixdesktop2Local];
+export const SliderUIMobile = ["SliderUIMobile_kxrjaa", SliderUIMobileLocal];
+export const SliderUIDesktop = ["SliderUIDesktop_rxwbmr", SliderUIDesktopLocal];
 export const uggPhillipLim = ["uggPhillipLim_pem01g", uggPhillipLimLocal];
-export const videosofmecarribeanQueen = [
-	"videosofmecarribeanQueen_i8wj6f",
-	videosofmecarribeanQueenLocal
-];
-export const videosofmetoastSquad = [
-	"videosofmetoastSquad_mas3ck",
-	videosofmetoastSquadLocal
-];
-export const startNowcoverLetterGif = [
-	"startNowcoverLetterGif_bvccsc",
-	startNowcoverLetterGifLocal
-];
+export const videosofmecarribeanQueen = ["videosofmecarribeanQueen_i8wj6f", videosofmecarribeanQueenLocal];
+export const videosofmetoastSquad = ["videosofmetoastSquad_mas3ck", videosofmetoastSquadLocal];
+export const startNowcoverLetterGif = ["startNowcoverLetterGif_bvccsc", startNowcoverLetterGifLocal];
 export const thisAppGatsby = ["thisAppGatsby_t82wvg", thisAppGatsbyLocal];
-export const thisAppherokuappdesktop = [
-	"thisAppherokuappdesktop_sditja",
-	thisAppherokuappdesktopLocal
-];
-export const uggJeremyScottDesktop = [
-	"uggJeremyScottDesktop_sgvscy",
-	uggJeremyScottDesktopLocal
-];
+export const thisAppherokuappdesktop = ["thisAppherokuappdesktop_sditja", thisAppherokuappdesktopLocal];
+export const uggJeremyScottDesktop = ["uggJeremyScottDesktop_sgvscy", uggJeremyScottDesktopLocal];
 export const uggslidesemail = ["uggslidesemail_ksnfol", uggslidesemailLocal];
 export const videosofme404 = ["videosofme404_rdozpg", videosofme404Local];
-export const videosofmedadDance = [
-	"videosofmedadDance_zo2r8z",
-	videosofmedadDanceLocal
-];
-export const videosofmegood404Snow = [
-	"videosofmegood404Snow_mk6luq",
-	videosofmegood404SnowLocal
-];
-export const videosofmemillyRockByPool = [
-	"videosofmemillyRockByPool_a7p87u",
-	videosofmemillyRockByPoolLocal
-];
+export const videosofmedadDance = ["videosofmedadDance_zo2r8z", videosofmedadDanceLocal];
+export const videosofmegood404Snow = ["videosofmegood404Snow_mk6luq", videosofmegood404SnowLocal];
+export const videosofmemillyRockByPool = ["videosofmemillyRockByPool_a7p87u", videosofmemillyRockByPoolLocal];
 export const videosofmemillyrockgrandcanyon = [
-	"videosofmemillyrockgrandcanyon_wtkrcp",
-	videosofmemillyrockgrandcanyonLocal
+  "videosofmemillyrockgrandcanyon_wtkrcp",
+  videosofmemillyrockgrandcanyonLocal,
 ];
-export const videosofmeoffRoadingDriving = [
-	"videosofmeoffRoadingDriving_cotere",
-	videosofmeoffRoadingDrivingLocal
-];
-export const videosofmeOffRoadSplash = [
-	"videosofmeOffRoadSplash_wgv7ye",
-	videosofmeOffRoadSplashLocal
-];
-export const videosofmeoffRoadStuck = [
-	"videosofmeoffRoadStuck_qrloha",
-	videosofmeoffRoadStuckLocal
-];
-export const videosofmephotosSedona = [
-	"videosofmephotosSedona_ryjt9j",
-	videosofmephotosSedonaLocal
-];
-export const videosofmeraveMillyRock = [
-	"videosofmeraveMillyRock_ru8zvg",
-	videosofmeraveMillyRockLocal
-];
-export const videosofmesoreLoser = [
-	"videosofmesoreLoser_lpbxzg",
-	videosofmesoreLoserLocal
-];
-export const videosofmeStandUp = [
-	"videosofmeStandUp_qown9l",
-	videosofmeStandUpLocal
-];
-export const videosofmetoast_1 = [
-	"videosofmetoast_1_ald4hk",
-	videosofmetoast_1Local
-];
-export const videosofmevNeckCrewNeck = [
-	"videosofmevNeckCrewNeck_wkqon3",
-	videosofmevNeckCrewNeckLocal
-];
-export const videosofmewakanda = [
-	"videosofmewakanda_jabpvw",
-	videosofmewakandaLocal
-];
-export const videosofmehammockChilling_1 = [
-	"videosofmehammockChilling_1_y3juyj",
-	videosofmehammockChilling_1Local
-];
-export const videosofmeaptDancing = [
-	"videosofmeaptDancing_bkn88u",
-	videosofmeaptDancingLocal
-];
-export const videosOfMeHerbieDuahComl = [
-	"startNowHerbieDuahCom_rryanb",
-	videosOfMeHerbieDuahCom
-];
-export const startNowresumeEmail = [
-	"startNowresumeEmail_czqk7z",
-	startNowresumeEmailLocal
-];
+export const videosofmeoffRoadingDriving = ["videosofmeoffRoadingDriving_cotere", videosofmeoffRoadingDrivingLocal];
+export const videosofmeOffRoadSplash = ["videosofmeOffRoadSplash_wgv7ye", videosofmeOffRoadSplashLocal];
+export const videosofmeoffRoadStuck = ["videosofmeoffRoadStuck_qrloha", videosofmeoffRoadStuckLocal];
+export const videosofmephotosSedona = ["videosofmephotosSedona_ryjt9j", videosofmephotosSedonaLocal];
+export const videosofmeraveMillyRock = ["videosofmeraveMillyRock_ru8zvg", videosofmeraveMillyRockLocal];
+export const videosofmesoreLoser = ["videosofmesoreLoser_lpbxzg", videosofmesoreLoserLocal];
+export const videosofmeStandUp = ["videosofmeStandUp_qown9l", videosofmeStandUpLocal];
+export const videosofmetoast_1 = ["videosofmetoast_1_ald4hk", videosofmetoast_1Local];
+export const videosofmevNeckCrewNeck = ["videosofmevNeckCrewNeck_wkqon3", videosofmevNeckCrewNeckLocal];
+export const videosofmewakanda = ["videosofmewakanda_jabpvw", videosofmewakandaLocal];
+export const videosofmehammockChilling_1 = ["videosofmehammockChilling_1_y3juyj", videosofmehammockChilling_1Local];
+export const videosofmeaptDancing = ["videosofmeaptDancing_bkn88u", videosofmeaptDancingLocal];
+export const videosOfMeHerbieDuahComl = ["startNowHerbieDuahCom_rryanb", videosOfMeHerbieDuahCom];
+export const startNowresumeEmail = ["startNowresumeEmail_czqk7z", startNowresumeEmailLocal];
 export const uggshoeuggemail = ["uggshoeuggemail_ptamto", uggshoeuggemailLocal];
 export const ugggiftguide = ["ugggiftguide_nbixlt", ugggiftguideLocal];

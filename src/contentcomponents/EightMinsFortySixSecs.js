@@ -33,23 +33,16 @@ import {
   eightFortySixHomeDesktop,
 } from "../MediaVariables";
 
-const header = "Typecraft";
-const workDuration = "September 2020 - Present";
-const workSkills = "React, Redux, Less, API";
-const workTools = "VSCode, Github";
+const header = "American Express";
+const workDuration = "May 2020 - July 2020";
+const workSkills = "React, UX Design, Sass";
+const workTools = "Adobe XD";
 
-const BedzinExhibitPage = () => {
+const AmericanExpressPage = () => {
   return (
     <Fragment>
       <ContentShow less>
-        <LessContent header={header}>Revamped a traveling exhibit site for my senior capstone.</LessContent>
-        <div className="less__container">
-          <Image
-            className="paddingLRSm"
-            src={bedzinCreationofExhibitDesktop}
-            alt="creation of the exhibit mockup page"
-          />
-        </div>
+        <LessContent header={header}>GG Portolio.</LessContent>
       </ContentShow>
       <ContentShow containerLarge more>
         <ZigZag>
@@ -79,7 +72,7 @@ const BedzinExhibitPage = () => {
   );
 };
 
-export default BedzinExhibitPage;
+export default AmericanExpressPage;
 
 const workinfo = {
   workDuration,

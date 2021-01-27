@@ -2,27 +2,27 @@ import { stripUnit } from "polished";
 import { bgColor, colorLight } from "./Themes/ThemeVariables";
 import { sliderMobileWidth, revealSecs } from "../helpers";
 export function fluidType(minVW, maxVW, minFontSize, maxFontSize) {
-	let u1 = stripUnit(minVW)[1];
-	let u2 = stripUnit(maxVW)[1];
-	let u3 = stripUnit(minFontSize)[1];
-	let u4 = stripUnit(maxFontSize)[1];
-	let finalFontSize = ``;
-	if (u1 === u2 && u1 && u3 && u1 === u4) {
-		finalFontSize = `
+  let u1 = stripUnit(minVW)[1];
+  let u2 = stripUnit(maxVW)[1];
+  let u3 = stripUnit(minFontSize)[1];
+  let u4 = stripUnit(maxFontSize)[1];
+  let finalFontSize = ``;
+  if (u1 === u2 && u1 && u3 && u1 === u4) {
+    finalFontSize = `
     font-size: ${minFontSize};
       @media screen and (min-width: ${minVW}) {
-        font-size: calc(${minFontSize} + ${stripUnit(maxFontSize) -
-			stripUnit(minFontSize)} * ((100vw - ${minVW}) / ${stripUnit(maxVW) -
-			stripUnit(minVW)}));
+        font-size: calc(${minFontSize} + ${stripUnit(maxFontSize) - stripUnit(minFontSize)} * ((100vw - ${minVW}) / ${
+      stripUnit(maxVW) - stripUnit(minVW)
+    }));
       }
       @media screen and (min-width: ${maxVW}) {
         font-size: ${maxFontSize};
       }
     `;
-	} else {
-		finalFontSize = `font-size: 16px`;
-	}
-	return finalFontSize;
+  } else {
+    finalFontSize = `font-size: 16px`;
+  }
+  return finalFontSize;
 }
 
 const minVW = `320px`;
@@ -36,11 +36,9 @@ export const containerLargePx = `1000px`;
 export const maxContentWidth = `720px`;
 export const mobile = "@media only screen and (max-width: 540px)";
 export const mobileSm = "@media only screen and (max-width: 340px)";
-export const tablet =
-	"@media screen and (max-width: 1199px) and (min-width: 768px)";
+export const tablet = "@media screen and (max-width: 1199px) and (min-width: 768px)";
 export const mobileHorizontal = "@media only screen and (max-width: 1200px)";
-export const removeNegativeMargin =
-	"@media only screen and (min-width: 1240px)";
+export const removeNegativeMargin = "@media only screen and (min-width: 1240px)";
 export const hideScrollbar = `-ms-overflow-style: none;  
 scrollbar-width: none;
 &::-webkit-scrollbar { 
@@ -56,15 +54,11 @@ ${mobile}{
 	top: 50.5%;
 }
 `;
-export const slightBoxShadowAbove =
-	"box-shadow: 0 -3px 15px rgba(0,0,0,0.10), 0 -3px 15px rgba(0,0,0,0.18);";
-export const slightBoxShadowBelow =
-	"box-shadow: 0 3px 15px rgba(0,0,0,0.10), 0 3px 15px rgba(0,0,0,0.18);";
-export const slightCircleBoxShadow =
-	"box-shadow: 0 3px 15px rgba(0,0,0,0.10), 0 3px 15px rgba(0,0,0,0.18);";
+export const slightBoxShadowAbove = "box-shadow: 0 -3px 15px rgba(0,0,0,0.10), 0 -3px 15px rgba(0,0,0,0.18);";
+export const slightBoxShadowBelow = "box-shadow: 0 3px 15px rgba(0,0,0,0.10), 0 3px 15px rgba(0,0,0,0.18);";
+export const slightCircleBoxShadow = "box-shadow: 0 3px 15px rgba(0,0,0,0.10), 0 3px 15px rgba(0,0,0,0.18);";
 
-export const absoluteOverlay =
-	"position: absolute;width: 100%;height: 100%;top: 0;left: 0;right: 0;bottom: 0;";
+export const absoluteOverlay = "position: absolute;width: 100%;height: 100%;top: 0;left: 0;right: 0;bottom: 0;";
 
 export const mobileSliderOnTop = `height: 100%;
 top: 0;
@@ -95,8 +89,7 @@ ${tablet} {
 ${mobile} {
 	transform: perspective(0) rotateX(0);
 }`;
-export const stupidNegativeMargin = `margin-top:${sliderMobileWidth /
-	2}px!important`;
+export const stupidNegativeMargin = `margin-top:${sliderMobileWidth / 2}px!important`;
 export const paddingLRSm = `
 padding-right: 20px;
 padding-left: 20px;
@@ -222,18 +215,18 @@ ${mobile} {
 
 export const marginBottomMed = `margin-bottom: 2rem;
 ${mobile} {
-	margin-bottom: 1.5rem;
+	margin-bottom: 1rem;
 }
 `;
 export const marginTopMed = `margin-top 3rem;
 ${mobile} {
-	margin-top: 2rem;
+	margin-top: 2.25rem;
 }
 `;
 
-export const marginTopSm = `margin-top: 1.5rem;
+export const marginTopSm = `margin-top: 1.2rem;
 ${mobile} {
-	margin-top: 1rem;
+	margin-top: .75rem;
 }
 `;
 

@@ -229,7 +229,7 @@ const SettingsPage = ({ contentProps }) => {
           </DisableSetting>
 
           <HeadingThree> {showAwardsBanner ? "Remove" : "Add"} Awards Banner</HeadingThree>
-          <Paragraph>This setting lets {showAwardsBanner ? "remove" : "add"} Awwwards banner.</Paragraph>
+          <Paragraph>This setting {showAwardsBanner ? "removes" : "adds"} Awwwards banner.</Paragraph>
           <ShowIf noAnimation thisValue={showAwardsBanner} thatValue={true}>
             <Button onClick={setAwardsBanner}>Remove Awwwards Banner</Button>
           </ShowIf>
