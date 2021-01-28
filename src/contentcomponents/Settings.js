@@ -11,10 +11,8 @@ import {
   LI,
   Small,
   Button,
-  // Emphasis,
   Gif,
   Image,
-  // SettingButton,
   DisableSetting,
   Link,
   Instructions,
@@ -22,8 +20,6 @@ import {
   HeadingThree,
 } from "../ContentHelpers";
 import { ShowIf } from "../ComponentHelpers";
-// import Text from "../stylecomponents/Text";
-// import Emoji from "a11y-react-emoji";
 
 import { SliderUIDesktop, SliderUIMobile } from "../VideoVariables";
 
@@ -38,12 +34,8 @@ const SettingsPage = ({ contentProps }) => {
     setNavBarComplement,
     minimalMode,
     setMinimalMode,
-    // lazyLoading,
-    // setLazyLoading,
     forDev,
     setForDev,
-    setSides,
-    // switchSides,
     fullScreen,
     setFullscreen,
     isContentPortrait,
@@ -53,32 +45,19 @@ const SettingsPage = ({ contentProps }) => {
     setVideoControls,
     showAwardsBanner,
     setShowAwardsBanner,
-    // downloaded
   } = contentProps;
 
   const controlVideoMode = () => {
     videoControls ? setVideoControls(false) : setVideoControls(true);
   };
+
   const moveNavBar = () => {
     navBarRight ? setNavBarRight(false) : setNavBarRight(true);
   };
+
   const complementNavBar = () => {
     navBarComplement ? setNavBarComplement(false) : setNavBarComplement(true);
   };
-  // const turnOnAccessibilitySettings = () => {
-  // 	setMinimalMode(true);
-  // 	setFullscreen(true);
-  // 	setVideoControls(true);
-  // 	setNavBarComplement(true);
-  // 	setAccessible(true);
-  // };
-  // const turnOffAccessibilitySettings = () => {
-  // 	setMinimalMode(false);
-  // 	setFullscreen(false);
-  // 	setVideoControls(false);
-  // 	setNavBarComplement(false);
-  // 	setAccessible(false);
-  // };
 
   const activateAccessibilityMode = () => {
     setMinimalMode(true);
@@ -122,14 +101,6 @@ const SettingsPage = ({ contentProps }) => {
     <Fragment>
       <ContentShow less>
         <LessContent header={header}>You can change certain aspects of this web app to your liking.</LessContent>
-        <div className="less__container">
-          {/* <Paragraph>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis
-						risus eget urna mollis ornare vel eu leo. Donec id elit non mi porta
-						gravida at eget metus. Sed posuere consectetur est at lobortis.
-						Maecenas sed diam eget risus varius blandit sit amet non magna.
-					</Paragraph> */}
-        </div>
       </ContentShow>
       <ContentShow containerLarge more>
         <ZigZag>

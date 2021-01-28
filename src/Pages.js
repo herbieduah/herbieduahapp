@@ -25,7 +25,7 @@ import ModelingPage from "./contentcomponents/Modeling";
 import ContactsPage from "./contentcomponents/Contacts";
 import FourOhFourPage from "./contentcomponents/FourOhFour";
 import HerbieDuahAppPage from "./contentcomponents/HerbieDuahApp";
-import TypecraftPage from "./contentcomponents/Typecraft";
+import TypecraftPage from "./contentcomponents/TypeCraft";
 import GGPortfolioPage from "./contentcomponents/GGPortfolio";
 import AmericanExpressPage from "./contentcomponents/AmericanExpress";
 import EightMinsFortySixSecsPage from "./contentcomponents/EightMinsFortySixSecs";
