@@ -29,13 +29,8 @@ export const SubMenu = (props) => {
           ) : null}
           <SubMenuWrapper showCategory={showCategory}>
             <li onClick={hideModal} className="subMenu__item">
-              <Text menuLink xl={true} to="/StartNow">
-                Start Now
-              </Text>
-            </li>
-            <li onClick={hideModal} className="subMenu__item">
-              <Text menuLink xl={true} to="/BedzinExhibit">
-                Bedzin Exhibit
+              <Text menuLink xl={true} to="/AmericanExpress">
+                AmEx
               </Text>
             </li>
             <li onClick={hideModal} className="subMenu__item">
@@ -44,16 +39,25 @@ export const SubMenu = (props) => {
               </Text>
             </li>
             <li onClick={hideModal} className="subMenu__item">
+              <Text menuLink xl={true} to="/0846">
+                08:46
+              </Text>
+            </li>
+            <li onClick={hideModal} className="subMenu__item">
+              <Text menuLink xl={true} to="/GGPortfolio">
+                GG Portfolio
+              </Text>
+            </li>
+            <li onClick={hideModal} className="subMenu__item">
+              <Text menuLink xl={true} to="/Typecraft">
+                Typecraft
+              </Text>
+            </li>
+            <li onClick={hideModal} className="subMenu__item">
               <Text menuLink xl={true} to="/DiscountTire">
                 Discount Tire
               </Text>
             </li>
-
-            {/* <li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink xl={true} to='/CulturalSuicide'>
-								Cultural $uicide
-							</Text>
-						</li> */}
           </SubMenuWrapper>
         </div>
       );
@@ -68,11 +72,6 @@ export const SubMenu = (props) => {
             </ElementReveal>
           ) : null}
           <SubMenuWrapper showCategory={showCategory}>
-            {/* <li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink xl={true} to='/UXvsHX'>
-								An App For Everyone
-							</Text>
-						</li> */}
             <li onClick={hideModal} className="subMenu__item">
               <Text menuLink xl={true} to="/AboutMe">
                 About Me
@@ -88,13 +87,6 @@ export const SubMenu = (props) => {
                 Inspiration
               </Text>
             </li>
-            {/* <ShowIf noAnimation thisValue={forDev} thatValue={true}>
-							<li onClick={hideModal} className='subMenu__item'>
-								<Text menuLink xl={true} to='/CaseStudy'>
-									Case Study
-								</Text>
-							</li>
-						</ShowIf> */}
             <ShowIf noAnimation thisValue={minimalMode} thatValue={true}>
               <li onClick={hideModal} className="subMenu__item">
                 <Text menuLink xl={true} to="/Contacts">
@@ -102,16 +94,6 @@ export const SubMenu = (props) => {
                 </Text>
               </li>
             </ShowIf>
-            {/* <li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink xl={true} to='/SpecialThanks'>
-								Special&shy; Thanks
-							</Text>
-						</li> */}
-            {/* <li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink xl={true} to='/Inspiration'>
-								Inspiration
-							</Text>
-						</li> */}
           </SubMenuWrapper>
         </div>
       );
@@ -131,11 +113,6 @@ export const SubMenu = (props) => {
                 Settings
               </Text>
             </li>
-            {/* <li onClick={hideModal} className='subMenu__item'>
-							<Text menuLink xl={true} to='/gradients'>
-								Gradients
-							</Text>
-						</li> */}
             <li onClick={hideModal} className="subMenu__item">
               <Text menuLink xl={true} to="/backgrounds">
                 Backgrounds

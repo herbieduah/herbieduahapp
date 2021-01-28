@@ -34,7 +34,7 @@ import eightFortySixmobileLocal from "./media/appVideos/eightFortySixmobile.mp4"
 import eightFortySixdesktopLocal from "./media/appVideos/eightFortySixdesktop.mp4";
 import eightFortySixdesktop2Local from "./media/appVideos/eightFortySixdesktop2.mp4";
 
-export const eightFortySixmobile = ["eightFortySixmobile_bjaf2r", eightFortySixmobileLocal];
+export const eightFortySixmobileVid = ["eightFortySixmobile_bjaf2r", eightFortySixmobileLocal];
 export const eightFortySixdesktop = ["eightFortySixdesktop_w7egt8", eightFortySixdesktopLocal];
 export const eightFortySixdesktop2 = ["eightFortySixdesktop2_jvxnfp", eightFortySixdesktop2Local];
 export const SliderUIMobile = ["SliderUIMobile_kxrjaa", SliderUIMobileLocal];

@@ -25,151 +25,179 @@ import ModelingPage from "./contentcomponents/Modeling";
 import ContactsPage from "./contentcomponents/Contacts";
 import FourOhFourPage from "./contentcomponents/FourOhFour";
 import HerbieDuahAppPage from "./contentcomponents/HerbieDuahApp";
+import TypecraftPage from "./contentcomponents/Typecraft";
+import GGPortfolioPage from "./contentcomponents/GGPortfolio";
+import AmericanExpressPage from "./contentcomponents/AmericanExpress";
+import EightMinsFortySixSecsPage from "./contentcomponents/EightMinsFortySixSecs";
 import { ContentWrapper } from "./ComponentHelpers";
 
+export const Typecraft = () => (
+  <ContentWrapper>
+    <TypecraftPage />
+  </ContentWrapper>
+);
+
+export const GGPortfolio = () => (
+  <ContentWrapper>
+    <GGPortfolioPage />
+  </ContentWrapper>
+);
+
+export const AmericanExpress = () => (
+  <ContentWrapper>
+    <AmericanExpressPage />
+  </ContentWrapper>
+);
+
+export const EightMinsFortySixSecs = () => (
+  <ContentWrapper>
+    <EightMinsFortySixSecsPage />
+  </ContentWrapper>
+);
+
 export const AboutMe = () => (
-	<ContentWrapper>
-		<AboutMePage />
-	</ContentWrapper>
+  <ContentWrapper>
+    <AboutMePage />
+  </ContentWrapper>
 );
 
 export const FourOhFour = () => (
-	<ContentWrapper>
-		<FourOhFourPage />
-	</ContentWrapper>
+  <ContentWrapper>
+    <FourOhFourPage />
+  </ContentWrapper>
 );
 
 export const Puns = () => (
-	<ContentWrapper>
-		<PunsPage />
-	</ContentWrapper>
+  <ContentWrapper>
+    <PunsPage />
+  </ContentWrapper>
 );
 
 export const HerbieDuahApp = () => (
-	<ContentWrapper>
-		<HerbieDuahAppPage />
-	</ContentWrapper>
+  <ContentWrapper>
+    <HerbieDuahAppPage />
+  </ContentWrapper>
 );
 
 export const Contacts = () => (
-	<ContentWrapper>
-		<ContactsPage />
-	</ContentWrapper>
+  <ContentWrapper>
+    <ContactsPage />
+  </ContentWrapper>
 );
 
 export const Backgrounds = () => (
-	<ContentWrapper>
-		<BackgroundsPage />
-	</ContentWrapper>
+  <ContentWrapper>
+    <BackgroundsPage />
+  </ContentWrapper>
 );
 
 export const Settings = () => (
-	<ContentWrapper>
-		<SettingsPage />
-	</ContentWrapper>
+  <ContentWrapper>
+    <SettingsPage />
+  </ContentWrapper>
 );
 
 export const Transitions = () => (
-	<ContentWrapper>
-		<TransitionsPage />
-	</ContentWrapper>
+  <ContentWrapper>
+    <TransitionsPage />
+  </ContentWrapper>
 );
 
 export const BedzinExhibit = () => (
-	<ContentWrapper>
-		<BedzinExhibitPage />
-	</ContentWrapper>
+  <ContentWrapper>
+    <BedzinExhibitPage />
+  </ContentWrapper>
 );
 export const Gradients = () => (
-	<ContentWrapper>
-		<GradientsPage />
-	</ContentWrapper>
+  <ContentWrapper>
+    <GradientsPage />
+  </ContentWrapper>
 );
 export const DiscountTire = () => (
-	<ContentWrapper>
-		<DiscountTirePage />
-	</ContentWrapper>
+  <ContentWrapper>
+    <DiscountTirePage />
+  </ContentWrapper>
 );
 export const CulturalSuicide = () => (
-	<ContentWrapper>
-		<CulturalSuicidePage />
-	</ContentWrapper>
+  <ContentWrapper>
+    <CulturalSuicidePage />
+  </ContentWrapper>
 );
 export const Inspiration = () => (
-	<ContentWrapper>
-		<InspirationPage />
-	</ContentWrapper>
+  <ContentWrapper>
+    <InspirationPage />
+  </ContentWrapper>
 );
 export const Home = () => (
-	<ContentWrapper>
-		<HomePage />
-	</ContentWrapper>
+  <ContentWrapper>
+    <HomePage />
+  </ContentWrapper>
 );
 export const People = () => (
-	<ContentWrapper>
-		<PeoplePage />
-	</ContentWrapper>
+  <ContentWrapper>
+    <PeoplePage />
+  </ContentWrapper>
 );
 export const IPhone = () => (
-	<ContentWrapper>
-		<IPhonePage />
-	</ContentWrapper>
+  <ContentWrapper>
+    <IPhonePage />
+  </ContentWrapper>
 );
 export const StartNow = () => (
-	<ContentWrapper>
-		<StartNowPage />
-	</ContentWrapper>
+  <ContentWrapper>
+    <StartNowPage />
+  </ContentWrapper>
 );
 export const Photography = () => (
-	<ContentWrapper>
-		<PhotographyPage />
-	</ContentWrapper>
+  <ContentWrapper>
+    <PhotographyPage />
+  </ContentWrapper>
 );
 
 export const Resume = () => (
-	<ContentWrapper>
-		<ResumePage />
-	</ContentWrapper>
+  <ContentWrapper>
+    <ResumePage />
+  </ContentWrapper>
 );
 
 export const SpecialThanks = () => (
-	<ContentWrapper>
-		<SpecialThanksPage />
-	</ContentWrapper>
+  <ContentWrapper>
+    <SpecialThanksPage />
+  </ContentWrapper>
 );
 
 export const Theme = () => (
-	<ContentWrapper>
-		<ThemePage />
-	</ContentWrapper>
+  <ContentWrapper>
+    <ThemePage />
+  </ContentWrapper>
 );
 
 export const Tone = () => (
-	<ContentWrapper>
-		<TonePage />
-	</ContentWrapper>
+  <ContentWrapper>
+    <TonePage />
+  </ContentWrapper>
 );
 
 export const Places = () => (
-	<ContentWrapper>
-		<PlacesPage />
-	</ContentWrapper>
+  <ContentWrapper>
+    <PlacesPage />
+  </ContentWrapper>
 );
 
 export const Modeling = () => (
-	<ContentWrapper>
-		<ModelingPage />
-	</ContentWrapper>
+  <ContentWrapper>
+    <ModelingPage />
+  </ContentWrapper>
 );
 
 export const Ugg = () => (
-	<ContentWrapper>
-		<UggPage />
-	</ContentWrapper>
+  <ContentWrapper>
+    <UggPage />
+  </ContentWrapper>
 );
 
 export const UXvsHX = () => (
-	<ContentWrapper>
-		<UXvsHXPage />
-	</ContentWrapper>
+  <ContentWrapper>
+    <UXvsHXPage />
+  </ContentWrapper>
 );

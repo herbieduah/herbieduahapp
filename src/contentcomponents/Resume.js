@@ -26,7 +26,7 @@ const Resume = () => {
         {/* <LessContent header={header}>My work experience.</LessContent> */}
 
         <LessContent header={header}>
-          <Link href="https://drive.google.com/file/d/1CtJxRPJxSRPlrDE0k28YKkFA165i3Cax/view">Check Out My Resume</Link>
+          <Link href="https://drive.google.com/file/d/1zEjYC-Qtu4xX5NAtcdbqU6pPk54B-kLd/view">Check Out My Resume</Link>
         </LessContent>
         <div className="less__container">
           <Paragraph>
@@ -50,10 +50,31 @@ const Resume = () => {
         </Experience>
         <HeadingTwo>Experience</HeadingTwo>
         <Experience>
+          <Text l>Software Engineer II</Text>
+          <Text format>American Express </Text>
+          <Text format>
+            <i>May 2020 to Present</i>
+          </Text>
+          <ul>
+            <li>
+              <Text format>
+                Worked closely with product owner, design, API and QA team members to develop and release highly visited
+                Account Alerts page from the ground up with React to replace legacy Account Alerts page.
+              </Text>
+            </li>
+            <li>
+              <Text format>
+                Building UIs with 100% test coverage, working with backend REST APIs to display and update required data
+                and, supporting testing and deploying through various environments for www.americanexpress.com.
+              </Text>
+            </li>
+          </ul>
+        </Experience>
+        <Experience>
           <Text l>Front End Developer</Text>
           <Text format>Discount Tire</Text>
           <Text format>
-            <i>March 2018 to Present</i>
+            <i>March 2018 to April 2020</i>
           </Text>
           <ul>
             <li>
@@ -65,8 +86,8 @@ const Resume = () => {
             </li>
             <li>
               <Text format>
-                Updating existing website content, creating new layouts, landing pages that follow existing web
-                standards; making a few modifications to existing developed code.
+                Led the design and development for a design system for the internal team using tools and languages like
+                Adobe XD, Bitbucket, Parcel.js, Javascript (ES6) and Sass.
               </Text>
             </li>
           </ul>

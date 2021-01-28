@@ -3,19 +3,13 @@ import React, { Fragment } from "react";
 // import Text from "../stylecomponents/Text";
 import {
   Paragraph,
-  // HeadingOne,
-  HeadingTwo,
-  // HeadingThree,
   Image,
   Emphasis,
-  // Link,
   ContentCategory,
   Figure,
   Figcaption,
   Small,
-  // Gif,
   Header,
-  // Flex,
   ContentShow,
   ZigZag,
   LessContent,
@@ -44,21 +38,7 @@ const header = "HerbieDuah.app";
 
 // const HomePage = ({ contentProps }) => {
 const HomePage = ({ contentProps }) => {
-  const { whom, forYou, ww, wh, isContentPortrait } = contentProps;
-  // const opts = {
-  // 	height: "100%",
-  // 	width: "100%",
-  // 	playerVars: {
-  // 		autoplay: 1,
-  // 		controls: 0,
-  // 		cc_load_policy: 0,
-  // 		fs: 0,
-  // 		iv_load_policy: 3,
-  // 		modestbranding: 1,
-  // 		rel: 0,
-  // 		showinfo: 0
-  // 	}
-  // };
+  const { whom, forYou, isContentPortrait } = contentProps;
 
   return (
     <Fragment>
@@ -79,11 +59,6 @@ const HomePage = ({ contentProps }) => {
                 Everyone is going to have their own app in the future, so I made my own.
               </Small>
             </ShowIf>
-
-            <Paragraph className="paddingLRParagraph marginBottomLarge">
-              Updating my Portfolio site this week to reflect my latest work experience. - Herbie 1/25/2021
-            </Paragraph>
-
             <ShowIf noAnimation thisValue={isContentPortrait} thatValue={false}>
               <Small className="marginBottomLarge">
                 Check this out on your phone when you get the chance&nbsp;{" "}

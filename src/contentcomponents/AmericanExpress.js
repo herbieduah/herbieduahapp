@@ -2,7 +2,6 @@
 import React, { Fragment } from "react";
 import {
   Paragraph,
-  HeadingTwo,
   Link,
   Header,
   LessContent,
@@ -10,39 +9,25 @@ import {
   Figure,
   ContentCategory,
   WorkInfo,
-  Image,
   ZigZag,
 } from "../ContentHelpers";
 import { ContentShow } from "../ContentHelpers";
 
-import {
-  bedzinCreationofExhibitDesktop,
-  bedzinExhibitOld,
-  typecraft,
-  georgeDevmobileScreenshot,
-  georgeDevIphoneWebsite,
-  georgeDevDesktopDark,
-  georgeDevDesktopLight,
-  amexDesktopFooter,
-  amexAlertsTopMobile,
-  amexAlertsMobile,
-  amexAlertsAllDesktop,
-  eightFortySixProtestMobile,
-  eightFortySixMobileHome,
-  eightFortySixmobile,
-  eightFortySixHomeDesktop,
-} from "../MediaVariables";
+import { amexAlertsTopMobile, amexAlertsAllDesktop } from "../MediaVariables";
+
+import { ShowIf } from "../ComponentHelpers";
 
 const header = "American Express";
-const workDuration = "May 2020 - July 2020";
-const workSkills = "React, UX Design, Sass";
-const workTools = "Adobe XD";
+const workDuration = "May 2020 - Present";
+const workSkills = "React, Redux, CSS (Sass), HTML5, Javascript";
+const workTools = "Visual Studio Code, Jenkins, Swagger, JIRA, Bitbucket";
 
-const AmericanExpressPage = () => {
+const AmericanExpressPage = ({ contentProps }) => {
+  const { forDev } = contentProps;
   return (
     <Fragment>
       <ContentShow less>
-        <LessContent header={header}>GG Portolio.</LessContent>
+        <LessContent header={header}></LessContent>
       </ContentShow>
       <ContentShow containerLarge more>
         <ZigZag>
@@ -52,18 +37,40 @@ const AmericanExpressPage = () => {
 
         <ZigZag>
           <Paragraph className="marginTopXLarge">
-            For my Computer Science capstone, my group was tasked with revamping &nbsp;
-            <Link href="http://bedzinexhibit.org/">Coming Soon</Link>. The exhibit, "Through the Eyes of Youth: Life and
-            Death in the Będzin Ghetto" tells the story of young people in the Jewish ghetto of Będzin (Poland) before,
-            during, and after the Holocaust.
+            I worked closely with product owner, design, API and QA team members to develop and release highly visited{" "}
+            <Link href="https://global.americanexpress.com/account-management/alerts">Account Alerts</Link> (Amex card
+            is required to login) page from the ground up.
           </Paragraph>
-          <Figure mockup className="paddingLRSm" alt="PENDING ALT INFORMATION" src={bedzinExhibitOld}>
+          <ShowIf noAnimation thisValue={forDev} thatValue={true}>
+            <Paragraph>
+              On the day to day, I build and refactor UIs with 100% test coverage, work with backend REST APIs to
+              display and update required data and, support testing and deployment through various environments for{" "}
+              <Link href="https://global.americanexpress.com">American Express</Link>.
+            </Paragraph>
+          </ShowIf>
+          <Figure
+            mockup
+            className="paddingLRSm"
+            alt="American Express Alerts page screenshot"
+            src={amexAlertsAllDesktop}>
             <Figcaption className="marginBottomLarge">
-              The web design before the redesign from &nbsp;
-              <Link href="https://archive.org/web/">Wayback Machine</Link>
+              American Express Account Alerts page screenshot. You can check it out{" "}
+              <Link href="https://global.americanexpress.com/account-management/alerts">here</Link>, if you're an Amex
+              card member
             </Figcaption>
           </Figure>
-          <Paragraph></Paragraph>
+        </ZigZag>
+
+        <ZigZag>
+          <Figure
+            mockup
+            className="paddingLRSm"
+            alt="American Express Alerts page mobile screenshot"
+            src={amexAlertsTopMobile}>
+            <Figcaption className="marginBottomLarge">
+              American Express Account Alerts page screenshot on mobile.
+            </Figcaption>
+          </Figure>
         </ZigZag>
 
         <ContentCategory category="work" />

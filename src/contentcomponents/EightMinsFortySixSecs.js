@@ -2,7 +2,6 @@
 import React, { Fragment } from "react";
 import {
   Paragraph,
-  HeadingTwo,
   Link,
   Header,
   LessContent,
@@ -10,7 +9,7 @@ import {
   Figure,
   ContentCategory,
   WorkInfo,
-  Image,
+  FiGif,
   ZigZag,
 } from "../ContentHelpers";
 import { ContentShow } from "../ContentHelpers";
@@ -32,17 +31,20 @@ import {
   eightFortySixmobile,
   eightFortySixHomeDesktop,
 } from "../MediaVariables";
+import { eightFortySixdesktop, eightFortySixmobileVid, eightFortySixdesktop2 } from "../VideoVariables";
+import { ShowIf } from "../ComponentHelpers";
 
-const header = "American Express";
-const workDuration = "May 2020 - July 2020";
-const workSkills = "React, UX Design, Sass";
-const workTools = "Adobe XD";
+const header = "08:46";
+const workDuration = "June 2020";
+const workSkills = "React, UX Design, CSS(Sass)";
+const workTools = "Visual Studio Code";
 
-const AmericanExpressPage = () => {
+const EightMinsFortySixSecsPage = ({ contentProps }) => {
+  const { isContentPortrait } = contentProps;
   return (
     <Fragment>
       <ContentShow less>
-        <LessContent header={header}>GG Portolio.</LessContent>
+        <LessContent header={header}>08:46</LessContent>
       </ContentShow>
       <ContentShow containerLarge more>
         <ZigZag>
@@ -52,18 +54,51 @@ const AmericanExpressPage = () => {
 
         <ZigZag>
           <Paragraph className="marginTopXLarge">
-            For my Computer Science capstone, my group was tasked with revamping &nbsp;
-            <Link href="http://bedzinexhibit.org/">Coming Soon</Link>. The exhibit, "Through the Eyes of Youth: Life and
-            Death in the Będzin Ghetto" tells the story of young people in the Jewish ghetto of Będzin (Poland) before,
-            during, and after the Holocaust.
+            On May 26th 2020, Officer Derek Chauvin, knelt on the neck of George Floyd for 8 minutes and 46 seconds and
+            killed him. I was inspired by{" "}
+            <Link href="https://blacklivesmatters.carrd.co/">blacklivesmatters.carrd.co</Link> to also create a website
+            to educate and help people protest safely. I built the site a Progressive Web App so people could use
+            certain parts of the site offline.
           </Paragraph>
-          <Figure mockup className="paddingLRSm" alt="PENDING ALT INFORMATION" src={bedzinExhibitOld}>
-            <Figcaption className="marginBottomLarge">
-              The web design before the redesign from &nbsp;
-              <Link href="https://archive.org/web/">Wayback Machine</Link>
-            </Figcaption>
+          <Paragraph>
+            Unfortunately, I had to sunset the project for the sake of my mental health at the time. I started the
+            project during the first weeks of my first Software Engineering opportunity after six weeks of unemployment
+            during a pandemic amid a nationwide protest for racial injustice.
+          </Paragraph>
+          <Paragraph>
+            The project is still live. <Link href="https://www.8minutes46seconds.app">8minutes46seconds</Link>
+          </Paragraph>
+
+          <Figure
+            mockup
+            className="paddingLRSm"
+            alt="Screenshot for the homepage of 8minutes46seconds"
+            src={eightFortySixHomeDesktop}>
+            <Figcaption className="marginBottomLarge">Screenshot of 8minutes46seconds.app homepage</Figcaption>
           </Figure>
-          <Paragraph></Paragraph>
+        </ZigZag>
+
+        <ZigZag>
+          <ShowIf noAnimation thisValue={isContentPortrait} thatValue={false}>
+            <FiGif
+              className="paddingLRSm"
+              desc="Screen recording of 8minutes46seconds"
+              width="720"
+              height="900"
+              url={eightFortySixdesktop2}>
+              <Figcaption>Screen recording of While You're at a Protest page</Figcaption>
+            </FiGif>
+          </ShowIf>
+          <ShowIf noAnimation thisValue={isContentPortrait} thatValue={true}>
+            <FiGif
+              className="paddingLRSm"
+              desc="Screen recording of 8minutes46seconds"
+              width="720"
+              height="900"
+              url={eightFortySixmobileVid}>
+              <Figcaption>Screen recording of While You're at a Protest page</Figcaption>
+            </FiGif>
+          </ShowIf>
         </ZigZag>
 
         <ContentCategory category="work" />
@@ -72,7 +107,7 @@ const AmericanExpressPage = () => {
   );
 };
 
-export default AmericanExpressPage;
+export default EightMinsFortySixSecsPage;
 
 const workinfo = {
   workDuration,

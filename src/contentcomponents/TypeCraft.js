@@ -15,41 +15,21 @@ import {
 } from "../ContentHelpers";
 import { ContentShow } from "../ContentHelpers";
 
-import {
-  bedzinCreationofExhibitDesktop,
-  bedzinExhibitOld,
-  typecraft,
-  georgeDevmobileScreenshot,
-  georgeDevIphoneWebsite,
-  georgeDevDesktopDark,
-  georgeDevDesktopLight,
-  amexDesktopFooter,
-  amexAlertsTopMobile,
-  amexAlertsMobile,
-  amexAlertsAllDesktop,
-  eightFortySixProtestMobile,
-  eightFortySixMobileHome,
-  eightFortySixmobile,
-  eightFortySixHomeDesktop,
-} from "../MediaVariables";
+import { typecraft } from "../MediaVariables";
 
 const header = "Typecraft";
 const workDuration = "September 2020 - Present";
-const workSkills = "React, Redux, Less, API";
-const workTools = "VSCode, Github";
+const workSkills = "React, Redux, CSS (Less), HTML5, Javascript";
+const workTools = "Visual Studio Code, Github";
 
-const BedzinExhibitPage = () => {
+const TypecraftPage = () => {
   return (
     <Fragment>
       <ContentShow less>
-        <LessContent header={header}>Revamped a traveling exhibit site for my senior capstone.</LessContent>
-        <div className="less__container">
-          <Image
-            className="paddingLRSm"
-            src={bedzinCreationofExhibitDesktop}
-            alt="creation of the exhibit mockup page"
-          />
-        </div>
+        <LessContent header={header}>
+          Working with backend engineers and a product designer to implement comment functionality and other features
+          using React.js and Redux.{" "}
+        </LessContent>
       </ContentShow>
       <ContentShow containerLarge more>
         <ZigZag>
@@ -59,27 +39,27 @@ const BedzinExhibitPage = () => {
 
         <ZigZag>
           <Paragraph className="marginTopXLarge">
-            For my Computer Science capstone, my group was tasked with revamping &nbsp;
-            <Link href="http://bedzinexhibit.org/">Coming Soon</Link>. The exhibit, "Through the Eyes of Youth: Life and
-            Death in the Będzin Ghetto" tells the story of young people in the Jewish ghetto of Będzin (Poland) before,
-            during, and after the Holocaust.
+            <Link href="https://www.typecraftapp.com">Typecraft</Link> is a web app that enables users to create,
+            prototype and present website content. I am working with backend engineers and a product designer to
+            refactor and implement features such as commenting and viewer mode with React.js and Redux.
           </Paragraph>
-          <Figure mockup className="paddingLRSm" alt="PENDING ALT INFORMATION" src={bedzinExhibitOld}>
+          <Paragraph>
+            The features are still being tested, will include more screenshots when the features are deployed to
+            production.
+          </Paragraph>
+          <Figure mockup className="paddingLRSm" alt="Screenshot of a wireframe made with Typecraft" src={typecraft}>
             <Figcaption className="marginBottomLarge">
-              The web design before the redesign from &nbsp;
-              <Link href="https://archive.org/web/">Wayback Machine</Link>
+              Screenshot of a wireframe of the desktop view for this web app.
             </Figcaption>
           </Figure>
-          <Paragraph></Paragraph>
         </ZigZag>
-
         <ContentCategory category="work" />
       </ContentShow>
     </Fragment>
   );
 };
 
-export default BedzinExhibitPage;
+export default TypecraftPage;
 
 const workinfo = {
   workDuration,
