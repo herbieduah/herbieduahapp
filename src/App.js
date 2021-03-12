@@ -115,6 +115,7 @@ export const App = () => {
 
   useEffect(() => {
     const values = queryString.parse(window.location.search);
+    const forValue = values.for || "";
     if (values.whom) {
       whoIsOnMyPage(values.whom);
     }
@@ -150,6 +151,10 @@ export const App = () => {
           activateDarkMode();
         }
       }
+    }
+
+    if (forValue.toLowerCase() === "square") {
+      setTheme("square");
     }
     // if (downloaded) {
 
