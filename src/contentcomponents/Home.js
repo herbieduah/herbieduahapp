@@ -72,7 +72,7 @@ const HomePage = ({ contentProps }) => {
             {/* Hey there */}
             <span>
               {forYouHelper(forYou)
-                ? `Hey ${forYouHelper(forYou)}`
+                ? `Hello, ${forYouHelper(forYou)}`
                 : // <Emoji className='emoji' symbol='😄' label='smile' />
                   "Hello, I'm Herbie"}
             </span>
