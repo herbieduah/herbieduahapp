@@ -95,7 +95,7 @@ export const themes = [
   {
     name: "square",
     properties: {
-      ...themeColorMaker("28c101", "ffffff"),
+      ...themeColorMaker("ffffff", "343B42"),
     },
     type: "secret",
     text: "Square",

@@ -180,7 +180,7 @@ export const forYouHelper = (forSomebody) => {
       person = " My Love";
       return person;
     case "square":
-      person = " I'm $Herbie";
+      person = " Square Employee";
       return person;
     default:
       return person;
