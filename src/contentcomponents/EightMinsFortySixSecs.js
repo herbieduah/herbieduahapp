@@ -54,7 +54,7 @@ const EightMinsFortySixSecsPage = ({ contentProps }) => {
 
         <ZigZag>
           <Paragraph className="marginTopXLarge">
-            On May 26th 2020, Officer Derek Chauvin, knelt on the neck of George Floyd for 8 minutes and 46 seconds and
+            On May 25th 2020, Officer Derek Chauvin, knelt on the neck of George Floyd for 8 minutes and 46 seconds and
             killed him. I was inspired by{" "}
             <Link href="https://blacklivesmatters.carrd.co/">blacklivesmatters.carrd.co</Link> to also create a website
             to educate and help people protest safely. I built the site a Progressive Web App so people could use
